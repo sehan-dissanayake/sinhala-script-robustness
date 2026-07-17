@@ -1,156 +1,111 @@
-import os
-import json
+"""Deterministic, akshara-aware Sinhala-to-ASCII romanization baseline.
 
-# Independent Vowels mapping
-vowels = {
-    'අ': 'a', 'ආ': 'aa', 'ඇ': 'ae', 'ඈ': 'aae', 'ඉ': 'i', 'ඊ': 'ii',
-    'උ': 'u', 'ඌ': 'uu', 'එ': 'e', 'ඒ': 'ee', 'ඓ': 'ai', 'ඔ': 'o',
-    'ඕ': 'oo', 'ඖ': 'au', 'ඍ': 'ru', 'ඎ': 'ruu', 'ඏ': 'lu', 'ඐ': 'luu'
+This is an orthographic phonetic approximation, not a full pronunciation model.
+It deliberately uses familiar ASCII Singlish spellings and preserves all
+non-Sinhala content. Input is normalized to NFC before parsing.
+"""
+
+import unicodedata
+
+try:
+    from ._dataset_io import process_datasets as _process_datasets
+except ImportError:  # Direct execution: python src/transliteration/phonetic.py
+    from _dataset_io import process_datasets as _process_datasets
+
+INDEPENDENT_VOWELS = {
+    "අ": "a", "ආ": "aa", "ඇ": "ae", "ඈ": "aae", "ඉ": "i", "ඊ": "ii",
+    "උ": "u", "ඌ": "uu", "ඍ": "ru", "ඎ": "ruu", "ඏ": "lu", "ඐ": "luu",
+    "එ": "e", "ඒ": "ee", "ඓ": "ai", "ඔ": "o", "ඕ": "oo", "ඖ": "au",
 }
 
-# Consonants mapping (base consonants without inherent vowel)
-consonants = {
-    'ක': 'k', 'ඛ': 'kh', 'ග': 'g', 'ඝ': 'gh', 'ඞ': 'n',
-    'ඟ': 'ndg',
-    'ච': 'c', 'ඡ': 'ch', 'ජ': 'j', 'ඣ': 'jh', 'ඤ': 'gn',
-    'ඥ': 'gn', 'ඦ': 'nndj',
-    'ට': 't', 'ඨ': 'th', 'ඩ': 'd', 'ඪ': 'dh', 'ණ': 'n',
-    'ඬ': 'ndd',
-    'ත': 'th', 'ථ': 'th', 'ද': 'd', 'ධ': 'dh', 'න': 'n',
-    'ඳ': 'nd',
-    'ප': 'p', 'ඵ': 'ph', 'බ': 'b', 'භ': 'bh', 'ම': 'm',
-    'ඹ': 'mb',
-    'ය': 'y', 'ර': 'r', 'ල': 'l', 'ව': 'w', 'ශ': 'sh',
-    'ෂ': 'sh', 'ස': 's', 'හ': 'h', 'ළ': 'l', 'ෆ': 'f'
+CONSONANTS = {
+    "ක": "k", "ඛ": "kh", "ග": "g", "ඝ": "gh", "ඞ": "ng", "ඟ": "ng",
+    "ච": "ch", "ඡ": "chh", "ජ": "j", "ඣ": "jh", "ඤ": "ny", "ඥ": "gn",
+    "ඦ": "ndj", "ට": "t", "ඨ": "th", "ඩ": "d", "ඪ": "dh", "ණ": "n",
+    "ඬ": "nd", "ත": "th", "ථ": "th", "ද": "d", "ධ": "dh", "න": "n",
+    "ඳ": "nd", "ප": "p", "ඵ": "ph", "බ": "b", "භ": "bh", "ම": "m",
+    "ඹ": "mb", "ය": "y", "ර": "r", "ල": "l", "ව": "w", "ශ": "sh",
+    "ෂ": "sh", "ස": "s", "හ": "h", "ළ": "l", "ෆ": "f",
 }
 
-# Vowel signs / dependent modifiers mapping
-vowel_signs = {
-    '්': '',       # Hal Kirima (removes inherent vowel)
-    'ා': 'aa',     # a-pilla
-    'ැ': 'ae',     # ae-pilla
-    'ෑ': 'aae',    # diga ae-pilla
-    'ි': 'i',      # is-pilla
-    'ී': 'ii',     # diga is-pilla
-    'ු': 'u',      # pa-pilla
-    'ූ': 'uu',     # diga pa-pilla
-    'ෘ': 'ru',     # gaeta-pilla
-    'ෙ': 'e',      # kombuwa
-    'ේ': 'ee',     # kombuwa and hal-kirima
-    'ෛ': 'ai',     # kombu deka
-    'ො': 'o',      # kombuwa and a-pilla
-    'ෝ': 'oo',     # kombuwa, a-pilla, and hal-kirima
-    'ෞ': 'au',     # kombuwa and gayanukitta
-    'ෟ': 'ow',
-    'ෲ': 'ruu',
-    'ෳ': 'luu'
+VOWEL_SIGNS = {
+    "ා": "aa", "ැ": "ae", "ෑ": "aae", "ි": "i", "ී": "ii", "ු": "u",
+    "ූ": "uu", "ෘ": "ru", "ෲ": "ruu", "ෙ": "e", "ේ": "ee", "ෛ": "ai",
+    "ො": "o", "ෝ": "oo", "ෞ": "au", "ෟ": "ow", "ෳ": "luu",
 }
 
-# Special signs mapping
-special_signs = {
-    'ං': 'n',      # anusvaraya
-    'ඃ': 'h',      # visargaya
-}
+SPECIAL_SIGNS = {"ං": "n", "ඃ": "h"}
+VIRAMA = "්"
+JOINERS = {"\u200c", "\u200d"}
+SINHALA_START = "\u0d80"
+SINHALA_END = "\u0dff"
+
+def _consume_joiners(text: str, index: int) -> int:
+    while index < len(text) and text[index] in JOINERS:
+        index += 1
+    return index
+
 
 def transliterate(text: str) -> str:
-    """
-    Robust character-by-character phonetic parsing for Sinhala -> Romanized transliteration.
-    """
+    """Romanize Sinhala text deterministically using orthographic syllables."""
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
     if not text:
         return ""
-        
-    result = []
-    i = 0
-    n = len(text)
-    
-    while i < n:
-        char = text[i]
-        
-        # Skip ZWJ (Zero-Width Joiner) and ZWNJ
-        if char in ('\u200d', '\u200c'):
-            i += 1
-            continue
-            
-        # Independent vowel match
-        if char in vowels:
-            result.append(vowels[char])
-            i += 1
-            continue
-            
-        # Consonant match
-        if char in consonants:
-            base = consonants[char]
-            next_idx = i + 1
-            has_modifier = False
-            
-            if next_idx < n:
-                next_char = text[next_idx]
-                if next_char in vowel_signs:
-                    modifier = vowel_signs[next_char]
-                    result.append(base + modifier)
-                    i += 2
-                    has_modifier = True
-                elif next_char == '\u200d' and next_idx + 1 < n and text[next_idx + 1] in vowel_signs:
-                    # e.g., consonant + ZWJ + vowel_sign
-                    modifier = vowel_signs[text[next_idx + 1]]
-                    result.append(base + modifier)
-                    i += 3
-                    has_modifier = True
-                    
-            if not has_modifier:
-                # Add inherent vowel 'a'
-                result.append(base + 'a')
-                i += 1
-            continue
-            
-        # Special sign match
-        if char in special_signs:
-            result.append(special_signs[char])
-            i += 1
-            continue
-            
-        # Standalone vowel sign (fallback/erroneous input)
-        if char in vowel_signs:
-            result.append(vowel_signs[char])
-            i += 1
-            continue
-            
-        # Keep non-Sinhala character as is
-        result.append(char)
-        i += 1
-        
-    return "".join(result)
 
-def process_datasets():
-    method_name = "phonetic"
-    in_dir = os.path.join("data", "processed")
-    out_dir = os.path.join("data", "romanized", method_name)
-    os.makedirs(out_dir, exist_ok=True)
-    
-    # Process MMLU
-    mmlu_in = os.path.join(in_dir, "sinhala_mmlu.jsonl")
-    mmlu_out = os.path.join(out_dir, "sinhala_mmlu_romanized.jsonl")
-    if os.path.exists(mmlu_in):
-        print(f"Transliterating MMLU...")
-        with open(mmlu_in, 'r', encoding='utf-8') as fin, open(mmlu_out, 'w', encoding='utf-8') as fout:
-            for line in fin:
-                r = json.loads(line)
-                r['text_romanized'] = transliterate(r['text_unicode'])
-                r['options_romanized'] = [transliterate(opt) for opt in r['options']]
-                fout.write(json.dumps(r, ensure_ascii=False) + "\n")
-        print(f"Saved to {mmlu_out}")
+    text = unicodedata.normalize("NFC", text)
+    output: list[str] = []
+    index = 0
 
-    # Process SOLD
-    sold_in = os.path.join(in_dir, "sold.jsonl")
-    sold_out = os.path.join(out_dir, "sold_romanized.jsonl")
-    if os.path.exists(sold_in):
-        print(f"Transliterating SOLD...")
-        with open(sold_in, 'r', encoding='utf-8') as fin, open(sold_out, 'w', encoding='utf-8') as fout:
-            for line in fin:
-                r = json.loads(line)
-                r['text_romanized'] = transliterate(r['text_unicode'])
-                fout.write(json.dumps(r, ensure_ascii=False) + "\n")
-        print(f"Saved to {sold_out}")
+    while index < len(text):
+        char = text[index]
+        if char in JOINERS:
+            index += 1
+            continue
+        if char in INDEPENDENT_VOWELS:
+            output.append(INDEPENDENT_VOWELS[char])
+            index += 1
+            continue
+        if char in CONSONANTS:
+            output.append(CONSONANTS[char])
+            next_index = _consume_joiners(text, index + 1)
+            if next_index < len(text) and text[next_index] in VOWEL_SIGNS:
+                output.append(VOWEL_SIGNS[text[next_index]])
+                index = next_index + 1
+            elif next_index < len(text) and text[next_index] == VIRAMA:
+                index = _consume_joiners(text, next_index + 1)
+            else:
+                output.append("a")
+                index += 1
+            continue
+        if char in SPECIAL_SIGNS:
+            output.append(SPECIAL_SIGNS[char])
+            index += 1
+            continue
+        # Malformed corpora occasionally contain a detached or repeated vowel
+        # sign. Romanize the known sign deterministically instead of leaking it.
+        if char in VOWEL_SIGNS:
+            output.append(VOWEL_SIGNS[char])
+            index += 1
+            continue
+        if char == VIRAMA:
+            index += 1
+            continue
+        if SINHALA_START <= char <= SINHALA_END:
+            context = text[max(0, index - 8):index + 9]
+            raise ValueError(
+                f"Unsupported or malformed Sinhala character U+{ord(char):04X} "
+                f"at index {index} near {context!r}"
+            )
+        output.append(char)
+        index += 1
+
+    return "".join(output)
+
+
+def process_datasets() -> None:
+    _process_datasets("phonetic", transliterate)
+
 
 if __name__ == "__main__":
     process_datasets()

@@ -13,7 +13,7 @@ We evaluate the models on two established datasets:
 ## 🛠️ Methodology
 
 1. **Data Preparation**: Download and sample the raw datasets into an internal Unicode format.
-2. **Transliteration**: Transliterate the Unicode datasets into Romanized Singlish. We evaluate 5 candidate transliteration tools on a small pilot dataset and select the best one based on robustness to ad-hoc patterns.
+2. **Transliteration**: Generate matched Romanized variants with four automatic candidates (custom phonetic, Aksharamukha, Sinhala G2P, and uroman), then select one on a separate native-speaker-reviewed pilot before downstream evaluation.
 3. **Evaluation**: Query exactly 4 models (LLaMA-3.1-8B, Qwen2-7B, GPT-4o, Claude) uniformly across the dataset × script condition matrix.
 4. **Analysis**: 
    - Compute standard metrics (Accuracy for MMLU, F1 for SOLD).
