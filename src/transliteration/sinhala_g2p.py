@@ -1,10 +1,14 @@
 """Rule-based Sinhala G2P with explicit schwa epenthesis.
 
 Implements the ordered mapping and eight schwa rules in Wasala, Weerasinghe,
-and Gamage (COLING/ACL 2006). Output is a readable Latin phonemic
-transcription; `ə` is intentionally retained because ASCII `a` would erase the
-paper's /ə/ versus /a/ distinction. This is a G2P condition, not colloquial
-ASCII Singlish.
+and Gamage (COLING/ACL 2006). Two output variants are provided:
+
+- `transliterate` (phonemic): retains IPA schwa `ə` distinct from `/a/`. This
+  is the linguistically faithful transcription and is not ASCII-only.
+- `transliterate_ascii`: projects `ə -> a`, producing keyboard-typable output
+  comparable to the other three methods. This collapses the schwa/`a`
+  distinction that is the method's main contribution, so it should be
+  described as an ASCII-compatibility projection, not as more accurate.
 """
 
 import re
@@ -200,6 +204,7 @@ def transcribe_word(word: str) -> str:
 
 
 def transliterate(text: str) -> str:
+    """Phonemic transcription that retains schwa `ə` distinct from `/a/`."""
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     if not text:
@@ -211,8 +216,19 @@ def transliterate(text: str) -> str:
     )
 
 
+def transliterate_ascii(text: str) -> str:
+    """ASCII-projected transcription: same rules, with `ə` mapped to `a`.
+
+    This produces keyboard-typable output comparable to the other three
+    methods, at the cost of collapsing the /ə/ vs /a/ distinction that
+    `transliterate` exists to model.
+    """
+    return transliterate(text).replace(SCHWA, "a")
+
+
 def process_datasets() -> None:
     _process_datasets("sinhala_g2p_schwa", transliterate)
+    _process_datasets("sinhala_g2p_ascii", transliterate_ascii)
 
 
 if __name__ == "__main__":

@@ -1,10 +1,26 @@
 # Method 3: Rule-Based Sinhala G2P with Schwa Epenthesis
 
 **Implementation:** `src/transliteration/sinhala_g2p.py`
-**Output directory:** `data/romanized/sinhala_g2p_schwa/`
+**Output directories:**
+- `data/romanized/sinhala_g2p_schwa/` — phonemic variant, retains IPA schwa `ə` (function `transliterate`)
+- `data/romanized/sinhala_g2p_ascii/` — ASCII-projected variant, `ə → a` (function `transliterate_ascii`)
+
 **Type:** Rule-based, deterministic, implements a published academic algorithm
-**Direction:** Sinhala (Unicode) → Latin phonemic transcription (retains `ə`, not ASCII-only)
+**Direction:** Sinhala (Unicode) → Latin phonemic transcription, in two output forms (see §0)
 **Source publication:** Asanka Wasala, Ruvan Weerasinghe, and Kumudu Gamage. 2006. *Sinhala Grapheme-to-Phoneme Conversion and Rules for Schwa Epenthesis*. In Proceedings of the COLING/ACL 2006 Main Conference Poster Sessions, pages 890–897, Sydney, Australia. Association for Computational Linguistics. https://aclanthology.org/P06-2114/
+
+## 0. Two output variants — which one to use
+
+The rule engine (mapping, eight schwa rules, diphthong mapping — §2–5) is identical for both variants. They differ only in the final formatting step:
+
+| Variant | Function | Symbol for reduced vowel | Example (`කර`) | Keyboard-typable? | Use for |
+|---|---|---|---|---|---|
+| **Phonemic** | `transliterate` | `ə` (IPA schwa) | `kərə` | No — not an ASCII character | Linguistic reference; demonstrating the schwa/`a` distinction the algorithm models; appendix/qualitative examples in the paper |
+| **ASCII-projected** | `transliterate_ascii` | `a` (ə→a substitution) | `kara` | Yes | The actual LLM evaluation runs, so the Romanized condition stays keyboard-realistic and comparable to the other three methods |
+
+**Recommendation for the LLM experiments:** use `sinhala_g2p_ascii`. The phonemic variant is not something a person would type as Singlish, and a rare IPA character can also interact badly with some model tokenizers in ways unrelated to the phenomenon under study (script robustness), which would confound the comparison. Keep `sinhala_g2p_schwa` as a companion artifact — it is useful for the paper to *show* what information the ASCII projection discards, and for any qualitative/error analysis where the schwa/`a` distinction itself is the point of discussion.
+
+Note that the ASCII projection is a **pure postprocessing step** (`transliterate(text).replace("ə", "a")`) applied after all eight rules and the diphthong mapping have already run — the rules themselves still use the /ə/ vs /a/ distinction internally to decide correct vowel quality at each position (e.g., rule 5's exception list, rule 8's stem-specific reversal); only the final symbol is collapsed. This means `sinhala_g2p_ascii` is not the same as simply mapping every bare consonant to `a` the way Method 1 (`phonetic.py`) does — it still benefits from the rule engine's decisions about consonant clusters, word-final position, and the `kal-` exception, which can produce different results from Method 1 in principle even though both use only `a` for the inherent vowel. In practice, on this project's corpus, this mostly manifests as spelling agreement rather than divergence, since the rules mainly decide *which symbol* (`a` vs `ə`) to use, and after the ASCII projection that choice becomes invisible.
 
 ## 1. Purpose and role in the study
 
@@ -14,7 +30,7 @@ This method is included so the paper can distinguish two hypotheses about LLM de
 1. Degradation caused by **script change alone** (addressed by Methods 1, 2, 4 — orthographic transliteration).
 2. Degradation caused by **loss of the schwa/`a` phonemic distinction** specifically (addressed by comparing this method against the others).
 
-**Important framing note for the paper:** because this method retains the phoneme `ə` (schwa) as a distinct character rather than collapsing it to ASCII `a`, its output is not ordinary ASCII Singlish that a Sri Lankan would type on a keyboard. It should be presented as a **linguistically motivated phonemic transcription condition**, separate from the "naturalistic Singlish" methods. If a pure-ASCII variant is needed for an LLM prompt-compatibility reason, `ə` can be mapped to `a` as a final step, but doing so exactly reproduces Method 1's schwa handling and would defeat the purpose of including this method — this tradeoff should be stated explicitly if that substitution is made.
+**Important framing note for the paper:** the phonemic variant retains `ə` (schwa) as a distinct character rather than collapsing it to ASCII `a`, so its output is not ordinary ASCII Singlish that a Sri Lankan would type on a keyboard. It should be presented as a **linguistically motivated phonemic transcription condition**, separate from the "naturalistic Singlish" methods. This is why an ASCII-projected variant (`transliterate_ascii`, §0) is also generated — it is the recommended condition for the actual LLM robustness experiment, while the phonemic variant is retained as a companion reference artifact.
 
 ## 2. Algorithm overview
 
@@ -94,16 +110,18 @@ None of these deviations affect the core mapping table or the eight rules' condi
 
 ## 7. Worked examples (generated by the current implementation)
 
-| Sinhala input | Output (retains ə) | Compare: Method 1 (ASCII `a` only) |
-|---|---|---|
-| `සිංහල` | `singhələ` | `sinhala` |
-| `කොහොමද?` | `kohomədə?` | `kohomada?` |
-| `අම්ම` (mother) | `ammə` | `amma` |
-| `කර` (do/did) | `kərə` | `kara` |
-| `වන` | `wanə` | `wana` |
-| `කල` | `kələ` | `kala` |
-| `ප්‍රතිපත්ති` | `prətipatti` | `prathipaththi` |
-| `වෙසක් උත්සවයේදී...` | `wesak utsəwəyeedii bauddəyin anugəmənəyə kərənə puujaa widi dekə nam,` | `wesak uthsawayeedii bauddhayin anugamanaya karana puujaa widhi deka nam,` |
+| Sinhala input | Phonemic (`ə` retained) | ASCII-projected (`ə→a`) | Compare: Method 1 (ASCII `a` only, no rule engine) |
+|---|---|---|---|
+| `සිංහල` | `singhələ` | `singhala` | `sinhala` |
+| `කොහොමද?` | `kohomədə?` | `kohomada?` | `kohomada?` |
+| `අම්ම` (mother) | `ammə` | `amma` | `amma` |
+| `කර` (do/did) | `kərə` | `kara` | `kara` |
+| `වන` | `wanə` | `wana` | `wana` |
+| `කල` | `kələ` | `kala` | `kala` |
+| `ප්‍රතිපත්ති` | `prətipatti` | `pratipatti` | `prathipaththi` |
+| `වෙසක් උත්සවයේදී...` | `wesak utsəwəyeedii bauddəyin anugəmənəyə kərənə puujaa widi dekə nam,` | `wesak utsawayeedii bauddayin anugamanaya karana puujaa widi deka nam,` | `wesak uthsawayeedii bauddhayin anugamanaya karana puujaa widhi deka nam,` |
+
+The ASCII-projected column and Method 1 agree on most words here, but not identically: note `singhala` vs `sinhala` (the G2P mapping table renders anusvara-plus-following-consonant contexts slightly differently), and `bauddayin`/`widi` vs `bauddhayin`/`widhi` (the G2P consonant table maps ධ/ධ-class letters to unaspirated `d`, while Method 1 preserves the aspirate digraph `dh`). These are independent of the schwa question — they reflect the G2P mapping table's own consonant choices (§3), not the ASCII projection step.
 
 Observe `කර → kərə` and `වන → wanə`: both end in schwa because they are common verb-stem/participle forms, illustrating rule 1's general `ə→a` tendency being *overridden* for cases the paper's exceptions cover — a linguistically meaningful contrast that the pure-ASCII methods (1, 2, 4) cannot express at all, since they always spell the bare inherent vowel as `a`.
 
@@ -111,7 +129,7 @@ The paper itself gives the example `අම්ම (mother) → /ammə/ → /amma:
 
 ## 8. Guarantees and validation
 
-Same shared writer and Sinhala-leakage validator as the other three methods. Measured on this repository's data (2026-07 run): **1,851** SinhalaMMLU + **2,500** SOLD records, **0** Sinhala leakage, **0** unhandled characters (the mapping table's coverage of the Sinhala Unicode block was verified against the same corpus used for Methods 1/2/4).
+Same shared writer and Sinhala-leakage validator as the other three methods, applied independently to both output directories. Measured on this repository's data (2026-07 run): **1,851** SinhalaMMLU + **2,500** SOLD records in **each** of `sinhala_g2p_schwa/` and `sinhala_g2p_ascii/`, **0** Sinhala leakage, **0** unhandled characters (the mapping table's coverage of the Sinhala Unicode block was verified against the same corpus used for Methods 1/2/4). The ASCII variant was additionally verified to be byte-identical to the phonemic variant with every `ə` replaced by `a`, confirming the projection step introduces no other change.
 
 Throughput: ≈7,500 strings/second — slower than the plain phonetic baseline (more processing per word: 8 rule passes + diphthong pass) but far faster than Aksharamukha or uroman (no external process/library calls).
 
@@ -128,4 +146,4 @@ Eight targeted unit tests (one per rule, plus the diphthong mapper) were run aga
 
 > Asanka Wasala, Ruvan Weerasinghe, and Kumudu Gamage. 2006. Sinhala Grapheme-to-Phoneme Conversion and Rules for Schwa Epenthesis. In *Proceedings of the COLING/ACL 2006 Main Conference Poster Sessions*, pages 890–897, Sydney, Australia. Association for Computational Linguistics. https://aclanthology.org/P06-2114/ DOI via ACL Anthology page: https://doi.org/10.3115/1273073.1273187
 
-Describe this method in the paper as: *"a from-scratch reimplementation, in Python, of the mapping table and eight-rule schwa epenthesis algorithm of Wasala et al. (2006), with the documented deviations in Section 6 [of this document] (no exception lexicon, no compound segmentation, single-pass rule application)."* Do not describe it as using the authors' original code or as independently re-validated against expert transcriptions.
+Describe this method in the paper as: *"a from-scratch reimplementation, in Python, of the mapping table and eight-rule schwa epenthesis algorithm of Wasala et al. (2006), with the documented deviations in Section 6 [of this document] (no exception lexicon, no compound segmentation, single-pass rule application). Two output forms were derived from the same rule engine: a phonemic transcription retaining IPA schwa (/ə/), used for qualitative and reference analysis, and an ASCII-projected transcription (/ə/ → 'a') used as the Romanized-script condition in the LLM evaluation, for compatibility with the keyboard-typable format of the other three methods."* Do not describe it as using the authors' original code or as independently re-validated against expert transcriptions.
