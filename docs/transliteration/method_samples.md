@@ -2,7 +2,7 @@
 
 Randomly sampled records (seed=42) comparing all implemented methods against the original Sinhala Unicode source. 25 from SinhalaMMLU, 25 from SOLD (50 total).
 
-Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **Aksharamukha** = external library (`aksharamukha_method.py`) · **G2P phonemic** = Wasala et al. 2006 rule-based G2P, retains IPA schwa `ə` (`sinhala_g2p.py`, `transliterate`) · **G2P ASCII** = same rule engine with `ə→a` projected for keyboard-typable output (`sinhala_g2p.py`, `transliterate_ascii`) · **uroman** = external universal romanizer (`uroman_method.py`)
+Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **Aksharamukha** = external library (`aksharamukha_method.py`) · **uroman** = external universal romanizer (`uroman_method.py`)
 
 ---
 
@@ -14,8 +14,6 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** budun wahanseegee patidhaathuwa thaenpath kara nirmaanaya karana lada daagaeba wannee,
 - **Aksharamukha:** budun wahanseegee patidhaatuwa taenpat kara nirmaanaya karana lada daagaeba wannee,
-- **Sinhala G2P (phonemic, retains ə):** budun wahanseegee patidaatuwə taenpat kərə nirmaanəyə kərənə ladə daagaebə wannee,
-- **Sinhala G2P (ASCII, ə→a):** budun wahanseegee patidaatuwa taenpat kara nirmaanaya karana lada daagaeba wannee,
 - **uroman:** budun vahanseegee pattidaatuva taenpat kara nirmaanaya karana lada daagaeba vannee,
 
 **Options (Sinhala → romanized per method):**
@@ -23,26 +21,18 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 - අභයගිරිය දාගැබ
   - Phonetic (baseline): abhayagiriya daagaeba
   - Aksharamukha: abhayagiriya daagaeba
-  - Sinhala G2P (phonemic, retains ə): abəyəgiriyə daagaebə
-  - Sinhala G2P (ASCII, ə→a): abayagiriya daagaeba
   - uroman: abayagiriya daagaeba
 - රන්කොත් වෙහෙර
   - Phonetic (baseline): rankoth wehera
   - Aksharamukha: rankot wehera
-  - Sinhala G2P (phonemic, retains ə): rankot weherə
-  - Sinhala G2P (ASCII, ə→a): rankot wehera
   - uroman: rankot vehera
 - ථුපාරාමය දාගැබ
   - Phonetic (baseline): thupaaraamaya daagaeba
   - Aksharamukha: thupaaraamaya daagaeba
-  - Sinhala G2P (phonemic, retains ə): tupaaraaməyə daagaebə
-  - Sinhala G2P (ASCII, ə→a): tupaaraamaya daagaeba
   - uroman: tupaaraamaya daagaeba
-- ජේතවනාරාම දාගැබ ✅
+- ජේතවනාරාම දාගැබ 
   - Phonetic (baseline): jeethawanaaraama daagaeba
   - Aksharamukha: jeetawanaaraama daagaeba
-  - Sinhala G2P (phonemic, retains ə): jeetəwənaaraamə daagaebə
-  - Sinhala G2P (ASCII, ə→a): jeetawanaaraama daagaeba
   - uroman: jeetavanaaraama daagaeba
 
 ---
@@ -53,8 +43,6 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** chiiththa reddak nirmaanaya sandahaa wadaath sudusu moosthara wargaya wannee
 - **Aksharamukha:** chiitta reddak nirmaanaya sandahaa wadaat sudusu moostara wargaya wannee
-- **Sinhala G2P (phonemic, retains ə):** chiittə reddak nirmaanəyə sandəhaa wadaat sudusu moostərə wargəyə wannee
-- **Sinhala G2P (ASCII, ə→a):** chiitta reddak nirmaanaya sandahaa wadaat sudusu moostara wargaya wannee
 - **uroman:** ciitta reddak nirmaanaya sadahaa vaddaat sudusu moostara vargaya vannee
 
 **Options (Sinhala → romanized per method):**
@@ -62,26 +50,18 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 - වෘත්තාකාර මෝස්තර
   - Phonetic (baseline): wruththaakaara moosthara
   - Aksharamukha: wruttaakaara moostara
-  - Sinhala G2P (phonemic, retains ə): wruttaakaarə moostərə
-  - Sinhala G2P (ASCII, ə→a): wruttaakaara moostara
   - uroman: vrattaakaara moostara
 - මුළුනල මෝස්තර
   - Phonetic (baseline): mulunala moosthara
   - Aksharamukha: mulunala moostara
-  - Sinhala G2P (phonemic, retains ə): mulunələ moostərə
-  - Sinhala G2P (ASCII, ə→a): mulunala moostara
   - uroman: mulunala moostara
-- ව්‍යාප්ත මෝස්තර ✅
+- ව්‍යාප්ත මෝස්තර 
   - Phonetic (baseline): wyaaptha moosthara
   - Aksharamukha: wyaapta moostara
-  - Sinhala G2P (phonemic, retains ə): wyaaptə moostərə
-  - Sinhala G2P (ASCII, ə→a): wyaapta moostara
   - uroman: vyaapta moostara
 - වාටි මෝස්තර
   - Phonetic (baseline): waati moosthara
   - Aksharamukha: waati moostara
-  - Sinhala G2P (phonemic, retains ə): waati moostərə
-  - Sinhala G2P (ASCII, ə→a): waati moostara
   - uroman: vaatti moostara
 
 ---
@@ -92,8 +72,6 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** lakdiwa idikala palamu sthuupaya lesa handunwannee,
 - **Aksharamukha:** lakdiwa idikala palamu sthuupaya lesa handunwannee,
-- **Sinhala G2P (phonemic, retains ə):** lakdiwə idikələ paləmu stuupəyə lesə handunwannee,
-- **Sinhala G2P (ASCII, ə→a):** lakdiwa idikala palamu stuupaya lesa handunwannee,
 - **uroman:** lakdiva idikala palamu stuupaya lesa hadunvannee,
 
 **Options (Sinhala → romanized per method):**
@@ -101,26 +79,18 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 - කැලණි විහාරයයි.
   - Phonetic (baseline): kaelani wihaarayayi.
   - Aksharamukha: kaelani wihaarayayi.
-  - Sinhala G2P (phonemic, retains ə): kaeləni wihaarəyai.
-  - Sinhala G2P (ASCII, ə→a): kaelani wihaarayai.
   - uroman: kaelani vihaarayayi.
 - ථූපාරාම විහාරයයි.
   - Phonetic (baseline): thuupaaraama wihaarayayi.
   - Aksharamukha: thuupaaraama wihaarayayi.
-  - Sinhala G2P (phonemic, retains ə): tuupaaraamə wihaarəyai.
-  - Sinhala G2P (ASCII, ə→a): tuupaaraama wihaarayai.
   - uroman: tuupaaraama vihaarayayi.
-- අභයගිරි විහාරයයි. ✅
+- අභයගිරි විහාරයයි. 
   - Phonetic (baseline): abhayagiri wihaarayayi.
   - Aksharamukha: abhayagiri wihaarayayi.
-  - Sinhala G2P (phonemic, retains ə): abəyəgiri wihaarəyai.
-  - Sinhala G2P (ASCII, ə→a): abayagiri wihaarayai.
   - uroman: abayagiri vihaarayayi.
 - ජේතවන විහාරයයි.
   - Phonetic (baseline): jeethawana wihaarayayi.
   - Aksharamukha: jeetawana wihaarayayi.
-  - Sinhala G2P (phonemic, retains ə): jeetəwənə wihaarəyai.
-  - Sinhala G2P (ASCII, ə→a): jeetawana wihaarayai.
   - uroman: jeetavana vihaarayayi.
 
 ---
@@ -131,8 +101,6 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** nuul ruukada nirmaanayee dii ruukada saaediima sandahaa pradhaana washayen daewa bhaawithaa karana athara ee sandahaa waedi washayen bhaawitha karana daewa wargaya nam
 - **Aksharamukha:** nuul ruukada nirmaanayee dii ruukada saaediima sandahaa pradhaana washayen daewa bhaawitaa karana atara ee sandahaa waedi washayen bhaawita karana daewa wargaya nam
-- **Sinhala G2P (phonemic, retains ə):** nuul ruukədə nirmaanəyee dii ruukədə saaediimə sandəhaa prədaanə washəyen daewə baawitaa kərənə atərə ee sandəhaa waedi washəyen baawitə kərənə daewə wargəyə nam
-- **Sinhala G2P (ASCII, ə→a):** nuul ruukada nirmaanayee dii ruukada saaediima sandahaa pradaana washayen daewa baawitaa karana atara ee sandahaa waedi washayen baawita karana daewa wargaya nam
 - **uroman:** nuul ruukadda nirmaanayee dii ruukadda saediima sadahaa pradaana vasayen daeva baavitaa karana atara ee sadahaa vaeddi vasayen baavita karana daeva vargaya nam
 
 **Options (Sinhala → romanized per method):**
@@ -140,26 +108,18 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 - කළුවර
   - Phonetic (baseline): kaluwara
   - Aksharamukha: kaluwara
-  - Sinhala G2P (phonemic, retains ə): kaluwərə
-  - Sinhala G2P (ASCII, ə→a): kaluwara
   - uroman: kaluvara
 - තේක්ක
   - Phonetic (baseline): theekka
   - Aksharamukha: teekka
-  - Sinhala G2P (phonemic, retains ə): teekkə
-  - Sinhala G2P (ASCII, ə→a): teekka
   - uroman: teekka
-- රුක්අත්තන ✅
+- රුක්අත්තන 
   - Phonetic (baseline): rukaththana
   - Aksharamukha: rukattana
-  - Sinhala G2P (phonemic, retains ə): rukattənə
-  - Sinhala G2P (ASCII, ə→a): rukattana
   - uroman: rukattana
 - බුරුත
   - Phonetic (baseline): burutha
   - Aksharamukha: buruta
-  - Sinhala G2P (phonemic, retains ə): burutə
-  - Sinhala G2P (ASCII, ə→a): buruta
   - uroman: buruta
 
 ---
@@ -170,8 +130,6 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** budurajaanan wahansee kalaguna daekwiima washayen animisa loochana puujaawa sidukarana laddee kii wana sathiyeedii da ?
 - **Aksharamukha:** budurajaanan wahansee kalaguna daekwiima washayen animisa loochana puujaawa sidukarana laddee kii wana satiyeedii da ?
-- **Sinhala G2P (phonemic, retains ə):** budurəjaanan wahansee kaləgunə daekwiimə washəyen animisə loochənə puujaawə sidukərənə laddee kii wanə satiyeedii də ?
-- **Sinhala G2P (ASCII, ə→a):** budurajaanan wahansee kalaguna daekwiima washayen animisa loochana puujaawa sidukarana laddee kii wana satiyeedii da ?
 - **uroman:** budurajaanan vahansee kalaguna daekviima vasayen animisa loocana puujaava sidukarana laddee kii vana satiyeedii da ?
 
 **Options (Sinhala → romanized per method):**
@@ -179,26 +137,18 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 - පළමුවන සතියේ දී ය.
   - Phonetic (baseline): palamuwana sathiyee dii ya.
   - Aksharamukha: palamuwana satiyee dii ya.
-  - Sinhala G2P (phonemic, retains ə): paləmuwənə satiyee dii yə.
-  - Sinhala G2P (ASCII, ə→a): palamuwana satiyee dii ya.
   - uroman: palamuvana satiyee dii ya.
-- දෙවන සතියේ දී ය. ✅
+- දෙවන සතියේ දී ය. 
   - Phonetic (baseline): dewana sathiyee dii ya.
   - Aksharamukha: dewana satiyee dii ya.
-  - Sinhala G2P (phonemic, retains ə): dewənə satiyee dii yə.
-  - Sinhala G2P (ASCII, ə→a): dewana satiyee dii ya.
   - uroman: devana satiyee dii ya.
 - තෙවන සතියේ දී ය .
   - Phonetic (baseline): thewana sathiyee dii ya .
   - Aksharamukha: tewana satiyee dii ya .
-  - Sinhala G2P (phonemic, retains ə): tewənə satiyee dii yə .
-  - Sinhala G2P (ASCII, ə→a): tewana satiyee dii ya .
   - uroman: tevana satiyee dii ya .
 - පස්වන සතියේ දී ය.
   - Phonetic (baseline): paswana sathiyee dii ya.
   - Aksharamukha: paswana satiyee dii ya.
-  - Sinhala G2P (phonemic, retains ə): paswənə satiyee dii yə.
-  - Sinhala G2P (ASCII, ə→a): paswana satiyee dii ya.
   - uroman: pasvana satiyee dii ya.
 
 ---
@@ -209,35 +159,25 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** minisaa haa sathun athara wenaskam daknata laebee. wenaskam athara minisaa sathungen wenas wannee,
 - **Aksharamukha:** minisaa haa satun atara wenaskam daknata laebee. wenaskam atara minisaa satungen wenas wannee,
-- **Sinhala G2P (phonemic, retains ə):** minisaa haa satun atərə wenaskam daknətə laebee. wenaskam atərə minisaa satungen wenas wannee,
-- **Sinhala G2P (ASCII, ə→a):** minisaa haa satun atara wenaskam daknata laebee. wenaskam atara minisaa satungen wenas wannee,
 - **uroman:** minisaa haa satun atara venaskam daknatta laebee. venaskam atara minisaa satungen venas vannee,
 
 **Options (Sinhala → romanized per method):**
 
-- සදාචාර සම්පන්න බව නිසාය. ✅
+- සදාචාර සම්පන්න බව නිසාය. 
   - Phonetic (baseline): sadaachaara sampanna bawa nisaaya.
   - Aksharamukha: sadaachaara sampanna bawa nisaaya.
-  - Sinhala G2P (phonemic, retains ə): sadaachaarə sampannə bawə nisaayə.
-  - Sinhala G2P (ASCII, ə→a): sadaachaara sampanna bawa nisaaya.
   - uroman: sadaacaara sampanna bava nisaaya.
 - සදාචාරයෙන් තොර බව නිසාය.
   - Phonetic (baseline): sadaachaarayen thora bawa nisaaya.
   - Aksharamukha: sadaachaarayen tora bawa nisaaya.
-  - Sinhala G2P (phonemic, retains ə): sadaachaarəyen torə bawə nisaayə.
-  - Sinhala G2P (ASCII, ə→a): sadaachaarayen tora bawa nisaaya.
   - uroman: sadaacaarayen tora bava nisaaya.
 - අධ්‍යාපනයට යොමු නොවීම නිසා ය.
   - Phonetic (baseline): adhyaapanayata yomu nowiima nisaa ya.
   - Aksharamukha: adhyaapanayata yomu nowiima nisaa ya.
-  - Sinhala G2P (phonemic, retains ə): adyaapənəyətə yomu nowiimə nisaa yə.
-  - Sinhala G2P (ASCII, ə→a): adyaapanayata yomu nowiima nisaa ya.
   - uroman: adyaapanayatta yomu noviima nisaa ya.
 - දෙමාපියන්ට නොසැළකීම නිසා ය.
   - Phonetic (baseline): demaapiyanta nosaelakiima nisaa ya.
   - Aksharamukha: demaapiyanta nosaelakiima nisaa ya.
-  - Sinhala G2P (phonemic, retains ə): demaapiyantə nosaeləkiimə nisaa yə.
-  - Sinhala G2P (ASCII, ə→a): demaapiyanta nosaelakiima nisaa ya.
   - uroman: demaapiyantta nosaelakiima nisaa ya.
 
 ---
@@ -248,8 +188,6 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** sigaaloowaada suuthrayee guruwarun upamaa kara aethi dishaawa wannee ,
 - **Aksharamukha:** sigaaloowaada suutrayee guruwarun upamaa kara aeti dishaawa wannee ,
-- **Sinhala G2P (phonemic, retains ə):** sigaaloowaadə suutrayee guruwərun upəmaa kərə aeti dishaawə wannee ,
-- **Sinhala G2P (ASCII, ə→a):** sigaaloowaada suutrayee guruwarun upamaa kara aeti dishaawa wannee ,
 - **uroman:** sigaaloovaada suutrayee guruvarun upamaa kara aeti disaava vannee ,
 
 **Options (Sinhala → romanized per method):**
@@ -257,26 +195,18 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 - උතුරු දිසාවය
   - Phonetic (baseline): uthuru disaawaya
   - Aksharamukha: uturu disaawaya
-  - Sinhala G2P (phonemic, retains ə): uturu disaawəyə
-  - Sinhala G2P (ASCII, ə→a): uturu disaawaya
   - uroman: uturu disaavaya
 - බටහිර දිසාවය
   - Phonetic (baseline): batahira disaawaya
   - Aksharamukha: batahira disaawaya
-  - Sinhala G2P (phonemic, retains ə): batəhirə disaawəyə
-  - Sinhala G2P (ASCII, ə→a): batahira disaawaya
   - uroman: battahira disaavaya
-- දකුණු දිසාවය ✅
+- දකුණු දිසාවය 
   - Phonetic (baseline): dakunu disaawaya
   - Aksharamukha: dakunu disaawaya
-  - Sinhala G2P (phonemic, retains ə): dakunu disaawəyə
-  - Sinhala G2P (ASCII, ə→a): dakunu disaawaya
   - uroman: dakunu disaavaya
 - උඩ දිසාවය
   - Phonetic (baseline): uda disaawaya
   - Aksharamukha: uda disaawaya
-  - Sinhala G2P (phonemic, retains ə): udə disaawəyə
-  - Sinhala G2P (ASCII, ə→a): uda disaawaya
   - uroman: udda disaavaya
 
 ---
@@ -287,8 +217,6 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** budu dahamata anuwa daehaemi raekiyaawak nowannee,
 - **Aksharamukha:** budu dahamata anuwa daehaemi raekiyaawak nowannee,
-- **Sinhala G2P (phonemic, retains ə):** budu dahamətə anuwə daehaemi raekiyaawak nowannee,
-- **Sinhala G2P (ASCII, ə→a):** budu dahamata anuwa daehaemi raekiyaawak nowannee,
 - **uroman:** budu dahamatta anuva daehaemi raekiyaavak novannee,
 
 **Options (Sinhala → romanized per method):**
@@ -296,26 +224,18 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 - කෘෂිකර්මාන්තය
   - Phonetic (baseline): krushikarmaanthaya
   - Aksharamukha: krushikarmaantaya
-  - Sinhala G2P (phonemic, retains ə): krushikarmaantəyə
-  - Sinhala G2P (ASCII, ə→a): krushikarmaantaya
   - uroman: krasikarmaantaya
 - ගව පාලනය
   - Phonetic (baseline): gawa paalanaya
   - Aksharamukha: gawa paalanaya
-  - Sinhala G2P (phonemic, retains ə): gawə paalənəyə
-  - Sinhala G2P (ASCII, ə→a): gawa paalanaya
   - uroman: gava paalanaya
 - රාජ්‍ය සේවය
   - Phonetic (baseline): raajya seewaya
   - Aksharamukha: raajya seewaya
-  - Sinhala G2P (phonemic, retains ə): raajyə seewəyə
-  - Sinhala G2P (ASCII, ə→a): raajya seewaya
   - uroman: raajya seevaya
-- සත්ත්ව වෙළෙඳාම ✅
+- සත්ත්ව වෙළෙඳාම 
   - Phonetic (baseline): saththwa welendaama
   - Aksharamukha: sattwa welendaama
-  - Sinhala G2P (phonemic, retains ə): sattwə welendaamə
-  - Sinhala G2P (ASCII, ə→a): sattwa welendaama
   - uroman: sattva veledaama
 
 ---
@@ -326,35 +246,25 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** deewa darukama namaethi nomaekena laanchhanaya pudgala aathmaya thula sanituhan karana deewa prasaada nidhaanaya wannee ,
 - **Aksharamukha:** deewa darukama namaeti nomaekena laanchhanaya pudgala aatmaya tula sanituhan karana deewa prasaada nidhaanaya wannee ,
-- **Sinhala G2P (phonemic, retains ə):** deewə darukəmə namaeti nomaekenə laangchənəyə pudgələ aatməyə tulə sanituhan kərənə deewə prəsaadə nidaanəyə wannee ,
-- **Sinhala G2P (ASCII, ə→a):** deewa darukama namaeti nomaekena laangchanaya pudgala aatmaya tula sanituhan karana deewa prasaada nidaanaya wannee ,
 - **uroman:** deeva darukama namaeti nomaekena laancanaya pudgala aatmaya tula sanittuhan karana deeva prasaada nidaanaya vannee ,
 
 **Options (Sinhala → romanized per method):**
 
-- ප්‍රසාද ස්නාපනය ය . ✅
+- ප්‍රසාද ස්නාපනය ය . 
   - Phonetic (baseline): prasaada snaapanaya ya .
   - Aksharamukha: prasaada snaapanaya ya .
-  - Sinhala G2P (phonemic, retains ə): prəsaadə snaapənəyə yə .
-  - Sinhala G2P (ASCII, ə→a): prasaada snaapanaya ya .
   - uroman: prasaada snaapanaya ya .
 - පූජකවරය ය .
   - Phonetic (baseline): puujakawaraya ya .
   - Aksharamukha: puujakawaraya ya .
-  - Sinhala G2P (phonemic, retains ə): puujəkəwərəyə yə .
-  - Sinhala G2P (ASCII, ə→a): puujakawaraya ya .
   - uroman: puujakavaraya ya .
 - දිව්‍ය සත්ප්‍රසාදය ය .
   - Phonetic (baseline): diwya sathprasaadaya ya .
   - Aksharamukha: diwya satprasaadaya ya .
-  - Sinhala G2P (phonemic, retains ə): diwyə satprasaadəyə yə .
-  - Sinhala G2P (ASCII, ə→a): diwya satprasaadaya ya .
   - uroman: divya satprasaadaya ya .
 - රෝගීන්ගේ ආලේපය ය .
   - Phonetic (baseline): roogiingee aaleepaya ya .
   - Aksharamukha: roogiingee aaleepaya ya .
-  - Sinhala G2P (phonemic, retains ə): roogiingee aaleepəyə yə .
-  - Sinhala G2P (ASCII, ə→a): roogiingee aaleepaya ya .
   - uroman: roogiingee aaleepaya ya .
 
 ---
@@ -365,8 +275,6 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** apee edinedaa awashyathaa gaena apa ,
 - **Aksharamukha:** apee edinedaa awashyataa gaena apa ,
-- **Sinhala G2P (phonemic, retains ə):** apee edinedaa awashyətaa gaenə apə ,
-- **Sinhala G2P (ASCII, ə→a):** apee edinedaa awashyataa gaena apa ,
 - **uroman:** apee edinedaa avasyataa gaena apa ,
 
 **Options (Sinhala → romanized per method):**
@@ -374,26 +282,18 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 - කරදර විය යුතු ය .
   - Phonetic (baseline): karadara wiya yuthu ya .
   - Aksharamukha: karadara wiya yutu ya .
-  - Sinhala G2P (phonemic, retains ə): kərədərə wiyə yutu yə .
-  - Sinhala G2P (ASCII, ə→a): karadara wiya yutu ya .
   - uroman: karadara viya yutu ya .
 - බලාපොරොත්තු විය යුතු ය .
   - Phonetic (baseline): balaaporoththu wiya yuthu ya .
   - Aksharamukha: balaaporottu wiya yutu ya .
-  - Sinhala G2P (phonemic, retains ə): balaaporottu wiyə yutu yə .
-  - Sinhala G2P (ASCII, ə→a): balaaporottu wiya yutu ya .
   - uroman: balaaporottu viya yutu ya .
 - කනස්සලු විය යුතු ය .
   - Phonetic (baseline): kanassalu wiya yuthu ya .
   - Aksharamukha: kanassalu wiya yutu ya .
-  - Sinhala G2P (phonemic, retains ə): kanassəlu wiyə yutu yə .
-  - Sinhala G2P (ASCII, ə→a): kanassalu wiya yutu ya .
   - uroman: kanassalu viya yutu ya .
-- දෙවිඳුන්ට භාර කළ යුතු ය . ✅
+- දෙවිඳුන්ට භාර කළ යුතු ය . 
   - Phonetic (baseline): dewindunta bhaara kala yuthu ya .
   - Aksharamukha: dewindunta bhaara kala yutu ya .
-  - Sinhala G2P (phonemic, retains ə): dewinduntə baarə kələ yutu yə .
-  - Sinhala G2P (ASCII, ə→a): dewindunta baara kala yutu ya .
   - uroman: deviduntta baara kala yutu ya .
 
 ---
@@ -404,8 +304,6 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** galiila muhuda sandahaa yedena thawath namak wannee ,
 - **Aksharamukha:** galiila muhuda sandahaa yedena tawat namak wannee ,
-- **Sinhala G2P (phonemic, retains ə):** galiilə muhudə sandəhaa yedenə tawat namak wannee ,
-- **Sinhala G2P (ASCII, ə→a):** galiila muhuda sandahaa yedena tawat namak wannee ,
 - **uroman:** galiila muhuda sadahaa yedena tavat namak vannee ,
 
 **Options (Sinhala → romanized per method):**
@@ -413,26 +311,18 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 - රතු මුහුද
   - Phonetic (baseline): rathu muhuda
   - Aksharamukha: ratu muhuda
-  - Sinhala G2P (phonemic, retains ə): ratu muhudə
-  - Sinhala G2P (ASCII, ə→a): ratu muhuda
   - uroman: ratu muhuda
 - මළ මුහුද
   - Phonetic (baseline): mala muhuda
   - Aksharamukha: mala muhuda
-  - Sinhala G2P (phonemic, retains ə): malə muhudə
-  - Sinhala G2P (ASCII, ə→a): mala muhuda
   - uroman: mala muhuda
 - මධ්‍යධරණී මුහුද
   - Phonetic (baseline): madhyadharanii muhuda
   - Aksharamukha: madhyadharanii muhuda
-  - Sinhala G2P (phonemic, retains ə): madyədərənii muhudə
-  - Sinhala G2P (ASCII, ə→a): madyadaranii muhuda
   - uroman: madyadaranii muhuda
-- තිබේරියස් මුහුද ✅
+- තිබේරියස් මුහුද 
   - Phonetic (baseline): thibeeriyas muhuda
   - Aksharamukha: tibeeriyas muhuda
-  - Sinhala G2P (phonemic, retains ə): tibeeriyas muhudə
-  - Sinhala G2P (ASCII, ə→a): tibeeriyas muhuda
   - uroman: tibeeriyas muhuda
 
 ---
@@ -443,8 +333,6 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** uththaana wuu jeesus wahanseegee aena kaelael daeka wishwaasa kala goolayaa wannee ,
 - **Aksharamukha:** utthaana wuu jeesus wahanseegee aena kaelael daeka wishwaasa kala goolayaa wannee ,
-- **Sinhala G2P (phonemic, retains ə):** uttaanə wuu jeesus wahanseegee aenə kaelael daekə wishwaasə kələ gooləyaa wannee ,
-- **Sinhala G2P (ASCII, ə→a):** uttaana wuu jeesus wahanseegee aena kaelael daeka wishwaasa kala goolayaa wannee ,
 - **uroman:** uttaana vuu jeesus vahanseegee aena kaelael daeka visvaasa kala goolayaa vannee ,
 
 **Options (Sinhala → romanized per method):**
@@ -452,26 +340,18 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 - පේදුරුය
   - Phonetic (baseline): peeduruya
   - Aksharamukha: peeduruya
-  - Sinhala G2P (phonemic, retains ə): peeduruyə
-  - Sinhala G2P (ASCII, ə→a): peeduruya
   - uroman: peeduruya
 - තෝමස් ය .
   - Phonetic (baseline): thoomas ya .
   - Aksharamukha: toomas ya .
-  - Sinhala G2P (phonemic, retains ə): toomas yə .
-  - Sinhala G2P (ASCII, ə→a): toomas ya .
   - uroman: toomas ya .
-- ජොහාන් ය . ✅
+- ජොහාන් ය . 
   - Phonetic (baseline): johaan ya .
   - Aksharamukha: johaan ya .
-  - Sinhala G2P (phonemic, retains ə): johaan yə .
-  - Sinhala G2P (ASCII, ə→a): johaan ya .
   - uroman: johaan ya .
 - මත්තියස් ය .
   - Phonetic (baseline): maththiyas ya .
   - Aksharamukha: mattiyas ya .
-  - Sinhala G2P (phonemic, retains ə): mattiyas yə .
-  - Sinhala G2P (ASCII, ə→a): mattiyas ya .
   - uroman: mattiyas ya .
 
 ---
@@ -482,8 +362,6 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** pancha pusthakayehi sandahan karthru saha upa karthru wannee ,
 - **Aksharamukha:** pancha pustakayehi sandahan kartru saha upa kartru wannee ,
-- **Sinhala G2P (phonemic, retains ə):** pangchə pustəkəyehi sandəhan kartru saha upə kartru wannee ,
-- **Sinhala G2P (ASCII, ə→a):** pangcha pustakayehi sandahan kartru saha upa kartru wannee ,
 - **uroman:** panca pustakayehi sadahan kartra saha upa kartra vannee ,
 
 **Options (Sinhala → romanized per method):**
@@ -491,26 +369,18 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 - දෙවියන් වහන්සේ සහ යේසුස් වහන්සේ .
   - Phonetic (baseline): dewiyan wahansee saha yeesus wahansee .
   - Aksharamukha: dewiyan wahansee saha yeesus wahansee .
-  - Sinhala G2P (phonemic, retains ə): dewiyan wahansee saha yeesus wahansee .
-  - Sinhala G2P (ASCII, ə→a): dewiyan wahansee saha yeesus wahansee .
   - uroman: deviyan vahansee saha yeesus vahansee .
-- දෙවියන් වහන්සේ සහ මිනිසා . ✅
+- දෙවියන් වහන්සේ සහ මිනිසා . 
   - Phonetic (baseline): dewiyan wahansee saha minisaa .
   - Aksharamukha: dewiyan wahansee saha minisaa .
-  - Sinhala G2P (phonemic, retains ə): dewiyan wahansee saha minisaa .
-  - Sinhala G2P (ASCII, ə→a): dewiyan wahansee saha minisaa .
   - uroman: deviyan vahansee saha minisaa .
 - යේසුස් වහන්සේ සහ මිනිසා .
   - Phonetic (baseline): yeesus wahansee saha minisaa .
   - Aksharamukha: yeesus wahansee saha minisaa .
-  - Sinhala G2P (phonemic, retains ə): yeesus wahansee saha minisaa .
-  - Sinhala G2P (ASCII, ə→a): yeesus wahansee saha minisaa .
   - uroman: yeesus vahansee saha minisaa .
 - දෙවියන් වහන්සේ සහ ආබ්‍රහම් ය .
   - Phonetic (baseline): dewiyan wahansee saha aabraham ya .
   - Aksharamukha: dewiyan wahansee saha aabraham ya .
-  - Sinhala G2P (phonemic, retains ə): dewiyan wahansee saha aabraham yə .
-  - Sinhala G2P (ASCII, ə→a): dewiyan wahansee saha aabraham ya .
   - uroman: deviyan vahansee saha aabraham ya .
 
 ---
@@ -521,8 +391,6 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** wiweekaya aethiwita oba kriidaa katayuthuwala yediimen oba thula wardhanaya wana gunaangayak wannee,
 - **Aksharamukha:** wiweekaya aetiwita oba kriidaa katayutuwala yediimen oba tula wardhanaya wana gunaangayak wannee,
-- **Sinhala G2P (phonemic, retains ə):** wiweekəyə aetiwitə obə kriidaa katəyutuwələ yediimen obə tulə wardənəyə wanə gunaanggəyak wannee,
-- **Sinhala G2P (ASCII, ə→a):** wiweekaya aetiwita oba kriidaa katayutuwala yediimen oba tula wardanaya wana gunaanggayak wannee,
 - **uroman:** viveekaya aetivitta oba kriiddaa kattayutuvala yediimen oba tula vardanaya vana gunaangayak vannee,
 
 **Options (Sinhala → romanized per method):**
@@ -530,26 +398,18 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 - අලසකම වර්ධනය වීම.
   - Phonetic (baseline): alasakama wardhanaya wiima.
   - Aksharamukha: alasakama wardhanaya wiima.
-  - Sinhala G2P (phonemic, retains ə): aləsəkəmə wardənəyə wiimə.
-  - Sinhala G2P (ASCII, ə→a): alasakama wardanaya wiima.
   - uroman: alasakama vardanaya viima.
 - ආත්මාර්ථකාමී කටයුතු කිරීමට යොමු වීම.
   - Phonetic (baseline): aathmaarthakaamii katayuthu kiriimata yomu wiima.
   - Aksharamukha: aatmaarthakaamii katayutu kiriimata yomu wiima.
-  - Sinhala G2P (phonemic, retains ə): aatmaartəkaamii katəyutu kiriimətə yomu wiimə.
-  - Sinhala G2P (ASCII, ə→a): aatmaartakaamii katayutu kiriimata yomu wiima.
   - uroman: aatmaartakaamii kattayutu kiriimatta yomu viima.
 - අසාධාරණය අගය කිරීම.
   - Phonetic (baseline): asaadhaaranaya agaya kiriima.
   - Aksharamukha: asaadhaaranaya agaya kiriima.
-  - Sinhala G2P (phonemic, retains ə): asaadaarənəyə agəyə kiriimə.
-  - Sinhala G2P (ASCII, ə→a): asaadaaranaya agaya kiriima.
   - uroman: asaadaaranaya agaya kiriima.
-- ජය පරාජය සතුටින් විදදරා ගැනීම. ✅
+- ජය පරාජය සතුටින් විදදරා ගැනීම. 
   - Phonetic (baseline): jaya paraajaya sathutin widadaraa gaeniima.
   - Aksharamukha: jaya paraajaya satutin widadaraa gaeniima.
-  - Sinhala G2P (phonemic, retains ə): jayə paraajəyə satutin widədəraa gaeniimə.
-  - Sinhala G2P (ASCII, ə→a): jaya paraajaya satutin widadaraa gaeniima.
   - uroman: jaya paraajaya satuttin vidadaraa gaeniima.
 
 ---
@@ -560,8 +420,6 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** shrii lankaawee haa palala niwaeradi anupiliwelata daekwena pilithura thooranna.
 - **Aksharamukha:** shrii lankaawee haa palala niwaeradi anupiliwelata daekwena pilitura tooranna.
-- **Sinhala G2P (phonemic, retains ə):** shrii langkaawee haa palələ niwaerədi anupiliwelətə daekwenə piliturə toorannə.
-- **Sinhala G2P (ASCII, ə→a):** shrii langkaawee haa palala niwaeradi anupiliwelata daekwena pilitura tooranna.
 - **uroman:** srii lankaavee haa palala nivaeradi anupilivelatta daekvena pilitura tooranna.
 
 **Options (Sinhala → romanized per method):**
@@ -569,26 +427,18 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 - දිග කි. මී. 224, පළල කි.මී. 433
   - Phonetic (baseline): diga ki. mii. 224, palala ki.mii. 433
   - Aksharamukha: diga ki. mii. 224, palala ki.mii. 433
-  - Sinhala G2P (phonemic, retains ə): digə ki. mii. 224, palələ ki.mii. 433
-  - Sinhala G2P (ASCII, ə→a): diga ki. mii. 224, palala ki.mii. 433
   - uroman: diga ki. mii. 224, palala ki.mii. 433
 - දිග කි.මී. 423, පළල කි.මී 242
   - Phonetic (baseline): diga ki.mii. 423, palala ki.mii 242
   - Aksharamukha: diga ki.mii. 423, palala ki.mii 242
-  - Sinhala G2P (phonemic, retains ə): digə ki.mii. 423, palələ ki.mii 242
-  - Sinhala G2P (ASCII, ə→a): diga ki.mii. 423, palala ki.mii 242
   - uroman: diga ki.mii. 423, palala ki.mii 242
 - දිග කි.මී. 424, පළල කි.මී. 264
   - Phonetic (baseline): diga ki.mii. 424, palala ki.mii. 264
   - Aksharamukha: diga ki.mii. 424, palala ki.mii. 264
-  - Sinhala G2P (phonemic, retains ə): digə ki.mii. 424, palələ ki.mii. 264
-  - Sinhala G2P (ASCII, ə→a): diga ki.mii. 424, palala ki.mii. 264
   - uroman: diga ki.mii. 424, palala ki.mii. 264
-- දිග කි.මී. 432, පළල කි.මී. 224 ✅
+- දිග කි.මී. 432, පළල කි.මී. 224 
   - Phonetic (baseline): diga ki.mii. 432, palala ki.mii. 224
   - Aksharamukha: diga ki.mii. 432, palala ki.mii. 224
-  - Sinhala G2P (phonemic, retains ə): digə ki.mii. 432, palələ ki.mii. 224
-  - Sinhala G2P (ASCII, ə→a): diga ki.mii. 432, palala ki.mii. 224
   - uroman: diga ki.mii. 432, palala ki.mii. 224
 
 ---
@@ -599,8 +449,6 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 
 - **Phonetic (baseline):** 6 shreeniyee igenuma labana dinindu gee shariira skandha darshakaya yahapath mattamaka pawathina bawa saukhya guruthumiya paewasuwaaya. wardhaka satahanee ohuta adaala warnaya wannee kumakda?
 - **Aksharamukha:** 6 shreeniyee igenuma labana dinindu gee shariira skandha darshakaya yahapat mattamaka pawatina bawa saukhya gurutumiya paewasuwaaya. wardhaka satahanee ohuta adaala warnaya wannee kumakda?
-- **Sinhala G2P (phonemic, retains ə):** 6 shreeniyee igenumə labənə dinindu gee shariirə skandə darshəkəyə yahapat mattəməkə pawətinə bawə saukyə gurutumiyə paewəsuwaayə. wardəkə satəhanee ohutə adaalə warnəyə wannee kumakdə?
-- **Sinhala G2P (ASCII, ə→a):** 6 shreeniyee igenuma labana dinindu gee shariira skanda darshakaya yahapat mattamaka pawatina bawa saukya gurutumiya paewasuwaaya. wardaka satahanee ohuta adaala warnaya wannee kumakda?
 - **uroman:** 6 sreeniyee igenuma labana dinidu gee sariira skanda darsakaya yahapat mattttamaka pavatina bava saukya gurutumiya paevasuvaaya. vardaka sattahanee ohutta adaala varnaya vannee kumakda?
 
 **Options (Sinhala → romanized per method):**
@@ -608,26 +456,18 @@ Method key: **Phonetic** = in-house deterministic baseline (`phonetic.py`) · **
 - දම් පාට
   - Phonetic (baseline): dam paata
   - Aksharamukha: dam paata
-  - Sinhala G2P (phonemic, retains ə): dam paatə
-  - Sinhala G2P (ASCII, ə→a): dam paata
   - uroman: dam paatta
-- කොළ පාට ✅
+- කොළ පාට 
   - Phonetic (baseline): kola paata
   - Aksharamukha: kola paata
-  - Sinhala G2P (phonemic, retains ə): kolə paatə
-  - Sinhala G2P (ASCII, ə→a): kola paata
   - uroman: kola paatta
 - තැඹිලි පාට
   - Phonetic (baseline): thaembili paata
   - Aksharamukha: taembili paata
-  - Sinhala G2P (phonemic, retains ə): taembili paatə
-  - Sinhala G2P (ASCII, ə→a): taembili paata
   - uroman: taebili paatta
 - රතු පාට
   - Phonetic (baseline): rathu paata
   - Aksharamukha: ratu paata
-  - Sinhala G2P (phonemic, retains ə): ratu paatə
-  - Sinhala G2P (ASCII, ə→a): ratu paata
   - uroman: ratu paatta
 
 ---
@@ -647,11 +487,9 @@ A redipili, B thawalam, C sunka, D reegu niladhaariin
 
 1) welanda sanwidhaana,  2) peesha karmaantaya, 3) waraayan aashritawa katayutu kiriima, 4) gawayangee pitee badu genayaama
 A redipili, B tawalam, C sunka, D reegu niladhaariin
-- **Sinhala G2P (phonemic, retains ə):** pahatə kotas niwaerədiwə gaeləpuu witə niwaerədi piliturə wannee,
 
 1) weləndə sangwidaanə,  2) peeshə karmaantəyə, 3) waraayan aashritəwə katəyutu kiriimə, 4) gawəyangee pitee badu genəyaamə
 A redipili, B tawəlam, C sungkə, D reegu nilədaariin
-- **Sinhala G2P (ASCII, ə→a):** pahata kotas niwaeradiwa gaelapuu wita niwaeradi pilitura wannee,
 
 1) welanda sangwidaana,  2) peesha karmaantaya, 3) waraayan aashritawa katayutu kiriima, 4) gawayangee pitee badu genayaama
 A redipili, B tawalam, C sungka, D reegu niladaariin
@@ -665,26 +503,18 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 - ABCD
   - Phonetic (baseline): ABCD
   - Aksharamukha: ABCD
-  - Sinhala G2P (phonemic, retains ə): ABCD
-  - Sinhala G2P (ASCII, ə→a): ABCD
   - uroman: ABCD
 - DEBA
   - Phonetic (baseline): DEBA
   - Aksharamukha: DEBA
-  - Sinhala G2P (phonemic, retains ə): DEBA
-  - Sinhala G2P (ASCII, ə→a): DEBA
   - uroman: DEBA
 - BADC
   - Phonetic (baseline): BADC
   - Aksharamukha: BADC
-  - Sinhala G2P (phonemic, retains ə): BADC
-  - Sinhala G2P (ASCII, ə→a): BADC
   - uroman: BADC
-- CADB ✅
+- CADB 
   - Phonetic (baseline): CADB
   - Aksharamukha: CADB
-  - Sinhala G2P (phonemic, retains ə): CADB
-  - Sinhala G2P (ASCII, ə→a): CADB
   - uroman: CADB
 
 ---
@@ -698,9 +528,7 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Aksharamukha:** wuluhi falu wala ganana ,
 
-- **Sinhala G2P (phonemic, retains ə):** wuluhi falu walə ganənə ,
 
-- **Sinhala G2P (ASCII, ə→a):** wuluhi falu wala ganana ,
 
 - **uroman:** vuluhi falu vala ganana ,
 
@@ -710,26 +538,18 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 - 5
   - Phonetic (baseline): 5
   - Aksharamukha: 5
-  - Sinhala G2P (phonemic, retains ə): 5
-  - Sinhala G2P (ASCII, ə→a): 5
   - uroman: 5
 - 7
   - Phonetic (baseline): 7
   - Aksharamukha: 7
-  - Sinhala G2P (phonemic, retains ə): 7
-  - Sinhala G2P (ASCII, ə→a): 7
   - uroman: 7
 - 8
   - Phonetic (baseline): 8
   - Aksharamukha: 8
-  - Sinhala G2P (phonemic, retains ə): 8
-  - Sinhala G2P (ASCII, ə→a): 8
   - uroman: 8
-- 6 ✅
+- 6 
   - Phonetic (baseline): 6
   - Aksharamukha: 6
-  - Sinhala G2P (phonemic, retains ə): 6
-  - Sinhala G2P (ASCII, ə→a): 6
   - uroman: 6
 
 ---
@@ -743,9 +563,7 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Aksharamukha:** nabi nuh (alai) tumaagee naewa goda baessuu sthaanaya,
 
-- **Sinhala G2P (phonemic, retains ə):** nabi nuh (alai) tumaagee naewə godə baessuu staanəyə,
 
-- **Sinhala G2P (ASCII, ə→a):** nabi nuh (alai) tumaagee naewa goda baessuu staanaya,
 
 - **uroman:** nabi nuh (alai) tumaagee naeva godda baessuu staanaya,
 
@@ -755,26 +573,18 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 - නූර් කන්ද
   - Phonetic (baseline): nuur kanda
   - Aksharamukha: nuur kanda
-  - Sinhala G2P (phonemic, retains ə): nuur kandə
-  - Sinhala G2P (ASCII, ə→a): nuur kanda
   - uroman: nuur kanda
 - තුර්සිනා කන්ද
   - Phonetic (baseline): thursinaa kanda
   - Aksharamukha: tursinaa kanda
-  - Sinhala G2P (phonemic, retains ə): tursinaa kandə
-  - Sinhala G2P (ASCII, ə→a): tursinaa kanda
   - uroman: tursinaa kanda
-- ජූදි කන්ද ✅
+- ජූදි කන්ද 
   - Phonetic (baseline): juudi kanda
   - Aksharamukha: juudi kanda
-  - Sinhala G2P (phonemic, retains ə): juudi kandə
-  - Sinhala G2P (ASCII, ə→a): juudi kanda
   - uroman: juudi kanda
 - සෆා කන්ද
   - Phonetic (baseline): safaa kanda
   - Aksharamukha: safaa kanda
-  - Sinhala G2P (phonemic, retains ə): safaa kandə
-  - Sinhala G2P (ASCII, ə→a): safaa kanda
   - uroman: safaa kanda
 
 ---
@@ -785,8 +595,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** nuuthana sinhala warna maalaawee sanynyaka akshara ganana kiiyada?
 - **Aksharamukha:** nuutana sinhala warna maalaawee sanynyaka akshara ganana kiiyada?
-- **Sinhala G2P (phonemic, retains ə):** nuutənə singhələ warnə maalaawee sanynyəkə akshərə ganənə kiiyədə?
-- **Sinhala G2P (ASCII, ə→a):** nuutana singhala warna maalaawee sanynyaka akshara ganana kiiyada?
 - **uroman:** nuutana sinhala varna maalaavee sanynyaka aksara ganana kiiyada?
 
 **Options (Sinhala → romanized per method):**
@@ -794,26 +602,18 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 - 10 යි.
   - Phonetic (baseline): 10 yi.
   - Aksharamukha: 10 yi.
-  - Sinhala G2P (phonemic, retains ə): 10 yi.
-  - Sinhala G2P (ASCII, ə→a): 10 yi.
   - uroman: 10 yi.
-- 5 යි. ✅
+- 5 යි. 
   - Phonetic (baseline): 5 yi.
   - Aksharamukha: 5 yi.
-  - Sinhala G2P (phonemic, retains ə): 5 yi.
-  - Sinhala G2P (ASCII, ə→a): 5 yi.
   - uroman: 5 yi.
 - 18 යි.
   - Phonetic (baseline): 18 yi.
   - Aksharamukha: 18 yi.
-  - Sinhala G2P (phonemic, retains ə): 18 yi.
-  - Sinhala G2P (ASCII, ə→a): 18 yi.
   - uroman: 18 yi.
 - 3යි.
   - Phonetic (baseline): 3yi.
   - Aksharamukha: 3yi.
-  - Sinhala G2P (phonemic, retains ə): 3yi.
-  - Sinhala G2P (ASCII, ə→a): 3yi.
   - uroman: 3yi.
 
 ---
@@ -824,35 +624,25 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** eeka wachana anuktha naama padayak wannee ,
 - **Aksharamukha:** eeka wachana anukta naama padayak wannee ,
-- **Sinhala G2P (phonemic, retains ə):** eekə wachənə anuktə naamə padəyak wannee ,
-- **Sinhala G2P (ASCII, ə→a):** eeka wachana anukta naama padayak wannee ,
 - **uroman:** eeka vacana anukta naama padayak vannee ,
 
 **Options (Sinhala → romanized per method):**
 
-- මා ✅
+- මා 
   - Phonetic (baseline): maa
   - Aksharamukha: maa
-  - Sinhala G2P (phonemic, retains ə): maa
-  - Sinhala G2P (ASCII, ə→a): maa
   - uroman: maa
 - ඔවුන්
   - Phonetic (baseline): owun
   - Aksharamukha: owun
-  - Sinhala G2P (phonemic, retains ə): oun
-  - Sinhala G2P (ASCII, ə→a): oun
   - uroman: ovun
 - දියණියක්
   - Phonetic (baseline): diyaniyak
   - Aksharamukha: diyaniyak
-  - Sinhala G2P (phonemic, retains ə): diyəniyak
-  - Sinhala G2P (ASCII, ə→a): diyaniyak
   - uroman: diyaniyak
 - සිංහයෙක්
   - Phonetic (baseline): sinhayek
   - Aksharamukha: sinhayek
-  - Sinhala G2P (phonemic, retains ə): singhəyek
-  - Sinhala G2P (ASCII, ə→a): singhayek
   - uroman: sinhayek
 
 ---
@@ -863,8 +653,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** theyitha theyitha theyitha yathaam yana paa sarambayee saramba naamaya wannee
 - **Aksharamukha:** teyita teyita teyita yataam yana paa sarambayee saramba naamaya wannee
-- **Sinhala G2P (phonemic, retains ə):** teitə teitə teitə yataam yanə paa sarəmbəyee sarəmbə naaməyə wannee
-- **Sinhala G2P (ASCII, ə→a):** teita teita teita yataam yana paa sarambayee saramba naamaya wannee
 - **uroman:** teyita teyita teyita yataam yana paa sarabayee saraba naamaya vannee
 
 **Options (Sinhala → romanized per method):**
@@ -872,26 +660,18 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 - අඩිය
   - Phonetic (baseline): adiya
   - Aksharamukha: adiya
-  - Sinhala G2P (phonemic, retains ə): adiyə
-  - Sinhala G2P (ASCII, ə→a): adiya
   - uroman: addiya
 - දෑඩිය
   - Phonetic (baseline): daaediya
   - Aksharamukha: daaediya
-  - Sinhala G2P (phonemic, retains ə): daaediyə
-  - Sinhala G2P (ASCII, ə→a): daaediya
   - uroman: daeddiya
 - තුන් අඩිය
   - Phonetic (baseline): thun adiya
   - Aksharamukha: tun adiya
-  - Sinhala G2P (phonemic, retains ə): tun adiyə
-  - Sinhala G2P (ASCII, ə→a): tun adiya
   - uroman: tun addiya
-- සිව් අඩිය ✅
+- සිව් අඩිය 
   - Phonetic (baseline): siw adiya
   - Aksharamukha: siw adiya
-  - Sinhala G2P (phonemic, retains ə): siw adiyə
-  - Sinhala G2P (ASCII, ə→a): siw adiya
   - uroman: siv addiya
 
 ---
@@ -902,8 +682,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** mandi pada haa paa saramba walin daekiya haeki narthana sampradaaya wannee,
 - **Aksharamukha:** mandi pada haa paa saramba walin daekiya haeki nartana sampradaaya wannee,
-- **Sinhala G2P (phonemic, retains ə):** mandi padə haa paa sarəmbə walin daekiyə haeki nartənə sampradaayə wannee,
-- **Sinhala G2P (ASCII, ə→a):** mandi pada haa paa saramba walin daekiya haeki nartana sampradaaya wannee,
 - **uroman:** manddi pada haa paa saraba valin daekiya haeki nartana sampradaaya vannee,
 
 **Options (Sinhala → romanized per method):**
@@ -911,26 +689,18 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 - උඩරට හා පහත රට සම්ප්‍රදායන් රට සම්ප්‍රදායන්.
   - Phonetic (baseline): udarata haa pahatha rata sampradaayan rata sampradaayan.
   - Aksharamukha: udarata haa pahata rata sampradaayan rata sampradaayan.
-  - Sinhala G2P (phonemic, retains ə): udərətə haa pahatə ratə sampradaayan ratə sampradaayan.
-  - Sinhala G2P (ASCII, ə→a): udarata haa pahata rata sampradaayan rata sampradaayan.
   - uroman: uddaratta haa pahata ratta sampradaayan ratta sampradaayan.
-- පහතරට සහ උඩරට සම්ප්‍රදායන්. ✅
+- පහතරට සහ උඩරට සම්ප්‍රදායන්. 
   - Phonetic (baseline): pahatharata saha udarata sampradaayan.
   - Aksharamukha: pahatarata saha udarata sampradaayan.
-  - Sinhala G2P (phonemic, retains ə): pahatərətə saha udərətə sampradaayan.
-  - Sinhala G2P (ASCII, ə→a): pahatarata saha udarata sampradaayan.
   - uroman: pahataratta saha uddaratta sampradaayan.
 - සබරගමු හා පහතරට සම්ප්‍රදායන්.
   - Phonetic (baseline): sabaragamu haa pahatharata sampradaayan.
   - Aksharamukha: sabaragamu haa pahatarata sampradaayan.
-  - Sinhala G2P (phonemic, retains ə): sabərəgəmu haa pahatərətə sampradaayan.
-  - Sinhala G2P (ASCII, ə→a): sabaragamu haa pahatarata sampradaayan.
   - uroman: sabaragamu haa pahataratta sampradaayan.
 - පහතරට හා උඩරට සම්ප්‍රදායන්.
   - Phonetic (baseline): pahatharata haa udarata sampradaayan.
   - Aksharamukha: pahatarata haa udarata sampradaayan.
-  - Sinhala G2P (phonemic, retains ə): pahatərətə haa udərətə sampradaayan.
-  - Sinhala G2P (ASCII, ə→a): pahatarata haa udarata sampradaayan.
   - uroman: pahataratta haa uddaratta sampradaayan.
 
 ---
@@ -941,8 +711,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** “hisa muwa thula bella dewura daaethee dasaegili"
 - **Aksharamukha:** “hisa muwa tula bella dewura daaetee dasaegili"
-- **Sinhala G2P (phonemic, retains ə):** “hisə muwə tulə bellə deurə daaetee dasaegili"
-- **Sinhala G2P (ASCII, ə→a):** “hisa muwa tula bella deura daaetee dasaegili"
 - **uroman:** “hisa muva tula bella devura daetee dasaegili"
 
 **Options (Sinhala → romanized per method):**
@@ -950,26 +718,18 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 - ලී කෙලි කවියෙකි.
   - Phonetic (baseline): lii keli kawiyeki.
   - Aksharamukha: lii keli kawiyeki.
-  - Sinhala G2P (phonemic, retains ə): lii keli kawiyeki.
-  - Sinhala G2P (ASCII, ə→a): lii keli kawiyeki.
   - uroman: lii keli kaviyeki.
 - සවරං කවියකි.
   - Phonetic (baseline): sawaran kawiyaki.
   - Aksharamukha: sawaran kawiyaki.
-  - Sinhala G2P (phonemic, retains ə): sawərang kawiyəki.
-  - Sinhala G2P (ASCII, ə→a): sawarang kawiyaki.
   - uroman: savaran kaviyaki.
-- සිරසපාද කවියකි. ✅
+- සිරසපාද කවියකි. 
   - Phonetic (baseline): sirasapaada kawiyaki.
   - Aksharamukha: sirasapaada kawiyaki.
-  - Sinhala G2P (phonemic, retains ə): sirəsəpaadə kawiyəki.
-  - Sinhala G2P (ASCII, ə→a): sirasapaada kawiyaki.
   - uroman: sirasapaada kaviyaki.
 - පතුරු කවියකි.
   - Phonetic (baseline): pathuru kawiyaki.
   - Aksharamukha: paturu kawiyaki.
-  - Sinhala G2P (phonemic, retains ə): paturu kawiyəki.
-  - Sinhala G2P (ASCII, ə→a): paturu kawiyaki.
   - uroman: paturu kaviyaki.
 
 ---
@@ -980,35 +740,25 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** rasaayanika wiparyaasayaka dii sidu nowiya haekkee kumakda?
 - **Aksharamukha:** rasaayanika wiparyaasayaka dii sidu nowiya haekkee kumakda?
-- **Sinhala G2P (phonemic, retains ə):** rasaayənikə wiparyaasəyəkə dii sidu nowiyə haekkee kumakdə?
-- **Sinhala G2P (ASCII, ə→a):** rasaayanika wiparyaasayaka dii sidu nowiya haekkee kumakda?
 - **uroman:** rasaayanika viparyaasayaka dii sidu noviya haekkee kumakda?
 
 **Options (Sinhala → romanized per method):**
 
-- භෞතික අවස්ථාව පමණක් වෙනස් වීම ✅
+- භෞතික අවස්ථාව පමණක් වෙනස් වීම 
   - Phonetic (baseline): bhauthika awasthaawa pamanak wenas wiima
   - Aksharamukha: bhautika awasthaawa pamanak wenas wiima
-  - Sinhala G2P (phonemic, retains ə): bautikə awastaawə pamənak wenas wiimə
-  - Sinhala G2P (ASCII, ə→a): bautika awastaawa pamanak wenas wiima
   - uroman: bautika avastaava pamanak venas viima
 - තාපය පිට වීම
   - Phonetic (baseline): thaapaya pita wiima
   - Aksharamukha: taapaya pita wiima
-  - Sinhala G2P (phonemic, retains ə): taapəyə pitə wiimə
-  - Sinhala G2P (ASCII, ə→a): taapaya pita wiima
   - uroman: taapaya pitta viima
 - වායු බුබුලු පිටවීම
   - Phonetic (baseline): waayu bubulu pitawiima
   - Aksharamukha: waayu bubulu pitawiima
-  - Sinhala G2P (phonemic, retains ə): waayu bubulu pitəwiimə
-  - Sinhala G2P (ASCII, ə→a): waayu bubulu pitawiima
   - uroman: vaayu bubulu pittaviima
 - වර්ණය වෙනස් වීම
   - Phonetic (baseline): warnaya wenas wiima
   - Aksharamukha: warnaya wenas wiima
-  - Sinhala G2P (phonemic, retains ə): warnəyə wenas wiimə
-  - Sinhala G2P (ASCII, ə→a): warnaya wenas wiima
   - uroman: varnaya venas viima
 
 ---
@@ -1021,8 +771,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** yaapanee A32,A9 , naagadiipeta yana paara, peduru thudu paara hema  honda yi.anik ehe paarawal godak sawuththu. athurupaarawal ganna deyak naae.AB-21 wagee paarawaluth pelak thaen patta sawuththu. singala muniyaa yaapana tawumata naagadiipeta gihin aewilla ahano monaa thaa ehe kerenne ooni kiyala ?
 - **Aksharamukha:** yaapanee A32,A9 , naagadiipeta yana paara, peduru tudu paara hema  honda yi.anik ehe paarawal godak sawuttu. aturupaarawal ganna deyak naae.AB-21 wagee paarawalut pelak taen patta sawuttu. singala muniyaa yaapana tawumata naagadiipeta gihin aewilla ahano monaa taa ehe kerenne ooni kiyala ?
-- **Sinhala G2P (phonemic, retains ə):** yaapənee A32,A9 , naagədiipetə yanə paarə, peduru tudu paarə hemə  hondə yi.anik ehe paarəwal godak sauttu. aturupaarəwal gannə deyak naae.AB-21 wagee paarəwəlut pelak taen pattə sauttu. singgələ muniyaa yaapənə taumətə naagədiipetə gihin aewillə ahano monaa taa ehe kerenne ooni kiyələ ?
-- **Sinhala G2P (ASCII, ə→a):** yaapanee A32,A9 , naagadiipeta yana paara, peduru tudu paara hema  honda yi.anik ehe paarawal godak sauttu. aturupaarawal ganna deyak naae.AB-21 wagee paarawalut pelak taen patta sauttu. singgala muniyaa yaapana taumata naagadiipeta gihin aewilla ahano monaa taa ehe kerenne ooni kiyala ?
 - **uroman:** yaapanee A32,A9 , naagadiipetta yana paara, peduru tuddu paara hema  hoda yi.anik ehe paaraval goddak savuttu. aturupaaraval ganna deyak nae.AB-21 vagee paaravalut pelak taen patttta savuttu. singala muniyaa yaapana ttavumatta naagadiipetta gihin aevilla ahano monaa taa ehe kerenne ooni kiyala ?
 
 ---
@@ -1033,8 +781,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** @USER ada mama oba wenuwen baellige innee, mata hathara naeraembiimee, magee passa matha mata pahara, magee muhuna matha magee gaesuwahoth oba magee balu paetiyek kiyanawaa nam
 - **Aksharamukha:** @USER ada mama oba wenuwen baellige innee, mata hatara naeraembiimee, magee passa mata mata pahara, magee muhuna mata magee gaesuwahot oba magee balu paetiyek kiyanawaa nam
-- **Sinhala G2P (phonemic, retains ə):** @USER adə mamə obə wenuwen baellige innee, matə hatərə naeraembiimee, magee passə matə matə paharə, magee muhunə matə magee gaesuwəhot obə magee balu paetiyek kiyənəwaa nam
-- **Sinhala G2P (ASCII, ə→a):** @USER ada mama oba wenuwen baellige innee, mata hatara naeraembiimee, magee passa mata mata pahara, magee muhuna mata magee gaesuwahot oba magee balu paetiyek kiyanawaa nam
 - **uroman:** @USER ada mama oba venuven baellige innee, matta hatara naeraebiimee, magee passa mata matta pahara, magee muhuna mata magee gaesuvahot oba magee balu paettiyek kiyanavaa nam
 
 ---
@@ -1045,8 +791,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** yakek kiyalaa dannawanam pukatada ooyi passen aawee ???  #YouClaimedWarBitch #hujja_kelloo
 - **Aksharamukha:** yakek kiyalaa dannawanam pukatada ooyi passen aawee ???  #YouClaimedWarBitch #hujja_kelloo
-- **Sinhala G2P (phonemic, retains ə):** yakek kiyəlaa dannəwənam pukətədə ooyi passen aawee ???  #YouClaimedWarBitch #hujjə_kelloo
-- **Sinhala G2P (ASCII, ə→a):** yakek kiyalaa dannawanam pukatada ooyi passen aawee ???  #YouClaimedWarBitch #hujja_kelloo
 - **uroman:** yakek kiyalaa dannavanam pukattada ooyi passen aavee ???  #YouClaimedWarBitch #hujja_kelloo
 
 ---
@@ -1057,8 +801,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** gonaa kana paelee gon paelee naethinam raja paeleeda?
 - **Aksharamukha:** gonaa kana paelee gon paelee naetinam raja paeleeda?
-- **Sinhala G2P (phonemic, retains ə):** gonaa kanə paelee gon paelee naetinam rajə paeleedə?
-- **Sinhala G2P (ASCII, ə→a):** gonaa kana paelee gon paelee naetinam raja paeleeda?
 - **uroman:** gonaa kana paelee gon paelee naetinam raja paeleeda?
 
 ---
@@ -1069,8 +811,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** @USER mee pakayoo ⁣ammata  minissu paawalaa dennee thoo pakaya awajaathaka amma thaaththa naethiwa upanna ponnayekda huththoo
 - **Aksharamukha:** @USER mee pakayoo ⁣ammata  minissu paawalaa dennee too pakaya awajaataka amma taatta naetiwa upanna ponnayekda huttoo
-- **Sinhala G2P (phonemic, retains ə):** @USER mee pakəyoo ⁣ammətə  minissu paawəlaa dennee too pakəyə awəjaatəkə ammə taattə naetiwə upannə ponnəyekdə huttoo
-- **Sinhala G2P (ASCII, ə→a):** @USER mee pakayoo ⁣ammata  minissu paawalaa dennee too pakaya awajaataka amma taatta naetiwa upanna ponnayekda huttoo
 - **uroman:** @USER mee pakayoo ⁣ammatta  minissu paavalaa dennee too pakaya avajaataka amma taatta naetiva upanna ponnayekda huttoo
 
 ---
@@ -1081,8 +821,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** @USER teluukanna ooyi bijja kapan waelalenna hithenawaa kiyana kathaa walata @USER  @USER
 - **Aksharamukha:** @USER teluukanna ooyi bijja kapan waelalenna hitenawaa kiyana kataa walata @USER  @USER
-- **Sinhala G2P (phonemic, retains ə):** @USER teluukannə ooyi bijjə kapan waeləlennə hitenəwaa kiyənə kataa walətə @USER  @USER
-- **Sinhala G2P (ASCII, ə→a):** @USER teluukanna ooyi bijja kapan waelalenna hitenawaa kiyana kataa walata @USER  @USER
 - **uroman:** @USER tteluukanna ooyi bijja kapan vaelalenna hitenavaa kiyana kataa valatta @USER  @USER
 
 ---
@@ -1093,8 +831,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** @USER kakul deka maedin bijja ul welaa wage
 - **Aksharamukha:** @USER kakul deka maedin bijja ul welaa wage
-- **Sinhala G2P (phonemic, retains ə):** @USER kakul dekə maedin bijjə ul welaa wage
-- **Sinhala G2P (ASCII, ə→a):** @USER kakul deka maedin bijja ul welaa wage
 - **uroman:** @USER kakul deka maedin bijja ul velaa vage
 
 ---
@@ -1105,8 +841,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** es em es pennaapan wats aep eka on karapan  chaet boks eka pennaapan spiikar foon eka daapan   shoort skarts wisi karapan shoos daemili nawaththapan chiis sinaa kat karapan   swiit haart lesa indapan  kotu paninna mata diipan  mage wagathuga noasaapan man jeelar bawa daenagan thoge kuuduwe thoo indapan  sepranoo okiyoopiyars  @USER  · 10 Dec 2017 man gaena witharak hithapan ayithiya mage bawa hithapan  paththini charithaya raekapan  eli wenakan hotu perapan   innee kothanada kiyapan  kawuruth ekkada kiyapan  uuta foon eka diipan  daen oya aethi kata wahapan   ~uputaa gaeniimak~ kathruuta siyalu gaurawaya himiwiya yuthuya...
 - **Aksharamukha:** es em es pennaapan wats aep eka on karapan  chaet boks eka pennaapan spiikar foon eka daapan   shoort skarts wisi karapan shoos daemili nawattapan chiis sinaa kat karapan   swiit haart lesa indapan  kotu paninna mata diipan  mage wagatuga noasaapan man jeelar bawa daenagan toge kuuduwe too indapan  sepranoo okiyoopiyars  @USER  · 10 Dec 2017 man gaena witarak hitapan ayitiya mage bawa hitapan  pattini charitaya raekapan  eli wenakan hotu perapan   innee kotanada kiyapan  kawurut ekkada kiyapan  uuta foon eka diipan  daen oya aeti kata wahapan   ~uputaa gaeniimak~ katruuta siyalu gaurawaya himiwiya yutuya...
-- **Sinhala G2P (phonemic, retains ə):** es em es pennaapang wats aep ekə on kərəpang  chaet boks ekə pennaapang spiikər foon ekə daapang   shoort skarts wisi kərəpang shoos daemili nawattəpang chiis sinaa kat kərəpang   swiit haart lesə indəpang  kotu paninnə matə diipang  mage wagətugə noasaapang mang jeelər bawə daenəgang toge kuuduwe too indəpang  sepranoo okiyoopiyars  @USER  · 10 Dec 2017 mang gaenə witərak hitəpang aitiyə mage bawə hitəpang  pattini charitəyə raekəpang  eli wenəkang hotu perəpang   innee kotənədə kiyəpang  kaurut ekkədə kiyəpang  uutə foon ekə diipang  daen oyə aeti katə wahapang   ~uputaa gaeniimak~ katruutə siyəlu gaurəwəyə himiwiyə yutuyə...
-- **Sinhala G2P (ASCII, ə→a):** es em es pennaapang wats aep eka on karapang  chaet boks eka pennaapang spiikar foon eka daapang   shoort skarts wisi karapang shoos daemili nawattapang chiis sinaa kat karapang   swiit haart lesa indapang  kotu paninna mata diipang  mage wagatuga noasaapang mang jeelar bawa daenagang toge kuuduwe too indapang  sepranoo okiyoopiyars  @USER  · 10 Dec 2017 mang gaena witarak hitapang aitiya mage bawa hitapang  pattini charitaya raekapang  eli wenakang hotu perapang   innee kotanada kiyapang  kaurut ekkada kiyapang  uuta foon eka diipang  daen oya aeti kata wahapang   ~uputaa gaeniimak~ katruuta siyalu gaurawaya himiwiya yutuya...
 - **uroman:** es em es pennaapan vatts aep eka on karapan  caett boks eka pennaapan spiikar foon eka daapan   soortt skartts visi karapan soos daemili navattapan ciis sinaa katt karapan   sviitt haartt lesa idapan  kottu paninna matta diipan  mage vagatuga noasaapan man jeelar bava daenagan toge kuudduve too idapan  sepranoo okiyoopiyars  @USER  · 10 Dec 2017 man gaena vitarak hitapan ayitiya mage bava hitapan  pattini caritaya raekapan  eli venakan hottu perapan   innee kotanada kiyapan  kavurut ekkada kiyapan  uutta foon eka diipan  daen oya aeti katta vahapan   ~uputtaa gaeniimak~ katrratta siyalu gauravaya himiviya yutuya...
 
 ---
@@ -1117,8 +851,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** mee sakkili koochchi strayik eka karanawa wagee waeda karaddi amaaruwen edaa weela hoyan ikmanata gewal balan yanna inna minissu eekaadhipathiyo illana eka saadhaaranayi.  pa.li. saamaanya janayaa ihatha aakalpaya waeradi lesa dakina "oba" tharam buddhimath naetha. "oba" tharam dhanawath naetha. redda ussan enna kalin sithanna.
 - **Aksharamukha:** mee sakkili koochchi strayik eka karanawa wagee waeda karaddi amaaruwen edaa weela hoyan ikmanata gewal balan yanna inna minissu eekaadhipatiyo illana eka saadhaaranayi.  pa.li. saamaanya janayaa ihata aakalpaya waeradi lesa dakina "oba" taram buddhimat naeta. "oba" taram dhanawat naeta. redda ussan enna kalin sitanna.
-- **Sinhala G2P (phonemic, retains ə):** mee sakkili koochchi strəyik ekə kərənəwə wagee waedə kəraddi amaaruwen edaa weelə hoyan ikmənətə gewal balan yannə innə minissu eekaadipətiyo illənə ekə saadaarənai.  pə.li. saamaanyə janəyaa ihətə aakalpəyə waerədi lesə dakinə "obə" taram buddimat naetə. "obə" taram danəwat naetə. reddə ussan ennə kalin sitannə.
-- **Sinhala G2P (ASCII, ə→a):** mee sakkili koochchi strayik eka karanawa wagee waeda karaddi amaaruwen edaa weela hoyan ikmanata gewal balan yanna inna minissu eekaadipatiyo illana eka saadaaranai.  pa.li. saamaanya janayaa ihata aakalpaya waeradi lesa dakina "oba" taram buddimat naeta. "oba" taram danawat naeta. redda ussan enna kalin sitanna.
 - **uroman:** mee sakkili koocci sttrayik eka karanava vagee vaedda karaddi amaaruven edaa veela hoyan ikmanatta geval balan yanna inna minissu eekaadipatiyo illana eka saadaaranayi.  pa.li. saamaanya janayaa ihata aakalpaya vaeradi lesa dakina "oba" taram buddimat naeta. "oba" taram danavat naeta. redda ussan enna kalin sitanna.
 
 ---
@@ -1129,8 +861,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** @USER agamaeti ahawal labbak karannada yannee??
 - **Aksharamukha:** @USER agamaeti ahawal labbak karannada yannee??
-- **Sinhala G2P (phonemic, retains ə):** @USER agəmaeti ahawal labbak kərannədə yannee??
-- **Sinhala G2P (ASCII, ə→a):** @USER agamaeti ahawal labbak karannada yannee??
 - **uroman:** @USER agamaetti ahaval labbak karannada yannee??
 
 ---
@@ -1141,8 +871,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** oya gon moraal ewun ekka ochchara paetalenna yanna epaa. oya wagee mooda yakku thamayi mokak hari gon thelak waedunama saharaanlaa wagee maraagena maerenna yanne
 - **Aksharamukha:** oya gon moraal ewun ekka ochchara paetalenna yanna epaa. oya wagee mooda yakku tamayi mokak hari gon telak waedunama saharaanlaa wagee maraagena maerenna yanne
-- **Sinhala G2P (phonemic, retains ə):** oyə gon moraal eun ekkə ochchərə paetəlennə yannə epaa. oyə wagee moodə yakku tamai mokak hari gon telak waedunəmə saharaanlaa wagee maraagenə maerennə yanne
-- **Sinhala G2P (ASCII, ə→a):** oya gon moraal eun ekka ochchara paetalenna yanna epaa. oya wagee mooda yakku tamai mokak hari gon telak waedunama saharaanlaa wagee maraagena maerenna yanne
 - **uroman:** oya gon moraal evun ekka occara paettalenna yanna epaa. oya vagee moodda yakku tamayi mokak hari gon telak vaedunama saharaanlaa vagee maraagena maerenna yanne
 
 ---
@@ -1153,8 +881,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** @USER @USER  muta kaaella buulak diilaa daen pissu haedilaa
 - **Aksharamukha:** @USER @USER  muta kaaella buulak diilaa daen pissu haedilaa
-- **Sinhala G2P (phonemic, retains ə):** @USER @USER  mutə kaaellə buulak diilaa daeng pissu haedilaa
-- **Sinhala G2P (ASCII, ə→a):** @USER @USER  muta kaaella buulak diilaa daeng pissu haedilaa
 - **uroman:** @USER @USER  mutta kaella buulak diilaa daen pissu haedilaa
 
 ---
@@ -1165,8 +891,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** @USER oyaa mata pissaa kiyala baninawane. #amithbaninawaaSL ee nisaa man ada sadda karannaae.
 - **Aksharamukha:** @USER oyaa mata pissaa kiyala baninawane. #amitbaninawaaSL ee nisaa man ada sadda karannaae.
-- **Sinhala G2P (phonemic, retains ə):** @USER oyaa matə pissaa kiyələ baninəwəne. #amitbəninəwaaSL ee nisaa mang adə saddə kərannaae.
-- **Sinhala G2P (ASCII, ə→a):** @USER oyaa mata pissaa kiyala baninawane. #amitbaninawaaSL ee nisaa mang ada sadda karannaae.
 - **uroman:** @USER oyaa matta pissaa kiyala baninavane. #amitbaninavaaSL ee nisaa man ada sadda karannae.
 
 ---
@@ -1177,8 +901,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** feesbuk wool ekee eka ekaata kadee yannaae un kiyana kiyana paliyata.  gonaa wikkaa.
 - **Aksharamukha:** feesbuk wool ekee eka ekaata kadee yannaae un kiyana kiyana paliyata.  gonaa wikkaa.
-- **Sinhala G2P (phonemic, retains ə):** feesbuk wool ekee ekə ekaatə kadee yannaae un kiyənə kiyənə paliyətə.  gonaa wikkaa.
-- **Sinhala G2P (ASCII, ə→a):** feesbuk wool ekee eka ekaata kadee yannaae un kiyana kiyana paliyata.  gonaa wikkaa.
 - **uroman:** feesbuk vool ekee eka ekaatta kaddee yannae un kiyana kiyana paliyatta.  gonaa vikkaa.
 
 ---
@@ -1189,8 +911,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** @USER @USER  nodakin kiyana haeti eeka
 - **Aksharamukha:** @USER @USER  nodakin kiyana haeti eeka
-- **Sinhala G2P (phonemic, retains ə):** @USER @USER  nodəkin kiyənə haeti eekə
-- **Sinhala G2P (ASCII, ə→a):** @USER @USER  nodakin kiyana haeti eeka
 - **uroman:** @USER @USER  nodakin kiyana haetti eeka
 
 ---
@@ -1201,8 +921,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** hukawanawaa pakayata mata uba ewanne magulada pakoo
 - **Aksharamukha:** hukawanawaa pakayata mata uba ewanne magulada pakoo
-- **Sinhala G2P (phonemic, retains ə):** hukəwənəwaa pakəyətə matə ubə ewanne magulədə pakoo
-- **Sinhala G2P (ASCII, ə→a):** hukawanawaa pakayata mata uba ewanne magulada pakoo
 - **uroman:** hukavanavaa pakayatta matta uba evanne magulada pakoo
 
 ---
@@ -1213,8 +931,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** @USER uba wagee ponna yakkunta riplayi karanna welaawak mata naae ban.. ubee pus kaapu aeta dekee galak ellan muudata paenapan.. oowa thibunath waedak naaene.. ubala wagee un mee ratata barak.. ee nisaa apita paw nodii maeriyan..
 - **Aksharamukha:** @USER uba wagee ponna yakkunta riplayi karanna welaawak mata naae ban.. ubee pus kaapu aeta dekee galak ellan muudata paenapan.. oowa tibunat waedak naaene.. ubala wagee un mee ratata barak.. ee nisaa apita paw nodii maeriyan..
-- **Sinhala G2P (phonemic, retains ə):** @USER ubə wagee ponnə yakkuntə riplai kərannə welaawak matə naae ban.. ubee pus kaapu aetə dekee galak ellan muudətə paenəpan.. oowə tibunat waedak naaene.. ubələ wagee un mee ratətə barak.. ee nisaa apitə paw nodii maeriyan..
-- **Sinhala G2P (ASCII, ə→a):** @USER uba wagee ponna yakkunta riplai karanna welaawak mata naae ban.. ubee pus kaapu aeta dekee galak ellan muudata paenapan.. oowa tibunat waedak naaene.. ubala wagee un mee ratata barak.. ee nisaa apita paw nodii maeriyan..
 - **uroman:** @USER uba vagee ponna yakkuntta riplayi karanna velaavak matta nae ban.. ubee pus kaapu aetta dekee galak ellan muudatta paenapan.. oova tibunat vaeddak naene.. ubala vagee un mee rattatta barak.. ee nisaa apitta pav nodii maeriyan..
 
 ---
@@ -1225,8 +941,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** redda kunu awussannaethuwa palayankoo magula
 - **Aksharamukha:** redda kunu awussannaetuwa palayankoo magula
-- **Sinhala G2P (phonemic, retains ə):** reddə kunu aussannaetuwə paləyankoo magulə
-- **Sinhala G2P (ASCII, ə→a):** redda kunu aussannaetuwa palayankoo magula
 - **uroman:** redda kunu avussannaetuva palayankoo magula
 
 ---
@@ -1237,8 +951,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** 96.1 or 96.3 Hiru Fm Islandwide ------------------------------------------ pimburek thathpara gaanakin eka katata muwek... URL
 - **Aksharamukha:** 96.1 or 96.3 Hiru Fm Islandwide ------------------------------------------ pimburek tatpara gaanakin eka katata muwek... URL
-- **Sinhala G2P (phonemic, retains ə):** 96.1 or 96.3 Hiru Fm Islandwide ------------------------------------------ pimburek tatpərə gaanəkin ekə katətə muwek... URL
-- **Sinhala G2P (ASCII, ə→a):** 96.1 or 96.3 Hiru Fm Islandwide ------------------------------------------ pimburek tatpara gaanakin eka katata muwek... URL
 - **uroman:** 96.1 or 96.3 Hiru Fm Islandwide ------------------------------------------ piburek tatpara gaanakin eka kattatta muvek... URL
 
 ---
@@ -1249,8 +961,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** kondak naethii gon bijjoo ban -Dang Shapada @USER  · 14 Dec 2018 Twitter ekee prashnayak unoth kaath ekka hari langa idan pihiyen aninna balan inna un andura ganna puluwan..
 - **Aksharamukha:** kondak naetii gon bijjoo ban -Dang Shapada @USER  · 14 Dec 2018 Twitter ekee prashnayak unot kaat ekka hari langa idan pihiyen aninna balan inna un andura ganna puluwan..
-- **Sinhala G2P (phonemic, retains ə):** kondak naetii gon bijjoo ban -Dang Shapada @USER  · 14 Dec 2018 Twitter ekee prashnəyak unot kaat ekkə hari langə idan pihiyen aninnə balan innə un andurə gannə puluwan..
-- **Sinhala G2P (ASCII, ə→a):** kondak naetii gon bijjoo ban -Dang Shapada @USER  · 14 Dec 2018 Twitter ekee prashnayak unot kaat ekka hari langa idan pihiyen aninna balan inna un andura ganna puluwan..
 - **uroman:** kondak naetii gon bijjoo ban -Dang Shapada @USER  · 14 Dec 2018 Twitter ekee prasnayak unot kaat ekka hari laga idan pihiyen aninna balan inna un adura ganna puluvan..
 
 ---
@@ -1261,8 +971,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** @USER @USER  @USER  yakoo mee yakaa passa paeththenda mee kathaa kiyannee
 - **Aksharamukha:** @USER @USER  @USER  yakoo mee yakaa passa paettenda mee kataa kiyannee
-- **Sinhala G2P (phonemic, retains ə):** @USER @USER  @USER  yakoo mee yakaa passə paettendə mee kataa kiyannee
-- **Sinhala G2P (ASCII, ə→a):** @USER @USER  @USER  yakoo mee yakaa passa paettenda mee kataa kiyannee
 - **uroman:** @USER @USER  @USER  yakoo mee yakaa passa paettenda mee kataa kiyannee
 
 ---
@@ -1273,8 +981,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** @USER ,  @USER  @USER thrastha bedumwaadiin mee gaaeni nahutheta dolar walin purawalaa natawannee lankaawata thiyunu widihata pahara gahanna....  gaaenigee niyama wanshaya nam sinhala bauddha wenna baehae ...'osariya' boru kawar ekak wenna puluwan... sinhala uchchaaranaya baeri mokada 'maenikeeta'?
 - **Aksharamukha:** @USER ,  @USER  @USER trasta bedumwaadiin mee gaaeni nahuteta dolar walin purawalaa natawannee lankaawata tiyunu widihata pahara gahanna....  gaaenigee niyama wanshaya nam sinhala bauddha wenna baehae ...'osariya' boru kawar ekak wenna puluwan... sinhala uchchaaranaya baeri mokada 'maenikeeta'?
-- **Sinhala G2P (phonemic, retains ə):** @USER ,  @USER  @USER trastə bedumwaadiin mee gaaeni nahutetə dolər walin purəwəlaa natəwannee langkaawətə tiyunu widihətə paharə gahannə....  gaaenigee niyəmə wangshəyə nam singhələ bauddə wennə baehae ...'osəriyə' boru kawər ekak wennə puluwan... singhələ uchchaarənəyə baeri mokədə 'maenikeetə'?
-- **Sinhala G2P (ASCII, ə→a):** @USER ,  @USER  @USER trasta bedumwaadiin mee gaaeni nahuteta dolar walin purawalaa natawannee langkaawata tiyunu widihata pahara gahanna....  gaaenigee niyama wangshaya nam singhala baudda wenna baehae ...'osariya' boru kawar ekak wenna puluwan... singhala uchchaaranaya baeri mokada 'maenikeeta'?
 - **uroman:** @USER ,  @USER  @USER trasta bedumvaadiin mee gaeni nahutetta ddolar valin puravalaa nattavannee lankaavatta tiyunu vidihatta pahara gahanna....  gaenigee niyama vansaya nam sinhala baudda venna baehae ...'osariya' boru kavar ekak venna puluvan... sinhala uccaaranaya baeri mokada 'maenikeetta'?
 
 ---
@@ -1285,8 +991,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** ow ban mee aathmee wagee naaki wenakan balan inna baae eekiwa hambenna. gaetawara wiyeedima magee wenna ooni URL
 - **Aksharamukha:** ow ban mee aatmee wagee naaki wenakan balan inna baae eekiwa hambenna. gaetawara wiyeedima magee wenna ooni URL
-- **Sinhala G2P (phonemic, retains ə):** ow bang mee aatmee wagee naaki wenəkang balang innə baae eekiwə hambennə. gaetəwərə wiyeedimə magee wennə ooni URL
-- **Sinhala G2P (ASCII, ə→a):** ow bang mee aatmee wagee naaki wenakang balang inna baae eekiwa hambenna. gaetawara wiyeedima magee wenna ooni URL
 - **uroman:** ov ban mee aatmee vagee naaki venakan balan inna bae eekiva hambenna. gaettavara viyeedima magee venna ooni URL
 
 ---
@@ -1297,8 +1001,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** @USER iiyaa yakoo daenda blok wunee
 - **Aksharamukha:** @USER iiyaa yakoo daenda blok wunee
-- **Sinhala G2P (phonemic, retains ə):** @USER iiyaa yakoo daendə blok wunee
-- **Sinhala G2P (ASCII, ə→a):** @USER iiyaa yakoo daenda blok wunee
 - **uroman:** @USER iiyaa yakoo daenda blok vunee
 
 ---
@@ -1309,8 +1011,6 @@ A redipili, B tavalam, C sunka, D reegu niladaariin
 
 - **Phonetic (baseline):** ayise welaawa,   weyanko ikmanata waeda thiyenawa
 - **Aksharamukha:** ayise welaawa,   weyanko ikmanata waeda tiyenawa
-- **Sinhala G2P (phonemic, retains ə):** aise welaawə,   weyanko ikmənətə waedə tiyenəwə
-- **Sinhala G2P (ASCII, ə→a):** aise welaawa,   weyanko ikmanata waeda tiyenawa
 - **uroman:** ayise velaava,   veyanko ikmanatta vaedda tiyenava
 
 ---
