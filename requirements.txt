@@ -16,3 +16,4 @@ scipy
 matplotlib
 seaborn
 tqdm
+streamlit>=1.32

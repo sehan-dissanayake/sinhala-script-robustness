@@ -32,7 +32,8 @@ sinhala-script-robustness/
 │   ├── data_prep/                     # Download and sampling scripts
 │   ├── transliteration/               # Transliteration candidate logic and runner
 │   ├── evaluation/                    # Unified model clients and prompting templates
-│   └── analysis/                      # Metrics, McNemar's test, and error analysis
+│   ├── analysis/                      # Metrics, McNemar's test, and error analysis
+│   └── webapp/                        # Streamlit app for visual inspection of transliterations
 ├── results/                           # Evaluation outputs, metrics, and error categories
 ├── notebooks/                         # Exploratory data analysis notebooks
 └── requirements.txt                   # Pipeline dependencies
@@ -66,4 +67,14 @@ sinhala-script-robustness/
    python src/data_prep/download_sinhala_mmlu.py
    python src/data_prep/download_sold.py
    python src/data_prep/sample_datasets.py
+   ```
+5. **🔍 Run the Transliteration Inspector (Web App)**:
+   We include a local Streamlit app to visually inspect and compare the original Sinhala Unicode text against its four Romanized counterparts side-by-side.
+   Ensure you have installed the web app dependencies: 
+   ```bash
+   pip install "streamlit>=1.32" pandas
+   ```
+   then run:
+   ```bash
+   streamlit run src/webapp/app.py
    ```
