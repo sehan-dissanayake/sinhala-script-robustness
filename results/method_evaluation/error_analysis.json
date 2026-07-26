@@ -1,0 +1,126 @@
+{
+  "social_media": {
+    "human": {
+      "v_vs_w": 0.2023070097604259,
+      "long_vowel": 0.050828153981321796,
+      "aspiration": 0.15020663173993687,
+      "gemination": 0.17906999446812666
+    },
+    "methods": {
+      "phonetic": {
+        "v_vs_w": 0.0,
+        "long_vowel": 0.3836787987595887,
+        "aspiration": 0.17150318263424189,
+        "gemination": 0.16184103149991838
+      },
+      "aksharamukha": {
+        "v_vs_w": 0.0,
+        "long_vowel": 0.3836787987595887,
+        "aspiration": 0.02990044067243349,
+        "gemination": 0.17003427452260486
+      },
+      "uroman": {
+        "v_vs_w": 1.0,
+        "long_vowel": 0.29655622653827324,
+        "aspiration": 6.528480496164517e-05,
+        "gemination": 0.3638648604537294
+      },
+      "nisansa_sirs_method": {
+        "v_vs_w": 1.0,
+        "long_vowel": 0.3836787987595887,
+        "aspiration": 0.17150318263424189,
+        "gemination": 0.16177574669495676
+      }
+    }
+  },
+  "swa_bhasha_words": {
+    "human": {
+      "v_vs_w": 0.013786006184562457,
+      "long_vowel": 0.11988880778966658,
+      "aspiration": 0.5461086054162941,
+      "gemination": 0.1117135624768442
+    },
+    "methods": {
+      "phonetic": {
+        "v_vs_w": 9.934432743890323e-06,
+        "long_vowel": 0.8105527560138373,
+        "aspiration": 0.5624393956540166,
+        "gemination": 0.11503120915794075
+      },
+      "aksharamukha": {
+        "v_vs_w": 9.942482737364347e-06,
+        "long_vowel": 0.8105394424733008,
+        "aspiration": 0.22761272685718342,
+        "gemination": 0.13589352717848355
+      },
+      "uroman": {
+        "v_vs_w": 1.0,
+        "long_vowel": 0.7968775309595291,
+        "aspiration": 0.00276921643157173,
+        "gemination": 0.36764010837221994
+      }
+    }
+  },
+  "swa_bhasha_words_nisansacov": {
+    "human": {
+      "v_vs_w": 0.07964297974596636,
+      "long_vowel": 0.10248013099564679,
+      "aspiration": 0.4802508087383682,
+      "gemination": 0.11086704740604657
+    },
+    "methods": {
+      "phonetic": {
+        "v_vs_w": 0.00011424654404204273,
+        "long_vowel": 0.7380267050451746,
+        "aspiration": 0.511633485248261,
+        "gemination": 0.10546094187255137
+      },
+      "aksharamukha": {
+        "v_vs_w": 0.00011432491139819366,
+        "long_vowel": 0.7380267050451746,
+        "aspiration": 0.17378268169824898,
+        "gemination": 0.12497001679059727
+      },
+      "uroman": {
+        "v_vs_w": 1.0,
+        "long_vowel": 0.7119613016710642,
+        "aspiration": 0.0019988806268489644,
+        "gemination": 0.3354921244103302
+      },
+      "nisansa_sirs_method": {
+        "v_vs_w": 0.9993145207357478,
+        "long_vowel": 0.7380267050451746,
+        "aspiration": 0.511633485248261,
+        "gemination": 0.10262253138242584
+      }
+    }
+  },
+  "augmented_sentences_sample": {
+    "human": {
+      "v_vs_w": 0.0,
+      "long_vowel": 0.09222308545729949,
+      "aspiration": 0.3781523867331772,
+      "gemination": 0.044476529243047534
+    },
+    "methods": {
+      "phonetic": {
+        "v_vs_w": 0.0,
+        "long_vowel": 0.5628158701102312,
+        "aspiration": 0.38311599502886945,
+        "gemination": 0.04673311002582994
+      },
+      "aksharamukha": {
+        "v_vs_w": 0.0,
+        "long_vowel": 0.5628220451436107,
+        "aspiration": 0.13230992446790651,
+        "gemination": 0.05609880602299033
+      },
+      "uroman": {
+        "v_vs_w": 1.0,
+        "long_vowel": 0.5568860084264048,
+        "aspiration": 0.00041372723642556133,
+        "gemination": 0.1989174937780821
+      }
+    }
+  }
+}

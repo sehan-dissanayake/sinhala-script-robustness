@@ -1,0 +1,130 @@
+{
+  "social_media": {
+    "best_method": "phonetic",
+    "methods": {
+      "phonetic": {
+        "cer_mean": 0.18199876350300906,
+        "cer_ci95": [
+          0.1780816842480274,
+          0.18576042562237743
+        ]
+      },
+      "aksharamukha": {
+        "cer_mean": 0.19102479829841357,
+        "cer_ci95": [
+          0.1871865095575462,
+          0.19465133675504434
+        ],
+        "wilcoxon_vs_best_p": 2.2391832532683848e-130
+      },
+      "uroman": {
+        "cer_mean": 0.22777894981664845,
+        "cer_ci95": [
+          0.22378190301782253,
+          0.2317078381419287
+        ],
+        "wilcoxon_vs_best_p": 0.0
+      },
+      "nisansa_sirs_method": {
+        "cer_mean": 0.19685444078876912,
+        "cer_ci95": [
+          0.19291615136594675,
+          0.20074844990592214
+        ],
+        "wilcoxon_vs_best_p": 1.4694139945869524e-180
+      }
+    }
+  },
+  "swa_bhasha_words": {
+    "best_method": "phonetic",
+    "methods": {
+      "phonetic": {
+        "cer_mean": 0.12060644111235437,
+        "cer_ci95": [
+          0.12024522053313201,
+          0.12098577607883408
+        ]
+      },
+      "aksharamukha": {
+        "cer_mean": 0.14780578320505755,
+        "cer_ci95": [
+          0.14744078473742078,
+          0.1481851227860676
+        ],
+        "wilcoxon_vs_best_p": 0.0
+      },
+      "uroman": {
+        "cer_mean": 0.22775524175293035,
+        "cer_ci95": [
+          0.22735268501778305,
+          0.22817120221103276
+        ],
+        "wilcoxon_vs_best_p": 0.0
+      }
+    }
+  },
+  "swa_bhasha_words_nisansacov": {
+    "best_method": "phonetic",
+    "methods": {
+      "phonetic": {
+        "cer_mean": 0.13600329568923478,
+        "cer_ci95": [
+          0.13419117005929074,
+          0.1377497208034793
+        ]
+      },
+      "aksharamukha": {
+        "cer_mean": 0.16264896862647257,
+        "cer_ci95": [
+          0.1607715012259134,
+          0.16435485974346567
+        ],
+        "wilcoxon_vs_best_p": 0.0
+      },
+      "uroman": {
+        "cer_mean": 0.2243467216556752,
+        "cer_ci95": [
+          0.22248228767867154,
+          0.22611777478126957
+        ],
+        "wilcoxon_vs_best_p": 0.0
+      },
+      "nisansa_sirs_method": {
+        "cer_mean": 0.1662914763827038,
+        "cer_ci95": [
+          0.16436519877302386,
+          0.168175742210358
+        ],
+        "wilcoxon_vs_best_p": 0.0
+      }
+    }
+  },
+  "augmented_sentences_sample": {
+    "best_method": "phonetic",
+    "methods": {
+      "phonetic": {
+        "cer_mean": 0.11244140582876559,
+        "cer_ci95": [
+          0.11209419156723223,
+          0.1127859488674839
+        ]
+      },
+      "aksharamukha": {
+        "cer_mean": 0.13921869340991386,
+        "cer_ci95": [
+          0.13888255505773212,
+          0.13955832054862438
+        ],
+        "wilcoxon_vs_best_p": 0.0
+      },
+      "uroman": {
+        "cer_mean": 0.21033719646833357,
+        "cer_ci95": [
+          0.2099643656173921,
+          0.21071053423948466
+        ],
+        "wilcoxon_vs_best_p": 0.0
+      }
+    }
+  }
+}

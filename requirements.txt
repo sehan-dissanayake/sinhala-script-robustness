@@ -6,3 +6,13 @@ uroman==1.3.1.1
 scikit-learn
 selenium
 webdriver-manager
+
+# Method-evaluation pipeline (src/method_evaluation)
+kaggle
+jiwer
+rapidfuzz
+sacrebleu
+scipy
+matplotlib
+seaborn
+tqdm
