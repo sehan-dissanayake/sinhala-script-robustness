@@ -1,0 +1,25 @@
+Add shardable, resumable runner for the Nisansa web romanizer
+
+The endpoint serves ~25k words before it starts refusing, so covering the
+450,587-word corpus needs several sessions across several people. Splits the
+corpus into 24 independently runnable shards.
+
+- stride assignment (item i -> shard i % 24): the corpus is alphabetically
+  sorted, so contiguous ranges would make any partial result an alphabetically
+  biased slice; with a stride every shard stays a representative sample
+- one append-only JSONL per shard, so members never touch each other's files
+  and cannot conflict in git
+- results are persisted as each request returns, not at end of batch, so a
+  rate limit or Ctrl+C at any moment keeps everything already fetched
+- refusals no longer trigger payload bisection: a busy server has no quarrel
+  with the payload, and bisecting repeated the full backoff at every level,
+  stalling a group for minutes while appearing frozen
+- backoff state is surfaced on the progress bar so waiting is visible
+- advisory lock stops two processes working one shard (duplicate load, no gain)
+- committed manifest (2 MB gz) means teammates need no dataset download
+
+Shard results are committed by exception to the data ignore rules: they come
+from a rate-limited third party, so they are not cheaply regenerable and
+shared progress is the point. ~3 MB, no LFS.
+
+Team instructions: docs/method_evaluation/nisansa_runbook.md

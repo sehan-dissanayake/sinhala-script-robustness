@@ -59,6 +59,19 @@ class BatchRejected(RuntimeError):
     """The server did not return a usable, correctly aligned response."""
 
 
+class ServerBusy(BatchRejected):
+    """The server is shedding load. Retrying the same payload later works.
+
+    Distinct from a misaligned response because the remedy is different: a busy
+    server has no quarrel with the payload, so splitting it and retrying each
+    half only multiplies the waiting (and the load we add).
+    """
+
+
+class Misaligned(BatchRejected):
+    """The response did not line up with the request. Splitting may help."""
+
+
 def _post_once(payload: str, timeout: int) -> str:
     data = urllib.parse.urlencode(
         {"sinhala_text": payload, "remove_diacritics": "1"}
@@ -68,20 +81,27 @@ def _post_once(payload: str, timeout: int) -> str:
         html = resp.read().decode("utf-8")
     match = _OUTPUT_BOX.search(html)
     if not match:
-        raise BatchRejected("no output box in response")
+        raise ServerBusy("no output box in response")
     box = match.group(1)
     if "placeholder" in box:
         # Empirically this is the server shedding load, not a permanent refusal:
         # after a pause the identical payload succeeds. Treated as retryable.
-        raise BatchRejected("server returned placeholder")
+        raise ServerBusy("server returned placeholder")
     return box
 
 
-def _post(payload: str, timeout: int) -> str:
-    """POST with backoff. Raises BatchRejected only after exhausting retries."""
+def _post(payload: str, timeout: int, notify=None) -> str:
+    """POST with backoff. Raises after exhausting retries.
+
+    `notify` receives a short human-readable message before each wait, so a long
+    backoff is visible as progress rather than looking like a frozen process.
+    """
     last: Exception | None = None
-    for wait in (0.0,) + BACKOFF_S:
+    attempts = len(BACKOFF_S) + 1
+    for i, wait in enumerate((0.0,) + BACKOFF_S):
         if wait:
+            if notify:
+                notify(f"server busy ({last}); retry {i}/{attempts - 1} in {wait:.0f}s")
             time.sleep(wait)
         try:
             box = _post_once(payload, timeout)
@@ -89,14 +109,14 @@ def _post(payload: str, timeout: int) -> str:
             return box
         except Exception as exc:
             last = exc
-    raise BatchRejected(f"failed after {len(BACKOFF_S) + 1} attempts: {last}")
+    raise ServerBusy(f"still refusing after {attempts} attempts: {last}")
 
 
 def _split_lines(box: str, expected: int) -> list[str]:
     body = _TAGS.sub("", box).strip("\r\n")
     parts = re.split(r"\r?\n", body)
     if len(parts) != expected:
-        raise BatchRejected(f"expected {expected} lines, got {len(parts)}")
+        raise Misaligned(f"expected {expected} lines, got {len(parts)}")
     return [p.strip() for p in parts]
 
 
@@ -116,25 +136,36 @@ def _chunks(items: list[str]) -> list[list[str]]:
     return out
 
 
-def _romanize_chunk(chunk: list[str], timeout: int) -> list[str]:
-    """Romanize a chunk, bisecting on any alignment/rejection failure."""
+def _romanize_chunk(chunk: list[str], timeout: int, notify=None) -> list[str]:
+    """Romanize a chunk, bisecting only when splitting can actually help.
+
+    A misaligned response points at the payload, so halving it and retrying is
+    worth doing. A busy server does not care about the payload, so we propagate
+    immediately instead of bisecting - otherwise each level of the recursion
+    repeats the full backoff sequence and one bad group stalls for many minutes.
+    """
+    box = _post("\n".join(chunk), timeout, notify)          # ServerBusy propagates
     try:
-        box = _post("\n".join(chunk), timeout)
         return _split_lines(box, len(chunk))
-    except BatchRejected:
+    except Misaligned:
         if len(chunk) == 1:
             raise
         mid = len(chunk) // 2
-        return (_romanize_chunk(chunk[:mid], timeout)
-                + _romanize_chunk(chunk[mid:], timeout))
+        return (_romanize_chunk(chunk[:mid], timeout, notify)
+                + _romanize_chunk(chunk[mid:], timeout, notify))
 
 
 def transliterate_many(texts: list[str], timeout: int = 120,
-                       progress=None) -> list[str]:
+                       progress=None, notify=None, on_result=None) -> list[str]:
     """Romanize many Sinhala strings, batching requests. Order is preserved.
 
     Mirrors `nisansa_sir's_method.transliterate`, including the phonetic
     fallback pass that fills in characters the web app leaves unconverted.
+
+    `on_result(source, romanized)` is invoked as each request comes back, before
+    any later request is attempted. Callers should persist from that callback:
+    the endpoint can start refusing at any moment, and results already fetched
+    would otherwise be discarded along with the raised error.
     """
     normalized = [unicodedata.normalize("NFC", t) if t else "" for t in texts]
     # Items that cannot safely share a request (empty, or already newline-bearing)
@@ -143,9 +174,11 @@ def transliterate_many(texts: list[str], timeout: int = 120,
 
     for chunk_idx in _chunks_indices(sendable_idx, normalized):
         chunk = [normalized[i] for i in chunk_idx]
-        romanized = _romanize_chunk(chunk, timeout)
+        romanized = _romanize_chunk(chunk, timeout, notify)
         for i, r in zip(chunk_idx, romanized):
             results[i] = _phonetic(r) if r else ""
+            if on_result is not None and results[i]:
+                on_result(normalized[i], results[i])
         if progress is not None:
             progress(len(chunk))
 
