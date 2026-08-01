@@ -115,12 +115,12 @@ then `build_parallel_corpus.py`); it warns if it is missing.
 
 | Shard | Assigned to | Status |
 |---|---|---|
-| 0 | | partial |
-| 1 | | partial |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 0 |Sehan | partial |
+| 1 | Sehan| partial |
+| 2 | Sehan| |
+| 3 | Sehan| |
+| 4 |Sehan | |
+| 5 |Sehan | |
 | 6 | | |
 | 7 | | |
 | 8 | | |
