@@ -119,25 +119,25 @@ then `build_parallel_corpus.py`); it warns if it is missing.
 | 1 | Sehan| partial |
 | 2 | Sehan| |
 | 3 | Sehan| |
-| 4 |Sehan | |
-| 5 |Sehan | |
-| 6 | | |
-| 7 | | |
-| 8 | | |
-| 9 | | |
-| 10 | | |
-| 11 | | |
-| 12 | | |
-| 13 | | |
-| 14 | | |
-| 15 | | |
-| 16 | | |
-| 17 | | |
-| 18 | | |
-| 19 | | |
-| 20 | | |
-| 21 | | |
-| 22 | | |
-| 23 | | |
+| 4 | Dasun| |
+| 5 |Dasun | |
+| 6 | Dasun| |
+| 7 | Dasun| |
+| 8 | Eshin| |
+| 9 | Eshin| |
+| 10 | Eshin| |
+| 11 | Eshin| |
+| 12 | Shanil| |
+| 13 | Shanil| |
+| 14 | Shanil| |
+| 15 | Shanil| |
+| 16 | Dilhara| |
+| 17 | Dilhara| |
+| 18 | Dilhara| |
+| 19 | Dilhara| |
+| 20 | Chehan| |
+| 21 | Chehan| |
+| 22 | Chehan| |
+| 23 | Chehan| |
 
 Run `status` for live numbers; this table is only for claiming.
