@@ -41,7 +41,13 @@ from phonetic import transliterate as _phonetic  # noqa: E402
 
 URL = "https://nisansads.staff.uom.lk/CodeSamples/sinhala_romaniser.php"
 
-MAX_LINES = 300          # server tolerated 380 in isolation; stay just clear
+# The server accepted 380 lines in isolation and refused 400, so these sit well
+# below the observed ceiling. Whichever cap binds first wins: on the word corpus
+# (~21 bytes/word) that averages ~247 words per request. Lowering either cap is
+# always safe - batch size changes only how requests are packed, never the
+# romanization of a given word, and results are keyed by source word - so
+# existing shard files stay valid and nothing needs refetching.
+MAX_LINES = 250
 MAX_BYTES = 6000         # payload bytes of the joined chunk
 THROTTLE_S = 0.1         # polite pause between successful requests
 
