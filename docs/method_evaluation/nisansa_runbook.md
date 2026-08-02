@@ -135,9 +135,9 @@ then `build_parallel_corpus.py`); it warns if it is missing.
 | 17 | Dilhara| |
 | 18 | Dilhara| |
 | 19 | Dilhara| |
-| 20 | Chehan| |
-| 21 | Chehan| |
-| 22 | Chehan| |
-| 23 | Chehan| |
+| 20 | Chehan| partial |
+| 21 | Chehan| partial |
+| 22 | Chehan| partial |
+| 23 | Chehan| partial |
 
 Run `status` for live numbers; this table is only for claiming.
