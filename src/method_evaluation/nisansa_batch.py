@@ -68,7 +68,20 @@ THROTTLE_S = 0.1         # polite pause between successful requests
 
 # Input the endpoint cannot process. Sending it wastes a request and takes the
 # whole batch down with it, so it is filtered client-side.
-BROKEN_SEQUENCES = ("\u0DA4\u0DCA",)     # ඤ් : nya + al-lakuna
+#
+# The endpoint fails on ඤ (U+0DA4, taaluja naasikyaya) when it carries certain
+# vowel signs. Verified by direct probing: ඤ alone, ඤ+ඤ, ක+ඤ, ඤ+ක and ඤ+e all
+# work, and the neighbouring letter ඥ (U+0DA5) is unaffected - so its lookup
+# table is simply missing these combinations rather than the letter itself.
+# This list is the pre-filter; the authoritative record of what actually failed
+# is data/reference/nisansa_shards/<corpus>/unsupported.json, populated by
+# bisecting real batches.
+BROKEN_SEQUENCES = (
+    "\u0DA4\u0DCA",   # ඤ් nya + al-lakuna
+    "\u0DA4\u0DCF",   # ඤා nya + aa
+    "\u0DA4\u0DD2",   # ඤි nya + i
+    "\u0DA4\u0DD4",   # ඤු nya + u
+)
 
 # Retries exist only for genuine transport errors (dropped connection, timeout).
 # A placeholder response is deterministic and never retried.

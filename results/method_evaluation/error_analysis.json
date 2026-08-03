@@ -58,40 +58,12 @@
         "long_vowel": 0.7968775309595291,
         "aspiration": 0.00276921643157173,
         "gemination": 0.36764010837221994
-      }
-    }
-  },
-  "swa_bhasha_words_nisansacov": {
-    "human": {
-      "v_vs_w": 0.07964297974596636,
-      "long_vowel": 0.10248013099564679,
-      "aspiration": 0.4802508087383682,
-      "gemination": 0.11086704740604657
-    },
-    "methods": {
-      "phonetic": {
-        "v_vs_w": 0.00011424654404204273,
-        "long_vowel": 0.7380267050451746,
-        "aspiration": 0.511633485248261,
-        "gemination": 0.10546094187255137
-      },
-      "aksharamukha": {
-        "v_vs_w": 0.00011432491139819366,
-        "long_vowel": 0.7380267050451746,
-        "aspiration": 0.17378268169824898,
-        "gemination": 0.12497001679059727
-      },
-      "uroman": {
-        "v_vs_w": 1.0,
-        "long_vowel": 0.7119613016710642,
-        "aspiration": 0.0019988806268489644,
-        "gemination": 0.3354921244103302
       },
       "nisansa_sirs_method": {
-        "v_vs_w": 0.9993145207357478,
-        "long_vowel": 0.7380267050451746,
-        "aspiration": 0.511633485248261,
-        "gemination": 0.10262253138242584
+        "v_vs_w": 0.9991981832126458,
+        "long_vowel": 0.8069017700430695,
+        "aspiration": 0.5596549114978465,
+        "gemination": 0.1109089416353982
       }
     }
   },

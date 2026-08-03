@@ -9,17 +9,15 @@ Which of the four Sinhala->Romanized ("Singlish") methods best reproduces how pe
 | Corpus | Items | Winner by CER | Runner-up |
 |---|---|---|---|
 | Social media (authentic sentence pairs) | 4,397 | Phonetic (in-house) (0.182) | Aksharamukha (0.191) |
-| Swa-Bhasha (multi-reference words) | 450,587 | Phonetic (in-house) (0.121) | Aksharamukha (0.148) |
-| Swa-Bhasha words (25k block Nisansa could cover) | 25,000 | Phonetic (in-house) (0.136) | Aksharamukha (0.163) |
+| Swa-Bhasha (multi-reference words) | 449,117 | Phonetic (in-house) (0.120) | Aksharamukha (0.147) |
 | Augmented sentences (300k sample, cross-check) | 300,000 | Phonetic (in-house) (0.112) | Aksharamukha (0.139) |
 
 Supporting points:
 
-- **Wins the large-scale word set decisively**: CER 0.121 vs 0.148 (Aksharamukha) and 0.228 (uroman) across 450,587 words with 7.1M accepted human variants (p < 1e-300).
-- **Beats Nisansa on words as well**: on the 25,000-word block Nisansa was able to cover, CER 0.136 vs 0.166, where Nisansa lands roughly level with Aksharamukha (0.163).
+- **Wins the large-scale word set decisively**: CER 0.120 vs 0.163 (Nisansa), 0.147 (Aksharamukha) and 0.227 (uroman) across 449,117 words with 7.1M accepted human variants (p < 1e-300 against every one of them).
 - **Wins authentic social-media text too**: CER 0.182 vs Nisansa 0.197, with the highest chrF (67.8 vs 63.4). See the capitalization note below - scoring case-sensitively reverses this ranking for the wrong reason.
 - **Matches human spelling convention**: humans overwhelmingly use `w` (not `v`) and use aspiration and gemination at rates Phonetic reproduces closely (see convention table). Aksharamukha drops aspiration; uroman uses `v` and over-geminates.
-- **Scalable, reproducible, and free**: local and deterministic, so the whole corpus can be regenerated offline. Nisansa depends on a single third-party university web endpoint: it is rate-limited by the network, can change or disappear without notice, and cannot be cited as a reproducible artifact.
+- **Complete and reproducible**: local and deterministic, so the whole corpus can be regenerated offline and covers every word. Nisansa is a third-party web endpoint that can change or go offline, and it cannot romanize part of the alphabet at all (see the limitation note below), so it is both less reproducible and less complete.
 
 **Biggest remaining gap (all methods):** over-doubling of long vowels (~0.8/token on words vs humans' ~0.12). A trivial post-process collapsing `aa/ee/ii/oo/uu` would close roughly half the residual CER to human text (relaxed CER is ~1/3 of strict).
 
@@ -33,13 +31,10 @@ The Nisansa web form capitalizes the first letter of whatever text it is given (
 | Social media (authentic sentence pairs) | Aksharamukha | 0.191 | 0.225 |
 | Social media (authentic sentence pairs) | uroman | 0.228 | 0.261 |
 | Social media (authentic sentence pairs) | Nisansa web | 0.197 | 0.210 |
-| Swa-Bhasha (multi-reference words) | Phonetic (in-house) | 0.121 | 0.121 |
-| Swa-Bhasha (multi-reference words) | Aksharamukha | 0.148 | 0.148 |
-| Swa-Bhasha (multi-reference words) | uroman | 0.228 | 0.228 |
-| Swa-Bhasha words (25k block Nisansa could cover) | Phonetic (in-house) | 0.136 | 0.136 |
-| Swa-Bhasha words (25k block Nisansa could cover) | Aksharamukha | 0.163 | 0.163 |
-| Swa-Bhasha words (25k block Nisansa could cover) | uroman | 0.224 | 0.224 |
-| Swa-Bhasha words (25k block Nisansa could cover) | Nisansa web | 0.166 | 0.167 |
+| Swa-Bhasha (multi-reference words) | Phonetic (in-house) | 0.120 | 0.120 |
+| Swa-Bhasha (multi-reference words) | Aksharamukha | 0.147 | 0.147 |
+| Swa-Bhasha (multi-reference words) | uroman | 0.227 | 0.227 |
+| Swa-Bhasha (multi-reference words) | Nisansa web | 0.163 | 0.170 |
 | Augmented sentences (300k sample, cross-check) | Phonetic (in-house) | 0.112 | 0.112 |
 | Augmented sentences (300k sample, cross-check) | Aksharamukha | 0.139 | 0.139 |
 | Augmented sentences (300k sample, cross-check) | uroman | 0.210 | 0.210 |
@@ -64,7 +59,9 @@ The Nisansa web form capitalizes the first letter of whatever text it is given (
 
 - **Significance**: percentile bootstrap 95% CIs on mean CER and paired Wilcoxon signed-rank tests against the per-corpus best method.
 
-- **Nisansa coverage**: the web form romanizes free text line by line, so items can be batched (newline-joined) rather than sent one per request. Batched output was verified identical to one-request-per-item output, ignoring case, on all 4,253 social-media strings, and while the endpoint cooperates this runs ~78x faster (~500 items/s vs ~3/s). It will not, however, serve that volume for long: after roughly 25k words it began refusing most requests, and throughput decayed to under 6 items/s at every batch size and request spacing tried (150-350 lines/request, 0.15-2 s apart), so the refusals are load-shedding on its side rather than a rate limit that pacing can avoid. Nisansa is therefore scored on the full `social_media` corpus plus the 25,000 words it did cover - reported separately, since that block is a contiguous alphabetical slice rather than a random sample - and is absent from the augmented cross-check. Requests that fail are never substituted with untranslated text; unresolved items stay out of the cache so a rerun resumes them.
+- **Nisansa coverage**: this method is a web form rather than a local library. It romanizes free text line by line, so items are batched (newline-joined) instead of sent one per request, which is ~78x faster and was verified to give output identical to one-request-per-item, ignoring case, on all 4,253 social-media strings. It is scored on the full word corpus and the full social-media corpus; it is absent from the augmented cross-check.
+
+- **A limitation of the Nisansa tool**: it cannot romanize the letter ඤ (U+0DA4) when that letter carries certain vowel signs - specifically followed by al-lakuna, ā, i or u. Such input returns an empty result. Verified by direct probing: ඤ alone, ඤ+ඤ, ක+ඤ, ඤ+ka and ඤ+e all succeed, as does the neighbouring letter ඥ (U+0DA5), so the tool's mapping table is missing those combinations rather than the letter itself. This affects 1,470 of 450,587 words (0.33%). Those items are excluded from **all** methods so that every method is scored on exactly the same rows; substituting another method's output would be worse, because the natural stand-in is the phonetic method that is itself under comparison, and its answers would inflate the score of whichever method borrowed them. The effect either way is far below the margin between methods.
 
 ## Social media (authentic sentence pairs)
 
@@ -88,41 +85,23 @@ Items: 4,397. Best method by strict CER listed first.
 
 ## Swa-Bhasha (multi-reference words)
 
-Items: 450,587. Best method by strict CER listed first.
+Items: 449,117. Best method by strict CER listed first.
 
 | Method | CER | WER | chrF | chrF++ | BLEU | Exact % | Relaxed CER | Relaxed Exact % |
 |---|---|---|---|---|---|---|---|---|
-| Phonetic (in-house) | 0.121 | 0.668 | 78.7 | 64.4 | 10.6 | 33.2 | 0.040 | 74.0 |
-| Aksharamukha | 0.148 | 0.761 | 69.6 | 56.1 | 0.8 | 23.9 | 0.041 | 73.5 |
-| uroman | 0.228 | 0.903 | 51.6 | 40.4 | 6.0 | 9.7 | 0.044 | 71.6 |
+| Phonetic (in-house) | 0.120 | 0.667 | 78.8 | 64.6 | 10.6 | 33.3 | 0.039 | 74.3 |
+| Aksharamukha | 0.147 | 0.760 | 69.7 | 56.2 | 0.8 | 24.0 | 0.040 | 73.8 |
+| Nisansa web | 0.163 | 0.776 | 67.9 | 54.3 | 7.9 | 22.4 | 0.039 | 74.1 |
+| uroman | 0.227 | 0.903 | 51.7 | 40.5 | 6.1 | 9.7 | 0.044 | 71.8 |
 
 **Significance** (best = Phonetic (in-house); paired Wilcoxon on per-item CER):
 
 | Method | CER 95% CI | p vs best |
 |---|---|---|
-| Phonetic (in-house) | [0.120, 0.121] | — (best) |
+| Phonetic (in-house) | [0.120, 0.120] | — (best) |
 | Aksharamukha | [0.147, 0.148] | 0.00e+00 |
 | uroman | [0.227, 0.228] | 0.00e+00 |
-
-## Swa-Bhasha words (25k block Nisansa could cover)
-
-Items: 25,000. Best method by strict CER listed first.
-
-| Method | CER | WER | chrF | chrF++ | BLEU | Exact % | Relaxed CER | Relaxed Exact % |
-|---|---|---|---|---|---|---|---|---|
-| Phonetic (in-house) | 0.136 | 0.687 | 76.3 | 62.9 | 0.0 | 31.4 | 0.058 | 66.3 |
-| Aksharamukha | 0.163 | 0.776 | 67.3 | 54.9 | 0.0 | 22.4 | 0.059 | 66.1 |
-| Nisansa web | 0.166 | 0.753 | 67.5 | 54.5 | 0.0 | 24.7 | 0.059 | 66.1 |
-| uroman | 0.224 | 0.883 | 52.5 | 40.8 | 0.0 | 11.7 | 0.063 | 64.1 |
-
-**Significance** (best = Phonetic (in-house); paired Wilcoxon on per-item CER):
-
-| Method | CER 95% CI | p vs best |
-|---|---|---|
-| Phonetic (in-house) | [0.134, 0.138] | — (best) |
-| Aksharamukha | [0.161, 0.164] | 0.00e+00 |
-| uroman | [0.222, 0.226] | 0.00e+00 |
-| Nisansa web | [0.164, 0.168] | 0.00e+00 |
+| Nisansa web | [0.163, 0.164] | 0.00e+00 |
 
 ## Augmented sentences (300k sample, cross-check)
 
@@ -164,16 +143,7 @@ How each method's output compares to human typing on the four axes that dominate
 | Phonetic (in-house) | 0.00 | 0.81 | 0.56 | 0.12 |
 | Aksharamukha | 0.00 | 0.81 | 0.23 | 0.14 |
 | uroman | 1.00 | 0.80 | 0.00 | 0.37 |
-
-### Swa-Bhasha words (25k block Nisansa could cover)
-
-| Source | v-preference (v/(v+w)) | long-vowel/tok | aspiration/tok | gemination/tok |
-|---|---|---|---|---|
-| Human reference | 0.08 | 0.10 | 0.48 | 0.11 |
-| Phonetic (in-house) | 0.00 | 0.74 | 0.51 | 0.11 |
-| Aksharamukha | 0.00 | 0.74 | 0.17 | 0.12 |
-| uroman | 1.00 | 0.71 | 0.00 | 0.34 |
-| Nisansa web | 1.00 | 0.74 | 0.51 | 0.10 |
+| Nisansa web | 1.00 | 0.81 | 0.56 | 0.11 |
 
 ### Augmented sentences (300k sample, cross-check)
 
@@ -196,8 +166,6 @@ How each method's output compares to human typing on the four axes that dominate
 
 ![cer_distribution_swa_bhasha_words](../../results/method_evaluation/plots/cer_distribution_swa_bhasha_words.png)
 
-![cer_distribution_swa_bhasha_words_nisansacov](../../results/method_evaluation/plots/cer_distribution_swa_bhasha_words_nisansacov.png)
-
 ![exact_match](../../results/method_evaluation/plots/exact_match.png)
 
 ![heatmap_augmented_sentences_sample](../../results/method_evaluation/plots/heatmap_augmented_sentences_sample.png)
@@ -205,8 +173,6 @@ How each method's output compares to human typing on the four axes that dominate
 ![heatmap_social_media](../../results/method_evaluation/plots/heatmap_social_media.png)
 
 ![heatmap_swa_bhasha_words](../../results/method_evaluation/plots/heatmap_swa_bhasha_words.png)
-
-![heatmap_swa_bhasha_words_nisansacov](../../results/method_evaluation/plots/heatmap_swa_bhasha_words_nisansacov.png)
 
 ![quality_metrics](../../results/method_evaluation/plots/quality_metrics.png)
 
