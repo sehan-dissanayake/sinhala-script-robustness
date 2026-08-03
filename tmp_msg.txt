@@ -1,0 +1,37 @@
+Fix root cause of Nisansa endpoint failures: it breaks on the sequence ඤ්
+
+The endpoint was never rate limiting us. It fails, deterministically, on one
+input: U+0DA4 (nya) followed by U+0DCA (al-lakuna). Measured directly:
+
+  ඤ  alone            -> works
+  ක් and every other consonant + al-lakuna (41 tested) -> works
+  ඤ්                  -> fails, 3/3, every time
+  batch minus that one word -> passes immediately
+
+1,144 of 450,587 corpus words (0.254%) contain it. A request fails if any item
+in it does, so a 250-word batch fails ~30-47% of the time - exactly the
+"refusal rate" we kept measuring and misreading as load shedding. It also
+explains the history: the first 25k words were an alphabetical region with no
+such words and ran at ~500 words/s, and because affected words cluster
+alphabetically, a shard could appear to fail from its very first request.
+
+Retrying was provably useless: across 60 failing batches at 6 attempts each,
+not one ever succeeded on a later attempt. The old escalating backoff spent up
+to 38s sleeping per failure, which is why throughput was ~3 words/s instead of
+the ~133 words/s measured without it.
+
+Changes:
+- filter the known-broken sequence client-side; never send it
+- treat a placeholder as deterministic, never retried; retries now cover only
+  genuine transport errors
+- bisect a failing batch immediately with no waiting, so an uncatalogued blind
+  spot costs its own request rather than its whole batch
+- record unromanizable items in unsupported.json, excluded from "to do" so a
+  shard can legitimately reach 100%; kept out of shard files so those stay
+  pure endpoint output
+- make the shard lock atomic (O_EXCL): check-then-create let two runs started
+  in the same second both proceed
+- status: count unromanizable items as resolved, and stop decompressing the
+  manifest once per shard (6.5s -> 0.8s)
+
+Pre-registered all 1,144 affected words.

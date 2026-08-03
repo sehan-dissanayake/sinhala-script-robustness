@@ -103,6 +103,26 @@ def shard_items(corpus: str, shard: int, manifest: list[str] | None = None) -> l
     return (manifest if manifest is not None else load_manifest(corpus))[shard::n]
 
 
+def unsupported_path(corpus: str) -> Path:
+    return shard_dir(corpus) / "unsupported.json"
+
+
+def load_unsupported(corpus: str) -> dict[str, str]:
+    """Items the endpoint cannot romanize, mapped to why.
+
+    Kept out of the shard result files so those stay pure endpoint output, and
+    kept out of the "to do" count so a run can legitimately reach 100% instead
+    of forever reporting a handful of items left.
+    """
+    p = unsupported_path(corpus)
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+
+
+def save_unsupported(corpus: str, data: dict[str, str]) -> None:
+    unsupported_path(corpus).write_text(
+        json.dumps(data, ensure_ascii=False, indent=1, sort_keys=True), encoding="utf-8")
+
+
 def load_shard_results(corpus: str, shard: int) -> dict[str, str]:
     p = shard_path(corpus, shard)
     out: dict[str, str] = {}
@@ -186,18 +206,27 @@ def cmd_status(corpus: str) -> None:
     meta = load_meta(corpus)
     n, total = meta["n_shards"], meta["n_items"]
     print(f"{corpus}: {total:,} items across {n} shards\n")
-    print(" shard   done /  total   pct  state")
-    done_all = 0
+    print(" shard   done /  total   pct  skip  state")
+    done_all = skip_all = 0
     manifest = load_manifest(corpus)      # decompress once, not once per shard
+    skip = load_unsupported(corpus)
     for s in range(n):
-        items = shard_items(corpus, s, manifest)
-        done = len(set(load_shard_results(corpus, s)) & set(items))
+        items = set(shard_items(corpus, s, manifest))
+        done = len(set(load_shard_results(corpus, s)) & items)
+        n_skip = len(items & set(skip))
         done_all += done
-        pct = 100 * done / len(items) if items else 0
-        state = "complete" if done == len(items) else ("not started" if done == 0 else "partial")
-        print(f"  {s:3d}  {done:6,} / {len(items):6,}  {pct:5.1f}  {state}")
-    print(f"\noverall: {done_all:,} / {total:,} ({100 * done_all / total:.1f}%)")
-    if done_all == total:
+        skip_all += n_skip
+        # An item the endpoint cannot romanize counts as resolved: it will never
+        # succeed, so leaving it outstanding would stop a shard reaching 100%.
+        resolved = done + n_skip
+        pct = 100 * resolved / len(items) if items else 0
+        state = ("complete" if resolved >= len(items)
+                 else "not started" if resolved == 0 else "partial")
+        print(f"  {s:3d}  {done:6,} / {len(items):6,}  {pct:5.1f} {n_skip:5,}  {state}")
+    resolved_all = done_all + skip_all
+    print(f"\noverall: {done_all:,} romanized + {skip_all:,} unromanizable "
+          f"= {resolved_all:,} / {total:,} ({100 * resolved_all / total:.1f}%)")
+    if resolved_all >= total:
         print("all shards complete -> run `merge`")
 
 
@@ -213,18 +242,28 @@ class ShardLock:
         self.path = shard_dir(corpus) / f"shard-{shard:02d}.lock"
 
     def __enter__(self):
-        if self.path.exists():
+        # Create exclusively: checking for the file and then writing it is a
+        # race, and two runs launched in the same second both got through it.
+        for attempt in (1, 2):
             try:
-                pid = int(self.path.read_text(encoding="utf-8").strip())
-            except (ValueError, OSError):
-                pid = None
-            if pid and _pid_alive(pid):
-                raise SystemExit(
-                    f"Shard already running in process {pid} ({self.path.name}).\n"
-                    f"Pick a different shard, or stop that process first.")
-            print(f"(reclaiming stale lock from process {pid})")
-        self.path.write_text(str(os.getpid()), encoding="utf-8")
-        return self
+                fd = os.open(self.path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+                with os.fdopen(fd, "w") as fh:
+                    fh.write(str(os.getpid()))
+                return self
+            except FileExistsError:
+                try:
+                    pid = int(self.path.read_text(encoding="utf-8").strip())
+                except (ValueError, OSError):
+                    pid = None
+                if pid and pid != os.getpid() and _pid_alive(pid):
+                    raise SystemExit(
+                        f"Shard {self.path.stem.split('-')[-1]} is already running in "
+                        f"process {pid}.\nRun `status` and pick a shard nobody is on, "
+                        f"or stop that process first.")
+                if attempt == 1:
+                    print(f"(reclaiming stale lock from process {pid})")
+                    self.path.unlink(missing_ok=True)
+        raise SystemExit(f"could not acquire {self.path.name}")
 
     def __exit__(self, *exc):
         self.path.unlink(missing_ok=True)
@@ -247,9 +286,11 @@ def cmd_run(corpus: str, shard: int, limit: int | None) -> None:
 
     items = shard_items(corpus, shard)
     have = load_shard_results(corpus, shard)
-    todo = [i for i in items if i not in have]
-    print(f"[{corpus} shard {shard}] {len(items):,} assigned | "
-          f"{len(items) - len(todo):,} done | {len(todo):,} to do")
+    skip = load_unsupported(corpus)
+    todo = [i for i in items if i not in have and i not in skip]
+    n_skip = sum(1 for i in items if i in skip)
+    print(f"[{corpus} shard {shard}] {len(items):,} assigned | {len(have):,} done | "
+          f"{n_skip:,} unromanizable by endpoint | {len(todo):,} to do")
     if not todo:
         print("shard already complete.")
         return
@@ -262,6 +303,8 @@ def cmd_run(corpus: str, shard: int, limit: int | None) -> None:
     written = 0
     consecutive_failures = 0
     stopped_early = False
+    unsupported = load_unsupported(corpus)
+    known_unsupported = len(unsupported)
 
     with path.open("a", encoding="utf-8", newline="\n") as out, \
             tqdm(total=len(todo), desc=f"shard {shard}", unit="word") as bar:
@@ -281,6 +324,7 @@ def cmd_run(corpus: str, shard: int, limit: int | None) -> None:
             group = todo[start:start + GROUP]
             try:
                 transliterate_many(group, progress=bar.update, on_result=persist,
+                                   unsupported=unsupported,
                                    notify=lambda m: bar.set_postfix_str(m, refresh=True))
                 bar.set_postfix_str("")
                 consecutive_failures = 0
@@ -288,12 +332,19 @@ def cmd_run(corpus: str, shard: int, limit: int | None) -> None:
                 consecutive_failures += 1
                 tqdm.write(f"  ! group interrupted ({exc}); {written:,} results kept so far")
                 if consecutive_failures >= MAX_CONSECUTIVE_FAILURES:
-                    tqdm.write("  endpoint appears to be refusing traffic; stopping cleanly.")
+                    tqdm.write("  repeated transport failures; stopping cleanly.")
                     stopped_early = True
                     break
                 continue
 
-    remaining = len(items) - len(load_shard_results(corpus, shard))
+    if len(unsupported) > known_unsupported:
+        save_unsupported(corpus, unsupported)
+        print(f"\n{len(unsupported) - known_unsupported:,} item(s) the endpoint cannot "
+              f"romanize were recorded in {unsupported_path(corpus).name} "
+              f"({len(unsupported):,} total). They are not retried.")
+
+    done = load_shard_results(corpus, shard)
+    remaining = len([i for i in items if i not in done and i not in unsupported])
     print(f"\nwrote {written:,} results. {remaining:,} items left in this shard.")
     if remaining:
         print(f"Rate limited or interrupted? Just run the same command again - it resumes:\n"
