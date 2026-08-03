@@ -62,7 +62,7 @@ URL = "https://nisansads.staff.uom.lk/CodeSamples/sinhala_romaniser.php"
 # always safe - batch size changes only how requests are packed, never the
 # romanization of a given word, and results are keyed by source word - so
 # existing shard files stay valid and nothing needs refetching.
-MAX_LINES = 1
+MAX_LINES = 50
 MAX_BYTES = 6000         # payload bytes of the joined chunk
 THROTTLE_S = 0.1         # polite pause between successful requests
 
