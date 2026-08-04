@@ -12,6 +12,7 @@ METHOD_LABELS = {
     "aksharamukha": "Aksharamukha",
     "uroman": "uroman",
     "nisansa_sirs_method": "Nisansa web",
+    "nisansa_w": "Nisansa web + v→w",
 }
 CORPUS_LABELS = {
     "social_media": "Social media (authentic sentence pairs)",
@@ -58,12 +59,39 @@ def main():
                for c, rows in by_corpus.items()}
     overall = max(set(winners.values()), key=lambda m: list(winners.values()).count(m))
 
+    # A difference of 0.0001 CER is not a win, however many items back it. Treat
+    # methods whose bootstrap CIs overlap the leader's as statistically tied.
+    def ties_with_leader(corpus: str) -> list[str]:
+        entries = sig.get(corpus, {}).get("methods", {})
+        leader = sig.get(corpus, {}).get("best_method")
+        lead_ci = entries.get(leader, {}).get("cer_ci95")
+        if not lead_ci:
+            return []
+        out = []
+        for m, e in entries.items():
+            ci = e.get("cer_ci95")
+            if m != leader and ci and ci[0] <= lead_ci[1] and lead_ci[0] <= ci[1]:
+                out.append(m)
+        return out
+
+    tied_any = {c: ties_with_leader(c) for c in by_corpus}
+    contenders = sorted({m for v in tied_any.values() for m in v})
+
     lines.append(f"## Recommendation: {METHOD_LABELS.get(overall, overall)}\n")
-    lines.append(
-        f"**{METHOD_LABELS.get(overall, overall)} is the best method** on every corpus tested "
-        "and is the recommended choice for the downstream script-robustness pipeline. "
-        "It has the lowest CER and the highest chrF everywhere, and it is the only top-ranked "
-        "option that is local, deterministic, free, and reproducible offline.\n")
+    if contenders:
+        names = ", ".join(METHOD_LABELS.get(m, m) for m in contenders)
+        lines.append(
+            f"**{METHOD_LABELS.get(overall, overall)} is the recommended method**, but on accuracy it is "
+            f"a statistical tie with {names} - their confidence intervals overlap, so the ranking between "
+            f"them is not meaningful. The recommendation therefore rests on engineering properties rather "
+            f"than a quality difference: Phonetic runs locally and deterministically, needs no network, "
+            f"covers every word in the corpus, and can be rerun by anyone offline.\n")
+    else:
+        lines.append(
+            f"**{METHOD_LABELS.get(overall, overall)} is the best method** on every corpus tested "
+            "and is the recommended choice for the downstream script-robustness pipeline. "
+            "It has the lowest CER and the highest chrF everywhere, and it is the only top-ranked "
+            "option that is local, deterministic, free, and reproducible offline.\n")
 
     lines.append("| Corpus | Items | Winner by CER | Runner-up |")
     lines.append("|---|---|---|---|")
@@ -108,6 +136,33 @@ def main():
         "**Biggest remaining gap (all methods):** over-doubling of long vowels "
         "(~0.8/token on words vs humans' ~0.12). A trivial post-process collapsing `aa/ee/ii/oo/uu` "
         "would close roughly half the residual CER to human text (relaxed CER is ~1/3 of strict).\n")
+
+    if ("swa_bhasha_words", "nisansa_w") in grid:
+        lines.append("### The v/w convention accounted for Nisansa's entire gap\n")
+        lines.append(
+            "Nisansa's output matches the phonetic method on long vowels, aspiration and gemination, and "
+            "differs almost only in writing ව as `v` where humans overwhelmingly write `w`. Rewriting just "
+            "that one convention in its output (`nisansa_w`, a post-process of the cached results - not the "
+            "published tool) removes the difference entirely:\n")
+        lines.append("| Corpus | Nisansa as published | Nisansa with v→w | Phonetic |")
+        lines.append("|---|---|---|---|")
+        for corpus in by_corpus:
+            if (corpus, "nisansa_w") not in grid:
+                continue
+            lines.append(
+                f"| {CORPUS_LABELS.get(corpus, corpus)} | "
+                f"{_fmt(g(corpus, 'nisansa_sirs_method', 'cer_mean'))} | "
+                f"**{_fmt(g(corpus, 'nisansa_w', 'cer_mean'))}** | "
+                f"{_fmt(g(corpus, 'phonetic', 'cer_mean'))} |")
+        lines.append("")
+        lines.append(
+            "So the two methods are equivalent in romanization quality once that single orthographic "
+            "choice is normalized, which is consistent with the relaxed metrics: after canonicalizing "
+            "spelling style, their CERs were already identical to four decimal places. The honest "
+            "conclusion is that Nisansa is not a *worse* romanizer - it simply writes `v`, and Sinhala "
+            "speakers type `w`. Phonetic remains the recommendation because it matches human convention "
+            "out of the box and is local, complete and reproducible, not because it transliterates "
+            "better.\n")
 
     # --- capitalization artifact -----------------------------------------
     cased = [(m["corpus"], m["method"], m["cer_mean"], m.get("cer_mean_cased"))

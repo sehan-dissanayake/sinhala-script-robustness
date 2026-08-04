@@ -20,6 +20,7 @@ METHOD_LABELS = {
     "aksharamukha": "Aksharamukha",
     "uroman": "uroman",
     "nisansa_sirs_method": "Nisansa",
+    "nisansa_w": "Nisansa (v→w)",
 }
 CORPUS_LABELS = {
     "social_media": "Social media\n(authentic sentences)",
@@ -33,6 +34,7 @@ PALETTE = {
     "aksharamukha": "#E4572E",
     "uroman": "#8B5FBF",
     "nisansa_sirs_method": "#17A398",
+    "nisansa_w": "#0E6E66",       # same family as Nisansa: it is a variant of it
 }
 
 sns.set_theme(style="whitegrid", context="talk")

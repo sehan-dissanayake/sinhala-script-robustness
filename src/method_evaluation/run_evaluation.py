@@ -20,7 +20,7 @@ PARALLEL_DIR = PROJECT_ROOT / "data" / "reference" / "parallel"
 TRANSLIT_DIR = PROJECT_ROOT / "data" / "reference" / "transliterated"
 RESULTS_DIR = PROJECT_ROOT / "results" / "method_evaluation"
 
-ALL_METHODS = ["phonetic", "aksharamukha", "uroman", "nisansa_sirs_method"]
+ALL_METHODS = ["phonetic", "aksharamukha", "uroman", "nisansa_sirs_method", "nisansa_w"]
 
 
 def _load_corpus(corpus: str) -> tuple[dict[str, list[str]], str]:

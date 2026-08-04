@@ -56,6 +56,20 @@
     "bleu": 25.353823604939144
   },
   {
+    "corpus": "social_media",
+    "method": "nisansa_w",
+    "n": 4397,
+    "cer_mean": 0.18225975554413792,
+    "cer_mean_cased": 0.19576534212577298,
+    "wer_mean": 0.6064520418210829,
+    "exact_pct": 4.161928587673414,
+    "cer_relaxed_mean": 0.10787397606573522,
+    "exact_relaxed_pct": 11.871730725494656,
+    "chrf": 67.77009624472493,
+    "chrf2": 59.29572438116446,
+    "bleu": 28.580931436118238
+  },
+  {
     "corpus": "swa_bhasha_words",
     "method": "phonetic",
     "n": 449117,
@@ -110,6 +124,20 @@
     "chrf": 67.8557035015134,
     "chrf2": 54.25724908419804,
     "bleu": 7.913679201126884
+  },
+  {
+    "corpus": "swa_bhasha_words",
+    "method": "nisansa_w",
+    "n": 449117,
+    "cer_mean": 0.12006154365681564,
+    "cer_mean_cased": 0.12754353950680625,
+    "wer_mean": 0.6663877861077031,
+    "exact_pct": 33.36502514934861,
+    "cer_relaxed_mean": 0.039394042301577434,
+    "exact_relaxed_pct": 74.14415397324082,
+    "chrf": 78.74717638227213,
+    "chrf2": 64.39132339420088,
+    "bleu": 10.39911332484226
   },
   {
     "corpus": "augmented_sentences_sample",
