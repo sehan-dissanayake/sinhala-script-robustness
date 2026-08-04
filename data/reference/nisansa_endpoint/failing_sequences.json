@@ -1,0 +1,43 @@
+{
+ "description": "Sequences the Nisansa endpoint cannot romanize at all (returns its empty placeholder). Measured by nisansa_probe.py.",
+ "url": "https://nisansads.staff.uom.lk/CodeSamples/sinhala_romaniser.php",
+ "n_units_probed": 1026,
+ "sequences": [
+  "ඤ්",
+  "ඤ්‍ය",
+  "ඤ්‍ර",
+  "ඤා",
+  "ඤැ",
+  "ඤෑ",
+  "ඤි",
+  "ඤී",
+  "ඤු",
+  "ඤූ",
+  "ඤෘ",
+  "ඤේ",
+  "ඤෛ",
+  "ඤො",
+  "ඤෝ",
+  "ඤෞ",
+  "ඤෲ"
+ ],
+ "sequences_readable": [
+  "ඤ්  U+0DA4 U+0DCA",
+  "ඤ්‍ය  U+0DA4 U+0DCA U+200D U+0DBA",
+  "ඤ්‍ර  U+0DA4 U+0DCA U+200D U+0DBB",
+  "ඤා  U+0DA4 U+0DCF",
+  "ඤැ  U+0DA4 U+0DD0",
+  "ඤෑ  U+0DA4 U+0DD1",
+  "ඤි  U+0DA4 U+0DD2",
+  "ඤී  U+0DA4 U+0DD3",
+  "ඤු  U+0DA4 U+0DD4",
+  "ඤූ  U+0DA4 U+0DD6",
+  "ඤෘ  U+0DA4 U+0DD8",
+  "ඤේ  U+0DA4 U+0DDA",
+  "ඤෛ  U+0DA4 U+0DDB",
+  "ඤො  U+0DA4 U+0DDC",
+  "ඤෝ  U+0DA4 U+0DDD",
+  "ඤෞ  U+0DA4 U+0DDE",
+  "ඤෲ  U+0DA4 U+0DF2"
+ ]
+}

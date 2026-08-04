@@ -1,0 +1,158 @@
+﻿Sinhala to Romanized Singlish: transliteration method evaluation
+Generated,2026-08-04
+Primary metric,"CER, lower is better, scored against the closest accepted human variant, case-folded"
+Scoring,"All items scored. Where a method produced no output the item counts as CER 1.0, not excluded."
+
+Table 1. Summary
+Corpus,Items,Best by CER,CER,Runner-up,CER
+Social media (authentic sentence pairs),4397,Phonetic (in-house),0.182,Nisansa web (v->w preprocessed),0.1823
+Swa-Bhasha words (multi-reference),450587,Phonetic (in-house),0.1206,Nisansa web (v->w preprocessed),0.1326
+"Augmented sentences (300k sample, cross-check)",300000,Phonetic (in-house),0.1124,Aksharamukha,0.1392
+
+Table 2. Accuracy - Social media (authentic sentence pairs)
+Rank,Method,Items,Coverage %,CER,WER,chrF,chrF++,BLEU,Exact match %
+1,Phonetic (in-house),4397,100.0,0.182,0.6063,67.79,59.32,28.59,4.16
+2,Nisansa web (v->w preprocessed),4397,100.0,0.1823,0.6065,67.77,59.3,28.58,4.16
+3,Aksharamukha,4397,100.0,0.191,0.6398,63.66,55.38,26.26,3.5
+4,Nisansa web (as published),4397,100.0,0.1969,0.6469,63.36,54.88,25.35,3.18
+5,uroman,4397,100.0,0.2278,0.7464,55.7,47.13,20.71,1.59
+
+Table 3. Accuracy - Swa-Bhasha words (multi-reference)
+Rank,Method,Items,Coverage %,CER,WER,chrF,chrF++,BLEU,Exact match %
+1,Phonetic (in-house),450587,100.0,0.1206,0.668,78.67,64.4,10.57,33.2
+2,Nisansa web (v->w preprocessed),450587,99.674,0.1326,0.6911,76.12,62.11,10.18,30.9
+3,Aksharamukha,450587,100.0,0.1478,0.761,69.6,56.08,0.79,23.9
+4,Nisansa web (as published),450587,99.674,0.1757,0.7936,65.55,52.31,7.74,20.64
+5,uroman,450587,100.0,0.2278,0.9032,51.63,40.37,6.03,9.68
+
+"Table 4. Accuracy - Augmented sentences (300k sample, cross-check)"
+Rank,Method,Items,Coverage %,CER,WER,chrF,chrF++,BLEU,Exact match %
+1,Phonetic (in-house),300000,100.0,0.1124,0.5344,79.63,68.34,15.44,3.43
+2,Aksharamukha,300000,100.0,0.1392,0.6251,70.26,59.05,8.67,2.82
+3,uroman,300000,100.0,0.2103,0.781,53.51,43.34,2.22,1.74
+
+Table 5. Statistical significance (percentile bootstrap 95% CI on mean CER; paired Wilcoxon vs the best method on that corpus)
+Corpus,Method,CER,CI 95% low,CI 95% high,p vs best
+Social media (authentic sentence pairs),Phonetic (in-house),0.182,0.1781,0.1858,best method
+Social media (authentic sentence pairs),Nisansa web (v->w preprocessed),0.1823,0.1784,0.1861,1.586e-03
+Social media (authentic sentence pairs),Aksharamukha,0.191,0.1872,0.1947,2.239e-130
+Social media (authentic sentence pairs),Nisansa web (as published),0.1969,0.1929,0.2007,1.469e-180
+Social media (authentic sentence pairs),uroman,0.2278,0.2238,0.2317,<1e-300
+Swa-Bhasha words (multi-reference),Phonetic (in-house),0.1206,0.1202,0.121,best method
+Swa-Bhasha words (multi-reference),Nisansa web (v->w preprocessed),0.1326,0.1322,0.1331,<1e-300
+Swa-Bhasha words (multi-reference),Aksharamukha,0.1478,0.1474,0.1482,<1e-300
+Swa-Bhasha words (multi-reference),Nisansa web (as published),0.1757,0.1753,0.1762,<1e-300
+Swa-Bhasha words (multi-reference),uroman,0.2278,0.2274,0.2282,<1e-300
+"Augmented sentences (300k sample, cross-check)",Phonetic (in-house),0.1124,0.1121,0.1128,best method
+"Augmented sentences (300k sample, cross-check)",Aksharamukha,0.1392,0.1389,0.1396,<1e-300
+"Augmented sentences (300k sample, cross-check)",uroman,0.2103,0.21,0.2107,<1e-300
+
+"Table 6. Relaxed metrics (both sides canonicalized for spelling style: long vowels, w/v, aspiration, gemination)"
+Corpus,Method,Relaxed CER,Relaxed exact match %
+Social media (authentic sentence pairs),Phonetic (in-house),0.1077,11.85
+Social media (authentic sentence pairs),Nisansa web (v->w preprocessed),0.1079,11.87
+Social media (authentic sentence pairs),Aksharamukha,0.1077,11.8
+Social media (authentic sentence pairs),Nisansa web (as published),0.1079,11.87
+Social media (authentic sentence pairs),uroman,0.1077,11.87
+Swa-Bhasha words (multi-reference),Phonetic (in-house),0.0401,74.01
+Swa-Bhasha words (multi-reference),Nisansa web (v->w preprocessed),0.0426,73.8
+Swa-Bhasha words (multi-reference),Aksharamukha,0.041,73.52
+Swa-Bhasha words (multi-reference),Nisansa web (as published),0.0426,73.8
+Swa-Bhasha words (multi-reference),uroman,0.0442,71.58
+"Augmented sentences (300k sample, cross-check)",Phonetic (in-house),0.037,17.01
+"Augmented sentences (300k sample, cross-check)",Aksharamukha,0.0374,16.87
+"Augmented sentences (300k sample, cross-check)",uroman,0.0396,15.52
+
+"Table 7. Case sensitivity check (the Nisansa web form capitalizes the first letter of its input, which is an interface artifact rather than a romanization choice)"
+Corpus,Method,CER case-folded (primary),CER case-sensitive
+Social media (authentic sentence pairs),Phonetic (in-house),0.182,0.2165
+Social media (authentic sentence pairs),Nisansa web (v->w preprocessed),0.1823,0.1958
+Social media (authentic sentence pairs),Aksharamukha,0.191,0.2254
+Social media (authentic sentence pairs),Nisansa web (as published),0.1969,0.2103
+Social media (authentic sentence pairs),uroman,0.2278,0.2614
+Swa-Bhasha words (multi-reference),Phonetic (in-house),0.1206,0.1206
+Swa-Bhasha words (multi-reference),Nisansa web (v->w preprocessed),0.1326,0.1332
+Swa-Bhasha words (multi-reference),Aksharamukha,0.1478,0.1478
+Swa-Bhasha words (multi-reference),Nisansa web (as published),0.1757,0.1762
+Swa-Bhasha words (multi-reference),uroman,0.2278,0.2278
+"Augmented sentences (300k sample, cross-check)",Phonetic (in-house),0.1124,0.1124
+"Augmented sentences (300k sample, cross-check)",Aksharamukha,0.1392,0.1392
+"Augmented sentences (300k sample, cross-check)",uroman,0.2103,0.2103
+
+Table 8. Coverage and output defects
+Corpus,Method,Items,No output at all,Coverage %,Outputs containing unromanized Sinhala %
+Social media (authentic sentence pairs),Phonetic (in-house),4397,0,100.0,0.0
+Social media (authentic sentence pairs),Nisansa web (v->w preprocessed),4397,0,100.0,0.0
+Social media (authentic sentence pairs),Aksharamukha,4397,0,100.0,0.0
+Social media (authentic sentence pairs),Nisansa web (as published),4397,0,100.0,0.0
+Social media (authentic sentence pairs),uroman,4397,0,100.0,0.0
+Swa-Bhasha words (multi-reference),Phonetic (in-house),450587,0,100.0,0.0
+Swa-Bhasha words (multi-reference),Nisansa web (v->w preprocessed),450587,1470,99.674,0.816
+Swa-Bhasha words (multi-reference),Aksharamukha,450587,0,100.0,0.0
+Swa-Bhasha words (multi-reference),Nisansa web (as published),450587,1470,99.674,0.816
+Swa-Bhasha words (multi-reference),uroman,450587,0,100.0,0.0
+"Augmented sentences (300k sample, cross-check)",Phonetic (in-house),300000,0,100.0,0.001
+"Augmented sentences (300k sample, cross-check)",Aksharamukha,300000,0,100.0,0.001
+"Augmented sentences (300k sample, cross-check)",uroman,300000,0,100.0,0.001
+
+Table 9. Nisansa endpoint: sequences that return no output at all (measured by probing the full akshara grid)
+Sequence,Code points
+ඤ්,U+0DA4 U+0DCA
+ඤ්‍ය,U+0DA4 U+0DCA U+200D U+0DBA
+ඤ්‍ර,U+0DA4 U+0DCA U+200D U+0DBB
+ඤා,U+0DA4 U+0DCF
+ඤැ,U+0DA4 U+0DD0
+ඤෑ,U+0DA4 U+0DD1
+ඤි,U+0DA4 U+0DD2
+ඤී,U+0DA4 U+0DD3
+ඤු,U+0DA4 U+0DD4
+ඤූ,U+0DA4 U+0DD6
+ඤෘ,U+0DA4 U+0DD8
+ඤේ,U+0DA4 U+0DDA
+ඤෛ,U+0DA4 U+0DDB
+ඤො,U+0DA4 U+0DDC
+ඤෝ,U+0DA4 U+0DDD
+ඤෞ,U+0DA4 U+0DDE
+ඤෲ,U+0DA4 U+0DF2
+
+"Table 10. Nisansa endpoint: characters returned unromanized inside otherwise valid output, Swa-Bhasha word corpus"
+Code point,Character,Occurrences
+U+0DCA,්,1402
+U+0D9E,ඞ,744
+U+0DD2,ි,578
+U+0DCF,ා,259
+U+0DD4,ු,245
+U+0DD9,ෙ,218
+U+0DD3,ී,209
+U+0DDF,ෟ,161
+U+0DD0,ැ,157
+U+0D93,ඓ,90
+U+0DD6,ූ,68
+U+0DD8,ෘ,32
+U+0D8E,ඎ,28
+U+0DD1,ෑ,24
+U+0DDA,ේ,8
+U+0DDB,ෛ,6
+U+0D8F,ඏ,6
+U+0DA6,ඦ,5
+U+0DDC,ො,4
+U+0DDD,ෝ,1
+
+"Table 11. Spelling-convention profile (rates over items that produced output; the closer to the human reference row, the better the convention match)"
+Corpus,Source,v-preference v/(v+w),Long vowels per token,Aspiration digraphs per token,Geminates per token
+Social media (authentic sentence pairs),Human reference (target),0.2023,0.0508,0.1502,0.1791
+Social media (authentic sentence pairs),Phonetic (in-house),0.0,0.3837,0.1715,0.1618
+Social media (authentic sentence pairs),Nisansa web (v->w preprocessed),0.0,0.3837,0.1715,0.1618
+Social media (authentic sentence pairs),Aksharamukha,0.0,0.3837,0.0299,0.17
+Social media (authentic sentence pairs),Nisansa web (as published),1.0,0.3837,0.1715,0.1618
+Social media (authentic sentence pairs),uroman,1.0,0.2966,0.0001,0.3639
+Swa-Bhasha words (multi-reference),Human reference (target),0.0138,0.1199,0.5461,0.1117
+Swa-Bhasha words (multi-reference),Phonetic (in-house),0.0,0.8106,0.5624,0.115
+Swa-Bhasha words (multi-reference),Nisansa web (v->w preprocessed),0.0,0.8078,0.5615,0.109
+Swa-Bhasha words (multi-reference),Aksharamukha,0.0,0.8105,0.2276,0.1359
+Swa-Bhasha words (multi-reference),Nisansa web (as published),1.0,0.8078,0.5615,0.109
+Swa-Bhasha words (multi-reference),uroman,1.0,0.7969,0.0028,0.3676
+"Augmented sentences (300k sample, cross-check)",Human reference (target),0.0,0.0922,0.3782,0.0445
+"Augmented sentences (300k sample, cross-check)",Phonetic (in-house),0.0,0.5628,0.3831,0.0467
+"Augmented sentences (300k sample, cross-check)",Aksharamukha,0.0,0.5628,0.1323,0.0561
+"Augmented sentences (300k sample, cross-check)",uroman,1.0,0.5569,0.0004,0.1989

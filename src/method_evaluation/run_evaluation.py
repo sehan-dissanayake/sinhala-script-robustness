@@ -69,26 +69,33 @@ def paired_wilcoxon(a: np.ndarray, b: np.ndarray) -> float:
         return 1.0
 
 
-def evaluate_corpus(corpus: str, methods: list[str]) -> tuple[list, dict]:
+def evaluate_corpus(corpus: str, methods: list[str],
+                    common_subset: bool = False) -> tuple[list, dict]:
     refs, level = _load_corpus(corpus)
     all_hyps = {m: _load_hypotheses(corpus, m) for m in methods}
     available = {m: h for m, h in all_hyps.items() if h is not None}
 
-    # Score every method on exactly the same items: those where all of them
-    # produced output. The Nisansa endpoint cannot romanize ~0.3% of the word
-    # corpus (it fails on ඤ with certain vowel signs), and scoring those as
-    # empty strings would charge it a CER of 1.0 for a tool limitation while the
-    # other methods answer normally. Substituting another method's output
-    # instead would be worse: the natural stand-in is the phonetic method, which
-    # is the one being compared against, so its answers would inflate the score
-    # of whichever method borrowed them.
-    ids = [i for i in refs if all(h.get(i) for h in available.values())]
-    dropped = len(refs) - len(ids)
-    if dropped:
+    # Every item is scored, for every method. Where a method produced no output
+    # the item counts as total error (CER 1.0), because failing to romanize an
+    # input is the tool's own limitation and hiding it flatters the tool. The
+    # Nisansa endpoint refuses ~0.3% of the word corpus (ඤ with a vowel sign or
+    # al-lakuna); earlier revisions dropped those rows from all methods so the
+    # comparison stayed matched, which measured mapping quality but silently
+    # excused a coverage failure. Both views are useful, so the matched subset
+    # is still available via --common-subset for the appendix.
+    ids = list(refs)
+    if common_subset:
+        ids = [i for i in refs if all(h.get(i) for h in available.values())]
+        dropped = len(refs) - len(ids)
         missing = {m: sum(1 for i in refs if not h.get(i)) for m, h in available.items()}
-        print(f"  scoring {len(ids):,} of {len(refs):,} items common to all methods "
+        print(f"  COMMON SUBSET: scoring {len(ids):,} of {len(refs):,} items "
               f"({dropped:,} excluded; no output from "
-              f"{', '.join(f'{m}: {n:,}' for m, n in missing.items() if n)})")
+              f"{', '.join(f'{m}: {n:,}' for m, n in missing.items() if n) or 'none'})")
+    else:
+        empty = {m: sum(1 for i in refs if not h.get(i)) for m, h in available.items()}
+        note = ", ".join(f"{m}: {n:,}" for m, n in empty.items() if n)
+        print(f"  scoring all {len(ids):,} items"
+              + (f"; no output from {note} (scored as errors)" if note else ""))
 
     results, per_item = [], {}
     for method in methods:
@@ -105,21 +112,24 @@ def evaluate_corpus(corpus: str, methods: list[str]) -> tuple[list, dict]:
         }
         print(f"  {method:20s} CER={res.cer_mean:.4f} (cased {res.cer_mean_cased:.4f}) "
               f"chrF={res.chrf:.2f} exact={res.exact_pct:.1f}% "
-              f"relaxedCER={res.cer_relaxed_mean:.4f}")
+              f"relaxedCER={res.cer_relaxed_mean:.4f} "
+              f"coverage={res.coverage_pct:.2f}%"
+              + (f" ({res.n_empty:,} empty)" if res.n_empty else ""))
     return results, per_item
 
 
-def run(corpora: list[str], methods: list[str]) -> None:
+def run(corpora: list[str], methods: list[str], common_subset: bool = False,
+        suffix: str = "") -> None:
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     (RESULTS_DIR / "per_item").mkdir(exist_ok=True)
 
     all_summaries, significance = [], {}
     for corpus in corpora:
         print(f"\n=== {corpus} ===")
-        results, per_item = evaluate_corpus(corpus, methods)
+        results, per_item = evaluate_corpus(corpus, methods, common_subset)
         for res in results:
             all_summaries.append(res.summary())
-            with (RESULTS_DIR / "per_item" / f"{corpus}__{res.method}.json").open("w", encoding="utf-8") as fh:
+            with (RESULTS_DIR / "per_item" / f"{corpus}__{res.method}{suffix}.json").open("w", encoding="utf-8") as fh:
                 json.dump({"cer": res.per_item_cer, "cer_relaxed": res.per_item_cer_relaxed}, fh)
 
         if not results:
@@ -139,20 +149,29 @@ def run(corpora: list[str], methods: list[str]) -> None:
     import csv
     if all_summaries:
         keys = list(all_summaries[0].keys())
-        with (RESULTS_DIR / "metrics_summary.csv").open("w", encoding="utf-8", newline="") as fh:
+        with (RESULTS_DIR / f"metrics_summary{suffix}.csv").open("w", encoding="utf-8", newline="") as fh:
             writer = csv.DictWriter(fh, fieldnames=keys)
             writer.writeheader()
             writer.writerows(all_summaries)
-    with (RESULTS_DIR / "metrics.json").open("w", encoding="utf-8") as fh:
+    with (RESULTS_DIR / f"metrics{suffix}.json").open("w", encoding="utf-8") as fh:
         json.dump(all_summaries, fh, ensure_ascii=False, indent=2)
-    with (RESULTS_DIR / "significance.json").open("w", encoding="utf-8") as fh:
+    with (RESULTS_DIR / f"significance{suffix}.json").open("w", encoding="utf-8") as fh:
         json.dump(significance, fh, ensure_ascii=False, indent=2)
-    print(f"\nWrote metrics + significance to {RESULTS_DIR}")
+    print(f"\nWrote metrics + significance to {RESULTS_DIR}"
+          + (f" (suffix '{suffix}')" if suffix else ""))
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--corpora", nargs="+", default=["social_media", "swa_bhasha_words"])
+    parser.add_argument("--corpora", nargs="+",
+                        default=["social_media", "swa_bhasha_words",
+                                 "augmented_sentences_sample"])
     parser.add_argument("--methods", nargs="+", default=ALL_METHODS)
+    parser.add_argument("--common-subset", action="store_true",
+                        help="score only items every method answered (appendix view); "
+                             "by default nothing is excluded and no output scores as error")
+    parser.add_argument("--suffix", default="",
+                        help="suffix for output filenames, e.g. _common_subset")
     args = parser.parse_args()
-    run(args.corpora, args.methods)
+    suffix = args.suffix or ("_common_subset" if args.common_subset else "")
+    run(args.corpora, args.methods, args.common_subset, suffix)

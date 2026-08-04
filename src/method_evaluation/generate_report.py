@@ -11,8 +11,8 @@ METHOD_LABELS = {
     "phonetic": "Phonetic (in-house)",
     "aksharamukha": "Aksharamukha",
     "uroman": "uroman",
-    "nisansa_sirs_method": "Nisansa web",
-    "nisansa_w": "Nisansa web + v→w",
+    "nisansa_sirs_method": "Nisansa web (as published)",
+    "nisansa_w": "Nisansa web (v→w preprocessed)",
 }
 CORPUS_LABELS = {
     "social_media": "Social media (authentic sentence pairs)",
@@ -142,8 +142,8 @@ def main():
         lines.append(
             "Nisansa's output matches the phonetic method on long vowels, aspiration and gemination, and "
             "differs almost only in writing ව as `v` where humans overwhelmingly write `w`. Rewriting just "
-            "that one convention in its output (`nisansa_w`, a post-process of the cached results - not the "
-            "published tool) removes the difference entirely:\n")
+            "that one convention is applied as a preprocessing stage before scoring (a pure post-process of "
+            "the fetched results, not the published tool) and removes the difference entirely:\n")
         lines.append("| Corpus | Nisansa as published | Nisansa with v→w | Phonetic |")
         lines.append("|---|---|---|---|")
         for corpus in by_corpus:
@@ -217,28 +217,52 @@ def main():
         "- **Nisansa coverage**: this method is a web form rather than a local library. It romanizes free "
         "text line by line, so items are batched (newline-joined) instead of sent one per request, which "
         "is ~78x faster and was verified to give output identical to one-request-per-item, ignoring case, "
-        "on all 4,253 social-media strings. It is scored on the full word corpus and the full social-media "
-        "corpus; it is absent from the augmented cross-check.\n")
+        "on all 4,253 social-media strings. It is scored on every item of the full word corpus and the "
+        "full social-media corpus; it is absent from the augmented cross-check, which is a secondary "
+        "check against machine-generated romanizations and not worth the fetch time.\n")
     lines.append(
-        "- **A limitation of the Nisansa tool**: it cannot romanize the letter ඤ (U+0DA4) when that letter "
-        "carries certain vowel signs - specifically followed by al-lakuna, ā, i or u. Such input returns an "
-        "empty result. Verified by direct probing: ඤ alone, ඤ+ඤ, ක+ඤ, ඤ+ka and ඤ+e all succeed, as does the "
-        "neighbouring letter ඥ (U+0DA5), so the tool's mapping table is missing those combinations rather "
-        "than the letter itself. This affects 1,470 of 450,587 words (0.33%). Those items are excluded from "
-        "**all** methods so that every method is scored on exactly the same rows; substituting another "
-        "method's output would be worse, because the natural stand-in is the phonetic method that is itself "
-        "under comparison, and its answers would inflate the score of whichever method borrowed them. The "
-        "effect either way is far below the margin between methods.\n")
+        "- **v→w preprocessing**: the endpoint writes ව as `v` where Sinhala speakers type `w`. Since that "
+        "one orthographic choice accounted for its entire measured gap, the rewrite is applied as a "
+        "standard preprocessing stage and `Nisansa web (v→w preprocessed)` is the variant to read as *the* "
+        "Nisansa result. The as-published row is kept beside it so the modification stays visible.\n")
+    lines.append(
+        "- **Nothing is excluded.** Where a method produced no output for an item, that item is scored as "
+        "total error (CER 1.0) rather than dropped. Failing to romanize an input is a property of the tool, "
+        "so excusing it would flatter the tool; the `Coverage` column below makes the size of that effect "
+        "explicit. An earlier revision scored only the rows every method answered, which measured mapping "
+        "quality but hid a coverage failure; those matched-subset numbers are still reproducible with "
+        "`run_evaluation.py --common-subset`.\n")
+    lines.append(
+        "- **Two measured defects in the Nisansa tool.** Both are characterised by direct probing of the "
+        "full Sinhala akshara grid (881 units, `nisansa_probe.py`), not inferred from failures:\n"
+        "  1. *No output at all* for **17 sequences**, every one of them ඤ (U+0DA4) carrying a vowel sign "
+        "or al-lakuna (ඤ්, ඤා, ඤැ, ඤෑ, ඤි, ඤී, ඤු, ඤූ, ඤෘ, ඤේ, ඤෛ, ඤො, ඤෝ, ඤෞ, ඤෲ, ඤ්‍ය, ඤ්‍ර). The letter "
+        "ඤ alone romanizes fine, as does ඤෙ and the neighbouring ඥ (U+0DA5), so the tool's mapping table is "
+        "missing those specific combinations rather than the letter. The probe's table reproduces exactly "
+        "the 1,470 of 450,587 words (0.33%) that the corpus run found by bisection - independent "
+        "confirmation that it is neither over- nor under-inclusive.\n"
+        "  2. *Silent leaks*: **12 sequences** come back unromanized inside otherwise valid Latin output "
+        "(ඎ, ඏ, ඐ, ඓ, ඞ, ඦ, ෟ, ෳ, ඣෙ, ඤෙ, ඥෙ, ඬෙ), so ඓතිහාසික romanizes to `ඓthihaasika`. Real corpus text "
+        "also leaks on malformed sequences outside the grid, such as a vowel sign followed by al-lakuna. "
+        "These are scored as they are. An earlier revision ran the in-house phonetic romanizer over every "
+        "response to patch such characters up, which made the measured system a hybrid of two methods under "
+        "comparison and hid the defect; all results here are the endpoint's verbatim output.\n")
 
     for corpus, rows in by_corpus.items():
         rows = sorted(rows, key=lambda r: r["cer_mean"])
         lines.append(f"## {CORPUS_LABELS.get(corpus, corpus)}\n")
         n = rows[0]["n"]
         lines.append(f"Items: {n:,}. Best method by strict CER listed first.\n")
-        lines.append("| Method | CER | WER | chrF | chrF++ | BLEU | Exact % | Relaxed CER | Relaxed Exact % |")
-        lines.append("|---|---|---|---|---|---|---|---|---|")
+        lines.append("| Method | Coverage % | CER | WER | chrF | chrF++ | BLEU | Exact % | "
+                     "Relaxed CER | Relaxed Exact % |")
+        lines.append("|---|---|---|---|---|---|---|---|---|---|")
         for r in rows:
-            lines.append(f"| {METHOD_LABELS.get(r['method'], r['method'])} | {_fmt(r['cer_mean'])} | "
+            cov = r.get("coverage_pct")
+            cov_txt = "100" if cov is None else _fmt(cov, 2)
+            if r.get("n_empty"):
+                cov_txt += f" ({r['n_empty']:,} empty)"
+            lines.append(f"| {METHOD_LABELS.get(r['method'], r['method'])} | {cov_txt} | "
+                         f"{_fmt(r['cer_mean'])} | "
                          f"{_fmt(r['wer_mean'])} | {_fmt(r['chrf'],1)} | {_fmt(r['chrf2'],1)} | "
                          f"{_fmt(r['bleu'],1)} | {_fmt(r['exact_pct'],1)} | {_fmt(r['cer_relaxed_mean'])} | "
                          f"{_fmt(r['exact_relaxed_pct'],1)} |")
@@ -264,15 +288,21 @@ def main():
                      "Singlish variation. The method whose profile is closest to the human row tends to win.\n")
         for corpus, e in err.items():
             lines.append(f"### {CORPUS_LABELS.get(corpus, corpus)}\n")
-            lines.append("| Source | v-preference (v/(v+w)) | long-vowel/tok | aspiration/tok | gemination/tok |")
-            lines.append("|---|---|---|---|---|")
+            lines.append("| Source | v-preference (v/(v+w)) | long-vowel/tok | aspiration/tok | "
+                         "gemination/tok | leaked Sinhala % |")
+            lines.append("|---|---|---|---|---|---|")
             rows = [("Human reference", e["human"])] + [
                 (METHOD_LABELS.get(m, m), p) for m, p in e["methods"].items()]
             for name, p in rows:
                 vw = _fmt(p["v_vs_w"], 2) if p["v_vs_w"] is not None else "-"
+                leak = p.get("leak_rate")
+                leak_txt = "-" if leak is None else _fmt(100 * leak, 2)
                 lines.append(f"| {name} | {vw} | {_fmt(p['long_vowel'],2)} | "
-                             f"{_fmt(p['aspiration'],2)} | {_fmt(p['gemination'],2)} |")
+                             f"{_fmt(p['aspiration'],2)} | {_fmt(p['gemination'],2)} | {leak_txt} |")
             lines.append("")
+            lines.append("Rates are computed over the items each method produced output for, so a "
+                         "failed item cannot flatter a method by contributing zero tokens; coverage "
+                         "is charged in the metric tables above instead.\n")
 
     # Plots
     lines.append("## Figures\n")

@@ -1,0 +1,7444 @@
+{
+ "seconds": 461.2,
+ "units": {
+  "ං": {
+   "codes": "U+0D82",
+   "detail": "",
+   "kind": "special_sign",
+   "raw": "N̆",
+   "verdict": "ok"
+  },
+  "ඃ": {
+   "codes": "U+0D83",
+   "detail": "",
+   "kind": "special_sign",
+   "raw": "ha",
+   "verdict": "ok"
+  },
+  "අ": {
+   "codes": "U+0D85",
+   "detail": "",
+   "kind": "independent_vowel",
+   "raw": "A",
+   "verdict": "ok"
+  },
+  "ආ": {
+   "codes": "U+0D86",
+   "detail": "",
+   "kind": "independent_vowel",
+   "raw": "aa",
+   "verdict": "ok"
+  },
+  "ඇ": {
+   "codes": "U+0D87",
+   "detail": "",
+   "kind": "independent_vowel",
+   "raw": "ae",
+   "verdict": "ok"
+  },
+  "ඈ": {
+   "codes": "U+0D88",
+   "detail": "",
+   "kind": "independent_vowel",
+   "raw": "aee",
+   "verdict": "ok"
+  },
+  "ඉ": {
+   "codes": "U+0D89",
+   "detail": "",
+   "kind": "independent_vowel",
+   "raw": "I",
+   "verdict": "ok"
+  },
+  "ඊ": {
+   "codes": "U+0D8A",
+   "detail": "",
+   "kind": "independent_vowel",
+   "raw": "ii",
+   "verdict": "ok"
+  },
+  "උ": {
+   "codes": "U+0D8B",
+   "detail": "",
+   "kind": "independent_vowel",
+   "raw": "U",
+   "verdict": "ok"
+  },
+  "ඌ": {
+   "codes": "U+0D8C",
+   "detail": "",
+   "kind": "independent_vowel",
+   "raw": "uu",
+   "verdict": "ok"
+  },
+  "ඍ": {
+   "codes": "U+0D8D",
+   "detail": "",
+   "kind": "independent_vowel",
+   "raw": "Ir",
+   "verdict": "ok"
+  },
+  "ඎ": {
+   "codes": "U+0D8E",
+   "detail": "unromanized U+0D8E",
+   "kind": "independent_vowel",
+   "leaked": "ඎ",
+   "raw": "ඎ",
+   "verdict": "leak"
+  },
+  "ඏ": {
+   "codes": "U+0D8F",
+   "detail": "unromanized U+0D8F",
+   "kind": "independent_vowel",
+   "leaked": "ඏ",
+   "raw": "ඏ",
+   "verdict": "leak"
+  },
+  "ඐ": {
+   "codes": "U+0D90",
+   "detail": "unromanized U+0D90",
+   "kind": "independent_vowel",
+   "leaked": "ඐ",
+   "raw": "ඐ",
+   "verdict": "leak"
+  },
+  "එ": {
+   "codes": "U+0D91",
+   "detail": "",
+   "kind": "independent_vowel",
+   "raw": "E",
+   "verdict": "ok"
+  },
+  "ඒ": {
+   "codes": "U+0D92",
+   "detail": "",
+   "kind": "independent_vowel",
+   "raw": "ee",
+   "verdict": "ok"
+  },
+  "ඓ": {
+   "codes": "U+0D93",
+   "detail": "unromanized U+0D93",
+   "kind": "independent_vowel",
+   "leaked": "ඓ",
+   "raw": "ඓ",
+   "verdict": "leak"
+  },
+  "ඔ": {
+   "codes": "U+0D94",
+   "detail": "",
+   "kind": "independent_vowel",
+   "raw": "O",
+   "verdict": "ok"
+  },
+  "ඕ": {
+   "codes": "U+0D95",
+   "detail": "",
+   "kind": "independent_vowel",
+   "raw": "oo",
+   "verdict": "ok"
+  },
+  "ඖ": {
+   "codes": "U+0D96",
+   "detail": "",
+   "kind": "independent_vowel",
+   "raw": "Au",
+   "verdict": "ok"
+  },
+  "ක": {
+   "codes": "U+0D9A",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Ka",
+   "verdict": "ok"
+  },
+  "කඎක": {
+   "codes": "U+0D9A U+0D8E U+0D9A",
+   "detail": "unromanized U+0D8E",
+   "kind": "context",
+   "leaked": "ඎ",
+   "raw": "Kaඎka",
+   "verdict": "leak"
+  },
+  "කඏක": {
+   "codes": "U+0D9A U+0D8F U+0D9A",
+   "detail": "unromanized U+0D8F",
+   "kind": "context",
+   "leaked": "ඏ",
+   "raw": "Kaඏka",
+   "verdict": "leak"
+  },
+  "කඐක": {
+   "codes": "U+0D9A U+0D90 U+0D9A",
+   "detail": "unromanized U+0D90",
+   "kind": "context",
+   "leaked": "ඐ",
+   "raw": "Kaඐka",
+   "verdict": "leak"
+  },
+  "කඓක": {
+   "codes": "U+0D9A U+0D93 U+0D9A",
+   "detail": "unromanized U+0D93",
+   "kind": "context",
+   "leaked": "ඓ",
+   "raw": "Kaඓka",
+   "verdict": "leak"
+  },
+  "කකෟක": {
+   "codes": "U+0D9A U+0D9A U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kakaෟka",
+   "verdict": "leak"
+  },
+  "කකෳක": {
+   "codes": "U+0D9A U+0D9A U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kakaෳka",
+   "verdict": "leak"
+  },
+  "කඛෟක": {
+   "codes": "U+0D9A U+0D9B U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kakhaෟka",
+   "verdict": "leak"
+  },
+  "කඛෳක": {
+   "codes": "U+0D9A U+0D9B U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kakhaෳka",
+   "verdict": "leak"
+  },
+  "කගෟක": {
+   "codes": "U+0D9A U+0D9C U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kagaෟka",
+   "verdict": "leak"
+  },
+  "කගෳක": {
+   "codes": "U+0D9A U+0D9C U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kagaෳka",
+   "verdict": "leak"
+  },
+  "කඝෟක": {
+   "codes": "U+0D9A U+0D9D U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kaghaෟka",
+   "verdict": "leak"
+  },
+  "කඝෳක": {
+   "codes": "U+0D9A U+0D9D U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kaghaෳka",
+   "verdict": "leak"
+  },
+  "කඞක": {
+   "codes": "U+0D9A U+0D9E U+0D9A",
+   "detail": "unromanized U+0D9E",
+   "kind": "context",
+   "leaked": "ඞ",
+   "raw": "Kaඞka",
+   "verdict": "leak"
+  },
+  "කඞ්ක": {
+   "codes": "U+0D9A U+0D9E U+0DCA U+0D9A",
+   "detail": "unromanized U+0D9E U+0DCA",
+   "kind": "context",
+   "leaked": "ඞ්",
+   "raw": "Kaඞ්ka",
+   "verdict": "leak"
+  },
+  "කඞ්‍යක": {
+   "codes": "U+0D9A U+0D9E U+0DCA U+200D U+0DBA U+0D9A",
+   "detail": "unromanized U+0D9E U+0DCA",
+   "kind": "context",
+   "leaked": "ඞ්",
+   "raw": "Kaඞ්‍yaka",
+   "verdict": "leak"
+  },
+  "කඞ්‍රක": {
+   "codes": "U+0D9A U+0D9E U+0DCA U+200D U+0DBB U+0D9A",
+   "detail": "unromanized U+0D9E U+0DCA",
+   "kind": "context",
+   "leaked": "ඞ්",
+   "raw": "Kaඞ්‍raka",
+   "verdict": "leak"
+  },
+  "කඞාක": {
+   "codes": "U+0D9A U+0D9E U+0DCF U+0D9A",
+   "detail": "unromanized U+0D9E U+0DCF",
+   "kind": "context",
+   "leaked": "ඞා",
+   "raw": "Kaඞාka",
+   "verdict": "leak"
+  },
+  "කඞැක": {
+   "codes": "U+0D9A U+0D9E U+0DD0 U+0D9A",
+   "detail": "unromanized U+0D9E U+0DD0",
+   "kind": "context",
+   "leaked": "ඞැ",
+   "raw": "Kaඞැka",
+   "verdict": "leak"
+  },
+  "කඞෑක": {
+   "codes": "U+0D9A U+0D9E U+0DD1 U+0D9A",
+   "detail": "unromanized U+0D9E U+0DD1",
+   "kind": "context",
+   "leaked": "ඞෑ",
+   "raw": "Kaඞෑka",
+   "verdict": "leak"
+  },
+  "කඞික": {
+   "codes": "U+0D9A U+0D9E U+0DD2 U+0D9A",
+   "detail": "unromanized U+0D9E U+0DD2",
+   "kind": "context",
+   "leaked": "ඞි",
+   "raw": "Kaඞිka",
+   "verdict": "leak"
+  },
+  "කඞීක": {
+   "codes": "U+0D9A U+0D9E U+0DD3 U+0D9A",
+   "detail": "unromanized U+0D9E U+0DD3",
+   "kind": "context",
+   "leaked": "ඞී",
+   "raw": "Kaඞීka",
+   "verdict": "leak"
+  },
+  "කඞුක": {
+   "codes": "U+0D9A U+0D9E U+0DD4 U+0D9A",
+   "detail": "unromanized U+0D9E U+0DD4",
+   "kind": "context",
+   "leaked": "ඞු",
+   "raw": "Kaඞුka",
+   "verdict": "leak"
+  },
+  "කඞූක": {
+   "codes": "U+0D9A U+0D9E U+0DD6 U+0D9A",
+   "detail": "unromanized U+0D9E U+0DD6",
+   "kind": "context",
+   "leaked": "ඞූ",
+   "raw": "Kaඞූka",
+   "verdict": "leak"
+  },
+  "කඞෘක": {
+   "codes": "U+0D9A U+0D9E U+0DD8 U+0D9A",
+   "detail": "unromanized U+0D9E U+0DD8",
+   "kind": "context",
+   "leaked": "ඞෘ",
+   "raw": "Kaඞෘka",
+   "verdict": "leak"
+  },
+  "කඞෙක": {
+   "codes": "U+0D9A U+0D9E U+0DD9 U+0D9A",
+   "detail": "unromanized U+0D9E U+0DD9",
+   "kind": "context",
+   "leaked": "ඞෙ",
+   "raw": "Kaඞෙka",
+   "verdict": "leak"
+  },
+  "කඞේක": {
+   "codes": "U+0D9A U+0D9E U+0DDA U+0D9A",
+   "detail": "unromanized U+0D9E U+0DDA",
+   "kind": "context",
+   "leaked": "ඞේ",
+   "raw": "Kaඞේka",
+   "verdict": "leak"
+  },
+  "කඞෛක": {
+   "codes": "U+0D9A U+0D9E U+0DDB U+0D9A",
+   "detail": "unromanized U+0D9E U+0DDB",
+   "kind": "context",
+   "leaked": "ඞෛ",
+   "raw": "Kaඞෛka",
+   "verdict": "leak"
+  },
+  "කඞොක": {
+   "codes": "U+0D9A U+0D9E U+0DDC U+0D9A",
+   "detail": "unromanized U+0D9E U+0DDC",
+   "kind": "context",
+   "leaked": "ඞො",
+   "raw": "Kaඞොka",
+   "verdict": "leak"
+  },
+  "කඞෝක": {
+   "codes": "U+0D9A U+0D9E U+0DDD U+0D9A",
+   "detail": "unromanized U+0D9E U+0DDD",
+   "kind": "context",
+   "leaked": "ඞෝ",
+   "raw": "Kaඞෝka",
+   "verdict": "leak"
+  },
+  "කඞෞක": {
+   "codes": "U+0D9A U+0D9E U+0DDE U+0D9A",
+   "detail": "unromanized U+0D9E U+0DDE",
+   "kind": "context",
+   "leaked": "ඞෞ",
+   "raw": "Kaඞෞka",
+   "verdict": "leak"
+  },
+  "කඞෟක": {
+   "codes": "U+0D9A U+0D9E U+0DDF U+0D9A",
+   "detail": "unromanized U+0D9E U+0DDF",
+   "kind": "context",
+   "leaked": "ඞෟ",
+   "raw": "Kaඞෟka",
+   "verdict": "leak"
+  },
+  "කඞෲක": {
+   "codes": "U+0D9A U+0D9E U+0DF2 U+0D9A",
+   "detail": "unromanized U+0D9E U+0DF2",
+   "kind": "context",
+   "leaked": "ඞෲ",
+   "raw": "Kaඞෲka",
+   "verdict": "leak"
+  },
+  "කඞෳක": {
+   "codes": "U+0D9A U+0D9E U+0DF3 U+0D9A",
+   "detail": "unromanized U+0D9E U+0DF3",
+   "kind": "context",
+   "leaked": "ඞෳ",
+   "raw": "Kaඞෳka",
+   "verdict": "leak"
+  },
+  "කඟෟක": {
+   "codes": "U+0D9A U+0D9F U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kangaෟka",
+   "verdict": "leak"
+  },
+  "කඟෳක": {
+   "codes": "U+0D9A U+0D9F U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kangaෳka",
+   "verdict": "leak"
+  },
+  "කචෟක": {
+   "codes": "U+0D9A U+0DA0 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kachaෟka",
+   "verdict": "leak"
+  },
+  "කචෳක": {
+   "codes": "U+0D9A U+0DA0 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kachaෳka",
+   "verdict": "leak"
+  },
+  "කඡෟක": {
+   "codes": "U+0D9A U+0DA1 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kachaෟka",
+   "verdict": "leak"
+  },
+  "කඡෳක": {
+   "codes": "U+0D9A U+0DA1 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kachaෳka",
+   "verdict": "leak"
+  },
+  "කජෟක": {
+   "codes": "U+0D9A U+0DA2 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kajaෟka",
+   "verdict": "leak"
+  },
+  "කජෳක": {
+   "codes": "U+0D9A U+0DA2 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kajaෳka",
+   "verdict": "leak"
+  },
+  "කඣෙක": {
+   "codes": "U+0D9A U+0DA3 U+0DD9 U+0D9A",
+   "detail": "unromanized U+0DD9",
+   "kind": "context",
+   "leaked": "ෙ",
+   "raw": "Kajhaෙka",
+   "verdict": "leak"
+  },
+  "කඣෟක": {
+   "codes": "U+0D9A U+0DA3 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kajhaෟka",
+   "verdict": "leak"
+  },
+  "කඣෳක": {
+   "codes": "U+0D9A U+0DA3 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kajhaෳka",
+   "verdict": "leak"
+  },
+  "කඤ්ක": {
+   "codes": "U+0D9A U+0DA4 U+0DCA U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤ්‍යක": {
+   "codes": "U+0D9A U+0DA4 U+0DCA U+200D U+0DBA U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤ්‍රක": {
+   "codes": "U+0D9A U+0DA4 U+0DCA U+200D U+0DBB U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤාක": {
+   "codes": "U+0D9A U+0DA4 U+0DCF U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤැක": {
+   "codes": "U+0D9A U+0DA4 U+0DD0 U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤෑක": {
+   "codes": "U+0D9A U+0DA4 U+0DD1 U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤික": {
+   "codes": "U+0D9A U+0DA4 U+0DD2 U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤීක": {
+   "codes": "U+0D9A U+0DA4 U+0DD3 U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤුක": {
+   "codes": "U+0D9A U+0DA4 U+0DD4 U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤූක": {
+   "codes": "U+0D9A U+0DA4 U+0DD6 U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤෘක": {
+   "codes": "U+0D9A U+0DA4 U+0DD8 U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤෙක": {
+   "codes": "U+0D9A U+0DA4 U+0DD9 U+0D9A",
+   "detail": "unromanized U+0DD9",
+   "kind": "context",
+   "leaked": "ෙ",
+   "raw": "Kanෙka",
+   "verdict": "leak"
+  },
+  "කඤේක": {
+   "codes": "U+0D9A U+0DA4 U+0DDA U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤෛක": {
+   "codes": "U+0D9A U+0DA4 U+0DDB U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤොක": {
+   "codes": "U+0D9A U+0DA4 U+0DDC U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤෝක": {
+   "codes": "U+0D9A U+0DA4 U+0DDD U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤෞක": {
+   "codes": "U+0D9A U+0DA4 U+0DDE U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤෟක": {
+   "codes": "U+0D9A U+0DA4 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kanෟka",
+   "verdict": "leak"
+  },
+  "කඤෲක": {
+   "codes": "U+0D9A U+0DA4 U+0DF2 U+0D9A",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "context",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "කඤෳක": {
+   "codes": "U+0D9A U+0DA4 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kanෳka",
+   "verdict": "leak"
+  },
+  "කඥෙක": {
+   "codes": "U+0D9A U+0DA5 U+0DD9 U+0D9A",
+   "detail": "unromanized U+0DD9",
+   "kind": "context",
+   "leaked": "ෙ",
+   "raw": "Kajnaෙka",
+   "verdict": "leak"
+  },
+  "කඥෟක": {
+   "codes": "U+0D9A U+0DA5 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kajnaෟka",
+   "verdict": "leak"
+  },
+  "කඥෳක": {
+   "codes": "U+0D9A U+0DA5 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kajnaෳka",
+   "verdict": "leak"
+  },
+  "කඦක": {
+   "codes": "U+0D9A U+0DA6 U+0D9A",
+   "detail": "unromanized U+0DA6",
+   "kind": "context",
+   "leaked": "ඦ",
+   "raw": "Kaඦka",
+   "verdict": "leak"
+  },
+  "කඦ්ක": {
+   "codes": "U+0D9A U+0DA6 U+0DCA U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DCA",
+   "kind": "context",
+   "leaked": "ඦ්",
+   "raw": "Kaඦ්ka",
+   "verdict": "leak"
+  },
+  "කඦ්‍යක": {
+   "codes": "U+0D9A U+0DA6 U+0DCA U+200D U+0DBA U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DCA",
+   "kind": "context",
+   "leaked": "ඦ්",
+   "raw": "Kaඦ්‍yaka",
+   "verdict": "leak"
+  },
+  "කඦ්‍රක": {
+   "codes": "U+0D9A U+0DA6 U+0DCA U+200D U+0DBB U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DCA",
+   "kind": "context",
+   "leaked": "ඦ්",
+   "raw": "Kaඦ්‍raka",
+   "verdict": "leak"
+  },
+  "කඦාක": {
+   "codes": "U+0D9A U+0DA6 U+0DCF U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DCF",
+   "kind": "context",
+   "leaked": "ඦා",
+   "raw": "Kaඦාka",
+   "verdict": "leak"
+  },
+  "කඦැක": {
+   "codes": "U+0D9A U+0DA6 U+0DD0 U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DD0",
+   "kind": "context",
+   "leaked": "ඦැ",
+   "raw": "Kaඦැka",
+   "verdict": "leak"
+  },
+  "කඦෑක": {
+   "codes": "U+0D9A U+0DA6 U+0DD1 U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DD1",
+   "kind": "context",
+   "leaked": "ඦෑ",
+   "raw": "Kaඦෑka",
+   "verdict": "leak"
+  },
+  "කඦික": {
+   "codes": "U+0D9A U+0DA6 U+0DD2 U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DD2",
+   "kind": "context",
+   "leaked": "ඦි",
+   "raw": "Kaඦිka",
+   "verdict": "leak"
+  },
+  "කඦීක": {
+   "codes": "U+0D9A U+0DA6 U+0DD3 U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DD3",
+   "kind": "context",
+   "leaked": "ඦී",
+   "raw": "Kaඦීka",
+   "verdict": "leak"
+  },
+  "කඦුක": {
+   "codes": "U+0D9A U+0DA6 U+0DD4 U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DD4",
+   "kind": "context",
+   "leaked": "ඦු",
+   "raw": "Kaඦුka",
+   "verdict": "leak"
+  },
+  "කඦූක": {
+   "codes": "U+0D9A U+0DA6 U+0DD6 U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DD6",
+   "kind": "context",
+   "leaked": "ඦූ",
+   "raw": "Kaඦූka",
+   "verdict": "leak"
+  },
+  "කඦෘක": {
+   "codes": "U+0D9A U+0DA6 U+0DD8 U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DD8",
+   "kind": "context",
+   "leaked": "ඦෘ",
+   "raw": "Kaඦෘka",
+   "verdict": "leak"
+  },
+  "කඦෙක": {
+   "codes": "U+0D9A U+0DA6 U+0DD9 U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DD9",
+   "kind": "context",
+   "leaked": "ඦෙ",
+   "raw": "Kaඦෙka",
+   "verdict": "leak"
+  },
+  "කඦේක": {
+   "codes": "U+0D9A U+0DA6 U+0DDA U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DDA",
+   "kind": "context",
+   "leaked": "ඦේ",
+   "raw": "Kaඦේka",
+   "verdict": "leak"
+  },
+  "කඦෛක": {
+   "codes": "U+0D9A U+0DA6 U+0DDB U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DDB",
+   "kind": "context",
+   "leaked": "ඦෛ",
+   "raw": "Kaඦෛka",
+   "verdict": "leak"
+  },
+  "කඦොක": {
+   "codes": "U+0D9A U+0DA6 U+0DDC U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DDC",
+   "kind": "context",
+   "leaked": "ඦො",
+   "raw": "Kaඦොka",
+   "verdict": "leak"
+  },
+  "කඦෝක": {
+   "codes": "U+0D9A U+0DA6 U+0DDD U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DDD",
+   "kind": "context",
+   "leaked": "ඦෝ",
+   "raw": "Kaඦෝka",
+   "verdict": "leak"
+  },
+  "කඦෞක": {
+   "codes": "U+0D9A U+0DA6 U+0DDE U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DDE",
+   "kind": "context",
+   "leaked": "ඦෞ",
+   "raw": "Kaඦෞka",
+   "verdict": "leak"
+  },
+  "කඦෟක": {
+   "codes": "U+0D9A U+0DA6 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DDF",
+   "kind": "context",
+   "leaked": "ඦෟ",
+   "raw": "Kaඦෟka",
+   "verdict": "leak"
+  },
+  "කඦෲක": {
+   "codes": "U+0D9A U+0DA6 U+0DF2 U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DF2",
+   "kind": "context",
+   "leaked": "ඦෲ",
+   "raw": "Kaඦෲka",
+   "verdict": "leak"
+  },
+  "කඦෳක": {
+   "codes": "U+0D9A U+0DA6 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DA6 U+0DF3",
+   "kind": "context",
+   "leaked": "ඦෳ",
+   "raw": "Kaඦෳka",
+   "verdict": "leak"
+  },
+  "කටෟක": {
+   "codes": "U+0D9A U+0DA7 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kataෟka",
+   "verdict": "leak"
+  },
+  "කටෳක": {
+   "codes": "U+0D9A U+0DA7 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kataෳka",
+   "verdict": "leak"
+  },
+  "කඨෟක": {
+   "codes": "U+0D9A U+0DA8 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kathaෟka",
+   "verdict": "leak"
+  },
+  "කඨෳක": {
+   "codes": "U+0D9A U+0DA8 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kathaෳka",
+   "verdict": "leak"
+  },
+  "කඩෟක": {
+   "codes": "U+0D9A U+0DA9 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kadaෟka",
+   "verdict": "leak"
+  },
+  "කඩෳක": {
+   "codes": "U+0D9A U+0DA9 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kadaෳka",
+   "verdict": "leak"
+  },
+  "කඪෟක": {
+   "codes": "U+0D9A U+0DAA U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kadhaෟka",
+   "verdict": "leak"
+  },
+  "කඪෳක": {
+   "codes": "U+0D9A U+0DAA U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kadhaෳka",
+   "verdict": "leak"
+  },
+  "කණෟක": {
+   "codes": "U+0D9A U+0DAB U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kanaෟka",
+   "verdict": "leak"
+  },
+  "කණෳක": {
+   "codes": "U+0D9A U+0DAB U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kanaෳka",
+   "verdict": "leak"
+  },
+  "කඬෙක": {
+   "codes": "U+0D9A U+0DAC U+0DD9 U+0D9A",
+   "detail": "unromanized U+0DD9",
+   "kind": "context",
+   "leaked": "ෙ",
+   "raw": "Kandaෙka",
+   "verdict": "leak"
+  },
+  "කඬෟක": {
+   "codes": "U+0D9A U+0DAC U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kandaෟka",
+   "verdict": "leak"
+  },
+  "කඬෳක": {
+   "codes": "U+0D9A U+0DAC U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kandaෳka",
+   "verdict": "leak"
+  },
+  "කතෟක": {
+   "codes": "U+0D9A U+0DAD U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kathaෟka",
+   "verdict": "leak"
+  },
+  "කතෳක": {
+   "codes": "U+0D9A U+0DAD U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kathaෳka",
+   "verdict": "leak"
+  },
+  "කථෟක": {
+   "codes": "U+0D9A U+0DAE U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kathaෟka",
+   "verdict": "leak"
+  },
+  "කථෳක": {
+   "codes": "U+0D9A U+0DAE U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kathaෳka",
+   "verdict": "leak"
+  },
+  "කදෟක": {
+   "codes": "U+0D9A U+0DAF U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kadaෟka",
+   "verdict": "leak"
+  },
+  "කදෳක": {
+   "codes": "U+0D9A U+0DAF U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kadaෳka",
+   "verdict": "leak"
+  },
+  "කධෟක": {
+   "codes": "U+0D9A U+0DB0 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kadhaෟka",
+   "verdict": "leak"
+  },
+  "කධෳක": {
+   "codes": "U+0D9A U+0DB0 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kadhaෳka",
+   "verdict": "leak"
+  },
+  "කනෟක": {
+   "codes": "U+0D9A U+0DB1 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kanaෟka",
+   "verdict": "leak"
+  },
+  "කනෳක": {
+   "codes": "U+0D9A U+0DB1 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kanaෳka",
+   "verdict": "leak"
+  },
+  "කඳෟක": {
+   "codes": "U+0D9A U+0DB3 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kandaෟka",
+   "verdict": "leak"
+  },
+  "කඳෳක": {
+   "codes": "U+0D9A U+0DB3 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kandaෳka",
+   "verdict": "leak"
+  },
+  "කපෟක": {
+   "codes": "U+0D9A U+0DB4 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kapaෟka",
+   "verdict": "leak"
+  },
+  "කපෳක": {
+   "codes": "U+0D9A U+0DB4 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kapaෳka",
+   "verdict": "leak"
+  },
+  "කඵෟක": {
+   "codes": "U+0D9A U+0DB5 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kaphaෟka",
+   "verdict": "leak"
+  },
+  "කඵෳක": {
+   "codes": "U+0D9A U+0DB5 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kaphaෳka",
+   "verdict": "leak"
+  },
+  "කබෟක": {
+   "codes": "U+0D9A U+0DB6 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kabaෟka",
+   "verdict": "leak"
+  },
+  "කබෳක": {
+   "codes": "U+0D9A U+0DB6 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kabaෳka",
+   "verdict": "leak"
+  },
+  "කභෟක": {
+   "codes": "U+0D9A U+0DB7 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kabhaෟka",
+   "verdict": "leak"
+  },
+  "කභෳක": {
+   "codes": "U+0D9A U+0DB7 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kabhaෳka",
+   "verdict": "leak"
+  },
+  "කමෟක": {
+   "codes": "U+0D9A U+0DB8 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kamaෟka",
+   "verdict": "leak"
+  },
+  "කමෳක": {
+   "codes": "U+0D9A U+0DB8 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kamaෳka",
+   "verdict": "leak"
+  },
+  "කඹෟක": {
+   "codes": "U+0D9A U+0DB9 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kambaෟka",
+   "verdict": "leak"
+  },
+  "කඹෳක": {
+   "codes": "U+0D9A U+0DB9 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kambaෳka",
+   "verdict": "leak"
+  },
+  "කයෟක": {
+   "codes": "U+0D9A U+0DBA U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kayaෟka",
+   "verdict": "leak"
+  },
+  "කයෳක": {
+   "codes": "U+0D9A U+0DBA U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kayaෳka",
+   "verdict": "leak"
+  },
+  "කරෟක": {
+   "codes": "U+0D9A U+0DBB U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Karaෟka",
+   "verdict": "leak"
+  },
+  "කරෳක": {
+   "codes": "U+0D9A U+0DBB U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Karaෳka",
+   "verdict": "leak"
+  },
+  "කලෟක": {
+   "codes": "U+0D9A U+0DBD U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kalaෟka",
+   "verdict": "leak"
+  },
+  "කලෳක": {
+   "codes": "U+0D9A U+0DBD U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kalaෳka",
+   "verdict": "leak"
+  },
+  "කවෟක": {
+   "codes": "U+0D9A U+0DC0 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kavaෟka",
+   "verdict": "leak"
+  },
+  "කවෳක": {
+   "codes": "U+0D9A U+0DC0 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kavaෳka",
+   "verdict": "leak"
+  },
+  "කශෟක": {
+   "codes": "U+0D9A U+0DC1 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kashaෟka",
+   "verdict": "leak"
+  },
+  "කශෳක": {
+   "codes": "U+0D9A U+0DC1 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kashaෳka",
+   "verdict": "leak"
+  },
+  "කෂෟක": {
+   "codes": "U+0D9A U+0DC2 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kashaෟka",
+   "verdict": "leak"
+  },
+  "කෂෳක": {
+   "codes": "U+0D9A U+0DC2 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kashaෳka",
+   "verdict": "leak"
+  },
+  "කසෟක": {
+   "codes": "U+0D9A U+0DC3 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kasaෟka",
+   "verdict": "leak"
+  },
+  "කසෳක": {
+   "codes": "U+0D9A U+0DC3 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kasaෳka",
+   "verdict": "leak"
+  },
+  "කහෟක": {
+   "codes": "U+0D9A U+0DC4 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kahaෟka",
+   "verdict": "leak"
+  },
+  "කහෳක": {
+   "codes": "U+0D9A U+0DC4 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kahaෳka",
+   "verdict": "leak"
+  },
+  "කළෟක": {
+   "codes": "U+0D9A U+0DC5 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kalaෟka",
+   "verdict": "leak"
+  },
+  "කළෳක": {
+   "codes": "U+0D9A U+0DC5 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kalaෳka",
+   "verdict": "leak"
+  },
+  "කෆෟක": {
+   "codes": "U+0D9A U+0DC6 U+0DDF U+0D9A",
+   "detail": "unromanized U+0DDF",
+   "kind": "context",
+   "leaked": "ෟ",
+   "raw": "Kafaෟka",
+   "verdict": "leak"
+  },
+  "කෆෳක": {
+   "codes": "U+0D9A U+0DC6 U+0DF3 U+0D9A",
+   "detail": "unromanized U+0DF3",
+   "kind": "context",
+   "leaked": "ෳ",
+   "raw": "Kafaෳka",
+   "verdict": "leak"
+  },
+  "ක්": {
+   "codes": "U+0D9A U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "K",
+   "verdict": "ok"
+  },
+  "ක්‍ය": {
+   "codes": "U+0D9A U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "K‍ya",
+   "verdict": "ok"
+  },
+  "ක්‍ර": {
+   "codes": "U+0D9A U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "K‍ra",
+   "verdict": "ok"
+  },
+  "කා": {
+   "codes": "U+0D9A U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Kaa",
+   "verdict": "ok"
+  },
+  "කැ": {
+   "codes": "U+0D9A U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Kae",
+   "verdict": "ok"
+  },
+  "කෑ": {
+   "codes": "U+0D9A U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Kaee",
+   "verdict": "ok"
+  },
+  "කි": {
+   "codes": "U+0D9A U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ki",
+   "verdict": "ok"
+  },
+  "කී": {
+   "codes": "U+0D9A U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Kii",
+   "verdict": "ok"
+  },
+  "කු": {
+   "codes": "U+0D9A U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ku",
+   "verdict": "ok"
+  },
+  "කූ": {
+   "codes": "U+0D9A U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Kuu",
+   "verdict": "ok"
+  },
+  "කෘ": {
+   "codes": "U+0D9A U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Kru",
+   "verdict": "ok"
+  },
+  "කෙ": {
+   "codes": "U+0D9A U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ke",
+   "verdict": "ok"
+  },
+  "කේ": {
+   "codes": "U+0D9A U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Kee",
+   "verdict": "ok"
+  },
+  "කෛ": {
+   "codes": "U+0D9A U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Kai",
+   "verdict": "ok"
+  },
+  "කො": {
+   "codes": "U+0D9A U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ko",
+   "verdict": "ok"
+  },
+  "කෝ": {
+   "codes": "U+0D9A U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Koo",
+   "verdict": "ok"
+  },
+  "කෞ": {
+   "codes": "U+0D9A U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Kau",
+   "verdict": "ok"
+  },
+  "කෟ": {
+   "codes": "U+0D9A U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Kaෟ",
+   "verdict": "leak"
+  },
+  "කෲ": {
+   "codes": "U+0D9A U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Kruu",
+   "verdict": "ok"
+  },
+  "කෳ": {
+   "codes": "U+0D9A U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Kaෳ",
+   "verdict": "leak"
+  },
+  "ඛ": {
+   "codes": "U+0D9B",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Kha",
+   "verdict": "ok"
+  },
+  "ඛ්": {
+   "codes": "U+0D9B U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "Kh",
+   "verdict": "ok"
+  },
+  "ඛ්‍ය": {
+   "codes": "U+0D9B U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "Kh‍ya",
+   "verdict": "ok"
+  },
+  "ඛ්‍ර": {
+   "codes": "U+0D9B U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "Kh‍ra",
+   "verdict": "ok"
+  },
+  "ඛා": {
+   "codes": "U+0D9B U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Khaa",
+   "verdict": "ok"
+  },
+  "ඛැ": {
+   "codes": "U+0D9B U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Khae",
+   "verdict": "ok"
+  },
+  "ඛෑ": {
+   "codes": "U+0D9B U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Khaee",
+   "verdict": "ok"
+  },
+  "ඛි": {
+   "codes": "U+0D9B U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Khi",
+   "verdict": "ok"
+  },
+  "ඛී": {
+   "codes": "U+0D9B U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Khii",
+   "verdict": "ok"
+  },
+  "ඛු": {
+   "codes": "U+0D9B U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Khu",
+   "verdict": "ok"
+  },
+  "ඛූ": {
+   "codes": "U+0D9B U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Khuu",
+   "verdict": "ok"
+  },
+  "ඛෘ": {
+   "codes": "U+0D9B U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Khru",
+   "verdict": "ok"
+  },
+  "ඛෙ": {
+   "codes": "U+0D9B U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Khe",
+   "verdict": "ok"
+  },
+  "ඛේ": {
+   "codes": "U+0D9B U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Khee",
+   "verdict": "ok"
+  },
+  "ඛෛ": {
+   "codes": "U+0D9B U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Khai",
+   "verdict": "ok"
+  },
+  "ඛො": {
+   "codes": "U+0D9B U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Kho",
+   "verdict": "ok"
+  },
+  "ඛෝ": {
+   "codes": "U+0D9B U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Khoo",
+   "verdict": "ok"
+  },
+  "ඛෞ": {
+   "codes": "U+0D9B U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Khau",
+   "verdict": "ok"
+  },
+  "ඛෟ": {
+   "codes": "U+0D9B U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Khaෟ",
+   "verdict": "leak"
+  },
+  "ඛෲ": {
+   "codes": "U+0D9B U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Khruu",
+   "verdict": "ok"
+  },
+  "ඛෳ": {
+   "codes": "U+0D9B U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Khaෳ",
+   "verdict": "leak"
+  },
+  "ග": {
+   "codes": "U+0D9C",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Ga",
+   "verdict": "ok"
+  },
+  "ග්": {
+   "codes": "U+0D9C U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "G",
+   "verdict": "ok"
+  },
+  "ග්‍ය": {
+   "codes": "U+0D9C U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "G‍ya",
+   "verdict": "ok"
+  },
+  "ග්‍ර": {
+   "codes": "U+0D9C U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "G‍ra",
+   "verdict": "ok"
+  },
+  "ගා": {
+   "codes": "U+0D9C U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Gaa",
+   "verdict": "ok"
+  },
+  "ගැ": {
+   "codes": "U+0D9C U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Gae",
+   "verdict": "ok"
+  },
+  "ගෑ": {
+   "codes": "U+0D9C U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Gaee",
+   "verdict": "ok"
+  },
+  "ගි": {
+   "codes": "U+0D9C U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Gi",
+   "verdict": "ok"
+  },
+  "ගී": {
+   "codes": "U+0D9C U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Gii",
+   "verdict": "ok"
+  },
+  "ගු": {
+   "codes": "U+0D9C U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Gu",
+   "verdict": "ok"
+  },
+  "ගූ": {
+   "codes": "U+0D9C U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Guu",
+   "verdict": "ok"
+  },
+  "ගෘ": {
+   "codes": "U+0D9C U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Gru",
+   "verdict": "ok"
+  },
+  "ගෙ": {
+   "codes": "U+0D9C U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ge",
+   "verdict": "ok"
+  },
+  "ගේ": {
+   "codes": "U+0D9C U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Gee",
+   "verdict": "ok"
+  },
+  "ගෛ": {
+   "codes": "U+0D9C U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Gai",
+   "verdict": "ok"
+  },
+  "ගො": {
+   "codes": "U+0D9C U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Go",
+   "verdict": "ok"
+  },
+  "ගෝ": {
+   "codes": "U+0D9C U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Goo",
+   "verdict": "ok"
+  },
+  "ගෞ": {
+   "codes": "U+0D9C U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Gau",
+   "verdict": "ok"
+  },
+  "ගෟ": {
+   "codes": "U+0D9C U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Gaෟ",
+   "verdict": "leak"
+  },
+  "ගෲ": {
+   "codes": "U+0D9C U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Gruu",
+   "verdict": "ok"
+  },
+  "ගෳ": {
+   "codes": "U+0D9C U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Gaෳ",
+   "verdict": "leak"
+  },
+  "ඝ": {
+   "codes": "U+0D9D",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Gha",
+   "verdict": "ok"
+  },
+  "ඝ්": {
+   "codes": "U+0D9D U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "Gh",
+   "verdict": "ok"
+  },
+  "ඝ්‍ය": {
+   "codes": "U+0D9D U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "Gh‍ya",
+   "verdict": "ok"
+  },
+  "ඝ්‍ර": {
+   "codes": "U+0D9D U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "Gh‍ra",
+   "verdict": "ok"
+  },
+  "ඝා": {
+   "codes": "U+0D9D U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ghaa",
+   "verdict": "ok"
+  },
+  "ඝැ": {
+   "codes": "U+0D9D U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ghae",
+   "verdict": "ok"
+  },
+  "ඝෑ": {
+   "codes": "U+0D9D U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ghaee",
+   "verdict": "ok"
+  },
+  "ඝි": {
+   "codes": "U+0D9D U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ghi",
+   "verdict": "ok"
+  },
+  "ඝී": {
+   "codes": "U+0D9D U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ghii",
+   "verdict": "ok"
+  },
+  "ඝු": {
+   "codes": "U+0D9D U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ghu",
+   "verdict": "ok"
+  },
+  "ඝූ": {
+   "codes": "U+0D9D U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ghuu",
+   "verdict": "ok"
+  },
+  "ඝෘ": {
+   "codes": "U+0D9D U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ghru",
+   "verdict": "ok"
+  },
+  "ඝෙ": {
+   "codes": "U+0D9D U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ghe",
+   "verdict": "ok"
+  },
+  "ඝේ": {
+   "codes": "U+0D9D U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ghee",
+   "verdict": "ok"
+  },
+  "ඝෛ": {
+   "codes": "U+0D9D U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ghai",
+   "verdict": "ok"
+  },
+  "ඝො": {
+   "codes": "U+0D9D U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Gho",
+   "verdict": "ok"
+  },
+  "ඝෝ": {
+   "codes": "U+0D9D U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ghoo",
+   "verdict": "ok"
+  },
+  "ඝෞ": {
+   "codes": "U+0D9D U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ghau",
+   "verdict": "ok"
+  },
+  "ඝෟ": {
+   "codes": "U+0D9D U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Ghaෟ",
+   "verdict": "leak"
+  },
+  "ඝෲ": {
+   "codes": "U+0D9D U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ghruu",
+   "verdict": "ok"
+  },
+  "ඝෳ": {
+   "codes": "U+0D9D U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Ghaෳ",
+   "verdict": "leak"
+  },
+  "ඞ": {
+   "codes": "U+0D9E",
+   "detail": "unromanized U+0D9E",
+   "kind": "consonant",
+   "leaked": "ඞ",
+   "raw": "ඞ",
+   "verdict": "leak"
+  },
+  "ඞ්": {
+   "codes": "U+0D9E U+0DCA",
+   "detail": "unromanized U+0D9E U+0DCA",
+   "kind": "akshara_hal",
+   "leaked": "ඞ්",
+   "raw": "ඞ්",
+   "verdict": "leak"
+  },
+  "ඞ්‍ය": {
+   "codes": "U+0D9E U+0DCA U+200D U+0DBA",
+   "detail": "unromanized U+0D9E U+0DCA",
+   "kind": "conjunct_ya",
+   "leaked": "ඞ්",
+   "raw": "ඞ්‍ya",
+   "verdict": "leak"
+  },
+  "ඞ්‍ර": {
+   "codes": "U+0D9E U+0DCA U+200D U+0DBB",
+   "detail": "unromanized U+0D9E U+0DCA",
+   "kind": "conjunct_ra",
+   "leaked": "ඞ්",
+   "raw": "ඞ්‍ra",
+   "verdict": "leak"
+  },
+  "ඞා": {
+   "codes": "U+0D9E U+0DCF",
+   "detail": "unromanized U+0D9E U+0DCF",
+   "kind": "akshara",
+   "leaked": "ඞා",
+   "raw": "ඞා",
+   "verdict": "leak"
+  },
+  "ඞැ": {
+   "codes": "U+0D9E U+0DD0",
+   "detail": "unromanized U+0D9E U+0DD0",
+   "kind": "akshara",
+   "leaked": "ඞැ",
+   "raw": "ඞැ",
+   "verdict": "leak"
+  },
+  "ඞෑ": {
+   "codes": "U+0D9E U+0DD1",
+   "detail": "unromanized U+0D9E U+0DD1",
+   "kind": "akshara",
+   "leaked": "ඞෑ",
+   "raw": "ඞෑ",
+   "verdict": "leak"
+  },
+  "ඞි": {
+   "codes": "U+0D9E U+0DD2",
+   "detail": "unromanized U+0D9E U+0DD2",
+   "kind": "akshara",
+   "leaked": "ඞි",
+   "raw": "ඞි",
+   "verdict": "leak"
+  },
+  "ඞී": {
+   "codes": "U+0D9E U+0DD3",
+   "detail": "unromanized U+0D9E U+0DD3",
+   "kind": "akshara",
+   "leaked": "ඞී",
+   "raw": "ඞී",
+   "verdict": "leak"
+  },
+  "ඞු": {
+   "codes": "U+0D9E U+0DD4",
+   "detail": "unromanized U+0D9E U+0DD4",
+   "kind": "akshara",
+   "leaked": "ඞු",
+   "raw": "ඞු",
+   "verdict": "leak"
+  },
+  "ඞූ": {
+   "codes": "U+0D9E U+0DD6",
+   "detail": "unromanized U+0D9E U+0DD6",
+   "kind": "akshara",
+   "leaked": "ඞූ",
+   "raw": "ඞූ",
+   "verdict": "leak"
+  },
+  "ඞෘ": {
+   "codes": "U+0D9E U+0DD8",
+   "detail": "unromanized U+0D9E U+0DD8",
+   "kind": "akshara",
+   "leaked": "ඞෘ",
+   "raw": "ඞෘ",
+   "verdict": "leak"
+  },
+  "ඞෙ": {
+   "codes": "U+0D9E U+0DD9",
+   "detail": "unromanized U+0D9E U+0DD9",
+   "kind": "akshara",
+   "leaked": "ඞෙ",
+   "raw": "ඞෙ",
+   "verdict": "leak"
+  },
+  "ඞේ": {
+   "codes": "U+0D9E U+0DDA",
+   "detail": "unromanized U+0D9E U+0DDA",
+   "kind": "akshara",
+   "leaked": "ඞේ",
+   "raw": "ඞේ",
+   "verdict": "leak"
+  },
+  "ඞෛ": {
+   "codes": "U+0D9E U+0DDB",
+   "detail": "unromanized U+0D9E U+0DDB",
+   "kind": "akshara",
+   "leaked": "ඞෛ",
+   "raw": "ඞෛ",
+   "verdict": "leak"
+  },
+  "ඞො": {
+   "codes": "U+0D9E U+0DDC",
+   "detail": "unromanized U+0D9E U+0DDC",
+   "kind": "akshara",
+   "leaked": "ඞො",
+   "raw": "ඞො",
+   "verdict": "leak"
+  },
+  "ඞෝ": {
+   "codes": "U+0D9E U+0DDD",
+   "detail": "unromanized U+0D9E U+0DDD",
+   "kind": "akshara",
+   "leaked": "ඞෝ",
+   "raw": "ඞෝ",
+   "verdict": "leak"
+  },
+  "ඞෞ": {
+   "codes": "U+0D9E U+0DDE",
+   "detail": "unromanized U+0D9E U+0DDE",
+   "kind": "akshara",
+   "leaked": "ඞෞ",
+   "raw": "ඞෞ",
+   "verdict": "leak"
+  },
+  "ඞෟ": {
+   "codes": "U+0D9E U+0DDF",
+   "detail": "unromanized U+0D9E U+0DDF",
+   "kind": "akshara",
+   "leaked": "ඞෟ",
+   "raw": "ඞෟ",
+   "verdict": "leak"
+  },
+  "ඞෲ": {
+   "codes": "U+0D9E U+0DF2",
+   "detail": "unromanized U+0D9E U+0DF2",
+   "kind": "akshara",
+   "leaked": "ඞෲ",
+   "raw": "ඞෲ",
+   "verdict": "leak"
+  },
+  "ඞෳ": {
+   "codes": "U+0D9E U+0DF3",
+   "detail": "unromanized U+0D9E U+0DF3",
+   "kind": "akshara",
+   "leaked": "ඞෳ",
+   "raw": "ඞෳ",
+   "verdict": "leak"
+  },
+  "ඟ": {
+   "codes": "U+0D9F",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "N̆ga",
+   "verdict": "ok"
+  },
+  "ඟ්": {
+   "codes": "U+0D9F U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "N̆g",
+   "verdict": "ok"
+  },
+  "ඟ්‍ය": {
+   "codes": "U+0D9F U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "N̆g‍ya",
+   "verdict": "ok"
+  },
+  "ඟ්‍ර": {
+   "codes": "U+0D9F U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "N̆g‍ra",
+   "verdict": "ok"
+  },
+  "ඟා": {
+   "codes": "U+0D9F U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆gaa",
+   "verdict": "ok"
+  },
+  "ඟැ": {
+   "codes": "U+0D9F U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆gae",
+   "verdict": "ok"
+  },
+  "ඟෑ": {
+   "codes": "U+0D9F U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆gaee",
+   "verdict": "ok"
+  },
+  "ඟි": {
+   "codes": "U+0D9F U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆gi",
+   "verdict": "ok"
+  },
+  "ඟී": {
+   "codes": "U+0D9F U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆gii",
+   "verdict": "ok"
+  },
+  "ඟු": {
+   "codes": "U+0D9F U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆gu",
+   "verdict": "ok"
+  },
+  "ඟූ": {
+   "codes": "U+0D9F U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆guu",
+   "verdict": "ok"
+  },
+  "ඟෘ": {
+   "codes": "U+0D9F U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆gru",
+   "verdict": "ok"
+  },
+  "ඟෙ": {
+   "codes": "U+0D9F U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆ge",
+   "verdict": "ok"
+  },
+  "ඟේ": {
+   "codes": "U+0D9F U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆gee",
+   "verdict": "ok"
+  },
+  "ඟෛ": {
+   "codes": "U+0D9F U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆gai",
+   "verdict": "ok"
+  },
+  "ඟො": {
+   "codes": "U+0D9F U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆go",
+   "verdict": "ok"
+  },
+  "ඟෝ": {
+   "codes": "U+0D9F U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆goo",
+   "verdict": "ok"
+  },
+  "ඟෞ": {
+   "codes": "U+0D9F U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆gau",
+   "verdict": "ok"
+  },
+  "ඟෟ": {
+   "codes": "U+0D9F U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "N̆gaෟ",
+   "verdict": "leak"
+  },
+  "ඟෲ": {
+   "codes": "U+0D9F U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆gruu",
+   "verdict": "ok"
+  },
+  "ඟෳ": {
+   "codes": "U+0D9F U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "N̆gaෳ",
+   "verdict": "leak"
+  },
+  "ච": {
+   "codes": "U+0DA0",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Cha",
+   "verdict": "ok"
+  },
+  "ච්": {
+   "codes": "U+0DA0 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "Ch",
+   "verdict": "ok"
+  },
+  "ච්‍ය": {
+   "codes": "U+0DA0 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "Ch‍ya",
+   "verdict": "ok"
+  },
+  "ච්‍ර": {
+   "codes": "U+0DA0 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "Ch‍ra",
+   "verdict": "ok"
+  },
+  "චා": {
+   "codes": "U+0DA0 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chaa",
+   "verdict": "ok"
+  },
+  "චැ": {
+   "codes": "U+0DA0 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chae",
+   "verdict": "ok"
+  },
+  "චෑ": {
+   "codes": "U+0DA0 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chaee",
+   "verdict": "ok"
+  },
+  "චි": {
+   "codes": "U+0DA0 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chi",
+   "verdict": "ok"
+  },
+  "චී": {
+   "codes": "U+0DA0 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chii",
+   "verdict": "ok"
+  },
+  "චු": {
+   "codes": "U+0DA0 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chu",
+   "verdict": "ok"
+  },
+  "චූ": {
+   "codes": "U+0DA0 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chuu",
+   "verdict": "ok"
+  },
+  "චෘ": {
+   "codes": "U+0DA0 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chru",
+   "verdict": "ok"
+  },
+  "චෙ": {
+   "codes": "U+0DA0 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Che",
+   "verdict": "ok"
+  },
+  "චේ": {
+   "codes": "U+0DA0 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chee",
+   "verdict": "ok"
+  },
+  "චෛ": {
+   "codes": "U+0DA0 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chai",
+   "verdict": "ok"
+  },
+  "චො": {
+   "codes": "U+0DA0 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Cho",
+   "verdict": "ok"
+  },
+  "චෝ": {
+   "codes": "U+0DA0 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Choo",
+   "verdict": "ok"
+  },
+  "චෞ": {
+   "codes": "U+0DA0 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chau",
+   "verdict": "ok"
+  },
+  "චෟ": {
+   "codes": "U+0DA0 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Chaෟ",
+   "verdict": "leak"
+  },
+  "චෲ": {
+   "codes": "U+0DA0 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chruu",
+   "verdict": "ok"
+  },
+  "චෳ": {
+   "codes": "U+0DA0 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Chaෳ",
+   "verdict": "leak"
+  },
+  "ඡ": {
+   "codes": "U+0DA1",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Cha",
+   "verdict": "ok"
+  },
+  "ඡ්": {
+   "codes": "U+0DA1 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "Ch",
+   "verdict": "ok"
+  },
+  "ඡ්‍ය": {
+   "codes": "U+0DA1 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "Ch‍ya",
+   "verdict": "ok"
+  },
+  "ඡ්‍ර": {
+   "codes": "U+0DA1 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "Ch‍ra",
+   "verdict": "ok"
+  },
+  "ඡා": {
+   "codes": "U+0DA1 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chaa",
+   "verdict": "ok"
+  },
+  "ඡැ": {
+   "codes": "U+0DA1 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chae",
+   "verdict": "ok"
+  },
+  "ඡෑ": {
+   "codes": "U+0DA1 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chaee",
+   "verdict": "ok"
+  },
+  "ඡි": {
+   "codes": "U+0DA1 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chi",
+   "verdict": "ok"
+  },
+  "ඡී": {
+   "codes": "U+0DA1 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chii",
+   "verdict": "ok"
+  },
+  "ඡු": {
+   "codes": "U+0DA1 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chu",
+   "verdict": "ok"
+  },
+  "ඡූ": {
+   "codes": "U+0DA1 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chuu",
+   "verdict": "ok"
+  },
+  "ඡෘ": {
+   "codes": "U+0DA1 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chru",
+   "verdict": "ok"
+  },
+  "ඡෙ": {
+   "codes": "U+0DA1 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Che",
+   "verdict": "ok"
+  },
+  "ඡේ": {
+   "codes": "U+0DA1 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chee",
+   "verdict": "ok"
+  },
+  "ඡෛ": {
+   "codes": "U+0DA1 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chai",
+   "verdict": "ok"
+  },
+  "ඡො": {
+   "codes": "U+0DA1 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Cho",
+   "verdict": "ok"
+  },
+  "ඡෝ": {
+   "codes": "U+0DA1 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Choo",
+   "verdict": "ok"
+  },
+  "ඡෞ": {
+   "codes": "U+0DA1 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chau",
+   "verdict": "ok"
+  },
+  "ඡෟ": {
+   "codes": "U+0DA1 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Chaෟ",
+   "verdict": "leak"
+  },
+  "ඡෲ": {
+   "codes": "U+0DA1 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Chruu",
+   "verdict": "ok"
+  },
+  "ඡෳ": {
+   "codes": "U+0DA1 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Chaෳ",
+   "verdict": "leak"
+  },
+  "ජ": {
+   "codes": "U+0DA2",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Ja",
+   "verdict": "ok"
+  },
+  "ජ්": {
+   "codes": "U+0DA2 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "J",
+   "verdict": "ok"
+  },
+  "ජ්‍ය": {
+   "codes": "U+0DA2 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "J‍ya",
+   "verdict": "ok"
+  },
+  "ජ්‍ර": {
+   "codes": "U+0DA2 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "J‍ra",
+   "verdict": "ok"
+  },
+  "ජා": {
+   "codes": "U+0DA2 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jaa",
+   "verdict": "ok"
+  },
+  "ජැ": {
+   "codes": "U+0DA2 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jae",
+   "verdict": "ok"
+  },
+  "ජෑ": {
+   "codes": "U+0DA2 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jaee",
+   "verdict": "ok"
+  },
+  "ජි": {
+   "codes": "U+0DA2 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ji",
+   "verdict": "ok"
+  },
+  "ජී": {
+   "codes": "U+0DA2 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jii",
+   "verdict": "ok"
+  },
+  "ජු": {
+   "codes": "U+0DA2 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ju",
+   "verdict": "ok"
+  },
+  "ජූ": {
+   "codes": "U+0DA2 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Juu",
+   "verdict": "ok"
+  },
+  "ජෘ": {
+   "codes": "U+0DA2 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jru",
+   "verdict": "ok"
+  },
+  "ජෙ": {
+   "codes": "U+0DA2 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Je",
+   "verdict": "ok"
+  },
+  "ජේ": {
+   "codes": "U+0DA2 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jee",
+   "verdict": "ok"
+  },
+  "ජෛ": {
+   "codes": "U+0DA2 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jai",
+   "verdict": "ok"
+  },
+  "ජො": {
+   "codes": "U+0DA2 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jo",
+   "verdict": "ok"
+  },
+  "ජෝ": {
+   "codes": "U+0DA2 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Joo",
+   "verdict": "ok"
+  },
+  "ජෞ": {
+   "codes": "U+0DA2 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jau",
+   "verdict": "ok"
+  },
+  "ජෟ": {
+   "codes": "U+0DA2 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Jaෟ",
+   "verdict": "leak"
+  },
+  "ජෲ": {
+   "codes": "U+0DA2 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jruu",
+   "verdict": "ok"
+  },
+  "ජෳ": {
+   "codes": "U+0DA2 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Jaෳ",
+   "verdict": "leak"
+  },
+  "ඣ": {
+   "codes": "U+0DA3",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Jha",
+   "verdict": "ok"
+  },
+  "ඣ්": {
+   "codes": "U+0DA3 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "Jh",
+   "verdict": "ok"
+  },
+  "ඣ්‍ය": {
+   "codes": "U+0DA3 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "Jh‍ya",
+   "verdict": "ok"
+  },
+  "ඣ්‍ර": {
+   "codes": "U+0DA3 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "Jh‍ra",
+   "verdict": "ok"
+  },
+  "ඣා": {
+   "codes": "U+0DA3 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jhaa",
+   "verdict": "ok"
+  },
+  "ඣැ": {
+   "codes": "U+0DA3 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jhae",
+   "verdict": "ok"
+  },
+  "ඣෑ": {
+   "codes": "U+0DA3 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jhaee",
+   "verdict": "ok"
+  },
+  "ඣි": {
+   "codes": "U+0DA3 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jhi",
+   "verdict": "ok"
+  },
+  "ඣී": {
+   "codes": "U+0DA3 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jhii",
+   "verdict": "ok"
+  },
+  "ඣු": {
+   "codes": "U+0DA3 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jhu",
+   "verdict": "ok"
+  },
+  "ඣූ": {
+   "codes": "U+0DA3 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jhuu",
+   "verdict": "ok"
+  },
+  "ඣෘ": {
+   "codes": "U+0DA3 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jhru",
+   "verdict": "ok"
+  },
+  "ඣෙ": {
+   "codes": "U+0DA3 U+0DD9",
+   "detail": "unromanized U+0DD9",
+   "kind": "akshara",
+   "leaked": "ෙ",
+   "raw": "Jhaෙ",
+   "verdict": "leak"
+  },
+  "ඣේ": {
+   "codes": "U+0DA3 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jhee",
+   "verdict": "ok"
+  },
+  "ඣෛ": {
+   "codes": "U+0DA3 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jhai",
+   "verdict": "ok"
+  },
+  "ඣො": {
+   "codes": "U+0DA3 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jho",
+   "verdict": "ok"
+  },
+  "ඣෝ": {
+   "codes": "U+0DA3 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jhoo",
+   "verdict": "ok"
+  },
+  "ඣෞ": {
+   "codes": "U+0DA3 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jhau",
+   "verdict": "ok"
+  },
+  "ඣෟ": {
+   "codes": "U+0DA3 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Jhaෟ",
+   "verdict": "leak"
+  },
+  "ඣෲ": {
+   "codes": "U+0DA3 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jhruu",
+   "verdict": "ok"
+  },
+  "ඣෳ": {
+   "codes": "U+0DA3 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Jhaෳ",
+   "verdict": "leak"
+  },
+  "ඤ": {
+   "codes": "U+0DA4",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "n",
+   "verdict": "ok"
+  },
+  "ඤ්": {
+   "codes": "U+0DA4 U+0DCA",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "akshara_hal",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤ්‍ය": {
+   "codes": "U+0DA4 U+0DCA U+200D U+0DBA",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "conjunct_ya",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤ්‍ර": {
+   "codes": "U+0DA4 U+0DCA U+200D U+0DBB",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "conjunct_ra",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤා": {
+   "codes": "U+0DA4 U+0DCF",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "akshara",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤැ": {
+   "codes": "U+0DA4 U+0DD0",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "akshara",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤෑ": {
+   "codes": "U+0DA4 U+0DD1",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "akshara",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤි": {
+   "codes": "U+0DA4 U+0DD2",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "akshara",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤී": {
+   "codes": "U+0DA4 U+0DD3",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "akshara",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤු": {
+   "codes": "U+0DA4 U+0DD4",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "akshara",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤූ": {
+   "codes": "U+0DA4 U+0DD6",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "akshara",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤෘ": {
+   "codes": "U+0DA4 U+0DD8",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "akshara",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤෙ": {
+   "codes": "U+0DA4 U+0DD9",
+   "detail": "unromanized U+0DD9",
+   "kind": "akshara",
+   "leaked": "ෙ",
+   "raw": "nෙ",
+   "verdict": "leak"
+  },
+  "ඤේ": {
+   "codes": "U+0DA4 U+0DDA",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "akshara",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤෛ": {
+   "codes": "U+0DA4 U+0DDB",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "akshara",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤො": {
+   "codes": "U+0DA4 U+0DDC",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "akshara",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤෝ": {
+   "codes": "U+0DA4 U+0DDD",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "akshara",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤෞ": {
+   "codes": "U+0DA4 U+0DDE",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "akshara",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤෟ": {
+   "codes": "U+0DA4 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "nෟ",
+   "verdict": "leak"
+  },
+  "ඤෲ": {
+   "codes": "U+0DA4 U+0DF2",
+   "detail": "endpoint returned its empty placeholder",
+   "kind": "akshara",
+   "raw": "",
+   "verdict": "fail"
+  },
+  "ඤෳ": {
+   "codes": "U+0DA4 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "nෳ",
+   "verdict": "leak"
+  },
+  "ඥ": {
+   "codes": "U+0DA5",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Jna",
+   "verdict": "ok"
+  },
+  "ඥ්": {
+   "codes": "U+0DA5 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "Jn",
+   "verdict": "ok"
+  },
+  "ඥ්‍ය": {
+   "codes": "U+0DA5 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "Jn‍ya",
+   "verdict": "ok"
+  },
+  "ඥ්‍ර": {
+   "codes": "U+0DA5 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "Jn‍ra",
+   "verdict": "ok"
+  },
+  "ඥා": {
+   "codes": "U+0DA5 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jnaa",
+   "verdict": "ok"
+  },
+  "ඥැ": {
+   "codes": "U+0DA5 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jnae",
+   "verdict": "ok"
+  },
+  "ඥෑ": {
+   "codes": "U+0DA5 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jnaee",
+   "verdict": "ok"
+  },
+  "ඥි": {
+   "codes": "U+0DA5 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jni",
+   "verdict": "ok"
+  },
+  "ඥී": {
+   "codes": "U+0DA5 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jnii",
+   "verdict": "ok"
+  },
+  "ඥු": {
+   "codes": "U+0DA5 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jnu",
+   "verdict": "ok"
+  },
+  "ඥූ": {
+   "codes": "U+0DA5 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jnuu",
+   "verdict": "ok"
+  },
+  "ඥෘ": {
+   "codes": "U+0DA5 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jnru",
+   "verdict": "ok"
+  },
+  "ඥෙ": {
+   "codes": "U+0DA5 U+0DD9",
+   "detail": "unromanized U+0DD9",
+   "kind": "akshara",
+   "leaked": "ෙ",
+   "raw": "Jnaෙ",
+   "verdict": "leak"
+  },
+  "ඥේ": {
+   "codes": "U+0DA5 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jnee",
+   "verdict": "ok"
+  },
+  "ඥෛ": {
+   "codes": "U+0DA5 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jnai",
+   "verdict": "ok"
+  },
+  "ඥො": {
+   "codes": "U+0DA5 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jno",
+   "verdict": "ok"
+  },
+  "ඥෝ": {
+   "codes": "U+0DA5 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jnoo",
+   "verdict": "ok"
+  },
+  "ඥෞ": {
+   "codes": "U+0DA5 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jnau",
+   "verdict": "ok"
+  },
+  "ඥෟ": {
+   "codes": "U+0DA5 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Jnaෟ",
+   "verdict": "leak"
+  },
+  "ඥෲ": {
+   "codes": "U+0DA5 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Jnruu",
+   "verdict": "ok"
+  },
+  "ඥෳ": {
+   "codes": "U+0DA5 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Jnaෳ",
+   "verdict": "leak"
+  },
+  "ඦ": {
+   "codes": "U+0DA6",
+   "detail": "unromanized U+0DA6",
+   "kind": "consonant",
+   "leaked": "ඦ",
+   "raw": "ඦ",
+   "verdict": "leak"
+  },
+  "ඦ්": {
+   "codes": "U+0DA6 U+0DCA",
+   "detail": "unromanized U+0DA6 U+0DCA",
+   "kind": "akshara_hal",
+   "leaked": "ඦ්",
+   "raw": "ඦ්",
+   "verdict": "leak"
+  },
+  "ඦ්‍ය": {
+   "codes": "U+0DA6 U+0DCA U+200D U+0DBA",
+   "detail": "unromanized U+0DA6 U+0DCA",
+   "kind": "conjunct_ya",
+   "leaked": "ඦ්",
+   "raw": "ඦ්‍ya",
+   "verdict": "leak"
+  },
+  "ඦ්‍ර": {
+   "codes": "U+0DA6 U+0DCA U+200D U+0DBB",
+   "detail": "unromanized U+0DA6 U+0DCA",
+   "kind": "conjunct_ra",
+   "leaked": "ඦ්",
+   "raw": "ඦ්‍ra",
+   "verdict": "leak"
+  },
+  "ඦා": {
+   "codes": "U+0DA6 U+0DCF",
+   "detail": "unromanized U+0DA6 U+0DCF",
+   "kind": "akshara",
+   "leaked": "ඦා",
+   "raw": "ඦා",
+   "verdict": "leak"
+  },
+  "ඦැ": {
+   "codes": "U+0DA6 U+0DD0",
+   "detail": "unromanized U+0DA6 U+0DD0",
+   "kind": "akshara",
+   "leaked": "ඦැ",
+   "raw": "ඦැ",
+   "verdict": "leak"
+  },
+  "ඦෑ": {
+   "codes": "U+0DA6 U+0DD1",
+   "detail": "unromanized U+0DA6 U+0DD1",
+   "kind": "akshara",
+   "leaked": "ඦෑ",
+   "raw": "ඦෑ",
+   "verdict": "leak"
+  },
+  "ඦි": {
+   "codes": "U+0DA6 U+0DD2",
+   "detail": "unromanized U+0DA6 U+0DD2",
+   "kind": "akshara",
+   "leaked": "ඦි",
+   "raw": "ඦි",
+   "verdict": "leak"
+  },
+  "ඦී": {
+   "codes": "U+0DA6 U+0DD3",
+   "detail": "unromanized U+0DA6 U+0DD3",
+   "kind": "akshara",
+   "leaked": "ඦී",
+   "raw": "ඦී",
+   "verdict": "leak"
+  },
+  "ඦු": {
+   "codes": "U+0DA6 U+0DD4",
+   "detail": "unromanized U+0DA6 U+0DD4",
+   "kind": "akshara",
+   "leaked": "ඦු",
+   "raw": "ඦු",
+   "verdict": "leak"
+  },
+  "ඦූ": {
+   "codes": "U+0DA6 U+0DD6",
+   "detail": "unromanized U+0DA6 U+0DD6",
+   "kind": "akshara",
+   "leaked": "ඦූ",
+   "raw": "ඦූ",
+   "verdict": "leak"
+  },
+  "ඦෘ": {
+   "codes": "U+0DA6 U+0DD8",
+   "detail": "unromanized U+0DA6 U+0DD8",
+   "kind": "akshara",
+   "leaked": "ඦෘ",
+   "raw": "ඦෘ",
+   "verdict": "leak"
+  },
+  "ඦෙ": {
+   "codes": "U+0DA6 U+0DD9",
+   "detail": "unromanized U+0DA6 U+0DD9",
+   "kind": "akshara",
+   "leaked": "ඦෙ",
+   "raw": "ඦෙ",
+   "verdict": "leak"
+  },
+  "ඦේ": {
+   "codes": "U+0DA6 U+0DDA",
+   "detail": "unromanized U+0DA6 U+0DDA",
+   "kind": "akshara",
+   "leaked": "ඦේ",
+   "raw": "ඦේ",
+   "verdict": "leak"
+  },
+  "ඦෛ": {
+   "codes": "U+0DA6 U+0DDB",
+   "detail": "unromanized U+0DA6 U+0DDB",
+   "kind": "akshara",
+   "leaked": "ඦෛ",
+   "raw": "ඦෛ",
+   "verdict": "leak"
+  },
+  "ඦො": {
+   "codes": "U+0DA6 U+0DDC",
+   "detail": "unromanized U+0DA6 U+0DDC",
+   "kind": "akshara",
+   "leaked": "ඦො",
+   "raw": "ඦො",
+   "verdict": "leak"
+  },
+  "ඦෝ": {
+   "codes": "U+0DA6 U+0DDD",
+   "detail": "unromanized U+0DA6 U+0DDD",
+   "kind": "akshara",
+   "leaked": "ඦෝ",
+   "raw": "ඦෝ",
+   "verdict": "leak"
+  },
+  "ඦෞ": {
+   "codes": "U+0DA6 U+0DDE",
+   "detail": "unromanized U+0DA6 U+0DDE",
+   "kind": "akshara",
+   "leaked": "ඦෞ",
+   "raw": "ඦෞ",
+   "verdict": "leak"
+  },
+  "ඦෟ": {
+   "codes": "U+0DA6 U+0DDF",
+   "detail": "unromanized U+0DA6 U+0DDF",
+   "kind": "akshara",
+   "leaked": "ඦෟ",
+   "raw": "ඦෟ",
+   "verdict": "leak"
+  },
+  "ඦෲ": {
+   "codes": "U+0DA6 U+0DF2",
+   "detail": "unromanized U+0DA6 U+0DF2",
+   "kind": "akshara",
+   "leaked": "ඦෲ",
+   "raw": "ඦෲ",
+   "verdict": "leak"
+  },
+  "ඦෳ": {
+   "codes": "U+0DA6 U+0DF3",
+   "detail": "unromanized U+0DA6 U+0DF3",
+   "kind": "akshara",
+   "leaked": "ඦෳ",
+   "raw": "ඦෳ",
+   "verdict": "leak"
+  },
+  "ට": {
+   "codes": "U+0DA7",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "ta",
+   "verdict": "ok"
+  },
+  "ට්": {
+   "codes": "U+0DA7 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "t",
+   "verdict": "ok"
+  },
+  "ට්‍ය": {
+   "codes": "U+0DA7 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "t‍ya",
+   "verdict": "ok"
+  },
+  "ට්‍ර": {
+   "codes": "U+0DA7 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "t‍ra",
+   "verdict": "ok"
+  },
+  "ටා": {
+   "codes": "U+0DA7 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "taa",
+   "verdict": "ok"
+  },
+  "ටැ": {
+   "codes": "U+0DA7 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "tae",
+   "verdict": "ok"
+  },
+  "ටෑ": {
+   "codes": "U+0DA7 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "taee",
+   "verdict": "ok"
+  },
+  "ටි": {
+   "codes": "U+0DA7 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "ti",
+   "verdict": "ok"
+  },
+  "ටී": {
+   "codes": "U+0DA7 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "tii",
+   "verdict": "ok"
+  },
+  "ටු": {
+   "codes": "U+0DA7 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "tu",
+   "verdict": "ok"
+  },
+  "ටූ": {
+   "codes": "U+0DA7 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "tuu",
+   "verdict": "ok"
+  },
+  "ටෘ": {
+   "codes": "U+0DA7 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "tru",
+   "verdict": "ok"
+  },
+  "ටෙ": {
+   "codes": "U+0DA7 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "te",
+   "verdict": "ok"
+  },
+  "ටේ": {
+   "codes": "U+0DA7 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "tee",
+   "verdict": "ok"
+  },
+  "ටෛ": {
+   "codes": "U+0DA7 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "tai",
+   "verdict": "ok"
+  },
+  "ටො": {
+   "codes": "U+0DA7 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "to",
+   "verdict": "ok"
+  },
+  "ටෝ": {
+   "codes": "U+0DA7 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "too",
+   "verdict": "ok"
+  },
+  "ටෞ": {
+   "codes": "U+0DA7 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "tau",
+   "verdict": "ok"
+  },
+  "ටෟ": {
+   "codes": "U+0DA7 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "taෟ",
+   "verdict": "leak"
+  },
+  "ටෲ": {
+   "codes": "U+0DA7 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "truu",
+   "verdict": "ok"
+  },
+  "ටෳ": {
+   "codes": "U+0DA7 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "taෳ",
+   "verdict": "leak"
+  },
+  "ඨ": {
+   "codes": "U+0DA8",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "tha",
+   "verdict": "ok"
+  },
+  "ඨ්": {
+   "codes": "U+0DA8 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "th",
+   "verdict": "ok"
+  },
+  "ඨ්‍ය": {
+   "codes": "U+0DA8 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "th‍ya",
+   "verdict": "ok"
+  },
+  "ඨ්‍ර": {
+   "codes": "U+0DA8 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "th‍ra",
+   "verdict": "ok"
+  },
+  "ඨා": {
+   "codes": "U+0DA8 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "thaa",
+   "verdict": "ok"
+  },
+  "ඨැ": {
+   "codes": "U+0DA8 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "thae",
+   "verdict": "ok"
+  },
+  "ඨෑ": {
+   "codes": "U+0DA8 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "thaee",
+   "verdict": "ok"
+  },
+  "ඨි": {
+   "codes": "U+0DA8 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "thi",
+   "verdict": "ok"
+  },
+  "ඨී": {
+   "codes": "U+0DA8 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "thii",
+   "verdict": "ok"
+  },
+  "ඨු": {
+   "codes": "U+0DA8 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "thu",
+   "verdict": "ok"
+  },
+  "ඨූ": {
+   "codes": "U+0DA8 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "thuu",
+   "verdict": "ok"
+  },
+  "ඨෘ": {
+   "codes": "U+0DA8 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "thru",
+   "verdict": "ok"
+  },
+  "ඨෙ": {
+   "codes": "U+0DA8 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "the",
+   "verdict": "ok"
+  },
+  "ඨේ": {
+   "codes": "U+0DA8 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "thee",
+   "verdict": "ok"
+  },
+  "ඨෛ": {
+   "codes": "U+0DA8 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "thai",
+   "verdict": "ok"
+  },
+  "ඨො": {
+   "codes": "U+0DA8 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "tho",
+   "verdict": "ok"
+  },
+  "ඨෝ": {
+   "codes": "U+0DA8 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "thoo",
+   "verdict": "ok"
+  },
+  "ඨෞ": {
+   "codes": "U+0DA8 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "thau",
+   "verdict": "ok"
+  },
+  "ඨෟ": {
+   "codes": "U+0DA8 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "thaෟ",
+   "verdict": "leak"
+  },
+  "ඨෲ": {
+   "codes": "U+0DA8 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "thruu",
+   "verdict": "ok"
+  },
+  "ඨෳ": {
+   "codes": "U+0DA8 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "thaෳ",
+   "verdict": "leak"
+  },
+  "ඩ": {
+   "codes": "U+0DA9",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "da",
+   "verdict": "ok"
+  },
+  "ඩ්": {
+   "codes": "U+0DA9 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "d",
+   "verdict": "ok"
+  },
+  "ඩ්‍ය": {
+   "codes": "U+0DA9 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "d‍ya",
+   "verdict": "ok"
+  },
+  "ඩ්‍ර": {
+   "codes": "U+0DA9 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "d‍ra",
+   "verdict": "ok"
+  },
+  "ඩා": {
+   "codes": "U+0DA9 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "daa",
+   "verdict": "ok"
+  },
+  "ඩැ": {
+   "codes": "U+0DA9 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dae",
+   "verdict": "ok"
+  },
+  "ඩෑ": {
+   "codes": "U+0DA9 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "daee",
+   "verdict": "ok"
+  },
+  "ඩි": {
+   "codes": "U+0DA9 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "di",
+   "verdict": "ok"
+  },
+  "ඩී": {
+   "codes": "U+0DA9 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dii",
+   "verdict": "ok"
+  },
+  "ඩු": {
+   "codes": "U+0DA9 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "du",
+   "verdict": "ok"
+  },
+  "ඩූ": {
+   "codes": "U+0DA9 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "duu",
+   "verdict": "ok"
+  },
+  "ඩෘ": {
+   "codes": "U+0DA9 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dru",
+   "verdict": "ok"
+  },
+  "ඩෙ": {
+   "codes": "U+0DA9 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "de",
+   "verdict": "ok"
+  },
+  "ඩේ": {
+   "codes": "U+0DA9 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dee",
+   "verdict": "ok"
+  },
+  "ඩෛ": {
+   "codes": "U+0DA9 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dai",
+   "verdict": "ok"
+  },
+  "ඩො": {
+   "codes": "U+0DA9 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "do",
+   "verdict": "ok"
+  },
+  "ඩෝ": {
+   "codes": "U+0DA9 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "doo",
+   "verdict": "ok"
+  },
+  "ඩෞ": {
+   "codes": "U+0DA9 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dau",
+   "verdict": "ok"
+  },
+  "ඩෟ": {
+   "codes": "U+0DA9 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "daෟ",
+   "verdict": "leak"
+  },
+  "ඩෲ": {
+   "codes": "U+0DA9 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "druu",
+   "verdict": "ok"
+  },
+  "ඩෳ": {
+   "codes": "U+0DA9 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "daෳ",
+   "verdict": "leak"
+  },
+  "ඪ": {
+   "codes": "U+0DAA",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "dha",
+   "verdict": "ok"
+  },
+  "ඪ්": {
+   "codes": "U+0DAA U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "dh",
+   "verdict": "ok"
+  },
+  "ඪ්‍ය": {
+   "codes": "U+0DAA U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "dh‍ya",
+   "verdict": "ok"
+  },
+  "ඪ්‍ර": {
+   "codes": "U+0DAA U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "dh‍ra",
+   "verdict": "ok"
+  },
+  "ඪා": {
+   "codes": "U+0DAA U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dhaa",
+   "verdict": "ok"
+  },
+  "ඪැ": {
+   "codes": "U+0DAA U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dhae",
+   "verdict": "ok"
+  },
+  "ඪෑ": {
+   "codes": "U+0DAA U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dhaee",
+   "verdict": "ok"
+  },
+  "ඪි": {
+   "codes": "U+0DAA U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dhi",
+   "verdict": "ok"
+  },
+  "ඪී": {
+   "codes": "U+0DAA U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dhii",
+   "verdict": "ok"
+  },
+  "ඪු": {
+   "codes": "U+0DAA U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dhu",
+   "verdict": "ok"
+  },
+  "ඪූ": {
+   "codes": "U+0DAA U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dhuu",
+   "verdict": "ok"
+  },
+  "ඪෘ": {
+   "codes": "U+0DAA U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dhru",
+   "verdict": "ok"
+  },
+  "ඪෙ": {
+   "codes": "U+0DAA U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dhe",
+   "verdict": "ok"
+  },
+  "ඪේ": {
+   "codes": "U+0DAA U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dhee",
+   "verdict": "ok"
+  },
+  "ඪෛ": {
+   "codes": "U+0DAA U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dhai",
+   "verdict": "ok"
+  },
+  "ඪො": {
+   "codes": "U+0DAA U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dho",
+   "verdict": "ok"
+  },
+  "ඪෝ": {
+   "codes": "U+0DAA U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dhoo",
+   "verdict": "ok"
+  },
+  "ඪෞ": {
+   "codes": "U+0DAA U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dhau",
+   "verdict": "ok"
+  },
+  "ඪෟ": {
+   "codes": "U+0DAA U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "dhaෟ",
+   "verdict": "leak"
+  },
+  "ඪෲ": {
+   "codes": "U+0DAA U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "dhruu",
+   "verdict": "ok"
+  },
+  "ඪෳ": {
+   "codes": "U+0DAA U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "dhaෳ",
+   "verdict": "leak"
+  },
+  "ණ": {
+   "codes": "U+0DAB",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "na",
+   "verdict": "ok"
+  },
+  "ණ්": {
+   "codes": "U+0DAB U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "n",
+   "verdict": "ok"
+  },
+  "ණ්‍ය": {
+   "codes": "U+0DAB U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "n‍ya",
+   "verdict": "ok"
+  },
+  "ණ්‍ර": {
+   "codes": "U+0DAB U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "n‍ra",
+   "verdict": "ok"
+  },
+  "ණා": {
+   "codes": "U+0DAB U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "naa",
+   "verdict": "ok"
+  },
+  "ණැ": {
+   "codes": "U+0DAB U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "nae",
+   "verdict": "ok"
+  },
+  "ණෑ": {
+   "codes": "U+0DAB U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "naee",
+   "verdict": "ok"
+  },
+  "ණි": {
+   "codes": "U+0DAB U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "ni",
+   "verdict": "ok"
+  },
+  "ණී": {
+   "codes": "U+0DAB U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "nii",
+   "verdict": "ok"
+  },
+  "ණු": {
+   "codes": "U+0DAB U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "nu",
+   "verdict": "ok"
+  },
+  "ණූ": {
+   "codes": "U+0DAB U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "nuu",
+   "verdict": "ok"
+  },
+  "ණෘ": {
+   "codes": "U+0DAB U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "nru",
+   "verdict": "ok"
+  },
+  "ණෙ": {
+   "codes": "U+0DAB U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "ne",
+   "verdict": "ok"
+  },
+  "ණේ": {
+   "codes": "U+0DAB U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "nee",
+   "verdict": "ok"
+  },
+  "ණෛ": {
+   "codes": "U+0DAB U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "nai",
+   "verdict": "ok"
+  },
+  "ණො": {
+   "codes": "U+0DAB U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "no",
+   "verdict": "ok"
+  },
+  "ණෝ": {
+   "codes": "U+0DAB U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "noo",
+   "verdict": "ok"
+  },
+  "ණෞ": {
+   "codes": "U+0DAB U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "nau",
+   "verdict": "ok"
+  },
+  "ණෟ": {
+   "codes": "U+0DAB U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "naෟ",
+   "verdict": "leak"
+  },
+  "ණෲ": {
+   "codes": "U+0DAB U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "nruu",
+   "verdict": "ok"
+  },
+  "ණෳ": {
+   "codes": "U+0DAB U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "naෳ",
+   "verdict": "leak"
+  },
+  "ඬ": {
+   "codes": "U+0DAC",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "N̆da",
+   "verdict": "ok"
+  },
+  "ඬ්": {
+   "codes": "U+0DAC U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "N̆d",
+   "verdict": "ok"
+  },
+  "ඬ්‍ය": {
+   "codes": "U+0DAC U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "N̆d‍ya",
+   "verdict": "ok"
+  },
+  "ඬ්‍ර": {
+   "codes": "U+0DAC U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "N̆d‍ra",
+   "verdict": "ok"
+  },
+  "ඬා": {
+   "codes": "U+0DAC U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆daa",
+   "verdict": "ok"
+  },
+  "ඬැ": {
+   "codes": "U+0DAC U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆dae",
+   "verdict": "ok"
+  },
+  "ඬෑ": {
+   "codes": "U+0DAC U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆daee",
+   "verdict": "ok"
+  },
+  "ඬි": {
+   "codes": "U+0DAC U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆di",
+   "verdict": "ok"
+  },
+  "ඬී": {
+   "codes": "U+0DAC U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆dii",
+   "verdict": "ok"
+  },
+  "ඬු": {
+   "codes": "U+0DAC U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆du",
+   "verdict": "ok"
+  },
+  "ඬූ": {
+   "codes": "U+0DAC U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆duu",
+   "verdict": "ok"
+  },
+  "ඬෘ": {
+   "codes": "U+0DAC U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆dru",
+   "verdict": "ok"
+  },
+  "ඬෙ": {
+   "codes": "U+0DAC U+0DD9",
+   "detail": "unromanized U+0DD9",
+   "kind": "akshara",
+   "leaked": "ෙ",
+   "raw": "N̆daෙ",
+   "verdict": "leak"
+  },
+  "ඬේ": {
+   "codes": "U+0DAC U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆dee",
+   "verdict": "ok"
+  },
+  "ඬෛ": {
+   "codes": "U+0DAC U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆dai",
+   "verdict": "ok"
+  },
+  "ඬො": {
+   "codes": "U+0DAC U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆do",
+   "verdict": "ok"
+  },
+  "ඬෝ": {
+   "codes": "U+0DAC U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆doo",
+   "verdict": "ok"
+  },
+  "ඬෞ": {
+   "codes": "U+0DAC U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆dau",
+   "verdict": "ok"
+  },
+  "ඬෟ": {
+   "codes": "U+0DAC U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "N̆daෟ",
+   "verdict": "leak"
+  },
+  "ඬෲ": {
+   "codes": "U+0DAC U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆druu",
+   "verdict": "ok"
+  },
+  "ඬෳ": {
+   "codes": "U+0DAC U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "N̆daෳ",
+   "verdict": "leak"
+  },
+  "ත": {
+   "codes": "U+0DAD",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Tha",
+   "verdict": "ok"
+  },
+  "ත්": {
+   "codes": "U+0DAD U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "Th",
+   "verdict": "ok"
+  },
+  "ත්‍ය": {
+   "codes": "U+0DAD U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "Th‍ya",
+   "verdict": "ok"
+  },
+  "ත්‍ර": {
+   "codes": "U+0DAD U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "Th‍ra",
+   "verdict": "ok"
+  },
+  "තා": {
+   "codes": "U+0DAD U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thaa",
+   "verdict": "ok"
+  },
+  "තැ": {
+   "codes": "U+0DAD U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thae",
+   "verdict": "ok"
+  },
+  "තෑ": {
+   "codes": "U+0DAD U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thaee",
+   "verdict": "ok"
+  },
+  "ති": {
+   "codes": "U+0DAD U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thi",
+   "verdict": "ok"
+  },
+  "තී": {
+   "codes": "U+0DAD U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thii",
+   "verdict": "ok"
+  },
+  "තු": {
+   "codes": "U+0DAD U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thu",
+   "verdict": "ok"
+  },
+  "තූ": {
+   "codes": "U+0DAD U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thuu",
+   "verdict": "ok"
+  },
+  "තෘ": {
+   "codes": "U+0DAD U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thru",
+   "verdict": "ok"
+  },
+  "තෙ": {
+   "codes": "U+0DAD U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "The",
+   "verdict": "ok"
+  },
+  "තේ": {
+   "codes": "U+0DAD U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thee",
+   "verdict": "ok"
+  },
+  "තෛ": {
+   "codes": "U+0DAD U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thai",
+   "verdict": "ok"
+  },
+  "තො": {
+   "codes": "U+0DAD U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Tho",
+   "verdict": "ok"
+  },
+  "තෝ": {
+   "codes": "U+0DAD U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thoo",
+   "verdict": "ok"
+  },
+  "තෞ": {
+   "codes": "U+0DAD U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thau",
+   "verdict": "ok"
+  },
+  "තෟ": {
+   "codes": "U+0DAD U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Thaෟ",
+   "verdict": "leak"
+  },
+  "තෲ": {
+   "codes": "U+0DAD U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thruu",
+   "verdict": "ok"
+  },
+  "තෳ": {
+   "codes": "U+0DAD U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Thaෳ",
+   "verdict": "leak"
+  },
+  "ථ": {
+   "codes": "U+0DAE",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Tha",
+   "verdict": "ok"
+  },
+  "ථ්": {
+   "codes": "U+0DAE U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "Th",
+   "verdict": "ok"
+  },
+  "ථ්‍ය": {
+   "codes": "U+0DAE U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "Th‍ya",
+   "verdict": "ok"
+  },
+  "ථ්‍ර": {
+   "codes": "U+0DAE U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "Th‍ra",
+   "verdict": "ok"
+  },
+  "ථා": {
+   "codes": "U+0DAE U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thaa",
+   "verdict": "ok"
+  },
+  "ථැ": {
+   "codes": "U+0DAE U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thae",
+   "verdict": "ok"
+  },
+  "ථෑ": {
+   "codes": "U+0DAE U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thaee",
+   "verdict": "ok"
+  },
+  "ථි": {
+   "codes": "U+0DAE U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thi",
+   "verdict": "ok"
+  },
+  "ථී": {
+   "codes": "U+0DAE U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thii",
+   "verdict": "ok"
+  },
+  "ථු": {
+   "codes": "U+0DAE U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thu",
+   "verdict": "ok"
+  },
+  "ථූ": {
+   "codes": "U+0DAE U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thuu",
+   "verdict": "ok"
+  },
+  "ථෘ": {
+   "codes": "U+0DAE U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thru",
+   "verdict": "ok"
+  },
+  "ථෙ": {
+   "codes": "U+0DAE U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "The",
+   "verdict": "ok"
+  },
+  "ථේ": {
+   "codes": "U+0DAE U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thee",
+   "verdict": "ok"
+  },
+  "ථෛ": {
+   "codes": "U+0DAE U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thai",
+   "verdict": "ok"
+  },
+  "ථො": {
+   "codes": "U+0DAE U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Tho",
+   "verdict": "ok"
+  },
+  "ථෝ": {
+   "codes": "U+0DAE U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thoo",
+   "verdict": "ok"
+  },
+  "ථෞ": {
+   "codes": "U+0DAE U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thau",
+   "verdict": "ok"
+  },
+  "ථෟ": {
+   "codes": "U+0DAE U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Thaෟ",
+   "verdict": "leak"
+  },
+  "ථෲ": {
+   "codes": "U+0DAE U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Thruu",
+   "verdict": "ok"
+  },
+  "ථෳ": {
+   "codes": "U+0DAE U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Thaෳ",
+   "verdict": "leak"
+  },
+  "ද": {
+   "codes": "U+0DAF",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Da",
+   "verdict": "ok"
+  },
+  "ද්": {
+   "codes": "U+0DAF U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "D",
+   "verdict": "ok"
+  },
+  "ද්‍ය": {
+   "codes": "U+0DAF U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "D‍ya",
+   "verdict": "ok"
+  },
+  "ද්‍ර": {
+   "codes": "U+0DAF U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "D‍ra",
+   "verdict": "ok"
+  },
+  "දා": {
+   "codes": "U+0DAF U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Daa",
+   "verdict": "ok"
+  },
+  "දැ": {
+   "codes": "U+0DAF U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dae",
+   "verdict": "ok"
+  },
+  "දෑ": {
+   "codes": "U+0DAF U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Daee",
+   "verdict": "ok"
+  },
+  "දි": {
+   "codes": "U+0DAF U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Di",
+   "verdict": "ok"
+  },
+  "දී": {
+   "codes": "U+0DAF U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dii",
+   "verdict": "ok"
+  },
+  "දු": {
+   "codes": "U+0DAF U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Du",
+   "verdict": "ok"
+  },
+  "දූ": {
+   "codes": "U+0DAF U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Duu",
+   "verdict": "ok"
+  },
+  "දෘ": {
+   "codes": "U+0DAF U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dru",
+   "verdict": "ok"
+  },
+  "දෙ": {
+   "codes": "U+0DAF U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "De",
+   "verdict": "ok"
+  },
+  "දේ": {
+   "codes": "U+0DAF U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dee",
+   "verdict": "ok"
+  },
+  "දෛ": {
+   "codes": "U+0DAF U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dai",
+   "verdict": "ok"
+  },
+  "දො": {
+   "codes": "U+0DAF U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Do",
+   "verdict": "ok"
+  },
+  "දෝ": {
+   "codes": "U+0DAF U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Doo",
+   "verdict": "ok"
+  },
+  "දෞ": {
+   "codes": "U+0DAF U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dau",
+   "verdict": "ok"
+  },
+  "දෟ": {
+   "codes": "U+0DAF U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Daෟ",
+   "verdict": "leak"
+  },
+  "දෲ": {
+   "codes": "U+0DAF U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Druu",
+   "verdict": "ok"
+  },
+  "දෳ": {
+   "codes": "U+0DAF U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Daෳ",
+   "verdict": "leak"
+  },
+  "ධ": {
+   "codes": "U+0DB0",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Dha",
+   "verdict": "ok"
+  },
+  "ධ්": {
+   "codes": "U+0DB0 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "Dh",
+   "verdict": "ok"
+  },
+  "ධ්‍ය": {
+   "codes": "U+0DB0 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "Dh‍ya",
+   "verdict": "ok"
+  },
+  "ධ්‍ර": {
+   "codes": "U+0DB0 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "Dh‍ra",
+   "verdict": "ok"
+  },
+  "ධා": {
+   "codes": "U+0DB0 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dhaa",
+   "verdict": "ok"
+  },
+  "ධැ": {
+   "codes": "U+0DB0 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dhae",
+   "verdict": "ok"
+  },
+  "ධෑ": {
+   "codes": "U+0DB0 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dhaee",
+   "verdict": "ok"
+  },
+  "ධි": {
+   "codes": "U+0DB0 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dhi",
+   "verdict": "ok"
+  },
+  "ධී": {
+   "codes": "U+0DB0 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dhii",
+   "verdict": "ok"
+  },
+  "ධු": {
+   "codes": "U+0DB0 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dhu",
+   "verdict": "ok"
+  },
+  "ධූ": {
+   "codes": "U+0DB0 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dhuu",
+   "verdict": "ok"
+  },
+  "ධෘ": {
+   "codes": "U+0DB0 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dhru",
+   "verdict": "ok"
+  },
+  "ධෙ": {
+   "codes": "U+0DB0 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dhe",
+   "verdict": "ok"
+  },
+  "ධේ": {
+   "codes": "U+0DB0 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dhee",
+   "verdict": "ok"
+  },
+  "ධෛ": {
+   "codes": "U+0DB0 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dhai",
+   "verdict": "ok"
+  },
+  "ධො": {
+   "codes": "U+0DB0 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dho",
+   "verdict": "ok"
+  },
+  "ධෝ": {
+   "codes": "U+0DB0 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dhoo",
+   "verdict": "ok"
+  },
+  "ධෞ": {
+   "codes": "U+0DB0 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dhau",
+   "verdict": "ok"
+  },
+  "ධෟ": {
+   "codes": "U+0DB0 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Dhaෟ",
+   "verdict": "leak"
+  },
+  "ධෲ": {
+   "codes": "U+0DB0 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Dhruu",
+   "verdict": "ok"
+  },
+  "ධෳ": {
+   "codes": "U+0DB0 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Dhaෳ",
+   "verdict": "leak"
+  },
+  "න": {
+   "codes": "U+0DB1",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Na",
+   "verdict": "ok"
+  },
+  "න්": {
+   "codes": "U+0DB1 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "N",
+   "verdict": "ok"
+  },
+  "න්‍ය": {
+   "codes": "U+0DB1 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "N‍ya",
+   "verdict": "ok"
+  },
+  "න්‍ර": {
+   "codes": "U+0DB1 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "N‍ra",
+   "verdict": "ok"
+  },
+  "නා": {
+   "codes": "U+0DB1 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Naa",
+   "verdict": "ok"
+  },
+  "නැ": {
+   "codes": "U+0DB1 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Nae",
+   "verdict": "ok"
+  },
+  "නෑ": {
+   "codes": "U+0DB1 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Naee",
+   "verdict": "ok"
+  },
+  "නි": {
+   "codes": "U+0DB1 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ni",
+   "verdict": "ok"
+  },
+  "නී": {
+   "codes": "U+0DB1 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Nii",
+   "verdict": "ok"
+  },
+  "නු": {
+   "codes": "U+0DB1 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Nu",
+   "verdict": "ok"
+  },
+  "නූ": {
+   "codes": "U+0DB1 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Nuu",
+   "verdict": "ok"
+  },
+  "නෘ": {
+   "codes": "U+0DB1 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Nru",
+   "verdict": "ok"
+  },
+  "නෙ": {
+   "codes": "U+0DB1 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ne",
+   "verdict": "ok"
+  },
+  "නේ": {
+   "codes": "U+0DB1 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Nee",
+   "verdict": "ok"
+  },
+  "නෛ": {
+   "codes": "U+0DB1 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Nai",
+   "verdict": "ok"
+  },
+  "නො": {
+   "codes": "U+0DB1 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "No",
+   "verdict": "ok"
+  },
+  "නෝ": {
+   "codes": "U+0DB1 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Noo",
+   "verdict": "ok"
+  },
+  "නෞ": {
+   "codes": "U+0DB1 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Nau",
+   "verdict": "ok"
+  },
+  "නෟ": {
+   "codes": "U+0DB1 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Naෟ",
+   "verdict": "leak"
+  },
+  "නෲ": {
+   "codes": "U+0DB1 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Nruu",
+   "verdict": "ok"
+  },
+  "නෳ": {
+   "codes": "U+0DB1 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Naෳ",
+   "verdict": "leak"
+  },
+  "ඳ": {
+   "codes": "U+0DB3",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "N̆da",
+   "verdict": "ok"
+  },
+  "ඳ්": {
+   "codes": "U+0DB3 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "N̆d",
+   "verdict": "ok"
+  },
+  "ඳ්‍ය": {
+   "codes": "U+0DB3 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "N̆d‍ya",
+   "verdict": "ok"
+  },
+  "ඳ්‍ර": {
+   "codes": "U+0DB3 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "N̆d‍ra",
+   "verdict": "ok"
+  },
+  "ඳා": {
+   "codes": "U+0DB3 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆daa",
+   "verdict": "ok"
+  },
+  "ඳැ": {
+   "codes": "U+0DB3 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆dae",
+   "verdict": "ok"
+  },
+  "ඳෑ": {
+   "codes": "U+0DB3 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆daee",
+   "verdict": "ok"
+  },
+  "ඳි": {
+   "codes": "U+0DB3 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆di",
+   "verdict": "ok"
+  },
+  "ඳී": {
+   "codes": "U+0DB3 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆dii",
+   "verdict": "ok"
+  },
+  "ඳු": {
+   "codes": "U+0DB3 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆du",
+   "verdict": "ok"
+  },
+  "ඳූ": {
+   "codes": "U+0DB3 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆duu",
+   "verdict": "ok"
+  },
+  "ඳෘ": {
+   "codes": "U+0DB3 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆dru",
+   "verdict": "ok"
+  },
+  "ඳෙ": {
+   "codes": "U+0DB3 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆de",
+   "verdict": "ok"
+  },
+  "ඳේ": {
+   "codes": "U+0DB3 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆dee",
+   "verdict": "ok"
+  },
+  "ඳෛ": {
+   "codes": "U+0DB3 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆dai",
+   "verdict": "ok"
+  },
+  "ඳො": {
+   "codes": "U+0DB3 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆do",
+   "verdict": "ok"
+  },
+  "ඳෝ": {
+   "codes": "U+0DB3 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆doo",
+   "verdict": "ok"
+  },
+  "ඳෞ": {
+   "codes": "U+0DB3 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆dau",
+   "verdict": "ok"
+  },
+  "ඳෟ": {
+   "codes": "U+0DB3 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "N̆daෟ",
+   "verdict": "leak"
+  },
+  "ඳෲ": {
+   "codes": "U+0DB3 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "N̆druu",
+   "verdict": "ok"
+  },
+  "ඳෳ": {
+   "codes": "U+0DB3 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "N̆daෳ",
+   "verdict": "leak"
+  },
+  "ප": {
+   "codes": "U+0DB4",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Pa",
+   "verdict": "ok"
+  },
+  "ප්": {
+   "codes": "U+0DB4 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "P",
+   "verdict": "ok"
+  },
+  "ප්‍ය": {
+   "codes": "U+0DB4 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "P‍ya",
+   "verdict": "ok"
+  },
+  "ප්‍ර": {
+   "codes": "U+0DB4 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "P‍ra",
+   "verdict": "ok"
+  },
+  "පා": {
+   "codes": "U+0DB4 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Paa",
+   "verdict": "ok"
+  },
+  "පැ": {
+   "codes": "U+0DB4 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Pae",
+   "verdict": "ok"
+  },
+  "පෑ": {
+   "codes": "U+0DB4 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Paee",
+   "verdict": "ok"
+  },
+  "පි": {
+   "codes": "U+0DB4 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Pi",
+   "verdict": "ok"
+  },
+  "පී": {
+   "codes": "U+0DB4 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Pii",
+   "verdict": "ok"
+  },
+  "පු": {
+   "codes": "U+0DB4 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Pu",
+   "verdict": "ok"
+  },
+  "පූ": {
+   "codes": "U+0DB4 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Puu",
+   "verdict": "ok"
+  },
+  "පෘ": {
+   "codes": "U+0DB4 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Pru",
+   "verdict": "ok"
+  },
+  "පෙ": {
+   "codes": "U+0DB4 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Pe",
+   "verdict": "ok"
+  },
+  "පේ": {
+   "codes": "U+0DB4 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Pee",
+   "verdict": "ok"
+  },
+  "පෛ": {
+   "codes": "U+0DB4 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Pai",
+   "verdict": "ok"
+  },
+  "පො": {
+   "codes": "U+0DB4 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Po",
+   "verdict": "ok"
+  },
+  "පෝ": {
+   "codes": "U+0DB4 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Poo",
+   "verdict": "ok"
+  },
+  "පෞ": {
+   "codes": "U+0DB4 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Pau",
+   "verdict": "ok"
+  },
+  "පෟ": {
+   "codes": "U+0DB4 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Paෟ",
+   "verdict": "leak"
+  },
+  "පෲ": {
+   "codes": "U+0DB4 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Pruu",
+   "verdict": "ok"
+  },
+  "පෳ": {
+   "codes": "U+0DB4 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Paෳ",
+   "verdict": "leak"
+  },
+  "ඵ": {
+   "codes": "U+0DB5",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Pha",
+   "verdict": "ok"
+  },
+  "ඵ්": {
+   "codes": "U+0DB5 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "Ph",
+   "verdict": "ok"
+  },
+  "ඵ්‍ය": {
+   "codes": "U+0DB5 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "Ph‍ya",
+   "verdict": "ok"
+  },
+  "ඵ්‍ර": {
+   "codes": "U+0DB5 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "Ph‍ra",
+   "verdict": "ok"
+  },
+  "ඵා": {
+   "codes": "U+0DB5 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Phaa",
+   "verdict": "ok"
+  },
+  "ඵැ": {
+   "codes": "U+0DB5 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Phae",
+   "verdict": "ok"
+  },
+  "ඵෑ": {
+   "codes": "U+0DB5 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Phaee",
+   "verdict": "ok"
+  },
+  "ඵි": {
+   "codes": "U+0DB5 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Phi",
+   "verdict": "ok"
+  },
+  "ඵී": {
+   "codes": "U+0DB5 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Phii",
+   "verdict": "ok"
+  },
+  "ඵු": {
+   "codes": "U+0DB5 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Phu",
+   "verdict": "ok"
+  },
+  "ඵූ": {
+   "codes": "U+0DB5 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Phuu",
+   "verdict": "ok"
+  },
+  "ඵෘ": {
+   "codes": "U+0DB5 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Phru",
+   "verdict": "ok"
+  },
+  "ඵෙ": {
+   "codes": "U+0DB5 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Phe",
+   "verdict": "ok"
+  },
+  "ඵේ": {
+   "codes": "U+0DB5 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Phee",
+   "verdict": "ok"
+  },
+  "ඵෛ": {
+   "codes": "U+0DB5 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Phai",
+   "verdict": "ok"
+  },
+  "ඵො": {
+   "codes": "U+0DB5 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Pho",
+   "verdict": "ok"
+  },
+  "ඵෝ": {
+   "codes": "U+0DB5 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Phoo",
+   "verdict": "ok"
+  },
+  "ඵෞ": {
+   "codes": "U+0DB5 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Phau",
+   "verdict": "ok"
+  },
+  "ඵෟ": {
+   "codes": "U+0DB5 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Phaෟ",
+   "verdict": "leak"
+  },
+  "ඵෲ": {
+   "codes": "U+0DB5 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Phruu",
+   "verdict": "ok"
+  },
+  "ඵෳ": {
+   "codes": "U+0DB5 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Phaෳ",
+   "verdict": "leak"
+  },
+  "බ": {
+   "codes": "U+0DB6",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Ba",
+   "verdict": "ok"
+  },
+  "බ්": {
+   "codes": "U+0DB6 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "B",
+   "verdict": "ok"
+  },
+  "බ්‍ය": {
+   "codes": "U+0DB6 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "B‍ya",
+   "verdict": "ok"
+  },
+  "බ්‍ර": {
+   "codes": "U+0DB6 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "B‍ra",
+   "verdict": "ok"
+  },
+  "බා": {
+   "codes": "U+0DB6 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Baa",
+   "verdict": "ok"
+  },
+  "බැ": {
+   "codes": "U+0DB6 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bae",
+   "verdict": "ok"
+  },
+  "බෑ": {
+   "codes": "U+0DB6 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Baee",
+   "verdict": "ok"
+  },
+  "බි": {
+   "codes": "U+0DB6 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bi",
+   "verdict": "ok"
+  },
+  "බී": {
+   "codes": "U+0DB6 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bii",
+   "verdict": "ok"
+  },
+  "බු": {
+   "codes": "U+0DB6 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bu",
+   "verdict": "ok"
+  },
+  "බූ": {
+   "codes": "U+0DB6 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Buu",
+   "verdict": "ok"
+  },
+  "බෘ": {
+   "codes": "U+0DB6 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bru",
+   "verdict": "ok"
+  },
+  "බෙ": {
+   "codes": "U+0DB6 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Be",
+   "verdict": "ok"
+  },
+  "බේ": {
+   "codes": "U+0DB6 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bee",
+   "verdict": "ok"
+  },
+  "බෛ": {
+   "codes": "U+0DB6 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bai",
+   "verdict": "ok"
+  },
+  "බො": {
+   "codes": "U+0DB6 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bo",
+   "verdict": "ok"
+  },
+  "බෝ": {
+   "codes": "U+0DB6 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Boo",
+   "verdict": "ok"
+  },
+  "බෞ": {
+   "codes": "U+0DB6 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bau",
+   "verdict": "ok"
+  },
+  "බෟ": {
+   "codes": "U+0DB6 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Baෟ",
+   "verdict": "leak"
+  },
+  "බෲ": {
+   "codes": "U+0DB6 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bruu",
+   "verdict": "ok"
+  },
+  "බෳ": {
+   "codes": "U+0DB6 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Baෳ",
+   "verdict": "leak"
+  },
+  "භ": {
+   "codes": "U+0DB7",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Bha",
+   "verdict": "ok"
+  },
+  "භ්": {
+   "codes": "U+0DB7 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "Bh",
+   "verdict": "ok"
+  },
+  "භ්‍ය": {
+   "codes": "U+0DB7 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "Bh‍ya",
+   "verdict": "ok"
+  },
+  "භ්‍ර": {
+   "codes": "U+0DB7 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "Bh‍ra",
+   "verdict": "ok"
+  },
+  "භා": {
+   "codes": "U+0DB7 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bhaa",
+   "verdict": "ok"
+  },
+  "භැ": {
+   "codes": "U+0DB7 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bhae",
+   "verdict": "ok"
+  },
+  "භෑ": {
+   "codes": "U+0DB7 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bhaee",
+   "verdict": "ok"
+  },
+  "භි": {
+   "codes": "U+0DB7 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bhi",
+   "verdict": "ok"
+  },
+  "භී": {
+   "codes": "U+0DB7 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bhii",
+   "verdict": "ok"
+  },
+  "භු": {
+   "codes": "U+0DB7 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bhu",
+   "verdict": "ok"
+  },
+  "භූ": {
+   "codes": "U+0DB7 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bhuu",
+   "verdict": "ok"
+  },
+  "භෘ": {
+   "codes": "U+0DB7 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bhru",
+   "verdict": "ok"
+  },
+  "භෙ": {
+   "codes": "U+0DB7 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bhe",
+   "verdict": "ok"
+  },
+  "භේ": {
+   "codes": "U+0DB7 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bhee",
+   "verdict": "ok"
+  },
+  "භෛ": {
+   "codes": "U+0DB7 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bhai",
+   "verdict": "ok"
+  },
+  "භො": {
+   "codes": "U+0DB7 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bho",
+   "verdict": "ok"
+  },
+  "භෝ": {
+   "codes": "U+0DB7 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bhoo",
+   "verdict": "ok"
+  },
+  "භෞ": {
+   "codes": "U+0DB7 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bhau",
+   "verdict": "ok"
+  },
+  "භෟ": {
+   "codes": "U+0DB7 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Bhaෟ",
+   "verdict": "leak"
+  },
+  "භෲ": {
+   "codes": "U+0DB7 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Bhruu",
+   "verdict": "ok"
+  },
+  "භෳ": {
+   "codes": "U+0DB7 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Bhaෳ",
+   "verdict": "leak"
+  },
+  "ම": {
+   "codes": "U+0DB8",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Ma",
+   "verdict": "ok"
+  },
+  "ම්": {
+   "codes": "U+0DB8 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "M",
+   "verdict": "ok"
+  },
+  "ම්‍ය": {
+   "codes": "U+0DB8 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "M‍ya",
+   "verdict": "ok"
+  },
+  "ම්‍ර": {
+   "codes": "U+0DB8 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "M‍ra",
+   "verdict": "ok"
+  },
+  "මා": {
+   "codes": "U+0DB8 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Maa",
+   "verdict": "ok"
+  },
+  "මැ": {
+   "codes": "U+0DB8 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Mae",
+   "verdict": "ok"
+  },
+  "මෑ": {
+   "codes": "U+0DB8 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Maee",
+   "verdict": "ok"
+  },
+  "මි": {
+   "codes": "U+0DB8 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Mi",
+   "verdict": "ok"
+  },
+  "මී": {
+   "codes": "U+0DB8 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Mii",
+   "verdict": "ok"
+  },
+  "මු": {
+   "codes": "U+0DB8 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Mu",
+   "verdict": "ok"
+  },
+  "මූ": {
+   "codes": "U+0DB8 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Muu",
+   "verdict": "ok"
+  },
+  "මෘ": {
+   "codes": "U+0DB8 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Mru",
+   "verdict": "ok"
+  },
+  "මෙ": {
+   "codes": "U+0DB8 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Me",
+   "verdict": "ok"
+  },
+  "මේ": {
+   "codes": "U+0DB8 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Mee",
+   "verdict": "ok"
+  },
+  "මෛ": {
+   "codes": "U+0DB8 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Mai",
+   "verdict": "ok"
+  },
+  "මො": {
+   "codes": "U+0DB8 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Mo",
+   "verdict": "ok"
+  },
+  "මෝ": {
+   "codes": "U+0DB8 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Moo",
+   "verdict": "ok"
+  },
+  "මෞ": {
+   "codes": "U+0DB8 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Mau",
+   "verdict": "ok"
+  },
+  "මෟ": {
+   "codes": "U+0DB8 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Maෟ",
+   "verdict": "leak"
+  },
+  "මෲ": {
+   "codes": "U+0DB8 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Mruu",
+   "verdict": "ok"
+  },
+  "මෳ": {
+   "codes": "U+0DB8 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Maෳ",
+   "verdict": "leak"
+  },
+  "ඹ": {
+   "codes": "U+0DB9",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "M̆ba",
+   "verdict": "ok"
+  },
+  "ඹ්": {
+   "codes": "U+0DB9 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "M̆b",
+   "verdict": "ok"
+  },
+  "ඹ්‍ය": {
+   "codes": "U+0DB9 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "M̆b‍ya",
+   "verdict": "ok"
+  },
+  "ඹ්‍ර": {
+   "codes": "U+0DB9 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "M̆b‍ra",
+   "verdict": "ok"
+  },
+  "ඹා": {
+   "codes": "U+0DB9 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "M̆baa",
+   "verdict": "ok"
+  },
+  "ඹැ": {
+   "codes": "U+0DB9 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "M̆bae",
+   "verdict": "ok"
+  },
+  "ඹෑ": {
+   "codes": "U+0DB9 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "M̆baee",
+   "verdict": "ok"
+  },
+  "ඹි": {
+   "codes": "U+0DB9 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "M̆bi",
+   "verdict": "ok"
+  },
+  "ඹී": {
+   "codes": "U+0DB9 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "M̆bii",
+   "verdict": "ok"
+  },
+  "ඹු": {
+   "codes": "U+0DB9 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "M̆bu",
+   "verdict": "ok"
+  },
+  "ඹූ": {
+   "codes": "U+0DB9 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "M̆buu",
+   "verdict": "ok"
+  },
+  "ඹෘ": {
+   "codes": "U+0DB9 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "M̆bru",
+   "verdict": "ok"
+  },
+  "ඹෙ": {
+   "codes": "U+0DB9 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "M̆be",
+   "verdict": "ok"
+  },
+  "ඹේ": {
+   "codes": "U+0DB9 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "M̆bee",
+   "verdict": "ok"
+  },
+  "ඹෛ": {
+   "codes": "U+0DB9 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "M̆bai",
+   "verdict": "ok"
+  },
+  "ඹො": {
+   "codes": "U+0DB9 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "M̆bo",
+   "verdict": "ok"
+  },
+  "ඹෝ": {
+   "codes": "U+0DB9 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "M̆boo",
+   "verdict": "ok"
+  },
+  "ඹෞ": {
+   "codes": "U+0DB9 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "M̆bau",
+   "verdict": "ok"
+  },
+  "ඹෟ": {
+   "codes": "U+0DB9 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "M̆baෟ",
+   "verdict": "leak"
+  },
+  "ඹෲ": {
+   "codes": "U+0DB9 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "M̆bruu",
+   "verdict": "ok"
+  },
+  "ඹෳ": {
+   "codes": "U+0DB9 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "M̆baෳ",
+   "verdict": "leak"
+  },
+  "ය": {
+   "codes": "U+0DBA",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Ya",
+   "verdict": "ok"
+  },
+  "ය්": {
+   "codes": "U+0DBA U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "Y",
+   "verdict": "ok"
+  },
+  "ය්‍ය": {
+   "codes": "U+0DBA U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "Y‍ya",
+   "verdict": "ok"
+  },
+  "ය්‍ර": {
+   "codes": "U+0DBA U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "Y‍ra",
+   "verdict": "ok"
+  },
+  "යා": {
+   "codes": "U+0DBA U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Yaa",
+   "verdict": "ok"
+  },
+  "යැ": {
+   "codes": "U+0DBA U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Yae",
+   "verdict": "ok"
+  },
+  "යෑ": {
+   "codes": "U+0DBA U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Yaee",
+   "verdict": "ok"
+  },
+  "යි": {
+   "codes": "U+0DBA U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Yi",
+   "verdict": "ok"
+  },
+  "යී": {
+   "codes": "U+0DBA U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Yii",
+   "verdict": "ok"
+  },
+  "යු": {
+   "codes": "U+0DBA U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Yu",
+   "verdict": "ok"
+  },
+  "යූ": {
+   "codes": "U+0DBA U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Yuu",
+   "verdict": "ok"
+  },
+  "යෘ": {
+   "codes": "U+0DBA U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Yru",
+   "verdict": "ok"
+  },
+  "යෙ": {
+   "codes": "U+0DBA U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ye",
+   "verdict": "ok"
+  },
+  "යේ": {
+   "codes": "U+0DBA U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Yee",
+   "verdict": "ok"
+  },
+  "යෛ": {
+   "codes": "U+0DBA U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Yai",
+   "verdict": "ok"
+  },
+  "යො": {
+   "codes": "U+0DBA U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Yo",
+   "verdict": "ok"
+  },
+  "යෝ": {
+   "codes": "U+0DBA U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Yoo",
+   "verdict": "ok"
+  },
+  "යෞ": {
+   "codes": "U+0DBA U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Yau",
+   "verdict": "ok"
+  },
+  "යෟ": {
+   "codes": "U+0DBA U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Yaෟ",
+   "verdict": "leak"
+  },
+  "යෲ": {
+   "codes": "U+0DBA U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Yruu",
+   "verdict": "ok"
+  },
+  "යෳ": {
+   "codes": "U+0DBA U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Yaෳ",
+   "verdict": "leak"
+  },
+  "ර": {
+   "codes": "U+0DBB",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Ra",
+   "verdict": "ok"
+  },
+  "ර්": {
+   "codes": "U+0DBB U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "R",
+   "verdict": "ok"
+  },
+  "ර්‍ය": {
+   "codes": "U+0DBB U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "R‍ya",
+   "verdict": "ok"
+  },
+  "ර්‍ර": {
+   "codes": "U+0DBB U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "R‍ra",
+   "verdict": "ok"
+  },
+  "රා": {
+   "codes": "U+0DBB U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Raa",
+   "verdict": "ok"
+  },
+  "රැ": {
+   "codes": "U+0DBB U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Rae",
+   "verdict": "ok"
+  },
+  "රෑ": {
+   "codes": "U+0DBB U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Raee",
+   "verdict": "ok"
+  },
+  "රි": {
+   "codes": "U+0DBB U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ri",
+   "verdict": "ok"
+  },
+  "රී": {
+   "codes": "U+0DBB U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Rii",
+   "verdict": "ok"
+  },
+  "රු": {
+   "codes": "U+0DBB U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ru",
+   "verdict": "ok"
+  },
+  "රූ": {
+   "codes": "U+0DBB U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ruu",
+   "verdict": "ok"
+  },
+  "රෘ": {
+   "codes": "U+0DBB U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Rru",
+   "verdict": "ok"
+  },
+  "රෙ": {
+   "codes": "U+0DBB U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Re",
+   "verdict": "ok"
+  },
+  "රේ": {
+   "codes": "U+0DBB U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ree",
+   "verdict": "ok"
+  },
+  "රෛ": {
+   "codes": "U+0DBB U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Rai",
+   "verdict": "ok"
+  },
+  "රො": {
+   "codes": "U+0DBB U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ro",
+   "verdict": "ok"
+  },
+  "රෝ": {
+   "codes": "U+0DBB U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Roo",
+   "verdict": "ok"
+  },
+  "රෞ": {
+   "codes": "U+0DBB U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Rau",
+   "verdict": "ok"
+  },
+  "රෟ": {
+   "codes": "U+0DBB U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Raෟ",
+   "verdict": "leak"
+  },
+  "රෲ": {
+   "codes": "U+0DBB U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Rruu",
+   "verdict": "ok"
+  },
+  "රෳ": {
+   "codes": "U+0DBB U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Raෳ",
+   "verdict": "leak"
+  },
+  "ල": {
+   "codes": "U+0DBD",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "La",
+   "verdict": "ok"
+  },
+  "ල්": {
+   "codes": "U+0DBD U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "L",
+   "verdict": "ok"
+  },
+  "ල්‍ය": {
+   "codes": "U+0DBD U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "L‍ya",
+   "verdict": "ok"
+  },
+  "ල්‍ර": {
+   "codes": "U+0DBD U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "L‍ra",
+   "verdict": "ok"
+  },
+  "ලා": {
+   "codes": "U+0DBD U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Laa",
+   "verdict": "ok"
+  },
+  "ලැ": {
+   "codes": "U+0DBD U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Lae",
+   "verdict": "ok"
+  },
+  "ලෑ": {
+   "codes": "U+0DBD U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Laee",
+   "verdict": "ok"
+  },
+  "ලි": {
+   "codes": "U+0DBD U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Li",
+   "verdict": "ok"
+  },
+  "ලී": {
+   "codes": "U+0DBD U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Lii",
+   "verdict": "ok"
+  },
+  "ලු": {
+   "codes": "U+0DBD U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Lu",
+   "verdict": "ok"
+  },
+  "ලූ": {
+   "codes": "U+0DBD U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Luu",
+   "verdict": "ok"
+  },
+  "ලෘ": {
+   "codes": "U+0DBD U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Lru",
+   "verdict": "ok"
+  },
+  "ලෙ": {
+   "codes": "U+0DBD U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Le",
+   "verdict": "ok"
+  },
+  "ලේ": {
+   "codes": "U+0DBD U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Lee",
+   "verdict": "ok"
+  },
+  "ලෛ": {
+   "codes": "U+0DBD U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Lai",
+   "verdict": "ok"
+  },
+  "ලො": {
+   "codes": "U+0DBD U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Lo",
+   "verdict": "ok"
+  },
+  "ලෝ": {
+   "codes": "U+0DBD U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Loo",
+   "verdict": "ok"
+  },
+  "ලෞ": {
+   "codes": "U+0DBD U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Lau",
+   "verdict": "ok"
+  },
+  "ලෟ": {
+   "codes": "U+0DBD U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Laෟ",
+   "verdict": "leak"
+  },
+  "ලෲ": {
+   "codes": "U+0DBD U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Lruu",
+   "verdict": "ok"
+  },
+  "ලෳ": {
+   "codes": "U+0DBD U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Laෳ",
+   "verdict": "leak"
+  },
+  "ව": {
+   "codes": "U+0DC0",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Va",
+   "verdict": "ok"
+  },
+  "ව්": {
+   "codes": "U+0DC0 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "V",
+   "verdict": "ok"
+  },
+  "ව්‍ය": {
+   "codes": "U+0DC0 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "V‍ya",
+   "verdict": "ok"
+  },
+  "ව්‍ර": {
+   "codes": "U+0DC0 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "V‍ra",
+   "verdict": "ok"
+  },
+  "වා": {
+   "codes": "U+0DC0 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Vaa",
+   "verdict": "ok"
+  },
+  "වැ": {
+   "codes": "U+0DC0 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Vae",
+   "verdict": "ok"
+  },
+  "වෑ": {
+   "codes": "U+0DC0 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Vaee",
+   "verdict": "ok"
+  },
+  "වි": {
+   "codes": "U+0DC0 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Vi",
+   "verdict": "ok"
+  },
+  "වී": {
+   "codes": "U+0DC0 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Vii",
+   "verdict": "ok"
+  },
+  "වු": {
+   "codes": "U+0DC0 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Vu",
+   "verdict": "ok"
+  },
+  "වූ": {
+   "codes": "U+0DC0 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Vuu",
+   "verdict": "ok"
+  },
+  "වෘ": {
+   "codes": "U+0DC0 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Vru",
+   "verdict": "ok"
+  },
+  "වෙ": {
+   "codes": "U+0DC0 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ve",
+   "verdict": "ok"
+  },
+  "වේ": {
+   "codes": "U+0DC0 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Vee",
+   "verdict": "ok"
+  },
+  "වෛ": {
+   "codes": "U+0DC0 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Vai",
+   "verdict": "ok"
+  },
+  "වො": {
+   "codes": "U+0DC0 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Vo",
+   "verdict": "ok"
+  },
+  "වෝ": {
+   "codes": "U+0DC0 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Voo",
+   "verdict": "ok"
+  },
+  "වෞ": {
+   "codes": "U+0DC0 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Vau",
+   "verdict": "ok"
+  },
+  "වෟ": {
+   "codes": "U+0DC0 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Vaෟ",
+   "verdict": "leak"
+  },
+  "වෲ": {
+   "codes": "U+0DC0 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Vruu",
+   "verdict": "ok"
+  },
+  "වෳ": {
+   "codes": "U+0DC0 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Vaෳ",
+   "verdict": "leak"
+  },
+  "ශ": {
+   "codes": "U+0DC1",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "sha",
+   "verdict": "ok"
+  },
+  "ශ්": {
+   "codes": "U+0DC1 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "sh",
+   "verdict": "ok"
+  },
+  "ශ්‍ය": {
+   "codes": "U+0DC1 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "sh‍ya",
+   "verdict": "ok"
+  },
+  "ශ්‍ර": {
+   "codes": "U+0DC1 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "sh‍ra",
+   "verdict": "ok"
+  },
+  "ශා": {
+   "codes": "U+0DC1 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shaa",
+   "verdict": "ok"
+  },
+  "ශැ": {
+   "codes": "U+0DC1 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shae",
+   "verdict": "ok"
+  },
+  "ශෑ": {
+   "codes": "U+0DC1 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shaee",
+   "verdict": "ok"
+  },
+  "ශි": {
+   "codes": "U+0DC1 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shi",
+   "verdict": "ok"
+  },
+  "ශී": {
+   "codes": "U+0DC1 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shii",
+   "verdict": "ok"
+  },
+  "ශු": {
+   "codes": "U+0DC1 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shu",
+   "verdict": "ok"
+  },
+  "ශූ": {
+   "codes": "U+0DC1 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shuu",
+   "verdict": "ok"
+  },
+  "ශෘ": {
+   "codes": "U+0DC1 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shru",
+   "verdict": "ok"
+  },
+  "ශෙ": {
+   "codes": "U+0DC1 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "she",
+   "verdict": "ok"
+  },
+  "ශේ": {
+   "codes": "U+0DC1 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shee",
+   "verdict": "ok"
+  },
+  "ශෛ": {
+   "codes": "U+0DC1 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shai",
+   "verdict": "ok"
+  },
+  "ශො": {
+   "codes": "U+0DC1 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "sho",
+   "verdict": "ok"
+  },
+  "ශෝ": {
+   "codes": "U+0DC1 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shoo",
+   "verdict": "ok"
+  },
+  "ශෞ": {
+   "codes": "U+0DC1 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shau",
+   "verdict": "ok"
+  },
+  "ශෟ": {
+   "codes": "U+0DC1 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "shaෟ",
+   "verdict": "leak"
+  },
+  "ශෲ": {
+   "codes": "U+0DC1 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shruu",
+   "verdict": "ok"
+  },
+  "ශෳ": {
+   "codes": "U+0DC1 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "shaෳ",
+   "verdict": "leak"
+  },
+  "ෂ": {
+   "codes": "U+0DC2",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "sha",
+   "verdict": "ok"
+  },
+  "ෂ්": {
+   "codes": "U+0DC2 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "sh",
+   "verdict": "ok"
+  },
+  "ෂ්‍ය": {
+   "codes": "U+0DC2 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "sh‍ya",
+   "verdict": "ok"
+  },
+  "ෂ්‍ර": {
+   "codes": "U+0DC2 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "sh‍ra",
+   "verdict": "ok"
+  },
+  "ෂා": {
+   "codes": "U+0DC2 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shaa",
+   "verdict": "ok"
+  },
+  "ෂැ": {
+   "codes": "U+0DC2 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shae",
+   "verdict": "ok"
+  },
+  "ෂෑ": {
+   "codes": "U+0DC2 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shaee",
+   "verdict": "ok"
+  },
+  "ෂි": {
+   "codes": "U+0DC2 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shi",
+   "verdict": "ok"
+  },
+  "ෂී": {
+   "codes": "U+0DC2 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shii",
+   "verdict": "ok"
+  },
+  "ෂු": {
+   "codes": "U+0DC2 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shu",
+   "verdict": "ok"
+  },
+  "ෂූ": {
+   "codes": "U+0DC2 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shuu",
+   "verdict": "ok"
+  },
+  "ෂෘ": {
+   "codes": "U+0DC2 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shru",
+   "verdict": "ok"
+  },
+  "ෂෙ": {
+   "codes": "U+0DC2 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "she",
+   "verdict": "ok"
+  },
+  "ෂේ": {
+   "codes": "U+0DC2 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shee",
+   "verdict": "ok"
+  },
+  "ෂෛ": {
+   "codes": "U+0DC2 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shai",
+   "verdict": "ok"
+  },
+  "ෂො": {
+   "codes": "U+0DC2 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "sho",
+   "verdict": "ok"
+  },
+  "ෂෝ": {
+   "codes": "U+0DC2 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shoo",
+   "verdict": "ok"
+  },
+  "ෂෞ": {
+   "codes": "U+0DC2 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shau",
+   "verdict": "ok"
+  },
+  "ෂෟ": {
+   "codes": "U+0DC2 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "shaෟ",
+   "verdict": "leak"
+  },
+  "ෂෲ": {
+   "codes": "U+0DC2 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "shruu",
+   "verdict": "ok"
+  },
+  "ෂෳ": {
+   "codes": "U+0DC2 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "shaෳ",
+   "verdict": "leak"
+  },
+  "ස": {
+   "codes": "U+0DC3",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Sa",
+   "verdict": "ok"
+  },
+  "ස්": {
+   "codes": "U+0DC3 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "S",
+   "verdict": "ok"
+  },
+  "ස්‍ය": {
+   "codes": "U+0DC3 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "S‍ya",
+   "verdict": "ok"
+  },
+  "ස්‍ර": {
+   "codes": "U+0DC3 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "S‍ra",
+   "verdict": "ok"
+  },
+  "සා": {
+   "codes": "U+0DC3 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Saa",
+   "verdict": "ok"
+  },
+  "සැ": {
+   "codes": "U+0DC3 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Sae",
+   "verdict": "ok"
+  },
+  "සෑ": {
+   "codes": "U+0DC3 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Saee",
+   "verdict": "ok"
+  },
+  "සි": {
+   "codes": "U+0DC3 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Si",
+   "verdict": "ok"
+  },
+  "සී": {
+   "codes": "U+0DC3 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Sii",
+   "verdict": "ok"
+  },
+  "සු": {
+   "codes": "U+0DC3 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Su",
+   "verdict": "ok"
+  },
+  "සූ": {
+   "codes": "U+0DC3 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Suu",
+   "verdict": "ok"
+  },
+  "සෘ": {
+   "codes": "U+0DC3 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Sru",
+   "verdict": "ok"
+  },
+  "සෙ": {
+   "codes": "U+0DC3 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Se",
+   "verdict": "ok"
+  },
+  "සේ": {
+   "codes": "U+0DC3 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "See",
+   "verdict": "ok"
+  },
+  "සෛ": {
+   "codes": "U+0DC3 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Sai",
+   "verdict": "ok"
+  },
+  "සො": {
+   "codes": "U+0DC3 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "So",
+   "verdict": "ok"
+  },
+  "සෝ": {
+   "codes": "U+0DC3 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Soo",
+   "verdict": "ok"
+  },
+  "සෞ": {
+   "codes": "U+0DC3 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Sau",
+   "verdict": "ok"
+  },
+  "සෟ": {
+   "codes": "U+0DC3 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Saෟ",
+   "verdict": "leak"
+  },
+  "සෲ": {
+   "codes": "U+0DC3 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Sruu",
+   "verdict": "ok"
+  },
+  "සෳ": {
+   "codes": "U+0DC3 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Saෳ",
+   "verdict": "leak"
+  },
+  "හ": {
+   "codes": "U+0DC4",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Ha",
+   "verdict": "ok"
+  },
+  "හ්": {
+   "codes": "U+0DC4 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "H",
+   "verdict": "ok"
+  },
+  "හ්‍ය": {
+   "codes": "U+0DC4 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "H‍ya",
+   "verdict": "ok"
+  },
+  "හ්‍ර": {
+   "codes": "U+0DC4 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "H‍ra",
+   "verdict": "ok"
+  },
+  "හා": {
+   "codes": "U+0DC4 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Haa",
+   "verdict": "ok"
+  },
+  "හැ": {
+   "codes": "U+0DC4 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Hae",
+   "verdict": "ok"
+  },
+  "හෑ": {
+   "codes": "U+0DC4 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Haee",
+   "verdict": "ok"
+  },
+  "හි": {
+   "codes": "U+0DC4 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Hi",
+   "verdict": "ok"
+  },
+  "හී": {
+   "codes": "U+0DC4 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Hii",
+   "verdict": "ok"
+  },
+  "හු": {
+   "codes": "U+0DC4 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Hu",
+   "verdict": "ok"
+  },
+  "හූ": {
+   "codes": "U+0DC4 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Huu",
+   "verdict": "ok"
+  },
+  "හෘ": {
+   "codes": "U+0DC4 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Hru",
+   "verdict": "ok"
+  },
+  "හෙ": {
+   "codes": "U+0DC4 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "He",
+   "verdict": "ok"
+  },
+  "හේ": {
+   "codes": "U+0DC4 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Hee",
+   "verdict": "ok"
+  },
+  "හෛ": {
+   "codes": "U+0DC4 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Hai",
+   "verdict": "ok"
+  },
+  "හො": {
+   "codes": "U+0DC4 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Ho",
+   "verdict": "ok"
+  },
+  "හෝ": {
+   "codes": "U+0DC4 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Hoo",
+   "verdict": "ok"
+  },
+  "හෞ": {
+   "codes": "U+0DC4 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Hau",
+   "verdict": "ok"
+  },
+  "හෟ": {
+   "codes": "U+0DC4 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Haෟ",
+   "verdict": "leak"
+  },
+  "හෲ": {
+   "codes": "U+0DC4 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Hruu",
+   "verdict": "ok"
+  },
+  "හෳ": {
+   "codes": "U+0DC4 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Haෳ",
+   "verdict": "leak"
+  },
+  "ළ": {
+   "codes": "U+0DC5",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "la",
+   "verdict": "ok"
+  },
+  "ළ්": {
+   "codes": "U+0DC5 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "l",
+   "verdict": "ok"
+  },
+  "ළ්‍ය": {
+   "codes": "U+0DC5 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "l‍ya",
+   "verdict": "ok"
+  },
+  "ළ්‍ර": {
+   "codes": "U+0DC5 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "l‍ra",
+   "verdict": "ok"
+  },
+  "ළා": {
+   "codes": "U+0DC5 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "laa",
+   "verdict": "ok"
+  },
+  "ළැ": {
+   "codes": "U+0DC5 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "lae",
+   "verdict": "ok"
+  },
+  "ළෑ": {
+   "codes": "U+0DC5 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "laee",
+   "verdict": "ok"
+  },
+  "ළි": {
+   "codes": "U+0DC5 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "li",
+   "verdict": "ok"
+  },
+  "ළී": {
+   "codes": "U+0DC5 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "lii",
+   "verdict": "ok"
+  },
+  "ළු": {
+   "codes": "U+0DC5 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "lu",
+   "verdict": "ok"
+  },
+  "ළූ": {
+   "codes": "U+0DC5 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "luu",
+   "verdict": "ok"
+  },
+  "ළෘ": {
+   "codes": "U+0DC5 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "lru",
+   "verdict": "ok"
+  },
+  "ළෙ": {
+   "codes": "U+0DC5 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "le",
+   "verdict": "ok"
+  },
+  "ළේ": {
+   "codes": "U+0DC5 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "lee",
+   "verdict": "ok"
+  },
+  "ළෛ": {
+   "codes": "U+0DC5 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "lai",
+   "verdict": "ok"
+  },
+  "ළො": {
+   "codes": "U+0DC5 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "lo",
+   "verdict": "ok"
+  },
+  "ළෝ": {
+   "codes": "U+0DC5 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "loo",
+   "verdict": "ok"
+  },
+  "ළෞ": {
+   "codes": "U+0DC5 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "lau",
+   "verdict": "ok"
+  },
+  "ළෟ": {
+   "codes": "U+0DC5 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "laෟ",
+   "verdict": "leak"
+  },
+  "ළෲ": {
+   "codes": "U+0DC5 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "lruu",
+   "verdict": "ok"
+  },
+  "ළෳ": {
+   "codes": "U+0DC5 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "laෳ",
+   "verdict": "leak"
+  },
+  "ෆ": {
+   "codes": "U+0DC6",
+   "detail": "",
+   "kind": "consonant",
+   "raw": "Fa",
+   "verdict": "ok"
+  },
+  "ෆ්": {
+   "codes": "U+0DC6 U+0DCA",
+   "detail": "",
+   "kind": "akshara_hal",
+   "raw": "F",
+   "verdict": "ok"
+  },
+  "ෆ්‍ය": {
+   "codes": "U+0DC6 U+0DCA U+200D U+0DBA",
+   "detail": "",
+   "kind": "conjunct_ya",
+   "raw": "F‍ya",
+   "verdict": "ok"
+  },
+  "ෆ්‍ර": {
+   "codes": "U+0DC6 U+0DCA U+200D U+0DBB",
+   "detail": "",
+   "kind": "conjunct_ra",
+   "raw": "F‍ra",
+   "verdict": "ok"
+  },
+  "ෆා": {
+   "codes": "U+0DC6 U+0DCF",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Faa",
+   "verdict": "ok"
+  },
+  "ෆැ": {
+   "codes": "U+0DC6 U+0DD0",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Fae",
+   "verdict": "ok"
+  },
+  "ෆෑ": {
+   "codes": "U+0DC6 U+0DD1",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Faee",
+   "verdict": "ok"
+  },
+  "ෆි": {
+   "codes": "U+0DC6 U+0DD2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Fi",
+   "verdict": "ok"
+  },
+  "ෆී": {
+   "codes": "U+0DC6 U+0DD3",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Fii",
+   "verdict": "ok"
+  },
+  "ෆු": {
+   "codes": "U+0DC6 U+0DD4",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Fu",
+   "verdict": "ok"
+  },
+  "ෆූ": {
+   "codes": "U+0DC6 U+0DD6",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Fuu",
+   "verdict": "ok"
+  },
+  "ෆෘ": {
+   "codes": "U+0DC6 U+0DD8",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Fru",
+   "verdict": "ok"
+  },
+  "ෆෙ": {
+   "codes": "U+0DC6 U+0DD9",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Fe",
+   "verdict": "ok"
+  },
+  "ෆේ": {
+   "codes": "U+0DC6 U+0DDA",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Fee",
+   "verdict": "ok"
+  },
+  "ෆෛ": {
+   "codes": "U+0DC6 U+0DDB",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Fai",
+   "verdict": "ok"
+  },
+  "ෆො": {
+   "codes": "U+0DC6 U+0DDC",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Fo",
+   "verdict": "ok"
+  },
+  "ෆෝ": {
+   "codes": "U+0DC6 U+0DDD",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Foo",
+   "verdict": "ok"
+  },
+  "ෆෞ": {
+   "codes": "U+0DC6 U+0DDE",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Fau",
+   "verdict": "ok"
+  },
+  "ෆෟ": {
+   "codes": "U+0DC6 U+0DDF",
+   "detail": "unromanized U+0DDF",
+   "kind": "akshara",
+   "leaked": "ෟ",
+   "raw": "Faෟ",
+   "verdict": "leak"
+  },
+  "ෆෲ": {
+   "codes": "U+0DC6 U+0DF2",
+   "detail": "",
+   "kind": "akshara",
+   "raw": "Fruu",
+   "verdict": "ok"
+  },
+  "ෆෳ": {
+   "codes": "U+0DC6 U+0DF3",
+   "detail": "unromanized U+0DF3",
+   "kind": "akshara",
+   "leaked": "ෳ",
+   "raw": "Faෳ",
+   "verdict": "leak"
+  }
+ },
+ "url": "https://nisansads.staff.uom.lk/CodeSamples/sinhala_romaniser.php"
+}

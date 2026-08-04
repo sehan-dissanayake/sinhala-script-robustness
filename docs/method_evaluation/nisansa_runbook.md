@@ -1,143 +1,122 @@
-# Nisansa romanizer — team run guide
+# Nisansa romanizer — run guide
 
-We need the Nisansa web romanizer's output for all **450,587** words in the
-Swa-Bhasha corpus. The endpoint only serves roughly **25,000 words before it
-starts refusing traffic**, so the work is split into **24 shards** that we run
-between us, across as many sessions as it takes.
+We need the Nisansa web romanizer's output for **one** corpus:
 
-You can stop at any time. Everything fetched is saved immediately.
+| Corpus | Items | Requests | Rough time |
+|---|---|---|---|
+| `swa_bhasha_words` | 450,587 words | ~9,000 | ~1 hour |
+
+`social_media` (4,253 sentences) is **already done and does not need rerunning**:
+it contains none of the sequences the endpoint fails or leaks on, so its cached
+results are already the endpoint's verbatim output.
+
+`augmented_sentences_sample` is **deliberately not run** through Nisansa. It is a
+secondary cross-check whose references are themselves machine-generated, so it
+partly measures agreement with a generator rather than with human typing, and it
+is not worth ~1.2 hours of fetching. The other three methods are scored on it.
+
+Measured throughput is ~64 items/s, so this is about an hour of wall time rather
+than the multi-session effort it was originally. There is **no rate limit** —
+what used to look like load shedding was the ඤ bug failing whole batches (see
+below). You can stop at any time; everything fetched is saved immediately, and
+rerunning the same command resumes.
 
 ## Setup (once)
 
-```bash
-git clone <repo> && cd sinhala-script-robustness
+```powershell
 python -m venv .venv
-.venv\Scripts\activate          # Windows;  source .venv/bin/activate on mac/linux
+.venv\Scripts\activate
 pip install -r requirements.txt
+$env:PYTHONIOENCODING = "utf-8"      # or printing Sinhala crashes on cp1252
 ```
 
-You do **not** need to download any dataset. The word list ships with the repo
-(`data/reference/nisansa_shards/swa_bhasha_words/manifest.txt.gz`, 2 MB).
+Use the venv's Python. System Python lacks the dependencies.
 
-> Use the venv's Python. Running with system Python will fail on missing
-> packages.
+## What the runner records
 
-## 1. See what needs doing
+The endpoint's output **verbatim**. Two upstream defects are captured rather
+than smoothed over, because the evaluation counts them as the tool's genuine
+errors:
 
-```bash
-python src/method_evaluation/nisansa_shards.py status
+- **17 sequences produce no output at all** — every one is ඤ (U+0DA4) carrying a
+  vowel sign or al-lakuna. These are filtered client-side (sending one fails its
+  whole batch), recorded in `unsupported.json`, and scored as an empty
+  hypothesis, i.e. CER 1.0. They are *not* excluded from the comparison.
+- **12 sequences leak** — they come back unromanized inside otherwise valid
+  Latin output, so ඓතිහාසික becomes `ඓthihaasika`. Kept as-is.
+
+Both tables are measured by `nisansa_probe.py` and committed under
+`data/reference/nisansa_endpoint/`. You do not need to run the probe; it is
+there so the tables are evidence rather than guesswork.
+
+> **Historical note.** Results fetched before this change were passed through
+> the in-house phonetic romanizer to patch leaked characters up. That made the
+> measured system a hybrid of two methods under comparison, so the word corpus
+> was refetched from scratch. Do not reintroduce `repair=True`.
+
+## Run it
+
+Resumable — rerun after any interruption.
+
+```powershell
+python src/method_evaluation/nisansa_shards.py run --corpus swa_bhasha_words --all
 ```
 
-```
- shard   done /  total   pct  state
-    0   1,312 / 18,775    7.0  partial
-    1   1,041 / 18,775    5.5  partial
-   ...
-overall: 25,271 / 450,587 (5.6%)
-```
+`--all` walks all 24 shards in one process. To split the work across people,
+claim a shard number instead and use `--shard N`; shard *k* takes every 24th
+item, so any partial result set stays a representative sample rather than an
+alphabetically biased slice.
 
-Every shard starts at ~1,041 done because results we already had were seeded in.
+Progress and gaps:
 
-## 2. Claim a shard
-
-Put your name next to a shard in the table at the bottom of this file, commit,
-and push — so two people don't spend hours on the same shard.
-
-## 3. Run it
-
-```bash
-python src/method_evaluation/nisansa_shards.py run --shard 7
+```powershell
+python src/method_evaluation/nisansa_shards.py status --corpus swa_bhasha_words
 ```
 
-Optional: `--limit 5000` to stop after 5,000 words this session.
+## Then merge and rescore
 
-**What you'll see.** A progress bar. When the server gets busy it shows
-`server busy ...; retry 3/6 in 5s` — that is normal and it is still working, not
-frozen. If the server refuses three groups in a row it stops cleanly:
-
-```
-  endpoint appears to be refusing traffic; stopping cleanly.
-wrote 4,812 results. 12,922 items left in this shard.
-Rate limited or interrupted? Just run the same command again - it resumes
-```
-
-**That is expected, not a failure.** Wait a while (an hour, or try the next day)
-and run the same command again. It skips everything already done.
-
-You can also stop it yourself with Ctrl+C at any point — results already
-fetched are on disk.
-
-## 4. Commit your results
-
-```bash
-git add data/reference/nisansa_shards/swa_bhasha_words/shard-07.jsonl
-git commit -m "nisansa shard 07: <n> words"
-git push
-```
-
-You only ever touch **your own** shard file, so this never conflicts with
-anyone else's work. Repeat step 3 whenever you have time until your shard
-reaches 100%.
-
-## 5. When all 24 shards are complete (one person does this)
-
-```bash
-python src/method_evaluation/nisansa_shards.py merge
-python src/method_evaluation/run_evaluation.py     # rescore with full coverage
+```powershell
+python src/method_evaluation/nisansa_shards.py merge --corpus swa_bhasha_words
+python src/method_evaluation/derive_nisansa_w.py --corpora social_media
+python src/method_evaluation/run_evaluation.py
+python src/method_evaluation/error_analysis.py
 python src/method_evaluation/plots.py
 python src/method_evaluation/generate_report.py
 ```
 
+`merge` writes two hypothesis files: the endpoint's verbatim output, and the
+same output with **v→w preprocessing** applied. That rewrite is a stage of the
+method rather than an optional extra, so it happens automatically; the standalone
+`derive_nisansa_w.py` call above is only for `social_media`, which has no shard
+set. Both rows appear in the report, and the v→w row is the one to read as the
+Nisansa result.
+
 `merge` needs the rebuilt parallel corpus locally (`download_reference_data.py`
-then `build_parallel_corpus.py`); it warns if it is missing.
+then `build_parallel_corpus.py` then `sample_corpus.py`); it warns if missing.
+
+For the appendix comparison on only the rows every method answered:
+
+```powershell
+python src/method_evaluation/run_evaluation.py --common-subset
+```
 
 ## Notes / gotchas
 
-- **Don't run two shards at once on one machine, and don't run the same shard
-  twice.** A lock file blocks the latter with a clear message. Parallel runs
-  from one machine just add load to the bottleneck and slow everyone down.
-- **Whether running from 6 different networks actually helps is unproven.** The
-  evidence suggests the server sheds load globally rather than limiting per IP
-  (it returns normal empty responses rather than HTTP 429, and slowing down
-  didn't help). Worth having two people test simultaneously and comparing
-  throughput against one person alone before everyone commits their evening
-  to it.
-- **Shards are interleaved, not contiguous** (shard *k* takes every 24th word).
-  The corpus is alphabetically sorted, so contiguous blocks would give each
-  person one initial letter, and a partly finished run would be an
-  alphabetically biased sample. With the stride, whatever we finish stays a
-  representative sample of the whole corpus.
-- **Failures are never faked.** A failed request is retried, never written as an
-  empty or untranslated result, so partial data can't quietly turn into a wrong
-  score.
+- **Don't run the same shard twice concurrently.** A lock file blocks it with a
+  clear message. Two runs on one shard duplicate every request and gain nothing.
+- **Failures are never faked.** A transport error is retried and never written
+  as an empty result. A deterministic refusal is recorded as a refusal, so
+  partial data cannot quietly turn into a wrong score. The two are kept distinct
+  precisely because one is our problem and the other is the tool's.
+- **Retrying a refusal is useless.** Measured across 60 failing batches with 6
+  attempts each: not one succeeded later. The client raises immediately and
+  bisects the batch instead of waiting.
+- **Word-corpus shard results are committed** (~20 MB), so nobody has to refetch
+  them and a teammate needs no dataset download to contribute.
 
-## Shard claim table
+## Committing word-corpus results
 
-| Shard | Assigned to | Status |
-|---|---|---|
-| 0 |Sehan | partial |
-| 1 | Sehan| partial |
-| 2 | Sehan| |
-| 3 | Sehan| |
-| 4 | Dasun| |
-| 5 |Dasun | |
-| 6 | Dasun| |
-| 7 | Dasun| |
-| 8 | Eshin| |
-| 9 | Eshin| |
-| 10 | Eshin| |
-| 11 | Eshin| |
-| 12 | Shanil| |
-| 13 | Shanil| |
-| 14 | Shanil| |
-| 15 | Shanil| |
-| 16 | Dilhara| |
-| 17 | Dilhara| |
-| 18 | Dilhara| |
-| 19 | Dilhara| |
-| 20 | Chehan| partial |
-| 21 | Chehan| partial |
-| 22 | Chehan| partial |
-| 23 | Chehan| partial |
-
-Run `status` for live numbers; this table is only for claiming.
+```powershell
+git add data/reference/nisansa_shards/swa_bhasha_words
+git commit -m "nisansa word corpus: raw endpoint output, no phonetic repair"
+```

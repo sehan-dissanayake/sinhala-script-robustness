@@ -4,22 +4,36 @@ The upstream form (`sinhala_romaniser.php`) accepts free text and romanizes it
 line by line, so many items can be romanized in a single POST by joining them
 with newlines and splitting the response back apart. Measured on the word set
 this is ~70x faster than one request per item (~4.5 ms/item vs ~317 ms/item),
-which is what makes the 450k-word and sampled-sentence corpora feasible at all.
+which is what makes the 450k-word and 275k-sentence corpora feasible at all.
 
-The endpoint cannot romanize one specific sequence: U+0DA4 (nya) followed by
-U+0DCA (al-lakuna), i.e. ඤ්. Any request containing it returns the page's empty
-placeholder instead of output, deterministically and regardless of payload size,
-request rate or time of day. Measured directly: ඤ alone works, every other
-consonant + al-lakuna works, all 41 consonants tested, only ඤ් breaks. It occurs
-in 1,144 of the 450,587 corpus words (0.254%), and because a batch fails if any
-of its items contains it, a 250-word batch fails ~30-47% of the time. That is the
-entire cause of what looked like rate limiting or load shedding: retrying,
-slowing down and shrinking batches never helped because nothing was ever
-throttled. Such words are filtered out locally instead of being sent.
+Two distinct endpoint defects show up on this data, and they are handled
+differently because they are different kinds of failure:
+
+*Hard failures.* Certain aksharas make the endpoint return its empty
+placeholder instead of output, deterministically, regardless of payload size,
+request rate or time of day. All known cases involve U+0DA4 (ඤ) followed by a
+vowel sign or al-lakuna. The set is not guessable, so it is measured directly by
+`nisansa_probe.py` and read from disk (see `failing_sequences`); the hard-coded
+table below is only a fallback for a fresh clone. Because a batch fails if any
+of its items contains such a sequence, sending them wastes a bisection per
+affected batch, so they are held back locally and reported as failures. A failed
+item yields an empty hypothesis, which the evaluation scores as a genuine error
+rather than excluding.
+
+*Leaks.* Other characters (e.g. ඓ U+0D93) come back unromanized, embedded in
+otherwise valid Latin output. This is silent: the request succeeds. Leaks are
+recorded verbatim, because a leftover Sinhala character in the output *is* the
+tool's answer and scoring it as an error is the point.
+
+Earlier revisions ran the in-house phonetic romanizer over every response to
+patch leaks up. That made the measured system "Nisansa plus phonetic repair"
+and quietly hid the leak defect behind the output of one of the competing
+methods, so `repair` now defaults to False. It is kept only to reproduce the
+older numbers.
 
 Safety properties:
-  * Requests containing a known-broken sequence are never sent (see
-    BROKEN_SEQUENCES); callers get them back via `unsupported`.
+  * Requests containing a known-failing sequence are never sent; callers get
+    them back via `unsupported`.
   * A placeholder response is treated as "this payload contains something the
     endpoint cannot process", not as a transient error, so it is never retried -
     retrying is provably useless here (60 failing batches, 6 attempts each: not
@@ -28,8 +42,10 @@ Safety properties:
   * If a response does not split into exactly as many lines as we sent, the
     chunk is bisected and retried, down to single items, so a single awkward
     item can never shift the alignment of its neighbours.
-  * Items whose romanization would be empty are never sent (they would collapse
-    a line and break alignment); they are handled directly.
+  * Items that cannot be sent at all (empty, newline-bearing) are handled
+    separately so they can never collapse a line and shift the alignment.
+  * An item that comes back as a blank line is recorded as a failure rather
+    than left unresolved, so a resumable run cannot loop on it forever.
 
 Batching does not change the romanization itself: verified identical to
 one-item-per-request output (case-insensitively) on both the 4,253 social-media
@@ -41,6 +57,7 @@ a romanization choice, and the evaluation folds case, so this is immaterial.
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 import time
@@ -48,21 +65,30 @@ import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
+from functools import lru_cache
 from pathlib import Path
 
-TRANSLIT_SRC = Path(__file__).resolve().parents[1] / "transliteration"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+TRANSLIT_SRC = PROJECT_ROOT / "src" / "transliteration"
 sys.path.insert(0, str(TRANSLIT_SRC))
 from phonetic import transliterate as _phonetic  # noqa: E402
 
 URL = "https://nisansads.staff.uom.lk/CodeSamples/sinhala_romaniser.php"
 
+# Written by nisansa_probe.py; committed, so a fresh clone gets the measured
+# table without probing the endpoint again.
+SUPPORT_DIR = PROJECT_ROOT / "data" / "reference" / "nisansa_endpoint"
+FAILING_PATH = SUPPORT_DIR / "failing_sequences.json"
 
-MAX_LINES = 50
+MAX_LINES = 250
 MAX_BYTES = 6000         # payload bytes of the joined chunk
 THROTTLE_S = 0.1         # polite pause between successful requests
 
-# bisecting real batches.
-BROKEN_SEQUENCES = (
+SINHALA_RANGE = ("\u0d80", "\u0dff")
+
+# Fallback only. The probe found this table incomplete: ඤී, ඤේ, ඤො and ඤෝ fail
+# too, which is why the real table is measured rather than hand-written.
+FALLBACK_FAILING = (
     "\u0DA4\u0DCA",   # ඤ් nya + al-lakuna
     "\u0DA4\u0DCF",   # ඤා nya + aa
     "\u0DA4\u0DD2",   # ඤි nya + i
@@ -94,9 +120,27 @@ class Misaligned(BatchRejected):
     """The response did not line up with the request. Splitting may help."""
 
 
+@lru_cache(maxsize=1)
+def failing_sequences() -> tuple[str, ...]:
+    """Sequences the endpoint cannot romanize, longest first.
+
+    Measured by `nisansa_probe.py`. Falls back to the hand-written table if the
+    probe has never been run in this checkout.
+    """
+    if FAILING_PATH.exists():
+        seqs = json.loads(FAILING_PATH.read_text(encoding="utf-8"))["sequences"]
+        if seqs:
+            return tuple(sorted(seqs, key=len, reverse=True))
+    return FALLBACK_FAILING
+
+
+def has_sinhala(text: str) -> bool:
+    return any(SINHALA_RANGE[0] <= c <= SINHALA_RANGE[1] for c in text)
+
+
 def unsupported_reason(text: str) -> str | None:
     """Why the endpoint cannot romanize `text`, or None if it should be fine."""
-    for seq in BROKEN_SEQUENCES:
+    for seq in failing_sequences():
         if seq in text:
             return "contains " + " ".join(f"U+{ord(c):04X}" for c in seq)
     return None
@@ -141,6 +185,17 @@ def _post(payload: str, timeout: int, notify=None) -> str:
     raise BatchRejected(f"transport failed after {len(BACKOFF_S) + 1} attempts: {last}")
 
 
+def romanize_raw(text: str, timeout: int = 60) -> str:
+    """Romanize one string and return the endpoint's output verbatim.
+
+    No phonetic repair, no case folding: exactly what the tool produced, leaked
+    Sinhala characters included. Raises `Unprocessable` on a hard failure.
+    Used by `nisansa_probe.py` to characterise the endpoint.
+    """
+    box = _post(unicodedata.normalize("NFC", text), timeout)
+    return _TAGS.sub("", box).strip()
+
+
 def _split_lines(box: str, expected: int) -> list[str]:
     body = _TAGS.sub("", box).strip("\r\n")
     parts = re.split(r"\r?\n", body)
@@ -171,9 +226,9 @@ def _romanize_chunk(chunk: list[str], timeout: int, notify=None,
 
     Both failure modes are handled by bisecting, which costs ~2*log2(n) extra
     requests and no waiting at all. This matters because a single unromanizable
-    item would otherwise cost us every other item sharing its request: the known
-    broken sequence is filtered up front, but bisecting keeps that from being
-    load-bearing if the endpoint has other blind spots we have not catalogued.
+    item would otherwise cost us every other item sharing its request: known
+    failing sequences are filtered up front, but bisecting keeps that from being
+    load-bearing if the endpoint has blind spots the probe has not catalogued.
     """
     try:
         box = _post("\n".join(chunk), timeout, notify)
@@ -191,11 +246,18 @@ def _romanize_chunk(chunk: list[str], timeout: int, notify=None,
 
 def transliterate_many(texts: list[str], timeout: int = 120, progress=None,
                        notify=None, on_result=None,
-                       unsupported: dict | None = None) -> list[str]:
+                       unsupported: dict | None = None,
+                       repair: bool = False) -> list[str]:
     """Romanize many Sinhala strings, batching requests. Order is preserved.
 
-    Mirrors `nisansa_sir's_method.transliterate`, including the phonetic
-    fallback pass that fills in characters the web app leaves unconverted.
+    Returns the endpoint's output verbatim. Items the endpoint cannot handle
+    come back as "" and are recorded in `unsupported` with a reason; the caller
+    is expected to score those as errors, not to drop them.
+
+    `repair=True` reinstates the old behaviour of running the in-house phonetic
+    romanizer over each response to patch leaked Sinhala characters. That makes
+    this a hybrid of two methods under test and hides the leak defect, so it is
+    off by default and kept only for reproducing earlier results.
 
     `on_result(source, romanized)` is invoked as each request comes back, before
     any later request is attempted. Callers should persist from that callback:
@@ -205,53 +267,66 @@ def transliterate_many(texts: list[str], timeout: int = 120, progress=None,
     normalized = [unicodedata.normalize("NFC", t) if t else "" for t in texts]
     results: list[str] = ["" for _ in normalized]
 
-    # Held back: empty, newline-bearing (would break line alignment), or known to
-    # be unromanizable by this endpoint. Sending the last kind would fail the
-    # whole request it travels in.
-    sendable_idx = []
+    def fail(text: str, reason: str) -> None:
+        if unsupported is not None:
+            unsupported[text] = reason
+
+    # Held back: empty, newline-bearing (would break line alignment), or known
+    # to fail. Sending the last kind would fail the whole request it travels in.
+    sendable_idx: list[int] = []
+    multiline_idx: list[int] = []
     for i, t in enumerate(normalized):
-        if not t.strip() or "\n" in t:
-            continue
-        reason = unsupported_reason(t)
-        if reason:
-            if unsupported is not None:
-                unsupported[t] = reason
+        if not t.strip():
             if progress is not None:
                 progress(1)
             continue
-        sendable_idx.append(i)
+        reason = unsupported_reason(t)
+        if reason:
+            fail(t, reason)
+            if progress is not None:
+                progress(1)
+            continue
+        (multiline_idx if "\n" in t else sendable_idx).append(i)
 
     for chunk_idx in _chunks_indices(sendable_idx, normalized):
         chunk = [normalized[i] for i in chunk_idx]
         romanized = _romanize_chunk(chunk, timeout, notify, unsupported)
         for i, r in zip(chunk_idx, romanized):
-            results[i] = _phonetic(r) if r else ""
-            if on_result is not None and results[i]:
-                on_result(normalized[i], results[i])
+            src = normalized[i]
+            if not r:
+                # Either bisected down to a rejected item (already recorded) or
+                # a blank line for non-blank input. Record so a resumable run
+                # treats it as resolved instead of retrying it forever.
+                if unsupported is not None and src not in unsupported:
+                    fail(src, "endpoint returned a blank line")
+                continue
+            results[i] = _phonetic(r) if repair else r
+            if on_result is not None:
+                on_result(src, results[i])
         if progress is not None:
             progress(len(chunk))
 
     # Multi-line items cannot share a request, so they go one at a time.
-    sendable = set(sendable_idx)
-    for i, t in enumerate(normalized):
-        if i in sendable or not t.strip() or unsupported_reason(t):
-            continue
-        if "\n" in t:
-            try:
-                box = _post(t, timeout, notify)
-                results[i] = _phonetic(_TAGS.sub("", box).strip())
-                if on_result is not None and results[i]:
-                    on_result(t, results[i])
-            except Unprocessable:
-                if unsupported is None:
-                    raise
-                unsupported[t] = "rejected by endpoint"
-            if progress is not None:
-                progress(1)
+    for i in multiline_idx:
+        src = normalized[i]
+        try:
+            box = _post(src, timeout, notify)
+            raw = _TAGS.sub("", box).strip()
+            results[i] = (_phonetic(raw) if repair else raw) if raw else ""
+            if results[i] and on_result is not None:
+                on_result(src, results[i])
+            elif not results[i]:
+                fail(src, "endpoint returned a blank line")
+        except Unprocessable:
+            if unsupported is None:
+                raise
+            fail(src, "rejected by endpoint")
+        if progress is not None:
+            progress(1)
     return results
 
 
-def _chunks_indices(idx: list[str], normalized: list[str]) -> list[list[int]]:
+def _chunks_indices(idx: list[int], normalized: list[str]) -> list[list[int]]:
     out: list[list[int]] = []
     cur: list[int] = []
     size = 0

@@ -1,0 +1,802 @@
+{
+ "description": "Minimal set of sequences the Nisansa endpoint returns unromanized inside otherwise valid output. Match by substring. Scored as errors, not repaired. Derived by nisansa_probe.py from leaking_units, which lists every probed unit that leaked.",
+ "url": "https://nisansads.staff.uom.lk/CodeSamples/sinhala_romaniser.php",
+ "sequences": [
+  "ඎ",
+  "ඏ",
+  "ඐ",
+  "ඓ",
+  "ඞ",
+  "ඦ",
+  "ෟ",
+  "ෳ",
+  "ඣෙ",
+  "ඤෙ",
+  "ඥෙ",
+  "ඬෙ"
+ ],
+ "sequences_readable": [
+  "ඎ  U+0D8E",
+  "ඏ  U+0D8F",
+  "ඐ  U+0D90",
+  "ඓ  U+0D93",
+  "ඞ  U+0D9E",
+  "ඦ  U+0DA6",
+  "ෟ  U+0DDF",
+  "ෳ  U+0DF3",
+  "ඣෙ  U+0DA3 U+0DD9",
+  "ඤෙ  U+0DA4 U+0DD9",
+  "ඥෙ  U+0DA5 U+0DD9",
+  "ඬෙ  U+0DAC U+0DD9"
+ ],
+ "leaking_units": [
+  {
+   "unit": "ඎ",
+   "codes": "U+0D8E",
+   "raw": "ඎ",
+   "leaked": "ඎ"
+  },
+  {
+   "unit": "ඏ",
+   "codes": "U+0D8F",
+   "raw": "ඏ",
+   "leaked": "ඏ"
+  },
+  {
+   "unit": "ඐ",
+   "codes": "U+0D90",
+   "raw": "ඐ",
+   "leaked": "ඐ"
+  },
+  {
+   "unit": "ඓ",
+   "codes": "U+0D93",
+   "raw": "ඓ",
+   "leaked": "ඓ"
+  },
+  {
+   "unit": "කෟ",
+   "codes": "U+0D9A U+0DDF",
+   "raw": "Kaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "කෳ",
+   "codes": "U+0D9A U+0DF3",
+   "raw": "Kaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ඛෟ",
+   "codes": "U+0D9B U+0DDF",
+   "raw": "Khaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ඛෳ",
+   "codes": "U+0D9B U+0DF3",
+   "raw": "Khaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ගෟ",
+   "codes": "U+0D9C U+0DDF",
+   "raw": "Gaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ගෳ",
+   "codes": "U+0D9C U+0DF3",
+   "raw": "Gaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ඝෟ",
+   "codes": "U+0D9D U+0DDF",
+   "raw": "Ghaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ඝෳ",
+   "codes": "U+0D9D U+0DF3",
+   "raw": "Ghaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ඞ",
+   "codes": "U+0D9E",
+   "raw": "ඞ",
+   "leaked": "ඞ"
+  },
+  {
+   "unit": "ඞ්",
+   "codes": "U+0D9E U+0DCA",
+   "raw": "ඞ්",
+   "leaked": "ඞ්"
+  },
+  {
+   "unit": "ඞ්‍ය",
+   "codes": "U+0D9E U+0DCA U+200D U+0DBA",
+   "raw": "ඞ්‍ya",
+   "leaked": "ඞ්"
+  },
+  {
+   "unit": "ඞ්‍ර",
+   "codes": "U+0D9E U+0DCA U+200D U+0DBB",
+   "raw": "ඞ්‍ra",
+   "leaked": "ඞ්"
+  },
+  {
+   "unit": "ඞා",
+   "codes": "U+0D9E U+0DCF",
+   "raw": "ඞා",
+   "leaked": "ඞා"
+  },
+  {
+   "unit": "ඞැ",
+   "codes": "U+0D9E U+0DD0",
+   "raw": "ඞැ",
+   "leaked": "ඞැ"
+  },
+  {
+   "unit": "ඞෑ",
+   "codes": "U+0D9E U+0DD1",
+   "raw": "ඞෑ",
+   "leaked": "ඞෑ"
+  },
+  {
+   "unit": "ඞි",
+   "codes": "U+0D9E U+0DD2",
+   "raw": "ඞි",
+   "leaked": "ඞි"
+  },
+  {
+   "unit": "ඞී",
+   "codes": "U+0D9E U+0DD3",
+   "raw": "ඞී",
+   "leaked": "ඞී"
+  },
+  {
+   "unit": "ඞු",
+   "codes": "U+0D9E U+0DD4",
+   "raw": "ඞු",
+   "leaked": "ඞු"
+  },
+  {
+   "unit": "ඞූ",
+   "codes": "U+0D9E U+0DD6",
+   "raw": "ඞූ",
+   "leaked": "ඞූ"
+  },
+  {
+   "unit": "ඞෘ",
+   "codes": "U+0D9E U+0DD8",
+   "raw": "ඞෘ",
+   "leaked": "ඞෘ"
+  },
+  {
+   "unit": "ඞෙ",
+   "codes": "U+0D9E U+0DD9",
+   "raw": "ඞෙ",
+   "leaked": "ඞෙ"
+  },
+  {
+   "unit": "ඞේ",
+   "codes": "U+0D9E U+0DDA",
+   "raw": "ඞේ",
+   "leaked": "ඞේ"
+  },
+  {
+   "unit": "ඞෛ",
+   "codes": "U+0D9E U+0DDB",
+   "raw": "ඞෛ",
+   "leaked": "ඞෛ"
+  },
+  {
+   "unit": "ඞො",
+   "codes": "U+0D9E U+0DDC",
+   "raw": "ඞො",
+   "leaked": "ඞො"
+  },
+  {
+   "unit": "ඞෝ",
+   "codes": "U+0D9E U+0DDD",
+   "raw": "ඞෝ",
+   "leaked": "ඞෝ"
+  },
+  {
+   "unit": "ඞෞ",
+   "codes": "U+0D9E U+0DDE",
+   "raw": "ඞෞ",
+   "leaked": "ඞෞ"
+  },
+  {
+   "unit": "ඞෟ",
+   "codes": "U+0D9E U+0DDF",
+   "raw": "ඞෟ",
+   "leaked": "ඞෟ"
+  },
+  {
+   "unit": "ඞෲ",
+   "codes": "U+0D9E U+0DF2",
+   "raw": "ඞෲ",
+   "leaked": "ඞෲ"
+  },
+  {
+   "unit": "ඞෳ",
+   "codes": "U+0D9E U+0DF3",
+   "raw": "ඞෳ",
+   "leaked": "ඞෳ"
+  },
+  {
+   "unit": "ඟෟ",
+   "codes": "U+0D9F U+0DDF",
+   "raw": "N̆gaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ඟෳ",
+   "codes": "U+0D9F U+0DF3",
+   "raw": "N̆gaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "චෟ",
+   "codes": "U+0DA0 U+0DDF",
+   "raw": "Chaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "චෳ",
+   "codes": "U+0DA0 U+0DF3",
+   "raw": "Chaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ඡෟ",
+   "codes": "U+0DA1 U+0DDF",
+   "raw": "Chaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ඡෳ",
+   "codes": "U+0DA1 U+0DF3",
+   "raw": "Chaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ජෟ",
+   "codes": "U+0DA2 U+0DDF",
+   "raw": "Jaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ජෳ",
+   "codes": "U+0DA2 U+0DF3",
+   "raw": "Jaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ඣෙ",
+   "codes": "U+0DA3 U+0DD9",
+   "raw": "Jhaෙ",
+   "leaked": "ෙ"
+  },
+  {
+   "unit": "ඣෟ",
+   "codes": "U+0DA3 U+0DDF",
+   "raw": "Jhaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ඣෳ",
+   "codes": "U+0DA3 U+0DF3",
+   "raw": "Jhaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ඤෙ",
+   "codes": "U+0DA4 U+0DD9",
+   "raw": "nෙ",
+   "leaked": "ෙ"
+  },
+  {
+   "unit": "ඤෟ",
+   "codes": "U+0DA4 U+0DDF",
+   "raw": "nෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ඤෳ",
+   "codes": "U+0DA4 U+0DF3",
+   "raw": "nෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ඥෙ",
+   "codes": "U+0DA5 U+0DD9",
+   "raw": "Jnaෙ",
+   "leaked": "ෙ"
+  },
+  {
+   "unit": "ඥෟ",
+   "codes": "U+0DA5 U+0DDF",
+   "raw": "Jnaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ඥෳ",
+   "codes": "U+0DA5 U+0DF3",
+   "raw": "Jnaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ඦ",
+   "codes": "U+0DA6",
+   "raw": "ඦ",
+   "leaked": "ඦ"
+  },
+  {
+   "unit": "ඦ්",
+   "codes": "U+0DA6 U+0DCA",
+   "raw": "ඦ්",
+   "leaked": "ඦ්"
+  },
+  {
+   "unit": "ඦ්‍ය",
+   "codes": "U+0DA6 U+0DCA U+200D U+0DBA",
+   "raw": "ඦ්‍ya",
+   "leaked": "ඦ්"
+  },
+  {
+   "unit": "ඦ්‍ර",
+   "codes": "U+0DA6 U+0DCA U+200D U+0DBB",
+   "raw": "ඦ්‍ra",
+   "leaked": "ඦ්"
+  },
+  {
+   "unit": "ඦා",
+   "codes": "U+0DA6 U+0DCF",
+   "raw": "ඦා",
+   "leaked": "ඦා"
+  },
+  {
+   "unit": "ඦැ",
+   "codes": "U+0DA6 U+0DD0",
+   "raw": "ඦැ",
+   "leaked": "ඦැ"
+  },
+  {
+   "unit": "ඦෑ",
+   "codes": "U+0DA6 U+0DD1",
+   "raw": "ඦෑ",
+   "leaked": "ඦෑ"
+  },
+  {
+   "unit": "ඦි",
+   "codes": "U+0DA6 U+0DD2",
+   "raw": "ඦි",
+   "leaked": "ඦි"
+  },
+  {
+   "unit": "ඦී",
+   "codes": "U+0DA6 U+0DD3",
+   "raw": "ඦී",
+   "leaked": "ඦී"
+  },
+  {
+   "unit": "ඦු",
+   "codes": "U+0DA6 U+0DD4",
+   "raw": "ඦු",
+   "leaked": "ඦු"
+  },
+  {
+   "unit": "ඦූ",
+   "codes": "U+0DA6 U+0DD6",
+   "raw": "ඦූ",
+   "leaked": "ඦූ"
+  },
+  {
+   "unit": "ඦෘ",
+   "codes": "U+0DA6 U+0DD8",
+   "raw": "ඦෘ",
+   "leaked": "ඦෘ"
+  },
+  {
+   "unit": "ඦෙ",
+   "codes": "U+0DA6 U+0DD9",
+   "raw": "ඦෙ",
+   "leaked": "ඦෙ"
+  },
+  {
+   "unit": "ඦේ",
+   "codes": "U+0DA6 U+0DDA",
+   "raw": "ඦේ",
+   "leaked": "ඦේ"
+  },
+  {
+   "unit": "ඦෛ",
+   "codes": "U+0DA6 U+0DDB",
+   "raw": "ඦෛ",
+   "leaked": "ඦෛ"
+  },
+  {
+   "unit": "ඦො",
+   "codes": "U+0DA6 U+0DDC",
+   "raw": "ඦො",
+   "leaked": "ඦො"
+  },
+  {
+   "unit": "ඦෝ",
+   "codes": "U+0DA6 U+0DDD",
+   "raw": "ඦෝ",
+   "leaked": "ඦෝ"
+  },
+  {
+   "unit": "ඦෞ",
+   "codes": "U+0DA6 U+0DDE",
+   "raw": "ඦෞ",
+   "leaked": "ඦෞ"
+  },
+  {
+   "unit": "ඦෟ",
+   "codes": "U+0DA6 U+0DDF",
+   "raw": "ඦෟ",
+   "leaked": "ඦෟ"
+  },
+  {
+   "unit": "ඦෲ",
+   "codes": "U+0DA6 U+0DF2",
+   "raw": "ඦෲ",
+   "leaked": "ඦෲ"
+  },
+  {
+   "unit": "ඦෳ",
+   "codes": "U+0DA6 U+0DF3",
+   "raw": "ඦෳ",
+   "leaked": "ඦෳ"
+  },
+  {
+   "unit": "ටෟ",
+   "codes": "U+0DA7 U+0DDF",
+   "raw": "taෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ටෳ",
+   "codes": "U+0DA7 U+0DF3",
+   "raw": "taෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ඨෟ",
+   "codes": "U+0DA8 U+0DDF",
+   "raw": "thaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ඨෳ",
+   "codes": "U+0DA8 U+0DF3",
+   "raw": "thaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ඩෟ",
+   "codes": "U+0DA9 U+0DDF",
+   "raw": "daෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ඩෳ",
+   "codes": "U+0DA9 U+0DF3",
+   "raw": "daෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ඪෟ",
+   "codes": "U+0DAA U+0DDF",
+   "raw": "dhaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ඪෳ",
+   "codes": "U+0DAA U+0DF3",
+   "raw": "dhaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ණෟ",
+   "codes": "U+0DAB U+0DDF",
+   "raw": "naෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ණෳ",
+   "codes": "U+0DAB U+0DF3",
+   "raw": "naෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ඬෙ",
+   "codes": "U+0DAC U+0DD9",
+   "raw": "N̆daෙ",
+   "leaked": "ෙ"
+  },
+  {
+   "unit": "ඬෟ",
+   "codes": "U+0DAC U+0DDF",
+   "raw": "N̆daෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ඬෳ",
+   "codes": "U+0DAC U+0DF3",
+   "raw": "N̆daෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "තෟ",
+   "codes": "U+0DAD U+0DDF",
+   "raw": "Thaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "තෳ",
+   "codes": "U+0DAD U+0DF3",
+   "raw": "Thaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ථෟ",
+   "codes": "U+0DAE U+0DDF",
+   "raw": "Thaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ථෳ",
+   "codes": "U+0DAE U+0DF3",
+   "raw": "Thaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "දෟ",
+   "codes": "U+0DAF U+0DDF",
+   "raw": "Daෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "දෳ",
+   "codes": "U+0DAF U+0DF3",
+   "raw": "Daෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ධෟ",
+   "codes": "U+0DB0 U+0DDF",
+   "raw": "Dhaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ධෳ",
+   "codes": "U+0DB0 U+0DF3",
+   "raw": "Dhaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "නෟ",
+   "codes": "U+0DB1 U+0DDF",
+   "raw": "Naෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "නෳ",
+   "codes": "U+0DB1 U+0DF3",
+   "raw": "Naෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ඳෟ",
+   "codes": "U+0DB3 U+0DDF",
+   "raw": "N̆daෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ඳෳ",
+   "codes": "U+0DB3 U+0DF3",
+   "raw": "N̆daෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "පෟ",
+   "codes": "U+0DB4 U+0DDF",
+   "raw": "Paෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "පෳ",
+   "codes": "U+0DB4 U+0DF3",
+   "raw": "Paෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ඵෟ",
+   "codes": "U+0DB5 U+0DDF",
+   "raw": "Phaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ඵෳ",
+   "codes": "U+0DB5 U+0DF3",
+   "raw": "Phaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "බෟ",
+   "codes": "U+0DB6 U+0DDF",
+   "raw": "Baෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "බෳ",
+   "codes": "U+0DB6 U+0DF3",
+   "raw": "Baෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "භෟ",
+   "codes": "U+0DB7 U+0DDF",
+   "raw": "Bhaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "භෳ",
+   "codes": "U+0DB7 U+0DF3",
+   "raw": "Bhaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "මෟ",
+   "codes": "U+0DB8 U+0DDF",
+   "raw": "Maෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "මෳ",
+   "codes": "U+0DB8 U+0DF3",
+   "raw": "Maෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ඹෟ",
+   "codes": "U+0DB9 U+0DDF",
+   "raw": "M̆baෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ඹෳ",
+   "codes": "U+0DB9 U+0DF3",
+   "raw": "M̆baෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "යෟ",
+   "codes": "U+0DBA U+0DDF",
+   "raw": "Yaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "යෳ",
+   "codes": "U+0DBA U+0DF3",
+   "raw": "Yaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "රෟ",
+   "codes": "U+0DBB U+0DDF",
+   "raw": "Raෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "රෳ",
+   "codes": "U+0DBB U+0DF3",
+   "raw": "Raෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ලෟ",
+   "codes": "U+0DBD U+0DDF",
+   "raw": "Laෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ලෳ",
+   "codes": "U+0DBD U+0DF3",
+   "raw": "Laෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "වෟ",
+   "codes": "U+0DC0 U+0DDF",
+   "raw": "Vaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "වෳ",
+   "codes": "U+0DC0 U+0DF3",
+   "raw": "Vaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ශෟ",
+   "codes": "U+0DC1 U+0DDF",
+   "raw": "shaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ශෳ",
+   "codes": "U+0DC1 U+0DF3",
+   "raw": "shaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ෂෟ",
+   "codes": "U+0DC2 U+0DDF",
+   "raw": "shaෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ෂෳ",
+   "codes": "U+0DC2 U+0DF3",
+   "raw": "shaෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "සෟ",
+   "codes": "U+0DC3 U+0DDF",
+   "raw": "Saෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "සෳ",
+   "codes": "U+0DC3 U+0DF3",
+   "raw": "Saෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "හෟ",
+   "codes": "U+0DC4 U+0DDF",
+   "raw": "Haෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "හෳ",
+   "codes": "U+0DC4 U+0DF3",
+   "raw": "Haෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ළෟ",
+   "codes": "U+0DC5 U+0DDF",
+   "raw": "laෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ළෳ",
+   "codes": "U+0DC5 U+0DF3",
+   "raw": "laෳ",
+   "leaked": "ෳ"
+  },
+  {
+   "unit": "ෆෟ",
+   "codes": "U+0DC6 U+0DDF",
+   "raw": "Faෟ",
+   "leaked": "ෟ"
+  },
+  {
+   "unit": "ෆෳ",
+   "codes": "U+0DC6 U+0DF3",
+   "raw": "Faෳ",
+   "leaked": "ෳ"
+  }
+ ]
+}
