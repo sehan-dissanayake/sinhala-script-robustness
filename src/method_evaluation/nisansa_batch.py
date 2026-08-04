@@ -56,25 +56,11 @@ from phonetic import transliterate as _phonetic  # noqa: E402
 
 URL = "https://nisansads.staff.uom.lk/CodeSamples/sinhala_romaniser.php"
 
-# The server accepted 380 lines in isolation and refused 400, so these sit well
-# below the observed ceiling. Whichever cap binds first wins: on the word corpus
-# (~21 bytes/word) that averages ~247 words per request. Lowering either cap is
-# always safe - batch size changes only how requests are packed, never the
-# romanization of a given word, and results are keyed by source word - so
-# existing shard files stay valid and nothing needs refetching.
+
 MAX_LINES = 50
 MAX_BYTES = 6000         # payload bytes of the joined chunk
 THROTTLE_S = 0.1         # polite pause between successful requests
 
-# Input the endpoint cannot process. Sending it wastes a request and takes the
-# whole batch down with it, so it is filtered client-side.
-#
-# The endpoint fails on ඤ (U+0DA4, taaluja naasikyaya) when it carries certain
-# vowel signs. Verified by direct probing: ඤ alone, ඤ+ඤ, ක+ඤ, ඤ+ක and ඤ+e all
-# work, and the neighbouring letter ඥ (U+0DA5) is unaffected - so its lookup
-# table is simply missing these combinations rather than the letter itself.
-# This list is the pre-filter; the authoritative record of what actually failed
-# is data/reference/nisansa_shards/<corpus>/unsupported.json, populated by
 # bisecting real batches.
 BROKEN_SEQUENCES = (
     "\u0DA4\u0DCA",   # ඤ් nya + al-lakuna

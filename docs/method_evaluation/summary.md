@@ -95,7 +95,7 @@ Raw:      aayuboovan
 Fixed:    aayuboowan     <- now identical to Phonetic
 ```
 
-**One limitation of the tool.** It cannot romanize the letter **ඤ** (U+0DA4)
+**One BUG of the tool.** It cannot romanize the letter **ඤ** (U+0DA4)
 when that letter carries certain vowel signs — specifically when followed by
 al-lakuna, ā, i or u. Such input comes back empty. We confirmed this by
 testing directly: ඤ on its own works, so do ඤ+ඤ, ක+ඤ and ඤ+e, and so does the
@@ -155,14 +155,6 @@ The simplest and strictest check: did the guess match one of the accepted
 human answers exactly, character for character? A plain sanity check
 alongside the softer metrics above.
 
-**"Relaxed" scoring.**
-Before scoring, we also tried a version where both the guess and the answer
-are first normalized to remove known spelling-style differences (w vs v,
-doubled vowels vs single, etc.), then CER is recalculated. This isolates
-genuine mistakes from mere style choices. All four methods scored very
-similarly under this relaxed measure — showing that most of what looked like
-"error" under strict scoring was really just differing spelling conventions,
-not the methods getting the sounds wrong.
 
 ## 5. Results
 
@@ -199,12 +191,6 @@ fractionally ahead on exact matches on the word list. Aksharamukha and uroman
 are genuinely behind: those differences are significant at p < 0.0001, and
 effectively zero on the larger datasets.
 
-**Statistical confidence.** We ran a bootstrap test (resampling the data 2,000
-times to see how much the average could plausibly vary) plus a paired
-significance test. With 449,117 items, a CER difference of 0.0001 registers as
-"statistically significant" while being meaningless in practice, so ties are
-decided by whether the confidence intervals overlap rather than by any
-difference at all.
 
 ## 6. Why the results come out this way: spelling conventions
 
@@ -249,8 +235,3 @@ differences, and here Nisansa's has some drawbacks:
 The phonetic method has none of those: it is local, deterministic, covers every
 word, and matches human convention as-is. So it is the more convenient option
 for the pipeline, but that is a practical judgement, not a quality one.
-
----
-
-*Full tables, statistical tests and charts:* `docs/method_evaluation/README.md`
-*and* `results/method_evaluation/`.
