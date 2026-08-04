@@ -22,7 +22,7 @@ Sinhala:      ආයුබෝවන්
 Phonetic:     aayuboowan
 Aksharamukha: aayuboowan
 uroman:       aayuboovan       <- uses "v" instead of "w"
-Nisansa:      aayuboovan       <- also uses "v"
+Nisansa:      aayuboowan       <- after the v→w fix described in section 3
 ```
 
 They mostly produce very similar results but differ consistently in small
@@ -81,6 +81,19 @@ about 19 hours for 450,000 words, so instead we send many words joined
 together in a single request, which is about 78x faster and was verified to
 give identical results to one-at-a-time requests. The full word list now
 takes about an hour, and **all 450,587 words were processed**.
+
+**The v→w fix.** The tool writes ව as `v`, while Sinhala speakers
+overwhelmingly type `w`. Since that is a spelling convention rather than a
+transliteration error, we rewrite every `v` as `w` in its output before
+scoring, and all Nisansa numbers below are for the corrected version. The
+rewrite is unambiguous on this data: `w` appears in only 159 of 449,117 raw
+outputs (0.03%), so there is nothing for it to collide with.
+
+```
+Sinhala:  ආයුබෝවන්
+Raw:      aayuboovan
+Fixed:    aayuboowan     <- now identical to Phonetic
+```
 
 **One limitation of the tool.** It cannot romanize the letter **ඤ** (U+0DA4)
 when that letter carries certain vowel signs — specifically when followed by
@@ -155,32 +168,45 @@ not the methods getting the sounds wrong.
 
 CER by dataset (lower is better; bold = best):
 
-| Dataset | Items | Phonetic | Aksharamukha | uroman | Nisansa |
+| Dataset | Items | Phonetic | Nisansa | Aksharamukha | uroman |
 |---|---|---|---|---|---|
-| Social media sentences | 4,397 | **0.182** | 0.191 | 0.228 | 0.197 |
-| Swa-Bhasha words | 449,117 | **0.120** | 0.147 | 0.227 | 0.163 |
-| Augmented sentences (sample) | 300,000 | **0.112** | 0.139 | 0.210 | not run |
+| Social media sentences | 4,397 | **0.182** | **0.182** | 0.191 | 0.228 |
+| Swa-Bhasha words | 449,117 | **0.120** | **0.120** | 0.147 | 0.227 |
+| Augmented sentences (sample) | 300,000 | **0.112** | not run | 0.139 | 0.210 |
 
 Supporting metrics on the social media dataset (the most realistic test):
 
 | Method | CER ↓ | WER ↓ | chrF ↑ | BLEU ↑ | Exact match % ↑ |
 |---|---|---|---|---|---|
 | **Phonetic** | **0.182** | **0.606** | **67.8** | **28.6** | **4.2%** |
+| **Nisansa** | **0.182** | **0.606** | **67.8** | **28.6** | **4.2%** |
 | Aksharamukha | 0.191 | 0.640 | 63.7 | 26.3 | 3.5% |
-| Nisansa | 0.197 | 0.647 | 63.4 | 25.4 | 3.2% |
 | uroman | 0.228 | 0.746 | 55.7 | 20.7 | 1.6% |
 
-As published, Phonetic wins on every metric on every dataset. Section 7 shows
-that one spelling convention explains the whole of Nisansa's gap.
+And on the word list, where the multiple accepted spellings make exact-match
+meaningful:
 
-**Statistical confidence.** These are not close calls that could be due to
-chance. We ran a bootstrap test (resampling the data 2,000 times to see how
-much the average could plausibly vary) and a paired significance test against
-phonetic on every other method. All differences were significant at
-p < 0.0001, and for the word-level and augmented datasets the p-values were
-effectively zero.
+| Method | CER ↓ | chrF ↑ | Exact match % ↑ |
+|---|---|---|---|
+| **Phonetic** | **0.120** | **78.8** | 33.3% |
+| **Nisansa** | **0.120** | 78.7 | **33.4%** |
+| Aksharamukha | 0.147 | 69.7 | 24.0% |
+| uroman | 0.227 | 51.7 | 9.7% |
 
-## 6. Why phonetic wins: spelling-convention analysis
+**Phonetic and Nisansa are tied.** Their confidence intervals overlap on both
+datasets, so the ordering between them is not meaningful, and Nisansa is
+fractionally ahead on exact matches on the word list. Aksharamukha and uroman
+are genuinely behind: those differences are significant at p < 0.0001, and
+effectively zero on the larger datasets.
+
+**Statistical confidence.** We ran a bootstrap test (resampling the data 2,000
+times to see how much the average could plausibly vary) plus a paired
+significance test. With 449,117 items, a CER difference of 0.0001 registers as
+"statistically significant" while being meaningless in practice, so ties are
+decided by whether the confidence intervals overlap rather than by any
+difference at all.
+
+## 6. Why the results come out this way: spelling conventions
 
 Since the "relaxed" scoring showed all methods get the sounds roughly right,
 the real difference is *spelling style*. We measured how often each method
@@ -190,67 +216,39 @@ and how often real humans use certain spelling choices:
 |---|---|---|---|
 | **Real humans** | usually (80% w) | rarely | often |
 | **Phonetic** | matches (100% w) | over-uses | matches closely |
+| **Nisansa** | matches (100% w) | over-uses | matches closely |
 | **Aksharamukha** | matches (100% w) | over-uses | drops it |
 | **uroman** | opposite (100% v) | over-uses | drops it |
-| **Nisansa** | opposite (100% v) | over-uses | matches closely |
 
-Phonetic's spelling habits line up most closely with real human typing,
-which is the direct explanation for why it scores best. The one weakness
-shared by *every* method, including phonetic, is over-doubling long vowels
+Phonetic and Nisansa have effectively the same profile, which is why they
+score the same. Aksharamukha loses ground by dropping aspiration, and uroman
+is last because it does that *and* writes `v` *and* over-doubles consonants.
+
+The one weakness shared by *every* method is over-doubling long vowels
 (e.g. "aayuboowan" instead of "ayubowan") — real people rarely double vowels
 like this. This is a small, fixable issue: a simple post-processing step that
 collapses doubled vowels would likely close much of the remaining gap for
 every method.
 
-Notice from the table that Nisansa matches phonetic on every axis except
-one: it writes `v` where humans write `w`. So we tested that directly.
+## 7. Conclusion
 
-## 7. Testing the v/w convention
+**Phonetic and Nisansa's method are tied.** Once the v/w convention is
+normalized they are statistically indistinguishable on both datasets, and
+neither can be called the better romanizer. Aksharamukha and uroman are
+measurably worse.
 
-We took Nisansa's output and rewrote every `v` as `w`, then scored it again.
-This needed no re-fetching, since it is just a post-process of results we
-already had, and the rewrite is unambiguous on this data because `w` appears
-in only 159 of 449,117 Nisansa outputs (0.03%) — there is nothing for it to
-collide with.
+Choosing between the two tied methods therefore comes down to practical
+differences, and here Nisansa's has some drawbacks:
 
-```
-Sinhala:           ආයුබෝවන්
-Nisansa:           aayuboovan
-Nisansa with v→w:  aayuboowan     <- now identical to Phonetic
-```
+- it **cannot romanize part of the alphabet** (the ඤ combinations above), so
+  0.33% of the corpus has no output at all
+- it needs the **v→w fix** applied to its output to match how people type
+- it is a **web service**, so every item needs a network request, it can change
+  or go offline, and the run cannot be reproduced offline
 
-| Dataset | Nisansa as published | Nisansa with v→w | Phonetic |
-|---|---|---|---|
-| Social media | 0.197 | **0.182** | 0.182 |
-| Swa-Bhasha words | 0.163 | **0.120** | 0.120 |
-
-The gap closes completely. The confidence intervals now overlap phonetic's on
-both datasets, so the two are a **statistical tie**, and the v→w version is
-even fractionally ahead on exact matches (33.4% against 33.3% on words). This
-matches what the "relaxed" metric had already hinted at: once spelling style
-is normalized, the two methods score identically to four decimal places.
-
-**So the conclusion needs to be stated carefully.** Nisansa's method is not a
-worse romanizer than ours. It writes `v`, and Sinhala speakers type `w`. Once
-that single convention is normalized, the two are equivalent in quality.
-
-## 8. Recommendation
-
-**Use the phonetic method**, but for practical reasons rather than accuracy:
-
-- it already matches human convention, with no post-processing needed
-- it runs locally and deterministically, with no network dependency
-- it covers the whole corpus, including the words Nisansa cannot handle
-- anyone can reproduce the entire run offline, which matters for the paper
-
-Aksharamukha is clearly behind on every dataset, mainly because it drops
-aspiration. uroman is last everywhere: it uses `v`, drops aspiration, and
-over-doubles consonants.
-
-One note on our own reporting: with 449,117 items, a CER difference of 0.0001
-comes out "statistically significant" while being meaningless in practice. The
-results now decide ties from the confidence intervals rather than declaring a
-winner on any difference at all.
+The phonetic method has none of those: it is local, deterministic, covers every
+word, and matches human convention as-is. So it is the more convenient option
+for the pipeline, but that is a practical judgement, not a quality one.
 
 ---
 
