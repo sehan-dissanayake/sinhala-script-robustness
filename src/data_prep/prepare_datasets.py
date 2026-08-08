@@ -1,9 +1,39 @@
+"""Normalise each raw dataset into the shared processed schema.
+
+Every processed record carries at least:
+    id, dataset, text_unicode, label
+Multiple-choice datasets (SinhalaMMLU, Global PIQA) additionally carry `options`
+(a list of strings) and a letter label indexing into it. That shared shape is
+what src/transliteration/_dataset_io.py romanizes and what the downstream LLM
+runner consumes, so the two MCQ tasks need no special-casing.
+"""
+
 import json
 import os
+import random
+from collections import defaultdict
 
-def map_answer(ans):
-    mapping = {1: "A", 2: "B", 3: "C", 4: "D"}
-    return mapping.get(ans, str(ans))
+LETTERS = "ABCDEFGH"
+
+
+def map_answer(ans, choices, q_id=""):
+    """Map SinhalaMMLU's 1-based answer index to a letter.
+
+    One upstream row (q_no 64, "how many standard time zones is the Earth divided
+    into") stores the answer *value* 24 instead of its index, which silently
+    produced the bogus label "24". Where the field is out of range we recover the
+    index by matching it against the choices, and fail loudly if that is
+    ambiguous, rather than writing a label no downstream scorer can interpret.
+    """
+    if ans in (1, 2, 3, 4):
+        return LETTERS[ans - 1]
+    matches = [i for i, c in enumerate(choices) if str(c).strip() == str(ans).strip()]
+    if len(matches) == 1:
+        return LETTERS[matches[0]]
+    raise ValueError(
+        f"{q_id}: answer {ans!r} is not a 1-4 index and matches "
+        f"{len(matches)} of the choices {choices!r}"
+    )
 
 def prepare_mmlu():
     print("Processing SinhalaMMLU...")
@@ -24,7 +54,7 @@ def prepare_mmlu():
             "dataset": "sinhala_mmlu",
             "text_unicode": r['question'],
             "options": r['choices'],
-            "label": map_answer(r['answer']),
+            "label": map_answer(r['answer'], r['choices'], f"mmlu_{idx:04d}"),
             "domain": domain,
             "difficulty": diff
         })
@@ -63,9 +93,123 @@ def prepare_sold():
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
     print(f"Saved {len(output_records)} SOLD full records to {out_path}")
 
+
+def prepare_sold_heldout(pool_size=200, seed=42):
+    """Carve a small few-shot exemplar pool out of the SOLD *train* split.
+
+    The whole test split is evaluated, so exemplars cannot come from it. SOLD's
+    train split is otherwise unused here (nothing is fine-tuned), which makes it
+    the natural disjoint source. Only a small label-balanced slice is kept: 8
+    exemplars are ever needed, and each pooled row still has to be romanized by
+    every method, including the request-per-string web one.
+    """
+    print("Processing SOLD held-out (few-shot pool)...")
+    train_path = os.path.join("data", "raw", "sold", "train.jsonl")
+    if not os.path.exists(train_path):
+        print(f"  skipped: {train_path} not found")
+        return
+
+    by_label = defaultdict(list)
+    for r in _read_jsonl(train_path):
+        by_label[r['label']].append(r)
+
+    rng = random.Random(seed)
+    chosen = []
+    per_label = pool_size // max(len(by_label), 1)
+    for label in sorted(by_label):
+        pool = sorted(by_label[label], key=lambda r: str(r.get('post_id', r['text'])))
+        chosen.extend(rng.sample(pool, min(per_label, len(pool))))
+    chosen.sort(key=lambda r: str(r.get('post_id', r['text'])))
+
+    _write_processed(
+        [{
+            "id": f"soldho_{i:04d}",
+            "dataset": "sold_heldout",
+            "text_unicode": r['text'],
+            "label": r['label'],
+        } for i, r in enumerate(chosen, 1)],
+        "sold_heldout.jsonl", "SOLD held-out (few-shot pool)",
+    )
+
+def _read_jsonl(path):
+    with open(path, 'r', encoding='utf-8') as f:
+        return [json.loads(line) for line in f if line.strip()]
+
+
+def _piqa_record(row, record_id, dataset):
+    """Map one Global PIQA row to the shared processed schema.
+
+    `label` is a 0/1 index into [solution0, solution1] upstream (a string in the
+    TSV pool, an int in the HF config), so it is normalised to a letter here.
+    Upstream metadata is kept for stratification and error analysis; the English
+    translation fields are already Latin script, so the transliteration step
+    passes them through untouched.
+    """
+    label_idx = int(row['label'])
+    if label_idx not in (0, 1):
+        raise ValueError(f"{record_id}: unexpected label {row['label']!r}")
+    return {
+        "id": record_id,
+        "dataset": dataset,
+        "text_unicode": row['prompt'],
+        "options": [row['solution0'], row['solution1']],
+        "label": LETTERS[label_idx],
+        "example_id": row['example_id'],
+        "culturally_specific": bool(int(row.get('approx_cultural_score', 0) or 0)),
+        "llm_assisted": bool(int(row.get('llm_used', 0) or 0)),
+        "eng_options": [
+            row.get('eng_translated0') or row.get('gemini_translated0') or '',
+            row.get('eng_translated1') or row.get('gemini_translated1') or '',
+        ],
+    }
+
+
+def _write_processed(output_records, filename, description):
+    out_dir = os.path.join("data", "processed")
+    os.makedirs(out_dir, exist_ok=True)
+    out_path = os.path.join(out_dir, filename)
+    with open(out_path, 'w', encoding='utf-8') as f:
+        for r in output_records:
+            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    print(f"Saved {len(output_records)} {description} records to {out_path}")
+
+
+def prepare_global_piqa():
+    print("Processing Global PIQA (sin_sinh)...")
+    raw_dir = os.path.join("data", "raw", "global_piqa")
+    test_path = os.path.join(raw_dir, "test.jsonl")
+    if not os.path.exists(test_path):
+        print(f"  skipped: {test_path} not found "
+              "(run src/data_prep/download_global_piqa.py first)")
+        return
+
+    official = _read_jsonl(test_path)
+    _write_processed(
+        [_piqa_record(r, f"piqa_{i:04d}", "global_piqa") for i, r in enumerate(official, 1)],
+        "global_piqa.jsonl", "Global PIQA",
+    )
+
+    # Contributed rows the official 100 were sampled from. Only the rows whose
+    # prompt is absent from the official set are kept, so few-shot exemplars
+    # drawn from here cannot leak an evaluation item.
+    pool_path = os.path.join(raw_dir, "unsampled_full.jsonl")
+    if not os.path.exists(pool_path):
+        print(f"  note: {pool_path} not found, no held-out exemplar pool written")
+        return
+    official_prompts = {r['prompt'].strip() for r in official}
+    heldout = [r for r in _read_jsonl(pool_path) if r['prompt'].strip() not in official_prompts]
+    _write_processed(
+        [_piqa_record(r, f"piqaho_{i:04d}", "global_piqa_heldout")
+         for i, r in enumerate(heldout, 1)],
+        "global_piqa_heldout.jsonl", "Global PIQA held-out (few-shot pool)",
+    )
+
+
 def main():
     prepare_mmlu()
     prepare_sold()
+    prepare_sold_heldout()
+    prepare_global_piqa()
 
 if __name__ == "__main__":
     main()

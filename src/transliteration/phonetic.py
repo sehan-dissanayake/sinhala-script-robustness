@@ -8,9 +8,9 @@ non-Sinhala content. Input is normalized to NFC before parsing.
 import unicodedata
 
 try:
-    from ._dataset_io import process_datasets as _process_datasets
+    from ._dataset_io import cli as _cli, process_datasets as _process_datasets
 except ImportError:  # Direct execution: python src/transliteration/phonetic.py
-    from _dataset_io import process_datasets as _process_datasets
+    from _dataset_io import cli as _cli, process_datasets as _process_datasets
 
 INDEPENDENT_VOWELS = {
     "අ": "a", "ආ": "aa", "ඇ": "ae", "ඈ": "aae", "ඉ": "i", "ඊ": "ii",
@@ -108,4 +108,4 @@ def process_datasets() -> None:
 
 
 if __name__ == "__main__":
-    process_datasets()
+    _cli("phonetic", transliterate)

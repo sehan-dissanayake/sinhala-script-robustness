@@ -11,10 +11,10 @@ import urllib.parse
 import re
 
 try:
-    from ._dataset_io import process_datasets as _process_datasets
+    from ._dataset_io import cli as _cli, process_datasets as _process_datasets
     from .phonetic import transliterate as phonetic_transliterate
 except ImportError:  # Direct execution
-    from _dataset_io import process_datasets as _process_datasets
+    from _dataset_io import cli as _cli, process_datasets as _process_datasets
     from phonetic import transliterate as phonetic_transliterate
 
 def transliterate(text: str) -> str:
@@ -54,7 +54,9 @@ def process_datasets() -> None:
     _process_datasets("nisansa_sirs_method", transliterate)
 
 if __name__ == "__main__":
-    process_datasets()
+    # One HTTP request per string, so use --datasets to regenerate a single
+    # dataset rather than re-fetching all ~4,500 records.
+    _cli("nisansa_sirs_method", transliterate)
 
     # Example usage:
     #print(f"Testing: 'ඇමරිකා ඓතිහාසික එක්සත් ජනපදය'\nTransliteration: {transliterate(' ඇමරිකා ඓතිහාසික එක්සත් ජනපදය')}")

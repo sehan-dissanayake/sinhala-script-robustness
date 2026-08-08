@@ -88,6 +88,13 @@ DATASETS: dict[str, DatasetSpec] = {
         romanized_file="sold_romanized.jsonl",
         kind="flat",
     ),
+    "Global PIQA": DatasetSpec(
+        label="Global PIQA",
+        key="global_piqa",
+        processed_file="global_piqa.jsonl",
+        romanized_file="global_piqa_romanized.jsonl",
+        kind="mmlu",
+    ),
 }
 
 PUNCTUATION = ".,!?;:\"'“”‘’()[]{}<>«»…"

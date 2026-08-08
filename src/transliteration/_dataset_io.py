@@ -2,7 +2,7 @@
 
 import json
 from pathlib import Path
-from typing import Callable
+from typing import Callable, Sequence
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 SINHALA_START = "\u0d80"
@@ -45,11 +45,50 @@ def _transform_file(source: Path, destination: Path, fn: Callable[[str], str]) -
     return count
 
 
-def process_datasets(method_name: str, fn: Callable[[str], str]) -> None:
+DATASET_FILES = (
+    ("sinhala_mmlu.jsonl", "sinhala_mmlu_romanized.jsonl"),
+    ("sold.jsonl", "sold_romanized.jsonl"),
+    ("global_piqa.jsonl", "global_piqa_romanized.jsonl"),
+    # Held-out rows, used only as few-shot exemplar pools. They need the same
+    # Romanized twin as the evaluation items so an exemplar is never shown in a
+    # different script from the item being scored.
+    ("sold_heldout.jsonl", "sold_heldout_romanized.jsonl"),
+    ("global_piqa_heldout.jsonl", "global_piqa_heldout_romanized.jsonl"),
+)
+
+
+DATASET_NAMES = tuple(source.removesuffix(".jsonl") for source, _ in DATASET_FILES)
+
+
+def process_datasets(method_name: str, fn: Callable[[str], str],
+                     datasets: Sequence[str] | None = None) -> None:
+    """Romanize every processed dataset (or only the named ones) with `fn`.
+
+    `datasets` exists so a single dataset can be regenerated without recomputing
+    the rest. That matters for the network-bound Nisansa method, where the full
+    set is thousands of requests to a third-party endpoint.
+    """
+    if datasets:
+        unknown = sorted(set(datasets) - set(DATASET_NAMES))
+        if unknown:
+            raise ValueError(f"unknown dataset(s) {unknown}; choose from {list(DATASET_NAMES)}")
     input_dir = PROJECT_ROOT / "data" / "processed"
     output_dir = PROJECT_ROOT / "data" / "romanized" / method_name
-    for source_name, destination_name in (("sinhala_mmlu.jsonl", "sinhala_mmlu_romanized.jsonl"), ("sold.jsonl", "sold_romanized.jsonl")):
+    for source_name, destination_name in DATASET_FILES:
+        if datasets and source_name.removesuffix(".jsonl") not in datasets:
+            continue
         source = input_dir / source_name
         if source.exists():
             count = _transform_file(source, output_dir / destination_name, fn)
             print(f"Transliterated {count} records -> {output_dir / destination_name}")
+
+
+def cli(method_name: str, fn: Callable[[str], str]) -> None:
+    """Entry point for `python src/transliteration/<method>.py [--datasets ...]`."""
+    import argparse
+
+    parser = argparse.ArgumentParser(description=f"Romanize the processed datasets with {method_name}.")
+    parser.add_argument("--datasets", nargs="+", choices=list(DATASET_NAMES),
+                        help="limit the run to these processed datasets (default: all)")
+    args = parser.parse_args()
+    process_datasets(method_name, fn, args.datasets)
