@@ -62,6 +62,11 @@ data/reference/cache/
 !data/reference/nisansa_shards/
 *.lock
 
+# ...but not the sentence-corpus shards. Same provenance, but 275k sentence
+# results at ~450 bytes each is ~124 MB, and that corpus is a fixed-seed sample
+# that regenerates exactly, so it is reproducible at the cost of one ~70 min run.
+data/reference/nisansa_shards/augmented_sentences_sample/
+
 # The measured capability tables for the Nisansa endpoint ARE committed: they
 # document two upstream bugs (17 sequences it cannot romanize at all, 12 it
 # returns unromanized) and the evaluation depends on them. ~200 KB.

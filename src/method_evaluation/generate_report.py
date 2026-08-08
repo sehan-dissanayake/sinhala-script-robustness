@@ -59,39 +59,77 @@ def main():
                for c, rows in by_corpus.items()}
     overall = max(set(winners.values()), key=lambda m: list(winners.values()).count(m))
 
-    # A difference of 0.0001 CER is not a win, however many items back it. Treat
-    # methods whose bootstrap CIs overlap the leader's as statistically tied.
-    def ties_with_leader(corpus: str) -> list[str]:
+    # Whether a method is distinguishable from the leader is decided by the
+    # paired Wilcoxon test, not by whether the two bootstrap CIs overlap. The
+    # CIs describe two independent means; every method is scored on the *same*
+    # items, so the paired test is both the correct comparison and the more
+    # powerful one. On social media the CIs do overlap while the paired test
+    # rejects at p ~ 1.6e-03, and reading the CIs alone reported a "tie" that
+    # the data does not support.
+    ALPHA = 0.05
+    # A statistically clear win can still be too small to act on, so magnitude
+    # is reported separately from significance rather than conflated with it.
+    NEGLIGIBLE_CER = 0.005
+
+    def gap_to_leader(corpus: str, method: str):
         entries = sig.get(corpus, {}).get("methods", {})
         leader = sig.get(corpus, {}).get("best_method")
-        lead_ci = entries.get(leader, {}).get("cer_ci95")
-        if not lead_ci:
-            return []
-        out = []
-        for m, e in entries.items():
-            ci = e.get("cer_ci95")
-            if m != leader and ci and ci[0] <= lead_ci[1] and lead_ci[0] <= ci[1]:
-                out.append(m)
-        return out
+        if method == leader or leader not in entries or method not in entries:
+            return None
+        return entries[method]["cer_mean"] - entries[leader]["cer_mean"]
 
-    tied_any = {c: ties_with_leader(c) for c in by_corpus}
-    contenders = sorted({m for v in tied_any.values() for m in v})
+    def indistinguishable(corpus: str) -> set[str]:
+        entries = sig.get(corpus, {}).get("methods", {})
+        leader = sig.get(corpus, {}).get("best_method")
+        return {m for m, e in entries.items()
+                if m != leader and (e.get("wilcoxon_vs_best_p") or 0.0) > ALPHA}
+
+    scored_in = {m["method"]: set() for m in metrics}
+    for m in metrics:
+        scored_in[m["method"]].add(m["corpus"])
+
+    # Tied everywhere it was measured, not just on one corpus.
+    tied = sorted(m for m in scored_in
+                  if m != overall and scored_in[m]
+                  and all(m in indistinguishable(c) for c in scored_in[m]))
+    # Note: an assignment expression inside a comprehension binds in the
+    # enclosing scope, so the loop variable must not collide with `g` above.
+    gaps = {m: [d for c in scored_in[m] if (d := gap_to_leader(c, m)) is not None]
+            for m in scored_in if m != overall}
+    close = sorted(m for m, g in gaps.items()
+                   if m not in tied and g and max(g) < NEGLIGIBLE_CER)
 
     lines.append(f"## Recommendation: {METHOD_LABELS.get(overall, overall)}\n")
-    if contenders:
-        names = ", ".join(METHOD_LABELS.get(m, m) for m in contenders)
+    if tied:
+        names = ", ".join(METHOD_LABELS.get(m, m) for m in tied)
         lines.append(
             f"**{METHOD_LABELS.get(overall, overall)} is the recommended method**, but on accuracy it is "
-            f"a statistical tie with {names} - their confidence intervals overlap, so the ranking between "
-            f"them is not meaningful. The recommendation therefore rests on engineering properties rather "
-            f"than a quality difference: Phonetic runs locally and deterministically, needs no network, "
-            f"covers every word in the corpus, and can be rerun by anyone offline.\n")
+            f"statistically indistinguishable from {names} - the paired test does not separate them on any "
+            f"corpus, so the ranking between them is not meaningful. The recommendation therefore rests on "
+            f"engineering properties rather than a quality difference: it runs locally and "
+            f"deterministically, needs no network, covers every input, and can be rerun by anyone "
+            f"offline.\n")
     else:
+        runner = min(gaps, key=lambda m: max(gaps[m]) if gaps[m] else 9) if gaps else None
+        margin = max(gaps[runner]) if runner and gaps[runner] else None
         lines.append(
             f"**{METHOD_LABELS.get(overall, overall)} is the best method** on every corpus tested "
             "and is the recommended choice for the downstream script-robustness pipeline. "
             "It has the lowest CER and the highest chrF everywhere, and it is the only top-ranked "
             "option that is local, deterministic, free, and reproducible offline.\n")
+        if runner and margin is not None:
+            lines.append(
+                f"Its nearest rival is {METHOD_LABELS.get(runner, runner)}, behind by at most "
+                f"{margin:.4f} CER. The paired Wilcoxon separates them on every corpus, so the ordering "
+                f"is not a coin flip - but the margin is small in absolute terms, and it comes from "
+                f"coverage and leaked characters rather than from better letter-to-letter mapping. On the "
+                f"items Nisansa did answer, and with the v/w convention normalized, the two are very "
+                f"close.\n")
+        if close:
+            names = ", ".join(METHOD_LABELS.get(m, m) for m in close)
+            lines.append(
+                f"Statistically clear but practically negligible: {names} trail by under "
+                f"{NEGLIGIBLE_CER} CER everywhere, which is below the level worth acting on.\n")
 
     lines.append("| Corpus | Items | Winner by CER | Runner-up |")
     lines.append("|---|---|---|---|")
@@ -217,9 +255,7 @@ def main():
         "- **Nisansa coverage**: this method is a web form rather than a local library. It romanizes free "
         "text line by line, so items are batched (newline-joined) instead of sent one per request, which "
         "is ~78x faster and was verified to give output identical to one-request-per-item, ignoring case, "
-        "on all 4,253 social-media strings. It is scored on every item of the full word corpus and the "
-        "full social-media corpus; it is absent from the augmented cross-check, which is a secondary "
-        "check against machine-generated romanizations and not worth the fetch time.\n")
+        "on all 4,253 social-media strings. It is scored on every item of every corpus.\n")
     lines.append(
         "- **v→w preprocessing**: the endpoint writes ව as `v` where Sinhala speakers type `w`. Since that "
         "one orthographic choice accounted for its entire measured gap, the rewrite is applied as a "

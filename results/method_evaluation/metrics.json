@@ -206,5 +206,37 @@
     "chrf": 53.509292515207605,
     "chrf2": 43.338114324619305,
     "bleu": 2.2202646829235086
+  },
+  {
+    "corpus": "augmented_sentences_sample",
+    "method": "nisansa_sirs_method",
+    "n": 300000,
+    "n_empty": 449,
+    "coverage_pct": 99.85033333333332,
+    "cer_mean": 0.15312802983757412,
+    "cer_mean_cased": 0.1543106967856165,
+    "wer_mean": 0.6459296627548782,
+    "exact_pct": 2.4603333333333333,
+    "cer_relaxed_mean": 0.03848102807910617,
+    "exact_relaxed_pct": 17.144,
+    "chrf": 68.49119007464142,
+    "chrf2": 57.27705248973168,
+    "bleu": 7.560720562088072
+  },
+  {
+    "corpus": "augmented_sentences_sample",
+    "method": "nisansa_w",
+    "n": 300000,
+    "n_empty": 449,
+    "coverage_pct": 99.85033333333332,
+    "cer_mean": 0.1138348027228727,
+    "cer_mean_cased": 0.1150364556074625,
+    "wer_mean": 0.5344715482575322,
+    "exact_pct": 3.4316666666666666,
+    "cer_relaxed_mean": 0.03848102807910617,
+    "exact_relaxed_pct": 17.144,
+    "chrf": 79.44576697211939,
+    "chrf2": 68.19624719494483,
+    "bleu": 15.438890207958368
   }
 ]

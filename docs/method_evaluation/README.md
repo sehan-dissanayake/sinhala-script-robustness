@@ -4,13 +4,15 @@ Which of the four Sinhala->Romanized ("Singlish") methods best reproduces how pe
 
 ## Recommendation: Phonetic (in-house)
 
-**Phonetic (in-house) is the recommended method**, but on accuracy it is a statistical tie with Nisansa web (v→w preprocessed) - their confidence intervals overlap, so the ranking between them is not meaningful. The recommendation therefore rests on engineering properties rather than a quality difference: Phonetic runs locally and deterministically, needs no network, covers every word in the corpus, and can be rerun by anyone offline.
+**Phonetic (in-house) is the best method** on every corpus tested and is the recommended choice for the downstream script-robustness pipeline. It has the lowest CER and the highest chrF everywhere, and it is the only top-ranked option that is local, deterministic, free, and reproducible offline.
+
+Its nearest rival is Nisansa web (v→w preprocessed), behind by at most 0.0120 CER. The paired Wilcoxon separates them on every corpus, so the ordering is not a coin flip - but the margin is small in absolute terms, and it comes from coverage and leaked characters rather than from better letter-to-letter mapping. On the items Nisansa did answer, and with the v/w convention normalized, the two are very close.
 
 | Corpus | Items | Winner by CER | Runner-up |
 |---|---|---|---|
 | Social media (authentic sentence pairs) | 4,397 | Phonetic (in-house) (0.182) | Nisansa web (v→w preprocessed) (0.182) |
 | Swa-Bhasha (multi-reference words) | 450,587 | Phonetic (in-house) (0.121) | Nisansa web (v→w preprocessed) (0.133) |
-| Augmented sentences (300k sample, cross-check) | 300,000 | Phonetic (in-house) (0.112) | Aksharamukha (0.139) |
+| Augmented sentences (300k sample, cross-check) | 300,000 | Phonetic (in-house) (0.112) | Nisansa web (v→w preprocessed) (0.114) |
 
 Supporting points:
 
@@ -29,6 +31,7 @@ Nisansa's output matches the phonetic method on long vowels, aspiration and gemi
 |---|---|---|---|
 | Social media (authentic sentence pairs) | 0.197 | **0.182** | 0.182 |
 | Swa-Bhasha (multi-reference words) | 0.176 | **0.133** | 0.121 |
+| Augmented sentences (300k sample, cross-check) | 0.153 | **0.114** | 0.112 |
 
 So the two methods are equivalent in romanization quality once that single orthographic choice is normalized, which is consistent with the relaxed metrics: after canonicalizing spelling style, their CERs were already identical to four decimal places. The honest conclusion is that Nisansa is not a *worse* romanizer - it simply writes `v`, and Sinhala speakers type `w`. Phonetic remains the recommendation because it matches human convention out of the box and is local, complete and reproducible, not because it transliterates better.
 
@@ -51,6 +54,8 @@ The Nisansa web form capitalizes the first letter of whatever text it is given (
 | Augmented sentences (300k sample, cross-check) | Phonetic (in-house) | 0.112 | 0.112 |
 | Augmented sentences (300k sample, cross-check) | Aksharamukha | 0.139 | 0.139 |
 | Augmented sentences (300k sample, cross-check) | uroman | 0.210 | 0.210 |
+| Augmented sentences (300k sample, cross-check) | Nisansa web (as published) | 0.153 | 0.154 |
+| Augmented sentences (300k sample, cross-check) | Nisansa web (v→w preprocessed) | 0.114 | 0.115 |
 
 ## Metrics glossary
 
@@ -72,7 +77,7 @@ The Nisansa web form capitalizes the first letter of whatever text it is given (
 
 - **Significance**: percentile bootstrap 95% CIs on mean CER and paired Wilcoxon signed-rank tests against the per-corpus best method.
 
-- **Nisansa coverage**: this method is a web form rather than a local library. It romanizes free text line by line, so items are batched (newline-joined) instead of sent one per request, which is ~78x faster and was verified to give output identical to one-request-per-item, ignoring case, on all 4,253 social-media strings. It is scored on every item of the full word corpus and the full social-media corpus; it is absent from the augmented cross-check, which is a secondary check against machine-generated romanizations and not worth the fetch time.
+- **Nisansa coverage**: this method is a web form rather than a local library. It romanizes free text line by line, so items are batched (newline-joined) instead of sent one per request, which is ~78x faster and was verified to give output identical to one-request-per-item, ignoring case, on all 4,253 social-media strings. It is scored on every item of every corpus.
 
 - **v→w preprocessing**: the endpoint writes ව as `v` where Sinhala speakers type `w`. Since that one orthographic choice accounted for its entire measured gap, the rewrite is applied as a standard preprocessing stage and `Nisansa web (v→w preprocessed)` is the variant to read as *the* Nisansa result. The as-published row is kept beside it so the modification stays visible.
 
@@ -133,7 +138,9 @@ Items: 300,000. Best method by strict CER listed first.
 | Method | Coverage % | CER | WER | chrF | chrF++ | BLEU | Exact % | Relaxed CER | Relaxed Exact % |
 |---|---|---|---|---|---|---|---|---|---|
 | Phonetic (in-house) | 100.00 | 0.112 | 0.534 | 79.6 | 68.3 | 15.4 | 3.4 | 0.037 | 17.0 |
+| Nisansa web (v→w preprocessed) | 99.85 (449 empty) | 0.114 | 0.534 | 79.4 | 68.2 | 15.4 | 3.4 | 0.038 | 17.1 |
 | Aksharamukha | 100.00 | 0.139 | 0.625 | 70.3 | 59.0 | 8.7 | 2.8 | 0.037 | 16.9 |
+| Nisansa web (as published) | 99.85 (449 empty) | 0.153 | 0.646 | 68.5 | 57.3 | 7.6 | 2.5 | 0.038 | 17.1 |
 | uroman | 100.00 | 0.210 | 0.781 | 53.5 | 43.3 | 2.2 | 1.7 | 0.040 | 15.5 |
 
 **Significance** (best = Phonetic (in-house); paired Wilcoxon on per-item CER):
@@ -143,6 +150,8 @@ Items: 300,000. Best method by strict CER listed first.
 | Phonetic (in-house) | [0.112, 0.113] | — (best) |
 | Aksharamukha | [0.139, 0.140] | 0.00e+00 |
 | uroman | [0.210, 0.211] | 0.00e+00 |
+| Nisansa web (as published) | [0.153, 0.154] | 0.00e+00 |
+| Nisansa web (v→w preprocessed) | [0.113, 0.114] | 8.92e-94 |
 
 ## Why: spelling-convention profile
 
@@ -182,6 +191,8 @@ Rates are computed over the items each method produced output for, so a failed i
 | Phonetic (in-house) | 0.00 | 0.56 | 0.38 | 0.05 | 0.00 |
 | Aksharamukha | 0.00 | 0.56 | 0.13 | 0.06 | 0.00 |
 | uroman | 1.00 | 0.56 | 0.00 | 0.20 | 0.00 |
+| Nisansa web (as published) | 1.00 | 0.56 | 0.38 | 0.04 | 2.48 |
+| Nisansa web (v→w preprocessed) | 0.00 | 0.56 | 0.38 | 0.04 | 2.48 |
 
 Rates are computed over the items each method produced output for, so a failed item cannot flatter a method by contributing zero tokens; coverage is charged in the metric tables above instead.
 

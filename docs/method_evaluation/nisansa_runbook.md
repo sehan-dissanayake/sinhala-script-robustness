@@ -1,25 +1,21 @@
 # Nisansa romanizer — run guide
 
-We need the Nisansa web romanizer's output for **one** corpus:
+We need the Nisansa web romanizer's output for two corpora:
 
-| Corpus | Items | Requests | Rough time |
-|---|---|---|---|
-| `swa_bhasha_words` | 450,587 words | ~9,000 | ~1 hour |
+| Corpus | Items | Requests | Rough time | Status |
+|---|---|---|---|---|
+| `swa_bhasha_words` | 450,587 words | ~9,000 | ~1 hour | done |
+| `augmented_sentences_sample` | 275,259 sentences | ~12,500 | ~1.2 hours | to run |
 
 `social_media` (4,253 sentences) is **already done and does not need rerunning**:
 it contains none of the sequences the endpoint fails or leaks on, so its cached
 results are already the endpoint's verbatim output.
 
-`augmented_sentences_sample` is **deliberately not run** through Nisansa. It is a
-secondary cross-check whose references are themselves machine-generated, so it
-partly measures agreement with a generator rather than with human typing, and it
-is not worth ~1.2 hours of fetching. The other three methods are scored on it.
-
-Measured throughput is ~64 items/s, so this is about an hour of wall time rather
-than the multi-session effort it was originally. There is **no rate limit** —
-what used to look like load shedding was the ඤ bug failing whole batches (see
-below). You can stop at any time; everything fetched is saved immediately, and
-rerunning the same command resumes.
+Measured throughput is ~64 items/s, so each corpus is about an hour of wall time
+rather than the multi-session effort it was originally. There is **no rate
+limit** — what used to look like load shedding was the ඤ bug failing whole
+batches (see below). You can stop at any time; everything fetched is saved
+immediately, and rerunning the same command resumes.
 
 ## Setup (once)
 
@@ -56,10 +52,11 @@ there so the tables are evidence rather than guesswork.
 
 ## Run it
 
-Resumable — rerun after any interruption.
+One command per corpus. Resumable — rerun after any interruption.
 
 ```powershell
 python src/method_evaluation/nisansa_shards.py run --corpus swa_bhasha_words --all
+python src/method_evaluation/nisansa_shards.py run --corpus augmented_sentences_sample --all
 ```
 
 `--all` walks all 24 shards in one process. To split the work across people,
@@ -77,11 +74,13 @@ python src/method_evaluation/nisansa_shards.py status --corpus swa_bhasha_words
 
 ```powershell
 python src/method_evaluation/nisansa_shards.py merge --corpus swa_bhasha_words
+python src/method_evaluation/nisansa_shards.py merge --corpus augmented_sentences_sample
 python src/method_evaluation/derive_nisansa_w.py --corpora social_media
 python src/method_evaluation/run_evaluation.py
 python src/method_evaluation/error_analysis.py
 python src/method_evaluation/plots.py
 python src/method_evaluation/generate_report.py
+python src/method_evaluation/export_results_table.py
 ```
 
 `merge` writes two hypothesis files: the endpoint's verbatim output, and the
@@ -112,7 +111,9 @@ python src/method_evaluation/run_evaluation.py --common-subset
   attempts each: not one succeeded later. The client raises immediately and
   bisects the batch instead of waiting.
 - **Word-corpus shard results are committed** (~20 MB), so nobody has to refetch
-  them and a teammate needs no dataset download to contribute.
+  them and a teammate needs no dataset download to contribute. Sentence-corpus
+  shards are gitignored: ~124 MB, and that corpus is a fixed-seed sample that
+  regenerates exactly, so it is reproducible at the cost of one run.
 
 ## Committing word-corpus results
 
