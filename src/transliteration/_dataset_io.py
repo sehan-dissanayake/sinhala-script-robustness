@@ -49,11 +49,6 @@ DATASET_FILES = (
     ("sinhala_mmlu.jsonl", "sinhala_mmlu_romanized.jsonl"),
     ("sold.jsonl", "sold_romanized.jsonl"),
     ("global_piqa.jsonl", "global_piqa_romanized.jsonl"),
-    # Held-out rows, used only as few-shot exemplar pools. They need the same
-    # Romanized twin as the evaluation items so an exemplar is never shown in a
-    # different script from the item being scored.
-    ("sold_heldout.jsonl", "sold_heldout_romanized.jsonl"),
-    ("global_piqa_heldout.jsonl", "global_piqa_heldout_romanized.jsonl"),
 )
 
 

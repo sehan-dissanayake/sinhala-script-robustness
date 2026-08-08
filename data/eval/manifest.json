@@ -1,8 +1,7 @@
 {
   "transliteration_method": "phonetic",
-  "seed": 42,
-  "fewshot_k": 8,
   "sampling": "none: every available item is evaluated",
+  "prompting": "zero-shot only",
   "script_conditions": [
     "unicode",
     "romanized"
@@ -27,13 +26,6 @@
         "B": 501,
         "C": 507,
         "D": 370
-      },
-      "fewshot": {
-        "file": null,
-        "sha256": null,
-        "n": 0,
-        "pool": null,
-        "pool_size": 0
       }
     },
     "sold": {
@@ -51,13 +43,6 @@
       "label_counts": {
         "NOT": 1485,
         "OFF": 1015
-      },
-      "fewshot": {
-        "file": "data/eval/fewshot/sold.jsonl",
-        "sha256": "de95e3c90bf3fc8f53adb6091d00d00c3880ee05cc0f76da219f1db337facbee",
-        "n": 8,
-        "pool": "sold_heldout.jsonl",
-        "pool_size": 200
       }
     },
     "global_piqa": {
@@ -75,13 +60,6 @@
       "label_counts": {
         "A": 49,
         "B": 51
-      },
-      "fewshot": {
-        "file": "data/eval/fewshot/global_piqa.jsonl",
-        "sha256": "d933c2236e73c000df70f20e8f5f64994b1b3832e27323f095217753438ec75e",
-        "n": 8,
-        "pool": "global_piqa_heldout.jsonl",
-        "pool_size": 20
       }
     }
   }

@@ -10,8 +10,6 @@ runner consumes, so the two MCQ tasks need no special-casing.
 
 import json
 import os
-import random
-from collections import defaultdict
 
 LETTERS = "ABCDEFGH"
 
@@ -94,43 +92,6 @@ def prepare_sold():
     print(f"Saved {len(output_records)} SOLD full records to {out_path}")
 
 
-def prepare_sold_heldout(pool_size=200, seed=42):
-    """Carve a small few-shot exemplar pool out of the SOLD *train* split.
-
-    The whole test split is evaluated, so exemplars cannot come from it. SOLD's
-    train split is otherwise unused here (nothing is fine-tuned), which makes it
-    the natural disjoint source. Only a small label-balanced slice is kept: 8
-    exemplars are ever needed, and each pooled row still has to be romanized by
-    every method, including the request-per-string web one.
-    """
-    print("Processing SOLD held-out (few-shot pool)...")
-    train_path = os.path.join("data", "raw", "sold", "train.jsonl")
-    if not os.path.exists(train_path):
-        print(f"  skipped: {train_path} not found")
-        return
-
-    by_label = defaultdict(list)
-    for r in _read_jsonl(train_path):
-        by_label[r['label']].append(r)
-
-    rng = random.Random(seed)
-    chosen = []
-    per_label = pool_size // max(len(by_label), 1)
-    for label in sorted(by_label):
-        pool = sorted(by_label[label], key=lambda r: str(r.get('post_id', r['text'])))
-        chosen.extend(rng.sample(pool, min(per_label, len(pool))))
-    chosen.sort(key=lambda r: str(r.get('post_id', r['text'])))
-
-    _write_processed(
-        [{
-            "id": f"soldho_{i:04d}",
-            "dataset": "sold_heldout",
-            "text_unicode": r['text'],
-            "label": r['label'],
-        } for i, r in enumerate(chosen, 1)],
-        "sold_heldout.jsonl", "SOLD held-out (few-shot pool)",
-    )
-
 def _read_jsonl(path):
     with open(path, 'r', encoding='utf-8') as f:
         return [json.loads(line) for line in f if line.strip()]
@@ -189,26 +150,10 @@ def prepare_global_piqa():
         "global_piqa.jsonl", "Global PIQA",
     )
 
-    # Contributed rows the official 100 were sampled from. Only the rows whose
-    # prompt is absent from the official set are kept, so few-shot exemplars
-    # drawn from here cannot leak an evaluation item.
-    pool_path = os.path.join(raw_dir, "unsampled_full.jsonl")
-    if not os.path.exists(pool_path):
-        print(f"  note: {pool_path} not found, no held-out exemplar pool written")
-        return
-    official_prompts = {r['prompt'].strip() for r in official}
-    heldout = [r for r in _read_jsonl(pool_path) if r['prompt'].strip() not in official_prompts]
-    _write_processed(
-        [_piqa_record(r, f"piqaho_{i:04d}", "global_piqa_heldout")
-         for i, r in enumerate(heldout, 1)],
-        "global_piqa_heldout.jsonl", "Global PIQA held-out (few-shot pool)",
-    )
-
 
 def main():
     prepare_mmlu()
     prepare_sold()
-    prepare_sold_heldout()
     prepare_global_piqa()
 
 if __name__ == "__main__":

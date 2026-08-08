@@ -2,7 +2,7 @@
 
 This repository contains the experiment pipeline for evaluating whether Large Language Models (LLMs) perform worse on downstream NLP tasks when the input Sinhala text is Romanized ("Singlish", e.g. `kohomada`) instead of using the native Unicode script (`කොහොමද`).
 
-This is a zero-shot/few-shot evaluation pipeline (no model fine-tuning) designed to statistically compare LLM accuracy and F1 scores across two script conditions on two distinct tasks: Multiple Choice QA and Binary Classification.
+This is a zero-shot evaluation pipeline (no model fine-tuning, no few-shot exemplars) designed to statistically compare LLM accuracy and F1 scores across two script conditions on three distinct tasks: 4-way and 2-way Multiple Choice QA, and Binary Classification. Zero-shot is used uniformly across all three datasets so no task gets a prompting advantage the others don't.
 
 ## 📊 Datasets
 
@@ -20,7 +20,7 @@ Global PIQA also publishes a `sin_latn` config. That is a *separate*, non-parall
 
 1. **Data Preparation**: Download the raw datasets and normalise them into one Unicode schema.
 2. **Transliteration**: Generate matched Romanized variants with four candidates (custom phonetic, Aksharamukha, uroman, and Nisansa Sir's web method) and select one against 755k human-romanized reference items. **The phonetic method won on every corpus** — see [`docs/method_evaluation/`](docs/method_evaluation/).
-3. **Eval sets**: Freeze every item of every dataset with the Unicode and Romanized forms paired in a single record, plus few-shot exemplar pools held out from separate splits.
+3. **Eval sets**: Freeze every item of every dataset with the Unicode and Romanized forms paired in a single record.
 4. **Evaluation** *(next phase)*: Query 4 models (LLaMA-3.1-8B, Qwen2-7B, GPT-4o, Claude) uniformly across the dataset × script condition matrix.
 5. **Analysis** *(next phase)*:
    - Compute standard metrics (accuracy for MMLU and Global PIQA, F1 for SOLD).
@@ -38,7 +38,6 @@ sinhala-script-robustness/
 │   ├── reference/                     # Human-romanized corpora for method selection
 │   └── eval/                          # ✅ Frozen eval sets: both script conditions paired
 │       ├── <dataset>.jsonl            # Every item, no sampling
-│       ├── fewshot/<dataset>.jsonl    # Held-out, label-balanced exemplars
 │       └── manifest.json              # Counts, strata, SHA-256 per file
 ├── src/
 │   ├── data_prep/                     # Download, normalise, and freeze eval sets
@@ -89,7 +88,7 @@ sinhala-script-robustness/
    # Romanize with the selected method (add other methods only to inspect them)
    python src/transliteration/phonetic.py
 
-   # Freeze data/eval/: all items, paired script conditions, few-shot pools
+   # Freeze data/eval/: all items, paired script conditions
    python src/data_prep/build_eval_sets.py
    ```
    `build_eval_sets.py` validates as it goes (ids aligned, no Sinhala leaking into the

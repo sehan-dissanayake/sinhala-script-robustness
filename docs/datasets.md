@@ -1,8 +1,8 @@
 # Downstream evaluation datasets
 
 Status: **final**. `data/eval/` is frozen and ready for the LLM experiment phase.
-Everything here is reproducible from the raw sources with a fixed seed; `data/eval/manifest.json`
-records the seed, counts, strata, and a SHA-256 per file.
+Everything here is reproducible from the raw sources with no randomness involved;
+`data/eval/manifest.json` records the counts, strata, and a SHA-256 per file.
 
 ## What is in data/eval/
 
@@ -34,15 +34,17 @@ test, so the runner must not be able to score mismatched subsets against each ot
 | `sinhala_mmlu.jsonl` | 1,851 | 4-way MCQ | the entire released split |
 | `sold.jsonl` | 2,500 | Binary | the entire test split |
 | `global_piqa.jsonl` | 100 | 2-way MCQ | all of `sin_sinh` |
-| `fewshot/sold.jsonl`, `fewshot/global_piqa.jsonl` | 8 each | — | label-balanced, from held-out splits |
 
 4,451 items × 2 script conditions = **8,902 prompts per model**.
 
-**No sampling.** Every available item is evaluated, so the eval sets involve no randomness and
-the `--seed` flag affects only which few-shot exemplars are picked. Label distributions are
-therefore the source distributions: MMLU A/B/C/D = 473/501/507/370, SOLD NOT/OFF = 1485/1015,
-Global PIQA A/B = 49/51. `strata` is still recorded on every item and summarised in the
-manifest, since the analysis phase will want per-domain and per-class breakdowns.
+**No sampling, no few-shot.** Every available item is evaluated and every prompt is zero-shot —
+no demonstrations shown to the model before the real question. Zero-shot is used uniformly
+across all three datasets so none of them gets a prompting advantage the others don't; running
+two datasets few-shot and one zero-shot would make the cross-dataset comparison uninterpretable.
+There is no randomness anywhere in this step. Label distributions are the source distributions:
+MMLU A/B/C/D = 473/501/507/370, SOLD NOT/OFF = 1485/1015, Global PIQA A/B = 49/51. `strata` is
+still recorded on every item and summarised in the manifest, since the analysis phase will want
+per-domain and per-class breakdowns.
 
 ## Script conditions
 
@@ -64,36 +66,24 @@ released, 1,851 questions, all 4-way. Two things to know:
 * Every row is labelled `difficulty=Easy`, so difficulty carries no information. The builder
   detects constant strata fields, drops them from the reported breakdown, and says so rather
   than implying a difficulty analysis is possible. The field is still kept on each record.
-* Because the whole split is evaluated, there is no held-out pool for few-shot exemplars, and
-  nothing else Sinhala-MMLU-shaped is published. **SinhalaMMLU has to be run zero-shot**, or
-  with exemplars written by hand outside the benchmark.
 * One upstream row (`mmlu_0854`, `q_no` 64, "how many standard time zones is the Earth divided
   into") stores the answer *value* `24` in the `answer` field instead of the 1-based index `3`.
   That previously produced the uninterpretable label `"24"`. `prepare_datasets.py` now recovers
   the index by matching the value against the choices (giving `C`) and raises if that match is
   ambiguous, so a similar upstream slip cannot pass silently.
 
-**SOLD** (`sinhala-nlp/SOLD`). The full 2,500-item `test` split is evaluated. Nothing here is
-fine-tuned, so the 7,500-item train split is free to serve as the few-shot exemplar pool:
-`prepare_datasets.py` keeps a 200-row label-balanced slice of it as
-`data/processed/sold_heldout.jsonl`, romanized like everything else. 200 rows is far more than
-the 8 exemplars needed, and keeping it small matters because every pooled row also has to pass
-through the request-per-string web transliterator.
+**SOLD** (`sinhala-nlp/SOLD`). The full 2,500-item `test` split is evaluated. The dataset also
+ships a 7,500-item `train` split, meant for fine-tuning a model; it is downloaded (by
+`download_sold.py`) but otherwise unused here, since nothing in this project is fine-tuned.
 
 **Global PIQA** (`mrlbenchmarks/global-piqa-nonparallel`, config `sin_sinh`). 100 hand-written
 items, each a prompt plus two candidate solutions, 77 of them culturally specific. Two decisions:
 
-* The dataset also publishes a `sin_latn` config. That is a **separate, non-parallel** Sinhala
-  set authored in Latin script by different contributors — not a transliteration of `sin_sinh`.
-  Using it as the Romanized condition would vary content and authorship along with script and
-  make the comparison uninterpretable, so we transliterate `sin_sinh` ourselves, exactly as for
-  the other two datasets.
-* Few-shot exemplars cannot come from the eval set, and the official split is only 100 items,
-  all of which are evaluated. We therefore also fetch `unsampled_full/`, the 110-item
-  contributed pool the official set was drawn from, and keep the 20 rows whose prompt does not
-  appear in the official 100. Those become `data/processed/global_piqa_heldout.jsonl`, romanized
-  alongside everything else, and are the only source of Global PIQA exemplars.
-  `build_eval_sets.py` asserts the disjointness.
+The dataset also publishes a `sin_latn` config. That is a **separate, non-parallel** Sinhala set
+authored in Latin script by different contributors — not a transliteration of `sin_sinh`. Using
+it as the Romanized condition would vary content and authorship along with script and make the
+comparison uninterpretable, so we transliterate `sin_sinh` ourselves, exactly as for the other
+two datasets.
 
 Licence note: Global PIQA is CC BY-SA 4.0 and **evaluation-only** — the authors explicitly
 disallow training on it, or on synthetic data seeded from it. This project does no training,

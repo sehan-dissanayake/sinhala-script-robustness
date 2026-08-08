@@ -1,8 +1,9 @@
 """Freeze the downstream-evaluation sets: one file per dataset, both script conditions.
 
-Every available item is used - no sampling. Phase 2 selected the `phonetic`
-transliterator, so each item is emitted once with its Unicode and Romanized forms
-side by side:
+Every available item is used - no sampling, no few-shot exemplars (all three
+datasets are run zero-shot, so no dataset gets a prompting advantage the others
+don't). Phase 2 selected the `phonetic` transliterator, so each item is emitted
+once with its Unicode and Romanized forms side by side:
 
     {
       "id": "mmlu_0123", "dataset": "sinhala_mmlu", "task": "mcq",
@@ -15,12 +16,6 @@ Pairing the two conditions in a single record is what makes the planned
 McNemar test valid: the two script conditions are the same item, so the LLM
 runner cannot accidentally score mismatched subsets against each other.
 
-Few-shot exemplars come from explicit held-out pools (`*_heldout.jsonl`), never
-from the evaluation set itself, and are label-balanced so demonstrations neither
-leak test items nor skew the answer distribution. SinhalaMMLU releases only one
-split, so it has no disjoint pool and must be run zero-shot. Zero-shot runs can
-simply ignore data/eval/fewshot/.
-
     python src/data_prep/build_eval_sets.py
     python src/data_prep/build_eval_sets.py --method uroman
 """
@@ -30,8 +25,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import random
-from collections import Counter, defaultdict
+from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -51,21 +45,15 @@ class EvalSpec:
     task: str                    # "mcq" | "binary"
     strata_fields: tuple[str, ...]
     labels: tuple[str, ...]
-    fewshot_pool: str | None = None   # processed file to draw exemplars from
-    fewshot_romanized: str | None = None
 
 
 SPECS: tuple[EvalSpec, ...] = (
     EvalSpec("sinhala_mmlu", "sinhala_mmlu.jsonl", "sinhala_mmlu_romanized.jsonl",
              task="mcq", strata_fields=("domain", "difficulty"), labels=("A", "B", "C", "D")),
     EvalSpec("sold", "sold.jsonl", "sold_romanized.jsonl",
-             task="binary", strata_fields=("label",), labels=("NOT", "OFF"),
-             fewshot_pool="sold_heldout.jsonl",
-             fewshot_romanized="sold_heldout_romanized.jsonl"),
+             task="binary", strata_fields=("label",), labels=("NOT", "OFF")),
     EvalSpec("global_piqa", "global_piqa.jsonl", "global_piqa_romanized.jsonl",
-             task="mcq", strata_fields=("culturally_specific",), labels=("A", "B"),
-             fewshot_pool="global_piqa_heldout.jsonl",
-             fewshot_romanized="global_piqa_heldout_romanized.jsonl"),
+             task="mcq", strata_fields=("culturally_specific",), labels=("A", "B")),
 )
 
 
@@ -82,11 +70,10 @@ def _has_sinhala(text: str) -> bool:
     return any(SINHALA_START <= ch <= SINHALA_END for ch in text)
 
 
-def load_paired(spec: EvalSpec, method: str, processed_name: str,
-                romanized_name: str) -> list[dict]:
+def load_paired(spec: EvalSpec, method: str) -> list[dict]:
     """Join a processed file to its Romanized twin on `id`, validating both sides."""
-    processed_path = PROCESSED_DIR / processed_name
-    romanized_path = ROMANIZED_DIR / method / romanized_name
+    processed_path = PROCESSED_DIR / spec.processed
+    romanized_path = ROMANIZED_DIR / method / spec.romanized
     for path in (processed_path, romanized_path):
         if not path.exists():
             raise SystemExit(
@@ -148,10 +135,6 @@ def load_paired(spec: EvalSpec, method: str, processed_name: str,
     return paired
 
 
-# --------------------------------------------------------------------------- #
-# Stratified sampling
-# --------------------------------------------------------------------------- #
-
 def _stratum_key(record: dict, fields: tuple[str, ...]) -> str:
     return "|".join(f"{f}={record['strata'][f]}" for f in fields
                     if f in record["strata"])
@@ -161,8 +144,7 @@ def _effective_fields(records: list[dict], fields: tuple[str, ...]) -> tuple[str
     """Drop strata fields that take a single value across the corpus.
 
     SinhalaMMLU's only released split labels every question `difficulty=Easy`, so
-    stratifying on it does nothing; saying so beats silently pretending the
-    sample is balanced on difficulty.
+    reporting a breakdown by it would imply information that isn't there.
     """
     keep = []
     for field in fields:
@@ -171,30 +153,8 @@ def _effective_fields(records: list[dict], fields: tuple[str, ...]) -> tuple[str
             keep.append(field)
         else:
             print(f"  note: strata field {field!r} is constant "
-                  f"({values or 'absent'}), excluded from stratification")
+                  f"({values or 'absent'}), excluded from the reported breakdown")
     return tuple(keep)
-
-
-def label_balanced_sample(records: list[dict], k: int, labels: tuple[str, ...],
-                          seed: int) -> list[dict]:
-    """Pick k exemplars spread as evenly as possible over the label values."""
-    by_label: dict[str, list[dict]] = defaultdict(list)
-    for record in records:
-        by_label[record["label"]].append(record)
-
-    rng = random.Random(seed)
-    picked: list[dict] = []
-    present = [lab for lab in labels if by_label[lab]]
-    if not present:
-        return []
-    per_label = k // len(present)
-    extra = k - per_label * len(present)
-    for i, label in enumerate(present):
-        want = per_label + (1 if i < extra else 0)
-        pool = sorted(by_label[label], key=lambda r: r["id"])
-        picked.extend(rng.sample(pool, min(want, len(pool))))
-    rng.shuffle(picked)         # avoid a fixed label order in the prompt
-    return picked
 
 
 # --------------------------------------------------------------------------- #
@@ -212,21 +172,19 @@ def write_jsonl(records: list[dict], path: Path) -> str:
     return digest.hexdigest()
 
 
-def build(method: str, seed: int, fewshot_k: int) -> None:
+def build(method: str) -> None:
     manifest = {
         "transliteration_method": method,
-        "seed": seed,
-        "fewshot_k": fewshot_k,
         "sampling": "none: every available item is evaluated",
+        "prompting": "zero-shot only",
         "script_conditions": ["unicode", "romanized"],
         "datasets": {},
     }
 
     for spec in SPECS:
         print(f"\n=== {spec.name} ===")
-        records = load_paired(spec, method, spec.processed, spec.romanized)
+        records = load_paired(spec, method)
         fields = _effective_fields(records, spec.strata_fields)
-        eval_ids = {r["id"] for r in records}
 
         path = OUT_DIR / f"{spec.name}.jsonl"
         digest = write_jsonl(records, path)
@@ -236,30 +194,6 @@ def build(method: str, seed: int, fewshot_k: int) -> None:
         print(f"  labels: {dict(sorted(label_counts.items()))}")
         print(f"  strata: {dict(sorted(strata_counts.items()))}")
 
-        # Few-shot exemplars come from a held-out pool only. Because the eval set
-        # is now the whole dataset, there is no leftover to fall back on: a
-        # dataset without a pool has to be run zero-shot rather than quietly
-        # demonstrating with items it is scored on.
-        if spec.fewshot_pool:
-            pool = load_paired(spec, method, spec.fewshot_pool, spec.fewshot_romanized)
-            pool_source = spec.fewshot_pool
-        else:
-            pool, pool_source = [], None
-
-        exemplars = label_balanced_sample(pool, fewshot_k, spec.labels, seed)
-        overlap = eval_ids & {r["id"] for r in exemplars}
-        if overlap:
-            raise SystemExit(f"{spec.name}: exemplars overlap the eval set: {sorted(overlap)}")
-
-        fewshot_digest = fewshot_path = None
-        if exemplars:
-            fewshot_path = OUT_DIR / "fewshot" / f"{spec.name}.jsonl"
-            fewshot_digest = write_jsonl(exemplars, fewshot_path)
-            print(f"  {len(exemplars)} few-shot exemplars from {len(pool):,}-item "
-                  f"held-out pool -> {fewshot_path.relative_to(PROJECT_ROOT)}")
-        else:
-            print("  no held-out exemplar pool: this dataset must be run zero-shot")
-
         manifest["datasets"][spec.name] = {
             "task": spec.task,
             "file": str(path.relative_to(PROJECT_ROOT)).replace("\\", "/"),
@@ -268,14 +202,6 @@ def build(method: str, seed: int, fewshot_k: int) -> None:
             "strata_fields": list(fields),
             "strata_counts": dict(sorted(strata_counts.items())),
             "label_counts": dict(sorted(label_counts.items())),
-            "fewshot": {
-                "file": (str(fewshot_path.relative_to(PROJECT_ROOT)).replace("\\", "/")
-                         if fewshot_path else None),
-                "sha256": fewshot_digest,
-                "n": len(exemplars),
-                "pool": pool_source,
-                "pool_size": len(pool),
-            },
         }
 
     manifest_path = OUT_DIR / "manifest.json"
@@ -293,10 +219,6 @@ if __name__ == "__main__":
     parser.add_argument("--method", default="phonetic",
                         help="transliteration method under data/romanized/ (default: the "
                              "phase-2 winner, phonetic)")
-    parser.add_argument("--seed", type=int, default=42,
-                        help="seed for few-shot exemplar selection only; the eval sets "
-                             "are complete and involve no randomness")
-    parser.add_argument("--fewshot-k", type=int, default=8)
     args = parser.parse_args()
 
-    build(method=args.method, seed=args.seed, fewshot_k=args.fewshot_k)
+    build(method=args.method)
