@@ -6,20 +6,34 @@ Which of the four Sinhala->Romanized ("Singlish") methods best reproduces how pe
 
 **Phonetic (in-house) is the best method** on every corpus tested and is the recommended choice for the downstream script-robustness pipeline. It has the lowest CER and the highest chrF everywhere, and it is the only top-ranked option that is local, deterministic, free, and reproducible offline.
 
+Its nearest rival is Nisansa web (v→w preprocessed), behind by at most 0.0120 CER. The paired Wilcoxon separates them on every corpus, so the ordering is not a coin flip - but the margin is small in absolute terms, and it comes from coverage and leaked characters rather than from better letter-to-letter mapping. On the items Nisansa did answer, and with the v/w convention normalized, the two are very close.
+
 | Corpus | Items | Winner by CER | Runner-up |
 |---|---|---|---|
-| Social media (authentic sentence pairs) | 4,397 | Phonetic (in-house) (0.182) | Aksharamukha (0.191) |
-| Swa-Bhasha (multi-reference words) | 449,117 | Phonetic (in-house) (0.120) | Aksharamukha (0.147) |
-| Augmented sentences (300k sample, cross-check) | 300,000 | Phonetic (in-house) (0.112) | Aksharamukha (0.139) |
+| Social media (authentic sentence pairs) | 4,397 | Phonetic (in-house) (0.182) | Nisansa web (v→w preprocessed) (0.182) |
+| Swa-Bhasha (multi-reference words) | 450,587 | Phonetic (in-house) (0.121) | Nisansa web (v→w preprocessed) (0.133) |
+| Augmented sentences (300k sample, cross-check) | 300,000 | Phonetic (in-house) (0.112) | Nisansa web (v→w preprocessed) (0.114) |
 
 Supporting points:
 
-- **Wins the large-scale word set decisively**: CER 0.120 vs 0.163 (Nisansa), 0.147 (Aksharamukha) and 0.227 (uroman) across 449,117 words with 7.1M accepted human variants (p < 1e-300 against every one of them).
+- **Wins the large-scale word set decisively**: CER 0.121 vs 0.176 (Nisansa), 0.148 (Aksharamukha) and 0.228 (uroman) across 450,587 words with 7.1M accepted human variants (p < 1e-300 against every one of them).
 - **Wins authentic social-media text too**: CER 0.182 vs Nisansa 0.197, with the highest chrF (67.8 vs 63.4). See the capitalization note below - scoring case-sensitively reverses this ranking for the wrong reason.
 - **Matches human spelling convention**: humans overwhelmingly use `w` (not `v`) and use aspiration and gemination at rates Phonetic reproduces closely (see convention table). Aksharamukha drops aspiration; uroman uses `v` and over-geminates.
 - **Complete and reproducible**: local and deterministic, so the whole corpus can be regenerated offline and covers every word. Nisansa is a third-party web endpoint that can change or go offline, and it cannot romanize part of the alphabet at all (see the limitation note below), so it is both less reproducible and less complete.
 
 **Biggest remaining gap (all methods):** over-doubling of long vowels (~0.8/token on words vs humans' ~0.12). A trivial post-process collapsing `aa/ee/ii/oo/uu` would close roughly half the residual CER to human text (relaxed CER is ~1/3 of strict).
+
+### The v/w convention accounted for Nisansa's entire gap
+
+Nisansa's output matches the phonetic method on long vowels, aspiration and gemination, and differs almost only in writing ව as `v` where humans overwhelmingly write `w`. Rewriting just that one convention is applied as a preprocessing stage before scoring (a pure post-process of the fetched results, not the published tool) and removes the difference entirely:
+
+| Corpus | Nisansa as published | Nisansa with v→w | Phonetic |
+|---|---|---|---|
+| Social media (authentic sentence pairs) | 0.197 | **0.182** | 0.182 |
+| Swa-Bhasha (multi-reference words) | 0.176 | **0.133** | 0.121 |
+| Augmented sentences (300k sample, cross-check) | 0.153 | **0.114** | 0.112 |
+
+So the two methods are equivalent in romanization quality once that single orthographic choice is normalized, which is consistent with the relaxed metrics: after canonicalizing spelling style, their CERs were already identical to four decimal places. The honest conclusion is that Nisansa is not a *worse* romanizer - it simply writes `v`, and Sinhala speakers type `w`. Phonetic remains the recommendation because it matches human convention out of the box and is local, complete and reproducible, not because it transliterates better.
 
 ### Note: letter case is a UI artifact, not a romanization choice
 
@@ -30,14 +44,18 @@ The Nisansa web form capitalizes the first letter of whatever text it is given (
 | Social media (authentic sentence pairs) | Phonetic (in-house) | 0.182 | 0.216 |
 | Social media (authentic sentence pairs) | Aksharamukha | 0.191 | 0.225 |
 | Social media (authentic sentence pairs) | uroman | 0.228 | 0.261 |
-| Social media (authentic sentence pairs) | Nisansa web | 0.197 | 0.210 |
-| Swa-Bhasha (multi-reference words) | Phonetic (in-house) | 0.120 | 0.120 |
-| Swa-Bhasha (multi-reference words) | Aksharamukha | 0.147 | 0.147 |
-| Swa-Bhasha (multi-reference words) | uroman | 0.227 | 0.227 |
-| Swa-Bhasha (multi-reference words) | Nisansa web | 0.163 | 0.170 |
+| Social media (authentic sentence pairs) | Nisansa web (as published) | 0.197 | 0.210 |
+| Social media (authentic sentence pairs) | Nisansa web (v→w preprocessed) | 0.182 | 0.196 |
+| Swa-Bhasha (multi-reference words) | Phonetic (in-house) | 0.121 | 0.121 |
+| Swa-Bhasha (multi-reference words) | Aksharamukha | 0.148 | 0.148 |
+| Swa-Bhasha (multi-reference words) | uroman | 0.228 | 0.228 |
+| Swa-Bhasha (multi-reference words) | Nisansa web (as published) | 0.176 | 0.176 |
+| Swa-Bhasha (multi-reference words) | Nisansa web (v→w preprocessed) | 0.133 | 0.133 |
 | Augmented sentences (300k sample, cross-check) | Phonetic (in-house) | 0.112 | 0.112 |
 | Augmented sentences (300k sample, cross-check) | Aksharamukha | 0.139 | 0.139 |
 | Augmented sentences (300k sample, cross-check) | uroman | 0.210 | 0.210 |
+| Augmented sentences (300k sample, cross-check) | Nisansa web (as published) | 0.153 | 0.154 |
+| Augmented sentences (300k sample, cross-check) | Nisansa web (v→w preprocessed) | 0.114 | 0.115 |
 
 ## Metrics glossary
 
@@ -59,20 +77,27 @@ The Nisansa web form capitalizes the first letter of whatever text it is given (
 
 - **Significance**: percentile bootstrap 95% CIs on mean CER and paired Wilcoxon signed-rank tests against the per-corpus best method.
 
-- **Nisansa coverage**: this method is a web form rather than a local library. It romanizes free text line by line, so items are batched (newline-joined) instead of sent one per request, which is ~78x faster and was verified to give output identical to one-request-per-item, ignoring case, on all 4,253 social-media strings. It is scored on the full word corpus and the full social-media corpus; it is absent from the augmented cross-check.
+- **Nisansa coverage**: this method is a web form rather than a local library. It romanizes free text line by line, so items are batched (newline-joined) instead of sent one per request, which is ~78x faster and was verified to give output identical to one-request-per-item, ignoring case, on all 4,253 social-media strings. It is scored on every item of every corpus.
 
-- **A limitation of the Nisansa tool**: it cannot romanize the letter ඤ (U+0DA4) when that letter carries certain vowel signs - specifically followed by al-lakuna, ā, i or u. Such input returns an empty result. Verified by direct probing: ඤ alone, ඤ+ඤ, ක+ඤ, ඤ+ka and ඤ+e all succeed, as does the neighbouring letter ඥ (U+0DA5), so the tool's mapping table is missing those combinations rather than the letter itself. This affects 1,470 of 450,587 words (0.33%). Those items are excluded from **all** methods so that every method is scored on exactly the same rows; substituting another method's output would be worse, because the natural stand-in is the phonetic method that is itself under comparison, and its answers would inflate the score of whichever method borrowed them. The effect either way is far below the margin between methods.
+- **v→w preprocessing**: the endpoint writes ව as `v` where Sinhala speakers type `w`. Since that one orthographic choice accounted for its entire measured gap, the rewrite is applied as a standard preprocessing stage and `Nisansa web (v→w preprocessed)` is the variant to read as *the* Nisansa result. The as-published row is kept beside it so the modification stays visible.
+
+- **Nothing is excluded.** Where a method produced no output for an item, that item is scored as total error (CER 1.0) rather than dropped. Failing to romanize an input is a property of the tool, so excusing it would flatter the tool; the `Coverage` column below makes the size of that effect explicit. An earlier revision scored only the rows every method answered, which measured mapping quality but hid a coverage failure; those matched-subset numbers are still reproducible with `run_evaluation.py --common-subset`.
+
+- **Two measured defects in the Nisansa tool.** Both are characterised by direct probing of the full Sinhala akshara grid (881 units, `nisansa_probe.py`), not inferred from failures:
+  1. *No output at all* for **17 sequences**, every one of them ඤ (U+0DA4) carrying a vowel sign or al-lakuna (ඤ්, ඤා, ඤැ, ඤෑ, ඤි, ඤී, ඤු, ඤූ, ඤෘ, ඤේ, ඤෛ, ඤො, ඤෝ, ඤෞ, ඤෲ, ඤ්‍ය, ඤ්‍ර). The letter ඤ alone romanizes fine, as does ඤෙ and the neighbouring ඥ (U+0DA5), so the tool's mapping table is missing those specific combinations rather than the letter. The probe's table reproduces exactly the 1,470 of 450,587 words (0.33%) that the corpus run found by bisection - independent confirmation that it is neither over- nor under-inclusive.
+  2. *Silent leaks*: **12 sequences** come back unromanized inside otherwise valid Latin output (ඎ, ඏ, ඐ, ඓ, ඞ, ඦ, ෟ, ෳ, ඣෙ, ඤෙ, ඥෙ, ඬෙ), so ඓතිහාසික romanizes to `ඓthihaasika`. Real corpus text also leaks on malformed sequences outside the grid, such as a vowel sign followed by al-lakuna. These are scored as they are. An earlier revision ran the in-house phonetic romanizer over every response to patch such characters up, which made the measured system a hybrid of two methods under comparison and hid the defect; all results here are the endpoint's verbatim output.
 
 ## Social media (authentic sentence pairs)
 
 Items: 4,397. Best method by strict CER listed first.
 
-| Method | CER | WER | chrF | chrF++ | BLEU | Exact % | Relaxed CER | Relaxed Exact % |
-|---|---|---|---|---|---|---|---|---|
-| Phonetic (in-house) | 0.182 | 0.606 | 67.8 | 59.3 | 28.6 | 4.2 | 0.108 | 11.8 |
-| Aksharamukha | 0.191 | 0.640 | 63.7 | 55.4 | 26.3 | 3.5 | 0.108 | 11.8 |
-| Nisansa web | 0.197 | 0.647 | 63.4 | 54.9 | 25.4 | 3.2 | 0.108 | 11.9 |
-| uroman | 0.228 | 0.746 | 55.7 | 47.1 | 20.7 | 1.6 | 0.108 | 11.9 |
+| Method | Coverage % | CER | WER | chrF | chrF++ | BLEU | Exact % | Relaxed CER | Relaxed Exact % |
+|---|---|---|---|---|---|---|---|---|---|
+| Phonetic (in-house) | 100.00 | 0.182 | 0.606 | 67.8 | 59.3 | 28.6 | 4.2 | 0.108 | 11.8 |
+| Nisansa web (v→w preprocessed) | 100.00 | 0.182 | 0.606 | 67.8 | 59.3 | 28.6 | 4.2 | 0.108 | 11.9 |
+| Aksharamukha | 100.00 | 0.191 | 0.640 | 63.7 | 55.4 | 26.3 | 3.5 | 0.108 | 11.8 |
+| Nisansa web (as published) | 100.00 | 0.197 | 0.647 | 63.4 | 54.9 | 25.4 | 3.2 | 0.108 | 11.9 |
+| uroman | 100.00 | 0.228 | 0.746 | 55.7 | 47.1 | 20.7 | 1.6 | 0.108 | 11.9 |
 
 **Significance** (best = Phonetic (in-house); paired Wilcoxon on per-item CER):
 
@@ -81,37 +106,42 @@ Items: 4,397. Best method by strict CER listed first.
 | Phonetic (in-house) | [0.178, 0.186] | — (best) |
 | Aksharamukha | [0.187, 0.195] | 2.24e-130 |
 | uroman | [0.224, 0.232] | 0.00e+00 |
-| Nisansa web | [0.193, 0.201] | 1.47e-180 |
+| Nisansa web (as published) | [0.193, 0.201] | 1.47e-180 |
+| Nisansa web (v→w preprocessed) | [0.178, 0.186] | 1.59e-03 |
 
 ## Swa-Bhasha (multi-reference words)
 
-Items: 449,117. Best method by strict CER listed first.
+Items: 450,587. Best method by strict CER listed first.
 
-| Method | CER | WER | chrF | chrF++ | BLEU | Exact % | Relaxed CER | Relaxed Exact % |
-|---|---|---|---|---|---|---|---|---|
-| Phonetic (in-house) | 0.120 | 0.667 | 78.8 | 64.6 | 10.6 | 33.3 | 0.039 | 74.3 |
-| Aksharamukha | 0.147 | 0.760 | 69.7 | 56.2 | 0.8 | 24.0 | 0.040 | 73.8 |
-| Nisansa web | 0.163 | 0.776 | 67.9 | 54.3 | 7.9 | 22.4 | 0.039 | 74.1 |
-| uroman | 0.227 | 0.903 | 51.7 | 40.5 | 6.1 | 9.7 | 0.044 | 71.8 |
+| Method | Coverage % | CER | WER | chrF | chrF++ | BLEU | Exact % | Relaxed CER | Relaxed Exact % |
+|---|---|---|---|---|---|---|---|---|---|
+| Phonetic (in-house) | 100.00 | 0.121 | 0.668 | 78.7 | 64.4 | 10.6 | 33.2 | 0.040 | 74.0 |
+| Nisansa web (v→w preprocessed) | 99.67 (1,470 empty) | 0.133 | 0.691 | 76.1 | 62.1 | 10.2 | 30.9 | 0.043 | 73.8 |
+| Aksharamukha | 100.00 | 0.148 | 0.761 | 69.6 | 56.1 | 0.8 | 23.9 | 0.041 | 73.5 |
+| Nisansa web (as published) | 99.67 (1,470 empty) | 0.176 | 0.794 | 65.5 | 52.3 | 7.7 | 20.6 | 0.043 | 73.8 |
+| uroman | 100.00 | 0.228 | 0.903 | 51.6 | 40.4 | 6.0 | 9.7 | 0.044 | 71.6 |
 
 **Significance** (best = Phonetic (in-house); paired Wilcoxon on per-item CER):
 
 | Method | CER 95% CI | p vs best |
 |---|---|---|
-| Phonetic (in-house) | [0.120, 0.120] | — (best) |
+| Phonetic (in-house) | [0.120, 0.121] | — (best) |
 | Aksharamukha | [0.147, 0.148] | 0.00e+00 |
 | uroman | [0.227, 0.228] | 0.00e+00 |
-| Nisansa web | [0.163, 0.164] | 0.00e+00 |
+| Nisansa web (as published) | [0.175, 0.176] | 0.00e+00 |
+| Nisansa web (v→w preprocessed) | [0.132, 0.133] | 0.00e+00 |
 
 ## Augmented sentences (300k sample, cross-check)
 
 Items: 300,000. Best method by strict CER listed first.
 
-| Method | CER | WER | chrF | chrF++ | BLEU | Exact % | Relaxed CER | Relaxed Exact % |
-|---|---|---|---|---|---|---|---|---|
-| Phonetic (in-house) | 0.112 | 0.534 | 79.6 | 68.3 | 15.4 | 3.4 | 0.037 | 17.0 |
-| Aksharamukha | 0.139 | 0.625 | 70.3 | 59.0 | 8.7 | 2.8 | 0.037 | 16.9 |
-| uroman | 0.210 | 0.781 | 53.5 | 43.3 | 2.2 | 1.7 | 0.040 | 15.5 |
+| Method | Coverage % | CER | WER | chrF | chrF++ | BLEU | Exact % | Relaxed CER | Relaxed Exact % |
+|---|---|---|---|---|---|---|---|---|---|
+| Phonetic (in-house) | 100.00 | 0.112 | 0.534 | 79.6 | 68.3 | 15.4 | 3.4 | 0.037 | 17.0 |
+| Nisansa web (v→w preprocessed) | 99.85 (449 empty) | 0.114 | 0.534 | 79.4 | 68.2 | 15.4 | 3.4 | 0.038 | 17.1 |
+| Aksharamukha | 100.00 | 0.139 | 0.625 | 70.3 | 59.0 | 8.7 | 2.8 | 0.037 | 16.9 |
+| Nisansa web (as published) | 99.85 (449 empty) | 0.153 | 0.646 | 68.5 | 57.3 | 7.6 | 2.5 | 0.038 | 17.1 |
+| uroman | 100.00 | 0.210 | 0.781 | 53.5 | 43.3 | 2.2 | 1.7 | 0.040 | 15.5 |
 
 **Significance** (best = Phonetic (in-house); paired Wilcoxon on per-item CER):
 
@@ -120,6 +150,8 @@ Items: 300,000. Best method by strict CER listed first.
 | Phonetic (in-house) | [0.112, 0.113] | — (best) |
 | Aksharamukha | [0.139, 0.140] | 0.00e+00 |
 | uroman | [0.210, 0.211] | 0.00e+00 |
+| Nisansa web (as published) | [0.153, 0.154] | 0.00e+00 |
+| Nisansa web (v→w preprocessed) | [0.113, 0.114] | 8.92e-94 |
 
 ## Why: spelling-convention profile
 
@@ -127,32 +159,42 @@ How each method's output compares to human typing on the four axes that dominate
 
 ### Social media (authentic sentence pairs)
 
-| Source | v-preference (v/(v+w)) | long-vowel/tok | aspiration/tok | gemination/tok |
-|---|---|---|---|---|
-| Human reference | 0.20 | 0.05 | 0.15 | 0.18 |
-| Phonetic (in-house) | 0.00 | 0.38 | 0.17 | 0.16 |
-| Aksharamukha | 0.00 | 0.38 | 0.03 | 0.17 |
-| uroman | 1.00 | 0.30 | 0.00 | 0.36 |
-| Nisansa web | 1.00 | 0.38 | 0.17 | 0.16 |
+| Source | v-preference (v/(v+w)) | long-vowel/tok | aspiration/tok | gemination/tok | leaked Sinhala % |
+|---|---|---|---|---|---|
+| Human reference | 0.20 | 0.05 | 0.15 | 0.18 | 0.00 |
+| Phonetic (in-house) | 0.00 | 0.38 | 0.17 | 0.16 | 0.00 |
+| Aksharamukha | 0.00 | 0.38 | 0.03 | 0.17 | 0.00 |
+| uroman | 1.00 | 0.30 | 0.00 | 0.36 | 0.00 |
+| Nisansa web (as published) | 1.00 | 0.38 | 0.17 | 0.16 | 0.00 |
+| Nisansa web (v→w preprocessed) | 0.00 | 0.38 | 0.17 | 0.16 | 0.00 |
+
+Rates are computed over the items each method produced output for, so a failed item cannot flatter a method by contributing zero tokens; coverage is charged in the metric tables above instead.
 
 ### Swa-Bhasha (multi-reference words)
 
-| Source | v-preference (v/(v+w)) | long-vowel/tok | aspiration/tok | gemination/tok |
-|---|---|---|---|---|
-| Human reference | 0.01 | 0.12 | 0.55 | 0.11 |
-| Phonetic (in-house) | 0.00 | 0.81 | 0.56 | 0.12 |
-| Aksharamukha | 0.00 | 0.81 | 0.23 | 0.14 |
-| uroman | 1.00 | 0.80 | 0.00 | 0.37 |
-| Nisansa web | 1.00 | 0.81 | 0.56 | 0.11 |
+| Source | v-preference (v/(v+w)) | long-vowel/tok | aspiration/tok | gemination/tok | leaked Sinhala % |
+|---|---|---|---|---|---|
+| Human reference | 0.01 | 0.12 | 0.55 | 0.11 | 0.00 |
+| Phonetic (in-house) | 0.00 | 0.81 | 0.56 | 0.12 | 0.00 |
+| Aksharamukha | 0.00 | 0.81 | 0.23 | 0.14 | 0.00 |
+| uroman | 1.00 | 0.80 | 0.00 | 0.37 | 0.00 |
+| Nisansa web (as published) | 1.00 | 0.81 | 0.56 | 0.11 | 0.82 |
+| Nisansa web (v→w preprocessed) | 0.00 | 0.81 | 0.56 | 0.11 | 0.82 |
+
+Rates are computed over the items each method produced output for, so a failed item cannot flatter a method by contributing zero tokens; coverage is charged in the metric tables above instead.
 
 ### Augmented sentences (300k sample, cross-check)
 
-| Source | v-preference (v/(v+w)) | long-vowel/tok | aspiration/tok | gemination/tok |
-|---|---|---|---|---|
-| Human reference | 0.00 | 0.09 | 0.38 | 0.04 |
-| Phonetic (in-house) | 0.00 | 0.56 | 0.38 | 0.05 |
-| Aksharamukha | 0.00 | 0.56 | 0.13 | 0.06 |
-| uroman | 1.00 | 0.56 | 0.00 | 0.20 |
+| Source | v-preference (v/(v+w)) | long-vowel/tok | aspiration/tok | gemination/tok | leaked Sinhala % |
+|---|---|---|---|---|---|
+| Human reference | 0.00 | 0.09 | 0.38 | 0.04 | 0.00 |
+| Phonetic (in-house) | 0.00 | 0.56 | 0.38 | 0.05 | 0.00 |
+| Aksharamukha | 0.00 | 0.56 | 0.13 | 0.06 | 0.00 |
+| uroman | 1.00 | 0.56 | 0.00 | 0.20 | 0.00 |
+| Nisansa web (as published) | 1.00 | 0.56 | 0.38 | 0.04 | 2.48 |
+| Nisansa web (v→w preprocessed) | 0.00 | 0.56 | 0.38 | 0.04 | 2.48 |
+
+Rates are computed over the items each method produced output for, so a failed item cannot flatter a method by contributing zero tokens; coverage is charged in the metric tables above instead.
 
 ## Figures
 

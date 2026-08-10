@@ -7,10 +7,10 @@ from functools import lru_cache
 from uroman import Uroman
 
 try:
-    from ._dataset_io import process_datasets as _process_datasets
+    from ._dataset_io import cli as _cli, process_datasets as _process_datasets
     from .phonetic import transliterate as _fallback_transliterate
 except ImportError:
-    from _dataset_io import process_datasets as _process_datasets
+    from _dataset_io import cli as _cli, process_datasets as _process_datasets
     from phonetic import transliterate as _fallback_transliterate
 
 TOKEN_PATTERN = re.compile(r"([\u0d80-\u0dff\u200c\u200d]+|[^\u0d80-\u0dff\u200c\u200d]+)")
@@ -44,4 +44,4 @@ def process_datasets() -> None:
 
 
 if __name__ == "__main__":
-    process_datasets()
+    _cli("uroman", transliterate)

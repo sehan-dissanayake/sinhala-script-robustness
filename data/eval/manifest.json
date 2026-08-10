@@ -1,0 +1,66 @@
+{
+  "transliteration_method": "phonetic",
+  "sampling": "none: every available item is evaluated",
+  "prompting": "zero-shot only",
+  "script_conditions": [
+    "unicode",
+    "romanized"
+  ],
+  "datasets": {
+    "sinhala_mmlu": {
+      "task": "mcq",
+      "file": "data/eval/sinhala_mmlu.jsonl",
+      "sha256": "3d41dcd97ff73d40ee066256131c2db6a179eb3556fa1317359e5a0644686efc",
+      "n": 1851,
+      "strata_fields": [
+        "domain"
+      ],
+      "strata_counts": {
+        "domain=Humanities": 1162,
+        "domain=Language": 155,
+        "domain=Social_Science": 370,
+        "domain=Stem": 164
+      },
+      "label_counts": {
+        "A": 473,
+        "B": 501,
+        "C": 507,
+        "D": 370
+      }
+    },
+    "sold": {
+      "task": "binary",
+      "file": "data/eval/sold.jsonl",
+      "sha256": "f1e652f822852634060333d03ea22f308cb95348f9b363178ec2cd90606479bb",
+      "n": 2500,
+      "strata_fields": [
+        "label"
+      ],
+      "strata_counts": {
+        "label=NOT": 1485,
+        "label=OFF": 1015
+      },
+      "label_counts": {
+        "NOT": 1485,
+        "OFF": 1015
+      }
+    },
+    "global_piqa": {
+      "task": "mcq",
+      "file": "data/eval/global_piqa.jsonl",
+      "sha256": "243d7e554db2ea4416190e3a57217e1962c27423f35564b1c2f94c24250d6805",
+      "n": 100,
+      "strata_fields": [
+        "culturally_specific"
+      ],
+      "strata_counts": {
+        "culturally_specific=False": 23,
+        "culturally_specific=True": 77
+      },
+      "label_counts": {
+        "A": 49,
+        "B": 51
+      }
+    }
+  }
+}

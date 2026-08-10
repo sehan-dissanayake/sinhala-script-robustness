@@ -22,6 +22,15 @@ side-effect - enough to reverse the social-media ranking on its own. The
 case-sensitive mean CER is still reported as `cer_mean_cased` so the size of
 that artifact stays visible.
 
+An empty hypothesis means the method produced no output for that item, which is
+scored as total error (CER and WER 1.0, no exact match) in every regime rather
+than excluded. Scoring it is the honest treatment: failing to romanize an input
+is a property of the tool, not of the evaluation. Handling it explicitly also
+avoids a degenerate case in the relaxed regime, where a reference that
+canonicalizes to the empty string would otherwise award a perfect score to a
+method that returned nothing. `n_empty` and `coverage_pct` report how much of
+each method's score comes from outright failure.
+
 Edit-based metrics use rapidfuzz (C++). chrF/chrF++/BLEU use sacrebleu.
 """
 
@@ -86,10 +95,19 @@ class ItemScore:
     best_ref: str            # strict best reference (for corpus chrF/BLEU)
     level: str = "sentence"
     cer_cased: float = 0.0   # case-sensitive CER, kept as a sensitivity check
+    empty: bool = False      # method produced no output at all
 
 
 def score_item(hypothesis: str, references: list[str], level: str = "sentence",
                fold_case: bool = True) -> ItemScore:
+    if not hypothesis and any(references):
+        # No output: total error under every regime. The longest reference is
+        # handed to the corpus-level chrF/BLEU accumulators so an empty
+        # hypothesis costs recall there too.
+        return ItemScore(cer=1.0, wer=1.0, exact=False, cer_relaxed=1.0,
+                         exact_relaxed=False, best_ref=max(references, key=len),
+                         level=level, cer_cased=1.0, empty=True)
+
     keep_spaces = level == "sentence"
     raw_hyp, raw_refs = hypothesis, references
     if fold_case:
@@ -117,6 +135,8 @@ class CorpusResult:
     corpus: str
     method: str
     n: int
+    n_empty: int          # items with no output at all
+    coverage_pct: float   # 100 * (1 - n_empty / n)
     cer_mean: float
     cer_mean_cased: float
     wer_mean: float
@@ -150,10 +170,14 @@ def aggregate(corpus: str, method: str, hypotheses: list[str],
     chrf2 = sacrebleu.corpus_chrf(hyps, [best_refs], word_order=2).score
     bleu = sacrebleu.corpus_bleu(hyps, [best_refs], tokenize="13a").score
 
+    n_empty = sum(s.empty for s in scores)
+
     return CorpusResult(
         corpus=corpus,
         method=method,
         n=n,
+        n_empty=n_empty,
+        coverage_pct=100.0 * (1 - n_empty / n) if n else 0.0,
         cer_mean=sum(s.cer for s in scores) / n,
         cer_mean_cased=sum(s.cer_cased for s in scores) / n,
         wer_mean=sum(s.wer for s in scores) / n,
