@@ -79,19 +79,14 @@ def main():
 
     lines.append("Supporting points:\n")
     if ("swa_bhasha_words", "phonetic") in grid:
+        n_words = g("swa_bhasha_words", "phonetic", "n") or 0
         lines.append(
             f"- **Wins the large-scale word set decisively**: CER "
             f"{_fmt(g('swa_bhasha_words','phonetic','cer_mean'))} vs "
+            f"{_fmt(g('swa_bhasha_words','nisansa_sirs_method','cer_mean'))} (Nisansa), "
             f"{_fmt(g('swa_bhasha_words','aksharamukha','cer_mean'))} (Aksharamukha) and "
-            f"{_fmt(g('swa_bhasha_words','uroman','cer_mean'))} (uroman) across 450,587 words "
-            f"with 7.1M accepted human variants (p < 1e-300).")
-    if ("swa_bhasha_words_nisansacov", "nisansa_sirs_method") in grid:
-        lines.append(
-            f"- **Beats Nisansa on words as well**: on the 25,000-word block Nisansa was able to cover, "
-            f"CER {_fmt(g('swa_bhasha_words_nisansacov','phonetic','cer_mean'))} vs "
-            f"{_fmt(g('swa_bhasha_words_nisansacov','nisansa_sirs_method','cer_mean'))}, where Nisansa "
-            f"lands roughly level with Aksharamukha "
-            f"({_fmt(g('swa_bhasha_words_nisansacov','aksharamukha','cer_mean'))}).")
+            f"{_fmt(g('swa_bhasha_words','uroman','cer_mean'))} (uroman) across {n_words:,} words "
+            f"with 7.1M accepted human variants (p < 1e-300 against every one of them).")
     if ("social_media", "phonetic") in grid:
         lines.append(
             f"- **Wins authentic social-media text too**: CER "
@@ -105,10 +100,10 @@ def main():
         "aspiration and gemination at rates Phonetic reproduces closely (see convention table). "
         "Aksharamukha drops aspiration; uroman uses `v` and over-geminates.")
     lines.append(
-        "- **Scalable, reproducible, and free**: local and deterministic, so the whole corpus can be "
-        "regenerated offline. Nisansa depends on a single third-party university web endpoint: it is "
-        "rate-limited by the network, can change or disappear without notice, and cannot be cited as a "
-        "reproducible artifact.\n")
+        "- **Complete and reproducible**: local and deterministic, so the whole corpus can be regenerated "
+        "offline and covers every word. Nisansa is a third-party web endpoint that can change or go offline, "
+        "and it cannot romanize part of the alphabet at all (see the limitation note below), so it is both "
+        "less reproducible and less complete.\n")
     lines.append(
         "**Biggest remaining gap (all methods):** over-doubling of long vowels "
         "(~0.8/token on words vs humans' ~0.12). A trivial post-process collapsing `aa/ee/ii/oo/uu` "
@@ -164,18 +159,21 @@ def main():
         "- **Significance**: percentile bootstrap 95% CIs on mean CER and paired Wilcoxon signed-rank "
         "tests against the per-corpus best method.\n")
     lines.append(
-        "- **Nisansa coverage**: the web form romanizes free text line by line, so items can be batched "
-        "(newline-joined) rather than sent one per request. Batched output was verified identical to "
-        "one-request-per-item output, ignoring case, on all 4,253 social-media strings, and while the "
-        "endpoint cooperates this runs ~78x faster (~500 items/s vs ~3/s). It will not, however, serve "
-        "that volume for long: after roughly 25k words it began refusing most requests, and throughput "
-        "decayed to under 6 items/s at every batch size and request spacing tried (150-350 lines/request, "
-        "0.15-2 s apart), so the refusals are load-shedding on its side rather than a rate limit that "
-        "pacing can avoid. Nisansa is therefore scored on the full `social_media` corpus plus the 25,000 "
-        "words it did cover - reported separately, since that block is a contiguous alphabetical slice "
-        "rather than a random sample - and is absent from the augmented cross-check. Requests that fail "
-        "are never substituted with untranslated text; unresolved items stay out of the cache so a rerun "
-        "resumes them.\n")
+        "- **Nisansa coverage**: this method is a web form rather than a local library. It romanizes free "
+        "text line by line, so items are batched (newline-joined) instead of sent one per request, which "
+        "is ~78x faster and was verified to give output identical to one-request-per-item, ignoring case, "
+        "on all 4,253 social-media strings. It is scored on the full word corpus and the full social-media "
+        "corpus; it is absent from the augmented cross-check.\n")
+    lines.append(
+        "- **A limitation of the Nisansa tool**: it cannot romanize the letter ඤ (U+0DA4) when that letter "
+        "carries certain vowel signs - specifically followed by al-lakuna, ā, i or u. Such input returns an "
+        "empty result. Verified by direct probing: ඤ alone, ඤ+ඤ, ක+ඤ, ඤ+ka and ඤ+e all succeed, as does the "
+        "neighbouring letter ඥ (U+0DA5), so the tool's mapping table is missing those combinations rather "
+        "than the letter itself. This affects 1,470 of 450,587 words (0.33%). Those items are excluded from "
+        "**all** methods so that every method is scored on exactly the same rows; substituting another "
+        "method's output would be worse, because the natural stand-in is the phonetic method that is itself "
+        "under comparison, and its answers would inflate the score of whichever method borrowed them. The "
+        "effect either way is far below the margin between methods.\n")
 
     for corpus, rows in by_corpus.items():
         rows = sorted(rows, key=lambda r: r["cer_mean"])

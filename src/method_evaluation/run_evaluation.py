@@ -71,10 +71,28 @@ def paired_wilcoxon(a: np.ndarray, b: np.ndarray) -> float:
 
 def evaluate_corpus(corpus: str, methods: list[str]) -> tuple[list, dict]:
     refs, level = _load_corpus(corpus)
-    ids = list(refs)
+    all_hyps = {m: _load_hypotheses(corpus, m) for m in methods}
+    available = {m: h for m, h in all_hyps.items() if h is not None}
+
+    # Score every method on exactly the same items: those where all of them
+    # produced output. The Nisansa endpoint cannot romanize ~0.3% of the word
+    # corpus (it fails on ඤ with certain vowel signs), and scoring those as
+    # empty strings would charge it a CER of 1.0 for a tool limitation while the
+    # other methods answer normally. Substituting another method's output
+    # instead would be worse: the natural stand-in is the phonetic method, which
+    # is the one being compared against, so its answers would inflate the score
+    # of whichever method borrowed them.
+    ids = [i for i in refs if all(h.get(i) for h in available.values())]
+    dropped = len(refs) - len(ids)
+    if dropped:
+        missing = {m: sum(1 for i in refs if not h.get(i)) for m, h in available.items()}
+        print(f"  scoring {len(ids):,} of {len(refs):,} items common to all methods "
+              f"({dropped:,} excluded; no output from "
+              f"{', '.join(f'{m}: {n:,}' for m, n in missing.items() if n)})")
+
     results, per_item = [], {}
     for method in methods:
-        hyps = _load_hypotheses(corpus, method)
+        hyps = available.get(method)
         if hyps is None:
             continue
         ordered_hyps = [hyps.get(i, "") for i in ids]
