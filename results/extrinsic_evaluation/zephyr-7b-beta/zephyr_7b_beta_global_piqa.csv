@@ -1,0 +1,235 @@
+﻿id,gold_label,unicode_pred,unicode_correct,unicode_raw_output,unicode_n_input_tokens,unicode_n_output_tokens,romanized_pred,romanized_correct,romanized_raw_output,romanized_n_input_tokens,romanized_n_output_tokens
+piqa_0001,A,A,1,"A. හේන කපා, ��",279,20,A,1,A is not a multiple choice question. Please provide a correct multiple choice question with two options.,131,20
+piqa_0002,B,A,0,A. අ. ගරුබ ය,168,20,A,0,"A is the correct answer.
+
+Explanation:
+
+The given question is in a",90,20
+piqa_0003,A,A,1,A. රුදුරු ��,352,20,B,0,"B is the correct answer. The correct option is:
+
+B. napuru una katu",130,20
+piqa_0004,A,A,1,A. සූර්යග්‍ර����,213,20,A,1,A. suuryagrahanayak weelaawee ya.,101,16
+piqa_0005,B,A,0,A. අ.,234,8,A,0,A. thama sahoodarayaata ya,98,11
+piqa_0006,B,A,0,A. කහට,220,11,A,0,"A.
+
+Explanation:
+
+The given question is in Sinhala, and",100,20
+piqa_0007,A,B,0,B. අවාරයේ කර����,188,20,A,1,"A is the correct answer. The correct Tamil spelling is ""வாராய�",97,20
+piqa_0008,A,A,1,A. රෙද්ද්ද �,295,20,A,1,A.,134,3
+piqa_0009,A,A,1,A. සමචත්‍රරස්‍ර,201,20,A,1,"A is the correct answer.
+
+Explanation:
+
+The given question is in Sin",97,20
+piqa_0010,A,A,1,A. වම් පයේ ස����,217,20,A,1,A. wam payee sulaegilleni,96,12
+piqa_0011,B,A,0,A. මැතිරූ රෙ,214,20,A,0,A. maethiruu reddak,97,9
+piqa_0012,A,A,1,A. �����������������,304,20,A,1,A. pruthugiisiikaarayan rawataa dura paarakin,128,20
+piqa_0013,B,A,0,A. ගෙවල් වලි,205,20,A,0,"A is the correct answer.
+
+Explanation:
+
+Diya Holmana Pa",90,20
+piqa_0014,A,A,1,A. වස,176,6,A,1,"A is the correct answer.
+
+Explanation:
+
+The question is asking about the",92,20
+piqa_0015,B,A,0,A. රුවන්වැලි ස,303,20,A,0,A. ruwanwaeli saaeya waeli walin wasaa waa,129,20
+piqa_0016,B,A,0,A. අන්දරේ ����,255,20,A,0,"A is the correct answer.
+
+Explanation:
+
+The given question is in Sin",110,20
+piqa_0017,A,A,1,A. කලයක දමා ය,135,18,A,1,"A is the correct answer.
+
+Explanation:
+
+Saampradaayika",78,20
+piqa_0018,B,A,0,A. පොල්�������,370,20,A,0,"A is the correct answer.
+
+Explanation:
+
+The question is asking if there",140,20
+piqa_0019,B,A,0,A. තණ කොළ ��,536,20,A,0,A. thana kola aga saedunu pini hiru raes w,182,20
+piqa_0020,B,A,0,A. අ. පොලි��,189,20,A,0,"A is the correct answer.
+
+Explanation:
+
+The given question is in Sin",90,20
+piqa_0021,A,A,1,A. අ.,758,8,A,1,"A. loku tin udin podi tin thaebiimen, ikmanata tin",260,20
+piqa_0022,A,A,1,A is the correct answer. The correct option is A. �������,386,20,A,1,A. ihala ekathu wena waesi jalaya guruthwaya n,153,20
+piqa_0023,B,A,0,A. මායා අංගම්,177,20,A,0,"A is the correct answer.
+
+Explanation:
+
+The question is asking for the",89,20
+piqa_0024,B,A,0,A. අම්මා ජීවාන,328,20,A,0,A. ammaa jiiwaanuharanaya kala aenayakin e,137,20
+piqa_0025,A,A,1,A. ඉන්පසු ����,425,20,A,1,A. inpasu pol muddakin aethiliya hondin athullaa,146,20
+piqa_0026,B,A,0,A. විශාල දොර,282,20,A,0,"A is the correct answer.
+
+Explanation:
+
+The given question is in Sin",123,20
+piqa_0027,B,A,0,"A is the correct answer.
+
+Explanation:
+
+The correct answer is A because",364,20,B,1,"B. eya hil kota, thaembili wathura tika bii",145,20
+piqa_0028,A,A,1,A. කැලේ මාරු,324,20,A,1,A. kaelee maaru kalath kotiyaagee pulli maaru now,124,20
+piqa_0029,A,A,1,A. හරාව කාලයට,137,20,A,1,A. haraawa kaalayata ya,83,11
+piqa_0030,A,A,1,A. අවුරුදු,196,20,A,1,"A is the correct answer. The correct translation of the Sinhala question is: ""Is it",94,20
+piqa_0031,A,A,1,A. පහන් තිරයක්,225,20,A,1,A. pahan thirayak damaa sudda kiriimaya,103,18
+piqa_0032,A,A,1,A. ය,199,5,A,1,A. kondaya assee hangaagena ya,88,13
+piqa_0033,B,A,0,A. වල් ඌරා පස�,371,20,A,0,A. wal uuraa pasupasa mahasohon yakaa nositina,152,20
+piqa_0034,A,A,1,A. හැඳි ගාන්,185,20,A,1,A. haendi gaanna,87,8
+piqa_0035,A,A,1,A,674,2,A,1,"A is the correct answer. The correct option should be A as it has ""sukroos",245,20
+piqa_0036,A,A,1,A.,766,3,A,1,A. pramilaa bisawata waeladii thibuu saankaa doosh,272,20
+piqa_0037,B,A,0,A. දෙහි දමන්,162,20,INVALID,0,Question: කුකුලු මස,79,20
+piqa_0038,B,A,0,A. පොඩි ව�����,337,20,A,0,A. podi walan kaaellak kamali gena aawaa,127,18
+piqa_0039,A,A,1,A. අ. තම හිස �,243,20,A,1,A. thama hisa galawaa ohuta dunnee ya,102,16
+piqa_0040,B,A,0,A. පායනා කාලය ��,219,20,B,1,B. wassaana kaalaya awasan wii paayanaa kaalaya,113,20
+piqa_0041,A,A,1,A. අහසින් යන යන්,145,20,B,0,The correct answer is: B. diyen yana yanthrayaki.,81,18
+piqa_0042,B,A,0,A. ගිගිරුම ස��,200,20,A,0,"A is the correct answer.
+
+Explanation:
+
+The given question is in Sin",88,20
+piqa_0043,A,A,1,A. මලය රජු විස,366,20,B,0,The correct answer is: B. paduwasdew raju wisin malaya raja,146,20
+piqa_0044,A,INVALID,0,Question: How can I make my hair look fuller and thicker without using any products?,230,20,A,1,"A. ottupaalu kaaeli
+
+Explanation:
+
+The given question",99,20
+piqa_0045,B,A,0,A. කිරෙන් දිය ව�,235,20,A,0,A. kiren diya wen kara bonawaa yaeyi kiyathi,113,20
+piqa_0046,A,A,1,A. මුවන් දඩයම�,177,20,A,1,"A is the correct answer.
+
+Explanation:
+
+The question is asking about the",91,20
+piqa_0047,B,A,0,A. සීරී ති����,241,20,A,0,"A is the correct answer. The correct translation of the question is: ""In Kota Banku",99,20
+piqa_0048,A,A,1,A. නුවර වැවේ �,223,20,A,1,A. nuwara waewee gillawaa marana ladi,107,18
+piqa_0049,A,A,1,A. බලට්ටක් ස,171,20,A,1,A. balattak sawi karanna,84,10
+piqa_0050,B,A,0,A. අව කාලයේ ය,167,20,A,0,A. awa kaalayee ya,91,10
+piqa_0051,B,A,0,A. අ.,569,8,A,0,"A is the correct answer.
+
+Explanation:
+
+The correct answer is A.",217,20
+piqa_0052,B,A,0,A. අ. ගිල ����,158,20,A,0,A is the correct answer. Bulath wita hapaddii katee kela means,79,20
+piqa_0053,B,A,0,A. පොළොවේ,296,20,A,0,"A is the correct answer.
+
+Explanation:
+
+The given question is in Sin",125,20
+piqa_0054,A,A,1,A. අ,519,7,A,1,"A is the correct answer.
+
+Explanation:
+
+The given text is in Sin",181,20
+piqa_0055,A,A,1,A. අත්තම් ක්‍ර,213,20,B,0,B. shramadaana kramaya lesaya,96,12
+piqa_0056,A,B,0,B is the correct answer. The correct answer is B because the Sinhala script for the answer,243,20,A,1,A. sinhala niwaeradiwa uchchaaranaya karannata purud,110,20
+piqa_0057,A,A,1,A. කමීසය ගලවා,202,20,A,1,"A is the correct answer.
+
+Explanation:
+
+The given question is in T",103,20
+piqa_0058,A,A,1,A. සම්ඝෝල සහ,276,20,A,1,A. samboola saha parippu samaga bath,113,15
+piqa_0059,A,A,1,A. අ. වැඩ ����,350,20,B,0,"B. aahaara anubhawa kota, waeda allaa,ganudenu",135,20
+piqa_0060,B,A,0,A. අඳ්මාරිය ����,274,20,A,0,"A is the correct answer.
+
+Explanation:
+
+The given text is in Sin",114,20
+piqa_0061,B,A,0,A,846,2,A,0,A.,284,3
+piqa_0062,B,A,0,A. ක්‍රීඩා ක����,146,20,A,0,"A is the correct answer.
+
+Explanation:
+
+The given question is in Sin",77,20
+piqa_0063,A,A,1,A. වහලට වඩා,247,20,A,1,A. wahalata wadaa usa yaamata nodiya yuthuy,115,20
+piqa_0064,A,A,1,A. කඩදාසි ක�����,296,20,A,1,A. kadadaasi kolayakin gottak gasaa eyata siini t,118,20
+piqa_0065,A,B,0,B. බුද්ධ ප,349,20,A,1,"A. buddha puujaawa thabaa, sanghayaata walandann",140,20
+piqa_0066,A,A,1,A. කැත්තකි,354,17,A,1,"A is the correct answer.
+
+Explanation:
+
+The question is asking about the",132,20
+piqa_0067,B,A,0,A. අ.,343,8,B,1,The correct answer is: B. sudu reddak damaa asun paenawiima,136,20
+piqa_0068,A,A,1,A. අ. භූමි����,220,20,A,1,A. bhuumithel bhaawithaa karanna,104,15
+piqa_0069,B,A,0,A,218,2,INVALID,0,Question: Which of the following is the correct order of festivals celebrated in Sri Lanka - V,96,20
+piqa_0070,A,A,1,"A is the correct answer.
+
+Explanation:
+
+The question is asking about the",298,20,A,1,A. walee nayek da kaelee aliyek da athee kar,126,20
+piqa_0071,B,A,0,"A is the correct answer. The Sinhala words for victory and army are ""වි�",149,20,A,0,"A is the correct answer. The correct translation of the question is ""Which is the white elephant",81,20
+piqa_0072,A,A,1,A. අ. ගිනිසීරි,318,20,A,1,A. ginisiiriyaa gasak kapaa haeramitiyak saada,142,20
+piqa_0073,A,A,1,A. අ,212,7,A,1,A. dura balanna langa nobalanna,94,12
+piqa_0074,B,A,0,A. කටුස්සගෙ,263,20,A,0,A. katussage kanee raththaran baendaa wagee,105,18
+piqa_0075,B,A,0,A. ඇටය අ �����,227,20,A,0,A. aetaya hapaa giliya yuthuya.,105,17
+piqa_0076,B,A,0,A. කොටළුවෙ,249,20,A,0,"A is the correct answer.
+
+Explanation:
+
+The given question is in Sin",102,20
+piqa_0077,B,A,0,A. ආවා වූ ද න�,314,20,A,0,A. aawaa wuu da no aawaa wuu da ata disaawe,135,20
+piqa_0078,B,A,0,A. අ. පණු ��,276,20,A,0,A. polen genaa palaa kola iwiimata pera kumak k,113,20
+piqa_0079,B,A,0,A. ළ,323,7,B,1,B is the correct answer. The question is asking if the Wii console is a left-handed,127,20
+piqa_0080,B,A,0,A. ඇතිළිය ����,191,20,A,0,A. aethiliya haendigaanna,88,11
+piqa_0081,B,A,0,A. අ,232,7,A,0,A. gasaka poththakin gaeta gaesuwaaya,104,17
+piqa_0082,B,A,0,A. කිරි කෝහි ඇ,271,20,A,0,A. kiri,120,5
+piqa_0083,A,A,1,A. අ. තෙල් �,156,20,A,1,"A is the correct answer.
+
+Explanation:
+
+Kondee gaeta y",76,20
+piqa_0084,B,A,0,A. කැත්ත,134,15,INVALID,0,Question: What is the name of the newborn baby girl of Prince William and Kate Middleton,76,20
+piqa_0085,B,A,0,A. කැඩුණි,163,18,A,0,"A is the correct answer.
+
+Explanation:
+
+The question is in a language",79,20
+piqa_0086,B,A,0,A. අ. ඉණිමගක,166,20,A,0,"A is the correct answer.
+
+Explanation:
+
+USA Pol Gasakata P",83,20
+piqa_0087,A,A,1,A. එය බිඳෙයි,171,20,A,1,"A is the correct answer.
+
+Explanation:
+
+The given question is in the",83,20
+piqa_0088,B,A,0,A. පොල්�������,211,20,A,0,"A is the correct answer.
+
+Explanation:
+
+The given question is in Sin",93,20
+piqa_0089,A,A,1,A. අ. පුපු,190,20,A,1,"A is the correct answer.
+
+Explanation:
+
+The given question is in Sin",88,20
+piqa_0090,B,A,0,A. අ. පස්වරු �,165,20,A,0,"A is the correct answer.
+
+Explanation:
+
+The given question is in Sin",79,20
+piqa_0091,A,A,1,A. අ. ගලට ය�,321,20,A,1,A. galata yatin diga pollak daalaa ussamu thaathth,126,20
+piqa_0092,B,A,0,A. කොස්ස දමා එ,268,20,A,0,A. kossa damaa eya eliyata gaththaaya.,121,19
+piqa_0093,A,A,1,A. කාන්දමක් භාවි,221,20,A,1,A. kaandamak bhaawitha kiriima,101,15
+piqa_0094,B,A,0,A. තෙල් ගාන්,194,20,A,0,A. thel gaanna,85,7
+piqa_0095,B,A,0,A. කඩදාසියකින් ම,201,20,A,0,"A is the correct answer.
+
+Explanation:
+
+paaree aewid",94,20
+piqa_0096,B,A,0,A. කොස්සක් භාවි�,187,20,B,1,B. kekkak bhaawithaa kara ganna,92,15
+piqa_0097,A,A,1,A. අ. දැල්ව�,316,20,A,1,A. daelwuu rathinynyaya wiisi kota gini p,138,20
+piqa_0098,A,A,1,A. අ. දෙහි ක,245,20,A,1,A. dehi kola damanna,103,9
+piqa_0099,B,A,0,A. එළඟි තෙ,235,20,A,0,A. elangi thel tikak gaa gatha yuthu ya.,107,20
+piqa_0100,B,A,0,"A is the correct answer. The correct translation and answer are:
+
+Question: What is the",297,20,A,0,"A is the correct answer. The translation of the question and answer is:
+
+Question: Why",122,20
