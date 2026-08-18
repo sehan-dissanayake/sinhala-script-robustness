@@ -1,0 +1,101 @@
+﻿id,gold_label,unicode_pred,unicode_correct,unicode_raw_output,unicode_n_input_tokens,unicode_n_output_tokens,romanized_pred,romanized_correct,romanized_raw_output,romanized_n_input_tokens,romanized_n_output_tokens
+piqa_0001,A,A,1,"A. හේන කපා, ග�",299,20,A,1,"A. heena kapaa, gini thabaa, wawaa, raeka,",136,20
+piqa_0002,B,A,0,A. ගරුඬ යකා ක,204,20,A,0,A. garunda yakaa kiyaa,98,10
+piqa_0003,A,A,1,A.,350,3,A,1,A. ruduru pethangoda uyanata giya pasuwa napuru una k,139,20
+piqa_0004,A,A,1,A. සූර්යග්‍ර,240,20,A,1,A. suuryagrahanayak weelaawee ya.,109,15
+piqa_0005,B,A,0,A,246,2,A,0,A. thama sahoodarayaata ya,107,11
+piqa_0006,B,A,0,A,250,2,A,0,A,106,2
+piqa_0007,A,A,1,A. වාරයේ කරු�,201,20,A,1,A. waarayee karunaa kala yuthu ya,107,15
+piqa_0008,A,A,1,A. රෙද්ද්ද හ,354,20,A,1,A. reddda hadaa gaeniimata oona nisaa lamayaa wada,141,20
+piqa_0009,A,A,1,A. සමචත්‍රරස,223,20,A,1,A. samachathrarasra hayak saadaa gatha yuthuya,106,19
+piqa_0010,A,A,1,A. වම් පයේ ස�,232,20,A,1,A. wam payee sulaegilleni,104,12
+piqa_0011,B,A,0,A. මැතිරූ රෙ,243,20,A,0,A. maethiruu reddak,105,9
+piqa_0012,A,A,1,A. පෘතුගීසී�,331,20,A,1,A. pruthugiisiikaarayan rawataa dura paarakin aganuw,134,20
+piqa_0013,B,A,0,A. ගෙවල් වලි,227,20,A,0,A. gewal walin sathun elawaa gaeniimata ya,103,18
+piqa_0014,A,A,1,A. වස දී මැර�,195,20,A,1,A. wasa dii maeruwaa ya,101,12
+piqa_0015,B,A,0,A. රුවන්වලි �,336,20,A,0,A. ruwanwaeli saaeya waeli walin wasaa waaeda,136,20
+piqa_0016,B,A,0,A. අන්දරේ බත,276,20,A,0,A. andaree bath kaaewaa wagee kiyaaya,121,16
+piqa_0017,A,A,1,A. කලයක දමා ය,163,20,A,1,A. kalayaka damaa ya,91,10
+piqa_0018,B,A,0,A.,370,3,A,0,A. polthel pengawuu paankadayak diga kootuwaka oth,146,20
+piqa_0019,B,A,0,A. තණ කොළ අග �,549,20,A,0,A. thana kola aga saedunu pini hiru raes wihid,186,20
+piqa_0020,B,A,0,A,214,2,A,0,A. polithin baaegayakata damanna,99,14
+piqa_0021,A,A,1,A. ලොකු ටින්,789,20,A,1,"A. loku tin udin podi tin thaebiimen, ikmanata tin eka",250,20
+piqa_0022,A,A,1,A.,414,3,A,1,A. ihala ekathu wena waesi jalaya guruthwaya nis,161,20
+piqa_0023,B,A,0,A. මායා අංගම,201,20,A,0,A. maayaa angam pora ya,100,11
+piqa_0024,B,A,0,A. අම්මා ජීව,350,20,A,0,A. ammaa jiiwaanuharanaya kala aenayakin ema,145,20
+piqa_0025,A,A,1,A. ඉන්පසු පො,435,20,A,1,A. inpasu pol muddakin aethiliya hondin athullaa gath,149,20
+piqa_0026,B,A,0,A,305,2,A,0,A. wishaala dorakin lena wasaa giyeeya,126,15
+piqa_0027,B,A,0,A. එය දෙකට කප,355,20,A,0,"A. eya dekata kapaa, thaembili wathura tika bii,",146,20
+piqa_0028,A,A,1,A. කැලේ මාරු �,338,20,A,1,A. kaelee maaru kalath kotiyaagee pulli maaru nowee,128,20
+piqa_0029,A,A,1,A,164,2,A,1,A. haraawa kaalayata ya,92,11
+piqa_0030,A,A,1,A. අවුරුදු හ,210,20,A,1,A. awurudu hathak mehekaara kam kalee ya,101,16
+piqa_0031,A,A,1,A,255,2,A,1,A. pahan thirayak damaa sudda kiriimaya,113,18
+piqa_0032,A,A,1,A,206,2,A,1,A. kondaya assee hangaagena ya,100,13
+piqa_0033,B,A,0,A. වල් ඌරා පස,412,20,A,0,A. wal uuraa pasupasa mahasohon yakaa nositina bawa nish,152,20
+piqa_0034,A,A,1,A,201,2,A,1,A. haendi gaanna,98,7
+piqa_0035,A,A,1,"A. පොල්,තල්,�",717,20,A,1,A.,238,3
+piqa_0036,A,A,1,A. ප්‍රමිලා �,825,20,A,1,A.,265,3
+piqa_0037,B,A,0,A,184,2,A,0,A,91,2
+piqa_0038,B,A,0,A. පොඩි වලං ක,345,20,A,0,A. podi walan kaaellak kamali gena aawaa,138,18
+piqa_0039,A,A,1,A,260,2,A,1,A. thama hisa galawaa ohuta dunnee ya,111,15
+piqa_0040,B,A,0,A. පායනා කාල�,263,20,A,0,A. paayanaa kaalaya awasan wii wassaana kaalaya aer,121,20
+piqa_0041,A,A,1,A,182,2,A,1,A. ahasin yana yanthrayaki,90,11
+piqa_0042,B,A,0,A. ගිගිරුම ස,215,20,A,0,A. gigiruma seeya,97,8
+piqa_0043,A,A,1,A. මලය රජු ව�,418,20,A,1,A,154,2
+piqa_0044,A,A,1,A. ඔට්ටුපාල�,239,20,A,1,A. ottupaalu kaaeli,107,9
+piqa_0045,B,A,0,A. කිරෙන් දි�,289,20,A,0,A. kiren diya wen kara bonawaa yaeyi kiyathi,113,17
+piqa_0046,A,A,1,A,209,2,A,1,A. muwan dadayamee yana wita ya,99,13
+piqa_0047,B,A,0,A,239,2,A,0,A. siirii thibuni,110,9
+piqa_0048,A,A,1,A,250,2,A,1,A. nuwara waewee gillawaa marana ladi,112,17
+piqa_0049,A,A,1,A. බලට්ටක් ස,192,20,A,1,A. balattak sawi karanna,97,10
+piqa_0050,B,A,0,A. අව කාලයේ ය,192,20,A,0,A. awa kaalayee ya,102,10
+piqa_0051,B,A,0,A. එක බෝ මැඬ �,562,20,A,0,"A. eka boo maenda ya, deka animisa loochana ya, thuna",208,20
+piqa_0052,B,A,0,A. ගිල ගත යු�,153,20,A,0,A,88,2
+piqa_0053,B,A,0,A,306,2,A,0,A. polowee isbak da wathuree ata isbak da yana bawa k,124,20
+piqa_0054,A,A,1,A. දණහිසේ දී,513,20,A,1,A.,194,3
+piqa_0055,A,A,1,A. අත්තම් ක්‍,238,20,A,1,A. aththam kramaya lesaya,109,11
+piqa_0056,A,A,1,A. සිංහල නිව,284,20,A,1,A. sinhala niwaeradiwa uchchaaranaya karannata purudu karann,116,20
+piqa_0057,A,A,1,A. කමීසය ගලව�,233,20,A,1,A. kamiisaya galawaa yaa yuthuya,109,14
+piqa_0058,A,A,1,A. සම්බෝල සහ,288,20,A,1,A. samboola saha parippu samaga bath,122,14
+piqa_0059,A,A,1,A. වැඩ අල්ලා,336,20,A,1,"A. waeda allaa, ganudenu kota, aahaara anubhawa",145,20
+piqa_0060,B,A,0,A. බිඳුණා,270,16,A,0,A. bindunaa,126,6
+piqa_0061,B,A,0,"A. ලුණු, මිර�",855,20,A,0,"A. lunu, miris kudu, gammiris kudu ekathu kara hond",269,20
+piqa_0062,B,A,0,A. ක්‍රීඩා කල�,163,20,A,0,A. kriidaa kalee ya,86,10
+piqa_0063,A,A,1,A,254,2,A,1,A. wahalata wadaa usa yaamata nodiya yuthuya,118,18
+piqa_0064,A,A,1,A. කඩදාසි කොළ,318,20,A,1,A. kadadaasi kolayakin gottak gasaa eyata siini tika daemu,126,20
+piqa_0065,A,A,1,A. බුද්ධ පූජ,354,20,A,1,A,148,2
+piqa_0066,A,A,1,A. කැත්තකි,379,17,A,1,A. kaeththaki,141,7
+piqa_0067,B,A,0,A. ගිලන්පස ප,365,20,A,0,A. gilanpasa puujaa kiriima inpasu sudu reddak dama,139,20
+piqa_0068,A,A,1,A. භූමිතෙල් �,231,20,A,1,A. bhuumithel bhaawithaa karanna,114,15
+piqa_0069,B,A,0,"A. බෝධිය, චෛ�",222,20,A,0,"A. boodhiya, chaithyaya, budugeya",109,16
+piqa_0070,A,A,1,A. වලේ නයෙක්,310,20,A,1,A. walee nayek da kaelee aliyek da athee karawael,132,20
+piqa_0071,B,A,0,A. කජු කඩමින්,179,20,A,0,A. kaju kadamin sitiyaa ya,90,11
+piqa_0072,A,A,1,A. ගිනිසීරි�,376,20,A,1,A. ginisiiriyaa gasak kapaa haeramitiyak saadaa,149,20
+piqa_0073,A,A,1,A,229,2,A,1,A. dura balanna langa nobalanna,104,12
+piqa_0074,B,A,0,A. කටුස්සගෙ ක,283,20,A,0,A,117,2
+piqa_0075,B,A,0,A. ඇටය හපා ග�,232,20,A,0,A. aetaya hapaa giliya yuthuya,110,14
+piqa_0076,B,A,0,A,264,2,A,0,A. kotaluweki,115,8
+piqa_0077,B,A,0,A,338,2,A,0,A. aawaa wuu da no aawaa wuu da ata disaaweh,144,20
+piqa_0078,B,A,0,A,276,2,A,0,A. panu biththara yanna hondin weelaa gatha yuth,122,20
+piqa_0079,B,A,0,A,314,2,A,0,A.,132,3
+piqa_0080,B,A,0,A,206,2,A,0,A. aethiliya haendigaanna,101,11
+piqa_0081,B,A,0,A. ගසක පොත්ත,244,20,A,0,A. gasaka poththakin gaeta gaesuwaaya,110,16
+piqa_0082,B,A,0,A. කිරි කොහි �,293,20,A,0,A. kiri kohi aethdaeyi balaakiyaa gena ya,128,20
+piqa_0083,A,A,1,A,171,2,A,1,A,88,2
+piqa_0084,B,A,0,A. කැත්ත,148,13,A,0,A. kaeththa,86,6
+piqa_0085,B,A,0,A. කැඩුණි,188,15,A,0,A. kaeduni,91,6
+piqa_0086,B,A,0,A. ඉණිමගක් භ,190,20,A,0,A. inimagak bhaawithaa karanna,95,13
+piqa_0087,A,A,1,A,184,2,A,1,A. eya bindeyi,94,8
+piqa_0088,B,A,0,A,228,2,A,0,A,100,2
+piqa_0089,A,A,1,A,198,2,A,1,A. pupurannata patan gaththeeya,96,13
+piqa_0090,B,A,0,A,177,2,A,0,A. paswaru deka,92,8
+piqa_0091,A,A,1,A. ගලට යටින්,345,20,A,1,A. galata yatin diga pollak daalaa ussamu thaaththaa,130,20
+piqa_0092,B,A,0,A. කොස්ස දමා �,290,20,A,0,A,128,2
+piqa_0093,A,A,1,A. කාන්දමක් �,237,20,A,1,A. kaandamak bhaawitha kiriima,110,14
+piqa_0094,B,A,0,A,200,2,A,0,A. thel gaanna,97,7
+piqa_0095,B,A,0,A. කඩදාසියකි,225,20,A,0,A. kadadaasiyakin muhuna wasaa ganna,103,14
+piqa_0096,B,A,0,A. කොස්සක් භ�,213,20,A,0,A,103,2
+piqa_0097,A,A,1,A. දැල්වූ රත,332,20,A,1,A,141,2
+piqa_0098,A,A,1,A,252,2,A,1,A. dehi kola damanna,107,8
+piqa_0099,B,A,0,A,242,2,A,0,A. elangi thel tikak gaa gatha yuthu ya.,112,18
+piqa_0100,B,A,0,A. රෙදි කෑල්�,319,20,A,0,"A. 'redi kaaellak elakiren themala nalalen thiyanna', a",129,20
