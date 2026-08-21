@@ -1,0 +1,464 @@
+﻿culturally_specific,id,gold_label,unicode_pred_digit,unicode_pred_label,unicode_correct,unicode_raw_output,unicode_n_input_tokens,unicode_n_output_tokens,romanized_pred_digit,romanized_pred_label,romanized_correct,romanized_raw_output,romanized_n_input_tokens,romanized_n_output_tokens
+True,piqa_0001,A,2,B,0,"2. හේන කපා, වවා, රැක, අස්වනු",289,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+heena kapaa, wawaa, raeka, aswanu nelaa, gini thabaa gatha",142,40
+True,piqa_0002,B,INVALID,INVALID,0,"The best option to complete the given text is:
+
+ගරුඬ යකා කියා ය
+
+Explanation:",178,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+minisungee haa sathungee lee bona yaksha wargayata kiyannee garunda y",101,40
+True,piqa_0003,A,2,B,0,2. නපුරු ඉණ කටුව පතු,362,40,2,B,0,"The best option to complete the given text is:
+
+2. napuru una katuwa pathulee aenuna pasuwa ruduru pethangoda uyanata gi",141,40
+True,piqa_0004,A,2,B,0,2. චන්ද්‍රග්‍රහණයක් වේලාව�,223,40,INVALID,INVALID,0,"Chandragrahanayak weelaawee ya.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""The moon c",113,40
+True,piqa_0005,B,1,A,0,"The best option to complete the given text is:
+
+1. තම සෝෝදරයාට ය",244,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+mii paeni kadannata lanuwaka ellii helata basinnaa bohoo wita ee lanu",109,40
+True,piqa_0006,B,INVALID,INVALID,0,"The best option to complete the given text is:
+
+පූස් පැටියට ����",230,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+puus paetiyata badaginiyi wagee' kiyamin ammaa uuta thamangee
+k",111,40
+True,piqa_0007,A,INVALID,INVALID,0,"The best option to complete the given text is:
+
+අවාරයේ කරුණා කළ ය�",198,40,INVALID,INVALID,0,"The best option to complete the given text is ""awaarayee karunaa kala yuthu ya"" as ""siriipaadaya"" suggests a reverential or devotional",108,40
+True,piqa_0008,A,2,B,0,2. ළමයා වඩා ගැනීමට ඕන නිසා,305,40,2,B,0,"The best option to complete the given text is:
+
+2. lamayaa wadaa gaeniimata oona nisaa reddda hadaa ganna kiyaa ya",145,40
+True,piqa_0009,A,2,B,0,2. සමචතුරස්‍ර අටක් සාදා ����,211,40,1,A,1,"The best option to complete the given text is:
+
+atapattam kuuduwak saaediimata nam
+1. samachathrarasra hayak saada",108,40
+True,piqa_0010,A,INVALID,INVALID,0,"The best option to complete the given text is:
+ගෝඨයිම්බර යෝධයා ර",227,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+goothayimbara yoodhayaa ritigala jayaseenata pahara dunnee kumakin",107,40
+True,piqa_0011,B,INVALID,INVALID,0,"The best option to complete the given text is:
+ඉතුවන්කන්දේ සූර ස",224,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+uthuwankandee suura saradiyel wedi nowadinnata kumak paawichchi kalaa ya",107,40
+True,piqa_0012,A,INVALID,INVALID,0,"The best option to complete the given text is:
+පෘතුගීසීකාරයන්",314,40,1,A,1,"The best option to complete the given text is:
+
+parangiyaa koottee giyaa kiwuu siddiyee wunee mokak da?
+1.",139,40
+True,piqa_0013,B,2,B,1,2. කුඹුරු වලින් සතුන් ����,215,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+diya holmana paawichchi karannee
+kumburu walin sathun elawaa gaeniimata",101,40
+True,piqa_0014,A,INVALID,INVALID,0,"The best option to complete the given text is:
+අනුලා රැජිණගේ",186,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+anulaa raejinagee swaami purushayanta aeya kumak kalaa da? bas",103,40
+True,piqa_0015,B,2,B,1,2. රුවන්වැලි සෑය රෙදි වලින,313,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+dutu gaemunu raju maranaasanna bawa dutu saddhaathissa kumaraa
+ru",141,40
+True,piqa_0016,B,1,A,0,1. අන්දරේ බත් කෑවා වගේ ක,265,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+mona tharam apahasuthaa thibunath thaman kaemathi deeta ida haedena bawa",121,40
+True,piqa_0017,A,2,B,0,"2. බෝතලයක දමා ය
+
+Explanation:
+
+The given text is in Sinh",145,40,INVALID,INVALID,0,"The best option to complete the given text is ""saampradaayika kramayata jaadi hadannee kalayaka damaa ya"" as ""kalayaka d",89,40
+True,piqa_0018,B,2,B,1,2. භූමිතෙල් පෙඟවූ පා,380,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+bhuumithel pengawuu paankadayak diga kootuwaka othaa gaerandiya",151,40
+True,piqa_0019,B,1,A,0,1. තණ කොළ අග සැදුනු,546,40,2,B,1,"The best option to complete the given text is:
+
+2. thana kola aga saedunu pini hiru raes wihiduna wita saenen a",193,40
+True,piqa_0020,B,2,B,1,2. කඩදාසියක් මතට දමන්න,199,33,INVALID,INVALID,0,"The best option to complete the given text is:
+
+papadam badina wita, thaachchiyen baa gannaa papadam
+polithin b",102,40
+True,piqa_0021,A,1,A,1,1. ලොකු ටින් ඉඨින් පොඩ,768,40,1,A,1,"1. Loku tin udin podi tin thaebiimen, ikmanata tin eka matha eka thaebiya haekiya.
+
+Explan",272,40
+True,piqa_0022,A,1,A,1,"The best option to complete the given text is:
+
+1. ඉහළ එකතු වෙ",396,40,2,B,0,"The best option to complete the given text is:
+
+2. ihala ekathu wena waesi jalaya guruthwaya nisaa ihalata genwaa",164,40
+True,piqa_0023,B,INVALID,INVALID,0,"ඉලංගම් පොර ය
+
+අවි ආය����",187,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+awi aayudha sahithawa karana angampora wargayata kiyana nama wannee?",99,40
+True,piqa_0024,B,2,B,1,2. අම්මා ජීවානුහරණය කල අ,338,40,INVALID,INVALID,0,"The best option to complete the given text is:
+kaelee dan kadanna giya malligee kakulee katuwak aenii gedara aawee",148,40
+True,piqa_0025,A,1,A,1,1. ඉන්පසු පොල් මුඩ්ඩකි,435,40,1,A,1,"The best option to complete the given text is:
+
+1. inpasu pol muddakin aethiliya hondin athullaa gaththaaya
+
+The translation",157,40
+True,piqa_0026,B,INVALID,INVALID,0,"The best option to complete the given text is:
+
+ඉංහයා දඩයමේ යනවි",292,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+wishaala galakin lena wasaa giyeeya
+
+The complete text would be:
+sinhayaa dad",134,40
+True,piqa_0027,B,2,B,1,"2. එය හිල් කොට, තැඹිලි",374,40,2,B,1,"The best option to complete the given text is:
+
+2. eya hil kota, thaembili wathura tika bii, inpasu eya dek",155,40
+True,piqa_0028,A,2,B,0,2. පුල්ලි මාරු කලත් ක�����,334,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+pulli maaru kalath kotiyaagee kaelee maaru nowee
+
+Explanation:
+
+The",135,40
+True,piqa_0029,A,2,B,0,2. වාරකන් කාලයට ය,147,22,INVALID,INVALID,0,"The best option to complete the given text is ""dhiiwarayan muudu yannee waarakan kaalayata da?""",93,31
+True,piqa_0030,A,2,B,0,2. දවස් හතක් මෙහෙකාර කම් ක��,206,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+dikthala dinaa gaeniimata kaalagoola dawas hathak mehekaara kam k",105,40
+True,piqa_0031,A,1,A,1,1. පහන් තිරයක් දමා සුදුස��,235,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+kanee kalaanduru iwath kiriimata sudusuma kramaya wannee kumak da?",114,40
+True,piqa_0032,A,INVALID,INVALID,0,"The best option to complete the given text is:
+දළදාව ලංකාවට ����",209,40,2,B,0,"The best option to complete the given text is:
+
+daladaawa lankaawata genaawee kesee sangawaa gena da?
+
+2. pothak",99,40
+True,piqa_0033,B,1,A,0,1. වල් ඌරා පසුපස මහස��������,381,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+wal uuraa pasupasa mahasohon yakaa nositina bawa nishchaya karagaeniim",163,40
+True,piqa_0034,A,2,B,0,2. ඇතිළිය හොලවන්න,195,30,INVALID,INVALID,0,"The best option to complete the given text is:
+
+kiri hodi uyana wita, hodda kaeti gaesiima waelaekwiimata nithara",98,40
+True,piqa_0035,A,2,B,0,"2. පොල්,තල්,කිතුල් වැන",684,40,2,B,0,"The best option to complete the given text is:
+
+2. pol,thal,kithul waeni thaala wargayee shaakayaka lapati pushpa manj",256,40
+True,piqa_0036,A,1,A,1,1. ප්‍රමිලා බිසවට වැළදී,776,40,1,A,1,"The best option to complete the given text is:
+
+1. pramilaa bisawata waeladii thibuu saankaa dooshayak wenuwen kala bal",283,40
+True,piqa_0037,B,INVALID,INVALID,0,"The best option to complete the given text is:
+
+දෙහි දමන්න
+
+Explanation:
+
+The given",172,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+kukulu mas piliyela kiriimeedii, mas padam kiriimata dehi damanna
+
+Ex",90,40
+True,piqa_0038,B,1,A,0,1. පොඩි වලං කෑල්ලක් කම��,347,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+podi gal kaetayak kamali gena aawaa.
+yaaluwoo okkoma battoo paninna",138,40
+True,piqa_0039,A,2,B,0,2. තම සළුව ගලවා ඔහුට �,253,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+rajathumaa thama saluwa galawaa ohuta dunnee ya
+bawa duppath minisaagen da",112,40
+True,piqa_0040,B,2,B,1,2. වස්සාන කාලය අවසන් වී පායනා කා,229,40,2,B,1,"The best option to complete the given text is:
+
+kathina puujaawa thiyannee mona kaalayee da?
+2. wassaana kaal",124,40
+True,piqa_0041,A,INVALID,INVALID,0,"The best option to complete the given text is:
+
+අහසින් යන යන්ත්‍රයකි",155,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+diyen yana yanthrayaki
+
+Explanation:
+
+The given text is in Sinhala, and it",92,40
+True,piqa_0042,B,2,B,1,2. විදුලිය සේය,210,23,INVALID,INVALID,0,"The best option to complete the given text is:
+
+guththila kaawyata anuwa suranganan natathdii ath lela dunnee kumak",99,40
+True,piqa_0043,A,2,B,0,2. පඩුවස්දෙව් රජු විසින් ම,376,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+niyangayak hoo apala upadrawayak walakwanu pinisa hoo gamata seth pathaa",157,40
+True,piqa_0044,A,1,A,1,1. ඔට්ටුපාලු කෑලි is the best option to,240,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+wesak kuuduwak saadana wita bata kaebali ekata thabaa baendaganna w",110,40
+True,piqa_0045,B,2,B,1,2. දියෙන් කිරි වෙන් කර බොනවා ය,245,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+diyen kiri wen kara bonawaa yaeyi kiyathi
+
+Explanation:
+
+The given",125,40
+True,piqa_0046,A,INVALID,INVALID,0,"The best option to complete the given text is:
+
+දේවානම්පිය රජුට",187,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+deewaanampiya rajuta mihindu himiyan hamu wunee masun dadayamee",102,40
+True,piqa_0047,B,1,A,0,"1. සීරී තිබුණි is the best option to complete the given text.
+
+Explan",251,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+kota bankuwa uda thibuu maeti korahaa ammagee atha waedii bimata wa",110,40
+True,piqa_0048,A,2,B,0,2. නුවර වැවේ ටිල්ලවා නාවන ��,233,40,INVALID,INVALID,0,"The best option to complete the given text is:
+shriiii wikrama raajasinha rajathumaa aehaeleepola kumaarihaamiwa",118,40
+True,piqa_0049,A,1,A,1,"1. බලට්ටක් සවි කරන්න
+
+Explanation:
+
+The given text is",181,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+gasee aethi amba pahasuwen kadaa gaeniimata kekkata
+balattak saw",95,40
+True,piqa_0050,B,INVALID,INVALID,0,"The best option to complete the given text is:
+
+අව කාලයේ ය
+
+Explanation:
+
+The given text is",177,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+seth kawi kiyannata yaa yuththee chandra maasayee kumana kaalayee",102,40
+True,piqa_0051,B,2,B,1,"2. එක බෝ මැඬ ය, දෙක අනිම",579,40,1,A,0,"The best option to complete the given text is:
+buudun sath sathiya gatha kalee kesee da?
+1. eka boo maenda",228,40
+True,piqa_0052,B,INVALID,INVALID,0,"The best option to complete the given text is:
+
+බුලත් විට ��������",168,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+bulath wita hapaddii katee kela
+gila gatha yuthuya
+
+This means:",90,40
+True,piqa_0053,B,2,B,1,2. පොළොවේ අට ඉස්බක් ��,306,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+polowee ata isbak da wathuree isbak da yana bawa kiyathi.",136,40
+True,piqa_0054,A,2,B,0,2. විළුඹේ දී එක් ටිශාව,529,40,2,B,0,"2. wilumbee dii ek dishaawakata da, ukulee dii anek dishaawata saha urahisa haa gela pradeeshay",192,40
+True,piqa_0055,A,INVALID,INVALID,0,"The best option to complete the given text is:
+
+අත්තම් ක්‍රමය ලෙසය",223,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+shramadaana kramaya lesaya
+
+Explanation:
+
+The given text is in Sinhala, and it",107,40
+True,piqa_0056,A,2,B,0,2. සිංහල වැරදිව ඉච්චාරනය,253,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+kudaa lamayin lawaa sakaskada kiyawannee sinhala niwaeradiwa uch",121,40
+True,piqa_0057,A,2,B,0,"The best option to complete the given text is:
+
+2. කලියම ගලවා යා ය����",212,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+nalluur kandaswaami koowilata yana wita pirimi aya kesee yaa yuthu",114,40
+True,piqa_0058,A,1,A,1,"The best option to complete the given text is:
+
+1. සම්ඝෝල සහ පරි��",286,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+waeda aerii parakku wii gedara paemini ammaa, ada raae kaaemata k",124,40
+True,piqa_0059,A,2,B,0,"2. ආහාර අනුභව කොට, වැඩ",360,40,2,B,0,"Answer: 2. aahaara anubhawa kota, waeda allaa,ganudenu kala yuthuya",146,31
+True,piqa_0060,B,INVALID,INVALID,0,"The best option to complete the given text is:
+
+අල්මාරිය ඉඩ බි����",284,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+almaariya uda thibuu piththala heppuwa, puusaagee aengee waedii",125,40
+True,piqa_0061,B,1,A,0,"1. ලුණු, මිරිස් කුඩු, ගම",856,40,1,A,0,"1. lunu, miris kudu, gammiris kudu ekathu kara hondin kotaa ganna. Daen ema mishranay",295,40
+True,piqa_0062,B,1,A,0,"The best option to complete the given text is:
+
+1. ක්‍රීඩා කලේ ය
+
+The text",156,40,2,B,1,"2. yuddha kalee ya
+
+Explanation:
+
+The given text ""sapumal kumaru wanni rajunta erehiwa"" does not provide",88,40
+True,piqa_0063,A,2,B,0,2. වහලට වඩා උස යාමට දිය ය�,257,40,2,B,0,Answer: 2. wahalata wadaa usa yaamata diya yuthuya,126,25
+True,piqa_0064,A,1,A,1,1. කඩදාසි කොළයකින් ගොට්ට,306,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+kadee mudalaalita siini daemiimata kawarayak nothibuu nisaa ohu
+k",129,40
+True,piqa_0065,A,2,B,0,"2. බුද්ධ පූජාව තබා, ��",359,40,2,B,0,"The best option to complete the given text is:
+
+daanayak deddii kala yuthu piliwela wannee
+
+2. buddha puu",151,40
+True,piqa_0066,A,2,B,0,"2. පිහියකි
+
+Explanation:
+
+The given text is in Sinhala, and it describes a situation where a group of",364,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+mangala yuwala pooruwen basiddii pol gediyak bindiima, sinhala bauddha w",143,40
+True,piqa_0067,B,2,B,1,2. සුදු රෙද්දක් දමා අස��,353,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+swaamiin wahansee namak gedarata waedama kala wita kala yuththee kum",147,40
+True,piqa_0068,A,1,A,1,1. භූමිතෙල් භාවිතා කරන්න,230,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+thalathel bhaawithaa karanna
+
+Explanation:
+
+The given text is in Malayalam,",115,40
+True,piqa_0069,B,2,B,1,"2. චෛත්‍යය, බෝධිය, බුද",228,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+pansalata giya wita wandanaa kala yuthu piliwela wannee chaithyaya,",107,40
+True,piqa_0070,A,2,B,0,2. වලේ අලියෙක් ද කැලේ,308,40,2,B,0,"The best option to complete the given text is:
+
+2. walee aliyek da kaelee nayek da athee karawaelak da wuu wita",137,40
+True,piqa_0071,B,2,B,1,2. කපු කටිමින් සිටියා ය,159,32,INVALID,INVALID,0,"The best option to complete the given text is:
+
+wijaya lankaawata ena wita kuweeniya kaju kadamin sitiyaa ya.
+
+Ex",91,40
+True,piqa_0072,A,1,A,1,1. ගිනිසීරියා ගසක් කපා හැරමි,328,40,1,A,1,"The best option to complete the given text is:
+
+1. ginisiiriyaa gasak kapaa haeramitiyak saadaa denna
+
+The text describes",153,40
+True,piqa_0073,A,INVALID,INVALID,0,"The best option to complete the given text is:
+අඟ බලන්න දුර නො",222,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+diighaayu kumaraata piya rajathumaa karannata dun awawaadaya kumak da",105,40
+True,piqa_0074,B,2,B,1,"The best option to complete the given text is:
+
+2. කටුස්සගෙ කරේ ර�",273,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+nusudussanta garu buumanu wita wana deya gaena kiyana kiyamanaki
+katuss",116,40
+True,piqa_0075,B,1,A,0,1. ඇටය හපා ගිලිය යුතුය,237,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+dan yanu shrii lankaawee sulabawa daknata laebena palathuraki. Dan",116,40
+True,piqa_0076,B,INVALID,INVALID,0,"The best option to complete the given text is:
+
+පිරිමි අශ්වයෙකු ස�",259,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+pirimi ashwayeku saha gaehaenu buuruweku athara aethi wana gruhaashr",114,40
+True,piqa_0077,B,2,B,1,2. ආවා වූ ද නො ආවා වූ ද ස�,324,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+kataaram kotaa sanga gatha kala lenwala saamaanyayen liyuu puda waek",146,40
+False,piqa_0078,B,INVALID,INVALID,0,"The best option to complete the given text is:
+පණු බිත්තර යන්න �",286,40,1,A,0,"The best option to complete the given text is:
+
+polen genaa palaa kola iwiimata pera kumak kala yuthu da?
+1. pan",124,40
+False,piqa_0079,B,2,B,1,2. දහයියා හා බෝල් සුළඟ,333,40,2,B,1,"The best option to complete the given text is:
+
+2. dahayiyaa haa bol sulangee gasaagena yana athara honda wii bima god",138,40
+False,piqa_0080,B,INVALID,INVALID,0,"The best option to complete the given text is:
+
+ඇතිළිය හොලවන්න",201,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+maalu uyana wita, maalu kaaeli adiyata aellii ma waelakwiimata maalu",99,40
+False,piqa_0081,B,2,B,1,2. වැල් කැබැල්ලකින් ගැ,242,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+wael kaebaellakin gaeta gaesuwaaya
+
+Explanation:
+
+The given text is in",115,40
+False,piqa_0082,B,INVALID,INVALID,0,"The best option to complete the given text is:
+ගොම කොහි ඇත්�����",281,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+gopallan raae handa paanee thama gawayan soyaa gannee kumak gaena",131,40
+False,piqa_0083,A,2,B,0,2. වතුර ගා හොඳින් පීරන්න,166,40,2,B,0,"2. wathura gaa hondin piiranna is the best option to complete the given text as ""kondee gaeta yawanna"" can be translated to ""I want",87,40
+False,piqa_0084,B,INVALID,INVALID,0,"The best option to complete the given text is:
+දර කොටයක් පැලීම",144,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+dara kotayak paeliimata bhaawithaa karannee kumak da?
+porawa",87,40
+False,piqa_0085,B,2,B,1,"The best option to complete the given text is:
+
+2. නැවුණි
+
+Explanation:
+
+The given text describes a",173,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+kamal hiini kambiyakin kiloo graaem ekaka barak osawaddii kambiya ka",91,40
+False,piqa_0086,B,1,A,0,"1. ඉණිමගක් භාවිතා කරන්න
+
+Explanation:",176,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+usa pol gasakata pahasuwen naegiimata walallak bhaawithaa karanna
+
+Ex",93,40
+False,piqa_0087,A,INVALID,INVALID,0,"The best option to complete the given text is:
+
+එය තැලෙයි
+
+Explanation:
+
+The",181,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+maeti pahanak miitar dekaka pamana usaka sita bimata waetunoth eya thaele",94,40
+False,piqa_0088,B,2,B,1,2. භූමිතෙල් ටිකක් දර ව����,221,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+bhuumithel tikak dara walata isinna
+
+This means that the landmark or geographical feature being",104,40
+False,piqa_0089,A,2,B,0,2. දිය වෙන්නට පටන් ගත්����,200,40,INVALID,INVALID,0,"The best option to complete the given text is ""diya wenna patan gaththeeya."" 
+
+Explanation:
+
+The given text is in Sinhala",99,40
+False,piqa_0090,B,1,A,0,"1. පස්වරු දෙක
+
+Explanation:
+
+The given text is in Sinhala, and it",175,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+mal paela walata wathura daemiimata sudusu welaawa wannee paswaru deka.",90,40
+False,piqa_0091,A,1,A,1,"The best option to complete the given text is:
+
+1. ගලට යටින් දිග",331,40,1,A,1,"The best option to complete the given text is:
+
+1. galata yatin diga pollak daalaa ussamu thaaththaa kiwwaa
+
+The other",136,40
+False,piqa_0092,B,INVALID,INVALID,0,"The best option to complete the given text is:
+
+අම්මා ගේ අතු ග",278,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+ammaa koottak damaa eya eliyata gaththaaya
+
+Explanation:
+
+The given",131,40
+False,piqa_0093,A,2,B,0,2. දැලක් භාවිත කිරීම,231,33,INVALID,INVALID,0,"The best option to complete the given text is:
+
+lindata waetunu belek baaldiyak goda gaeniimata hondama kramaya kum",112,40
+False,piqa_0094,B,INVALID,INVALID,0,"The best option to complete the given text is:
+
+ඉටි ගාන්න
+
+Explanation:
+
+The given text is in",204,40,INVALID,INVALID,0,"The best option to complete the given text is ""iti gaanna"".
+
+Explanation:
+
+The given text is in Sinhala, and it appears to be a traditional chant or",96,40
+False,piqa_0095,B,2,B,1,2. අතින් මුහුණ වසා ගන්න,211,38,INVALID,INVALID,0,"The best option to complete the given text is:
+
+athin muhuna wasaa ganna
+
+Explanation:
+
+The given text is in the Sinhala language,",105,40
+False,piqa_0096,B,1,A,0,"1. කොස්සක් භාවිතා කර ගන්න
+
+Explanation:",197,40,INVALID,INVALID,0,"The best option to complete the given text is:
+
+krikat gahaddii wahalayee raenduna boolaya gaeniimata
+kossak bhaaw",103,40
+False,piqa_0097,A,2,B,0,2. දැල්වූ ටනි පෙට්ටිය,326,40,1,A,1,"The best option to complete the given text is:
+
+rathinynyaa paththu karana wita kumak kala yuthu da?
+1. dael",149,40
+False,piqa_0098,A,INVALID,INVALID,0,"The best option to complete the given text is:
+
+ඔත් කන්නයේ වී ව�����",255,40,2,B,0,"2. kesel kola damanna is the best option to complete the given text as it fits the context of the Sinhala phrase ""aluth kannayee wii weelaa",114,40
+False,piqa_0099,B,1,A,0,1. එළඟි තෙල් ටිකක් ගා ��,245,40,1,A,0,The correct answer is: maduruwan kaaema walakwaa gaeniimata kumak kala yuthu da? 1. elangi thel tikak,118,40
+False,piqa_0100,B,2,B,1,2. 'රෙදි කෑල්ලක් වතුරෙන්,307,40,1,A,0,"1. 'redi kaaellak elakiren themala nalalen thiyanna', aachchi kiiwaaya.",132,31
