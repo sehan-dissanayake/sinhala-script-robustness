@@ -1,13 +1,18 @@
 """
-Generate one extrinsic-evaluation notebook per model under
-results/extrinsic_evaluation/updated/<model_label>/extrinsic-evaluation-<model_label>.ipynb
+Generate one robust extrinsic-evaluation notebook per model under:
+results/extrinsic_evaluation/<model_label>/extrinsic-evaluation-<model_label>.ipynb
+and update the base reference notebook results/extrinsic_evaluation/extrinsic-evaluation.ipynb.
 
-Key differences from the base notebook (extrinsic-evaluation.ipynb):
-  - Section 1 config cell is pre-filled for each model with:
-      MODEL_ID, MODEL_LABEL, LOAD_IN_8BIT, PROMPT_TEMPLATE, REASONING_MODE
-  - The generation engine is updated (from prompt-evaluation.ipynb) to support
-    REASONING_MODE  ("none" | "no_think" | "enable_thinking_false")
-  - Call sites pass reasoning_mode=REASONING_MODE through generate_response()
+Robustness Features for Kaggle "Save & Run All (Commit)":
+  - Checkpoint & Auto-Resume: continuously flushes CSV outputs to disk; auto-detects
+    and resumes from existing /kaggle/working or /kaggle/input checkpoint CSVs without repeating work.
+  - Kaggle Time-Limit Safety Guard: TIME_LIMIT_HOURS = 11.5 guarantees that if execution
+    approaches Kaggle's 12.0h hard timeout, it cleanly saves all progress, computes summary statistics,
+    and exits as SUCCESS rather than failing from timeout.
+  - Per-item Exception Handling: OOM/glitch on a single prompt is safely caught and logged
+    without crashing a multi-hour run.
+  - Model-Specific Pre-filled Configurations: MODEL_ID, MODEL_LABEL, PROMPT_TEMPLATE, REASONING_MODE.
+  - 16-bit (LOAD_IN_8BIT = False) for all models.
 """
 
 import json
@@ -18,13 +23,6 @@ from pathlib import Path
 # MODEL REGISTRY
 # ---------------------------------------------------------------------------
 MODELS = [
-    {
-        "id": "microsoft/phi-4",
-        "label": "Phi-4",
-        "reasoning_mode": "none",
-        "load_in_8bit": False,
-        "prompt_template": "T1_direct",
-    },
     {
         "id": "mann-e/Hormoz-8B",
         "label": "Hormoz-8B",
@@ -78,7 +76,7 @@ MODELS = [
         "id": "Qwen/Qwen3.5-9B",
         "label": "Qwen-3.5-9B",
         "reasoning_mode": "enable_thinking_false",  # Qwen3.5-style kwarg
-        "load_in_8bit": True,   # 9B won't fit in fp16 across 2x T4
+        "load_in_8bit": False,                      # 16-bit
         "prompt_template": "T1_direct",
     },
     {
@@ -91,6 +89,13 @@ MODELS = [
     {
         "id": "Qwen/Qwen2-7B-Instruct",
         "label": "Qwen2-7B-Instruct",
+        "reasoning_mode": "none",
+        "load_in_8bit": False,
+        "prompt_template": "T1_direct",
+    },
+    {
+        "id": "microsoft/phi-4",
+        "label": "Phi-4",
         "reasoning_mode": "none",
         "load_in_8bit": False,
         "prompt_template": "T1_direct",
@@ -156,8 +161,13 @@ def cell_config(m):
         f"LOAD_IN_8BIT = {load_in_8bit_str}\n",
         "\n",
         "# If a previous run's CSV for this model+dataset already exists, skip ids already completed\n",
-        "# instead of starting over. Protects against Kaggle session interruptions on a ~4,451-item run.\n",
+        "# instead of starting over. Protects against Kaggle session interruptions on a ~9,479-item run.\n",
         "RESUME = True\n",
+        "\n",
+        "# Kaggle maximum runtime safety limit in hours (Kaggle hard timeout is 12.0h).\n",
+        "# If reached, the notebook gracefully saves all CSV progress, computes summary statistics,\n",
+        "# and finishes cleanly as SUCCESS rather than failing from timeout.\n",
+        "TIME_LIMIT_HOURS = 11.5\n",
         "\n",
         "# Dataset paths (update if your Kaggle dataset mount differs)\n",
         "DATA_DIR = \"/kaggle/input/sinhala-eval-datasets\"  # Folder containing the 3 JSONL files\n",
@@ -172,6 +182,7 @@ def cell_config(m):
         "print(f\"Reasoning mode: {REASONING_MODE}\")\n",
         "print(f\"8-bit:          {LOAD_IN_8BIT}\")\n",
         "print(f\"Resume:         {RESUME}\")\n",
+        "print(f\"Time limit:     {TIME_LIMIT_HOURS} hours\")\n",
         "print(f\"Output:         {OUTPUT_PREFIX}_*.csv\")",
     ]
 
@@ -286,7 +297,7 @@ cell_load_datasets = [
     "      f\"x 2 script conditions = {(len(mmlu_data) + len(sold_data) + len(piqa_data)) * 2:,} prompts\")",
 ]
 
-# Prompt templates cell — identical content to the base notebook
+# Prompt templates cell
 cell_prompt_templates = [
     "# ============================================================\n",
     "# PROMPT TEMPLATES\n",
@@ -357,7 +368,7 @@ cell_prompt_templates = [
     "    \"sinhala_mmlu\": {\n",
     "        \"unicode\": [\n",
     "            {\"question\": \"ලෝකයේ විශාලතම මහාද්වීපය කුමක්ද?\",\n",
-    "             \"options\": [\"ආසියාව\", \"අප්\\u200dරිකාව\", \"යුරෝපය\", \"ඕස්ට්\\u200dරේලියාව\"],\n",
+    "             \"options\": [\"ආසියාව\", \"අප්‍රිකාව\", \"යුරෝපය\", \"ඕස්ට්‍රේලියාව\"],\n",
     "             \"answer_digit\": \"1\"},\n",
     "            {\"question\": \"දිනකට පැය කීයක් තිබේද?\",\n",
     "             \"options\": [\"12\", \"24\", \"48\", \"60\"],\n",
@@ -530,7 +541,7 @@ cell_prompt_templates = [
     "\n",
     "def _extract_token(generated_text, valid_tokens, keyword_pattern):\n",
     "    \"\"\"\n",
-    "    Shared boundary-safe extractor for both digit tokens (\"1\"..\"4\") and word tokens\n",
+    "    Shared boundary-safe extractor for both digit tokens (\"1\"..\"N\") and word tokens\n",
     "    (\"NOT\"/\"OFF\"). `keyword_pattern` is the regex alternation for words that typically\n",
     "    precede the answer (e.g. \"answer|option|choice\" or \"label|answer|classification\").\n",
     "    \"\"\"\n",
@@ -538,7 +549,6 @@ cell_prompt_templates = [
     "        return \"INVALID\"\n",
     "    text = generated_text.strip()\n",
     "    pattern_tokens = \"|\".join(re.escape(t) for t in valid_tokens)\n",
-    "    # Digits must not be adjacent to other digits (so \"10\" can't match token \"1\").\n",
     "    is_digit = valid_tokens and valid_tokens[0].isdigit()\n",
     "    boundary = r\"(?<!\\d)\" if is_digit else r\"\\b\"\n",
     "    end_boundary = r\"(?!\\d)\" if is_digit else r\"\\b\"\n",
@@ -570,7 +580,7 @@ cell_prompt_templates = [
     "\n",
     "\n",
     "def extract_mcq_choice(generated_text, digit_labels):\n",
-    "    \"\"\"Extract the chosen digit (\"1\"..\"4\") from generated text.\"\"\"\n",
+    "    \"\"\"Extract the chosen digit (\"1\"..\"N\") from generated text.\"\"\"\n",
     "    return _extract_token(generated_text, digit_labels, r\"correct\\s+answer|answer|option|choice\")\n",
     "\n",
     "\n",
@@ -599,7 +609,7 @@ cell_prompt_templates = [
     "print(f\"\\ndigit_to_letter test: 1->{digit_to_letter('1')} 2->{digit_to_letter('2')} INVALID->{digit_to_letter('INVALID')}\")",
 ]
 
-# Updated generation engine with REASONING_MODE support
+# Fault-tolerant generation engine with REASONING_MODE support
 cell_generation_engine = [
     "@torch.inference_mode()\n",
     "def generate_response(prompt, max_new_tokens=MAX_NEW_TOKENS, temperature=TEMPERATURE):\n",
@@ -614,46 +624,51 @@ cell_generation_engine = [
     "    \"\"\"\n",
     "    has_template = hasattr(tokenizer, \"apply_chat_template\") and getattr(tokenizer, \"chat_template\", None)\n",
     "\n",
-    "    if has_template:\n",
-    "        if REASONING_MODE == \"no_think\":\n",
-    "            messages = [\n",
-    "                {\"role\": \"system\", \"content\": \"/no_think\"},\n",
-    "                {\"role\": \"user\", \"content\": prompt},\n",
-    "            ]\n",
-    "            formatted_prompt = tokenizer.apply_chat_template(\n",
-    "                messages, tokenize=False, add_generation_prompt=True\n",
-    "            )\n",
-    "        elif REASONING_MODE == \"enable_thinking_false\":\n",
-    "            messages = [{\"role\": \"user\", \"content\": prompt}]\n",
-    "            formatted_prompt = tokenizer.apply_chat_template(\n",
-    "                messages, tokenize=False, add_generation_prompt=True, enable_thinking=False\n",
-    "            )\n",
-    "        else:  # \"none\" — standard path\n",
-    "            messages = [{\"role\": \"user\", \"content\": prompt}]\n",
-    "            formatted_prompt = tokenizer.apply_chat_template(\n",
-    "                messages, tokenize=False, add_generation_prompt=True\n",
-    "            )\n",
-    "    else:\n",
-    "        formatted_prompt = prompt\n",
+    "    try:\n",
+    "        if has_template:\n",
+    "            if REASONING_MODE == \"no_think\":\n",
+    "                messages = [\n",
+    "                    {\"role\": \"system\", \"content\": \"/no_think\"},\n",
+    "                    {\"role\": \"user\", \"content\": prompt},\n",
+    "                ]\n",
+    "                formatted_prompt = tokenizer.apply_chat_template(\n",
+    "                    messages, tokenize=False, add_generation_prompt=True\n",
+    "                )\n",
+    "            elif REASONING_MODE == \"enable_thinking_false\":\n",
+    "                messages = [{\"role\": \"user\", \"content\": prompt}]\n",
+    "                formatted_prompt = tokenizer.apply_chat_template(\n",
+    "                    messages, tokenize=False, add_generation_prompt=True, enable_thinking=False\n",
+    "                )\n",
+    "            else:  # \"none\" — standard path\n",
+    "                messages = [{\"role\": \"user\", \"content\": prompt}]\n",
+    "                formatted_prompt = tokenizer.apply_chat_template(\n",
+    "                    messages, tokenize=False, add_generation_prompt=True\n",
+    "                )\n",
+    "        else:\n",
+    "            formatted_prompt = prompt\n",
     "\n",
-    "    device = next(model.parameters()).device\n",
-    "    inputs = tokenizer(\n",
-    "        formatted_prompt, return_tensors=\"pt\", truncation=True, max_length=MAX_INPUT_TOKENS\n",
-    "    ).to(device)\n",
-    "    input_len = inputs[\"input_ids\"].shape[1]\n",
+    "        device = next(model.parameters()).device\n",
+    "        inputs = tokenizer(\n",
+    "            formatted_prompt, return_tensors=\"pt\", truncation=True, max_length=MAX_INPUT_TOKENS\n",
+    "        ).to(device)\n",
+    "        input_len = inputs[\"input_ids\"].shape[1]\n",
     "\n",
-    "    gen_kwargs = {\n",
-    "        \"max_new_tokens\": max_new_tokens,\n",
-    "        \"do_sample\": temperature > 0,\n",
-    "        \"pad_token_id\": tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id,\n",
-    "    }\n",
-    "    if temperature > 0:\n",
-    "        gen_kwargs[\"temperature\"] = temperature\n",
+    "        gen_kwargs = {\n",
+    "            \"max_new_tokens\": max_new_tokens,\n",
+    "            \"do_sample\": temperature > 0,\n",
+    "            \"pad_token_id\": tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id,\n",
+    "        }\n",
+    "        if temperature > 0:\n",
+    "            gen_kwargs[\"temperature\"] = temperature\n",
     "\n",
-    "    outputs = model.generate(**inputs, **gen_kwargs)\n",
-    "    generated_ids = outputs[0][input_len:]\n",
-    "    generated_text = tokenizer.decode(generated_ids, skip_special_tokens=True)\n",
-    "    return generated_text, input_len, len(generated_ids)\n",
+    "        outputs = model.generate(**inputs, **gen_kwargs)\n",
+    "        generated_ids = outputs[0][input_len:]\n",
+    "        generated_text = tokenizer.decode(generated_ids, skip_special_tokens=True)\n",
+    "        return generated_text, input_len, len(generated_ids)\n",
+    "    except Exception as e:\n",
+    "        torch.cuda.empty_cache()\n",
+    "        print(f\"\\n[WARNING] Generation error on prompt: {e}\")\n",
+    "        return f\"ERROR: {e}\", 0, 0\n",
     "\n",
     "\n",
     "print(f\"Generation engine initialized. REASONING_MODE = {REASONING_MODE!r}\")\n",
@@ -714,6 +729,7 @@ cell_pilot_run = [
     "print(\"=\" * 75)",
 ]
 
+# Robust evaluation runner with continuous flushing, multi-source resume, and Kaggle timeout safety guard
 cell_eval_runners = [
     "MCQ_FIELDNAMES_BASE = [\n",
     "    \"id\", \"gold_label\",\n",
@@ -730,43 +746,106 @@ cell_eval_runners = [
     "    \"romanized_n_input_tokens\", \"romanized_n_output_tokens\",\n",
     "]\n",
     "\n",
+    "GLOBAL_START_TIME = time.time()\n",
     "\n",
-    "def _existing_ids(output_csv):\n",
-    "    \"\"\"Ids already written by a previous (possibly interrupted) run.\"\"\"\n",
-    "    if not (RESUME and os.path.exists(output_csv)):\n",
+    "def _check_time_limit():\n",
+    "    \"\"\"Return True if time limit in hours has been exceeded.\"\"\"\n",
+    "    elapsed_hours = (time.time() - GLOBAL_START_TIME) / 3600.0\n",
+    "    return elapsed_hours >= TIME_LIMIT_HOURS\n",
+    "\n",
+    "\n",
+    "def _find_checkpoint_file(filename):\n",
+    "    \"\"\"Find existing CSV in current working dir or in mounted /kaggle/input/ datasets.\"\"\"\n",
+    "    if os.path.exists(filename) and os.path.getsize(filename) > 0:\n",
+    "        return filename\n",
+    "    input_base = \"/kaggle/input\"\n",
+    "    if os.path.exists(input_base):\n",
+    "        for root, _, files in os.walk(input_base):\n",
+    "            if filename in files:\n",
+    "                candidate = os.path.join(root, filename)\n",
+    "                if os.path.getsize(candidate) > 0:\n",
+    "                    return candidate\n",
+    "    return None\n",
+    "\n",
+    "\n",
+    "def _load_existing_progress(output_csv, fieldnames):\n",
+    "    \"\"\"\n",
+    "    If output_csv exists locally or in /kaggle/input, prepare output_csv with existing rows\n",
+    "    and return the set of already completed IDs.\n",
+    "    \"\"\"\n",
+    "    if not RESUME:\n",
     "        return set()\n",
-    "    with open(output_csv, \"r\", newline=\"\", encoding=\"utf-8-sig\") as f:\n",
-    "        return {row[\"id\"] for row in csv.DictReader(f)}\n",
+    "    \n",
+    "    src = _find_checkpoint_file(output_csv)\n",
+    "    if not src:\n",
+    "        return set()\n",
+    "    \n",
+    "    done_ids = set()\n",
+    "    rows = []\n",
+    "    try:\n",
+    "        with open(src, \"r\", newline=\"\", encoding=\"utf-8-sig\") as f:\n",
+    "            reader = csv.DictReader(f)\n",
+    "            for r in reader:\n",
+    "                if \"id\" in r and r[\"id\"]:\n",
+    "                    done_ids.add(r[\"id\"])\n",
+    "                    rows.append(r)\n",
+    "        \n",
+    "        if src != output_csv and rows:\n",
+    "            with open(output_csv, \"w\", newline=\"\", encoding=\"utf-8-sig\") as f:\n",
+    "                writer = csv.DictWriter(f, fieldnames=fieldnames)\n",
+    "                writer.writeheader()\n",
+    "                for r in rows:\n",
+    "                    writer.writerow({k: r.get(k, \"\") for k in fieldnames})\n",
+    "                f.flush()\n",
+    "            print(f\"[RESUME] Loaded {len(done_ids):,} existing records from {src} -> {output_csv}\")\n",
+    "        elif src == output_csv:\n",
+    "            print(f\"[RESUME] Found existing {output_csv} with {len(done_ids):,} records\")\n",
+    "    except Exception as e:\n",
+    "        print(f\"[WARNING] Could not read existing checkpoint from {src}: {e}\")\n",
+    "        return set()\n",
+    "    \n",
+    "    return done_ids\n",
     "\n",
     "\n",
     "def run_mcq_evaluation(dataset, dataset_name, output_csv, strata_fields, dataset_key, subject_field=None):\n",
     "    \"\"\"\n",
     "    Run MCQ evaluation (MMLU or PIQA) on both script conditions.\n",
-    "    strata_fields: keys inside each item's \"strata\" dict to copy into the CSV as columns\n",
-    "        (e.g. \"domain\", \"difficulty\", \"culturally_specific\"). data/eval/*.jsonl nests these\n",
-    "        under item[\"strata\"], not at the item's top level.\n",
-    "    dataset_key: \"sinhala_mmlu\" or \"global_piqa\" — selects the right few-shot exemplars when\n",
-    "        PROMPT_TEMPLATE == \"T2_fewshot\"; unused (but still required) for T1_direct/T3_answer_first.\n",
-    "    subject_field: key inside item[\"strata\"] holding the MMLU subject/domain, or None for\n",
-    "        PIQA (no subject wording in its prompt).\n",
+    "    strata_fields: keys inside each item's 'strata' dict to copy into the CSV as columns.\n",
+    "    dataset_key: 'sinhala_mmlu' or 'global_piqa'.\n",
+    "    subject_field: key inside item['strata'] holding the MMLU subject/domain, or None for PIQA.\n",
     "    \"\"\"\n",
     "    fieldnames = strata_fields + MCQ_FIELDNAMES_BASE\n",
-    "    done_ids = _existing_ids(output_csv)\n",
-    "    mode = \"a\" if done_ids else \"w\"\n",
+    "    done_ids = _load_existing_progress(output_csv, fieldnames)\n",
+    "    mode = \"a\" if (os.path.exists(output_csv) and os.path.getsize(output_csv) > 0) else \"w\"\n",
     "\n",
     "    print(f\"\\n{'='*65}\")\n",
-    "    print(f\"Evaluating: {dataset_name} ({len(dataset)} items, {len(done_ids)} already done)\")\n",
+    "    print(f\"Evaluating: {dataset_name} ({len(dataset):,} items, {len(done_ids):,} already done)\")\n",
     "    print(f\"Output:     {output_csv}\")\n",
     "    print(f\"{'='*65}\")\n",
+    "\n",
+    "    remaining = [it for it in dataset if it[\"id\"] not in done_ids]\n",
+    "    if not remaining:\n",
+    "        print(f\"All {len(dataset):,} items already completed in {output_csv}.\")\n",
+    "        return output_csv\n",
     "\n",
     "    with open(output_csv, mode=mode, newline=\"\", encoding=\"utf-8-sig\") as f:\n",
     "        writer = csv.DictWriter(f, fieldnames=fieldnames)\n",
     "        if mode == \"w\":\n",
     "            writer.writeheader()\n",
+    "            f.flush()\n",
     "\n",
     "        t0 = time.time()\n",
-    "        remaining = [it for it in dataset if it[\"id\"] not in done_ids]\n",
+    "        timeout_hit = False\n",
+    "        n_processed = 0\n",
+    "\n",
     "        for i, item in enumerate(tqdm(remaining, desc=dataset_name)):\n",
+    "            if _check_time_limit():\n",
+    "                elapsed_h = (time.time() - GLOBAL_START_TIME) / 3600.0\n",
+    "                print(f\"\\n[TIME LIMIT GUARD] Elapsed: {elapsed_h:.2f}h >= {TIME_LIMIT_HOURS}h.\")\n",
+    "                print(f\"Saving checkpoint ({len(done_ids) + i:,}/{len(dataset):,} completed) and exiting cleanly.\")\n",
+    "                timeout_hit = True\n",
+    "                break\n",
+    "\n",
     "            strata = item.get(\"strata\", {})\n",
     "            row = {k: strata.get(k) for k in strata_fields}\n",
     "            row[\"id\"] = item[\"id\"]\n",
@@ -790,38 +869,50 @@ cell_eval_runners = [
     "                row[f\"{script}_n_output_tokens\"] = n_out\n",
     "\n",
     "            writer.writerow(row)\n",
-    "            if (i + 1) % 50 == 0:\n",
-    "                f.flush()\n",
+    "            f.flush()\n",
+    "            n_processed += 1\n",
     "\n",
     "        elapsed = time.time() - t0\n",
     "\n",
-    "    n_done = len(remaining)\n",
-    "    if n_done:\n",
-    "        print(f\"Done {n_done:,} new items in {elapsed/60:.1f} min ({elapsed/n_done:.2f} s/item)\")\n",
-    "    else:\n",
-    "        print(\"Nothing to do, all items already completed.\")\n",
+    "    if n_processed:\n",
+    "        print(f\"Done {n_processed:,} new items in {elapsed/60:.1f} min ({elapsed/n_processed:.2f} s/item)\")\n",
     "    return output_csv\n",
     "\n",
     "\n",
     "def run_sold_evaluation(dataset, output_csv):\n",
     "    \"\"\"Run SOLD binary classification on both script conditions.\"\"\"\n",
-    "    fieldnames = [\"label\"] + SOLD_FIELDNAMES_BASE  # gold label doubles as the strata field\n",
-    "    done_ids = _existing_ids(output_csv)\n",
-    "    mode = \"a\" if done_ids else \"w\"\n",
+    "    fieldnames = [\"label\"] + SOLD_FIELDNAMES_BASE\n",
+    "    done_ids = _load_existing_progress(output_csv, fieldnames)\n",
+    "    mode = \"a\" if (os.path.exists(output_csv) and os.path.getsize(output_csv) > 0) else \"w\"\n",
     "\n",
     "    print(f\"\\n{'='*65}\")\n",
-    "    print(f\"Evaluating: SOLD ({len(dataset)} items, {len(done_ids)} already done)\")\n",
+    "    print(f\"Evaluating: SOLD ({len(dataset):,} items, {len(done_ids):,} already done)\")\n",
     "    print(f\"Output:     {output_csv}\")\n",
     "    print(f\"{'='*65}\")\n",
+    "\n",
+    "    remaining = [it for it in dataset if it[\"id\"] not in done_ids]\n",
+    "    if not remaining:\n",
+    "        print(f\"All {len(dataset):,} items already completed in {output_csv}.\")\n",
+    "        return output_csv\n",
     "\n",
     "    with open(output_csv, mode=mode, newline=\"\", encoding=\"utf-8-sig\") as f:\n",
     "        writer = csv.DictWriter(f, fieldnames=fieldnames)\n",
     "        if mode == \"w\":\n",
     "            writer.writeheader()\n",
+    "            f.flush()\n",
     "\n",
     "        t0 = time.time()\n",
-    "        remaining = [it for it in dataset if it[\"id\"] not in done_ids]\n",
+    "        timeout_hit = False\n",
+    "        n_processed = 0\n",
+    "\n",
     "        for i, item in enumerate(tqdm(remaining, desc=\"SOLD\")):\n",
+    "            if _check_time_limit():\n",
+    "                elapsed_h = (time.time() - GLOBAL_START_TIME) / 3600.0\n",
+    "                print(f\"\\n[TIME LIMIT GUARD] Elapsed: {elapsed_h:.2f}h >= {TIME_LIMIT_HOURS}h.\")\n",
+    "                print(f\"Saving checkpoint ({len(done_ids) + i:,}/{len(dataset):,} completed) and exiting cleanly.\")\n",
+    "                timeout_hit = True\n",
+    "                break\n",
+    "\n",
     "            row = {\"id\": item[\"id\"], \"gold_label\": item[\"label\"], \"label\": item[\"label\"]}\n",
     "\n",
     "            for script in [\"unicode\", \"romanized\"]:\n",
@@ -838,20 +929,17 @@ cell_eval_runners = [
     "                row[f\"{script}_n_output_tokens\"] = n_out\n",
     "\n",
     "            writer.writerow(row)\n",
-    "            if (i + 1) % 50 == 0:\n",
-    "                f.flush()\n",
+    "            f.flush()\n",
+    "            n_processed += 1\n",
     "\n",
     "        elapsed = time.time() - t0\n",
     "\n",
-    "    n_done = len(remaining)\n",
-    "    if n_done:\n",
-    "        print(f\"Done {n_done:,} new items in {elapsed/60:.1f} min ({elapsed/n_done:.2f} s/item)\")\n",
-    "    else:\n",
-    "        print(\"Nothing to do, all items already completed.\")\n",
+    "    if n_processed:\n",
+    "        print(f\"Done {n_processed:,} new items in {elapsed/60:.1f} min ({elapsed/n_processed:.2f} s/item)\")\n",
     "    return output_csv\n",
     "\n",
     "\n",
-    "print(\"Evaluation runners ready.\")",
+    "print(\"Evaluation runners ready with continuous flushing, checkpointing, and time guard.\")",
 ]
 
 cell_run_all = [
@@ -874,7 +962,7 @@ cell_run_all = [
     ")\n",
     "\n",
     "print(\"\\n\" + \"=\"*65)\n",
-    "print(\"ALL EVALUATIONS COMPLETE\")\n",
+    "print(\"ALL EVALUATION LOOPS FINISHED\")\n",
     "print(\"=\"*65)",
 ]
 
@@ -882,45 +970,66 @@ cell_summary = [
     "import pandas as pd\n",
     "\n",
     "def summarize(csv_path, task_name):\n",
-    "    df = pd.read_csv(csv_path)\n",
-    "    n = len(df)\n",
-    "    u_acc = df[\"unicode_correct\"].mean() * 100\n",
-    "    r_acc = df[\"romanized_correct\"].mean() * 100\n",
-    "    u_invalid_col = \"unicode_pred_label\" if \"unicode_pred_label\" in df.columns else \"unicode_pred\"\n",
-    "    r_invalid_col = \"romanized_pred_label\" if \"romanized_pred_label\" in df.columns else \"romanized_pred\"\n",
-    "    u_invalid = (df[u_invalid_col] == \"INVALID\").mean() * 100\n",
-    "    r_invalid = (df[r_invalid_col] == \"INVALID\").mean() * 100\n",
-    "    gap = u_acc - r_acc\n",
+    "    if not os.path.exists(csv_path) or os.path.getsize(csv_path) == 0:\n",
+    "        print(f\"{task_name:14} -- Not evaluated or empty yet\")\n",
+    "        return None\n",
+    "    try:\n",
+    "        df = pd.read_csv(csv_path)\n",
+    "        n = len(df)\n",
+    "        if n == 0:\n",
+    "            print(f\"{task_name:14} n=0 (empty)\")\n",
+    "            return None\n",
+    "        u_acc = df[\"unicode_correct\"].mean() * 100\n",
+    "        r_acc = df[\"romanized_correct\"].mean() * 100\n",
+    "        u_invalid_col = \"unicode_pred_label\" if \"unicode_pred_label\" in df.columns else \"unicode_pred\"\n",
+    "        r_invalid_col = \"romanized_pred_label\" if \"romanized_pred_label\" in df.columns else \"romanized_pred\"\n",
+    "        u_invalid = (df[u_invalid_col] == \"INVALID\").mean() * 100\n",
+    "        r_invalid = (df[r_invalid_col] == \"INVALID\").mean() * 100\n",
+    "        gap = u_acc - r_acc\n",
     "\n",
-    "    print(f\"{task_name:14} n={n:5,}  Unicode={u_acc:6.2f}%  Romanized={r_acc:6.2f}%  \"\n",
-    "          f\"Gap={gap:+6.2f}pp  Invalid(U/R)={u_invalid:.1f}%/{r_invalid:.1f}%\")\n",
-    "    return {\"Task\": task_name, \"N\": n, \"Unicode Acc (%)\": round(u_acc, 2),\n",
-    "            \"Romanized Acc (%)\": round(r_acc, 2), \"Gap (pp)\": round(gap, 2),\n",
-    "            \"Unicode Invalid (%)\": round(u_invalid, 2), \"Romanized Invalid (%)\": round(r_invalid, 2)}\n",
+    "        print(f\"{task_name:14} n={n:5,}  Unicode={u_acc:6.2f}%  Romanized={r_acc:6.2f}%  \"\n",
+    "              f\"Gap={gap:+6.2f}pp  Invalid(U/R)={u_invalid:.1f}%/{r_invalid:.1f}%\")\n",
+    "        return {\"Task\": task_name, \"N\": n, \"Unicode Acc (%)\": round(u_acc, 2),\n",
+    "                \"Romanized Acc (%)\": round(r_acc, 2), \"Gap (pp)\": round(gap, 2),\n",
+    "                \"Unicode Invalid (%)\": round(u_invalid, 2), \"Romanized Invalid (%)\": round(r_invalid, 2)}\n",
+    "    except Exception as e:\n",
+    "        print(f\"[WARNING] Could not summarize {csv_path}: {e}\")\n",
+    "        return None\n",
     "\n",
     "\n",
     "print(f\"{MODEL_LABEL} \\u2014 Extrinsic Evaluation Summary\")\n",
     "print(\"-\" * 90)\n",
-    "results = [\n",
+    "raw_results = [\n",
     "    summarize(mmlu_csv, \"Sinhala MMLU\"),\n",
     "    summarize(sold_csv, \"SOLD\"),\n",
     "    summarize(piqa_csv, \"Global PIQA\"),\n",
     "]\n",
-    "summary_df = pd.DataFrame(results)\n",
-    "summary_csv = f\"{OUTPUT_PREFIX}_extrinsic_summary.csv\"\n",
-    "summary_df.to_csv(summary_csv, index=False)\n",
-    "print(f\"\\nSummary saved to: {summary_csv}\")\n",
-    "summary_df",
+    "results = [r for r in raw_results if r is not None]\n",
+    "if results:\n",
+    "    summary_df = pd.DataFrame(results)\n",
+    "    summary_csv = f\"{OUTPUT_PREFIX}_extrinsic_summary.csv\"\n",
+    "    summary_df.to_csv(summary_csv, index=False)\n",
+    "    print(f\"\\nSummary saved to: {summary_csv}\")\n",
+    "    display(summary_df) if \"display\" in globals() else print(summary_df)\n",
+    "else:\n",
+    "    print(\"\\nNo completed evaluation results to summarize yet.\")",
 ]
 
 cell_output_listing = [
-    "print(\"All output files:\")\n",
-    "for f in [mmlu_csv, sold_csv, piqa_csv, summary_csv]:\n",
-    "    size = os.path.getsize(f) / 1024\n",
-    "    print(f\"  {f} ({size:.1f} KB)\")\n",
+    "print(\"All output files in working directory:\")\n",
+    "for f in [mmlu_csv, sold_csv, piqa_csv]:\n",
+    "    if os.path.exists(f):\n",
+    "        size = os.path.getsize(f) / 1024\n",
+    "        print(f\"  {f} ({size:.1f} KB)\")\n",
+    "    else:\n",
+    "        print(f\"  {f} (not created yet)\")\n",
     "\n",
-    "print(f\"\\n\\u2705 {MODEL_LABEL} extrinsic evaluation complete!\")\n",
-    "print(\"\\nTo re-run for a different model, use the dedicated notebook for that model.\")",
+    "summary_file = f\"{OUTPUT_PREFIX}_extrinsic_summary.csv\"\n",
+    "if os.path.exists(summary_file):\n",
+    "    size = os.path.getsize(summary_file) / 1024\n",
+    "    print(f\"  {summary_file} ({size:.1f} KB)\")\n",
+    "\n",
+    "print(f\"\\n\\u2705 {MODEL_LABEL} extrinsic evaluation run completed!\")",
 ]
 
 
@@ -1006,21 +1115,40 @@ def build_notebook(m):
 
 
 # ---------------------------------------------------------------------------
-# MAIN — write one notebook per model
+# MAIN — write notebooks directly into results/extrinsic_evaluation/
 # ---------------------------------------------------------------------------
 
-UPDATED_DIR = Path(__file__).parent / "updated"
+def main():
+    base_dir = Path(__file__).parent
 
-for m in MODELS:
-    folder = UPDATED_DIR / m["label"]
-    folder.mkdir(parents=True, exist_ok=True)
+    for m in MODELS:
+        folder = base_dir / m["label"]
+        folder.mkdir(parents=True, exist_ok=True)
 
-    nb = build_notebook(m)
-    nb_path = folder / f"extrinsic-evaluation-{m['label']}.ipynb"
+        nb = build_notebook(m)
+        nb_path = folder / f"extrinsic-evaluation-{m['label']}.ipynb"
 
-    with open(nb_path, "w", encoding="utf-8") as fh:
-        json.dump(nb, fh, ensure_ascii=False, indent=1)
+        with open(nb_path, "w", encoding="utf-8") as fh:
+            json.dump(nb, fh, ensure_ascii=False, indent=1)
 
-    print(f"Written: {nb_path.relative_to(UPDATED_DIR.parent.parent.parent)}")
+        print(f"Generated: {nb_path.relative_to(base_dir.parent.parent)}")
 
-print(f"\nAll {len(MODELS)} model notebooks generated under: {UPDATED_DIR}")
+    # Also update base reference notebook results/extrinsic_evaluation/extrinsic-evaluation.ipynb
+    base_model = {
+        "id": "HuggingFaceTB/SmolLM3-3B",
+        "label": "SmolLM3-3B",
+        "reasoning_mode": "no_think",
+        "load_in_8bit": False,
+        "prompt_template": "T1_direct",
+    }
+    base_nb = build_notebook(base_model)
+    base_nb_path = base_dir / "extrinsic-evaluation.ipynb"
+    with open(base_nb_path, "w", encoding="utf-8") as fh:
+        json.dump(base_nb, fh, ensure_ascii=False, indent=1)
+    print(f"Generated base reference: {base_nb_path.relative_to(base_dir.parent.parent)}")
+
+    print(f"\nAll {len(MODELS)} model notebooks successfully updated!")
+
+
+if __name__ == "__main__":
+    main()
