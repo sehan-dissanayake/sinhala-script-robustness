@@ -1,0 +1,30 @@
+==============================================================================
+PROMPT TEMPLATE PILOT — ANALYSIS SUMMARY
+==============================================================================
+Models: 9 | Datasets: ['sinhala_mmlu', 'sold', 'global_piqa'] | Total generations: 3,240
+
+Recommended template per dataset (pooled overall_accuracy):
+  global_piqa    -> T3_answer_first  (overall_acc=0.519, invalid_rate=0.047)
+  sinhala_mmlu   -> T1_direct        (overall_acc=0.267, invalid_rate=0.000)
+  sold           -> T3_answer_first  (overall_acc=0.525, invalid_rate=0.100)
+
+Does the winner hold across BOTH scripts (unicode & romanized)?
+  global_piqa    winner=T3_answer_first  min_across_scripts=0.517 (consistent)
+  sinhala_mmlu   winner=T1_direct        min_across_scripts=0.250 (consistent)
+  sold           winner=T3_answer_first  min_across_scripts=0.494 (consistent)
+
+Any single model dragging the winning template down? (bottom 3 shown per dataset)
+  global_piqa / T3_answer_first:
+    TinyLlama-1.1B-Chat-v1.0 overall_acc=0.225 invalid_rate=0.425
+    SmolLM3-3B               overall_acc=0.350 invalid_rate=0.000
+    Qwen2-7B-Instruct        overall_acc=0.375 invalid_rate=0.000
+  sinhala_mmlu / T1_direct:
+    stablelm-zephyr-3b       overall_acc=0.175 invalid_rate=0.000
+    TinyLlama-1.1B-Chat-v1.0 overall_acc=0.200 invalid_rate=0.000
+    zephyr-7b-beta           overall_acc=0.200 invalid_rate=0.000
+  sold / T3_answer_first:
+    TinyLlama-1.1B-Chat-v1.0 overall_acc=0.050 invalid_rate=0.900
+    SmolLM3-3B               overall_acc=0.300 invalid_rate=0.000
+    Qwen-3.5-4B              overall_acc=0.450 invalid_rate=0.000
+
+Full CSV breakdowns written to: E:\git\sinhala-script-robustness\results\prompt_template_evaluation\results\analysis_out

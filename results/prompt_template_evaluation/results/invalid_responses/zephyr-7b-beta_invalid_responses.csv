@@ -1,0 +1,113 @@
+﻿model,dataset,template,script,id,original_question,gold_label,pred,pred_label,correct,raw_output,n_input_tokens,n_output_tokens
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_1310,"නූතන සිංහල වර්ණ මාලාවේ සඤ්ඤක අක්ෂර ගණන කීයද?
+Options: 10 යි. | 5 යි. | 18 යි. | 3යි.",B,INVALID,INVALID,0,Question: තියාරා පියාරා පියාරා පියාරා �,416,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0229,"බුදු දහමට අනුව දැහැමි රැකියාවක් නොවන්නේ,
+Options: කෘෂිකර්මාන්තය | ගව පාලනය | රාජ්‍ය සේවය | සත්ත්ව වෙළෙඳාම",D,INVALID,INVALID,0,Question: තුදු දහමට අනුව ����,466,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0052,"බුදුන් වහන්සේගේ පටිධාතුව තැන්පත් කර නිර්මාණය කරන ලද දාගැබ වන්නේ,
+Options: අභයගිරිය දාගැබ | රන්කොත් වෙහෙර | ථුපාරාමය දාගැබ | ජේතවනාරාම දාගැබ",D,INVALID,INVALID,0,Question: තියාරා තියාරා තියාරා තියාරා �,542,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_1519,"“හිස මුව තුල බෙල්ල දෙවුර දෑතේ දසැගිලි""
+Options: ලී කෙලි කවියෙකි. | සවරං කවියකි. | සිරසපාද කවියකි. | පතුරු කවියකි.",C,INVALID,INVALID,0,Question: තහිරියා පුත්තියිටම ����,477,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0564,"විවේකය ඇතිවිට ඔබ ක්‍රීඩා කටයුතුවල යෙදීමෙන් ඔබ තුළ වර්ධනය වන ගුණාංගයක් වන්නේ,
+Options: අලසකම වර්ධනය වීම. | ආත්මාර්ථකාමී කටයුතු කිරීමට යොමු වීම. | අසාධාරණය අගය කිරීම. | ජය පරාජය සතුටින් විදදරා ගැනීම.",D,INVALID,INVALID,0,Question: තියාරා පුළතියින් ����������,624,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0502,"පංච පුස්තකයෙහි සඳහන් කර්තෘ සහ උප කර්තෘ වන්නේ ,
+Options: දෙවියන් වහන්සේ සහ යේසුස් වහන්සේ . | දෙවියන් වහන්සේ සහ මිනිසා . | යේසුස් වහන්සේ සහ මිනිසා . | දෙවියන් වහන්සේ සහ ආබ්‍රහම් ය .",B,INVALID,INVALID,0,Question: තිතුටටර්ගහහරු �����,565,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_0502,"pancha pusthakayehi sandahan karthru saha upa karthru wannee ,
+Options: dewiyan wahansee saha yeesus wahansee . | dewiyan wahansee saha minisaa . | yeesus wahansee saha minisaa . | dewiyan wahansee saha aabraham ya .",B,INVALID,INVALID,0,Question: kiyavaththama kiyavaththama kiyavaththama kiyavaththama kiyavaththama kiyavaththama kiy,287,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0458,"ගලීල මුහුද සඳහා යෙදෙන තවත් නමක් වන්නේ ,
+Options: රතු මුහුද | මළ මුහුද | මධ්‍යධරණී මුහුද | තිබේරියස් මුහුද",D,INVALID,INVALID,0,Question: තිබේගහහරට �������������,489,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0286,"දේව දරුකම නමැති නොමැකෙන ලාංඡනය පුද්ගල ආත්මය තුළ සනිටුහන් කරන දේව ප්‍රසාද නිධානය වන්නේ ,
+Options: ප්‍රසාද ස්නාපනය ය . | පූජකවරය ය . | දිව්‍ය සත්ප්‍රසාදය ය . | රෝගීන්ගේ ආලේපය ය .",A,INVALID,INVALID,0,Question: තිබටට පැය කීයක් තිබ,572,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_1509,"තෙයිත තෙයිත තෙයිත යතාම් යන පා සරඹයේ සරඹ නාමය වන්නේ
+Options: අඩිය | දෑඩිය | තුන් අඩිය | සිව් අඩිය",D,INVALID,INVALID,0,Question: තෙයිත තෙයිත තෙයිත ය,449,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_1509,"theyitha theyitha theyitha yathaam yana paa sarambayee saramba naamaya wannee
+Options: adiya | daaediya | thun adiya | siw adiya",D,INVALID,INVALID,0,Question: kumara kavithaaya kumariyaaya kumarayaaya kumarayaaya kumarayaaya kumarayaaya kumarayaaya,257,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0210,"සිගාලෝවාද සූත්‍රයේ ගුරුවරුන් උපමා කර ඇති දිශාව වන්නේ ,
+Options: උතුරු දිසාවය | බටහිර දිසාවය | දකුණු දිසාවය | උඩ දිසාවය",C,INVALID,INVALID,0,Question: තහිර පුර්ුවරුන් ඉති��,488,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_1386,"ඒක වචන අනුක්ත නාම පදයක් වන්නේ ,
+Options: මා | ඔවුන් | දියණියක් | සිංහයෙක්",A,INVALID,INVALID,0,Question: ඉතුළතමට පැය කීයක් �,402,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_1517,"මණ්ඩි පද හා පා සරඹ වලින් දැකිය හැකි නර්තන සම්ප්‍රදාය වන්නේ,
+Options: උඩරට හා පහත රට සම්ප්‍රදායන් රට සම්ප්‍රදායන්. | පහතරට සහ උඩරට සම්ප්‍රදායන්. | සබරගමු හා පහතරට සම්ප්‍රදායන්. | පහතරට හා උඩරට සම්ප්‍රදායන්.",B,INVALID,INVALID,0,Question: තිබදුන්ගළුණුතහර,624,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_1517,"mandi pada haa paa saramba walin daekiya haeki narthana sampradaaya wannee,
+Options: udarata haa pahatha rata sampradaayan rata sampradaayan. | pahatharata saha udarata sampradaayan. | sabaragamu haa pahatharata sampradaayan. | pahatharata haa udarata sampradaayan.",B,INVALID,INVALID,0,Question: kankanamala kankanamala kankanamala kankanamala kankanamala kankanamala kankanamala kankan,315,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_1828,"රසායනික විපර්යාසයක දී සිදු නොවිය හැක්කේ කුමක්ද?
+Options: භෞතික අවස්ථාව පමණක් වෙනස් වීම | තාපය පිට වීම | වායු බුබුලු පිටවීම | වර්ණය වෙනස් වීම",A,INVALID,INVALID,0,Question: තුළුමට පැය කීයක් ති,517,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_1828,"rasaayanika wiparyaasayaka dii sidu nowiya haekkee kumakda?
+Options: bhauthika awasthaawa pamanak wenas wiima | thaapaya pita wiima | waayu bubulu pitawiima | warnaya wenas wiima",A,INVALID,INVALID,0,Question: kumakdaa kiyawaththa kiyawaththa kiyawaththa kiyawaththa kiyawaththa kiyawaththa kiyaw,276,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_1117,"පහත කොටස් නිවැරදිව ගැලපූ විට නිවැරදි පිළිතුර වන්නේ,
+
+1) වෙළඳ සංවිධාන,  2) පේෂ කර්මාන්තය, 3) වරායන් ආශ්‍රිතව කටයුතු කිරීම, 4) ගවයන්ගේ පිටේ බඩු ගෙනයාම
+A රෙදිපිළි, B තවලම්, C සුංක, D රේගු නිලධාරීන්
+Options: ABCD | DEBA | BADC | CADB",D,INVALID,INVALID,0,Question: පහත කොටස් නිවැරදිව ����,639,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0179,"බුදුරජාණන් වහන්සේ කළගුණ දැක්වීම වශයෙන් අනිමිස ලෝචන පූජාව සිදුකරන ලද්දේ කී වන සතියේදී ද ?
+Options: පළමුවන සතියේ දී ය. | දෙවන සතියේ දී ය. | තෙවන සතියේ දී ය . | පස්වන සතියේ දී ය.",B,INVALID,INVALID,0,Question: �������������������������������������,594,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0865,"ශ්‍රී ලංකාවේ හා පළල නිවැරදි අනුපිළිවෙලට දැක්වෙන පිළිතුර තෝරන්න.
+Options: දිග කි. මී. 224, පළල කි.මී. 433 | දිග කි.මී. 423, පළල කි.මී 242 | දිග කි.මී. 424, පළල කි.මී. 264 | දිග කි.මී. 432, පළල කි.මී. 224",D,INVALID,INVALID,0,Question: තියාරා පියාරා අත්‍රකාරා �����,613,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0066,"නූල් රූකඩ නිර්මාණයේ දී රූකඩ සෑදීම සඳහා ප්‍රධාන වශයෙන් දැව භාවිතා කරන අතර ඒ සඳහා වැඩි වශයෙන් භාවිත කරන දැව වර්ගය නම්
+Options: කළුවර | තේක්ක | රුක්අත්තන | බුරුත",C,INVALID,INVALID,0,Question: තිතෙටගණ෍තුණ්�����,557,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_0066,"nuul ruukada nirmaanayee dii ruukada saaediima sandahaa pradhaana washayen daewa bhaawithaa karana athara ee sandahaa waedi washayen bhaawitha karana daewa wargaya nam
+Options: kaluwara | theekka | rukaththana | burutha",C,INVALID,INVALID,0,Question: kankanamala kankanamala kankanamala kankanamala kankanamala kankanamala kankanamala kankan,291,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0062,"ලක්දිව ඉදිකළ පළමු ස්ථූපය ලෙස හඳුන්වන්නේ,
+Options: කැලණි විහාරයයි. | ථූපාරාම විහාරයයි. | අභයගිරි විහාරයයි. | ජේතවන විහාරයයි.",C,INVALID,INVALID,0,Question: තහිර පුර්ුණු පුර්��,490,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0192,"මිනිසා හා සතුන් අතර වෙනස්කම් දක්නට ලැබේ. වෙනස්කම් අතර මිනිසා සතුන්ගෙන් වෙනස් වන්නේ,
+Options: සදාචාර සම්පන්න බව නිසාය. | සදාචාරයෙන් තොර බව නිසාය. | අධ්‍යාපනයට යොමු නොවීම නිසා ය. | දෙමාපියන්ට නොසැළකීම නිසා ය.",A,INVALID,INVALID,0,Question: තිබටට පැය කීයක් තිබ,601,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_1210,"වුළුහි ෆලු වල ගණන ,
+
+Options: 5 | 7 | 8 | 6",D,INVALID,INVALID,0,Answer: 6 (ඉතුළුහි ෆලු වල,163,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_1210,"wuluhi falu wala ganana ,
+
+Options: 5 | 7 | 8 | 6",D,INVALID,INVALID,0,"The correct answer is: 6. (waluhi falu wala ganana means ""six and seven are not one"" in Swahili, indicating that 6 is the answer.)",134,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0457,@USER @USER   ප්‍රවෘත්ති මැදිරියේ නව මුහුණුවර ජාත්‍යන්තරය හා සැසැඳෙනවා. ඒත් ‘නිව්ස් ටිකර්‘ එක කියවන්න චීනක්කණ්ණාඩියක් ඕනෑ වෙනවා. ඒ ගැනත් හිතන්න.,NOT,INVALID,INVALID,0,Text: අද කාලගුණය හොඳයි. �,466,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_1127,උන් තමා ගවුන්ඩ් එකේ ඉදන් මැච් පැරදුනාම බෝතල් විසිකරන්නේ.. අඩු කුලේ පර හැත්ත #TweepsMatchOut #ගයියා @USER  · 31 Aug 2017 කුනුහර්ප කියාගෙන ලංකාවට බැනලා නෙගටිව් ටුයිට්  1ට 100ක්  දැම්මත් නෝ ටිකට්ස්. අපිට ඕනේ SL cricket fanz ල මිසක් බූරුවෝ නෙවෙයි.  #TweepsMatchOut,OFF,INVALID,INVALID,0,Text: ඉතුහපත්ගුණය��������,611,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_1127,un thamaa gawund ekee idan maech paeradunaama boothal wisikarannee.. adu kulee para haeththa #TweepsMatchOut #gayiyaa @USER  · 31 Aug 2017 kunuharpa kiyaagena lankaawata baenalaa negatiw tuyit  1ta 100k  daemmath noo tikats. apita oonee SL cricket fanz la misak buuruwoo neweyi.  #TweepsMatchOut,OFF,INVALID,INVALID,0,Text: un thamaa gawund ekee idan maech paeradunaama boothal wisikarannee.. adu kulee para haeththa #Twe,274,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0572,අඩෝ කීර්ති සර් අපිට කියන්නේ බැල්ලිගේ පුතාලා කියලා කේසිරි සර් කියන්නේ අවජාතක බල්ලෝ කියලා එතකොට අපි අවජාතක බැල්ලිගේ පුතාලාද ඕයි? #TutionConvos,OFF,INVALID,INVALID,0,Text: අඩෝ කීර්ති සර් අපිට ක,490,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_2234,URL  මෙයා හිතන්නෙ මහින්දට ඉන්නේ මොලේ නැති එවුන් කියල. රනිල්ගෙයි චන්ද්රිකාගෙයි පශ්චාත්භාගේ ලෙව කන ගමන් පට්ට කෙබර කියනවා.,OFF,INVALID,INVALID,0,Text: අද කාලගුණය හොඳයි. �,450,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_2419,@USER අපේ රටේ තාක්ෂනය අධි සමාජගත වීමේ ප්‍රවනතාවක් තියෙනව. හැම රටකම එහෙම ඇති. ඒත් ඒරටවල මනා හික්මීමක් සහිත උගත් පාලන තන්ත්‍රයක් තියෙනව.අවාසනාවකට අපේ රටේ පාකයෝ මැටි අල,OFF,INVALID,INVALID,0,Text: අපේ රටේ තාක්ෂනය අධි,532,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_1729,"“කවුද මේ පිස්සා මෙතන්ට ගෙනාවේ “තොටවත්තට,මෛත්‍රීගේන් කුණු බැනුම්:  URL",NOT,INVALID,INVALID,0,"Text: ""අද කාලගුණය හොඳයි. �",375,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0123,"එකෙක් : උඹ ගැහුවා ද බං ? මං : නෑ  ඌ : බය නොවී ඕක ගහගනිං බං,  උඹ ඉස්කෝලේ රුබෙල්ලා ඉන්ජෙක්ෂන් විදින පෝලිමේ ඉස්සරලම ගිහින් ගහගත්තනේ, බය වෙන්ඩ එපා යකෝ",NOT,INVALID,INVALID,0,Text: එකෙක් : ඉඹ ගැහුවා ද,517,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_0123,"ekek : umba gaehuwaa da ban ? man : naae  uu : baya nowii ooka gahaganin ban,  umba iskoolee rubellaa injekshan widina poolimee issaralama gihin gahagaththanee, baya wenda epaa yakoo",NOT,INVALID,INVALID,0,"Text: ekek : umba gaehuwaa da ban ? man : naae  uu : baya nowii ooka gahaganin ban,  umb",227,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0384,@USER  @USER මං නම් කැත හිතකිනි නෙමෙයි ඒක කිවේ චමල් අයියෙ. එහෙත් ඔයාව ෂුවර් නැ,NOT,INVALID,INVALID,0,Text: අද කාලගුණය හොඳයි. �,369,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_0384,@USER  @USER man nam kaetha hithakini nemeyi eeka kiwee chamal ayiye. eheth oyaawa shuwar nae,NOT,INVALID,INVALID,0,Text: @USER  @USER man nam kaetha hithakini nemeyi eeka kiwee chamal ayiye. eheth oyaawa shu,189,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0896,වයිෆ් ගැබ් ගත්තහම ඇයගේ යෙහෙළියෝ #condratulation කියලා කියනවා  ඒත් කවුරුවත් හස්බන්ඩ්ගේ පිටට තට්ටුවක් දාලා good job කියලා කියන්නේ නැහැ.   මේක පට්ට අසාධාරණයි බං..,NOT,INVALID,INVALID,0,Text: අද කාලගුණය හොඳයි. �,493,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0953,"@USER ගොඩයන්නට මැජික්. මාසෙකට charter ප්ලේන් 3 , 4ක් ආවම හෙන ලොකුයි. .  වෙන රටවල අලුත හදපු ගුවන් තොටුපොලවල් සමග සංචාරකන් පැමිණිම පොඩ්ඩක් සංසන්දනය කරලා බැලුවනම් තෙරෙයි මෙක අමු සුදු අලියෙක් කියලා.",NOT,INVALID,INVALID,0,Text: අද කාලගුණය හොඳයි. �,574,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0109,@USER @USER  කහට නෙමේ බැක්ටීරියා දිලීර ලෙල්ලේ තැන්පත්වෙනවා. කටින් කැඩුවොත් ඒවා කටට යනවා @USER  @USER,NOT,INVALID,INVALID,0,Text: අද කාලගුණය හොඳයි. �,400,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_2299,ඔව් බං මේ ආත්මේ වගේ නාකි වෙනකං බලං ඉන්න බෑ ඒකිව හම්බෙන්න. ගැටවර වියේදිම මගේ වෙන්න ඕනි URL,NOT,INVALID,INVALID,0,Text: ඔව් බං මේ ආත්මේ වගේ,403,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0082,"ගොපල්ලන් රෑ හඳ පානේ තම ගවයන් සොයා ගන්නේ කුමක් ගැන ඇස ගසා සිටීමෙන් ද?
+Options: කිරි කොහි ඇත්දැයි බලාකියා ගෙන ය | ගොම කොහි ඇත්දැයි බලාකියා ගෙන ය",B,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,595,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0015,"දුටු ගැමුණු රජු මරණාසන්න බව දුටු සද්ධාතිස්ස කුමරා
+Options: රුවන්වැලි සෑය වැලි වලින් වසා වෑඩ ඉවර කල සේ පෙන්වී ය | රුවන්වැලි සෑය රෙදි වලින් වසා වෑඩ ඉවර කල සේ පෙන්වී ය",B,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,627,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0004,"සුදු වෙන්නට සිතා ලංකාවේ සමහරු වදකහ සුදිය බිවුවේ
+Options: සූර්යග්‍රහණයක් වේලාවේ ය. | චන්ද්‍රග්‍රහණයක් වේලාවේ ය.",A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,537,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0095,"පාරේ ඇවිදින විට ඉර මුහුණට වැටීම වැලක්වීමට
+Options: කඩදාසියකින් මුහුණ වසා ගන්න | අතින් මුහුණ වසා ගන්න",B,INVALID,INVALID,0,Question: ඉප්තුගුණට ඉර�������,525,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0036,"දස්කොන් හා ප්‍රමිලා අතර වූ අනියම් සම්බන්ධතාව ශ‍්‍රී වීර පරාක්‍රම නරෙන්ද්‍රසිංහ රජුට හසුවූයේ දස්කොන් කුමක් කල විට ද?
+Options: ප්‍රමිලා බිසවට වැළදී තිබූ සාංකා දෝශයක් වෙනුවෙන් කල බලි යාගයක දී ඇගේ රුවට සමාන මැටියෙන් කළ රුවක් නිම වූ විට දස්කොන් ගොස් එහි කලවයෙහි උපන් ලපයක් සලකුණු කළ විට. | ප්‍රමිලා බිසවට වැළදී තිබූ සාංකා දෝශයක් වෙනුවෙන් කල බලි යාගයක දී ඇගේ රුවට සමාන මැටියෙන් කළ රුවක් නිම වූ විට දස්කොන් ගොස් එහි නලලෙහි උපන් ලපයක් සලකුණු කළ විට.",A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,1090,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0032,"දළදාව ලංකාවට ගෙනාවේ කෙසේ සඟවා ගෙන ද?
+Options: කොණ්ඩය අස්සේ හංගාගෙන ය | පොතක් අස්සේ හංගාගෙන ය",A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,523,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0029,"ධීවරයන් මූදු යන්නේ මොන කාලයට ද?
+Options: හරාව කාලයට ය | වාරකන් කාලයට ය",A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,461,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0018,"ගෙට රිංගූ ගැරඬියෙකු එළවීමට සුදුසුම ක්‍රමය කුමක් ද?
+Options: පොල්තෙල් පෙඟවූ පාන්කඩයක් දිග කෝටුවක ඔතා ගැරඬියාගේ ඇඟේ ගාන්න | භූමිතෙල් පෙඟවූ පාන්කඩයක් දිග කෝටුවක ඔතා ගැරඬියාගේ ඇඟේ ගාන්න",B,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,694,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0014,"අනුලා රැජිණගේ ස්වාමි පුරුෂයන්ට ඇය කුමක් කලා ද?
+Options: වස දී මැරුවා ය | බස දී මැරුවා ය",A,INVALID,INVALID,0,Question: අන්දුන්ගොණුරු පුර,500,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0087,"මැටි පහනක් මීටර් දෙකක පමණ උසක සිට බිමට වැටුනොත්
+Options: එය බිඳෙයි | එය තැලෙයි",A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,495,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0070,"මරණ තුනක් ඇති මිනිහෙක් පැණි කෑවේ කුමන විට ද?
+Options: වලේ නයෙක් ද කැලේ අලියෙක් ද අතේ කරවැලක් ද වූ විට ය | වලේ අලියෙක් ද කැලේ නයෙක් ද අතේ කරවැලක් ද වූ විට ය",A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,622,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0012,"පරංගියා කෝට්ටේ ගියා කිවූ සිද්දියේ වුනේ මොකක් ද?
+Options: පෘතුගීසීකාරයන් රවටා දුර පාරකින් අගනුවට ගෙන ගිය එකය | පෘතුගීසීකාරයන් රවටා ළඟ පාරකින් අගනුවට ගෙන ගිය එකය",A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,628,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0076,"පිරිමි අශ්වයෙකු සහ ගැහැණු බූරුවෙකු අතර ඇති වන ගෘහාශ්‍රිත අශ්චිය දෙමුහුමක් නිසා බිහිවන්නේ
+Options: කොටළුවෙකි | හිනිළුවෙකි",B,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,573,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0055,"ගොයම් කැපීම වැනි කටයුතු සඳහා එකිනෙකාට උදව් කිරීම හැඳුන්වූයේ
+Options: අත්තම් ක්‍රමය ලෙසය | ශ්‍රමදාන ක්‍රමය ලෙසය",A,INVALID,INVALID,0,Question: ඉගුගු පුණු ��������,537,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0005,"මී පැණි කඩන්නට ලණුවක එල්ලී හෙලට බසින්නා බොහෝ විට ඒ ලණුව අල්ලා ගන්නට දෙන්නේ
+Options: තම සහෝදරයාට ය | තම මස්සිනාට ය",B,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,558,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0028,"පදිංචිය ආදී බාහිර දේ කොපමණ වෙනස් කලත් ජන්මයෙන් ආ ගති නොවෙනස් වන බව කියන්නේ
+Options: කැලේ මාරු කලත් කොටියාගේ පුල්ලි මාරු නොවේ | පුල්ලි මාරු කලත් කොටියාගේ කැලේ මාරු නොවේ",A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,648,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0030,"දික්තල දිනා ගැනීමට කාලගෝල
+Options: අවුරුදු හතක් මෙහෙකාර කම් කලේ ය | දවස් හතක් මෙහෙකාර කම් කලේ ය",A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,520,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0065,"දානයක් දෙද්දී කළ යුතු පිළිවෙල වන්නේ
+Options: බුද්ධ පූජාව තබා, සංඝයාට වලඳන්නට දී, ඉන්පසු ගිහියන්ට කෑමට දීමය ය | බුද්ධ පූජාව තබා, ගිහියන්ට කෑමට දී, ඉන්පසු සංඝයාට වලඳන්නට දීමය ය",A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,673,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0078,"පොලෙන් ගෙනා පලා කොළ ඉවීමට පෙර කුමක් කළ යුතු ද?
+Options: පණු බිත්තර යන්න හොඳින් වේලා ගත යුතු ය | පණු බිත්තර යන්න හොඳින් සෝදා ගත යුතු ය",B,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,600,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0072,"ආච්චි ගමන් බිමන් යන්නට භාවිතා කරන හැරමිටිය අස්ථානගත වී ඇත. එය සොයා ගන්නකන් ඇගේ පාවිච්චියට
+Options: ගිනිසීරියා ගසක් කපා හැරමිටියක් සාදා දෙන්න | මඤ්ඤොක්කා ගසක් කපා හැරමිටියක් සාදා දෙන්න",A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,642,40

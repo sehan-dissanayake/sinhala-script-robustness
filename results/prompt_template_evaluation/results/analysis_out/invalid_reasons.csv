@@ -1,0 +1,15 @@
+﻿dataset,template,model,count,example_raw_output
+sold,T3_answer_first,TinyLlama-1.1B-Chat-v1.0,36,"The text ""ප්‍රවෘත්ති මැදිරියේ න"
+sold,T1_direct,TinyLlama-1.1B-Chat-v1.0,35,"Response:
+
+Text: @USER @USER   ප්‍රවෘත්ති මැදිරි"
+sinhala_mmlu,T2_fewshot,zephyr-7b-beta,24,Question: තියාරා පියාරා පියාරා පියාරා �
+global_piqa,T2_fewshot,zephyr-7b-beta,20,Question: අත් සෝදා ගැනීමට වඩා
+global_piqa,T3_answer_first,TinyLlama-1.1B-Chat-v1.0,17,Both options are equally valid and suitable to complete the given text. The give
+sold,T2_fewshot,zephyr-7b-beta,15,Text: අද කාලගුණය හොඳයි. �
+sold,T2_fewshot,TinyLlama-1.1B-Chat-v1.0,14,"Response:
+
+Text: අද කාලගුණය ��������"
+global_piqa,T1_direct,TinyLlama-1.1B-Chat-v1.0,14,Both options are valid and acceptable answers to the given text. The given text 
+global_piqa,T2_fewshot,TinyLlama-1.1B-Chat-v1.0,6,Both options are correct and provide the same answer. The given text does not co
+sinhala_mmlu,T3_answer_first,zephyr-7b-beta,2,Answer: 6 (ඉතුළුහි ෆලු වල

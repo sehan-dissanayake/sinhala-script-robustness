@@ -1,0 +1,294 @@
+﻿model,dataset,template,script,id,original_question,gold_label,pred,pred_label,correct,raw_output,n_input_tokens,n_output_tokens
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0457,@USER @USER   ප්‍රවෘත්ති මැදිරියේ නව මුහුණුවර ජාත්‍යන්තරය හා සැසැඳෙනවා. ඒත් ‘නිව්ස් ටිකර්‘ එක කියවන්න චීනක්කණ්ණාඩියක් ඕනෑ වෙනවා. ඒ ගැනත් හිතන්න.,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER @USER   ප්‍රවෘත්ති මැදිරි",300,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0457,@USER @USER   prawruththi maediriyee nawa muhunuwara jaathyantharaya haa saesaendenawaa. eeth ‘niws tikar‘ eka kiyawanna chiinakkannaadiyak oonaae wenawaa. ee gaenath hithanna.,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER @USER   Prawruththi maediriyee nawa muhunuwara jaathyantharaya haa saesaenden",149,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0103,@USER පට්ට ගොන් ඩිසයින් එකක්නේ,OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER පට්ට ගොන් ඩිසයි",121,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0103,@USER patta gon disayin ekaknee,OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER patta gon disayin ekaknee
+Answer:
+
+Response:
+
+Text: @USER patta gon disayin ek",87,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_1127,උන් තමා ගවුන්ඩ් එකේ ඉදන් මැච් පැරදුනාම බෝතල් විසිකරන්නේ.. අඩු කුලේ පර හැත්ත #TweepsMatchOut #ගයියා @USER  · 31 Aug 2017 කුනුහර්ප කියාගෙන ලංකාවට බැනලා නෙගටිව් ටුයිට්  1ට 100ක්  දැම්මත් නෝ ටිකට්ස්. අපිට ඕනේ SL cricket fanz ල මිසක් බූරුවෝ නෙවෙයි.  #TweepsMatchOut,OFF,INVALID,INVALID,0,"Response:
+
+Text: උන් තමා ගවුන්ඩ් එකේ",446,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_1127,un thamaa gawund ekee idan maech paeradunaama boothal wisikarannee.. adu kulee para haeththa #TweepsMatchOut #gayiyaa @USER  · 31 Aug 2017 kunuharpa kiyaagena lankaawata baenalaa negatiw tuyit  1ta 100k  daemmath noo tikats. apita oonee SL cricket fanz la misak buuruwoo neweyi.  #TweepsMatchOut,OFF,INVALID,INVALID,0,"Response:
+
+Text: un thamaa gawund ekee idan maech paeradunaama boothal wisikarannee.. adu kulee para ha",203,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_1004,@USER ඒක පාස්කු කොමිසමට වැඩක් නෑනෙ... පාස්කු ප්‍රහාරය ගැන හොයන්න... කිව්වාලු අහින්සක බදූර්....,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER ඒක පාස්කු කොමිසමට",218,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_1004,@USER eeka paasku komisamata waedak naaene... paasku prahaaraya gaena hoyanna... kiwwaalu ahinsaka baduur....,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER eeka paasku komisamata waedak naaene... paasku prahaaraya gaena hoyanna... kiww",116,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0915,මිනිස්සු මෝඩ කතා කියති.ඒවාට සමාව දිය හැක.කියූ මෝඩ කතා සාධාරිණීකරණය කරන්න තක්කඩි කතා කියති.තක්කඩිකමට කිසිම සමාවක් නැත!!! #sayNotoBullshit,NOT,INVALID,INVALID,0,"Response:
+
+Text: මිනිස්සු මෝඩ කතා කි��",276,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0572,අඩෝ කීර්ති සර් අපිට කියන්නේ බැල්ලිගේ පුතාලා කියලා කේසිරි සර් කියන්නේ අවජාතක බල්ලෝ කියලා එතකොට අපි අවජාතක බැල්ලිගේ පුතාලාද ඕයි? #TutionConvos,OFF,INVALID,INVALID,0,"Response:
+
+Text: අඩෝ කීර්ති සර් අප",324,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0420,ඇට බෝල බලලා කාටද බන් හරි ගියේ???? පොතක් පතක් බලා ගනින් නැත්තම් ගහක් වටේ සුද්ද කරපන් පලයන් වහපන් ඔය රූප පෙට්ටිය...  #slvsafg,NOT,INVALID,INVALID,0,"Response:
+
+Text: ඇට බෝල බලලා කාට",288,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0420,aeta boola balalaa kaatada ban hari giyee???? pothak pathak balaa ganin naeththam gahak watee sudda karapan palayan wahapan oya ruupa pettiya...  #slvsafg,NOT,INVALID,INVALID,0,"Response:
+
+Text: aeta boola balalaa kaatada ban hari giyee???? pothak pathak balaa ganin naeththam gah",138,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_2234,URL  මෙයා හිතන්නෙ මහින්දට ඉන්නේ මොලේ නැති එවුන් කියල. රනිල්ගෙයි චන්ද්රිකාගෙයි පශ්චාත්භාගේ ලෙව කන ගමන් පට්ට කෙබර කියනවා.,OFF,INVALID,INVALID,0,"Response:
+
+Text: URL  මෙයා හිතන්නෙ මහින්��",278,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0357,රෙද්ද Amith Malinga @USER  · 2 Jan දවසක් ඒවී අපිත්,NOT,INVALID,INVALID,0,"Response:
+
+Text: රෙද්ද Amith Malinga @USER  · 2 Jan දවසක්",128,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0357,redda Amith Malinga @USER  · 2 Jan dawasak eewii apith,NOT,INVALID,INVALID,0,"Response:
+
+Text: redda Amith Malinga @USER  · 2 Jan dawasak eewii apith
+Answer:
+
+Question: Please classify the",97,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_2419,@USER අපේ රටේ තාක්ෂනය අධි සමාජගත වීමේ ප්‍රවනතාවක් තියෙනව. හැම රටකම එහෙම ඇති. ඒත් ඒරටවල මනා හික්මීමක් සහිත උගත් පාලන තන්ත්‍රයක් තියෙනව.අවාසනාවකට අපේ රටේ පාකයෝ මැටි අල,OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER අපේ රටේ තාක්ෂනය",366,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_2419,@USER apee ratee thaakshanaya adhi samaajagatha wiimee prawanathaawak thiyenawa. haema ratakama ehema aethi. eeth eeratawala manaa hikmiimak sahitha ugath paalana thanthrayak thiyenawa.awaasanaawakata apee ratee paakayoo maeti ala,OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER apee ratee thaakshanaya adhi samaajagatha wiimee prawanathaawak thiyen",173,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0131,@USER  @USER  @USER  : කිරුළපනට ආපු බස් එහෙක හැප්පිලා එක්කෙනෙක් මැරිල  : මොකක් කිව්ව ඇහුනෙ නෑ  #MediaFreedom #lka,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER  @USER  : කිරුළපනට ආප",218,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0131,@USER  @USER  @USER  : kirulapanata aapu bas eheka haeppilaa ekkenek maerila  : mokak kiwwa aehune naae  #MediaFreedom #lka,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER  @USER  : kirulapanata aapu bas eheka haeppilaa ekkenek maerila  :",127,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0123,"එකෙක් : උඹ ගැහුවා ද බං ? මං : නෑ  ඌ : බය නොවී ඕක ගහගනිං බං,  උඹ ඉස්කෝලේ රුබෙල්ලා ඉන්ජෙක්ෂන් විදින පෝලිමේ ඉස්සරලම ගිහින් ගහගත්තනේ, බය වෙන්ඩ එපා යකෝ",NOT,INVALID,INVALID,0,"Response:
+
+Text: එකෙක් : උඹ ගැහුවා",347,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0123,"ekek : umba gaehuwaa da ban ? man : naae  uu : baya nowii ooka gahaganin ban,  umba iskoolee rubellaa injekshan widina poolimee issaralama gihin gahagaththanee, baya wenda epaa yakoo",NOT,INVALID,INVALID,0,"Response:
+
+Text: ekek : umba gaehuwaa da ban ? man : naae  uu : baya nowii ooka gahaganin ban,",152,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0384,@USER  @USER මං නම් කැත හිතකිනි නෙමෙයි ඒක කිවේ චමල් අයියෙ. එහෙත් ඔයාව ෂුවර් නැ,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER මං නම් කැත හිතකිනි",195,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0384,@USER  @USER man nam kaetha hithakini nemeyi eeka kiwee chamal ayiye. eheth oyaawa shuwar nae,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER man nam kaetha hithakini nemeyi eeka kiwee chamal ayiye. eheth oya",114,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0896,වයිෆ් ගැබ් ගත්තහම ඇයගේ යෙහෙළියෝ #condratulation කියලා කියනවා  ඒත් කවුරුවත් හස්බන්ඩ්ගේ පිටට තට්ටුවක් දාලා good job කියලා කියන්නේ නැහැ.   මේක පට්ට අසාධාරණයි බං..,NOT,INVALID,INVALID,0,"Response:
+
+Text: වයිෆ් ගැබ් ගත්�����",333,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0896,wayif gaeb gaththahama aeyagee yeheliyoo #condratulation kiyalaa kiyanawaa  eeth kawuruwath hasbandgee pitata thattuwak daalaa good job kiyalaa kiyannee naehae.   meeka patta asaadhaaranayi ban..,NOT,INVALID,INVALID,0,"Response:
+
+Text: wayif gaeb gaththahama aeyagee yeheliyoo #condratulation kiyalaa kiyanawaa  eeth kaw",154,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0953,"@USER ගොඩයන්නට මැජික්. මාසෙකට charter ප්ලේන් 3 , 4ක් ආවම හෙන ලොකුයි. .  වෙන රටවල අලුත හදපු ගුවන් තොටුපොලවල් සමග සංචාරකන් පැමිණිම පොඩ්ඩක් සංසන්දනය කරලා බැලුවනම් තෙරෙයි මෙක අමු සුදු අලියෙක් කියලා.",NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER ගොඩයන්නට මැජික්.",416,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0953,"@USER godayannata maejik. maasekata charter pleen 3 , 4k aawama hena lokuyi. .  wena ratawala alutha hadapu guwan thotupolawal samaga sanchaarakan paeminima poddak sansandanaya karalaa baeluwanam thereyi meka amu sudu aliyek kiyalaa.",NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER godayannata maejik. maasekata charter pleen 3 , 4k aawama hena lokuyi. .",171,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_2070,මෙන්න මෙහෙමයි අපේ කාලේ කොල්ලෝ කෙල්ලෝ නාකි උනාම.. :D URL,NOT,INVALID,INVALID,0,"Response:
+
+Text: මෙන්න මෙහෙමයි අපේ",163,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_2070,menna mehemayi apee kaalee kolloo kelloo naaki unaama.. :D URL,NOT,INVALID,INVALID,0,"Response:
+
+Text: menna mehemayi apee kaalee kolloo kelloo naaki unaama.. :D
+URL: https://www.youtube.",100,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_2466,"@USER ,  @USER  @USER මුන් අරින කොට තොට අමාරැ වෙනවා",OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER ,  @USER  @USER මුන් අරින කොට ��",133,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_2466,"@USER ,  @USER  @USER mun arina kota thota amaarae wenawaa",OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER ,  @USER  @USER mun arina kota thota amaarae wenawaa
+Answer:
+
+Response:
+
+Text",98,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0109,@USER @USER  කහට නෙමේ බැක්ටීරියා දිලීර ලෙල්ලේ තැන්පත්වෙනවා. කටින් කැඩුවොත් ඒවා කටට යනවා @USER  @USER,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER @USER  කහට නෙමේ බැක්����",222,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0109,@USER @USER  kahata nemee baektiiriyaa diliira lellee thaenpathwenawaa. katin kaeduwoth eewaa katata yanawaa @USER  @USER,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER @USER  kahata nemee baektiiriyaa diliira lellee thaenpathwenawaa. katin",126,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_2299,ඔව් බං මේ ආත්මේ වගේ නාකි වෙනකං බලං ඉන්න බෑ ඒකිව හම්බෙන්න. ගැටවර වියේදිම මගේ වෙන්න ඕනි URL,NOT,INVALID,INVALID,0,"Response:
+
+Text: ඔව් බං මේ ආත්මේ ව��",223,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_2299,ow ban mee aathmee wagee naaki wenakan balan inna baae eekiwa hambenna. gaetawara wiyeedima magee wenna ooni URL,NOT,INVALID,INVALID,0,"Response:
+
+Text: ow ban mee aathmee wagee naaki wenakan balan inna baae eekiwa hambenna. gaetawara",121,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0457,@USER @USER   ප්‍රවෘත්ති මැදිරියේ නව මුහුණුවර ජාත්‍යන්තරය හා සැසැඳෙනවා. ඒත් ‘නිව්ස් ටිකර්‘ එක කියවන්න චීනක්කණ්ණාඩියක් ඕනෑ වෙනවා. ඒ ගැනත් හිතන්න.,NOT,INVALID,INVALID,0,"Response:
+
+Text: අද කාලගුණය ��������",492,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0457,@USER @USER   prawruththi maediriyee nawa muhunuwara jaathyantharaya haa saesaendenawaa. eeth ‘niws tikar‘ eka kiyawanna chiinakkannaadiyak oonaae wenawaa. ee gaenath hithanna.,NOT,INVALID,INVALID,0,Text: @USER @USER   prajathiya kandhaya kandhaya kandhaya kandhaya kandhaya kandhaya kandhaya,220,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_1004,@USER eeka paasku komisamata waedak naaene... paasku prahaaraya gaena hoyanna... kiwwaalu ahinsaka baduur....,NOT,INVALID,INVALID,0,Text: @USER eeka paasku komisamata waedak naaene... paasku prahaaraya gaena hoyanna... kiwwaalu ahins,187,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0915,මිනිස්සු මෝඩ කතා කියති.ඒවාට සමාව දිය හැක.කියූ මෝඩ කතා සාධාරිණීකරණය කරන්න තක්කඩි කතා කියති.තක්කඩිකමට කිසිම සමාවක් නැත!!! #sayNotoBullshit,NOT,INVALID,INVALID,0,"Response:
+
+Text: අද කාලගුණය ��������",468,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0420,ඇට බෝල බලලා කාටද බන් හරි ගියේ???? පොතක් පතක් බලා ගනින් නැත්තම් ගහක් වටේ සුද්ද කරපන් පලයන් වහපන් ඔය රූප පෙට්ටිය...  #slvsafg,NOT,INVALID,INVALID,0,"Response:
+
+Text: අද කාලගුණය ��������",480,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_2419,@USER අපේ රටේ තාක්ෂනය අධි සමාජගත වීමේ ප්‍රවනතාවක් තියෙනව. හැම රටකම එහෙම ඇති. ඒත් ඒරටවල මනා හික්මීමක් සහිත උගත් පාලන තන්ත්‍රයක් තියෙනව.අවාසනාවකට අපේ රටේ පාකයෝ මැටි අල,OFF,INVALID,INVALID,0,"Response:
+
+Text: අද කාලගුණය ��������",558,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_2419,@USER apee ratee thaakshanaya adhi samaajagatha wiimee prawanathaawak thiyenawa. haema ratakama ehema aethi. eeth eeratawala manaa hikmiimak sahitha ugath paalana thanthrayak thiyenawa.awaasanaawakata apee ratee paakayoo maeti ala,OFF,INVALID,INVALID,0,Text: @USER apee ratee thaakshanaya adhi samaajagatha wiimee prawanathaawak thiyenawa. Haema,244,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_1729,"“kawuda mee pissaa methanta genaawee “thotawaththata,maithriigeen kunu baenum:  URL",NOT,INVALID,INVALID,0,"Text: ""kawuda mee pissaa methanta genaawee ""thotawaththata,maithriigeen kunu baenum:  URL",182,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0384,@USER  @USER man nam kaetha hithakini nemeyi eeka kiwee chamal ayiye. eheth oyaawa shuwar nae,NOT,INVALID,INVALID,0,Text: @USER  @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @,185,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0896,වයිෆ් ගැබ් ගත්තහම ඇයගේ යෙහෙළියෝ #condratulation කියලා කියනවා  ඒත් කවුරුවත් හස්බන්ඩ්ගේ පිටට තට්ටුවක් දාලා good job කියලා කියන්නේ නැහැ.   මේක පට්ට අසාධාරණයි බං..,NOT,INVALID,INVALID,0,"Response:
+
+Text: අද කාලගුණය ��������",525,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0953,"@USER godayannata maejik. maasekata charter pleen 3 , 4k aawama hena lokuyi. .  wena ratawala alutha hadapu guwan thotupolawal samaga sanchaarakan paeminima poddak sansandanaya karalaa baeluwanam thereyi meka amu sudu aliyek kiyalaa.",NOT,INVALID,INVALID,0,"Text: @USER godayannata maejik. maasekata charter pleen 3 , 4k aawama hena lokuyi. .  wena r",242,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_2070,මෙන්න මෙහෙමයි අපේ කාලේ කොල්ලෝ කෙල්ලෝ නාකි උනාම.. :D URL,NOT,INVALID,INVALID,0,Text: අද කාලගුණය හොඳය,355,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_2466,"@USER ,  @USER  @USER මුන් අරින කොට තොට අමාරැ වෙනවා",OFF,INVALID,INVALID,0,"Response: @USER , @USER  @USER මුන් අරින කොට �������",325,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0109,@USER @USER  kahata nemee baektiiriyaa diliira lellee thaenpathwenawaa. katin kaeduwoth eewaa katata yanawaa @USER  @USER,NOT,INVALID,INVALID,0,Text: @USER @USER  kahata nemee baektiiriyaa diliira lellee thaenpathwenawaa. katin kaeduwoth,197,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0457,@USER @USER   ප්‍රවෘත්ති මැදිරියේ නව මුහුණුවර ජාත්‍යන්තරය හා සැසැඳෙනවා. ඒත් ‘නිව්ස් ටිකර්‘ එක කියවන්න චීනක්කණ්ණාඩියක් ඕනෑ වෙනවා. ඒ ගැනත් හිතන්න.,NOT,INVALID,INVALID,0,"The text ""ප්‍රවෘත්ති මැදිරියේ න",313,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0457,@USER @USER   prawruththi maediriyee nawa muhunuwara jaathyantharaya haa saesaendenawaa. eeth ‘niws tikar‘ eka kiyawanna chiinakkannaadiyak oonaae wenawaa. ee gaenath hithanna.,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER @USER   Prawruththi maediriyee nawa muhunuwara jaathyantharaya haa saesaenden",162,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0103,@USER පට්ට ගොන් ඩිසයින් එකක්නේ,OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER පට්ට ගොන් ඩිසයි",134,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_1127,උන් තමා ගවුන්ඩ් එකේ ඉදන් මැච් පැරදුනාම බෝතල් විසිකරන්නේ.. අඩු කුලේ පර හැත්ත #TweepsMatchOut #ගයියා @USER  · 31 Aug 2017 කුනුහර්ප කියාගෙන ලංකාවට බැනලා නෙගටිව් ටුයිට්  1ට 100ක්  දැම්මත් නෝ ටිකට්ස්. අපිට ඕනේ SL cricket fanz ල මිසක් බූරුවෝ නෙවෙයි.  #TweepsMatchOut,OFF,INVALID,INVALID,0,"The text ""උන් තමා ගවුන්ඩ් එකේ ඉ",459,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_1127,un thamaa gawund ekee idan maech paeradunaama boothal wisikarannee.. adu kulee para haeththa #TweepsMatchOut #gayiyaa @USER  · 31 Aug 2017 kunuharpa kiyaagena lankaawata baenalaa negatiw tuyit  1ta 100k  daemmath noo tikats. apita oonee SL cricket fanz la misak buuruwoo neweyi.  #TweepsMatchOut,OFF,INVALID,INVALID,0,"Based on the Sinhala text, ""un thamaa gawund ekee idan maech paeradunaama boothal wisikarannee.. adu k",216,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_1004,@USER ඒක පාස්කු කොමිසමට වැඩක් නෑනෙ... පාස්කු ප්‍රහාරය ගැන හොයන්න... කිව්වාලු අහින්සක බදූර්....,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER ඒක පාස්කු කොමිසමට",231,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_1004,@USER eeka paasku komisamata waedak naaene... paasku prahaaraya gaena hoyanna... kiwwaalu ahinsaka baduur....,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER eeka paasku komisamata waedak naaene... paasku prahaaraya gaena hoyanna... kiww",129,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0915,මිනිස්සු මෝඩ කතා කියති.ඒවාට සමාව දිය හැක.කියූ මෝඩ කතා සාධාරිණීකරණය කරන්න තක්කඩි කතා කියති.තක්කඩිකමට කිසිම සමාවක් නැත!!! #sayNotoBullshit,NOT,INVALID,INVALID,0,"The text ""මිනිස්සු මෝඩ කතා කියත",289,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0915,minissu mooda kathaa kiyathi.eewaata samaawa diya haeka.kiyuu mooda kathaa saadhaariniikaranaya karanna thakkadi kathaa kiyathi.thakkadikamata kisima samaawak naetha!!! #sayNotoBullshit,NOT,INVALID,INVALID,0,"Response: The text ""minissu mooda kathaa kiyathi.eewaata samaawa diya haeka.kiyuu mooda k",171,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0572,අඩෝ කීර්ති සර් අපිට කියන්නේ බැල්ලිගේ පුතාලා කියලා කේසිරි සර් කියන්නේ අවජාතක බල්ලෝ කියලා එතකොට අපි අවජාතක බැල්ලිගේ පුතාලාද ඕයි? #TutionConvos,OFF,INVALID,INVALID,0,"Based on the given text, ""අඩෝ කීර්ති සර් �����",337,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0572,adoo kiirthi sar apita kiyannee baelligee puthaalaa kiyalaa keesiri sar kiyannee awajaathaka balloo kiyalaa ethakota api awajaathaka baelligee puthaalaada ooyi? #TutionConvos,OFF,INVALID,INVALID,0,"Response:
+
+Text: adoo kiirthi sar apita kiyannee baelligee puthaalaa kiyalaa keesiri sar kiyannee awaja",155,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0420,ඇට බෝල බලලා කාටද බන් හරි ගියේ???? පොතක් පතක් බලා ගනින් නැත්තම් ගහක් වටේ සුද්ද කරපන් පලයන් වහපන් ඔය රූප පෙට්ටිය...  #slvsafg,NOT,INVALID,INVALID,0,"Based on the given text, ""ඇට බෝල බලලා කා��",301,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0420,aeta boola balalaa kaatada ban hari giyee???? pothak pathak balaa ganin naeththam gahak watee sudda karapan palayan wahapan oya ruupa pettiya...  #slvsafg,NOT,INVALID,INVALID,0,"Based on the given text, ""aeta boola balalaa kaatada ban hari giyee???? pothak pathak balaa ganin naeththam",151,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_2234,URL  මෙයා හිතන්නෙ මහින්දට ඉන්නේ මොලේ නැති එවුන් කියල. රනිල්ගෙයි චන්ද්රිකාගෙයි පශ්චාත්භාගේ ලෙව කන ගමන් පට්ට කෙබර කියනවා.,OFF,INVALID,INVALID,0,"Based on the given text, ""URL"" is a website, and the text ""මෙයා හිතන්නෙ",291,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_2234,URL  meyaa hithanne mahindata innee molee naethi ewun kiyala. ranilgeyi chandrikaageyi pashchaathbhaagee lewa kana gaman patta kebara kiyanawaa.,OFF,INVALID,INVALID,0,"Response:
+
+Text: URL meyaa hithanne mahindata innee molee naethi ewun kiyala. Ranilgeyi chandrikaageyi",146,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0357,රෙද්ද Amith Malinga @USER  · 2 Jan දවසක් ඒවී අපිත්,NOT,INVALID,INVALID,0,"Based on the given text, ""දවසක් ඒවී අපිත්"" means """,141,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_2419,@USER අපේ රටේ තාක්ෂනය අධි සමාජගත වීමේ ප්‍රවනතාවක් තියෙනව. හැම රටකම එහෙම ඇති. ඒත් ඒරටවල මනා හික්මීමක් සහිත උගත් පාලන තන්ත්‍රයක් තියෙනව.අවාසනාවකට අපේ රටේ පාකයෝ මැටි අල,OFF,INVALID,INVALID,0,"The text ""අපේ රටේ තාක්ෂනය �����",379,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_2419,@USER apee ratee thaakshanaya adhi samaajagatha wiimee prawanathaawak thiyenawa. haema ratakama ehema aethi. eeth eeratawala manaa hikmiimak sahitha ugath paalana thanthrayak thiyenawa.awaasanaawakata apee ratee paakayoo maeti ala,OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER apee ratee thaakshanaya adhi samaajagatha wiimee prawanathaawak thiyen",186,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_1729,"“කවුද මේ පිස්සා මෙතන්ට ගෙනාවේ “තොටවත්තට,මෛත්‍රීගේන් කුණු බැනුම්:  URL",NOT,INVALID,INVALID,0,"Response:
+
+Text: ""කවුද මේ පිස්සා ම�����",210,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_1729,"“kawuda mee pissaa methanta genaawee “thotawaththata,maithriigeen kunu baenum:  URL",NOT,INVALID,INVALID,0,"Response:
+
+Text: ""kawuda mee pissaa methanta genaawee ""thotawaththata,maithriigeen kunu baenum",124,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0131,@USER  @USER  @USER  : කිරුළපනට ආපු බස් එහෙක හැප්පිලා එක්කෙනෙක් මැරිල  : මොකක් කිව්ව ඇහුනෙ නෑ  #MediaFreedom #lka,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER  @USER  : කිරුළපනට ආප",231,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0131,@USER  @USER  @USER  : kirulapanata aapu bas eheka haeppilaa ekkenek maerila  : mokak kiwwa aehune naae  #MediaFreedom #lka,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER  @USER  : kirulapanata aapu bas eheka haeppilaa ekkenek maerila  :",140,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0123,"එකෙක් : උඹ ගැහුවා ද බං ? මං : නෑ  ඌ : බය නොවී ඕක ගහගනිං බං,  උඹ ඉස්කෝලේ රුබෙල්ලා ඉන්ජෙක්ෂන් විදින පෝලිමේ ඉස්සරලම ගිහින් ගහගත්තනේ, බය වෙන්ඩ එපා යකෝ",NOT,INVALID,INVALID,0,Text: එකෙක් : උඹ ගැහුවා ද,360,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0123,"ekek : umba gaehuwaa da ban ? man : naae  uu : baya nowii ooka gahaganin ban,  umba iskoolee rubellaa injekshan widina poolimee issaralama gihin gahagaththanee, baya wenda epaa yakoo",NOT,INVALID,INVALID,0,"Response:
+
+Text: ekek : umba gaehuwaa da ban ? man : naae  uu : baya nowii ooka gahaganin ban,",165,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0384,@USER  @USER මං නම් කැත හිතකිනි නෙමෙයි ඒක කිවේ චමල් අයියෙ. එහෙත් ඔයාව ෂුවර් නැ,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER මං නම් කැත හිතකිනි",208,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0384,@USER  @USER man nam kaetha hithakini nemeyi eeka kiwee chamal ayiye. eheth oyaawa shuwar nae,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER man nam kaetha hithakini nemeyi eeka kiwee chamal ayiye. eheth oya",127,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0896,වයිෆ් ගැබ් ගත්තහම ඇයගේ යෙහෙළියෝ #condratulation කියලා කියනවා  ඒත් කවුරුවත් හස්බන්ඩ්ගේ පිටට තට්ටුවක් දාලා good job කියලා කියන්නේ නැහැ.   මේක පට්ට අසාධාරණයි බං..,NOT,INVALID,INVALID,0,"The text ""වයිෆ් ගැබ් ගත්තහම �",346,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0896,wayif gaeb gaththahama aeyagee yeheliyoo #condratulation kiyalaa kiyanawaa  eeth kawuruwath hasbandgee pitata thattuwak daalaa good job kiyalaa kiyannee naehae.   meeka patta asaadhaaranayi ban..,NOT,INVALID,INVALID,0,"Based on the given text, ""wayif gaeb gaththahama aeyagee yeheliyoo #condratulation kiyalaa kiyanawaa  eeth",167,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0953,"@USER ගොඩයන්නට මැජික්. මාසෙකට charter ප්ලේන් 3 , 4ක් ආවම හෙන ලොකුයි. .  වෙන රටවල අලුත හදපු ගුවන් තොටුපොලවල් සමග සංචාරකන් පැමිණිම පොඩ්ඩක් සංසන්දනය කරලා බැලුවනම් තෙරෙයි මෙක අමු සුදු අලියෙක් කියලා.",NOT,INVALID,INVALID,0,"The text ""ගොඩයන්නට මැජික්. මා����",429,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0953,"@USER godayannata maejik. maasekata charter pleen 3 , 4k aawama hena lokuyi. .  wena ratawala alutha hadapu guwan thotupolawal samaga sanchaarakan paeminima poddak sansandanaya karalaa baeluwanam thereyi meka amu sudu aliyek kiyalaa.",NOT,INVALID,INVALID,0,"Based on the given text, ""godayannata maejik. maasekata charter pleen 3 , 4k aawama hena lokuyi. .",184,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_2070,මෙන්න මෙහෙමයි අපේ කාලේ කොල්ලෝ කෙල්ලෝ නාකි උනාම.. :D URL,NOT,INVALID,INVALID,0,"Response:
+
+Text: මෙන්න මෙහෙමයි අපේ",176,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_2466,"@USER ,  @USER  @USER මුන් අරින කොට තොට අමාරැ වෙනවා",OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER ,  @USER  @USER මුන් අරින කොට ��",146,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0109,@USER @USER  කහට නෙමේ බැක්ටීරියා දිලීර ලෙල්ලේ තැන්පත්වෙනවා. කටින් කැඩුවොත් ඒවා කටට යනවා @USER  @USER,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER @USER  කහට නෙමේ බැක්����",235,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0109,@USER @USER  kahata nemee baektiiriyaa diliira lellee thaenpathwenawaa. katin kaeduwoth eewaa katata yanawaa @USER  @USER,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER @USER  kahata nemee baektiiriyaa diliira lellee thaenpathwenawaa. katin",139,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_2299,ඔව් බං මේ ආත්මේ වගේ නාකි වෙනකං බලං ඉන්න බෑ ඒකිව හම්බෙන්න. ගැටවර වියේදිම මගේ වෙන්න ඕනි URL,NOT,INVALID,INVALID,0,"Response:
+
+Text: ඔව් බං මේ ආත්මේ ව��",236,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_2299,ow ban mee aathmee wagee naaki wenakan balan inna baae eekiwa hambenna. gaetawara wiyeedima magee wenna ooni URL,NOT,INVALID,INVALID,0,"Response:
+
+Text: ""OW BAN MEE AATHMEE WAGEE NAAKI WENAKAN BALAN INNA BAE EEKIWA HAM",134,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0082,"ගොපල්ලන් රෑ හඳ පානේ තම ගවයන් සොයා ගන්නේ කුමක් ගැන ඇස ගසා සිටීමෙන් ද?
+Options: කිරි කොහි ඇත්දැයි බලාකියා ගෙන ය | ගොම කොහි ඇත්දැයි බලාකියා ගෙන ය",B,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The given text is asking for a number, and the question does not specify which option is the best one to complete the given text.",319,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0015,"දුටු ගැමුණු රජු මරණාසන්න බව දුටු සද්ධාතිස්ස කුමරා
+Options: රුවන්වැලි සෑය වැලි වලින් වසා වෑඩ ඉවර කල සේ පෙන්වී ය | රුවන්වැලි සෑය රෙදි වලින් වසා වෑඩ ඉවර කල සේ පෙන්වී ය",B,INVALID,INVALID,0,"Both options are valid and can be used to complete the given text. The given text is asking for a recommendation for a good option to complete the given task, and both options are valid. The",355,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0015,"dutu gaemunu raju maranaasanna bawa dutu saddhaathissa kumaraa
+Options: ruwanwaeli saaeya waeli walin wasaa waaeda iwara kala see penwii ya | ruwanwaeli saaeya redi walin wasaa waaeda iwara kala see penwii ya",B,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The given text is asking for a translation of the phrase ""dutu gaemunu raju maranaasanna bawa",153,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0004,"සුදු වෙන්නට සිතා ලංකාවේ සමහරු වදකහ සුදිය බිවුවේ
+Options: සූර්යග්‍රහණයක් වේලාවේ ය. | චන්ද්‍රග්‍රහණයක් වේලාවේ ය.",A,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The given text is asking for a recommendation, and the options provided are both valid and acceptable. The question does not require th",259,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0018,"geta ringuu gaerandiyeku elawiimata sudusuma kramaya kumak da?
+Options: polthel pengawuu paankadayak diga kootuwaka othaa gaerandiyaagee aengee gaanna | bhuumithel pengawuu paankadayak diga kootuwaka othaa gaerandiyaagee aengee gaanna",B,INVALID,INVALID,0,"Both options are equally valid and acceptable in completing the given text. The given text is asking for a recommendation, and the two options provided are both acceptable. The given text does not spe",171,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0012,"පරංගියා කෝට්ටේ ගියා කිවූ සිද්දියේ වුනේ මොකක් ද?
+Options: පෘතුගීසීකාරයන් රවටා දුර පාරකින් අගනුවට ගෙන ගිය එකය | පෘතුගීසීකාරයන් රවටා ළඟ පාරකින් අගනුවට ගෙන ගිය එකය",A,INVALID,INVALID,0,"Both options are valid and can be used to complete the given text. The given text mentions that ""පරංගියා ක��",352,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0012,"parangiyaa koottee giyaa kiwuu siddiyee wunee mokak da?
+Options: pruthugiisiikaarayan rawataa dura paarakin aganuwata gena giya ekaya | pruthugiisiikaarayan rawataa langa paarakin aganuwata gena giya ekaya",A,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The given text is asking for a recommendation, and the options provided are both valid and acceptable. The best option to complete the ",156,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0028,"padinchiya aadii baahira dee kopamana wenas kalath janmayen aa gathi nowenas wana bawa kiyannee
+Options: kaelee maaru kalath kotiyaagee pulli maaru nowee | pulli maaru kalath kotiyaagee kaelee maaru nowee",A,INVALID,INVALID,0,"Both options are equally good options to complete the given text. The given text is a sentence with two options for the word ""kalath"" (which is a noun). The first option,",144,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0030,"දික්තල දිනා ගැනීමට කාලගෝල
+Options: අවුරුදු හතක් මෙහෙකාර කම් කලේ ය | දවස් හතක් මෙහෙකාර කම් කලේ ය",A,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The given text only asks for the best option, and the answer does not matter. The question is not asking for the number, but",226,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0065,"දානයක් දෙද්දී කළ යුතු පිළිවෙල වන්නේ
+Options: බුද්ධ පූජාව තබා, සංඝයාට වලඳන්නට දී, ඉන්පසු ගිහියන්ට කෑමට දීමය ය | බුද්ධ පූජාව තබා, ගිහියන්ට කෑමට දී, ඉන්පසු සංඝයාට වලඳන්නට දීමය ය",A,INVALID,INVALID,0,"Both options are valid and can be used to complete the given text. The given text mentions that ""දානයක් ��������",401,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0065,"daanayak deddii kala yuthu piliwela wannee
+Options: buddha puujaawa thabaa, sanghayaata walandannata dii, inpasu gihiyanta kaaemata diimaya ya | buddha puujaawa thabaa, gihiyanta kaaemata dii, inpasu sanghayaata walandannata diimaya ya",A,INVALID,INVALID,0,"Both options are equally valid and acceptable in completing the given text. The given text is a sentence, and the given options are the correct answers. The given text does not require repeating the q",165,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0078,"පොලෙන් ගෙනා පලා කොළ ඉවීමට පෙර කුමක් කළ යුතු ද?
+Options: පණු බිත්තර යන්න හොඳින් වේලා ගත යුතු ය | පණු බිත්තර යන්න හොඳින් සෝදා ගත යුතු ය",B,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The given text is asking for a number, and the question does not specify which option is the best one to complete the given text.",316,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0072,"ආච්චි ගමන් බිමන් යන්නට භාවිතා කරන හැරමිටිය අස්ථානගත වී ඇත. එය සොයා ගන්නකන් ඇගේ පාවිච්චියට
+Options: ගිනිසීරියා ගසක් කපා හැරමිටියක් සාදා දෙන්න | මඤ්ඤොක්කා ගසක් කපා හැරමිටියක් සාදා දෙන්න",A,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The first option, ""ගිනිසීරියා ග",372,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0072,"aachchi gaman biman yannata bhaawithaa karana haeramitiya asthaanagatha wii aetha. eya soyaa gannakan aegee paawichchiyata
+Options: ginisiiriyaa gasak kapaa haeramitiyak saadaa denna | manynyokkaa gasak kapaa haeramitiyak saadaa denna",A,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The given text is asking for a translation of the phrase ""aetha. eya soyaa gannakan aeg",167,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0036,"daskon haa pramilaa athara wuu aniyam sambandhathaawa shrii wiira paraakrama narendrasinha rajuta hasuwuuyee daskon kumak kala wita da?
+Options: pramilaa bisawata waeladii thibuu saankaa dooshayak wenuwen kala bali yaagayaka dii aegee ruwata samaana maetiyen kala ruwak nima wuu wita daskon gos ehi kalawayehi upan lapayak salakunu kala wita. | pramilaa bisawata waeladii thibuu saankaa dooshayak wenuwen kala bali yaagayaka dii aegee ruwata samaana maetiyen kala ruwak nima wuu wita daskon gos ehi nalalehi upan lapayak salakunu kala wita.",A,INVALID,INVALID,0,Both options are correct and provide the same answer. The given text does not contain any information about the best option to complete the given text.,414,30
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0018,"ගෙට රිංගූ ගැරඬියෙකු එළවීමට සුදුසුම ක්‍රමය කුමක් ද?
+Options: පොල්තෙල් පෙඟවූ පාන්කඩයක් දිග කෝටුවක ඔතා ගැරඬියාගේ ඇඟේ ගාන්න | භූමිතෙල් පෙඟවූ පාන්කඩයක් දිග කෝටුවක ඔතා ගැරඬියාගේ ඇඟේ ගාන්න",B,INVALID,INVALID,0,"Both options are correct and provide the best answer to the given text. The first option, ""අත් සෝදා �",726,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0070,"මරණ තුනක් ඇති මිනිහෙක් පැණි කෑවේ කුමන විට ද?
+Options: වලේ නයෙක් ද කැලේ අලියෙක් ද අතේ කරවැලක් ද වූ විට ය | වලේ අලියෙක් ද කැලේ නයෙක් ද අතේ කරවැලක් ද වූ විට ය",A,INVALID,INVALID,0,"Both options are correct and provide the best answer to the given text. The first option, ""අත් සෝදා �",650,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0012,"පරංගියා කෝට්ටේ ගියා කිවූ සිද්දියේ වුනේ මොකක් ද?
+Options: පෘතුගීසීකාරයන් රවටා දුර පාරකින් අගනුවට ගෙන ගිය එකය | පෘතුගීසීකාරයන් රවටා ළඟ පාරකින් අගනුවට ගෙන ගිය එකය",A,INVALID,INVALID,0,Both options are correct and provide the correct answer to the given text. The given text is asking which of the two options is the best to complete the given text. The given text does not provide,668,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0065,"දානයක් දෙද්දී කළ යුතු පිළිවෙල වන්නේ
+Options: බුද්ධ පූජාව තබා, සංඝයාට වලඳන්නට දී, ඉන්පසු ගිහියන්ට කෑමට දීමය ය | බුද්ධ පූජාව තබා, ගිහියන්ට කෑමට දී, ඉන්පසු සංඝයාට වලඳන්නට දීමය ය",A,INVALID,INVALID,0,"Both options are correct and provide the best answer to the given text. The first option, ""අත් සෝදා �",717,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0078,"පොලෙන් ගෙනා පලා කොළ ඉවීමට පෙර කුමක් කළ යුතු ද?
+Options: පණු බිත්තර යන්න හොඳින් වේලා ගත යුතු ය | පණු බිත්තර යන්න හොඳින් සෝදා ගත යුතු ය",B,INVALID,INVALID,0,"Both options are correct and provide the best answer to the given text. The first option, ""අත් සෝදා �",632,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0082,"gopallan raae handa paanee thama gawayan soyaa gannee kumak gaena aesa gasaa sitiimen da?
+Options: kiri kohi aethdaeyi balaakiyaa gena ya | goma kohi aethdaeyi balaakiyaa gena ya",B,INVALID,INVALID,0,"Both options are equally valid and suitable to complete the given text. The given text is asking for a specific action, which can be completed by either option. The first option, ""kiri k",158,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0015,"දුටු ගැමුණු රජු මරණාසන්න බව දුටු සද්ධාතිස්ස කුමරා
+Options: රුවන්වැලි සෑය වැලි වලින් වසා වෑඩ ඉවර කල සේ පෙන්වී ය | රුවන්වැලි සෑය රෙදි වලින් වසා වෑඩ ඉවර කල සේ පෙන්වී ය",B,INVALID,INVALID,0,"Both options are equally effective in completing the given text. The first option, ""දුටු ගැම��",369,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0004,"sudu wennata sithaa lankaawee samaharu wadakaha sudiya biwuwee
+Options: suuryagrahanayak weelaawee ya. | chandragrahanayak weelaawee ya.",A,INVALID,INVALID,0,"Both options are equally valid and suitable to complete the given text. The given text is a sentence fragment, and the first option ""sudu whenta sithaa lankaawee",141,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0095,"paaree aewidina wita ira muhunata waetiima waelakwiimata
+Options: kadadaasiyakin muhuna wasaa ganna | athin muhuna wasaa ganna",B,INVALID,INVALID,0,"Both options are equally valid and appropriate to complete the given text. The given text is asking for a translation of a phrase in Arabic, and both options provide a translation. The first option,",133,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0036,"daskon haa pramilaa athara wuu aniyam sambandhathaawa shrii wiira paraakrama narendrasinha rajuta hasuwuuyee daskon kumak kala wita da?
+Options: pramilaa bisawata waeladii thibuu saankaa dooshayak wenuwen kala bali yaagayaka dii aegee ruwata samaana maetiyen kala ruwak nima wuu wita daskon gos ehi kalawayehi upan lapayak salakunu kala wita. | pramilaa bisawata waeladii thibuu saankaa dooshayak wenuwen kala bali yaagayaka dii aegee ruwata samaana maetiyen kala ruwak nima wuu wita daskon gos ehi nalalehi upan lapayak salakunu kala wita.",A,INVALID,INVALID,0,"Both options are equally valid and suitable to complete the given text. The given text is asking for a recommendation for a specific type of flower, and both options provide a recommendation for the s",307,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0032,"daladaawa lankaawata genaawee kesee sangawaa gena da?
+Options: kondaya assee hangaagena ya | pothak assee hangaagena ya",A,INVALID,INVALID,0,"Both options are equally valid and acceptable. The given text is asking for a specific answer, and the question does not specify which option is preferred. Therefore, the best option to complete the g",128,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0029,"dhiiwarayan muudu yannee mona kaalayata da?
+Options: haraawa kaalayata ya | waarakan kaalayata ya",A,INVALID,INVALID,0,"Both options are equally valid and acceptable. The given text does not specify which option is the best to complete the given sentence. Therefore, the answer is ""dhiiwarayan muudu",121,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0018,"ගෙට රිංගූ ගැරඬියෙකු එළවීමට සුදුසුම ක්‍රමය කුමක් ද?
+Options: පොල්තෙල් පෙඟවූ පාන්කඩයක් දිග කෝටුවක ඔතා ගැරඬියාගේ ඇඟේ ගාන්න | භූමිතෙල් පෙඟවූ පාන්කඩයක් දිග කෝටුවක ඔතා ගැරඬියාගේ ඇඟේ ගාන්න",B,INVALID,INVALID,0,"Both options are valid and can be used to complete the given text. The given text mentions that ""ගෙට රි�������",424,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0014,"අනුලා රැජිණගේ ස්වාමි පුරුෂයන්ට ඇය කුමක් කලා ද?
+Options: වස දී මැරුවා ය | බස දී මැරුවා ය",A,INVALID,INVALID,0,"Both options are equally valid and appropriate to complete the given text. The given text is a question, and the answer is not relevant to the question. Therefore, the best option to complete the give",228,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0087,"maeti pahanak miitar dekaka pamana usaka sita bimata waetunoth
+Options: eya bindeyi | eya thaeleyi",A,INVALID,INVALID,0,"Both options are equally valid and acceptable. The given text ""maeti pahanak miitar dekaka pamana usaka sita bimata waetunoth"" can be",121,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0005,"මී පැණි කඩන්නට ලණුවක එල්ලී හෙලට බසින්නා බොහෝ විට ඒ ලණුව අල්ලා ගන්නට දෙන්නේ
+Options: තම සහෝදරයාට ය | තම මස්සිනාට ය",B,INVALID,INVALID,0,"Both options are equally valid and suitable to complete the given text. The given text is asking for a recommendation, and both options are suitable for this purpose. The first option, ""ත",286,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0028,"පදිංචිය ආදී බාහිර දේ කොපමණ වෙනස් කලත් ජන්මයෙන් ආ ගති නොවෙනස් වන බව කියන්නේ
+Options: කැලේ මාරු කලත් කොටියාගේ පුල්ලි මාරු නොවේ | පුල්ලි මාරු කලත් කොටියාගේ කැලේ මාරු නොවේ",A,INVALID,INVALID,0,"Both options are equally valid and appropriate to complete the given text. The given text is asking for a recommendation, and the first option is a recommendation to complete the task, while the secon",376,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0028,"padinchiya aadii baahira dee kopamana wenas kalath janmayen aa gathi nowenas wana bawa kiyannee
+Options: kaelee maaru kalath kotiyaagee pulli maaru nowee | pulli maaru kalath kotiyaagee kaelee maaru nowee",A,INVALID,INVALID,0,"Based on the given text, the best option to complete the given text is ""kaelee maaru kalath kotiyaagee pulli maaru nowee."" The answer number is",158,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0030,"dikthala dinaa gaeniimata kaalagoola
+Options: awurudu hathak mehekaara kam kalee ya | dawas hathak mehekaara kam kalee ya",A,INVALID,INVALID,0,"Both options are equally valid and acceptable. The given text ""dikthala dinaa gaeniimata kaalagoola"" means ""the sun is setting on the horizon""",130,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0065,"දානයක් දෙද්දී කළ යුතු පිළිවෙල වන්නේ
+Options: බුද්ධ පූජාව තබා, සංඝයාට වලඳන්නට දී, ඉන්පසු ගිහියන්ට කෑමට දීමය ය | බුද්ධ පූජාව තබා, ගිහියන්ට කෑමට දී, ඉන්පසු සංඝයාට වලඳන්නට දීමය ය",A,INVALID,INVALID,0,"Both options are valid and can be used to complete the given text. The first option, ""දානයක් දෙද",415,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0072,"ආච්චි ගමන් බිමන් යන්නට භාවිතා කරන හැරමිටිය අස්ථානගත වී ඇත. එය සොයා ගන්නකන් ඇගේ පාවිච්චියට
+Options: ගිනිසීරියා ගසක් කපා හැරමිටියක් සාදා දෙන්න | මඤ්ඤොක්කා ගසක් කපා හැරමිටියක් සාදා දෙන්න",A,INVALID,INVALID,0,"Both options are equally effective in completing the given text. The first option, ""ආච්චි ගමන් බ",386,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0072,"aachchi gaman biman yannata bhaawithaa karana haeramitiya asthaanagatha wii aetha. eya soyaa gannakan aegee paawichchiyata
+Options: ginisiiriyaa gasak kapaa haeramitiyak saadaa denna | manynyokkaa gasak kapaa haeramitiyak saadaa denna",A,INVALID,INVALID,0,"Both options are equally valid and suitable to complete the given text. The given text is asking for a specific action, which can be completed by either option. The given text does not specify which o",181,40
