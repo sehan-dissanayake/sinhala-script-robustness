@@ -30,14 +30,14 @@ MODELS = [
         "label": "Hormoz-8B",
         "reasoning_mode": "none",
         "load_in_8bit": False,
-        "prompt_template": "T3_answer_first",
+        "prompt_template": "T1_direct",
     },
     {
         "id": "HuggingFaceTB/SmolLM3-3B",
         "label": "SmolLM3-3B",
         "reasoning_mode": "no_think",        # suppresses <think>...</think>
         "load_in_8bit": False,
-        "prompt_template": "T2_fewshot",
+        "prompt_template": "T1_direct",
     },
     {
         "id": "HuggingFaceH4/zephyr-7b-beta",
