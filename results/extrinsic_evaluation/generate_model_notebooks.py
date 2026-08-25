@@ -1,75 +1,182 @@
-{
- "cells": [
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "# Extrinsic Downstream Task Evaluation\n",
-    "## Sinhala Script Robustness — Unicode vs Romanized"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## 1. Configuration"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "trusted": true
-   },
-   "outputs": [],
-   "source": [
-    "# ============================================================\n",
-    "# MODEL CONFIGURATION — CHANGE ONLY THIS CELL TO SWITCH MODELS\n",
-    "# ============================================================\n",
-    "\n",
-    "MODEL_ID    = \"microsoft/phi-4\"    # HuggingFace model ID\n",
-    "PROMPT_TEMPLATE = \"T1_direct\"\n",
-    "MODEL_LABEL = \"Phi-4\"              # Short label for filenames & tables\n",
-    "MAX_NEW_TOKENS = 40                 # Max tokens to generate per response\n",
-    "TEMPERATURE    = 0.0                # Greedy decoding (deterministic, zero-shot)\n",
-    "MAX_INPUT_TOKENS = 4096             # Truncate prompts longer than this (safety margin)\n",
-    "\n",
-    "# Set True only for large models that won't fit in fp16 across 2x T4 (32GB total).\n",
-    "LOAD_IN_8BIT = False\n",
-    "\n",
-    "# If a previous run's CSV for this model+dataset already exists, skip ids already completed\n",
-    "# instead of starting over. Protects against Kaggle session interruptions on a ~4,451-item run.\n",
-    "RESUME = True\n",
-    "\n",
-    "# Dataset paths (update if your Kaggle dataset mount differs)\n",
-    "DATA_DIR = \"/kaggle/input/sinhala-eval-datasets\"  # Folder containing the 3 JSONL files\n",
-    "\n",
-    "# Output prefix (auto-generated from MODEL_LABEL)\n",
-    "import re\n",
-    "OUTPUT_PREFIX = re.sub(r\"[^a-z0-9]+\", \"_\", MODEL_LABEL.lower()).strip(\"_\")\n",
-    "\n",
-    "print(f\"Model:        {MODEL_ID}\")\n",
-    "print(f\"Label:        {MODEL_LABEL}\")\n",
-    "print(f\"8-bit:        {LOAD_IN_8BIT}\")\n",
-    "print(f\"Resume:       {RESUME}\")\n",
-    "print(f\"Output:       {OUTPUT_PREFIX}_*.csv\")"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## 2. Environment Setup & Hardware Verification"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "trusted": true
-   },
-   "outputs": [],
-   "source": [
+"""
+Generate one extrinsic-evaluation notebook per model under
+results/extrinsic_evaluation/updated/<model_label>/extrinsic-evaluation-<model_label>.ipynb
+
+Key differences from the base notebook (extrinsic-evaluation.ipynb):
+  - Section 1 config cell is pre-filled for each model with:
+      MODEL_ID, MODEL_LABEL, LOAD_IN_8BIT, PROMPT_TEMPLATE, REASONING_MODE
+  - The generation engine is updated (from prompt-evaluation.ipynb) to support
+    REASONING_MODE  ("none" | "no_think" | "enable_thinking_false")
+  - Call sites pass reasoning_mode=REASONING_MODE through generate_response()
+"""
+
+import json
+import os
+from pathlib import Path
+
+# ---------------------------------------------------------------------------
+# MODEL REGISTRY
+# ---------------------------------------------------------------------------
+MODELS = [
+    {
+        "id": "microsoft/phi-4",
+        "label": "Phi-4",
+        "reasoning_mode": "none",
+        "load_in_8bit": False,
+        "prompt_template": "T1_direct",
+    },
+    {
+        "id": "mann-e/Hormoz-8B",
+        "label": "Hormoz-8B",
+        "reasoning_mode": "none",
+        "load_in_8bit": False,
+        "prompt_template": "T3_answer_first",
+    },
+    {
+        "id": "HuggingFaceTB/SmolLM3-3B",
+        "label": "SmolLM3-3B",
+        "reasoning_mode": "no_think",        # suppresses <think>...</think>
+        "load_in_8bit": False,
+        "prompt_template": "T2_fewshot",
+    },
+    {
+        "id": "HuggingFaceH4/zephyr-7b-beta",
+        "label": "zephyr-7b-beta",
+        "reasoning_mode": "none",
+        "load_in_8bit": False,
+        "prompt_template": "T1_direct",
+    },
+    {
+        "id": "stabilityai/stablelm-zephyr-3b",
+        "label": "stablelm-zephyr-3b",
+        "reasoning_mode": "none",
+        "load_in_8bit": False,
+        "prompt_template": "T1_direct",
+    },
+    {
+        "id": "MBZUAI/LaMini-GPT-1.5B",
+        "label": "LaMini-GPT-1.5B",
+        "reasoning_mode": "none",
+        "load_in_8bit": False,
+        "prompt_template": "T1_direct",
+    },
+    {
+        "id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+        "label": "TinyLlama-1.1B-Chat-v1.0",
+        "reasoning_mode": "none",
+        "load_in_8bit": False,
+        "prompt_template": "T1_direct",
+    },
+    {
+        "id": "Qwen/Qwen3.5-4B",
+        "label": "Qwen-3.5-4B",
+        "reasoning_mode": "enable_thinking_false",  # Qwen3.5-style kwarg
+        "load_in_8bit": False,
+        "prompt_template": "T1_direct",
+    },
+    {
+        "id": "Qwen/Qwen3.5-9B",
+        "label": "Qwen-3.5-9B",
+        "reasoning_mode": "enable_thinking_false",  # Qwen3.5-style kwarg
+        "load_in_8bit": True,   # 9B won't fit in fp16 across 2x T4
+        "prompt_template": "T1_direct",
+    },
+    {
+        "id": "meta-llama/Llama-3.1-8B-Instruct",
+        "label": "Llama-3.1-8B-Instruct",
+        "reasoning_mode": "none",
+        "load_in_8bit": False,
+        "prompt_template": "T1_direct",
+    },
+    {
+        "id": "Qwen/Qwen2-7B-Instruct",
+        "label": "Qwen2-7B-Instruct",
+        "reasoning_mode": "none",
+        "load_in_8bit": False,
+        "prompt_template": "T1_direct",
+    },
+]
+
+# ---------------------------------------------------------------------------
+# NOTEBOOK CELL BUILDERS
+# ---------------------------------------------------------------------------
+
+def md_cell(source_lines):
+    """Return a markdown cell dict."""
+    return {
+        "cell_type": "markdown",
+        "metadata": {},
+        "source": source_lines,
+    }
+
+
+def code_cell(source_lines):
+    """Return a code cell dict (not yet executed)."""
+    return {
+        "cell_type": "code",
+        "execution_count": None,
+        "metadata": {"trusted": True},
+        "outputs": [],
+        "source": source_lines,
+    }
+
+
+# ---------------------------------------------------------------------------
+# CELL SOURCE DEFINITIONS
+# ---------------------------------------------------------------------------
+
+def cell_config(m):
+    load_in_8bit_str = "True" if m["load_in_8bit"] else "False"
+    reasoning_note = {
+        "none": "# No chain-of-thought suppression needed for this model.",
+        "no_think": "# SmolLM3-style: injects '/no_think' as a system message so the model\n# skips its <think>...</think> block and emits only the final answer.",
+        "enable_thinking_false": "# Qwen3.5-style: passes enable_thinking=False to apply_chat_template so\n# the model skips its <think>...</think> block and emits only the final answer.",
+    }[m["reasoning_mode"]]
+
+    return [
+        "# ============================================================\n",
+        "# MODEL CONFIGURATION — pre-filled for this model\n",
+        "# ============================================================\n",
+        "\n",
+        f"MODEL_ID    = \"{m['id']}\"    # HuggingFace model ID\n",
+        f"MODEL_LABEL = \"{m['label']}\"              # Short label for filenames & tables\n",
+        f"PROMPT_TEMPLATE = \"{m['prompt_template']}\"  # Best template from prompt-evaluation pilot\n",
+        "\n",
+        "# ---- Reasoning-mode flag ----\n",
+        f"# Options: \"none\" | \"no_think\" | \"enable_thinking_false\"\n",
+        f"# Applies identically to both script conditions and all datasets.\n",
+        f"{reasoning_note}\n",
+        f"REASONING_MODE = \"{m['reasoning_mode']}\"\n",
+        "\n",
+        "MAX_NEW_TOKENS = 40                 # Max tokens to generate per response\n",
+        "TEMPERATURE    = 0.0                # Greedy decoding (deterministic, zero-shot)\n",
+        "MAX_INPUT_TOKENS = 4096             # Truncate prompts longer than this (safety margin)\n",
+        "\n",
+        f"# Set True only for large models that won't fit in fp16 across 2x T4 (32 GB total).\n",
+        f"LOAD_IN_8BIT = {load_in_8bit_str}\n",
+        "\n",
+        "# If a previous run's CSV for this model+dataset already exists, skip ids already completed\n",
+        "# instead of starting over. Protects against Kaggle session interruptions on a ~4,451-item run.\n",
+        "RESUME = True\n",
+        "\n",
+        "# Dataset paths (update if your Kaggle dataset mount differs)\n",
+        "DATA_DIR = \"/kaggle/input/sinhala-eval-datasets\"  # Folder containing the 3 JSONL files\n",
+        "\n",
+        "# Output prefix (auto-generated from MODEL_LABEL)\n",
+        "import re\n",
+        "OUTPUT_PREFIX = re.sub(r\"[^a-z0-9]+\", \"_\", MODEL_LABEL.lower()).strip(\"_\")\n",
+        "\n",
+        "print(f\"Model:          {MODEL_ID}\")\n",
+        "print(f\"Label:          {MODEL_LABEL}\")\n",
+        "print(f\"Template:       {PROMPT_TEMPLATE}\")\n",
+        "print(f\"Reasoning mode: {REASONING_MODE}\")\n",
+        "print(f\"8-bit:          {LOAD_IN_8BIT}\")\n",
+        "print(f\"Resume:         {RESUME}\")\n",
+        "print(f\"Output:         {OUTPUT_PREFIX}_*.csv\")",
+    ]
+
+
+cell_env_setup = [
     "import sys\n",
     "import os\n",
     "\n",
@@ -92,18 +199,11 @@
     "    name = torch.cuda.get_device_name(i)\n",
     "    mem = torch.cuda.get_device_properties(i).total_memory / (1024**3)\n",
     "    print(f\"  cuda:{i} -> {name} ({mem:.1f} GB)\")\n",
-    "assert device_count > 0, \"No GPU detected. Enable GPU T4 x2 in Session options.\""
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "trusted": true
-   },
-   "outputs": [],
-   "source": [
-    "# HuggingFace authentication (needed for gated models, e.g. Llama family if ever cloze-scored)\n",
+    "assert device_count > 0, \"No GPU detected. Enable GPU T4 x2 in Session options.\"",
+]
+
+cell_hf_auth = [
+    "# HuggingFace authentication (needed for gated models, e.g. Llama-3.1-8B-Instruct)\n",
     "from huggingface_hub import login\n",
     "\n",
     "try:\n",
@@ -118,24 +218,10 @@
     "        login(token=HF_TOKEN)\n",
     "        print(\"Authenticated via explicit token.\")\n",
     "    else:\n",
-    "        print(f\"No HF_TOKEN found ({e}). Public models will still work.\")"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## 3. Load Model & Tokenizer"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "trusted": true
-   },
-   "outputs": [],
-   "source": [
+    "        print(f\"No HF_TOKEN found ({e}). Public models will still work.\")",
+]
+
+cell_load_model = [
     "print(f\"Loading {MODEL_ID}...\")\n",
     "\n",
     "tokenizer = AutoTokenizer.from_pretrained(\n",
@@ -152,6 +238,9 @@
     "    print(\"WARNING: this model has no chat template. It will be prompted with the raw text \"\n",
     "          \"instead of its native assistant format — confirm this model is actually instruct-tuned \"\n",
     "          \"before trusting the results (this notebook is not meant for base models).\")\n",
+    "if not has_template and REASONING_MODE != \"none\":\n",
+    "    print(f\"WARNING: REASONING_MODE={REASONING_MODE!r} but this model has no chat template. \"\n",
+    "          \"The reasoning-mode setting will have no effect.\")\n",
     "\n",
     "model_kwargs = dict(\n",
     "    device_map=\"auto\",\n",
@@ -172,24 +261,10 @@
     "print(\"Model loaded successfully.\")\n",
     "print(f\"Precision: {model.dtype}\")\n",
     "if hasattr(model, \"hf_device_map\"):\n",
-    "    print(f\"Device map: {model.hf_device_map}\")"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## 4. Load Evaluation Datasets"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "trusted": true
-   },
-   "outputs": [],
-   "source": [
+    "    print(f\"Device map: {model.hf_device_map}\")",
+]
+
+cell_load_datasets = [
     "def load_jsonl(filepath):\n",
     "    \"\"\"Load a JSONL file into a list of dicts.\"\"\"\n",
     "    data = []\n",
@@ -208,31 +283,17 @@
     "print(f\"SOLD         : {len(sold_data):,} items (binary classification)\")\n",
     "print(f\"Global PIQA  : {len(piqa_data):,} items (2-way MCQ)\")\n",
     "print(f\"\\nTotal items  : {len(mmlu_data) + len(sold_data) + len(piqa_data):,} \"\n",
-    "      f\"x 2 script conditions = {(len(mmlu_data) + len(sold_data) + len(piqa_data)) * 2:,} prompts\")"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## 5. Prompt Templates & Label Extraction"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "trusted": true
-   },
-   "outputs": [],
-   "source": [
+    "      f\"x 2 script conditions = {(len(mmlu_data) + len(sold_data) + len(piqa_data)) * 2:,} prompts\")",
+]
+
+# Prompt templates cell — identical content to the base notebook
+cell_prompt_templates = [
     "# ============================================================\n",
     "# PROMPT TEMPLATES\n",
     "# ============================================================\n",
     "# Three interchangeable prompting techniques (T1/T2/T3) are defined below.\n",
     "# PROMPT_TEMPLATE (set in the Configuration cell) selects which one is used\n",
-    "# for every dataset. Currently set to \"T1_direct\" for all three datasets\n",
-    "# (Sinhala MMLU, SOLD, Global PIQA).\n",
+    "# for every dataset.\n",
     "\n",
     "NO_REPEAT_INSTRUCTION = \"Do not repeat the question or text in your response.\"\n",
     "\n",
@@ -290,8 +351,57 @@
     "\n",
     "# ------------------------------------------------------------------\n",
     "# T2 — FEW-SHOT: 2 fixed exemplars answered in the exact target format\n",
-    "# (not used while PROMPT_TEMPLATE = \"T1_direct\"; requires FEWSHOT_EXAMPLES)\n",
     "# ------------------------------------------------------------------\n",
+    "\n",
+    "FEWSHOT_EXAMPLES = {\n",
+    "    \"sinhala_mmlu\": {\n",
+    "        \"unicode\": [\n",
+    "            {\"question\": \"ලෝකයේ විශාලතම මහාද්වීපය කුමක්ද?\",\n",
+    "             \"options\": [\"ආසියාව\", \"අප්\\u200dරිකාව\", \"යුරෝපය\", \"ඕස්ට්\\u200dරේලියාව\"],\n",
+    "             \"answer_digit\": \"1\"},\n",
+    "            {\"question\": \"දිනකට පැය කීයක් තිබේද?\",\n",
+    "             \"options\": [\"12\", \"24\", \"48\", \"60\"],\n",
+    "             \"answer_digit\": \"2\"},\n",
+    "        ],\n",
+    "        \"romanized\": [\n",
+    "            {\"question\": \"lookayee wishaalathama mahaadwiipaya kumakda?\",\n",
+    "             \"options\": [\"aasiyaawa\", \"aprikaawa\", \"yuroopaya\", \"oostreeliyaawa\"],\n",
+    "             \"answer_digit\": \"1\"},\n",
+    "            {\"question\": \"dinakata paeya kiiyak thibeeda?\",\n",
+    "             \"options\": [\"12\", \"24\", \"48\", \"60\"],\n",
+    "             \"answer_digit\": \"2\"},\n",
+    "        ],\n",
+    "    },\n",
+    "    \"global_piqa\": {\n",
+    "        \"unicode\": [\n",
+    "            {\"question\": \"අත් සෝදා ගැනීමට වඩාත් සුදුසු දෙය කුමක්ද?\",\n",
+    "             \"options\": [\"සබන් හා වතුර භාවිතා කිරීම\", \"වැලි හා ගල් භාවිතා කිරීම\"],\n",
+    "             \"answer_digit\": \"1\"},\n",
+    "            {\"question\": \"රෑට කියවීමට වඩාත් සුදුසු ආලෝකය කුමක්ද?\",\n",
+    "             \"options\": [\"අඳුර\", \"පහන් එළිය\"],\n",
+    "             \"answer_digit\": \"2\"},\n",
+    "        ],\n",
+    "        \"romanized\": [\n",
+    "            {\"question\": \"ath soodaa gaeniimata wadaath sudusu deya kumakda?\",\n",
+    "             \"options\": [\"saban haa wathura bhaawithaa kiriima\", \"waeli haa gal bhaawithaa kiriima\"],\n",
+    "             \"answer_digit\": \"1\"},\n",
+    "            {\"question\": \"raaeta kiyawiimata wadaath sudusu aalookaya kumakda?\",\n",
+    "             \"options\": [\"andura\", \"pahan eliya\"],\n",
+    "             \"answer_digit\": \"2\"},\n",
+    "        ],\n",
+    "    },\n",
+    "    \"sold\": {\n",
+    "        \"unicode\": [\n",
+    "            {\"text\": \"අද කාලගුණය හොඳයි. එළියට ගිහින් ඇවිදින්න පුළුවන්.\", \"answer\": \"NOT\"},\n",
+    "            {\"text\": \"උඹ හරිම මෝඩයෙක්. කිසි දෙයක් තේරෙන්නෙ නෑ.\", \"answer\": \"OFF\"},\n",
+    "        ],\n",
+    "        \"romanized\": [\n",
+    "            {\"text\": \"ada kaalagunaya hondayi. eliyata gihin aewidinna puluwan.\", \"answer\": \"NOT\"},\n",
+    "            {\"text\": \"umba harima moodayek. kisi deyak theerennee naae.\", \"answer\": \"OFF\"},\n",
+    "        ],\n",
+    "    },\n",
+    "}\n",
+    "\n",
     "\n",
     "def build_mcq_prompt_t2(question, options, dataset_key, script, subject=None):\n",
     "    options_str, digit_labels = _mcq_options_block(options)\n",
@@ -350,7 +460,6 @@
     "\n",
     "# ------------------------------------------------------------------\n",
     "# T3 — ANSWER FIRST: state the answer before any reasoning\n",
-    "# (not used while PROMPT_TEMPLATE = \"T1_direct\")\n",
     "# ------------------------------------------------------------------\n",
     "\n",
     "def build_mcq_prompt_t3(question, options, subject=None):\n",
@@ -479,7 +588,7 @@
     "\n",
     "print(f\"Prompt templates and extraction functions defined. Active PROMPT_TEMPLATE = {PROMPT_TEMPLATE!r}\")\n",
     "\n",
-    "# Sanity check (uses the active PROMPT_TEMPLATE, i.e. T1_direct, for all three datasets)\n",
+    "# Sanity check\n",
     "p_mcq, digits = build_mcq_prompt(PROMPT_TEMPLATE, \"Sample question?\", [\"opt1\", \"opt2\", \"opt3\", \"opt4\"],\n",
     "                                  \"sinhala_mmlu\", \"unicode\", subject=\"Social_Science\")\n",
     "print(f\"\\n--- Sample MMLU Prompt ---\\n{p_mcq}\")\n",
@@ -487,32 +596,43 @@
     "                              \"global_piqa\", \"unicode\")\n",
     "print(f\"\\n--- Sample PIQA Prompt ---\\n{p_piqa}\")\n",
     "print(f\"\\n--- Sample SOLD Prompt ---\\n{build_sold_prompt(PROMPT_TEMPLATE, 'Sample text', 'unicode')}\")\n",
-    "print(f\"\\ndigit_to_letter test: 1->{digit_to_letter('1')} 2->{digit_to_letter('2')} INVALID->{digit_to_letter('INVALID')}\")\n"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## 6. Generation Engine with Native Chat Template"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "trusted": true
-   },
-   "outputs": [],
-   "source": [
+    "print(f\"\\ndigit_to_letter test: 1->{digit_to_letter('1')} 2->{digit_to_letter('2')} INVALID->{digit_to_letter('INVALID')}\")",
+]
+
+# Updated generation engine with REASONING_MODE support
+cell_generation_engine = [
     "@torch.inference_mode()\n",
     "def generate_response(prompt, max_new_tokens=MAX_NEW_TOKENS, temperature=TEMPERATURE):\n",
-    "    \"\"\"Generate a response from the instruct model given a plain-text prompt.\"\"\"\n",
-    "    if hasattr(tokenizer, \"apply_chat_template\") and getattr(tokenizer, \"chat_template\", None):\n",
-    "        messages = [{\"role\": \"user\", \"content\": prompt}]\n",
-    "        formatted_prompt = tokenizer.apply_chat_template(\n",
-    "            messages, tokenize=False, add_generation_prompt=True\n",
-    "        )\n",
+    "    \"\"\"Generate a response from the instruct model given a plain-text prompt.\n",
+    "\n",
+    "    REASONING_MODE (global, set in Configuration cell) controls how the chat\n",
+    "    template is applied for models that default to emitting <think>...</think> blocks:\n",
+    "      'none'                 — standard single user message (no suppression)\n",
+    "      'no_think'             — SmolLM3-style: adds '/no_think' as a system message\n",
+    "      'enable_thinking_false' — Qwen3.5-style: passes enable_thinking=False kwarg\n",
+    "    The setting is applied identically to both script conditions and all datasets.\n",
+    "    \"\"\"\n",
+    "    has_template = hasattr(tokenizer, \"apply_chat_template\") and getattr(tokenizer, \"chat_template\", None)\n",
+    "\n",
+    "    if has_template:\n",
+    "        if REASONING_MODE == \"no_think\":\n",
+    "            messages = [\n",
+    "                {\"role\": \"system\", \"content\": \"/no_think\"},\n",
+    "                {\"role\": \"user\", \"content\": prompt},\n",
+    "            ]\n",
+    "            formatted_prompt = tokenizer.apply_chat_template(\n",
+    "                messages, tokenize=False, add_generation_prompt=True\n",
+    "            )\n",
+    "        elif REASONING_MODE == \"enable_thinking_false\":\n",
+    "            messages = [{\"role\": \"user\", \"content\": prompt}]\n",
+    "            formatted_prompt = tokenizer.apply_chat_template(\n",
+    "                messages, tokenize=False, add_generation_prompt=True, enable_thinking=False\n",
+    "            )\n",
+    "        else:  # \"none\" — standard path\n",
+    "            messages = [{\"role\": \"user\", \"content\": prompt}]\n",
+    "            formatted_prompt = tokenizer.apply_chat_template(\n",
+    "                messages, tokenize=False, add_generation_prompt=True\n",
+    "            )\n",
     "    else:\n",
     "        formatted_prompt = prompt\n",
     "\n",
@@ -535,27 +655,25 @@
     "    generated_text = tokenizer.decode(generated_ids, skip_special_tokens=True)\n",
     "    return generated_text, input_len, len(generated_ids)\n",
     "\n",
-    "print(\"Generation engine initialized.\")"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## 7. Pilot Run"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "trusted": true
-   },
-   "outputs": [],
-   "source": [
+    "\n",
+    "print(f\"Generation engine initialized. REASONING_MODE = {REASONING_MODE!r}\")\n",
+    "\n",
+    "# Quick sanity-check generation\n",
+    "_sample_item_text = \"Sample question?\"\n",
+    "_sample_prompt, _ = build_mcq_prompt(PROMPT_TEMPLATE, _sample_item_text, [\"opt1\", \"opt2\", \"opt3\", \"opt4\"],\n",
+    "                                      \"sinhala_mmlu\", \"unicode\", subject=\"Science\")\n",
+    "_sample_out, _, _ = generate_response(_sample_prompt)\n",
+    "print(f\"Sample output: {repr(_sample_out[:150])}\")\n",
+    "if REASONING_MODE != \"none\" and \"<think>\" in _sample_out.lower():\n",
+    "    print(\"WARNING: <think> block still present — the suppression flag did not take effect \"\n",
+    "          \"for this model/transformers version. Investigate before trusting results.\")",
+]
+
+cell_pilot_run = [
     "print(\"=\" * 75)\n",
     "print(\"PILOT RUN — 5 items per task per script condition\")\n",
     "print(f\"Prompt template: {PROMPT_TEMPLATE}\")\n",
+    "print(f\"Reasoning mode:  {REASONING_MODE}\")\n",
     "print(\"=\" * 75)\n",
     "\n",
     "print(\"\\n--- Sinhala MMLU (MCQ, numeric answer) ---\")\n",
@@ -593,24 +711,10 @@
     "\n",
     "print(\"\\n\" + \"=\" * 75)\n",
     "print(\"Pilot complete. Check output above for clean extractions before running Section 8.\")\n",
-    "print(\"=\" * 75)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## 8. Full Evaluation"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "trusted": true
-   },
-   "outputs": [],
-   "source": [
+    "print(\"=\" * 75)",
+]
+
+cell_eval_runners = [
     "MCQ_FIELDNAMES_BASE = [\n",
     "    \"id\", \"gold_label\",\n",
     "    \"unicode_pred_digit\", \"unicode_pred_label\", \"unicode_correct\", \"unicode_raw_output\",\n",
@@ -746,17 +850,11 @@
     "        print(\"Nothing to do, all items already completed.\")\n",
     "    return output_csv\n",
     "\n",
-    "print(\"Evaluation runners ready.\")"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "trusted": true
-   },
-   "outputs": [],
-   "source": [
+    "\n",
+    "print(\"Evaluation runners ready.\")",
+]
+
+cell_run_all = [
     "# ============================================================\n",
     "# RUN ALL THREE EVALUATIONS\n",
     "# ============================================================\n",
@@ -777,24 +875,10 @@
     "\n",
     "print(\"\\n\" + \"=\"*65)\n",
     "print(\"ALL EVALUATIONS COMPLETE\")\n",
-    "print(\"=\"*65)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## 9. Overall Summary"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "trusted": true
-   },
-   "outputs": [],
-   "source": [
+    "print(\"=\"*65)",
+]
+
+cell_summary = [
     "import pandas as pd\n",
     "\n",
     "def summarize(csv_path, task_name):\n",
@@ -826,64 +910,117 @@
     "summary_csv = f\"{OUTPUT_PREFIX}_extrinsic_summary.csv\"\n",
     "summary_df.to_csv(summary_csv, index=False)\n",
     "print(f\"\\nSummary saved to: {summary_csv}\")\n",
-    "summary_df"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "## 10. Output File Listing"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {
-    "trusted": true
-   },
-   "outputs": [],
-   "source": [
+    "summary_df",
+]
+
+cell_output_listing = [
     "print(\"All output files:\")\n",
     "for f in [mmlu_csv, sold_csv, piqa_csv, summary_csv]:\n",
     "    size = os.path.getsize(f) / 1024\n",
     "    print(f\"  {f} ({size:.1f} KB)\")\n",
     "\n",
     "print(f\"\\n\\u2705 {MODEL_LABEL} extrinsic evaluation complete!\")\n",
-    "print(\"\\nTo evaluate another model:\")\n",
-    "print(\"  1. Change MODEL_ID / MODEL_LABEL (and LOAD_IN_8BIT if it's a large model) in the Configuration cell\")\n",
-    "print(\"  2. Restart the runtime and run all cells\")"
-   ]
-  }
- ],
- "metadata": {
-  "kaggle": {
-   "accelerator": "gpu",
-   "dataSources": [],
-   "dockerImageVersionId": 28755,
-   "isGpuEnabled": true,
-   "isInternetEnabled": true,
-   "language": "python",
-   "sourceType": "notebook"
-  },
-  "kernelspec": {
-   "display_name": "Python 3",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.12.13"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 4
-}
+    "print(\"\\nTo re-run for a different model, use the dedicated notebook for that model.\")",
+]
+
+
+# ---------------------------------------------------------------------------
+# NOTEBOOK ASSEMBLER
+# ---------------------------------------------------------------------------
+
+def build_notebook(m):
+    cells = [
+        md_cell([
+            f"# Extrinsic Downstream Task Evaluation — {m['label']}\n",
+            f"## Sinhala Script Robustness — Unicode vs Romanized\n",
+            f"\n",
+            f"**Model:** `{m['id']}`  \n",
+            f"**Prompt template:** `{m['prompt_template']}`  \n",
+            f"**Reasoning mode:** `{m['reasoning_mode']}`  \n",
+            f"**8-bit quantization:** `{m['load_in_8bit']}`",
+        ]),
+        md_cell(["## 1. Configuration"]),
+        code_cell(cell_config(m)),
+        md_cell(["## 2. Environment Setup & Hardware Verification"]),
+        code_cell(cell_env_setup),
+        code_cell(cell_hf_auth),
+        md_cell(["## 3. Load Model & Tokenizer"]),
+        code_cell(cell_load_model),
+        md_cell(["## 4. Load Evaluation Datasets"]),
+        code_cell(cell_load_datasets),
+        md_cell([
+            "## 5. Prompt Templates & Label Extraction\n",
+            f"Using template **`{m['prompt_template']}`** (selected from prompt-evaluation pilot).\n",
+            "All three templates (T1/T2/T3) are defined below; only the one selected above is active.\n",
+            "Few-shot exemplars for T2 are embedded inline.",
+        ]),
+        code_cell(cell_prompt_templates),
+        md_cell([
+            "## 6. Generation Engine with Native Chat Template\n",
+            f"`REASONING_MODE = \"{m['reasoning_mode']}\"` — see Configuration cell for details.\n",
+            "The engine applies this setting identically across both script conditions and all datasets.\n",
+            "A quick sanity-check generation is run immediately after definition.",
+        ]),
+        code_cell(cell_generation_engine),
+        md_cell(["## 7. Pilot Run"]),
+        code_cell(cell_pilot_run),
+        md_cell(["## 8. Full Evaluation"]),
+        code_cell(cell_eval_runners),
+        code_cell(cell_run_all),
+        md_cell(["## 9. Overall Summary"]),
+        code_cell(cell_summary),
+        md_cell(["## 10. Output File Listing"]),
+        code_cell(cell_output_listing),
+    ]
+
+    return {
+        "cells": cells,
+        "metadata": {
+            "kaggle": {
+                "accelerator": "gpu",
+                "dataSources": [],
+                "dockerImageVersionId": 28755,
+                "isGpuEnabled": True,
+                "isInternetEnabled": True,
+                "language": "python",
+                "sourceType": "notebook",
+            },
+            "kernelspec": {
+                "display_name": "Python 3",
+                "language": "python",
+                "name": "python3",
+            },
+            "language_info": {
+                "codemirror_mode": {"name": "ipython", "version": 3},
+                "file_extension": ".py",
+                "mimetype": "text/x-python",
+                "name": "python",
+                "nbformat_exporter": "python",
+                "pygments_lexer": "ipython3",
+                "version": "3.12.13",
+            },
+        },
+        "nbformat": 4,
+        "nbformat_minor": 4,
+    }
+
+
+# ---------------------------------------------------------------------------
+# MAIN — write one notebook per model
+# ---------------------------------------------------------------------------
+
+UPDATED_DIR = Path(__file__).parent / "updated"
+
+for m in MODELS:
+    folder = UPDATED_DIR / m["label"]
+    folder.mkdir(parents=True, exist_ok=True)
+
+    nb = build_notebook(m)
+    nb_path = folder / f"extrinsic-evaluation-{m['label']}.ipynb"
+
+    with open(nb_path, "w", encoding="utf-8") as fh:
+        json.dump(nb, fh, ensure_ascii=False, indent=1)
+
+    print(f"Written: {nb_path.relative_to(UPDATED_DIR.parent.parent.parent)}")
+
+print(f"\nAll {len(MODELS)} model notebooks generated under: {UPDATED_DIR}")
