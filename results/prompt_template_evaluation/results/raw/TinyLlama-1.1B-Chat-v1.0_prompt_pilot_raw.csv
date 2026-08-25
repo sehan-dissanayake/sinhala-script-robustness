@@ -1,0 +1,1003 @@
+﻿model,dataset,template,script,id,gold_label,pred,pred_label,correct,raw_output,n_input_tokens,n_output_tokens
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_1310,B,1,A,0,"1. 1/2
+2. 5/6
+3. 18/20
+4. 3/4",215,30
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_1310,B,1,A,0,"1. 10 yi.
+
+Correct answer: 1
+
+Answer: 10 yi.
+
+4. 3yi.
+
+Correct answer:",147,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_0229,D,1,A,0,"1. 1
+2. 2
+3. 3
+4. 4",265,20
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_0229,D,1,A,0,"1. Answer: 1
+
+Response: Answer 1 is correct and most appropriate.",147,20
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_0052,D,1,A,0,"1. අභයගිරිය දාගැබ
+2. ර",337,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_0052,D,1,A,0,"Answer: 1/2/3/4
+
+The question asks for the correct or most appropriate answer from the given options. The given options are:
+
+1. abhayag",171,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_1519,C,1,A,0,"1. 1/2
+2. 3
+3. 4
+4. 2/3",280,24
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_1519,C,1,A,0,"1. 1
+2. 2
+3. 3
+4. 4
+Answer: Choice 1",154,27
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_0564,D,1,A,0,"1. 1
+2. 2
+3. 3
+4. 4",439,20
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_0564,D,1,A,0,"1/2/3/4
+Answer: 1
+
+Based on the given text, the correct or most appropriate answer for the question ""wiweekaya aethiwita oba",204,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_0502,B,1,A,0,Answer: 1,400,5
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_0502,B,1,A,0,"Answer: 1/2/3/4
+
+The given question is a multiple-choice question related to the Humanities. The question asks for the correct or most appropriate answer from answers",182,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_0458,D,1,A,0,"1. 1
+2. 2
+3. 3
+4. 4",284,20
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_0458,D,1,A,0,"1. Rathu muhuda
+2. Mala muhuda
+3. Madhyadharanii muhuda
+4. Thibeeriyas muhuda",149,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_0286,A,1,A,1,Answer: 1/2/3/4,393,11
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_0286,A,1,A,1,"Answer: 1/2/3/4
+
+The question asks for the correct or most appropriate answer from the given options. The given options are:
+
+1. Prasaada s",187,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_1509,D,1,A,0,"1. 1/2
+2. 3
+3. 4
+4. 1/4",262,24
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_1509,D,1,A,0,"1. Answer: 1
+
+Response: Answer: 1
+
+2. Answer: 2
+
+Response: Answer: 2
+
+3. Answer: 3",145,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_0210,C,1,A,0,"1. 1
+2. 2
+3. 3
+4. 4",295,20
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_0210,C,1,A,0,"1. uthuru disaawaya
+2. batahira disaawaya
+3. dakunu disaawaya
+4. uda disaawaya",157,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_1386,A,1,A,1,"1. මා
+2. ඔවුන්
+3. දියණියක්
+4",197,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_1386,A,1,A,1,"Answer: 1/2/3/4
+
+The question asks for the correct or most appropriate answer from answers 1/2/3/4 for the following question: ""Do not",130,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_1517,B,1,A,0,"1. 1
+2. 2
+3. 3
+4. 4",441,20
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_1517,B,1,A,0,"1/2/3/4
+Answer: 1",204,13
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_1828,A,1,A,1,"1. 1
+2. 2
+3. 3
+4. 4",328,20
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_1828,A,1,A,1,"1/2/3/4
+Answer: 1
+
+Based on the given text, the correct or most appropriate answer for the question ""Do not repeat the question or text in your",169,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_1117,D,1,A,0,"Answer: 1/2/3/4
+
+The correct or most appropriate answer for the question is 1/2/3/4. The question asks for the number of options that",441,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_1117,D,1,A,0,"Answer: 1/2/3/4
+
+The given text is a multiple-choice question related to the Humanities. The question asks for the correct or most appropriate answer from the given",220,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_0179,B,1,A,0,Answer: 1/2/3/4,417,11
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_0179,B,1,A,0,"1. Correct answer: 1
+
+Answer: The correct answer is 1.
+
+2. Incorrect answer: 2
+
+Answer: The correct answer is 3.",193,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_1210,D,1,A,0,"1. 5
+
+Correct answer: 1
+
+Answer: 5
+
+4. 6
+
+Correct answer: 4
+
+Answer: 6",148,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_1210,D,1,A,0,Answer: 1,119,5
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_0865,D,1,A,0,Answer: 1,398,5
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_0865,D,1,A,0,Answer: 1/2/3/4,222,11
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_0066,C,1,A,0,"1. 1
+2. 2
+3. 3
+4. 4",356,20
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_0066,C,1,A,0,"Answer: 1/2/3/4
+
+The correct or most appropriate answer for the question is 1/2/3/4. The question does not require repeating the question or",182,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_0062,C,1,A,0,"1. කැලණි විහාරයයි.
+Correct answer: 1
+
+2",299,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_0062,C,1,A,0,"1/2/3/4
+Answer: 1
+
+Based on the given text, ""lakdiwa idikala palamu sthuupaya lesa handunw",171,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,unicode,mmlu_0192,A,1,A,1,"1. 1
+2. 2
+3. 3
+4. 4",434,20
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T1_direct,romanized,mmlu_0192,A,1,A,1,"1. Correct answer: 1
+
+Answer: The correct answer is 1.
+
+2. Incorrect answer: 2
+
+Answer: The correct answer is 3.",198,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_1310,B,1,A,0,"1. 1/2/3/4
+Answer: 1",447,16
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_1310,B,1,A,0,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+Answer: 1
+
+Question: dinak",254,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_0229,D,1,A,0,"1. 1/2/3/4
+Answer: 1
+
+Question: ලෝකයේ විශා",497,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_0229,D,1,A,0,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+Answer: 1",254,35
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_0052,D,1,A,0,"1. 1/2
+2. 3
+3. 4
+4. 2/3",569,24
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_0052,D,1,A,0,"Answer: 1
+
+Question: lookayee wishaalathama mahaadwiipaya kumakda?
+1. aasiyaawa
+2. aprikaawa",278,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_1519,C,1,A,0,"1. 1/2/3/4
+
+Answer: 1
+
+Explanation: The question is a multiple-choice question with four options, and the correct answer is",512,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_1519,C,1,A,0,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+Answer: 1",261,35
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_0564,D,3,C,0,"Answer: 3
+
+Question: ලෝකයේ විශාලතම ම��",671,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_0564,D,1,A,0,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+
+Answer: 1",311,36
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_0502,B,3,C,0,"Answer: 3
+
+Question: ලෝකයේ විශාලතම ම��",632,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_0502,B,1,A,0,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+
+Answer: 1",289,36
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_0458,D,1,A,0,"1. 1/2/3/4
+
+Answer: 1
+
+Explanation: The question is a multiple-choice question with four options, and the correct answer is",516,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_0458,D,1,A,0,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+Answer: 1
+
+Question: dinak",256,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_0286,A,3,C,0,"Answer: 3
+
+Question: ලෝකයේ විශාලතම ම��",625,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_0286,A,1,A,1,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+
+Answer: 1",294,36
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_1509,D,3,C,0,"Answer: 3
+
+Question: ලෝකයේ විශාලතම ම��",494,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_1509,D,1,A,0,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+
+Answer: 1",252,36
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_0210,C,1,A,0,"1. 1/2/3/4
+
+Answer: 1
+
+Explanation: The question asks for the correct or most appropriate answer from the given options. The given options",527,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_0210,C,1,A,0,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+
+Answer: 1",264,36
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_1386,A,1,A,1,"Answer: 1
+
+Question: ලෝකයේ විශාලතම ම��",429,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_1386,A,1,A,1,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+Answer: 1
+
+Question: dinak",237,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_1517,B,3,C,0,"Answer: 3
+
+Question: ලෝකයේ විශාලතම ම��",673,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_1517,B,1,A,0,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+
+Answer: 1",311,36
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_1828,A,3,C,0,"Answer: 3
+
+Question: ලෝකයේ විශාලතම ම��",560,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_1828,A,1,A,1,"Answer: 1
+
+Question: lookayee wishaalathama mahaadwiipaya kumakda?
+1. aasiyaawa
+2. aprikaawa",276,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_1117,D,1,A,0,"Answer: 1
+
+Question: ලෝකයේ විශාලතම ම��",673,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_1117,D,1,A,0,"1. A
+2. B
+3. C
+4. D
+
+Answer: 1",327,22
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_0179,B,3,C,0,Answer: 3,649,5
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_0179,B,1,A,0,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+
+Answer: 1",300,36
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_1210,D,3,C,0,"Answer: 3
+
+Question: ලෝකයේ විශාලතම ම��",380,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_1210,D,1,A,0,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+Answer: 1
+
+Question: dinak",226,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_0865,D,2,B,0,Answer: 2,630,5
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_0865,D,1,A,0,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+
+Answer: 1",329,36
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_0066,C,1,A,0,"1. 1
+2. 2
+3. 4
+4. 6",588,20
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_0066,C,1,A,0,"Answer: 1
+
+Question: lookayee wishaalathama mahaadwiipaya kumakda?
+1. aasiyaawa
+2. aprikaawa",289,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_0062,C,1,A,0,"1. 1/2/3/4
+Answer: 1",531,16
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_0062,C,1,A,0,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+Answer: 1
+
+Question: dinak",278,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,unicode,mmlu_0192,A,3,C,0,"Answer: 3
+
+Question: ලෝකයේ විශාලතම ම��",666,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T2_fewshot,romanized,mmlu_0192,A,1,A,1,"1. aasiyaawa
+2. aprikaawa
+3. yuroopaya
+4. oostreeliyaawa
+
+Answer: 1",305,36
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_1310,B,1,A,0,"1. 1/2
+
+Explanation: The question asks for the most appropriate answer from the given options. Since the question does not provide any information about the answer number, the answer",229,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_1310,B,1,A,0,"Answer: 1
+
+Based on the given text, the question is asking about the number of syllables in the Sinhala word ""nuuthana sinhala warna ma",161,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_0229,D,1,A,0,"Answer: 1
+
+Based on the given text, the correct or most appropriate answer for the question ""Do not repeat the question or text in your response"" is ""1"". The given",279,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_0229,D,1,A,0,"Answer: 1
+
+Explanation:
+
+The given text ""budu dahamata anuwa daehaemi raekiyaawak nowannee"" means """,161,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_0052,D,1,A,0,"1. අභයගිරිය දාගැබ
+2. ර",351,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_0052,D,2,B,0,"Answer: 2 (Correct)
+
+The given text states that ""budun wahanseegee patidhaathuwa thaenpath kara nirmaanaya",185,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_1519,C,3,C,1,"Answer: 3 (Correct)
+
+The question is asking for the correct or most appropriate answer from the given options. The given options are:
+
+1. ����",294,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_1519,C,2,B,0,"Answer: 2
+
+Based on the given text, ""hisa muwa thula bella dewura daaethee dasaegili"" means ""the sun is sh",168,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_0564,D,1,A,0,"Answer: 1
+
+Based on the given text, the correct or most appropriate answer for the question is 1. The question asks about the reasoning behind the statement that ""the social sciences",453,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_0564,D,2,B,0,"Answer: 2
+
+Based on the given text, ""wiweekaya aethiwita oba kriidaa katayuthuwala yediimen oba thula w",218,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_0502,B,1,A,0,"Answer: 1
+
+Based on the given text, the question asks for the correct or most appropriate answer for the number 1. The answer is 1, which is the first number",414,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_0502,B,2,B,1,"Answer: 2
+
+Based on the given text, ""pancha pusthakayehi sandahan karthru saha upa karthru wannee"" means",196,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_0458,D,1,A,0,"1. 1
+2. 2
+3. 3
+4. 4
+
+Answer: 1",298,26
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_0458,D,1,A,0,"1. Correct answer: 1
+
+Explanation: The given text states that ""galiila muhuda sandahaa yedena thawath namak wannee""",163,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_0286,A,1,A,1,"Answer: 1
+
+Based on the given text, the question is asking for the correct or most appropriate answer for the number 1. The answer is 1, which is the first",407,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_0286,A,2,B,0,Answer: 2,201,5
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_1509,D,1,A,0,"Answer: 1
+
+Based on the given text, the correct answer is 1. The question asks for the answer number (1/2/3/4) before explaining the reasoning",276,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_1509,D,1,A,0,"1. Answer: 1
+
+Explanation: The question is asking for the correct answer to the given text, which is ""theyitha theyitha theyitha yatha",159,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_0210,C,1,A,0,"1. 1
+2. 2
+3. 3
+4. 4
+
+Answer: 1",309,26
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_0210,C,1,A,0,"Answer: 1
+
+Explanation: The given text states that ""sigaaloowaada suuthrayee guruwarun upamaa kara aethi disha",171,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_1386,A,1,A,1,"1. මා
+Correct answer: 1
+
+Explanation: The given text states that ""ඒක වචන අන�",211,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_1386,A,1,A,1,"Answer: 1
+
+Explanation: The given text ""eeka wachana anuktha naama padayak wannee"" means ""The sun is shining, the",144,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_1517,B,1,A,0,"Answer: 1
+
+The correct answer is 1. The question is asking about the relationship between the Humanities and the Arts. The answer provided is the correct answer.",455,37
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_1517,B,2,B,1,"Answer: 2
+
+Based on the given text, ""udarata haa pahatha rata sampradaaya wannee, sabaragamu haa",218,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_1828,A,1,A,1,"1. 1
+2. 2
+3. 3
+4. 4
+
+Answer: 1",342,26
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_1828,A,2,B,0,"Answer: 2
+
+Based on the given text, ""thaapaya pita wiima"" means ""to make a sound like a pita."" Therefore, the correct answer is",183,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_1117,D,2,B,0,"Answer: 2. Dekalb
+
+Reason: Dekalb is a city in Illinois, United States, known for its historic architecture and cultural events.",455,35
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_1117,D,1,A,0,"Answer: 1
+
+Because the given text ""pahatha kotas niwaeradiwa gaelapuu wita niwaeradi pilithura wannee",234,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_0179,B,1,A,0,"Answer: 1
+
+Because the question is asking about the correct or most appropriate answer for the given text, the answer number (1/2/3/4) should be given first",431,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_0179,B,1,A,0,"1. Answer: 1
+
+Explanation: The question asks for the correct or most appropriate answer from the given options. In this case, the answer is 1, which is the",207,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_1210,D,1,A,0,"Answer: 1
+
+Based on the given text, the question is asking for the correct or most appropriate answer for the number 1. The answer is 1, which is the first",162,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_1210,D,1,A,0,"Answer: 1
+
+Based on the given text, the correct or most appropriate answer for the question is 1. The given text states that ""wuluhi falu wala gan",133,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_0865,D,1,A,0,"Answer: 1
+
+Based on the given text, the correct or most appropriate answer for the question is 1. The question asks for the correct or most appropriate answer for the number",412,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_0865,D,1,A,0,"Answer: 1
+
+Based on the given text, the correct answer is 1. The question asks for the answer number (1/2/3/4) before any explanation.",236,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_0066,C,1,A,0,"1. කළුවර
+Correct answer: 1
+
+2. තේක්ක
+Correct answer: 2",370,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_0066,C,1,A,0,"Answer: 1
+
+Explanation:
+
+The question asks for the correct or most appropriate answer from the given options. In this case, the answer is option 1 (kaluw",196,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_0062,C,1,A,0,"Answer: 1
+
+Based on the given text, the correct or most appropriate answer for the question ""Do not repeat the question or text in your response. State the answer number (1",313,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_0062,C,2,B,0,"Answer: 2
+
+Based on the given text, ""lakdiwa idikala palamu sthuupaya lesa handunwannee"" means ""the sound of",185,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,unicode,mmlu_0192,A,1,A,1,"Answer: 1
+
+Based on the given text, the question is asking for the correct or most appropriate answer for the number 1. The answer is 1, as the question is",448,40
+TinyLlama-1.1B-Chat-v1.0,sinhala_mmlu,T3_answer_first,romanized,mmlu_0192,A,2,B,0,"Answer: 2
+
+Based on the given text, ""sadaachaara sampanna bawa nisaaya"" means ""the person who is responsible for the preparation of",212,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0457,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER @USER   ප්‍රවෘත්ති මැදිරි",300,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0457,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER @USER   Prawruththi maediriyee nawa muhunuwara jaathyantharaya haa saesaenden",149,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0103,OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER පට්ට ගොන් ඩිසයි",121,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0103,OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER patta gon disayin ekaknee
+Answer:
+
+Response:
+
+Text: @USER patta gon disayin ek",87,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_1127,OFF,INVALID,INVALID,0,"Response:
+
+Text: උන් තමා ගවුන්ඩ් එකේ",446,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_1127,OFF,INVALID,INVALID,0,"Response:
+
+Text: un thamaa gawund ekee idan maech paeradunaama boothal wisikarannee.. adu kulee para ha",203,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_1004,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER ඒක පාස්කු කොමිසමට",218,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_1004,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER eeka paasku komisamata waedak naaene... paasku prahaaraya gaena hoyanna... kiww",116,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0915,NOT,INVALID,INVALID,0,"Response:
+
+Text: මිනිස්සු මෝඩ කතා කි��",276,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0915,NOT,NOT,NOT,1,"Response: ""NOT""
+
+The text ""minissu mooda kathaa kiyathi.eewaata samaawa diya haeka.kiyu",158,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0572,OFF,INVALID,INVALID,0,"Response:
+
+Text: අඩෝ කීර්ති සර් අප",324,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0572,OFF,NOT,NOT,0,"Response: ""NOT""",142,6
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0420,NOT,INVALID,INVALID,0,"Response:
+
+Text: ඇට බෝල බලලා කාට",288,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0420,NOT,INVALID,INVALID,0,"Response:
+
+Text: aeta boola balalaa kaatada ban hari giyee???? pothak pathak balaa ganin naeththam gah",138,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_2234,OFF,INVALID,INVALID,0,"Response:
+
+Text: URL  මෙයා හිතන්නෙ මහින්��",278,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_2234,OFF,NOT,NOT,0,"Response: NOT
+
+Text: URL  meyaa hithanne mahindata innee molee naethi ewun kiyala. Ranilgeyi chandrika",133,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0357,NOT,INVALID,INVALID,0,"Response:
+
+Text: රෙද්ද Amith Malinga @USER  · 2 Jan දවසක්",128,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0357,NOT,INVALID,INVALID,0,"Response:
+
+Text: redda Amith Malinga @USER  · 2 Jan dawasak eewii apith
+Answer:
+
+Question: Please classify the",97,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_2419,OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER අපේ රටේ තාක්ෂනය",366,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_2419,OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER apee ratee thaakshanaya adhi samaajagatha wiimee prawanathaawak thiyen",173,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_1729,NOT,NOT,NOT,1,"Response: ""NOT""
+
+The given text ""කවුද මේ පිස්සා ම�",197,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_1729,NOT,NOT,NOT,1,"Response: ""NOT""
+
+Based on the given text, ""kawuda mee pissaa methanta genaawee"" means ""a person who is a p",111,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0131,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER  @USER  : කිරුළපනට ආප",218,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0131,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER  @USER  : kirulapanata aapu bas eheka haeppilaa ekkenek maerila  :",127,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0123,NOT,INVALID,INVALID,0,"Response:
+
+Text: එකෙක් : උඹ ගැහුවා",347,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0123,NOT,INVALID,INVALID,0,"Response:
+
+Text: ekek : umba gaehuwaa da ban ? man : naae  uu : baya nowii ooka gahaganin ban,",152,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0384,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER මං නම් කැත හිතකිනි",195,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0384,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER man nam kaetha hithakini nemeyi eeka kiwee chamal ayiye. eheth oya",114,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0896,NOT,INVALID,INVALID,0,"Response:
+
+Text: වයිෆ් ගැබ් ගත්�����",333,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0896,NOT,INVALID,INVALID,0,"Response:
+
+Text: wayif gaeb gaththahama aeyagee yeheliyoo #condratulation kiyalaa kiyanawaa  eeth kaw",154,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0953,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER ගොඩයන්නට මැජික්.",416,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0953,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER godayannata maejik. maasekata charter pleen 3 , 4k aawama hena lokuyi. .",171,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_2070,NOT,INVALID,INVALID,0,"Response:
+
+Text: මෙන්න මෙහෙමයි අපේ",163,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_2070,NOT,INVALID,INVALID,0,"Response:
+
+Text: menna mehemayi apee kaalee kolloo kelloo naaki unaama.. :D
+URL: https://www.youtube.",100,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_2466,OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER ,  @USER  @USER මුන් අරින කොට ��",133,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_2466,OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER ,  @USER  @USER mun arina kota thota amaarae wenawaa
+Answer:
+
+Response:
+
+Text",98,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_0109,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER @USER  කහට නෙමේ බැක්����",222,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_0109,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER @USER  kahata nemee baektiiriyaa diliira lellee thaenpathwenawaa. katin",126,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,unicode,sold_2299,NOT,INVALID,INVALID,0,"Response:
+
+Text: ඔව් බං මේ ආත්මේ ව��",223,40
+TinyLlama-1.1B-Chat-v1.0,sold,T1_direct,romanized,sold_2299,NOT,INVALID,INVALID,0,"Response:
+
+Text: ow ban mee aathmee wagee naaki wenakan balan inna baae eekiwa hambenna. gaetawara",121,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0457,NOT,INVALID,INVALID,0,"Response:
+
+Text: අද කාලගුණය ��������",492,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0457,NOT,INVALID,INVALID,0,Text: @USER @USER   prajathiya kandhaya kandhaya kandhaya kandhaya kandhaya kandhaya kandhaya,220,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0103,OFF,NOT,NOT,0,"Response: NOT
+
+Text: අද කාලගුණය �������",313,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0103,OFF,NOT,NOT,0,"Response: NOT
+
+Text: ada kaalagunaya hondayi. eliyata gihin aewidinna puluwan.
+Answer: NOT
+
+Text",158,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_1127,OFF,NOT,NOT,0,"Both ""NOT"" and ""OFF"" are correct responses to the given text. ""NOT"" means that the given text is not offensive, while ""OFF"" means that the given text is",638,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_1127,OFF,NOT,NOT,0,Response: NOT,274,4
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_1004,NOT,NOT,NOT,1,Response: NOT,410,4
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_1004,NOT,INVALID,INVALID,0,Text: @USER eeka paasku komisamata waedak naaene... paasku prahaaraya gaena hoyanna... kiwwaalu ahins,187,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0915,NOT,INVALID,INVALID,0,"Response:
+
+Text: අද කාලගුණය ��������",468,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0915,NOT,NOT,NOT,1,"Text: ada kaalagunaya hondayi. eliyata gihin aewidinna puluwan. Answer: NOT
+
+Text: umba harima m",229,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0572,OFF,NOT,NOT,0,"Response: ""NOT""",516,6
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0572,OFF,NOT,NOT,0,"Text: ada kaalagunaya hondayi. eliyata gihin aewidinna puluwan.
+Answer: NOT
+
+Text: umba harima",213,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0420,NOT,INVALID,INVALID,0,"Response:
+
+Text: අද කාලගුණය ��������",480,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0420,NOT,NOT,NOT,1,"Text: ada kaalagunaya hondayi. eliyata gihin aewidinna puluwan.
+Answer: NOT
+
+Text: umba harima",209,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_2234,OFF,NOT,NOT,0,Response: NOT,470,4
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_2234,OFF,NOT,NOT,0,"Text: ada kaalagunaya hondayi. eliyata gihin aewidinna puluwan.
+Answer: NOT
+
+Text: umba harima",204,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0357,NOT,NOT,NOT,1,"Response: NOT
+
+Text: අද කාලගුණය �������",320,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0357,NOT,NOT,NOT,1,"Response: NOT
+
+Text: ada kaalagunaya hondayi. eliyata gihin aewidinna puluwan.
+Answer: NOT
+
+Text",168,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_2419,OFF,INVALID,INVALID,0,"Response:
+
+Text: අද කාලගුණය ��������",558,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_2419,OFF,INVALID,INVALID,0,Text: @USER apee ratee thaakshanaya adhi samaajagatha wiimee prawanathaawak thiyenawa. Haema,244,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_1729,NOT,NOT,NOT,1,Response: NOT,389,4
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_1729,NOT,INVALID,INVALID,0,"Text: ""kawuda mee pissaa methanta genaawee ""thotawaththata,maithriigeen kunu baenum:  URL",182,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0131,NOT,NOT,NOT,1,Response: NOT,410,4
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0131,NOT,NOT,NOT,1,"Response: NOT
+
+Text: ada kaalagunaya hondayi. eliyata gihin aewidinna puluwan.
+Answer: NOT
+
+Text",198,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0123,NOT,NOT,NOT,1,Response: NOT,539,4
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0123,NOT,NOT,NOT,1,"Text: ada kaalagunaya hondayi. eliyata gihin aewidinna puluwan.
+Answer: NOT
+
+Text: umba harima",223,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0384,NOT,NOT,NOT,1,Response: NOT,387,4
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0384,NOT,INVALID,INVALID,0,Text: @USER  @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @USER @,185,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0896,NOT,INVALID,INVALID,0,"Response:
+
+Text: අද කාලගුණය ��������",525,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0896,NOT,NOT,NOT,1,"Text: ada kaalagunaya hondayi. eliyata gihin aewidinna puluwan.
+Answer: NOT
+
+Text: umba harima",225,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0953,NOT,NOT,NOT,1,"Both ""NOT"" and ""OFF"" are correct responses to the given text. ""NOT"" means that the given text is not offensive, while ""OFF"" means that the given text is",608,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0953,NOT,INVALID,INVALID,0,"Text: @USER godayannata maejik. maasekata charter pleen 3 , 4k aawama hena lokuyi. .  wena r",242,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_2070,NOT,INVALID,INVALID,0,Text: අද කාලගුණය හොඳය,355,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_2070,NOT,NOT,NOT,1,"Text: ada kaalagunaya hondayi. eliyata gihin aewidinna puluwan.
+Answer: NOT
+
+Text: umba harima",171,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_2466,OFF,INVALID,INVALID,0,"Response: @USER , @USER  @USER මුන් අරින කොට �������",325,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_2466,OFF,NOT,NOT,0,"Response: NOT
+
+Text: ada kaalagunaya hondayi. eliyata gihin aewidinna puluwan.
+Answer: NOT
+
+Text",169,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_0109,NOT,NOT,NOT,1,Response: NOT,414,4
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_0109,NOT,INVALID,INVALID,0,Text: @USER @USER  kahata nemee baektiiriyaa diliira lellee thaenpathwenawaa. katin kaeduwoth,197,40
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,unicode,sold_2299,NOT,NOT,NOT,1,Response: NOT,415,4
+TinyLlama-1.1B-Chat-v1.0,sold,T2_fewshot,romanized,sold_2299,NOT,NOT,NOT,1,"Text: ada kaalagunaya hondayi. eliyata gihin aewidinna puluwan.
+Answer: NOT
+
+Text: umba harima",192,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0457,NOT,INVALID,INVALID,0,"The text ""ප්‍රවෘත්ති මැදිරියේ න",313,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0457,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER @USER   Prawruththi maediriyee nawa muhunuwara jaathyantharaya haa saesaenden",162,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0103,OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER පට්ට ගොන් ඩිසයි",134,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0103,OFF,NOT,NOT,0,"Response:
+
+Text: @USER patta gon disayin ekaknee
+Answer:
+
+1. NOT: This text is not offensive.
+
+Reason:",100,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_1127,OFF,INVALID,INVALID,0,"The text ""උන් තමා ගවුන්ඩ් එකේ ඉ",459,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_1127,OFF,INVALID,INVALID,0,"Based on the Sinhala text, ""un thamaa gawund ekee idan maech paeradunaama boothal wisikarannee.. adu k",216,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_1004,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER ඒක පාස්කු කොමිසමට",231,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_1004,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER eeka paasku komisamata waedak naaene... paasku prahaaraya gaena hoyanna... kiww",129,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0915,NOT,INVALID,INVALID,0,"The text ""මිනිස්සු මෝඩ කතා කියත",289,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0915,NOT,INVALID,INVALID,0,"Response: The text ""minissu mooda kathaa kiyathi.eewaata samaawa diya haeka.kiyuu mooda k",171,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0572,OFF,INVALID,INVALID,0,"Based on the given text, ""අඩෝ කීර්ති සර් �����",337,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0572,OFF,INVALID,INVALID,0,"Response:
+
+Text: adoo kiirthi sar apita kiyannee baelligee puthaalaa kiyalaa keesiri sar kiyannee awaja",155,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0420,NOT,INVALID,INVALID,0,"Based on the given text, ""ඇට බෝල බලලා කා��",301,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0420,NOT,INVALID,INVALID,0,"Based on the given text, ""aeta boola balalaa kaatada ban hari giyee???? pothak pathak balaa ganin naeththam",151,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_2234,OFF,INVALID,INVALID,0,"Based on the given text, ""URL"" is a website, and the text ""මෙයා හිතන්නෙ",291,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_2234,OFF,INVALID,INVALID,0,"Response:
+
+Text: URL meyaa hithanne mahindata innee molee naethi ewun kiyala. Ranilgeyi chandrikaageyi",146,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0357,NOT,INVALID,INVALID,0,"Based on the given text, ""දවසක් ඒවී අපිත්"" means """,141,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0357,NOT,NOT,NOT,1,"Response:
+
+Text: redda Amith Malinga @USER  · 2 Jan dawasak eewii apith
+
+Answer:
+
+1. NOT",110,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_2419,OFF,INVALID,INVALID,0,"The text ""අපේ රටේ තාක්ෂනය �����",379,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_2419,OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER apee ratee thaakshanaya adhi samaajagatha wiimee prawanathaawak thiyen",186,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_1729,NOT,INVALID,INVALID,0,"Response:
+
+Text: ""කවුද මේ පිස්සා ම�����",210,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_1729,NOT,INVALID,INVALID,0,"Response:
+
+Text: ""kawuda mee pissaa methanta genaawee ""thotawaththata,maithriigeen kunu baenum",124,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0131,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER  @USER  : කිරුළපනට ආප",231,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0131,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER  @USER  : kirulapanata aapu bas eheka haeppilaa ekkenek maerila  :",140,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0123,NOT,INVALID,INVALID,0,Text: එකෙක් : උඹ ගැහුවා ද,360,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0123,NOT,INVALID,INVALID,0,"Response:
+
+Text: ekek : umba gaehuwaa da ban ? man : naae  uu : baya nowii ooka gahaganin ban,",165,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0384,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER මං නම් කැත හිතකිනි",208,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0384,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER  @USER man nam kaetha hithakini nemeyi eeka kiwee chamal ayiye. eheth oya",127,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0896,NOT,INVALID,INVALID,0,"The text ""වයිෆ් ගැබ් ගත්තහම �",346,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0896,NOT,INVALID,INVALID,0,"Based on the given text, ""wayif gaeb gaththahama aeyagee yeheliyoo #condratulation kiyalaa kiyanawaa  eeth",167,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0953,NOT,INVALID,INVALID,0,"The text ""ගොඩයන්නට මැජික්. මා����",429,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0953,NOT,INVALID,INVALID,0,"Based on the given text, ""godayannata maejik. maasekata charter pleen 3 , 4k aawama hena lokuyi. .",184,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_2070,NOT,INVALID,INVALID,0,"Response:
+
+Text: මෙන්න මෙහෙමයි අපේ",176,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_2070,NOT,NOT,NOT,1,"Response:
+
+Text: menna mehemayi apee kaalee kolloo kelloo naaki unaama.. :D URL
+
+Label: NOT
+
+Re",113,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_2466,OFF,INVALID,INVALID,0,"Response:
+
+Text: @USER ,  @USER  @USER මුන් අරින කොට ��",146,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_2466,OFF,NOT,NOT,0,"Response:
+
+Text: @USER ,  @USER  @USER mun arina kota thota amaarae wenawaa
+
+Answer:
+
+1. NOT:",111,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_0109,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER @USER  කහට නෙමේ බැක්����",235,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_0109,NOT,INVALID,INVALID,0,"Response:
+
+Text: @USER @USER  kahata nemee baektiiriyaa diliira lellee thaenpathwenawaa. katin",139,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,unicode,sold_2299,NOT,INVALID,INVALID,0,"Response:
+
+Text: ඔව් බං මේ ආත්මේ ව��",236,40
+TinyLlama-1.1B-Chat-v1.0,sold,T3_answer_first,romanized,sold_2299,NOT,INVALID,INVALID,0,"Response:
+
+Text: ""OW BAN MEE AATHMEE WAGEE NAAKI WENAKAN BALAN INNA BAE EEKIWA HAM",134,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0082,B,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The given text is asking for a number, and the question does not specify which option is the best one to complete the given text.",319,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0082,B,1,A,0,"Both options are equally valid and acceptable. The given text does not specify which answer is the best option to complete the given sentence. Therefore, the answer is ""1.""",144,36
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0015,B,INVALID,INVALID,0,"Both options are valid and can be used to complete the given text. The given text is asking for a recommendation for a good option to complete the given task, and both options are valid. The",355,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0015,B,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The given text is asking for a translation of the phrase ""dutu gaemunu raju maranaasanna bawa",153,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0004,A,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The given text is asking for a recommendation, and the options provided are both valid and acceptable. The question does not require th",259,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0004,A,1,A,1,"Both options are valid and acceptable answers to the given text. The best option to complete the given text is option 1, which is ""sudu whenta sithaa lankaa",127,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0095,B,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,233,28
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0095,B,1,A,0,"Both options are valid and acceptable answers to the given text. The best option to complete the given text is option 1, which is ""kadadaasiyakin muhuna was",119,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0036,A,1,A,1,"Both options are correct and provide a good answer to the given text. The first option, ""1/2,"" is the best option to complete the given text because it is the number (1",850,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0036,A,1,A,1,"Both options are correct and the best option to complete the given text is option 1, which is the number 1/2.",293,29
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0032,A,1,A,1,1/2 is the best option to complete the given text as it is the only number that appears in the given text.,241,26
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0032,A,1,A,1,"Both options are valid and acceptable answers to the given text. The best option to complete the given text is option 1, which is ""kondaya assee hangaagena ya.""",114,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0029,A,1,A,1,1. හරාව කාලයට ය,175,26
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0029,A,1,A,1,Option 1 (1/2) is the best option to complete the given text as it is the only option that does not repeat the question or text.,107,33
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0018,B,1,A,0,"Both options are correct and provide the correct answer to the given text. The given text is asking for the best option to complete the given sentence, and the answer is ""1/2.""",410,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0018,B,INVALID,INVALID,0,"Both options are equally valid and acceptable in completing the given text. The given text is asking for a recommendation, and the two options provided are both acceptable. The given text does not spe",171,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0014,A,1,A,1,1. වස දී මැරුවා ය,214,30
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0014,A,1,A,1,"Both options are valid and can be used to complete the given text. The best option to complete the given text is option 1, which is ""wasa dii maeruwaa",118,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0087,A,1,A,1,Option 1 (1/2) is the best option to complete the given text as it is the only option that does not repeat the question or text.,207,33
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0087,A,1,A,1,"Both options are valid and acceptable answers to the given text. The best option to complete the given text is option 1, which is ""eya bindeyi.""",107,36
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0070,A,1,A,1,The best option to complete the given text is option 1 (1/2). This answer is based on the given text and the given question.,334,31
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0070,A,1,A,1,"Both options are valid and acceptable answers to the given text. The best option to complete the given text is option 1, which is ""walee nayek da kaelee ali",152,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0012,A,INVALID,INVALID,0,"Both options are valid and can be used to complete the given text. The given text mentions that ""පරංගියා ක��",352,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0012,A,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The given text is asking for a recommendation, and the options provided are both valid and acceptable. The best option to complete the ",156,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0076,B,1,A,0,Option 1 (1/2) is the best option to complete the given text as it is the only option that does not repeat the question or text.,281,33
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0076,B,1,A,0,"Both options are valid and acceptable answers to the given text. The best option to complete the given text is option 1, which is ""kotaluweki.""",125,35
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0055,A,1,A,1,"Option 1 (1/2) is the best option to complete the given text as it is the only option that includes the word ""ගොයම්""",257,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0055,A,1,A,1,"Both options are valid and acceptable answers to the given text. The best option to complete the given text is option 1, which is ""aththam kramaya lesaya"" (to",122,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0005,B,1,A,0,1/2 is the best option to complete the given text as it is the only option that does not repeat the question or text.,272,28
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0005,B,1,A,0,"Both options are valid and acceptable answers to the given text. The best option to complete the given text is option 1, which is ""thama sahoodarayaata ya.""",123,39
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0028,A,1,A,1,Both options are correct and provide a clear answer to the given text. Option 1 is the best option to complete the given text because it provides a direct answer to the question and does not repeat,362,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0028,A,INVALID,INVALID,0,"Both options are equally good options to complete the given text. The given text is a sentence with two options for the word ""kalath"" (which is a noun). The first option,",144,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0030,A,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The given text only asks for the best option, and the answer does not matter. The question is not asking for the number, but",226,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0030,A,1,A,1,Both options are valid and can be used to complete the given text. The answer with the number 1/2 is the best option as it is the only one that includes the given text.,116,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0065,A,INVALID,INVALID,0,"Both options are valid and can be used to complete the given text. The given text mentions that ""දානයක් ��������",401,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0065,A,INVALID,INVALID,0,"Both options are equally valid and acceptable in completing the given text. The given text is a sentence, and the given options are the correct answers. The given text does not require repeating the q",165,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0078,B,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The given text is asking for a number, and the question does not specify which option is the best one to complete the given text.",316,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0078,B,1,A,0,"Both options are valid and acceptable answers to the given text. The best option to complete the given text is option 1, which is ""panu biththara yanna hondin",140,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,unicode,piqa_0072,A,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The first option, ""ගිනිසීරියා ග",372,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T1_direct,romanized,piqa_0072,A,INVALID,INVALID,0,"Both options are valid and acceptable answers to the given text. The given text is asking for a translation of the phrase ""aetha. eya soyaa gannakan aeg",167,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0082,B,1,A,0,"Answer: 1
+
+Question: අත් සෝදා ගැනීම�",635,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0082,B,1,A,0,"Answer: 1
+
+Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura b",265,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0015,B,1,A,0,"Both options are correct and provide the correct answer to the given text. The given text is asking for the best option to complete the given text, and the answer is 1.",671,38
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0015,B,1,A,0,"1. saban haa wathura bhaawithaa kiriima
+2. waeli haa gal bhaawithaa kiriima
+
+Both options are",273,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0004,A,1,A,1,Both options are correct and the best option to complete the given text is option 1 (1/2). Option 2 (2) is not a valid answer as it does not provide a,575,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0004,A,1,A,1,"Answer: 1
+
+Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura b",247,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0095,B,1,A,0,"Answer: 1
+
+Question: අත් සෝදා ගැනීම�",549,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0095,B,1,A,0,"Answer: 1
+
+Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura b",240,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0036,A,1,A,1,1. අත් සෝදා ගැනීමට ව��,1166,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0036,A,INVALID,INVALID,0,Both options are correct and provide the same answer. The given text does not contain any information about the best option to complete the given text.,414,30
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0032,A,1,A,1,"Answer: 1
+
+Question: අත් සෝදා ගැනීම�",557,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0032,A,1,A,1,"Answer: 1
+
+Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura b",235,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0029,A,1,A,1,"Answer: 1
+
+Question: අත් සෝදා ගැනීම�",491,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0029,A,1,A,1,"Answer: 1
+
+Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura b",229,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0018,B,INVALID,INVALID,0,"Both options are correct and provide the best answer to the given text. The first option, ""අත් සෝදා �",726,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0018,B,1,A,0,"Answer: 1
+
+Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura b",292,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0014,A,1,A,1,"Both options are correct and provide the correct answer to the given text. The given text is asking for the best option to complete the given text, and the answer is 1.",530,38
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0014,A,1,A,1,"Answer: 1
+
+Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura b",239,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0087,A,1,A,1,"Both options are correct and provide the correct answer to the given text. The given text is asking for a number, and the options provided are 1 and 2. The question asks for the",523,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0087,A,1,A,1,"Answer: 1
+
+Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura b",228,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0070,A,INVALID,INVALID,0,"Both options are correct and provide the best answer to the given text. The first option, ""අත් සෝදා �",650,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0070,A,1,A,1,"1. saban haa wathura bhaawithaa kiriima
+2. waeli haa gal bhaawithaa kiriima
+
+Both options are",273,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0012,A,INVALID,INVALID,0,Both options are correct and provide the correct answer to the given text. The given text is asking which of the two options is the best to complete the given text. The given text does not provide,668,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0012,A,1,A,1,"Answer: 1
+
+Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura b",277,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0076,B,1,A,0,"Answer: 1
+
+Question: අත් සෝදා ගැනීම�",597,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0076,B,1,A,0,"1. saban haa wathura bhaawithaa kiriima
+2. waeli haa gal bhaawithaa kiriima
+
+Both options are",245,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0055,A,1,A,1,Both options are correct and the best option to complete the given text is option 1 (1/2).,573,24
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0055,A,1,A,1,"1. saban haa wathura bhaawithaa kiriima
+2. waeli haa gal bhaawithaa kiriima
+
+Both options are",243,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0005,B,1,A,0,"Both options are correct and provide the best answer to the given text. The given text is asking about the best option to complete the given text, and the answer is ""1"" because it comple",588,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0005,B,1,A,0,"1. saban haa wathura bhaawithaa kiriima
+2. waeli haa gal bhaawithaa kiriima
+
+Both options are",244,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0028,A,1,A,1,"Answer: 1
+
+Question: අත් සෝදා ගැනීම�",678,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0028,A,1,A,1,"Answer: 1
+
+Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura b",265,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0030,A,1,A,1,"Both options are correct and provide the correct answer to the given text. The given text is asking for the best option to complete the given text, and the answer is 1.",542,38
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0030,A,1,A,1,"Answer: 1
+
+Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura b",237,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0065,A,INVALID,INVALID,0,"Both options are correct and provide the best answer to the given text. The first option, ""අත් සෝදා �",717,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0065,A,1,A,1,"Answer: 1
+
+Both options are correct and provide the same answer. The given text is asking about the best option to complete the given sentence, which means the answer is the first option",286,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0078,B,INVALID,INVALID,0,"Both options are correct and provide the best answer to the given text. The first option, ""අත් සෝදා �",632,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0078,B,1,A,0,"Answer: 1
+
+Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura b",261,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,unicode,piqa_0072,A,1,A,1,"Answer: 1
+
+Question: අත් සෝදා ගැනීම�",688,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T2_fewshot,romanized,piqa_0072,A,1,A,1,"Answer: 1
+
+Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura b",288,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0082,B,1,A,0,"Both options are valid and can be used to complete the given text. Option 1 is the best option to complete the given text because it is the first option to be given, and it is",333,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0082,B,INVALID,INVALID,0,"Both options are equally valid and suitable to complete the given text. The given text is asking for a specific action, which can be completed by either option. The first option, ""kiri k",158,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0015,B,INVALID,INVALID,0,"Both options are equally effective in completing the given text. The first option, ""දුටු ගැම��",369,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0015,B,1,A,0,"Based on the given text, the best option to complete the given text is option 1 (ruwanwaeli saaeya waeli walin wasaa waaeda iw",167,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0004,A,2,B,0,"Both options are equally valid and suitable to complete the given text. The given text is a list of 2 answers, and the question asks for the best option to complete the given text. The",273,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0004,A,INVALID,INVALID,0,"Both options are equally valid and suitable to complete the given text. The given text is a sentence fragment, and the first option ""sudu whenta sithaa lankaawee",141,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0095,B,1,A,0,"Option 1 (1/2) is the best option to complete the given text because it is the first answer that is mentioned in the given text. The given text states that ""ප",247,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0095,B,INVALID,INVALID,0,"Both options are equally valid and appropriate to complete the given text. The given text is asking for a translation of a phrase in Arabic, and both options provide a translation. The first option,",133,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0036,A,1,A,1,"Both options are correct and provide a good explanation for the given text. Option 1 states that the best option to complete the given text is to use the phrase ""දස",864,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0036,A,INVALID,INVALID,0,"Both options are equally valid and suitable to complete the given text. The given text is asking for a recommendation for a specific type of flower, and both options provide a recommendation for the s",307,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0032,A,1,A,1,"Both options are valid and can be used to complete the given text. Option 1 is the best option to complete the given text because it is the only option that includes the word ""��",255,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0032,A,INVALID,INVALID,0,"Both options are equally valid and acceptable. The given text is asking for a specific answer, and the question does not specify which option is preferred. Therefore, the best option to complete the g",128,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0029,A,1,A,1,Option 1 (1/2) is the best option to complete the given text as it is the only option that does not repeat the question or text in its response.,189,36
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0029,A,INVALID,INVALID,0,"Both options are equally valid and acceptable. The given text does not specify which option is the best to complete the given sentence. Therefore, the answer is ""dhiiwarayan muudu",121,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0018,B,INVALID,INVALID,0,"Both options are valid and can be used to complete the given text. The given text mentions that ""ගෙට රි�������",424,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0018,B,1,A,0,Option 1 (1/2) is the best option to complete the given text because it is the first answer and does not repeat the question or text in its response.,185,36
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0014,A,INVALID,INVALID,0,"Both options are equally valid and appropriate to complete the given text. The given text is a question, and the answer is not relevant to the question. Therefore, the best option to complete the give",228,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0014,A,1,A,1,"Both options are equally valid and acceptable. The given text does not specify which option is the best to complete the given sentence. Therefore, the answer is ""1.""",132,35
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0087,A,2,B,0,"Both options are equally valid and appropriate to complete the given text. The given text is a list of 2 answers, and the question asks for the best option to complete the given text. The",221,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0087,A,INVALID,INVALID,0,"Both options are equally valid and acceptable. The given text ""maeti pahanak miitar dekaka pamana usaka sita bimata waetunoth"" can be",121,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0070,A,2,B,0,"Both options are valid and can be used to complete the given text. The given text mentions that ""out of the given 2 answers, which one is the best option to complete the given text",348,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0070,A,1,A,1,"Both options are equally valid and acceptable in completing the given text. The answer number (1/2) is the first one to be given, and the explanation is not necessary after giving the",166,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0012,A,1,A,1,"Both options are valid and can be used to complete the given text. Option 1 is the best option to complete the given text because it is the only option that mentions the word ""��",366,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0012,A,1,A,1,"Both options are equally valid and acceptable. The given text is a sentence fragment, and the question asks for the best option to complete it. The answer is option 1, which is the first",170,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0076,B,1,A,0,"Both options are valid and can be used to complete the given text. The answer number (1/2) is the first option, and the explanation is provided after giving the number.",295,39
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0076,B,1,A,0,"Both options are equally valid and suitable to complete the given text. The answer number (1/2) is given first, followed by a brief explanation. The explanation is not necessary for answering the",139,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0055,A,2,B,0,"Both options are equally valid and suitable to complete the given text. The given text is a list of 2 answers, and the question asks for the best option to complete the given text. The",271,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0055,A,1,A,1,"Both options are equally valid and suitable to complete the given text. The answer number (1/2) is given first, before any explanation. The explanation is given after giving the answer number.",136,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0005,B,INVALID,INVALID,0,"Both options are equally valid and suitable to complete the given text. The given text is asking for a recommendation, and both options are suitable for this purpose. The first option, ""ත",286,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0005,B,1,A,0,"Based on the given text, the best option to complete the given text is option 1 (thama sahoodarayaata ya).
+
+Option 2 (thama massinaata",137,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0028,A,INVALID,INVALID,0,"Both options are equally valid and appropriate to complete the given text. The given text is asking for a recommendation, and the first option is a recommendation to complete the task, while the secon",376,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0028,A,INVALID,INVALID,0,"Based on the given text, the best option to complete the given text is ""kaelee maaru kalath kotiyaagee pulli maaru nowee."" The answer number is",158,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0030,A,2,B,0,"Both options are equally valid and suitable to complete the given text. The given text is a list of 2 answers, and the question asks for the best option to complete the given text. The",240,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0030,A,INVALID,INVALID,0,"Both options are equally valid and acceptable. The given text ""dikthala dinaa gaeniimata kaalagoola"" means ""the sun is setting on the horizon""",130,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0065,A,INVALID,INVALID,0,"Both options are valid and can be used to complete the given text. The first option, ""දානයක් දෙද",415,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0065,A,1,A,1,"Based on the given text, the best option to complete the given text is option 1 (buddha puujaawa thabaa, sanghayaata walandannata di",179,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0078,B,1,A,0,"Both options are valid and can be used to complete the given text. Option 1 is the best option to complete the given text because it is the first option to be given, and it is",330,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0078,B,1,A,0,"Both options are equally valid and appropriate to complete the given text. The answer number (1/2) is the first one to be given, and the explanation is not necessary after giving the number",154,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,unicode,piqa_0072,A,INVALID,INVALID,0,"Both options are equally effective in completing the given text. The first option, ""ආච්චි ගමන් බ",386,40
+TinyLlama-1.1B-Chat-v1.0,global_piqa,T3_answer_first,romanized,piqa_0072,A,INVALID,INVALID,0,"Both options are equally valid and suitable to complete the given text. The given text is asking for a specific action, which can be completed by either option. The given text does not specify which o",181,40

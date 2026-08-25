@@ -1,0 +1,10 @@
+﻿model,dataset,template,n,invalid_rate,accuracy_among_valid,overall_accuracy
+SmolLM3-3B,sinhala_mmlu,T1_direct,40,0.0,0.225,0.225
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,40,0.0,0.25,0.25
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,40,0.0,0.2,0.2
+SmolLM3-3B,sold,T1_direct,40,0.0,0.3,0.3
+SmolLM3-3B,sold,T2_fewshot,40,0.0,0.3,0.3
+SmolLM3-3B,sold,T3_answer_first,40,0.0,0.3,0.3
+SmolLM3-3B,global_piqa,T1_direct,40,0.0,0.45,0.45
+SmolLM3-3B,global_piqa,T2_fewshot,40,0.0,0.425,0.425
+SmolLM3-3B,global_piqa,T3_answer_first,40,0.0,0.35,0.35

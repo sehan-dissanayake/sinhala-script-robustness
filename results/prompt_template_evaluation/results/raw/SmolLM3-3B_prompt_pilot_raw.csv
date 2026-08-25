@@ -1,0 +1,585 @@
+﻿model,dataset,template,script,id,gold_label,pred,pred_label,correct,raw_output,n_input_tokens,n_output_tokens
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_1310,B,3,C,0,3. 18 යි.,253,11
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_1310,B,3,C,0,3. 18 yi.,182,7
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_0229,D,3,C,0,3. රාජ්‍ය සේවය,312,24
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_0229,D,3,C,0,3. raajya seewaya,191,9
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_0052,D,3,C,0,3. ථුපාරාමය දාගැබ,375,31
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_0052,D,3,C,0,3. thupaaraamaya daagaeba,207,11
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_1519,C,3,C,1,3. සිරසපාද කවියකි.,312,31
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_1519,C,3,C,1,3. sirasapaada kawiyaki.,193,12
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_0564,D,3,C,0,3. අසාධාරණය අගය කිරීම.,470,38
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_0564,D,2,B,0,2. aathmaarthakaamii katayuthu kiriimata yomu wiima.,238,23
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_0502,B,3,C,0,3,428,2
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_0502,B,3,C,0,3. yeesus wahansee saha minisaa.,217,15
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_0458,D,3,C,0,3. මධ්‍යධරණී මුහුද,309,32
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_0458,D,3,C,0,3. madhyadharanii muhuda,188,11
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_0286,A,3,C,0,3. දිව්‍ය සත්ප්‍රසාදය ය .,421,40
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_0286,A,3,C,0,3. diwya sathprasaadaya ya.,222,14
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_1509,D,3,C,0,3. තුන් අඩිය,295,21
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_1509,D,3,C,0,3. thun adiya,188,7
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_0210,C,3,C,1,3. දකුණු දිසාවය,333,27
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_0210,C,3,C,1,3. dakunu disaawaya,199,9
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_1386,A,3,C,0,3. දියණියක්,251,20
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_1386,A,3,C,0,3. diyaniyak,174,7
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_1517,B,4,D,0,4. පහතරට හා උඩරට සම්ප්‍�,483,40
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_1517,B,4,D,0,4. pahatharata haa udarata sampradaayan.,237,18
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_1828,A,3,C,0,3. වායු බුබුලු පිටවීම,375,38
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_1828,A,3,C,0,3. waayu bubulu pitawiima,204,11
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_1117,D,3,C,0,3. BADC,481,5
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_1117,D,3,C,0,3. BADC,259,5
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_0179,B,3,C,0,3. තෙවන සතියේ දී ය.,423,32
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_0179,B,3,C,0,3. thewana sathiyee dii ya.,227,14
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_1210,D,3,C,0,3. 8,187,5
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_1210,D,4,D,1,4. 6,164,5
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_0865,D,3,C,0,"3. දිග කි.මී. 424, පළල කි.මී.",420,40
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_0865,D,3,C,0,"3. diga ki.mii. 424, palala ki.mii. 264",245,20
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_0066,C,3,C,1,3. රුක්අත්තන,405,22
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_0066,C,3,C,1,3. rukaththana,224,7
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_0062,C,3,C,1,3. අභයගිරි විහාරයයි.,340,36
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_0062,C,3,C,1,3. abhayagiri wihaarayayi.,196,12
+SmolLM3-3B,sinhala_mmlu,T1_direct,unicode,mmlu_0192,A,3,C,0,3. අධ්‍යාපනයට යොමු නොවී,489,40
+SmolLM3-3B,sinhala_mmlu,T1_direct,romanized,mmlu_0192,A,3,C,0,3. adhyaapanayata yomu nowiima nisaa ya.,235,18
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1310,B,3,C,0,3,469,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1310,B,2,B,1,2,278,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0229,D,2,B,0,2,528,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0229,D,3,C,0,3,287,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0052,D,1,A,0,1,591,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0052,D,3,C,0,3,303,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1519,C,1,A,0,1,528,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1519,C,3,C,1,3,289,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0564,D,2,B,0,2,686,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0564,D,3,C,0,3,334,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0502,B,1,A,0,1,644,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0502,B,3,C,0,3,313,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0458,D,2,B,0,2,525,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0458,D,3,C,0,3,284,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0286,A,1,A,1,1,637,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0286,A,3,C,0,3,318,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1509,D,1,A,0,1,511,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1509,D,1,A,0,1,284,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0210,C,2,B,0,2,549,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0210,C,3,C,1,3,295,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1386,A,2,B,0,2,467,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1386,A,2,B,0,2,270,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1517,B,2,B,1,2,699,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1517,B,2,B,1,2,333,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1828,A,2,B,0,2,591,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1828,A,3,C,0,3,300,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1117,D,1,A,0,1,697,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1117,D,3,C,0,3,355,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0179,B,2,B,1,2,639,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0179,B,2,B,1,2,323,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1210,D,2,B,0,2,403,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1210,D,3,C,0,3,260,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0865,D,2,B,0,2,636,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0865,D,3,C,0,3,341,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0066,C,2,B,0,2,621,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0066,C,3,C,1,3,320,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0062,C,2,B,0,2,556,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0062,C,3,C,1,3,292,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0192,A,2,B,0,2,705,2
+SmolLM3-3B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0192,A,2,B,0,2,331,2
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1310,B,3,C,0,"3. 18 යි.
+
+My reasoning is based on the fact that the Sinhala language has a unique script called the Sinhala script, which is used to write the Sinhala",266,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1310,B,3,C,0,"3. 18 yi.
+
+Explanation: The Sinhala alphabet has 36 letters. The question is asking for the number of letters in the Sinhala alphabet, which is 36. However, the",195,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0229,D,3,C,0,"3. රාජ්‍ය සේවය
+
+Explanation: The question is asking about a place where Budh Dhamma was",325,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0229,D,3,C,0,"3. raajya seewaya
+
+Explanation: The phrase ""budu dahamata anuwa daehaemi raekiyaawak nowannee"" translates to ""We have",204,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0052,D,3,C,0,3. ථුපාරාමය දාගැබ,388,31
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0052,D,3,C,0,"3. thupaaraamaya daagaeba
+
+Explanation: The phrase ""budun wahanseegee patidhaathuwa thaenpath kara nirmaanaya karana l",220,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1519,C,3,C,1,"3. සිරසපාද කවියකි.
+
+Explanation: The phrase ""හි�",325,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1519,C,3,C,1,"3. sirasapaada kawiyaki.
+
+Explanation: The phrase ""hisa muwa thula bella dewura daaethee dasaegili"" translates to ""the man who",206,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0564,D,3,C,0,"3. අසාධාරණය අගය කිරීම.
+
+Explanation: The",483,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0564,D,3,C,0,"3. asaadhaaranaya agaya kiriima.
+
+Explanation: The sentence structure and meaning suggest that the correct answer is ""asaadhaaranaya agaya kiriima"" (3",251,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0502,B,3,C,0,3. යේසුස් වහන්සේ සහ මින,441,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0502,B,3,C,0,"3. yeesus wahansee saha minisaa.
+
+Explanation: The question is asking about the co-authors of the Pancha Pustakam, which is a collection of",230,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0458,D,3,C,0,"3. මධ්‍යධරණී මුහුද
+
+Explanation: The correct answer is �",322,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0458,D,3,C,0,"3. madhyadharanii muhuda
+
+Explanation: The phrase ""galiila muhuda sandahaa yedena thawath namak wannee"" translates to ""the middle",201,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0286,A,3,C,0,3. දිව්‍ය සත්ප්‍රසාදය ය .,434,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0286,A,3,C,0,"3. diwya sathprasaadaya ya.
+
+Explanation: The phrase ""deewa prasaada nidhaanaya wannee"" translates to ""for the welfare of the",235,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1509,D,3,C,0,"3. තුන් අඩිය
+
+Explanation: The question is asking for the correct Sinhala word for ""government building."" The correct",308,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1509,D,3,C,0,"3. thun adiya
+
+Explanation: The given phrase appears to be a mix of Sanskrit and Tamil words. However, ""thun adiya"" is a common Tamil phrase that means """,201,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0210,C,3,C,1,"3. දකුණු දිසාවය
+
+Explanation: The question is asking about the type of movement that occurs",346,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0210,C,3,C,1,"3. dakunu disaawaya
+
+Explanation: The phrase ""sigaaloowaada suuthrayee guruwarun upamaa kara aethi dishaawa wannee""",212,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1386,A,3,C,0,"3. දියණියක්
+
+Explanation: The phrase ""ඒක වචන අ�",264,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1386,A,3,C,0,"3. diyaniyak
+
+Explanation: The phrase ""eeka wachana anuktha naama padayak wannee"" translates to ""I am your servant, my name is",187,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1517,B,3,C,0,3. සබරගමු හා පහතරට සම්ප,496,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1517,B,3,C,0,"3. sabaragamu haa pahatharata sampradaayan.
+
+Explanation: The sentence structure and meaning suggest that ""sabaragamu"" (a type of tree) is",250,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1828,A,3,C,0,"3. වායු බුබුලු පිටවීම
+
+Explanation:",388,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1828,A,3,C,0,"3. waayu bubulu pitawiima
+
+Explanation: The question is asking about the source of the Rasaayanika Wiparyaasayaka Dī, which is a Sanskrit",217,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1117,D,3,C,0,"3. BADC
+
+Explanation: The question is asking for the correct order of the letters in the word ""පහත කොටස් �",494,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1117,D,3,C,0,"3. BADC
+
+Explanation: The given phrase ""pahatha kotas niwaeradiwa gaelapuu wita niwaeradi pilithura wannee"" is in",272,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0179,B,3,C,0,"3. තෙවන සතියේ දී ය.
+
+Explanation: The question is asking about the type",436,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0179,B,3,C,0,"3. thewana sathiyee dii ya.
+
+Explanation: The question is in Somali, and it translates to ""What is the correct or most appropriate answer for the following question?"" The",240,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1210,D,3,C,0,"3. 8
+
+The correct answer is 3. 8. The question is in Sinhala and translates to ""Which number is missing in the sequence?"" The sequence given is 5,",200,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1210,D,3,C,0,"3. 8
+
+Explanation: The given phrase ""wuluhi falu wala ganana"" is in the Somali language. Translating it to English, it roughly means ""I am",177,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0865,D,3,C,0,"3. දිග කි.මී. 424, පළල කි.මී.",433,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0865,D,3,C,0,"3. diga ki.mii. 424, palala ki.mii. 264
+
+Explanation: The question seems to be asking for the correct combination of page numbers for a book. The",258,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0066,C,3,C,1,"3. රුක්අත්තන
+
+Explanation: The question is asking about a type of government that is established by a revolution.",418,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0066,C,3,C,1,"3. rukaththana
+
+Explanation: The sentence structure and context suggest that ""rukaththana"" (third option) is the most appropriate answer. The phrase ""dii ruuk",237,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0062,C,3,C,1,"3. අභයගිරි විහාරයයි.
+
+Explanation: The question is",353,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0062,C,3,C,1,"3. abhayagiri wihaarayayi.
+
+Explanation: The phrase ""lakdiwa idikala palamu sthuupaya lesa handunwannee"" translates to ""the sound",209,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0192,A,3,C,0,3. අධ්‍යාපනයට යොමු නොවී,502,40
+SmolLM3-3B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0192,A,3,C,0,"3. adhyaapanayata yomu nowiima nisaa ya.
+
+Explanation: The sentence structure and meaning suggest that ""adhyaapanayata yomu nowiima nisaa",248,40
+SmolLM3-3B,sold,T1_direct,unicode,sold_0457,NOT,OFF,OFF,0,OFF,361,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_0457,NOT,OFF,OFF,0,OFF,192,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_0103,OFF,OFF,OFF,1,OFF,170,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_0103,OFF,OFF,OFF,1,OFF,133,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_1127,OFF,OFF,OFF,1,OFF,482,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_1127,OFF,OFF,OFF,1,OFF,237,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_1004,NOT,OFF,OFF,0,OFF,269,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_1004,NOT,OFF,OFF,0,OFF,161,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_0915,NOT,OFF,OFF,0,OFF,337,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_0915,NOT,OFF,OFF,0,OFF,192,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_0572,OFF,OFF,OFF,1,OFF,354,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_0572,OFF,OFF,OFF,1,OFF,186,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_0420,NOT,OFF,OFF,0,OFF,321,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_0420,NOT,OFF,OFF,0,OFF,177,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_2234,OFF,OFF,OFF,1,OFF,330,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_2234,OFF,OFF,OFF,1,OFF,176,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_0357,NOT,OFF,OFF,0,OFF,174,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_0357,NOT,OFF,OFF,0,OFF,145,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_2419,OFF,OFF,OFF,1,OFF,413,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_2419,OFF,OFF,OFF,1,OFF,209,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_1729,NOT,OFF,OFF,0,OFF,238,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_1729,NOT,OFF,OFF,0,OFF,155,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_0131,NOT,OFF,OFF,0,OFF,264,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_0131,NOT,OFF,OFF,0,OFF,174,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_0123,NOT,OFF,OFF,0,OFF,373,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_0123,NOT,OFF,OFF,0,OFF,192,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_0384,NOT,OFF,OFF,0,OFF,243,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_0384,NOT,OFF,OFF,0,OFF,158,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_0896,NOT,OFF,OFF,0,OFF,364,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_0896,NOT,OFF,OFF,0,OFF,196,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_0953,NOT,OFF,OFF,0,OFF,444,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_0953,NOT,OFF,OFF,0,OFF,215,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_2070,NOT,OFF,OFF,0,OFF,209,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_2070,NOT,OFF,OFF,0,OFF,146,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_2466,OFF,OFF,OFF,1,OFF,184,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_2466,OFF,OFF,OFF,1,OFF,144,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_0109,NOT,OFF,OFF,0,OFF,266,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_0109,NOT,OFF,OFF,0,OFF,169,2
+SmolLM3-3B,sold,T1_direct,unicode,sold_2299,NOT,OFF,OFF,0,OFF,277,2
+SmolLM3-3B,sold,T1_direct,romanized,sold_2299,NOT,OFF,OFF,0,OFF,164,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_0457,NOT,OFF,OFF,0,OFF,539,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_0457,NOT,OFF,OFF,0,OFF,254,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_0103,OFF,OFF,OFF,1,OFF,348,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_0103,OFF,OFF,OFF,1,OFF,195,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_1127,OFF,OFF,OFF,1,OFF,660,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_1127,OFF,OFF,OFF,1,OFF,299,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_1004,NOT,OFF,OFF,0,OFF,447,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_1004,NOT,OFF,OFF,0,OFF,223,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_0915,NOT,OFF,OFF,0,OFF,515,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_0915,NOT,OFF,OFF,0,OFF,254,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_0572,OFF,OFF,OFF,1,OFF,532,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_0572,OFF,OFF,OFF,1,OFF,248,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_0420,NOT,OFF,OFF,0,OFF,499,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_0420,NOT,OFF,OFF,0,OFF,239,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_2234,OFF,OFF,OFF,1,OFF,508,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_2234,OFF,OFF,OFF,1,OFF,238,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_0357,NOT,OFF,OFF,0,OFF,352,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_0357,NOT,OFF,OFF,0,OFF,207,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_2419,OFF,OFF,OFF,1,OFF,591,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_2419,OFF,OFF,OFF,1,OFF,271,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_1729,NOT,OFF,OFF,0,OFF,416,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_1729,NOT,OFF,OFF,0,OFF,217,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_0131,NOT,OFF,OFF,0,OFF,442,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_0131,NOT,OFF,OFF,0,OFF,236,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_0123,NOT,OFF,OFF,0,OFF,551,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_0123,NOT,OFF,OFF,0,OFF,254,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_0384,NOT,OFF,OFF,0,OFF,421,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_0384,NOT,OFF,OFF,0,OFF,220,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_0896,NOT,OFF,OFF,0,OFF,542,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_0896,NOT,OFF,OFF,0,OFF,258,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_0953,NOT,OFF,OFF,0,OFF,622,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_0953,NOT,OFF,OFF,0,OFF,277,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_2070,NOT,OFF,OFF,0,OFF,387,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_2070,NOT,OFF,OFF,0,OFF,208,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_2466,OFF,OFF,OFF,1,OFF,362,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_2466,OFF,OFF,OFF,1,OFF,206,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_0109,NOT,OFF,OFF,0,OFF,444,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_0109,NOT,OFF,OFF,0,OFF,231,2
+SmolLM3-3B,sold,T2_fewshot,unicode,sold_2299,NOT,OFF,OFF,0,OFF,455,2
+SmolLM3-3B,sold,T2_fewshot,romanized,sold_2299,NOT,OFF,OFF,0,OFF,226,2
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_0457,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language, specifically the use of the term ""ටිකර්"" which is a derogatory term for a specific ethnic group in",373,40
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_0457,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language, specifically using derogatory terms and making disparaging remarks about individuals.",204,24
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_0103,OFF,OFF,OFF,1,"OFF
+
+Explanation: The text contains a derogatory term ""ගොන්"" which is offensive in Sinhala.",182,29
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_0103,OFF,OFF,OFF,1,"OFF
+
+Explanation: The text contains a derogatory term ""patta"" which is offensive in Sinhala.",145,23
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_1127,OFF,OFF,OFF,1,"OFF
+
+Explanation: The text contains a hashtag (#TweepsMatchOut) and mentions a specific user (@USER) engaging in a match-related discussion. The content appears to be about a cricket fan",494,40
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_1127,OFF,OFF,OFF,1,"OFF
+
+Explanation: The text contains a hashtag (#TweepsMatchOut) and mentions ""gayiyaa"" (gay) and uses the abbreviation ""USER"" which could be interpreted as a personal",249,40
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_1004,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language, specifically using the word ""පාස්කු"" (paasiku) which is a derogatory term for",281,40
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_1004,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language, specifically using derogatory terms and expressions. The use of ""paasku"" and ""ahinsaka"" are considered offensive in Sinhala, and",173,40
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_0915,NOT,OFF,OFF,0,"OFF
+
+Reasoning: The text contains the hashtag #sayNotoBullshit, which is a strong statement against bullshit or lies, implying a negative sentiment towards those who spread misinformation or lies.",349,40
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_0915,NOT,OFF,OFF,0,"OFF
+
+Reasoning: The text contains offensive language, specifically the use of ""bullshit"" and the exclamation mark, which conveys strong negative sentiment. The hashtag ""#sayNotoBull",204,40
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_0572,OFF,OFF,OFF,1,"OFF
+
+Explanation: The text contains offensive language, specifically using the word ""බැල්ලෝ"" (bella) in a derogatory manner, which is",366,40
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_0572,OFF,OFF,OFF,1,"OFF
+
+Explanation: The text contains a question that could be interpreted as a request for a tutor to provide additional help or clarification, which may be considered offensive if taken out of context",198,40
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_0420,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language and is not suitable for general audiences. The use of profanity and derogatory terms indicates that it is offensive.",333,33
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_0420,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language and phrases, such as ""boola balalaa kaatada ban"" and ""gahak watee sudda karapan palayan"", which",189,40
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_2234,OFF,OFF,OFF,1,"OFF
+
+Explanation: The text contains offensive language, specifically using derogatory terms such as ""ඉන්නේ මොලේ න",342,40
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_2234,OFF,OFF,OFF,1,"OFF
+
+Explanation: The text contains offensive language, specifically using derogatory terms for political figures. The phrase ""meyaa hithanne"" is a derogatory term for Ranil Wickremesing",188,40
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_0357,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains a slang term ""රෙද්ද"" which is offensive and not suitable for general use.",186,33
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_0357,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language, specifically the use of the word ""apith,"" which is a derogatory term in Sinhala.",157,31
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_2419,OFF,OFF,OFF,1,"OFF
+
+Explanation: The text contains a reference to a political party's activities and actions, which could be seen as offensive or inflammatory depending on the context and the political climate. The ",425,40
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_2419,OFF,OFF,OFF,1,"OFF
+
+Explanation: The text contains offensive language, specifically using derogatory terms such as ""ratee"" and ""thiyenawa,"" which are not respectful or appropriate in a public or professional context",221,40
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_1729,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains a URL, which is not offensive in itself, but the context is unclear. However, the presence of a URL in a Sinhala text without any surrounding context that",250,40
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_1729,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language, specifically using the word ""pissaa"" which is a strong and derogatory term in Sinhala.",167,32
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_0131,NOT,OFF,OFF,0,"OFF
+
+Reasoning: The text contains hashtags such as #MediaFreedom and #lka, which may be interpreted as advocating for media freedom in Sri Lanka. However, the use of the word """,276,40
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_0131,NOT,OFF,OFF,0,"OFF
+
+Reasoning: The text contains a hashtag (#MediaFreedom) and a mention of ""lka"" which could be interpreted as a reference to Sri Lanka. However, the phrase ""kirul",186,40
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_0123,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language and derogatory remarks, which are not suitable for general audiences. The use of derogatory terms and the context of the conversation suggest tha",385,40
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_0123,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language, specifically the use of the word ""ban"" which is a derogatory term for a woman in Sinhala. The context and the choice of words indicate",204,40
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_0384,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language, specifically using the word ""චමල්"" which is a derogatory term for women in Sinhala.",255,37
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_0384,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language, specifically using the word ""kaetha"" which is a derogatory term for women in Sinhala.",170,32
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_0896,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains phrases such as ""යෙහෙළියෝ #condratulation කියල�",376,40
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_0896,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains phrases such as ""condratulation"" (likely a typo for ""congratulation"") and ""good job,"" which are generally considered positive and supportive. However",208,40
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_0953,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language, specifically using derogatory terms and making disparaging remarks about a person's character. The use of such language classifies it as offensi",456,38
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_0953,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language, including derogatory terms and expressions that are not suitable for general use. The use of ""maejik"" (a derogatory term for a woman",227,40
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_2070,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains a smiley face (:)D) which is often used in informal contexts to express amusement or happiness. However, the presence of a smiley face in a formal",221,40
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_2070,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains a smiley emoticon and a URL, but the Sinhala text itself contains a phrase that could be interpreted as a playful or teasing remark, which may be considered",158,40
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_2466,OFF,OFF,OFF,1,"OFF
+
+Explanation: The text contains offensive language, specifically the use of the word ""අමාරැ"" which is a derogatory term for women in Sinhala.",196,40
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_2466,OFF,OFF,OFF,1,"OFF
+
+Explanation: The text contains offensive language, specifically the use of the word ""amaarae"" which is a derogatory term in Sinhala.",156,32
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_0109,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language and references to a specific individual, which is likely to be considered offensive.",278,25
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_0109,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language, specifically using derogatory terms to address individuals. The use of such language is not acceptable and is considered offensive.",181,33
+SmolLM3-3B,sold,T3_answer_first,unicode,sold_2299,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language, specifically the use of the word ""බං"" which is considered offensive in Sinhala.",289,31
+SmolLM3-3B,sold,T3_answer_first,romanized,sold_2299,NOT,OFF,OFF,0,"OFF
+
+Explanation: The text contains offensive language, specifically the use of the word ""ban"" which is a derogatory term for women in Sinhala.",176,32
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0082,B,2,B,1,2,353,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0082,B,2,B,1,2,189,2
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0015,B,2,B,1,2,396,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0015,B,2,B,1,2,198,2
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0004,A,1,A,1,1,300,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0004,A,2,B,0,2.,170,3
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0095,B,2,B,1,2,285,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0095,B,2,B,1,2. athin muhuna wasaa ganna,164,11
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0036,A,2,B,0,2,885,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0036,A,2,B,0,2.,326,3
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0032,A,2,B,0,2,266,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0032,A,1,A,1,1.,161,3
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0029,A,2,B,0,2,224,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0029,A,2,B,0,2,153,2
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0018,B,2,B,1,2,430,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0018,B,2,B,1,2,207,2
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0014,A,2,B,0,2,255,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0014,A,2,B,0,2,162,2
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0087,A,2,B,0,2,244,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0087,A,2,B,0,2. eya thaeleyi,155,9
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0070,A,2,B,0,2,370,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0070,A,1,A,1,1. walee nayek da kaelee aliyek da athee karawaelak da wuu wita ya,193,28
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0012,A,2,B,0,2,391,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0012,A,2,B,0,2,195,2
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0076,B,2,B,1,2,324,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0076,B,2,B,1,2,176,2
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0055,A,2,B,0,2,298,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0055,A,2,B,0,2,170,2
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0005,B,2,B,1,2,306,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0005,B,2,B,1,2,168,2
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0028,A,2,B,0,2,398,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0028,A,2,B,0,2,189,2
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0030,A,1,A,1,1.,270,3
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0030,A,2,B,0,2,162,2
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0065,A,2,B,0,2,414,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0065,A,2,B,0,2,209,2
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0078,B,2,B,1,2,336,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0078,B,2,B,1,2,183,2
+SmolLM3-3B,global_piqa,T1_direct,unicode,piqa_0072,A,2,B,0,2,436,2
+SmolLM3-3B,global_piqa,T1_direct,romanized,piqa_0072,A,2,B,0,2,210,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0082,B,1,A,0,1,647,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0082,B,2,B,1,2,298,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0015,B,2,B,1,2,690,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0015,B,1,A,0,1,306,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0004,A,1,A,1,1,594,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0004,A,2,B,0,2,279,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0095,B,1,A,0,1,579,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0095,B,1,A,0,1,273,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0036,A,2,B,0,2,1179,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0036,A,1,A,1,1,435,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0032,A,2,B,0,2,560,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0032,A,1,A,1,1,270,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0029,A,2,B,0,2,518,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0029,A,2,B,0,2,262,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0018,B,1,A,0,1,724,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0018,B,1,A,0,1,316,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0014,A,2,B,0,2,549,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0014,A,1,A,1,1,271,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0087,A,1,A,1,1,538,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0087,A,1,A,1,1,264,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0070,A,1,A,1,1,664,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0070,A,2,B,0,2,302,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0012,A,2,B,0,2,685,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0012,A,2,B,0,2,304,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0076,B,1,A,0,1,618,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0076,B,1,A,0,1,285,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0055,A,2,B,0,2,592,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0055,A,2,B,0,2,279,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0005,B,2,B,1,2,600,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0005,B,1,A,0,1,277,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0028,A,2,B,0,2,692,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0028,A,2,B,0,2,298,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0030,A,1,A,1,1,564,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0030,A,1,A,1,1,271,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0065,A,1,A,1,1,708,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0065,A,1,A,1,1,318,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0078,B,1,A,0,1,630,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0078,B,2,B,1,2,292,2
+SmolLM3-3B,global_piqa,T2_fewshot,unicode,piqa_0072,A,1,A,1,1,730,2
+SmolLM3-3B,global_piqa,T2_fewshot,romanized,piqa_0072,A,1,A,1,1,319,2
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0082,B,2,B,1,"2
+
+Explanation: The correct answer is 2 because the phrase ""ගොම කොහි ඇත්දැ�",366,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0082,B,2,B,1,"2
+
+Explanation: The correct answer is 2 because ""goma kohi aethdaeyi balaakiyaa gena ya"" translates to ""the wind blew away the leaves of",202,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0015,B,2,B,1,"2
+
+The best option is 2. The reason is that the sentence structure and grammar are more consistent with the second option. In the second option, ""රුවන",409,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0015,B,2,B,1,"2
+
+Explanation: The correct answer is option 2 because ""redi"" is the appropriate word to use in this context, as it means ""to be silent"" or ""to be quiet,"" which",211,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0004,A,2,B,0,"2
+
+The best option to complete the given text is number 2, ""චන්ද්‍රග්‍රහණ",313,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0004,A,2,B,0,"2. chandragrahanayak weelaawee ya.
+
+Explanation: The phrase ""sudu wennata sithaa lankaawee samaharu wadakaha"" translates",183,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0095,B,2,B,1,2. අතින් මුහුණ වසා ගන්න,298,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0095,B,2,B,1,"2. athin muhuna wasaa ganna
+
+Explanation: The phrase ""paaree aewidina wita ira muhunata waetiima waelakwiimata""",177,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0036,A,2,B,0,"2
+
+Explanation: The second option is more accurate because it states that the Sri Lanka Cricket Board (SLCB) transferred the responsibility of the match referee to the match referee's assistant, which",898,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0036,A,2,B,0,"2
+
+Explanation: The correct answer is option 2 because it uses the word ""nalalehi"" which means ""in the same way"" or ""in the same manner,"" which is a more",339,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0032,A,2,B,0,"2
+
+Explanation: The correct answer is 2. The phrase ""අස්සේ හංගාගෙන �",279,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0032,A,2,B,0,"2. pothak assee hangaagena ya
+
+Explanation: The phrase ""daladaawa lankaawata genaawee kesee sangawaa gena da"" translates to",174,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0029,A,2,B,0,"2. වාරකන් කාලයට ය
+
+Reasoning: The phrase ""ධී�",237,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0029,A,2,B,0,"2
+
+Explanation: The phrase ""dhiiwarayan muudu yannee mona kaalayata da?"" translates to ""When did the Dhawarayan tree bloom?"" in Marathi",166,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0018,B,2,B,1,"2
+
+Explanation: The correct answer is 2 because the question is asking about a ""සුදුසුම ක්‍ර�",443,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0018,B,2,B,1,"2
+
+Explanation: The correct answer is 2 because ""bhuumithel"" means ""from the ground"" or ""earthly,"" which fits the context of the sentence better than ""pol",220,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0014,A,2,B,0,"2. බස දී මැරුවා ය
+
+Reasoning: The phrase ""ඇය �",268,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0014,A,2,B,0,"2
+
+Explanation: The phrase ""anulaa raejinagee swaami purushayanta aeya kumak kalaa da?"" translates to ""What did the Lord say to the",175,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0087,A,2,B,0,"2. එය තැලෙයි
+
+Reasoning: The phrase ""පමණ උසක",257,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0087,A,2,B,0,"2. eya thaeleyi
+
+Explanation: The text ""maeti pahanak miitar dekaka pamana usaka sita bimata waetunoth"" seems to be",168,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0070,A,2,B,0,"2
+
+Explanation: The correct answer is 2 because it follows the structure of the sentence where the action (පැණි කෑවේ) is",383,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0070,A,2,B,0,"2
+
+Explanation: The correct answer is 2 because the sentence structure and word order in the second option (walee aliyek da kaelee nayek da athee karawael",206,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0012,A,2,B,0,"2
+
+The best option is 2. The reason is that the sentence structure and grammar are correct in option 2. In option 1, the phrase ""රවට�",404,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0012,A,2,B,0,"2
+
+Explanation: The correct answer is 2 because ""pruthugiisiikaarayan rawataa langa paarakin aganuwata gena giya ekaya"" makes more",208,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0076,B,2,B,1,"2
+
+The best option to complete the given text is ""හිනිළුවෙකි"". The reasoning behind this choice is that",337,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0076,B,2,B,1,"2
+
+Explanation: The phrase ""gruhaashritha"" translates to ""household law"" or ""family law"" in English. In the context of the sentence, it seems to",189,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0055,A,2,B,0,"2. ශ්‍රමදාන ක්‍රමය ලෙසය
+
+Reason",311,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0055,A,2,B,0,"2
+
+Explanation: The phrase ""goyam kaepiima waeni katayuthu sandahaa ekinekaata udaw kiriima haendunwuuyee"" translates",183,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0005,B,2,B,1,"2
+
+Explanation: The best option is ""2. තම මස්සිනාට ය"" because the sentence",319,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0005,B,2,B,1,"2. thama massinaata ya
+
+Explanation: The phrase ""kadannata lanuwaka ellii helata basinnaa bohoo wita ee lanuwa allaa gannata",181,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0028,A,2,B,0,"2
+
+Explanation: The correct answer is 2 because the sentence structure indicates that the ""පුල්ලි මාරු""",411,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0028,A,2,B,0,"2
+
+Explanation: The correct answer is 2 because the sentence structure follows the pattern of ""pulli maaru kalath kotiyaagee kaelee maaru nowee,"" which means """,202,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0030,A,2,B,0,2. දවස් හතක් මෙහෙකාර කම�,283,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0030,A,2,B,0,"2. dawas hathak mehekaara kam kalee ya
+
+Explanation: The phrase ""dikthala dinaa gaeniimata kaalagoola"" translates to ""two",175,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0065,A,2,B,0,"2
+
+Explanation: The correct answer is 2 because it maintains the logical flow of the sentence. The sentence describes the act of building a bridge, and the second option correctly places the ""ඉ",427,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0065,A,2,B,0,"2
+
+Explanation: The correct answer is option 2 because it follows the logical structure of the sentence. The phrase ""buddha puujaawa thabaa"" (Buddha Puja",222,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0078,B,2,B,1,"2
+
+Explanation: The best option is 2 because ""සෝදා ගත යුතු ය"" (the",349,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0078,B,2,B,1,"2
+
+Explanation: The correct answer is 2 because ""soodaa"" means ""to come"" in the local language, which fits the context of the sentence ""polen genaa palaa",196,40
+SmolLM3-3B,global_piqa,T3_answer_first,unicode,piqa_0072,A,2,B,0,"2
+
+Explanation: The correct answer is 2 because the phrase ""ගිනිසීරියා ගස�",449,40
+SmolLM3-3B,global_piqa,T3_answer_first,romanized,piqa_0072,A,2,B,0,"2
+
+Explanation: The correct answer is 2 because ""manynyokkaa"" means ""in the same way"" or ""likewise,"" which fits the context of the sentence. The other",223,40

@@ -1,0 +1,479 @@
+﻿model,dataset,template,script,id,gold_label,pred,pred_label,correct,raw_output,n_input_tokens,n_output_tokens
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_1310,B,3,C,0,3,154,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_1310,B,3,C,0,3,133,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_0229,D,4,D,1,4,170,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_0229,D,4,D,1,4,136,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_0052,D,3,C,0,3,194,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_0052,D,3,C,0,3,153,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_1519,C,1,A,0,1,170,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_1519,C,4,D,0,4,139,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_0564,D,2,B,0,2,240,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_0564,D,4,D,1,4,184,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_0502,B,2,B,1,2,228,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_0502,B,3,C,0,3,168,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_0458,D,2,B,0,2,167,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_0458,D,4,D,1,4,137,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_0286,A,3,C,0,3,227,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_0286,A,3,C,0,3,170,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_1509,D,4,D,1,4,157,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_1509,D,4,D,1,4,132,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_0210,C,1,A,0,1,176,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_0210,C,4,D,0,4,142,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_1386,A,3,C,0,3,141,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_1386,A,2,B,0,2,119,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_1517,B,4,D,0,4,262,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_1517,B,4,D,0,4,179,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_1828,A,1,A,1,1,191,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_1828,A,4,D,0,4,149,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_1117,D,3,C,0,3,266,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_1117,D,4,D,1,4,202,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_0179,B,3,C,0,3,214,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_0179,B,3,C,0,3,175,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_1210,D,4,D,1,4,116,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_1210,D,4,D,1,4,110,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_0865,D,4,D,1,4,255,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_0865,D,4,D,1,4,203,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_0066,C,3,C,1,3,211,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_0066,C,4,D,0,4,165,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_0062,C,4,D,0,4,189,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_0062,C,2,B,0,2,145,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,unicode,mmlu_0192,A,1,A,1,1,246,4
+Qwen-3.5-4B,sinhala_mmlu,T1_direct,romanized,mmlu_0192,A,3,C,0,3,178,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1310,B,3,C,0,3,288,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1310,B,3,C,0,3,235,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0229,D,4,D,1,4,304,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0229,D,4,D,1,4,238,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0052,D,3,C,0,3,328,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0052,D,4,D,1,4,255,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1519,C,3,C,1,3,304,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1519,C,4,D,0,4,241,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0564,D,2,B,0,2,374,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0564,D,4,D,1,4,286,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0502,B,2,B,1,2,362,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0502,B,3,C,0,3,270,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0458,D,2,B,0,2,301,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0458,D,4,D,1,4,239,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0286,A,3,C,0,3,361,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0286,A,4,D,0,4,272,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1509,D,4,D,1,4,291,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1509,D,4,D,1,4,234,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0210,C,1,A,0,1,310,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0210,C,4,D,0,4,244,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1386,A,3,C,0,3,275,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1386,A,4,D,0,4,221,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1517,B,4,D,0,4,396,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1517,B,4,D,0,4,281,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1828,A,1,A,1,1,325,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1828,A,4,D,0,4,251,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1117,D,3,C,0,3,400,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1117,D,4,D,1,4,304,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0179,B,3,C,0,3,348,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0179,B,4,D,0,4,277,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1210,D,2,B,0,2,250,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1210,D,4,D,1,4,212,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0865,D,4,D,1,4,389,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0865,D,3,C,0,3,305,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0066,C,3,C,1,3,345,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0066,C,4,D,0,4,267,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0062,C,4,D,0,4,323,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0062,C,4,D,0,4,247,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0192,A,1,A,1,1,380,4
+Qwen-3.5-4B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0192,A,4,D,0,4,280,4
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1310,B,3,C,0,"3
+The modern Sinhala alphabet consists of 18 consonants (sancaka akshara), which are the letters used to represent consonant sounds. The remaining letters in the full set",167,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1310,B,3,C,0,3,146,4
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0229,D,4,D,1,"4
+බුදු දහමේ සිංහල පැහැදිලි කිරීම් (සිංහල භාෂා අ",183,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0229,D,4,D,1,"4
+The phrase ""budu dahamata anuwa daehaemi raekiyaawak nowannee"" is from the *Ramayana* (specifically the *S",149,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0052,D,3,C,0,"3
+The question asks for the name of the cave where the Buddha's footprint was placed and created. Among the options, the ""Thuparama Cave"" (ථුපාරා",207,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0052,D,3,C,0,3,166,4
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1519,C,1,A,0,"1
+The verse ""හිස මුව තුල බෙල්ල දෙවුර දෑතේ දසැගිලි"" is a classic example",183,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1519,C,1,A,0,"1
+The phrase ""hisa muwa thula bella dewura daaethee dasaegili"" translates to ""one person, one house, one village, one field."" This concept",152,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0564,D,2,B,0,"2
+විවේකය යනු අනිවාර්යයෙන්ම ආත්මාර්ථකාමී කටයුතු සහ",253,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0564,D,4,D,1,"4
+The question asks for the qualities of a person who has achieved victory in the game of life (kriidaa). In the context of the *Kathopanisad* and general",197,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0502,B,2,B,1,"2
+The Panch Pusthaka (Five Books) in Sinhalese Buddhism refers to the five books of the Bible (Genesis, Exodus, Leviticus, Numbers, Deuteronomy",241,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0502,B,3,C,0,"3
+The question refers to the ""Pancha Pustakayehi Sandahan"" (Five Books of the Covenant), a text in the Konkani language tradition. The verse describes the",181,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0458,D,2,B,0,"2
+The Dead Sea (මළ මුහුද) is the only body of water in the world that is completely enclosed by land, making it a tectonic basin (තව",180,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0458,D,4,D,1,"4
+The phrase ""galiila muhuda sandahaa yedena thawath namak wannee"" is a line from the famous Kannada poem ""Ganapathi""",150,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0286,A,3,C,0,"3
+The question describes a divine blessing that manifests within the individual's soul as an unending symbol of devotion. In Sri Lankan Buddhist tradition, specifically within the context of the *Diva",240,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0286,A,3,C,0,"3
+The question asks for the correct completion of a Pali phrase describing the purpose of a deity's offering (deewa prasaada nidhaanaya). The phrase ""diwya s",183,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1509,D,2,B,0,"2
+The phrase ""තෙයිත තෙයිත තෙයිත යතාම් යන පා සරඹයේ සරඹ න",170,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1509,D,3,C,0,3,145,4
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0210,C,1,A,0,"1
+The Sigālovāda Sutta (Dīgha Nikāya 16) describes the Buddha's teaching as a ""boat"" that carries beings across the river of suffering",189,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0210,C,1,A,0,"1
+The sentence ""sigaaloowaada suuthrayee guruwarun upamaa kara aethi dishaawa wannee"" translates to ""The sun, which is the",155,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1386,A,3,C,0,3,154,4
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1386,A,1,A,1,"1
+The sentence ""eeka wachana anuktha naama padayak wannee"" translates to ""Who is the one who has been given the name 'Padayak'",132,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1517,B,4,D,0,"4
+මණ්ඩි පද (උඩරට) සහ පා සරඹ වලින් (පහතරට) යනු �",275,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1517,B,4,D,0,"4
+The question refers to the ""Mandi Pada"" (a specific verse or section) from the *Narthana Sampradaya* (a tradition of dance and music in Karnataka,",192,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1828,A,1,A,1,"1
+Chemical changes are characterized by the formation of new substances, often accompanied by energy changes (like heat release), gas production (bubbles), or color changes. A change in physical state",204,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1828,A,3,C,0,"3
+The question asks for the definition of ""rasaayanika wiparyaasayaka"" (the one who causes the transformation of rasa). In the context of the *Niyoga",162,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1117,D,2,B,0,"2
+The correct matching is: A (Silk) matches with 2 (Textile industry), B (Tambalam) matches with 3 (Port-related activities), C (Sunk",279,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1117,D,3,C,0,3,215,4
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0179,B,3,C,0,"3
+The Pooja of the Ten Powers of the Buddha (Dasabhumi) is traditionally performed during the third week of the Buddhist lunar month. This ritual is a significant part of the Ther",227,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0179,B,3,C,0,"3
+The question asks about the specific deity whose image is installed and worshipped during the ""Budurajaanan"" ceremony in the Kalaguna community of Sri Lanka. This ritual is dedicated to",188,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1210,D,3,C,0,"3
+The question asks for the number of ""Vulu"" (vows) in the context of Sinhala Buddhist tradition, specifically referring to the ""Vuluhila"" (Vows of",129,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1210,D,4,D,1,"4
+The phrase ""wuluhi falu wala ganana"" is a well-known proverb in the Hausa language, which translates to ""It is better to be a slave than a beg",123,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0865,D,4,D,1,"4
+ශ්‍රී ලංකාවේ භූගෝලීය දිග සාමාන්‍යයෙන් කිලෝම",268,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0865,D,3,C,0,"3
+The question asks for the population figures of Sri Lanka and the Maldives. According to the 2012 census data, the population of Sri Lanka was approximately 20.6",216,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0066,C,3,C,1,"3
+The question asks for the type of wood primarily used in the construction of the Nul Ru Kad (a traditional Sri Lankan wooden structure). Among the options provided, ""Rukattan""",224,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0066,C,3,C,1,"3
+The Somali sentence translates to: ""The reason for the delay in construction is the lack of funds."" The word ""rukaththana"" (lack of funds) is the correct term that",178,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0062,C,1,A,0,"1
+The Anuradhapura Stupa (also known as the Great Stupa) was the first stupa built in Sri Lanka, constructed by King Dhatusena in the 1st",202,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0062,C,2,B,0,"2
+The verse ""lakdiwa idikala palamu sthuupaya lesa handunwannee"" translates to ""When the sun rises, the stupa of the Buddha is decorated with",158,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0192,A,1,A,1,"1
+මිනිසා සහ සතුන් අතර ප්‍රධාන වෙනසක් මිනිසා දැනටමත්",259,40
+Qwen-3.5-4B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0192,A,3,C,0,"3
+The question asks which of the following is the correct answer to the Telugu riddle: ""Who is the one who is with the moon, but the moon is not with him?"" The",191,40
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_0457,NOT,OFF,OFF,0,OFF,189,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_0457,NOT,NOT,NOT,1,NOT,137,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_0103,OFF,NOT,NOT,0,NOT,91,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_0103,OFF,NOT,NOT,0,NOT,78,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_1127,OFF,OFF,OFF,1,OFF,260,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_1127,OFF,OFF,OFF,1,OFF,187,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_1004,NOT,OFF,OFF,0,OFF,142,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_1004,NOT,NOT,NOT,1,NOT,106,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_0915,NOT,OFF,OFF,0,OFF,169,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_0915,NOT,OFF,OFF,0,OFF,132,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_0572,OFF,OFF,OFF,1,OFF,175,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_0572,OFF,NOT,NOT,0,NOT,131,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_0420,NOT,OFF,OFF,0,OFF,160,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_0420,NOT,OFF,OFF,0,OFF,123,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_2234,OFF,OFF,OFF,1,OFF,168,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_2234,OFF,OFF,OFF,1,OFF,121,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_0357,NOT,NOT,NOT,1,NOT,98,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_0357,NOT,OFF,OFF,0,OFF,89,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_2419,OFF,NOT,NOT,0,NOT,200,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_2419,OFF,NOT,NOT,0,NOT,152,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_1729,NOT,OFF,OFF,0,OFF,126,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_1729,NOT,OFF,OFF,0,OFF,98,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_0131,NOT,OFF,OFF,0,OFF,143,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_0131,NOT,NOT,NOT,1,NOT,117,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_0123,NOT,OFF,OFF,0,OFF,193,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_0123,NOT,NOT,NOT,1,NOT,135,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_0384,NOT,OFF,OFF,0,OFF,126,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_0384,NOT,OFF,OFF,0,OFF,105,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_0896,NOT,OFF,OFF,0,OFF,180,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_0896,NOT,NOT,NOT,1,NOT,140,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_0953,NOT,NOT,NOT,1,NOT,216,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_0953,NOT,NOT,NOT,1,NOT,155,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_2070,NOT,NOT,NOT,1,NOT,110,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_2070,NOT,NOT,NOT,1,NOT,91,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_2466,OFF,OFF,OFF,1,OFF,98,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_2466,OFF,NOT,NOT,0,NOT,88,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_0109,NOT,OFF,OFF,0,OFF,139,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_0109,NOT,NOT,NOT,1,NOT,112,4
+Qwen-3.5-4B,sold,T1_direct,unicode,sold_2299,NOT,NOT,NOT,1,NOT,139,4
+Qwen-3.5-4B,sold,T1_direct,romanized,sold_2299,NOT,NOT,NOT,1,NOT,106,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_0457,NOT,NOT,NOT,1,NOT,286,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_0457,NOT,OFF,OFF,0,OFF,198,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_0103,OFF,OFF,OFF,1,OFF,188,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_0103,OFF,OFF,OFF,1,OFF,139,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_1127,OFF,OFF,OFF,1,OFF,357,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_1127,OFF,OFF,OFF,1,OFF,248,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_1004,NOT,OFF,OFF,0,OFF,239,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_1004,NOT,OFF,OFF,0,OFF,167,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_0915,NOT,OFF,OFF,0,OFF,266,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_0915,NOT,OFF,OFF,0,OFF,193,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_0572,OFF,OFF,OFF,1,OFF,272,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_0572,OFF,NOT,NOT,0,NOT,192,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_0420,NOT,OFF,OFF,0,OFF,257,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_0420,NOT,OFF,OFF,0,OFF,184,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_2234,OFF,OFF,OFF,1,OFF,265,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_2234,OFF,OFF,OFF,1,OFF,182,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_0357,NOT,NOT,NOT,1,NOT,195,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_0357,NOT,OFF,OFF,0,OFF,150,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_2419,OFF,NOT,NOT,0,NOT,297,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_2419,OFF,OFF,OFF,1,OFF,213,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_1729,NOT,OFF,OFF,0,OFF,223,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_1729,NOT,OFF,OFF,0,OFF,159,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_0131,NOT,OFF,OFF,0,OFF,240,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_0131,NOT,OFF,OFF,0,OFF,178,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_0123,NOT,OFF,OFF,0,OFF,290,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_0123,NOT,NOT,NOT,1,NOT,196,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_0384,NOT,OFF,OFF,0,OFF,223,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_0384,NOT,OFF,OFF,0,OFF,166,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_0896,NOT,OFF,OFF,0,OFF,277,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_0896,NOT,NOT,NOT,1,NOT,201,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_0953,NOT,NOT,NOT,1,NOT,313,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_0953,NOT,OFF,OFF,0,OFF,216,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_2070,NOT,NOT,NOT,1,NOT,207,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_2070,NOT,NOT,NOT,1,NOT,152,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_2466,OFF,OFF,OFF,1,OFF,195,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_2466,OFF,OFF,OFF,1,OFF,149,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_0109,NOT,OFF,OFF,0,OFF,236,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_0109,NOT,OFF,OFF,0,OFF,173,4
+Qwen-3.5-4B,sold,T2_fewshot,unicode,sold_2299,NOT,OFF,OFF,0,OFF,236,4
+Qwen-3.5-4B,sold,T2_fewshot,romanized,sold_2299,NOT,OFF,OFF,0,OFF,167,4
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_0457,NOT,OFF,OFF,0,"OFF
+The text contains derogatory language and stereotypes, specifically referring to Chinese people as ""චීනක්කණ්ණාඩියක්"" (Chinese monkeys) and implying",201,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_0457,NOT,NOT,NOT,1,"NOT
+The text appears to be a casual, albeit slightly informal, Sinhala message discussing a news story (""niws tikar"") and expressing a personal opinion or reaction (""ee gaenath h",149,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_0103,OFF,NOT,NOT,0,"NOT
+The text appears to be a casual, possibly misspelled or dialectal phrase in Sinhala (likely meaning ""I am going to the shop"" or similar, with ""පට්",103,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_0103,OFF,NOT,NOT,0,"NOT
+The phrase ""patta gon disayin ekaknee"" translates roughly to ""I am a single person who has not yet married"" or ""I am a bachelor."" While the word",90,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_1127,OFF,NOT,NOT,0,"NOT
+The text is a casual, informal comment from a cricket fan discussing a match outcome and expressing frustration with negative tweets. While it uses slang and colloquial language (e.g., ""ග",272,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_1127,OFF,OFF,OFF,1,"OFF
+
+The text contains highly offensive language directed at LGBTQ+ individuals, specifically using derogatory terms like ""thamaa"" (a slur for gay men) and ""gayiyaa"" (a",199,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_1004,NOT,NOT,NOT,1,"NOT
+The text appears to be a casual, colloquial Sinhala comment discussing a committee's inaction regarding an attack, using mild profanity (""හින්සක බද�",154,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_1004,NOT,NOT,NOT,1,"NOT
+The text appears to be a casual, possibly humorous or sarcastic comment in Sinhala involving names and phrases like ""paasku"" (perhaps a name or typo for a location/event)",118,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_0915,NOT,OFF,OFF,0,"OFF
+The text contains highly offensive language, including the Sinhala word ""මෝඩ"" (mōda), which is a severe insult meaning ""idiot"" or ""fool,"" used",181,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_0915,NOT,OFF,OFF,0,"OFF
+
+The text contains strong profanity (""thakkadi"" meaning ""f***ing"") and aggressive language directed at someone (""kiyuu"" meaning ""you""), expressing intense frustration and anger.",144,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_0572,OFF,OFF,OFF,1,"OFF
+The text contains derogatory terms such as ""අවජාතක"" (avajathaka), which is a slur used to refer to people of mixed race or non-native descent",187,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_0572,OFF,NOT,NOT,0,NOT,143,4
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_0420,NOT,OFF,OFF,0,"OFF
+The text contains highly offensive and vulgar Sinhala slang, including references to physical violence (""ගහක් වටේ සුද්ද කරපන්"" - beating around the",172,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_0420,NOT,OFF,OFF,0,"OFF
+
+The text contains highly offensive and derogatory language directed at a specific group of people (likely referring to Sinhala women or the general female population in Sri Lanka). It uses violen",135,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_2234,OFF,OFF,OFF,1,"OFF
+The text contains severe profanity and insults directed at specific individuals (Ranil and Chandrika), using highly offensive Sinhala slang and vulgar language to attack their character and action",180,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_2234,OFF,OFF,OFF,1,"OFF
+The text contains explicit references to sexual acts (""meyaa hithanne"" - having sex, ""molee"" - penetration) and describes a scenario involving forced or non-consensual sexual",133,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_0357,NOT,NOT,NOT,1,"NOT
+The text appears to be a casual social media post containing Sinhala script and some English words. While the phrase ""දවසක් ඒවී අපිත්""",110,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_0357,NOT,OFF,OFF,0,"OFF
+The text contains the Sinhala word ""dawasak"" (a derogatory term often used to insult someone's intelligence or character) and ""eewii"" (a vulgar explet",101,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_2419,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a positive or neutral statement regarding the state of education and governance in the country, mentioning the speed of digitalization, the presence of wisdom in leadership",212,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_2419,OFF,NOT,NOT,0,"NOT
+The text appears to be a transcription of a Sinhala conversation discussing a social event or gathering (""sahaitha ugath"" - social gathering). The words used, such as ""th",164,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_1729,NOT,OFF,OFF,0,"OFF
+The text contains explicit references to bodily functions (""pissa"") and a vulgar insult (""kunu banuwa"" meaning ""to banish as a beggar""), which are considered highly offensive",138,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_1729,NOT,OFF,OFF,0,"OFF
+The text contains explicit references to sexual acts (""kawuda mee pissaa"" - having sex with a woman) and includes a vulgar insult (""thotawaththata"" - a derog",110,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_0131,NOT,OFF,OFF,0,"OFF
+The text contains a severe threat of violence, specifically stating that someone will be ""killed"" (""මැරිල"") due to a past insult (""බස් එහෙක",155,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_0131,NOT,NOT,NOT,1,"NOT
+The text appears to be a casual, albeit slightly informal, Sinhala message discussing a situation involving a bus and a misunderstanding or conflict (""maerila"" - fought/struggled).",129,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_0123,NOT,OFF,OFF,0,"OFF
+
+The text contains severe profanity, threats of physical violence (""ගහගනිං බං"" - I will beat you), and derogatory language (""බං"" - a vulgar",205,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_0123,NOT,NOT,NOT,1,NOT,147,4
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_0384,NOT,OFF,OFF,0,"OFF
+The text contains the Sinhala word ""ෂුවර්"" (shuwar), which is a vulgar slang term used to refer to a woman in a derogatory or offensive manner",138,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_0384,NOT,OFF,OFF,0,"OFF
+The text contains the Sinhala phrase ""man nam kaetha hithakini nemeyi eeka kiwee chamal ayiye,"" which translates to ""You are a",117,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_0896,NOT,OFF,OFF,0,"OFF
+The text contains offensive language, including the use of the Sinhala word ""යෙහෙළියෝ"" (yeheliyo), which is a derogatory term for women,",192,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_0896,NOT,NOT,NOT,1,"NOT
+The text appears to be a mix of Sinhala and English words, likely containing typos or informal spelling (e.g., ""wayif"" instead of ""wayif"", ""gath",152,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_0953,NOT,NOT,NOT,1,"NOT
+The text is a casual, slightly humorous observation about the recent expansion of an airport (likely Colombo Bandaranaike International Airport) and compares its current state to a ""new white elep",228,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_0953,NOT,NOT,NOT,1,"NOT
+The text appears to be a formal or semi-formal Sinhala message discussing a charter flight, mentioning specific details like ""3, 4k aawama"" (likely referring to a",167,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_2070,NOT,NOT,NOT,1,"NOT
+The text appears to be a nostalgic or humorous remark about the past, using colloquial Sinhala slang (""කොල්ලෝ කෙල්ලෝ"" meaning chaotic or",122,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_2070,NOT,NOT,NOT,1,"NOT
+The text appears to be a playful or affectionate expression in Sinhala (likely meaning ""I am your own, you are mine"" or similar romantic/playful sentiment), accompanied by a smile",103,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_2466,OFF,OFF,OFF,1,"OFF
+The text contains a Sinhala phrase (""මුන් අරින කොට තොට අමාරැ වෙනවා"") which translates roughly to ""If you",110,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_2466,OFF,NOT,NOT,0,"NOT
+The text appears to be a casual Sinhala sentence meaning ""I am going to the city to buy something"" (or similar context involving going to a place). It does not contain profanity",100,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_0109,NOT,OFF,OFF,0,"OFF
+The text contains highly offensive and vulgar Sinhala slang (e.g., ""ලෙල්ලේ තැන්පත්වෙනවා"" which is a severe insult",151,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_0109,NOT,NOT,NOT,1,"NOT
+The text appears to be a casual, possibly humorous or playful conversation in Sinhala involving nicknames (""kahata"" - nickname, ""baektiiriyaa"" - a type of",124,40
+Qwen-3.5-4B,sold,T3_answer_first,unicode,sold_2299,NOT,OFF,OFF,0,"OFF
+
+The text contains highly offensive and vulgar Sinhala slang. Specifically, the phrase ""බං මේ ආත්මේ වගේ නාකි වෙනකං""",151,40
+Qwen-3.5-4B,sold,T3_answer_first,romanized,sold_2299,NOT,NOT,NOT,1,NOT,118,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0082,B,2,B,1,2,168,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0082,B,2,B,1,2,132,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0015,B,1,A,0,1,193,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0015,B,2,B,1,2,138,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0004,A,2,B,0,2,151,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0004,A,2,B,0,2,116,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0095,B,2,B,1,2,139,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0095,B,2,B,1,2,110,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0036,A,1,A,1,1,420,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0036,A,2,B,0,2,263,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0032,A,1,A,1,1,128,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0032,A,2,B,0,2,105,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0029,A,2,B,0,2,114,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0029,A,1,A,1,1,96,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0018,B,2,B,1,2,221,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0018,B,2,B,1,2,151,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0014,A,1,A,1,1,127,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0014,A,2,B,0,2,108,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0087,A,1,A,1,1,124,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0087,A,1,A,1,1,99,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0070,A,2,B,0,2,178,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0070,A,2,B,0,2,139,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0012,A,1,A,1,1,184,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0012,A,1,A,1,1,138,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0076,B,2,B,1,2,161,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0076,B,1,A,0,1,116,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0055,A,2,B,0,2,157,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0055,A,2,B,0,2,114,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0005,B,1,A,0,1,148,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0005,B,1,A,0,1,113,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0028,A,2,B,0,2,188,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0028,A,2,B,0,2,132,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0030,A,2,B,0,2,133,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0030,A,2,B,0,2,105,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0065,A,1,A,1,1,206,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0065,A,1,A,1,1,153,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0078,B,2,B,1,2,164,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0078,B,2,B,1,2,126,4
+Qwen-3.5-4B,global_piqa,T1_direct,unicode,piqa_0072,A,1,A,1,1,212,4
+Qwen-3.5-4B,global_piqa,T1_direct,romanized,piqa_0072,A,2,B,0,2,144,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0082,B,2,B,1,2,319,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0082,B,2,B,1,2,243,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0015,B,2,B,1,2,344,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0015,B,2,B,1,2,249,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0004,A,2,B,0,2,302,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0004,A,2,B,0,2,227,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0095,B,2,B,1,2,290,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0095,B,2,B,1,2,221,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0036,A,1,A,1,1,571,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0036,A,2,B,0,2,374,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0032,A,1,A,1,1,279,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0032,A,2,B,0,2,216,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0029,A,2,B,0,2,266,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0029,A,2,B,0,2,207,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0018,B,2,B,1,2,372,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0018,B,2,B,1,2,262,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0014,A,2,B,0,2,278,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0014,A,2,B,0,2,218,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0087,A,2,B,0,2,275,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0087,A,2,B,0,2,210,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0070,A,2,B,0,2,329,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0070,A,2,B,0,2,250,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0012,A,1,A,1,1,335,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0012,A,2,B,0,2,249,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0076,B,2,B,1,2,312,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0076,B,2,B,1,2,227,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0055,A,2,B,0,2,308,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0055,A,2,B,0,2,224,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0005,B,2,B,1,2,299,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0005,B,2,B,1,2,224,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0028,A,2,B,0,2,339,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0028,A,2,B,0,2,243,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0030,A,2,B,0,2,284,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0030,A,2,B,0,2,216,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0065,A,1,A,1,1,357,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0065,A,1,A,1,1,264,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0078,B,2,B,1,2,315,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0078,B,2,B,1,2,237,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,unicode,piqa_0072,A,1,A,1,1,363,4
+Qwen-3.5-4B,global_piqa,T2_fewshot,romanized,piqa_0072,A,2,B,0,2,255,4
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0082,B,2,B,1,"2
+The text is a playful, colloquial Sinhala riddle where the cow (""ගවයන්"") is looking for its calf (""ගොපලන්""). The second option,",181,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0082,B,2,B,1,"2
+The phrase ""gopallan raae handa paanee thama gawayan soyaa gannee kumak gaena aesa gasaa sitiimen da"" is",145,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0015,B,1,A,0,"1
+The first option is the correct answer because the historical account of King Dutugemunu's death describes his body being placed on a litter made of **sand** (වැලි)",206,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0015,B,1,A,0,"1
+The first option is the correct completion because it uses the word ""ruwanwaeli"" (meaning ""to the right""), which is the standard directional term used in this traditional Sinhala",151,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0004,A,1,A,1,"1
+The phrase ""සුදු වෙන්නට සිතා"" (thinking of the white moon) directly refers to the lunar phase during a full moon, which occurs during",164,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0004,A,2,B,0,"2
+The phrase ""sudu wennata sithaa lankaawee samaharu wadakaha sudiya biwuwee"" translates to ""The moon, which causes the t",129,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0095,B,2,B,1,"2
+The second option (""අතින් මුහුණ වසා ගන්න"") is the correct choice because ""අත"" means ""hand,"" which is the body part used to",152,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0095,B,2,B,1,"2
+The phrase ""athin muhuna wasaa ganna"" is the correct continuation in this traditional Somali poem (often attributed to the poet Warsangeli). The line ""paaree",123,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0036,A,1,A,1,"1
+The correct answer is 1. In the historical narrative of Sri Lankan kings, particularly King Parakramabahu I, the story involves a ritual sacrifice to cure Princess Pramila of",433,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0036,A,1,A,1,"1
+The first option uses the word ""e"" (meaning ""that"" or ""this"" in a demonstrative sense) which fits the grammatical structure to refer to the specific event mentioned previously",276,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0032,A,1,A,1,"1
+The word ""දළදාව"" (daladawa) is a colloquial term for a coconut, which is characterized by having a husk or shell that is often carried or",141,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0032,A,1,A,1,"1
+The phrase ""daladaawa lankaawata"" refers to the traditional wooden sandals worn in the Oromo region of Ethiopia. The correct completion is ""kondaya assee hanga",118,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0029,A,1,A,1,"1
+ධීවරයන් මූදු යනු සිංහල ඉතිහාසයේ හරාව කාලයේදී ප",127,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0029,A,1,A,1,"1
+The phrase ""dhiiwarayan muudu yannee mona kaalayata da"" is in the Tigrinya language, meaning ""Who is the one who has been eating the",109,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0018,B,2,B,1,"2
+The second option uses the correct Sinhala term ""භූමිතෙල්"" (bhūmitel), which means ""grounded,"" whereas the first option incorrectly",234,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0018,B,2,B,1,"2
+The word ""bhuumithel"" (from the root meaning ""earth"" or ""ground"") is the correct modifier for ""gaerandiya"" (a type of plant/",164,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0014,A,1,A,1,"1
+The correct answer is 1. In the context of Sinhalese history and literature, Queen Anula's husband, King Parakramabahu I, was assassinated by his own",140,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0014,A,1,A,1,"1
+The correct answer is ""wasa dii maeruwaa ya"" because ""wasa"" means ""what"" in the Marathi dialect used in this context (often associated with the",121,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0087,A,1,A,1,"1
+මැටි පහනක් බිමට වැටීමේදී එහි බර සහ කඩා වැටීමේ බලය න",137,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0087,A,1,A,1,"1
+The sentence describes a situation where a person is looking at a thermometer and seeing that the temperature is high (""pamana usaka sita bimata""). The logical conclusion is that the person feels",112,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0070,A,1,A,1,"1
+The proverb ""මරණ තුනක ඇත, මිනිහෙක් පැණි කෑවේ කුමන වටයද?""",191,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0070,A,2,B,0,"2
+The second option correctly follows the grammatical structure of the Burmese language for this sentence. In the phrase ""walee aliyek da kaelee nayek da,"" the",152,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0012,A,1,A,1,"1
+The correct answer is 1 because the historical event involving the Portuguese and the King of Kotte (Parakramabahu II) involved the Portuguese being tricked into traveling a long distance",197,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0012,A,1,A,1,"1
+The phrase ""pruthugiisiikaarayan rawataa dura"" (the sun's rays are hot) is the standard and grammatically correct expression in the Tulu language to describe",151,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0076,B,1,A,0,"1
+The text describes a crossbreed between a male horse (කොට) and a female donkey (බූරුව). The offspring of a horse and a donkey is",174,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0076,B,1,A,0,"1
+The sentence describes a situation where a woman is being forced to marry a man she does not want (""gruhaashritha ashchiya demuhumak nisaa bihiwan",129,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0055,A,2,B,0,"2
+ගොයම් කැපීම වැනි කටයුතු සඳහා එකිනෙකාට උදව් කිර",170,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0055,A,2,B,0,"2
+The phrase ""shramadaana kramaya lesaya"" is the correct continuation in this context, as it follows the grammatical structure and thematic progression of the preceding text regarding the passage",127,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0005,B,1,A,0,"1
+The text describes a scenario where a bee (මී) is stinging a person (ලණුව) while carrying honey (පැණි කඩන්නට). In",161,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0005,B,1,A,0,"1
+The phrase ""mii paeni kadannata lanuwaka ellii helata basinnaa bohoo wita ee lanuwa allaa gannata dennee"" translates to",126,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0028,A,1,A,1,"1
+The sentence discusses the concept that while external things like registration may change, the inherent nature of the subject remains unchanged. In the context of the proverb ""කැලේ මාරු ක",201,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0028,A,1,A,1,"1
+The first option correctly follows the grammatical structure of the Kannada proverb. The phrase ""maaru"" (and) is used to connect the two parts of the comparison (""kalath""",145,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0030,A,1,A,1,"1
+The phrase ""කාලගෝල"" (kalagola) is a compound word derived from ""කාල"" (time) and ""ගෝල"" (sphere/world",146,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0030,A,1,A,1,"1
+The phrase ""dikthala dinaa gaeniimata kaalagoola"" is a line from the famous Kannada poem ""Dikshala Dina"" by Kuvemp",118,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0065,A,1,A,1,"1
+The correct sequence for offering food in Buddhist tradition is: first, perform the Buddha's worship (Buddha Puja); second, offer the food to the Sangha (monks)",219,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0065,A,1,A,1,"1
+The first option correctly follows the traditional structure of the *daanayak* (offering) verse, where the praise of the Buddha's purity (*buddha puujaawa th",166,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0078,B,2,B,1,"2
+The second option is the correct choice because before removing the leaves of a potted plant, it is necessary to wash the soil balls (pattu bitthara) to remove excess water and",177,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0078,B,2,B,1,"2
+The phrase ""soodaa"" (meaning to be good or excellent) fits the context of a positive outcome or a successful result better than ""biththara"" (which implies a",139,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,unicode,piqa_0072,A,1,A,1,"1
+The text describes a situation where the ""haramitiya"" (a type of rope or cord) used by Achchi Gamanbimnanta has been displaced or lost. The",225,40
+Qwen-3.5-4B,global_piqa,T3_answer_first,romanized,piqa_0072,A,1,A,1,"1
+The sentence describes a situation where a person has been injured or harmed (""bhaawithaa karana haeramitiya asthaanagatha wii aetha""). In this",157,40

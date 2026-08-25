@@ -1,0 +1,447 @@
+﻿model,dataset,template,script,id,gold_label,pred,pred_label,correct,raw_output,n_input_tokens,n_output_tokens
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1310,B,3,C,0,3,190,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1310,B,3,C,0,3,135,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0229,D,2,B,0,2,232,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0229,D,2,B,0,2,142,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0052,D,3,C,0,3,277,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0052,D,3,C,0,3,159,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1519,C,3,C,1,3,230,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1519,C,2,B,0,2,144,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0564,D,2,B,0,2,351,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0564,D,2,B,0,2,191,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0502,B,2,B,1,2,324,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0502,B,2,B,1,2,171,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0458,D,2,B,0,2,230,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0458,D,2,B,0,2,145,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0286,A,3,C,0,3,319,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0286,A,3,C,0,3,175,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1509,D,3,C,0,3,224,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1509,D,3,C,0,3,140,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0210,C,3,C,1,3,248,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0210,C,3,C,1,3,150,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1386,A,3,C,0,3,181,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1386,A,3,C,0,3,125,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1517,B,4,D,0,4,365,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1517,B,2,B,1,2,188,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1828,A,1,A,1,1,280,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1828,A,3,C,0,3,156,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1117,D,3,C,0,3,377,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1117,D,3,C,0,3,210,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0179,B,2,B,1,2,326,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0179,B,3,C,0,3,179,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1210,D,3,C,0,3,133,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1210,D,3,C,0,3,115,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0865,D,3,C,0,3,353,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0865,D,2,B,0,2,212,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0066,C,3,C,1,3,312,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0066,C,3,C,1,3,176,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0062,C,2,B,0,2,250,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0062,C,3,C,1,3,151,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0192,A,1,A,1,1,373,2
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0192,A,2,B,0,2,187,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1310,B,3,C,0,3,375,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1310,B,3,C,0,3,236,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0229,D,1,A,0,1,417,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0229,D,1,A,0,1,243,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0052,D,1,A,0,1,462,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0052,D,3,C,0,3,260,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1519,C,3,C,1,3,415,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1519,C,3,C,1,3,245,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0564,D,2,B,0,2,536,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0564,D,2,B,0,2,292,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0502,B,1,A,0,1,509,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0502,B,1,A,0,1,272,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0458,D,2,B,0,2,415,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0458,D,2,B,0,2,246,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0286,A,3,C,0,3,504,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0286,A,3,C,0,3,276,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1509,D,3,C,0,3,409,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1509,D,3,C,0,3,241,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0210,C,3,C,1,3,433,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0210,C,3,C,1,3,251,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1386,A,3,C,0,3,366,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1386,A,3,C,0,3,226,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1517,B,2,B,1,2,550,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1517,B,2,B,1,2,289,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1828,A,1,A,1,1,465,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1828,A,1,A,1,1,257,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1117,D,3,C,0,3,562,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1117,D,3,C,0,3,311,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0179,B,2,B,1,2,511,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0179,B,3,C,0,3,280,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1210,D,3,C,0,3,318,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1210,D,3,C,0,3,216,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0865,D,1,A,0,1,538,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0865,D,4,D,1,4,313,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0066,C,3,C,1,3,497,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0066,C,3,C,1,3,277,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0062,C,1,A,0,1,435,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0062,C,3,C,1,3,252,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0192,A,1,A,1,1,558,2
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0192,A,3,C,0,3,288,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1310,B,3,C,0,3,203,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1310,B,3,C,0,3,148,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0229,D,2,B,0,2,245,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0229,D,2,B,0,2,155,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0052,D,1,A,0,1,290,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0052,D,3,C,0,3,172,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1519,C,2,B,0,2,243,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1519,C,2,B,0,2,157,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0564,D,2,B,0,2,364,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0564,D,2,B,0,2,204,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0502,B,2,B,1,2,337,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0502,B,2,B,1,2,184,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0458,D,2,B,0,2,243,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0458,D,2,B,0,2,158,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0286,A,3,C,0,3,332,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0286,A,3,C,0,3,188,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1509,D,3,C,0,3,237,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1509,D,2,B,0,2. daaediya,153,7
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0210,C,2,B,0,2,261,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0210,C,3,C,1,3,163,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1386,A,1,A,1,1,194,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1386,A,3,C,0,3,138,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1517,B,4,D,0,4,378,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1517,B,2,B,1,2,201,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1828,A,1,A,1,1,293,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1828,A,2,B,0,2,169,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1117,D,3,C,0,3,390,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1117,D,3,C,0,3,223,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0179,B,2,B,1,2,339,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0179,B,2,B,1,2,192,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1210,D,3,C,0,3,146,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1210,D,2,B,0,2,128,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0865,D,2,B,0,2,366,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0865,D,2,B,0,2,225,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0066,C,3,C,1,3,325,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0066,C,3,C,1,3,189,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0062,C,2,B,0,2,263,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0062,C,3,C,1,3,164,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0192,A,2,B,0,2,386,2
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0192,A,2,B,0,2,200,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_0457,NOT,NOT,NOT,1,NOT,268,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_0457,NOT,NOT,NOT,1,NOT,146,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_0103,OFF,NOT,NOT,0,NOT,113,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_0103,OFF,OFF,OFF,1,OFF,85,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_1127,OFF,NOT,NOT,0,NOT,379,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_1127,OFF,NOT,NOT,0,NOT,195,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_1004,NOT,NOT,NOT,1,NOT,194,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_1004,NOT,NOT,NOT,1,NOT,113,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_0915,NOT,OFF,OFF,0,OFF,247,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_0915,NOT,NOT,NOT,1,NOT,144,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_0572,OFF,NOT,NOT,0,NOT,264,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_0572,OFF,NOT,NOT,0,NOT,138,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_0420,NOT,OFF,OFF,0,OFF,235,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_0420,NOT,OFF,OFF,0,OFF,130,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_2234,OFF,NOT,NOT,0,NOT,242,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_2234,OFF,NOT,NOT,0,NOT,129,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_0357,NOT,NOT,NOT,1,NOT,118,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_0357,NOT,NOT,NOT,1,NOT,97,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_2419,OFF,NOT,NOT,0,NOT,304,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_2419,OFF,OFF,OFF,1,OFF,163,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_1729,NOT,NOT,NOT,1,NOT,167,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_1729,NOT,NOT,NOT,1,NOT,107,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_0131,NOT,NOT,NOT,1,NOT,193,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_0131,NOT,NOT,NOT,1,NOT,126,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_0123,NOT,NOT,NOT,1,NOT,287,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_0123,NOT,NOT,NOT,1,NOT,145,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_0384,NOT,NOT,NOT,1,NOT,176,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_0384,NOT,NOT,NOT,1,NOT,112,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_0896,NOT,NOT,NOT,1,NOT,270,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_0896,NOT,NOT,NOT,1,NOT,149,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_0953,NOT,NOT,NOT,1,NOT,334,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_0953,NOT,NOT,NOT,1,NOT,167,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_2070,NOT,NOT,NOT,1,NOT,147,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_2070,NOT,NOT,NOT,1,NOT,99,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_2466,OFF,NOT,NOT,0,NOT,127,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_2466,OFF,NOT,NOT,0,NOT,96,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_0109,NOT,NOT,NOT,1,NOT,192,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_0109,NOT,NOT,NOT,1,NOT,122,2
+Qwen2-7B-Instruct,sold,T1_direct,unicode,sold_2299,NOT,NOT,NOT,1,NOT,203,2
+Qwen2-7B-Instruct,sold,T1_direct,romanized,sold_2299,NOT,NOT,NOT,1,NOT,116,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_0457,NOT,NOT,NOT,1,NOT,420,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_0457,NOT,OFF,OFF,0,OFF,208,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_0103,OFF,OFF,OFF,1,OFF,265,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_0103,OFF,OFF,OFF,1,OFF,147,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_1127,OFF,OFF,OFF,1,OFF,531,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_1127,OFF,OFF,OFF,1,OFF,257,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_1004,NOT,OFF,OFF,0,OFF,346,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_1004,NOT,OFF,OFF,0,OFF,175,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_0915,NOT,OFF,OFF,0,OFF,399,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_0915,NOT,OFF,OFF,0,OFF,206,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_0572,OFF,OFF,OFF,1,OFF,416,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_0572,OFF,NOT,NOT,0,NOT,200,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_0420,NOT,OFF,OFF,0,OFF,387,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_0420,NOT,OFF,OFF,0,OFF,192,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_2234,OFF,OFF,OFF,1,OFF,394,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_2234,OFF,OFF,OFF,1,OFF,191,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_0357,NOT,NOT,NOT,1,NOT,270,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_0357,NOT,OFF,OFF,0,OFF,159,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_2419,OFF,NOT,NOT,0,NOT,456,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_2419,OFF,OFF,OFF,1,OFF,225,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_1729,NOT,OFF,OFF,0,OFF,319,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_1729,NOT,OFF,OFF,0,OFF,169,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_0131,NOT,NOT,NOT,1,NOT,345,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_0131,NOT,OFF,OFF,0,OFF,188,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_0123,NOT,OFF,OFF,0,OFF,439,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_0123,NOT,OFF,OFF,0,OFF,207,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_0384,NOT,OFF,OFF,0,OFF,328,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_0384,NOT,OFF,OFF,0,OFF,174,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_0896,NOT,OFF,OFF,0,OFF,422,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_0896,NOT,NOT,NOT,1,NOT,211,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_0953,NOT,NOT,NOT,1,NOT,486,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_0953,NOT,OFF,OFF,0,OFF,229,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_2070,NOT,NOT,NOT,1,NOT,299,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_2070,NOT,OFF,OFF,0,OFF,161,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_2466,OFF,OFF,OFF,1,OFF,279,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_2466,OFF,OFF,OFF,1,OFF,158,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_0109,NOT,OFF,OFF,0,OFF,344,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_0109,NOT,OFF,OFF,0,OFF,184,2
+Qwen2-7B-Instruct,sold,T2_fewshot,unicode,sold_2299,NOT,OFF,OFF,0,OFF,355,2
+Qwen2-7B-Instruct,sold,T2_fewshot,romanized,sold_2299,NOT,OFF,OFF,0,OFF,178,2
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_0457,NOT,NOT,NOT,1,NOT,280,2
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_0457,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a conversation or argument in Sinhala, using strong language but does not contain any explicit offensive content or insults directed towards a specific group or individual.",158,40
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_0103,OFF,NOT,NOT,0,"NOT
+
+The given text appears to be a conversation or comment in Sinhala, which translates to ""@USER, you're a bit too much."" It does not contain any offensive language or content.",125,40
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_0103,OFF,OFF,OFF,1,"OFF
+
+The text appears to be using offensive language, possibly referring to someone's mother in a derogatory manner. This kind of content is generally considered offensive.",97,33
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_1127,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a mix of Sinhala and English, discussing a user's experience with a match or event, possibly related to cricket, and mentioning a hashtag. There is no",391,40
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_1127,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a mix of Sinhala and English, discussing a Twitter campaign ""#TweepsMatchOut"" and possibly expressing opinions about a person's sexual orientation. The language",207,40
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_1004,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a conversation or comment about someone's behavior during a festival, possibly Easter, suggesting they should reflect on causing harm. There is no indication of offense or ",206,40
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_1004,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a conversation or argument in Sinhala, possibly expressing frustration or annoyance. There are no explicit offensive words or insults present in the text.",125,36
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_0915,NOT,NOT,NOT,1,"NOT
+
+The text appears to be expressing an opinion against something being called ""bullshit"" and encouraging others to say no to it. There is no explicit offensive language or content present in the te",259,40
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_0915,NOT,NOT,NOT,1,"NOT
+
+The text appears to be expressing frustration or annoyance and includes a hashtag promoting honesty. There is no explicit offensive language or content present.",156,29
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_0572,OFF,NOT,NOT,0,NOT,276,2
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_0572,OFF,NOT,NOT,0,"NOT
+
+The text appears to be part of a conversation about tutoring and seems to be discussing the effectiveness of different teaching methods or tutors. There is no offensive language or content presen",150,37
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_0420,NOT,OFF,OFF,0,"OFF
+
+The text appears to be a mix of Sinhala and English, possibly containing profanity or offensive language. The specific words used could be considered offensive in context, but without knowing the",247,40
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_0420,NOT,OFF,OFF,0,"OFF
+
+The text appears to be using profanity and contains aggressive language, which makes it offensive.",142,21
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_2234,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a conversation or statement in Sinhala, discussing something related to a person named Mahinda and possibly referencing a mol (a type of fruit) not being available.",254,40
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_2234,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a conversation or argument in Sinhala, discussing political figures Ranil and Chandrika. It does not contain any offensive language or content.",141,36
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_0357,NOT,NOT,NOT,1,"NOT
+
+The given text appears to be a message or comment possibly on a social media platform addressed to someone named Amith Malinga. It mentions a date ('2 Jan') and uses the word",130,40
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_0357,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a mix of Sinhala language and possibly a social media post format. It does not contain any explicit offensive content or language. The context is unclear without additional",109,40
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_2419,OFF,NOT,NOT,0,"NOT
+
+The text appears to be discussing a person's contribution to a higher social cohesion and how they have been involved in a system that includes monitoring and regulation, possibly related to a co",316,40
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_2419,OFF,OFF,OFF,1,"OFF
+
+The text appears to be using offensive language and derogatory terms, which makes it inappropriate or offensive. The specific words used are not clear without context, but they seem to be disresp",175,40
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_1729,NOT,NOT,NOT,1,NOT,179,2
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_1729,NOT,NOT,NOT,1,"NOT
+
+The given text appears to be a mix of Sinhala and English characters with some potentially offensive words like ""piss"" and ""mee"", but it is unclear if they are being",119,40
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_0131,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a conversation in Sinhala, possibly using internet slang or humor. It does not contain any offensive language or content. The hashtags ""#MediaFreedom"" and ""#l",205,40
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_0131,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a mix of Sinhala and English, possibly expressing frustration or criticism. It does not contain any explicit offensive language or content. The hashtags ""#MediaFreedom"" and",138,40
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_0123,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a conversation between two people in Sinhala, discussing various topics such as education and possibly personal experiences. There is no indication of offensive language or",299,39
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_0123,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a conversation between two people, possibly in a playful or teasing manner. There are no explicit offensive words or insults present in the text. The dialogue seems to invo",157,40
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_0384,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a conversation between two users on a social media platform, using colloquial language and possibly teasing each other. There is no indication of offensive content or langu",188,40
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_0384,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a conversation between two users on a platform, possibly using a colloquial language. The content does not contain any offensive language or insults directed at someone. It",124,40
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_0896,NOT,NOT,NOT,1,NOT,282,2
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_0896,NOT,NOT,NOT,1,"NOT
+
+The text appears to be congratulating someone and does not contain any offensive language or content. It seems to be a friendly message with a typo (""#condratulation"" instead of ""con",161,40
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_0953,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a conversation or message between two individuals discussing travel plans and possibly sharing experiences related to travel. There is no indication of offensive language o",346,36
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_0953,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a conversation or argument in Sinhala, discussing someone's actions and consequences without any explicit offensive language or content.",179,31
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_2070,NOT,NOT,NOT,1,"NOT
+
+The given text appears to be a casual and playful sentence in Sinhala, possibly expressing a humorous or teasing tone towards oneself. The use of emoticons and the phrase ""සැ",159,40
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_2070,NOT,NOT,NOT,1,"NOT
+
+The given text appears to be a string of words that might not convey any offensive content. It seems like it could be part of a casual conversation or a playful message, possibly involving a game",111,40
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_2466,OFF,NOT,NOT,0,"NOT
+
+The given text appears to be a sentence in the Sinhala language, which translates to ""USER, USER, USER, please do something for me"" in English. There is no offensive",139,40
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_2466,OFF,NOT,NOT,0,"NOT
+
+The given text appears to be a conversation in Sinhala, possibly expressing frustration or annoyance. It does not contain any explicit offensive language or content.",108,33
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_0109,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a conversation or argument between two users on a platform, using strong language but does not contain any explicit offensive content or insults directed towards a specific",204,40
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_0109,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a conversation or argument in Sinhala, with the speaker expressing frustration or dissatisfaction with someone's behavior. There are no explicit offensive words or insults ",134,40
+Qwen2-7B-Instruct,sold,T3_answer_first,unicode,sold_2299,NOT,NOT,NOT,1,"NOT
+
+The given text appears to be a casual conversation or message in Sinhala, possibly expressing frustration or annoyance. There is no explicit offensive language or content present.",215,35
+Qwen2-7B-Instruct,sold,T3_answer_first,romanized,sold_2299,NOT,NOT,NOT,1,"NOT
+
+The given text appears to be a mix of Sinhala and English language, possibly containing profanity or offensive content. However, without proper context or understanding of the specific phrases us",128,40
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0082,B,2,B,1,2,265,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0082,B,2,B,1,2,143,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0015,B,2,B,1,2,301,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0015,B,1,A,0,1,150,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0004,A,1,A,1,1,215,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0004,A,2,B,0,2,121,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0095,B,1,A,0,1,202,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0095,B,1,A,0,1,118,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0036,A,1,A,1,1,705,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0036,A,1,A,1,1,278,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0032,A,2,B,0,2,192,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0032,A,2,B,0,2,112,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0029,A,1,A,1,1,152,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0029,A,2,B,0,2,104,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0018,B,1,A,0,1,329,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0018,B,1,A,0,1,159,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0014,A,1,A,1,1,185,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0014,A,2,B,0,2,114,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0087,A,1,A,1,1,171,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0087,A,1,A,1,1,107,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0070,A,1,A,1,1,281,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0070,A,1,A,1,1,147,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0012,A,2,B,0,2,287,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0012,A,1,A,1,1,147,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0076,B,1,A,0,1,240,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0076,B,1,A,0,1,127,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0055,A,1,A,1,1,214,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0055,A,2,B,0,2,121,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0005,B,1,A,0,1,220,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0005,B,1,A,0,1,120,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0028,A,2,B,0,2,300,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0028,A,2,B,0,2,140,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0030,A,2,B,0,2,191,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0030,A,2,B,0,2,114,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0065,A,2,B,0,2,312,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0065,A,2,B,0,2,160,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0078,B,1,A,0,1,255,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0078,B,1,A,0,1,136,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,unicode,piqa_0072,A,1,A,1,1,324,2
+Qwen2-7B-Instruct,global_piqa,T1_direct,romanized,piqa_0072,A,1,A,1,1,161,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0082,B,1,A,0,1,516,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0082,B,2,B,1,2,254,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0015,B,1,A,0,1,552,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0015,B,1,A,0,1,260,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0004,A,1,A,1,1,466,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0004,A,2,B,0,2,232,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0095,B,1,A,0,1,453,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0095,B,1,A,0,1,229,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0036,A,1,A,1,1,956,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0036,A,1,A,1,1,389,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0032,A,1,A,1,1,443,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0032,A,2,B,0,2,223,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0029,A,1,A,1,1,403,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0029,A,1,A,1,1,215,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0018,B,1,A,0,1,580,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0018,B,1,A,0,1,270,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0014,A,1,A,1,1,436,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0014,A,2,B,0,2,225,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0087,A,1,A,1,1,422,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0087,A,1,A,1,1,218,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0070,A,1,A,1,1,532,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0070,A,2,B,0,2,258,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0012,A,1,A,1,1,538,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0012,A,1,A,1,1,258,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0076,B,1,A,0,1,491,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0076,B,1,A,0,1,238,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0055,A,2,B,0,2,465,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0055,A,2,B,0,2,232,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0005,B,1,A,0,1,471,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0005,B,2,B,1,2,231,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0028,A,2,B,0,2,551,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0028,A,2,B,0,2,251,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0030,A,2,B,0,2,442,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0030,A,2,B,0,2,224,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0065,A,1,A,1,1,563,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0065,A,1,A,1,1,271,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0078,B,1,A,0,1,506,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0078,B,2,B,1,2,247,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0072,A,1,A,1,1,574,2
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0072,A,1,A,1,1,272,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0082,B,2,B,1,2,278,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0082,B,2,B,1,2,156,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0015,B,2,B,1,2,314,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0015,B,1,A,0,"1
+
+Reasoning: The sentence structure and context suggest that the first option is more appropriate as it maintains the grammatical flow and meaning of the original text better. The second option disru",163,40
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0004,A,2,B,0,2,228,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0004,A,2,B,0,2,134,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0095,B,2,B,1,2,215,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0095,B,2,B,1,2,131,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0036,A,1,A,1,"1
+
+The first option provides a more coherent and logical explanation for how Daskon reacted when faced with an unexpected situation related to Pramila's departure. It describes Daskon taking action ba",718,40
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0036,A,1,A,1,1,291,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0032,A,2,B,0,2,205,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0032,A,2,B,0,2,125,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0029,A,2,B,0,2,165,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0029,A,2,B,0,2,117,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0018,B,2,B,1,2,342,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0018,B,2,B,1,2,172,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0014,A,2,B,0,2,198,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0014,A,2,B,0,2,127,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0087,A,1,A,1,1,184,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0087,A,1,A,1,"1
+
+Explanation: The sentence provided seems to be in Wolof, a language spoken in Senegal. The context is not entirely clear, but based on the structure and vocabulary, ""eya"" is",120,40
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0070,A,2,B,0,"2
+
+Reasoning: The sentence structure and context suggest that the second option maintains proper grammatical flow and logical meaning when completed. It implies a scenario where an action is performed",294,40
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0070,A,2,B,0,2,160,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0012,A,2,B,0,2,300,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0012,A,1,A,1,1,160,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0076,B,1,A,0,1,253,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0076,B,1,A,0,"1
+
+Reasoning: The sentence appears to be in Wolof, a language spoken in Senegal. The context suggests that the person is talking about someone who has returned home and is being greeted by",140,40
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0055,A,2,B,0,2,227,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0055,A,2,B,0,2,134,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0005,B,1,A,0,1,233,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0005,B,2,B,1,"2
+
+Reasoning: The sentence appears to be in Wolof, a language spoken in Senegal. The context suggests that the speaker is discussing something related to a person's ability or capability. """,133,40
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0028,A,2,B,0,2,313,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0028,A,2,B,0,2,153,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0030,A,2,B,0,2,204,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0030,A,2,B,0,2,127,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0065,A,2,B,0,2,325,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0065,A,2,B,0,"2
+
+Reasoning: The sentence structure and logical flow suggest that ""sanghayaata walandannata"" (the gathering of the Sangha) should come after ""inpasu gihi",173,40
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0078,B,1,A,0,1,268,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0078,B,2,B,1,2,149,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0072,A,1,A,1,1,337,2
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0072,A,2,B,0,2,174,2

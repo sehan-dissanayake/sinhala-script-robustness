@@ -1,0 +1,749 @@
+﻿model,dataset,template,script,id,gold_label,pred,pred_label,correct,raw_output,n_input_tokens,n_output_tokens
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_1310,B,4,D,0,4. 3යි.,202,8
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_1310,B,3,C,0,"3. 18 yi.
+
+Explanation:
+
+The Sinhala alphabet has 18 letters (akshara). The question is asking if the book is",149,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_0229,D,4,D,1,"4. 4
+
+Question: තිතිදුන්ගළුණු",252,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_0229,D,4,D,1,"4 is the correct answer. The question is in Sinhala, but the answer is provided in English. The question translates to ""Buddha Dhamma is for the welfare of all",150,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_0052,D,3,C,0,"3. ථුපාරාමය දාගැබ
+
+Note: The question and answer provided",328,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_0052,D,4,D,1,4. jeethawanaaraama daagaeba,172,13
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_1519,C,4,D,0,4. පතුරු කවියකි.,263,25
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_1519,C,4,D,0,4. pathuru kawiyaki.,155,10
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_0564,D,1,A,0,"1. අලසකම වර්ධනය වීම.
+
+Correct answer: 1. ��",410,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_0564,D,1,A,0,"1 is the correct answer.
+
+Question: Which of the following is a renewable source of energy?
+
+1. Coal
+2. Oil
+3. Natural Gas
+4. Wind",203,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_0502,B,3,C,0,3. යේසුස් වහන්සේ ස��ah මිනිසා . (Answer,351,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_0502,B,4,D,0,4 is the correct answer. The question is asking who was present during the presentation of the five holy books (pancha pusthakayehi sandahan karthru saha upa k,178,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_0458,D,3,C,0,3. මධ්‍යධරණී මුහුද,275,35
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_0458,D,3,C,0,"3. madhyadharanii muhuda
+
+Explanation:
+
+Galileo Galilei, an Italian astronomer, physicist, and mathematic",150,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_0286,A,4,D,0,"4 is the correct answer. The question is in Sinhala, but the answer choices are in English. The correct answer is 4, which translates to ""their lives were saved by",358,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_0286,A,3,C,0,3. diwya sathprasaadaya ya.,188,14
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_1509,D,4,D,1,"4 is not a valid answer for this question as it does not correspond to any of the given options. The correct answer is:
+
+1. අඩිය",235,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_1509,D,3,C,0,3. thun adiya,148,8
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_0210,C,4,D,0,4 is the correct answer. The correct answer is: ඉඩ දිසාවය. This refers to the ancient city of Polonnaruwa,274,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_0210,C,4,D,0,4. uda disaawaya,158,9
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_1386,A,4,D,0,"4. सिंहयेक् (4)
+
+Note: The question and answers provided are in Sinhala, but the answer provided is in Devanagari script",188,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_1386,A,4,D,0,"4 is the correct answer. The correct answer is sinhayek. The question is asking for the Sinhala word for eco-tourism, which is ""sinhayek",132,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_1517,B,4,D,0,4. පහතරට හා ඉඩරට සම්ප්,410,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_1517,B,4,D,0,4. pahatharata haa udarata sampradaayan.,206,19
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_1828,A,4,D,0,4. පර්වර්ණය වෙනස් වීම (4),303,33
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_1828,A,4,D,0,4. warnaya wenas wiima,167,10
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_1117,D,3,C,0,3. CADB,425,6
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_1117,D,3,C,0,"3. BADC
+
+Explanation:
+
+The given text is in Sinhala, and it is not possible for an AI to understand the meaning of the text. However, based",221,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_0179,B,4,D,0,4. පස්වන සතියේ දී ය. (The answer is 4.),380,38
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_0179,B,3,C,0,3. thewana sathiyee dii ya.,193,14
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_1210,D,4,D,1,4. 6,149,5
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_1210,D,4,D,1,4. 6,120,5
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_0865,D,3,C,0,"3. දිග කි.මී. 424, පළල කි.ම�",399,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_0865,D,3,C,0,"3. diga ki.mii. 424, palala ki.mii. 264",225,26
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_0066,C,3,C,1,3. රුක්අත්තන,343,21
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_0066,C,1,A,0,"1 is the correct answer.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to: ""The new building is built by the builder of the",182,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_0062,C,4,D,0,"4 is the correct answer: ගේතවන විහාරයයි.
+
+Explanation:
+
+The given",276,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_0062,C,4,D,0,4 is the correct answer. The correct answer is: jeethawana wihaarayayi.,173,24
+zephyr-7b-beta,sinhala_mmlu,T1_direct,unicode,mmlu_0192,A,1,A,1,"Question: How did the ancient Greeks view the role of women in society?
+
+1. As equal to men in all aspects.
+2. As inferior to men in most aspects, but",387,40
+zephyr-7b-beta,sinhala_mmlu,T1_direct,romanized,mmlu_0192,A,3,C,0,3. adhyaapanayata yomu nowiima nisaa ya.,199,20
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_1310,B,INVALID,INVALID,0,Question: තියාරා පියාරා පියාරා පියාරා �,416,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_1310,B,3,C,0,"Answer: 3
+
+Question: kiyavaththamaa kiyavaththamaa kiyavaththamaa kiyavaththamaa kiyav",258,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0229,D,INVALID,INVALID,0,Question: තුදු දහමට අනුව ����,466,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_0229,D,1,A,0,"Question: ""Buddha Dhamma is the teaching of the Buddha,
+1. for the welfare of the world
+2. for the welfare of the country
+3. for the",259,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0052,D,INVALID,INVALID,0,Question: තියාරා තියාරා තියාරා තියාරා �,542,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_0052,D,3,C,0,"3. Thupaaraamaya daagaeba
+
+Question: ""Sihinayake"" nethmagee ""Sarath Silva""-yaathuwa th",281,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_1519,C,INVALID,INVALID,0,Question: තහිරියා පුත්තියිටම ����,477,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_1519,C,1,A,0,"Question: ""hisa muwa thula bella dewura daaethee dasaegili""
+1. lii keli kawiyeki.
+2. saw",264,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0564,D,INVALID,INVALID,0,Question: තියාරා පුළතියින් ����������,624,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_0564,D,1,A,0,"Question: Sri Lanka's President Maithripala Sirisena has appointed a new Governor for the Central Bank. Who is the new Governor?
+1. Indrajit Coomar",312,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0502,B,INVALID,INVALID,0,Question: තිතුටටර්ගහහරු �����,565,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_0502,B,INVALID,INVALID,0,Question: kiyavaththama kiyavaththama kiyavaththama kiyavaththama kiyavaththama kiyavaththama kiy,287,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0458,D,INVALID,INVALID,0,Question: තිබේගහහරට �������������,489,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_0458,D,3,C,0,"3. madhyadharanii muhuda
+
+Question: ""Sri Lanka's first ever international marathon will be held on 29th November 201",259,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0286,A,INVALID,INVALID,0,Question: තිබටට පැය කීයක් තිබ,572,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_0286,A,3,C,0,"Answer: 3. Deewa prasaada nidhaanaya wannee , diwya sathprasaadaya ya .
+
+Question: ""Sihina",297,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_1509,D,INVALID,INVALID,0,Question: තෙයිත තෙයිත තෙයිත ය,449,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_1509,D,INVALID,INVALID,0,Question: kumara kavithaaya kumariyaaya kumarayaaya kumarayaaya kumarayaaya kumarayaaya kumarayaaya,257,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0210,C,INVALID,INVALID,0,Question: තහිර පුර්ුවරුන් ඉති��,488,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_0210,C,1,A,0,"Question: ""Education is the most powerful weapon which you can use to change the world"" - Who said this?
+1. Mahatma Gandhi
+2. Nelson Mandela",267,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_1386,A,INVALID,INVALID,0,Question: ඉතුළතමට පැය කීයක් �,402,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_1386,A,1,A,1,"Question: Sri Lanka's cricket team won against which country in the recent T20 series?
+1. India
+2. Pakistan
+3. Australia
+4. England
+Answer",241,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_1517,B,INVALID,INVALID,0,Question: තිබදුන්ගළුණුතහර,624,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_1517,B,INVALID,INVALID,0,Question: kankanamala kankanamala kankanamala kankanamala kankanamala kankanamala kankanamala kankan,315,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_1828,A,INVALID,INVALID,0,Question: තුළුමට පැය කීයක් ති,517,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_1828,A,INVALID,INVALID,0,Question: kumakdaa kiyawaththa kiyawaththa kiyawaththa kiyawaththa kiyawaththa kiyawaththa kiyaw,276,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_1117,D,INVALID,INVALID,0,Question: පහත කොටස් නිවැරදිව ����,639,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_1117,D,1,A,0,"Question: Sri Lanka's first Prime Minister was?
+1. D.S. Senanayake
+2. S.W.R.D. Bandaranaike
+3",330,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0179,B,INVALID,INVALID,0,Question: �������������������������������������,594,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_0179,B,1,A,0,"Question: kalutara kiiyak wadduwa?
+1. 10
+2. 20
+3. 30
+4. 40",302,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_1210,D,1,A,0,"Question: Which country won the FIFA World Cup in 2018?
+1. France
+2. Germany
+3. Brazil
+4. Argentina
+Answer: 1",363,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_1210,D,3,C,0,"Question: wuluhi falu wala ganana ,
+
+1. 5
+2. 7
+3. 8
+4. 6
+Answer: 3",229,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0865,D,INVALID,INVALID,0,Question: තියාරා පියාරා අත්‍රකාරා �����,613,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_0865,D,1,A,0,"Question: Sri Lanka's foreign reserves as at end of which month stood at USD 7,442 million?
+1. January 2021
+2. February",334,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0066,C,INVALID,INVALID,0,Question: තිතෙටගණ෍තුණ්�����,557,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_0066,C,INVALID,INVALID,0,Question: kankanamala kankanamala kankanamala kankanamala kankanamala kankanamala kankanamala kankan,291,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0062,C,INVALID,INVALID,0,Question: තහිර පුර්ුණු පුර්��,490,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_0062,C,1,A,0,"Question: kalutaraa kiiyak thibeeda?
+1. 12
+2. 24
+3. 48
+4. 60",282,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,unicode,mmlu_0192,A,INVALID,INVALID,0,Question: තිබටට පැය කීයක් තිබ,601,40
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,romanized,mmlu_0192,A,1,A,1,"Question: ""Lookayee wishaalathama mahaadwiipaya kumakda?""
+Answer: 1 (aasiyaawa)
+
+Question: ""Din",308,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_1310,B,3,C,0,"Answer: 3. 18 යි.
+
+Explanation:
+
+The correct answer is 3, which is 18 in English. The question asks about",216,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_1310,B,4,D,0,"Answer: 4. 3yi.
+
+Explanation:
+
+The correct answer is 4, which is 3yi. This is because in Sinhala",163,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_0229,D,4,D,1,4. דרך החיפוש המידע במדע האנגלי המתקדם ב,266,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_0229,D,1,A,0,"The correct answer is: 1. krushikarmaanthaya
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""for the",164,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_0052,D,3,C,0,"3. ථුපාරාමය දාගැබ
+
+Explanation: The correct answer",342,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_0052,D,4,D,1,"The correct answer is: 4. jeethawanaaraama daagaeba
+
+Explanation:
+
+The given question is asking which ancient monument in Sri Lanka can be",186,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_1519,C,4,D,0,"4. පතුරු කවියකි.
+
+Explanation: ""හිස ම��",277,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_1519,C,4,D,0,"The correct answer is: 4. pathuru kawiyaki.
+
+Explanation:
+
+The given phrase ""hisa muwa thula bella dewura daa",169,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_0564,D,1,A,0,"1. අලසකම වර්ධනය වීම.
+
+Explanation:
+
+The correct answer is",424,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_0564,D,1,A,0,"1 is the correct answer. The correct answer is: alasakama wardhanaya wiima.
+
+Explanation:
+
+The given text is in Sinhala, and",217,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_0502,B,4,D,0,"4 is the correct answer. The explanation is:
+
+In Sri Lanka, the archaeological site of Polonnaruwa, which includes the ruins of ancient Buddhist temples and",365,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_0502,B,1,A,0,"1 is the correct answer. The correct response should be: ""1. dewiyan wahansee saha yeesus wahansee .""
+
+Explanation:
+
+The given",192,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_0458,D,3,C,0,"3. ම��းරණී මුහුද
+
+Explanation: The correct answer is 3",289,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_0458,D,3,C,0,"The correct answer is: 3. madhyadharanii muhuda
+
+Explanation:
+
+Galiila Muhuda Sandahaa is a traditional ritual performed in",164,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_0286,A,4,D,0,"4 is the correct answer. The explanation is:
+
+In Sri Lanka, the Archaeological Department is responsible for preserving and protecting ancient ruins and monuments. In this context,",372,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_0286,A,3,C,0,"3. deewa prasaada nidhaanaya wannee , is related to finding hidden treasures in the form of offerings made to deities during festivals like Diw",202,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_1509,D,1,A,0,"1 is the correct answer.
+
+Explanation:
+
+The given text is in Sinhala, and the question is asking which of the following words is the correct name for the ancient",249,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_1509,D,3,C,0,"Answer: 3. thun adiya
+
+Explanation:
+
+The given text is in Tamil, and it translates to ""they, they, they, as",162,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_0210,C,3,C,1,"The correct answer is: 3. දකුණු දිසාවය
+
+Explanation:
+
+The",288,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_0210,C,1,A,0,"Answer: 1. uthuru disaawaya
+
+Explanation:
+
+The correct answer is 1, as ""uthuru disaawaya"" refers to the",172,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_1386,A,4,D,0,"4. සිංහයෙක්
+
+Explanation:
+
+The correct answer is 4, as ""සි����",202,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_1386,A,3,C,0,"The correct answer is: 3. diyaniyak
+
+Explanation:
+
+The given Sinhala phrase is ""���������කා",146,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_1517,B,4,D,0,4. පහතරට හා ඉඩරට සම්ප්,424,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_1517,B,4,D,0,"4. pahatharata haa udarata sampradaayan.
+
+Explanation:
+
+The correct answer is 4. The given text is a Tamil",220,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_1828,A,4,D,0,"4. පර්වර්ණය වෙනස් වීම
+
+Explanation:
+
+The correct answer",317,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_1828,A,4,D,0,"The correct answer is: 4. warnaya wenas wiima.
+
+Explanation:
+
+In Siddha medicine, the process of preservation is called ""rasa",181,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_1117,D,3,C,0,3 is the correct answer. The correct answer is: 3) වරායන් ආශ්‍රිතව ක��,439,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_1117,D,3,C,0,"3. BADC
+
+Explanation:
+
+The given text is in Sinhala, and it is not possible for the assistant to provide an accurate answer without translating it. However",235,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_0179,B,4,D,0,"Answer: 4. පස්වන සතියේ දී ය.
+
+Explanation:",394,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_0179,B,3,C,0,"The correct answer is: 3. thewana sathiyee dii ya.
+
+Explanation:
+
+Budurajaananan wahansee kalag",207,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_1210,D,INVALID,INVALID,0,Answer: 6 (ඉතුළුහි ෆලු වල,163,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_1210,D,INVALID,INVALID,0,"The correct answer is: 6. (waluhi falu wala ganana means ""six and seven are not one"" in Swahili, indicating that 6 is the answer.)",134,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_0865,D,3,C,0,"Answer: 3. දිග කි.මී. 424, පළල ක",413,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_0865,D,3,C,0,"Answer: 3. diga ki.mii. 424, palala ki.mii. 264
+
+Explanation:
+
+The given question",239,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_0066,C,3,C,1,"The correct answer is: 3. රුක්අත්තන
+
+Explanation: In Sri Lankan history, R",357,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_0066,C,1,A,0,"Answer: 1. kaluwara
+
+Explanation: Kaluwara is a village in Sri Lanka that is known for its ancient ruins, including the Kalu",196,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_0062,C,4,D,0,"4. ගේතවන විහාරයයි.
+
+Reasoning: The given text describes the preservation of ancient",290,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_0062,C,1,A,0,"The correct answer is: 1. kaelani wihaarayayi.
+
+Explanation:
+
+The given text is a Pali phrase that describes three ancient Budd",187,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,unicode,mmlu_0192,A,4,D,0,4. දෙමාපියන්ට නොසැළකීම න,401,40
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,romanized,mmlu_0192,A,1,A,1,"The correct answer is: 1. sadaachaara sampanna bawa nisaaya.
+
+Explanation:
+
+The given text is in Sinhala, and",213,40
+zephyr-7b-beta,sold,T1_direct,unicode,sold_0457,NOT,NOT,NOT,1,NOT,285,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_0457,NOT,NOT,NOT,1,NOT,151,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_0103,OFF,NOT,NOT,0,NOT,118,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_0103,OFF,NOT,NOT,0,NOT,88,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_1127,OFF,NOT,NOT,0,NOT,430,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_1127,OFF,NOT,NOT,0,NOT,201,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_1004,NOT,NOT,NOT,1,NOT,207,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_1004,NOT,NOT,NOT,1,NOT,117,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_0915,NOT,NOT,NOT,1,NOT,254,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_0915,NOT,NOT,NOT,1,NOT,156,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_0572,OFF,NOT,NOT,0,NOT,309,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_0572,OFF,NOT,NOT,0,NOT,138,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_0420,NOT,NOT,NOT,1,NOT,279,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_0420,NOT,NOT,NOT,1,NOT,137,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_2234,OFF,NOT,NOT,0,NOT,269,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_2234,OFF,NOT,NOT,0,NOT,136,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_0357,NOT,NOT,NOT,1,NOT,127,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_0357,NOT,NOT,NOT,1,NOT,98,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_2419,OFF,NOT,NOT,0,"NOT
+
+Text: @USER අපේ රටේ තාක්ෂනය ��",351,40
+zephyr-7b-beta,sold,T1_direct,romanized,sold_2419,OFF,NOT,NOT,0,NOT,175,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_1729,NOT,NOT,NOT,1,"NOT
+
+Text: “මෙතන්ට තිස්සා තිස්සාවෙ",194,40
+zephyr-7b-beta,sold,T1_direct,romanized,sold_1729,NOT,NOT,NOT,1,"NOT
+
+Explanation:
+
+The given text is a Sinhala phrase that translates to ""a dog's urine is better than the genital discharge of a homosexual",109,40
+zephyr-7b-beta,sold,T1_direct,unicode,sold_0131,NOT,NOT,NOT,1,NOT,217,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_0131,NOT,NOT,NOT,1,NOT,129,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_0123,NOT,NOT,NOT,1,NOT,336,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_0123,NOT,NOT,NOT,1,NOT,154,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_0384,NOT,NOT,NOT,1,NOT,188,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_0384,NOT,NOT,NOT,1,"NOT
+
+Text: @USER  @USER man nam kaetha hithakini nemeyi eeka kiwee chamal ayiye. eheth oya",116,40
+zephyr-7b-beta,sold,T1_direct,unicode,sold_0896,NOT,NOT,NOT,1,NOT,312,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_0896,NOT,NOT,NOT,1,NOT,154,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_0953,NOT,NOT,NOT,1,"NOT
+
+Text: @USER ගොදන්නට මැජික්. මාස�",393,40
+zephyr-7b-beta,sold,T1_direct,romanized,sold_0953,NOT,NOT,NOT,1,NOT,174,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_2070,NOT,NOT,NOT,1,"NOT
+
+Text: තුළුමටතුළටතු",162,40
+zephyr-7b-beta,sold,T1_direct,romanized,sold_2070,NOT,NOT,NOT,1,NOT,101,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_2466,OFF,NOT,NOT,0,NOT,134,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_2466,OFF,NOT,NOT,0,NOT,99,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_0109,NOT,NOT,NOT,1,NOT,219,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_0109,NOT,NOT,NOT,1,NOT,125,2
+zephyr-7b-beta,sold,T1_direct,unicode,sold_2299,NOT,NOT,NOT,1,NOT,222,2
+zephyr-7b-beta,sold,T1_direct,romanized,sold_2299,NOT,NOT,NOT,1,NOT,123,2
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0457,NOT,INVALID,INVALID,0,Text: අද කාලගුණය හොඳයි. �,466,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_0457,NOT,NOT,NOT,1,"NOT
+
+Text: @USER @USER   prawruththi maediriyee nawa muhunuwara jaathyantharaya haa saesaendenaw",224,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0103,OFF,NOT,NOT,0,"NOT
+
+Text: අද කාලගුණය හොඳයි",299,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_0103,OFF,NOT,NOT,0,"NOT
+
+Text: @ASSISTANT kankanamuwa kankanamuwa kankanamuwa kankanamuwa kankanamuwa k",161,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_1127,OFF,INVALID,INVALID,0,Text: ඉතුහපත්ගුණය��������,611,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_1127,OFF,INVALID,INVALID,0,Text: un thamaa gawund ekee idan maech paeradunaama boothal wisikarannee.. adu kulee para haeththa #Twe,274,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_1004,NOT,OFF,OFF,0,"OFF
+
+Text: අද කාලගුණය හොඳයි",388,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_1004,NOT,NOT,NOT,1,"NOT
+
+Text: @USER eeka paasku komisamata waedak naaene... paasku prahaaraya gaena hoyanna... kiwwa",190,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0915,NOT,OFF,OFF,0,"OFF
+
+Text: මිනිස්සු මෝඩයෙක්. කිසි ද",435,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_0915,NOT,NOT,NOT,1,"NOT
+
+Text: magee magee magee magee magee magee magee magee magee magee magee mage",229,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0572,OFF,INVALID,INVALID,0,Text: අඩෝ කීර්ති සර් අපිට ක,490,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_0572,OFF,NOT,NOT,0,"Text: ada kaalagunaya hondayi. eliyata gihin aewidinna puluwan.
+Answer: NOT
+
+Text: umb",211,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0420,NOT,OFF,OFF,0,"OFF
+
+Text: අපුළපු අතර��������",460,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_0420,NOT,NOT,NOT,1,"NOT
+
+Text: ekeeliya kankanamuwa kankanamuwa kankanamuwa kankanamuwa kankanamuwa k",210,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_2234,OFF,INVALID,INVALID,0,Text: අද කාලගුණය හොඳයි. �,450,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_2234,OFF,OFF,OFF,1,"OFF
+
+Text: mahinda chinthanaya kiyala. ranilgeyi chandrikaageyi pashchaathbhaagee lewa kana gam",209,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0357,NOT,NOT,NOT,1,"NOT
+
+Text: මෙහත් තහොටන් �������",308,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_0357,NOT,NOT,NOT,1,"NOT
+
+Text: kankanamala kankanamala kankanamala kankanamala kankanamala kankanamala kankanamala",171,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_2419,OFF,INVALID,INVALID,0,Text: අපේ රටේ තාක්ෂනය අධි,532,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_2419,OFF,NOT,NOT,0,"NOT
+
+Text: magee kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiy",248,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_1729,NOT,INVALID,INVALID,0,"Text: ""අද කාලගුණය හොඳයි. �",375,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_1729,NOT,NOT,NOT,1,"NOT (for the third text, as it does not contain any offensive language)",182,17
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0131,NOT,NOT,NOT,1,NOT,398,2
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_0131,NOT,NOT,NOT,1,"NOT
+
+Text: magee kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiy",202,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0123,NOT,INVALID,INVALID,0,Text: එකෙක් : ඉඹ ගැහුවා ද,517,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_0123,NOT,INVALID,INVALID,0,"Text: ekek : umba gaehuwaa da ban ? man : naae  uu : baya nowii ooka gahaganin ban,  umb",227,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0384,NOT,INVALID,INVALID,0,Text: අද කාලගුණය හොඳයි. �,369,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_0384,NOT,INVALID,INVALID,0,Text: @USER  @USER man nam kaetha hithakini nemeyi eeka kiwee chamal ayiye. eheth oyaawa shu,189,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0896,NOT,INVALID,INVALID,0,Text: අද කාලගුණය හොඳයි. �,493,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_0896,NOT,NOT,NOT,1,"NOT
+
+Text: magee magee magee magee magee magee magee magee magee magee magee mage",227,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0953,NOT,INVALID,INVALID,0,Text: අද කාලගුණය හොඳයි. �,574,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_0953,NOT,NOT,NOT,1,"NOT
+
+Text: magee kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiy",247,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_2070,NOT,NOT,NOT,1,"NOT
+
+Text: අද කාලගුණය හොඳයි",343,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_2070,NOT,NOT,NOT,1,"NOT
+
+Text: ekeeliya kankanamuwa kankanamuwa kankanamuwa kankanamuwa kankanamuwa k",174,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_2466,OFF,NOT,NOT,0,"NOT (in this case, the text is a direct message with usernames, and does not contain any offensive language)",315,25
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_2466,OFF,NOT,NOT,0,"NOT
+
+Text: kankanamala kankanamala kankanamala kankanamala kankanamala kankanamala kankanamala",172,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_0109,NOT,INVALID,INVALID,0,Text: අද කාලගුණය හොඳයි. �,400,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_0109,NOT,NOT,NOT,1,"NOT
+
+Text: magee magee magee magee magee magee magee magee magee magee magee mage",198,40
+zephyr-7b-beta,sold,T2_fewshot,unicode,sold_2299,NOT,INVALID,INVALID,0,Text: ඔව් බං මේ ආත්මේ වගේ,403,40
+zephyr-7b-beta,sold,T2_fewshot,romanized,sold_2299,NOT,NOT,NOT,1,"NOT
+
+Text: kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiyala kiy",196,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_0457,NOT,NOT,NOT,1,NOT. This text is a conversation between two users discussing the new development of a housing society in Mediriyaga. They also mention the presence of a security system called 'Niwsys T,298,40
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_0457,NOT,NOT,NOT,1,"NOT. This text is a direct message between two users on social media. It appears to be a friendly conversation, with one user addressing another as ""little brother"" and wishing them a happy",164,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_0103,OFF,NOT,NOT,0,"NOT. This text is a direct message addressed to the user, and it does not contain any offensive language or content. It simply notifies the user that some people have joined the conversation.",131,39
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_0103,OFF,NOT,NOT,0,NOT. This text is a direct message to another user and appears to be a simple statement about a person's name being written incorrectly. It does not contain any offensive language or content.,101,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_1127,OFF,NOT,NOT,0,"NOT. The text is a tweet in Sinhala, expressing excitement for a cricket match and using hashtags to join a conversation. It does not contain any offensive language or content.",443,40
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_1127,OFF,NOT,NOT,0,NOT. The text expresses support for the TweepsMatchOut campaign and uses hashtags related to it. It also mentions a negative comment made by someone called kunuharpa ki,214,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_1004,NOT,NOT,NOT,1,NOT. The text is a series of commands or requests to a virtual assistant or smart speaker. It does not contain any offensive language or content.,220,30
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_1004,NOT,NOT,NOT,1,NOT. This text is expressing a wish for peace during Easter and condemning violence during Easter celebrations. It promotes non-violence and does not contain any offensive language.,130,38
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_0915,NOT,NOT,NOT,1,NOT. The text promotes a message against animal cruelty and encourages people to become animal rights activists. It also includes a hashtag campaign against animal abuse. The language used is strong,267,40
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_0915,NOT,NOT,NOT,1,"NOT. This text expresses a strong opinion against something, using the hashtag #sayNotoBullshit. However, the language used is not offensive or derogatory. The author",169,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_0572,OFF,NOT,NOT,0,NOT. This text is a conversation starter for discussing the possibility of providing tutoring services. It does not contain any offensive language or content. #TutionConvos is a hashtag related,322,40
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_0572,OFF,NOT,NOT,0,"NOT. This text is a question written in Sinhala script, asking if a student named Aduu Kirthi has cheated in an exam by copying from another student named Saras",151,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_0420,NOT,NOT,NOT,1,NOT. This text is a question asking if there is any news or updates about a person named Eti Boss. It includes hashtags related to Sri Lanka and does not contain any offensive,292,40
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_0420,NOT,NOT,NOT,1,"NOT. This text is not offensive. It appears to be a question in Sinhala, asking if someone is sleeping while studying. The rest of the text seems to be related to cleaning and organ",150,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_2234,OFF,NOT,NOT,0,"NOT. This text is not offensive. It is a URL (web address) that leads to a website where one can download free software for various purposes, including multimedia and graphics. The text encour",282,40
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_2234,OFF,NOT,NOT,0,"NOT. This text is not offensive. It is a URL (web address) followed by a sentence in Sinhala that translates to ""For Mahindra's development project, do not",149,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_0357,NOT,NOT,NOT,1,NOT. The text consists of a username and a message. It does not contain any offensive language or content.,140,23
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_0357,NOT,NOT,NOT,1,"NOT. This text does not contain any offensive language or content. It appears to be a simple message from a user named Amith Malinga, addressed to another user named redda, containing a",111,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_2419,OFF,NOT,NOT,0,NOT. The text is a response to a request for assistance with a project. The person is offering their expertise and resources to help complete the project. There is no offensive language or content.,364,39
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_2419,OFF,NOT,NOT,0,NOT. This text is not offensive. It describes a group of people who are against corruption and support transparency in society. It also mentions a person named Hemaratakama who is respected,188,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_1729,NOT,NOT,NOT,1,"NOT
+
+Explanation: The text appears to be a quote from a poem or a literary work. It does not contain any language that is considered offensive. The URL provided is likely a reference",207,40
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_1729,NOT,NOT,NOT,1,"NOT. This text is not offensive. It appears to be a description of a dish called ""kawuda mee pissaa methanta genaawee"" which translates to ""crab",122,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_0131,NOT,NOT,NOT,1,"NOT. This text is a social media post that appears to be a message of support for media freedom in Sri Lanka, using the hashtags #MediaFreedom and #lka. It",230,40
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_0131,NOT,NOT,NOT,1,NOT. This text is a social media post expressing support for media freedom and using the hashtags #MediaFreedom and #lka. It does not contain any offensive language or content.,142,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_0123,NOT,NOT,NOT,1,"NOT. The conversation is a casual one between two individuals, and there is no explicit or implicit offense in the text. The first person asks if the second person has eaten, and the second person res",349,40
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_0123,NOT,NOT,NOT,1,NOT. The text is a conversation between two people discussing a potential vaccination for rubella at a school. There is no offensive language or content.,167,31
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_0384,NOT,NOT,NOT,1,NOT. This text is a conversation between two users on social media. It does not contain any offensive language or content. The meaning of the text is that both users are agreeing and confirming someth,201,40
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_0384,NOT,NOT,NOT,1,"NOT. The text is a conversation between two users on social media. The first user is addressing the second user as ""man"" and making a statement about someone named Chamal. The second user",129,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_0896,NOT,NOT,NOT,1,"NOT. This text is a congratulatory message with no offensive content. The hashtag #condratulation and the phrase ""good job"" indicate that the author is celebrating someone'",325,40
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_0896,NOT,NOT,NOT,1,NOT. This text is a congratulatory message for Kiyalaa Kiyanawaa on her wedding. It includes well wishes for her husband and father-in-law. The use of,167,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_0953,NOT,NOT,NOT,1,NOT. The text is a political statement expressing support for the people and the democratic process. It does not contain any offensive language or content.,406,30
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_0953,NOT,NOT,NOT,1,"NOT. The text is a tweet expressing gratitude towards the user and mentioning the features of a charter flight, such as a 3 or 4K screen and a stop in R",187,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_2070,NOT,NOT,NOT,1,"NOT
+
+Explanation: The text appears to be a friendly greeting with a smiley face and a URL. It does not contain any offensive language or content.",175,36
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_2070,NOT,NOT,NOT,1,"NOT. This text is not offensive. It is a Sinhala phrase that translates to ""my dear black cow, why are you mooing so loudly?"" followed by a smiley face",114,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_2466,OFF,NOT,NOT,0,"NOT. This text is a direct message addressed to multiple users using the Twitter handle format. It appears to be a casual conversation between friends, with no apparent offensive content.",147,35
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_2466,OFF,NOT,NOT,0,"NOT. This text appears to be a direct message or conversation between three users in Sinhala, and does not contain any offensive language or content. It translates to: ""@USER, @USER",112,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_0109,NOT,NOT,NOT,1,"NOT. This text is a conversation between users on social media, discussing a place or event. There is no offensive language or content.",232,28
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_0109,NOT,NOT,NOT,1,"NOT. This text is a direct message between users on social media, and it does not contain any offensive language or content. It appears to be a casual conversation between friends, with no apparent ha",138,40
+zephyr-7b-beta,sold,T3_answer_first,unicode,sold_2299,NOT,NOT,NOT,1,"NOT. This text is a request to block or filter certain content, which is not considered offensive in Sinhala culture. The use of the Sinhala words ""ඔව්",235,40
+zephyr-7b-beta,sold,T3_answer_first,romanized,sold_2299,NOT,NOT,NOT,1,"NOT. This text is not offensive. It appears to be a message in Sinhala language, which can be translated to English as follows: ""Oh, ban mee (a type of no",136,40
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0082,B,1,A,0,1. කිරි කෝහි ඇත්දැයි බලා,297,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0082,B,2,B,1,2. goma kohi aethdaeyi balaakiyaa gena ya,147,21
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0015,B,2,B,1,2. 2. රුවන්වැලි සෑය රෙදි ව��,329,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0015,B,2,B,1,2. (2),157,6
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0004,A,1,A,1,1. සූර්යග්‍රහණයක් වේලාවේ ය,239,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0004,A,2,B,0,"2. chandragrahanayak weelaawee ya.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""The",129,40
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0095,B,2,B,1,2. අතින් මුහුණ වසා ගන්න (��,227,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0095,B,2,B,1,2. athin muhuna wasaa ganna,121,12
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0036,A,1,A,1,"1 is the best option to complete the given text.
+
+දස්කොන් හා ප්‍රමි��",792,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0036,A,2,B,0,2. pramilaa bisawata waeladii thibuu saankaa dooshayak wenuwen kala bali yaagayaka dii aegee ru,299,40
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0032,A,1,A,1,"1 is the best option to complete the given text.
+
+දළදාව ලංකාවට ��",225,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0032,A,2,B,0,2. (2) pothak assee hangaagena ya,115,16
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0029,A,2,B,0,"2. වාරකන් කාලයට ය
+
+ධීවරයන් ම����",163,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0029,A,2,B,0,2. waarakan kaalayata ya,109,11
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0018,B,2,B,1,2. භූමිතෙල් පෙඟවූ පා,396,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0018,B,2,B,1,"2. bhuumithel pengawuu paankadayak diga kootuwaka othaa gaerandiyaagee aengee gaanna
+
+Ex",167,40
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0014,A,2,B,0,2. (2) බස දී මැරුවා ය,202,31
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0014,A,2,B,0,2. basa dii maeruwaa ya,119,12
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0087,A,2,B,0,2. එය තැලෙයි,197,23
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0087,A,2,B,0,2. eya thaeleyi,110,10
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0070,A,2,B,0,"2. 2
+
+Translation:
+තුනක් ඇති මිනිහෙක්",324,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0070,A,2,B,0,2. walee aliyek da kaelee nayek da athee karawaelak da wuu wita ya,153,30
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0012,A,1,A,1,"1 is the best option to complete the given text.
+
+පරංටයා කෝට්ටේ",330,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0012,A,2,B,0,"2. (2) pruthugiisiikaarayan rawataa langa paarakin aganuwata gena giya ekaya
+
+Explanation:",155,40
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0076,B,1,A,0,"1. කොටළුවෙකි
+
+Note: The given text is in Sinhala, and the question and options",275,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0076,B,1,A,0,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is a mix of Sinhala and Tamil words that do not form a coherent",130,40
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0055,A,1,A,1,1. අත්තම් ක්‍රමය ලෙසය,239,32
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0055,A,2,B,0,2. shramadaana kramaya lesaya,123,12
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0005,B,1,A,0,1. තම සෝෝදරයාට ය,260,27
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0005,B,2,B,1,2. thama massinaata ya,125,9
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0028,A,2,B,0,"2. 2
+
+Explanation:
+
+The given text is in Sinhala, and it describes a situation where a person is trying to escape from a dangerous situation. The text",350,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0028,A,2,B,0,2. pulli maaru kalath kotiyaagee kaelee maaru nowee,151,22
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0030,A,1,A,1,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""The day's schedule"".",222,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0030,A,1,A,1,"1. awurudu hathak mehekaara kam kalee ya
+
+Explanation:
+
+The given text is in Sinhala, and it translates to",121,40
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0065,A,2,B,0,"2. බුද්ධ පූජාව තබා, ��",375,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0065,A,2,B,0,"2. buddha puujaawa thabaa, gihiyanta kaaemata dii, inpasu sanghayaata walandannata diimaya ya",167,40
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0078,B,1,A,0,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to: ""The police have arrested the",302,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0078,B,2,B,1,2. (2) panu biththara yanna hondin soodaa gatha yuthu ya,140,27
+zephyr-7b-beta,global_piqa,T1_direct,unicode,piqa_0072,A,2,B,0,2. මඤ්ඤොක්කා ගසක් කපා හැරම,344,40
+zephyr-7b-beta,global_piqa,T1_direct,romanized,piqa_0072,A,2,B,0,2. manynyokkaa gasak kapaa haeramitiyak saadaa denna,169,24
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0082,B,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,595,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0082,B,1,A,0,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",268,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0015,B,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,627,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0015,B,1,A,0,"Question: dutu gaemunu raju maranaasanna bawa dutu saddhaathissa kumaraa
+1. ruwanwaeli saaeya w",277,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0004,A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,537,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0004,A,1,A,1,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",249,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0095,B,INVALID,INVALID,0,Question: ඉප්තුගුණට ඉර�������,525,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0095,B,1,A,0,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",242,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0036,A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,1090,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0036,A,1,A,1,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",420,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0032,A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,523,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0032,A,1,A,1,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",236,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0029,A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,461,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0029,A,1,A,1,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",231,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0018,B,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,694,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0018,B,1,A,0,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",288,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0014,A,INVALID,INVALID,0,Question: අන්දුන්ගොණුරු පුර,500,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0014,A,1,A,1,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",240,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0087,A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,495,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0087,A,1,A,1,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",231,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0070,A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,622,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0070,A,1,A,1,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",274,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0012,A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,628,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0012,A,1,A,1,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",276,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0076,B,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,573,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0076,B,1,A,0,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",250,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0055,A,INVALID,INVALID,0,Question: ඉගුගු පුණු ��������,537,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0055,A,1,A,1,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",244,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0005,B,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,558,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0005,B,1,A,0,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",246,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0028,A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,648,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0028,A,1,A,1,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",272,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0030,A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,520,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0030,A,1,A,1,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",242,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0065,A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,673,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0065,A,1,A,1,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",288,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0078,B,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,600,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0078,B,1,A,0,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",261,40
+zephyr-7b-beta,global_piqa,T2_fewshot,unicode,piqa_0072,A,INVALID,INVALID,0,Question: අත් සෝදා ගැනීමට වඩා,642,40
+zephyr-7b-beta,global_piqa,T2_fewshot,romanized,piqa_0072,A,1,A,1,"Question: ath soodaa gaeniimata wadaath sudusu deya kumakda?
+1. saban haa wathura bhaawithaa kiri",290,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0082,B,1,A,0,1. කිරි කෝහි ඇත්දැයි බලා,311,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0082,B,1,A,0,"1. kiri kohi aethdaeyi balaakiyaa gena ya
+
+Explanation:
+
+The given text is a nonsensical string of words.",161,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0015,B,2,B,1,2. රුවන්වැලි සෑය රෙදි වලින,343,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0015,B,1,A,0,"1. The best option to complete the given text is:
+
+dutu gaemunu raju maranaasanna bawa dutu saddhaathissa kumaraa",171,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0004,A,1,A,1,1. සූර්යග්‍රහණයක් වේලාවේ ය,253,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0004,A,1,A,1,"1. suuryagrahanayak weelaawee ya.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""The sun",143,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0095,B,1,A,0,"1. The best option to complete the given text is ""kaldasiyakin muhufi wasaaga gannan"" (Sinhala: කඩ",241,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0095,B,2,B,1,"2. athin muhuna wasaa ganna
+
+Explanation:
+
+The phrase ""paaree aewidina wita ira muhunata waetiima",135,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0036,A,1,A,1,1. ප්‍රමිලා බිසවට වැළදී,806,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0036,A,1,A,1,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to:
+
+""There is a",313,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0032,A,1,A,1,1. කොණ්ඩය අස්සේ හංගා����,239,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0032,A,1,A,1,1 is not the correct answer as it does not make sense in the context of the question. The question is asking about Daladaawa Lankaawata Genaawee Kesee S,129,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0029,A,2,B,0,"2. वारकन् कालयां यानी, वारकन् का काला पह",177,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0029,A,1,A,1,"1 is not the best option to complete the given text. The correct answer is 2. Explanation: The given text is in Tamil, and the translation is ""Who is older,",123,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0018,B,1,A,0,1. පොල්තෙල් පෙඟවූ ��,410,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0018,B,2,B,1,2. bhuumithel pengawuu paankadayak diga kootuwaka othaa gaerandiyaagee aengee gaanna is the best,181,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0014,A,1,A,1,"1 is the best option to complete the given text.
+
+Explanation:
+
+The correct answer is 1 as the verb ""වස"" is used to indicate that the person is",216,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0014,A,1,A,1,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""Who is Anulaa R",133,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0087,A,1,A,1,"1. එය බිඳෙයි
+
+Explanation:
+The given text is in Sinhala, and it translates",211,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0087,A,1,A,1,"1. eya bindeyi
+
+Explanation:
+
+The given text is a Pali phrase that translates to ""may the merit of offering food to the monks",124,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0070,A,1,A,1,"1. The best option to complete the given text is: ""At the beach, some people are swimming while others are sunbathing."" (Explanation: The first option provides more context",338,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0070,A,2,B,0,"2. walee aliyek da kaelee nayek da athee karawaelak da wuu wita ya
+
+Explanation:
+
+The correct answer",167,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0012,A,1,A,1,1. පෘතුගීසීකාරයන් රවටා �,344,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0012,A,1,A,1,1. The best option to complete the given text is: parangiyaa koottee giyaa kiwuu siddiyee wunee mokak da? 1.,169,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0076,B,1,A,0,"1. කොටළුවෙකි
+
+Explanation:
+The given text describes a situation where a person is a",289,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0076,B,1,A,0,"1. kotaluweki
+
+Explanation:
+
+The given text is a Sinhala phrase that translates to ""cooking rice in a pot, eating it with cur",144,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0055,A,1,A,1,"1. The best option to complete the given text is ""Out of the given 2 answers, which one is the best option to complete the following text? Do not repeat the question or text in",253,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0055,A,1,A,1,"1 is not the correct answer as it suggests starting with the easy tasks first, which is not the same as starting with the initial tasks first, as implied by the Sinhala phrase ""goy",137,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0005,B,1,A,0,"1. The best option to complete the given text is:
+
+තම සහෝදරයාට ය
+
+Ex",274,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0005,B,1,A,0,"1. thama sahoodarayaata ya
+
+Explanation:
+
+The given text is in Sinhala, and it translates to: ""The small pond in Lan",139,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0028,A,1,A,1,1. කැලේ මාරු කලත් කොටියා,364,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0028,A,2,B,0,"2. pulli maaru kalath kotiyaagee kaelee maaru nowee
+
+Explanation:
+
+The given text is in Tamil, and it transl",165,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0030,A,1,A,1,"1. The best option to complete the given text is: ""The computer has identified the date"" (1)
+Explanation: The given text is in Sinhala, and the provided",236,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0030,A,1,A,1,"1. awurudu hathak mehekaara kam kalee ya
+
+Explanation:
+
+The given text is in Sinhala, and it translates to",135,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0065,A,2,B,0,"2. බුද්ධ පූජාව තබා, ��",389,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0065,A,2,B,0,"2. buddha puujaawa thabaa, gihiyanta kaaemata dii, inpasu sanghayaata walandannata diimaya ya",181,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0078,B,1,A,0,1. පණු බිත්තර යන්න හොඳ,316,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0078,B,1,A,0,"1. The best option to complete the given text is:
+
+polen genaa palaa kola iwiimata pera kumak kala yuthu da?
+1",154,40
+zephyr-7b-beta,global_piqa,T3_answer_first,unicode,piqa_0072,A,1,A,1,"1. The best option to complete the given text is: ""The ancient city of Gijón, located in the Principality of Asturias, is a historical and cultural gem that has",358,40
+zephyr-7b-beta,global_piqa,T3_answer_first,romanized,piqa_0072,A,1,A,1,1. The best option to complete the given text is: ginisiiriyaa gasak kapaa haeramitiyak saadaa denna. This option suggests that the aircraft,183,40

@@ -1,0 +1,681 @@
+﻿model,dataset,template,script,id,gold_label,pred,pred_label,correct,raw_output,n_input_tokens,n_output_tokens
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_1310,B,3,C,0,3,246,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_1310,B,3,C,0,3,185,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_0229,D,2,B,0,2,293,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_0229,D,4,D,1,4,185,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_0052,D,3,C,0,3,351,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_0052,D,4,D,1,4,201,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_1519,C,3,C,1,3,304,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_1519,C,3,C,1,3,190,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_0564,D,1,A,0,1,448,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_0564,D,2,B,0,2,229,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_0502,B,2,B,1,2,400,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_0502,B,2,B,1,2,207,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_0458,D,3,C,0,3,288,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_0458,D,2,B,0,2,179,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_0286,A,3,C,0,3,391,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_0286,A,3,C,0,3,218,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_1509,D,3,C,0,3,275,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_1509,D,3,C,0,3,180,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_0210,C,4,D,0,4,315,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_0210,C,3,C,1,3,193,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_1386,A,3,C,0,3,235,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_1386,A,2,B,0,2,170,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_1517,B,4,D,0,4,449,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_1517,B,4,D,0,4,228,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_1828,A,4,D,0,4,354,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_1828,A,4,D,0,4,199,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_1117,D,3,C,0,3,453,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_1117,D,3,C,0,3,247,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_0179,B,4,D,0,4,399,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_0179,B,3,C,0,3,225,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_1210,D,4,D,1,4,183,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_1210,D,4,D,1,4,161,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_0865,D,1,A,0,1,414,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_0865,D,4,D,1,4,259,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_0066,C,2,B,0,2,375,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_0066,C,3,C,1,3,211,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_0062,C,2,B,0,2,330,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_0062,C,2,B,0,2,195,2
+Hormoz-8B,sinhala_mmlu,T1_direct,unicode,mmlu_0192,A,2,B,0,2,455,2
+Hormoz-8B,sinhala_mmlu,T1_direct,romanized,mmlu_0192,A,2,B,0,2,234,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1310,B,3,C,0,3,456,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1310,B,4,D,0,4,286,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0229,D,1,A,0,1,503,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0229,D,4,D,1,4,286,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0052,D,2,B,0,2,561,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0052,D,3,C,0,3,302,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1519,C,3,C,1,3,514,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1519,C,3,C,1,3,291,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0564,D,1,A,0,1,658,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0564,D,2,B,0,2,330,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0502,B,1,A,0,1,610,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0502,B,4,D,0,4,308,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0458,D,2,B,0,2,498,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0458,D,2,B,0,2,280,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0286,A,3,C,0,3,601,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0286,A,3,C,0,3,319,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1509,D,3,C,0,3,485,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1509,D,4,D,1,4,281,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0210,C,4,D,0,4,525,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0210,C,4,D,0,4,294,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1386,A,4,D,0,4,445,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1386,A,4,D,0,4,271,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1517,B,4,D,0,4,659,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1517,B,4,D,0,4,329,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1828,A,4,D,0,4,564,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1828,A,4,D,0,4,300,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1117,D,3,C,0,3,663,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1117,D,3,C,0,3,348,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0179,B,2,B,1,2,609,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0179,B,2,B,1,2,326,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_1210,D,4,D,1,4,393,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_1210,D,4,D,1,4,262,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0865,D,1,A,0,1,624,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0865,D,4,D,1,4,360,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0066,C,2,B,0,2,585,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0066,C,4,D,0,4,312,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0062,C,2,B,0,2,540,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0062,C,2,B,0,2,296,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,unicode,mmlu_0192,A,2,B,0,2,665,2
+Hormoz-8B,sinhala_mmlu,T2_fewshot,romanized,mmlu_0192,A,2,B,0,2,335,2
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1310,B,3,C,0,"3
+
+**Reasoning:** නූතන සිංහල (Sinhala) වර්ණ ම",259,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1310,B,3,C,0,"3
+
+**Explanation:**
+
+The question is asking about the number of letters in the Sinhala alphabet. The Sinhala alphabet, known as ""Silabha"" or ""Akshara Malai",198,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0229,D,3,C,0,"3. රාජ්‍ය සේවය
+
+**Reasoning:**
+
+The passage seems to be asking why Buddhism does not cond",306,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0229,D,4,D,1,"4.
+
+**Explanation:**
+
+The phrase ""budu dahamata anuwa daehaemi raekiyaawak nowannee"" translates to ""as we reflect on our past actions",198,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0052,D,3,C,0,"3. ථුපාරාමය දාගැබ
+
+**Reasoning:**
+
+බු",364,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0052,D,4,D,1,"4. jeethawanaaraama daagaeba
+
+**Reasoning:** The phrase ""budun wahanseegee patidhaathuwa thaenpath kara nirmaanaya kar",214,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1519,C,3,C,1,"3. සිරසපාද කවියකි.
+
+**Reasoning:**
+
+The phrase",317,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1519,C,3,C,1,"3. sirasapaada kawiyaki.
+
+**Reasoning:** The phrase ""hisa muwa thula bella dewura daaethee dasaegili"" translates roughly to",203,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0564,D,3,C,0,"3. අසාධාරණය අගය කිරීම.
+
+**Reasoning",461,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0564,D,2,B,0,"2
+
+**Explanation:**
+
+The question seems to ask about how to overcome apathy or lack of initiative (aethiwita) to take up responsibilities (kriidaa katay",242,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0502,B,3,C,0,3. යේසුස් වහන්සේ සහ මිනිස,413,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0502,B,1,A,0,"1
+
+**Reasoning:** The statement seems to be discussing a concept related to the relationship between God (or deities, implied by ""dewiyan"") and humanity (implied by ""wahan",220,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0458,D,3,C,0,"3. මධ්‍යධරණී මුහුද
+
+**Reasoning:**
+
+""ග�",301,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0458,D,2,B,0,"2. mala muhuda
+
+**Explanation:** The phrase ""galiila muhuda sandahaa yedena thawath namak wannee"" translates to ""if you want to know the truth",192,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0286,A,3,C,0,"3. දිව්‍ය සත්ප්‍රසාදය ය .
+
+**Reasoning",404,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0286,A,3,C,0,"3. diwya sathprasaadaya ya .
+
+**Reasoning:** The passage implies a request for divine blessings or favor, which aligns most closely with the concept of ""div",231,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1509,D,4,D,1,"4. සිව් අඩිය
+
+**Explanation:**
+
+""තෙයිත තෙ",288,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1509,D,4,D,1,"4. siw adiya
+
+The phrase ""theyitha theyitha theyitha yathaam yana paa sarambayee saramba naamaya wannee"" translates to ""as I",193,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0210,C,4,D,0,"4. උඩ දිසාවය
+
+**Reasoning:**
+
+""සිගාලෝ�",328,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0210,C,3,C,1,"3. dakunu disaawaya
+
+**Explanation:** The phrase ""sigaaloowaada suuthrayee guruwarun upamaa kara aethi dishaawa wannee""",206,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1386,A,3,C,0,"3. දියණියක්
+
+**Reasoning:**
+
+The question is asking for the most appropriate word from the given options that completes",248,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1386,A,3,C,0,"3. diyaniyak
+
+**Reasoning:** The phrase ""eeka wachana anuktha naama padayak wannee"" translates to ""I want to learn one word",183,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1517,B,4,D,0,"4
+
+**Reasoning:**
+
+The question asks for the most appropriate description of the relationship between *උඩරට* (above/up) and *ප",462,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1517,B,4,D,0,"4. pahatharata haa udarata sampradaayan.
+
+**Reasoning:** The phrase ""mandi pada haa paa saramba walin daekiya ha",241,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1828,A,4,D,0,"4
+
+**Explanation:**
+
+The question asks what cannot prevent a natural process. The options describe different scenarios that could potentially halt or alter natural processes. 
+
+* **1.  �",367,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1828,A,4,D,0,"4
+
+**Explanation:**
+
+The question translates to ""How should a chemist proceed now?""  The options provided are all related to environmental considerations, with choices focusing on actions like minimiz",212,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1117,D,2,B,0,"2
+
+**Reasoning:**
+
+The question asks for the most appropriate answer to complete the sentence ""පහත කොටස් න�",466,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1117,D,3,C,0,"3
+
+**Explanation:**
+
+The phrase ""pahatha kotas niwaeradiwa gaelapuu wita niwaeradi pilithura wannee"" translates to something",260,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0179,B,3,C,0,"3. තෙවන සතියේ දී ය.
+
+**Reasoning:**
+
+ුද",412,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0179,B,3,C,0,"3. thewana sathiyee dii ya.
+
+**Reasoning:** The phrase ""budurajaanan wahansee kalaguna daekwiima washayen animisa lo",238,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_1210,D,4,D,1,"4
+
+**Explanation:**
+
+The question appears to be asking about the number of letters in the word ""වුළුහි ෆල",196,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_1210,D,4,D,1,"4
+
+**Explanation:** The phrase ""wuluhi falu wala ganana"" appears to be a combination of words from different languages, possibly Persian and Indian languages, or a constructed phrase",174,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0865,D,1,A,0,"1
+
+**Reasoning:**
+
+The question is asking for the correct combination of numbers that represent a pair where the sum of the first number and the second number from each pair adds up to",427,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0865,D,4,D,1,"4
+
+**Reasoning:**
+
+The question seems to be asking about a relationship between two sets of numbers, likely representing data related to Sri Lanka (shrii lankaawee).",272,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0066,C,3,C,1,"3. රුක්අත්තන
+
+**Reasoning:**
+
+නූල් රූක�",388,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0066,C,3,C,1,"3. Rukaththana
+
+**Explanation:**
+
+The question seems to be asking about the primary cause or reason (ruukada nirmaanayee dii) for the changes in",224,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0062,C,3,C,1,"3. අභයගිරි විහාරයයි.
+
+**Reasoning:**",343,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0062,C,3,C,1,"3. abhayagiri wihaarayayi.
+
+**Reasoning:** The phrase ""lakdiwa idikala palamu sthuupaya lesa handunwannee"" translates to """,208,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,unicode,mmlu_0192,A,2,B,0,"2
+
+**Explanation:**
+
+The passage translates to: ""Because of the gap between the self and others, one can gain insight."" Option 2, ""Because it is outside of the",468,40
+Hormoz-8B,sinhala_mmlu,T3_answer_first,romanized,mmlu_0192,A,2,B,0,"2.
+
+**Explanation:**
+
+The passage seems to be discussing the relationship between ethics (sadaachaarayen) and knowledge acquisition (wenaskam). The correct answer is option",247,40
+Hormoz-8B,sold,T1_direct,unicode,sold_0457,NOT,NOT,NOT,1,NOT,329,2
+Hormoz-8B,sold,T1_direct,romanized,sold_0457,NOT,NOT,NOT,1,NOT,182,2
+Hormoz-8B,sold,T1_direct,unicode,sold_0103,OFF,NOT,NOT,0,NOT,155,2
+Hormoz-8B,sold,T1_direct,romanized,sold_0103,OFF,NOT,NOT,0,NOT,126,2
+Hormoz-8B,sold,T1_direct,unicode,sold_1127,OFF,NOT,NOT,0,NOT,436,2
+Hormoz-8B,sold,T1_direct,romanized,sold_1127,OFF,OFF,OFF,1,OFF,227,2
+Hormoz-8B,sold,T1_direct,unicode,sold_1004,NOT,NOT,NOT,1,NOT,247,2
+Hormoz-8B,sold,T1_direct,romanized,sold_1004,NOT,OFF,OFF,0,OFF,153,2
+Hormoz-8B,sold,T1_direct,unicode,sold_0915,NOT,NOT,NOT,1,NOT,318,2
+Hormoz-8B,sold,T1_direct,romanized,sold_0915,NOT,OFF,OFF,0,OFF,179,2
+Hormoz-8B,sold,T1_direct,unicode,sold_0572,OFF,NOT,NOT,0,NOT,327,2
+Hormoz-8B,sold,T1_direct,romanized,sold_0572,OFF,NOT,NOT,0,NOT,179,2
+Hormoz-8B,sold,T1_direct,unicode,sold_0420,NOT,NOT,NOT,1,NOT,287,2
+Hormoz-8B,sold,T1_direct,romanized,sold_0420,NOT,OFF,OFF,0,OFF,168,2
+Hormoz-8B,sold,T1_direct,unicode,sold_2234,OFF,NOT,NOT,0,NOT,301,2
+Hormoz-8B,sold,T1_direct,romanized,sold_2234,OFF,NOT,NOT,0,NOT,167,2
+Hormoz-8B,sold,T1_direct,unicode,sold_0357,NOT,NOT,NOT,1,NOT,159,2
+Hormoz-8B,sold,T1_direct,romanized,sold_0357,NOT,NOT,NOT,1,NOT,136,2
+Hormoz-8B,sold,T1_direct,unicode,sold_2419,OFF,NOT,NOT,0,NOT,375,2
+Hormoz-8B,sold,T1_direct,romanized,sold_2419,OFF,NOT,NOT,0,NOT,193,2
+Hormoz-8B,sold,T1_direct,unicode,sold_1729,NOT,NOT,NOT,1,NOT,220,2
+Hormoz-8B,sold,T1_direct,romanized,sold_1729,NOT,NOT,NOT,1,NOT,146,2
+Hormoz-8B,sold,T1_direct,unicode,sold_0131,NOT,NOT,NOT,1,NOT,243,2
+Hormoz-8B,sold,T1_direct,romanized,sold_0131,NOT,NOT,NOT,1,NOT,163,2
+Hormoz-8B,sold,T1_direct,unicode,sold_0123,NOT,NOT,NOT,1,NOT,333,2
+Hormoz-8B,sold,T1_direct,romanized,sold_0123,NOT,NOT,NOT,1,NOT,187,2
+Hormoz-8B,sold,T1_direct,unicode,sold_0384,NOT,NOT,NOT,1,NOT,223,2
+Hormoz-8B,sold,T1_direct,romanized,sold_0384,NOT,NOT,NOT,1,NOT,149,2
+Hormoz-8B,sold,T1_direct,unicode,sold_0896,NOT,NOT,NOT,1,NOT,333,2
+Hormoz-8B,sold,T1_direct,romanized,sold_0896,NOT,NOT,NOT,1,NOT,188,2
+Hormoz-8B,sold,T1_direct,unicode,sold_0953,NOT,NOT,NOT,1,NOT,408,2
+Hormoz-8B,sold,T1_direct,romanized,sold_0953,NOT,OFF,OFF,0,OFF,199,2
+Hormoz-8B,sold,T1_direct,unicode,sold_2070,NOT,NOT,NOT,1,NOT,194,2
+Hormoz-8B,sold,T1_direct,romanized,sold_2070,NOT,NOT,NOT,1,NOT,137,2
+Hormoz-8B,sold,T1_direct,unicode,sold_2466,OFF,OFF,OFF,1,OFF,172,2
+Hormoz-8B,sold,T1_direct,romanized,sold_2466,OFF,NOT,NOT,0,NOT,136,2
+Hormoz-8B,sold,T1_direct,unicode,sold_0109,NOT,NOT,NOT,1,NOT,246,2
+Hormoz-8B,sold,T1_direct,romanized,sold_0109,NOT,NOT,NOT,1,NOT,161,2
+Hormoz-8B,sold,T1_direct,unicode,sold_2299,NOT,NOT,NOT,1,NOT,252,2
+Hormoz-8B,sold,T1_direct,romanized,sold_2299,NOT,NOT,NOT,1,NOT,153,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_0457,NOT,NOT,NOT,1,NOT,496,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_0457,NOT,OFF,OFF,0,OFF,245,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_0103,OFF,NOT,NOT,0,NOT,322,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_0103,OFF,NOT,NOT,0,NOT,189,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_1127,OFF,OFF,OFF,1,OFF,603,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_1127,OFF,OFF,OFF,1,OFF,290,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_1004,NOT,NOT,NOT,1,NOT,414,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_1004,NOT,OFF,OFF,0,OFF,216,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_0915,NOT,OFF,OFF,0,OFF,485,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_0915,NOT,OFF,OFF,0,OFF,242,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_0572,OFF,NOT,NOT,0,NOT,494,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_0572,OFF,NOT,NOT,0,NOT,242,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_0420,NOT,OFF,OFF,0,OFF,454,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_0420,NOT,OFF,OFF,0,OFF,231,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_2234,OFF,OFF,OFF,1,OFF,468,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_2234,OFF,NOT,NOT,0,NOT,230,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_0357,NOT,NOT,NOT,1,NOT,326,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_0357,NOT,NOT,NOT,1,NOT,199,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_2419,OFF,NOT,NOT,0,NOT,542,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_2419,OFF,OFF,OFF,1,OFF,256,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_1729,NOT,NOT,NOT,1,NOT,387,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_1729,NOT,NOT,NOT,1,NOT,209,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_0131,NOT,NOT,NOT,1,NOT,410,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_0131,NOT,NOT,NOT,1,NOT,226,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_0123,NOT,OFF,OFF,0,OFF,500,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_0123,NOT,NOT,NOT,1,NOT,250,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_0384,NOT,OFF,OFF,0,OFF,390,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_0384,NOT,OFF,OFF,0,OFF,212,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_0896,NOT,OFF,OFF,0,OFF,500,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_0896,NOT,NOT,NOT,1,NOT,251,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_0953,NOT,OFF,OFF,0,OFF,575,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_0953,NOT,OFF,OFF,0,OFF,262,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_2070,NOT,NOT,NOT,1,NOT,361,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_2070,NOT,NOT,NOT,1,NOT,200,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_2466,OFF,OFF,OFF,1,OFF,339,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_2466,OFF,NOT,NOT,0,NOT,199,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_0109,NOT,OFF,OFF,0,OFF,413,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_0109,NOT,NOT,NOT,1,NOT,224,2
+Hormoz-8B,sold,T2_fewshot,unicode,sold_2299,NOT,OFF,OFF,0,OFF,419,2
+Hormoz-8B,sold,T2_fewshot,romanized,sold_2299,NOT,NOT,NOT,1,NOT,216,2
+Hormoz-8B,sold,T3_answer_first,unicode,sold_0457,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual conversation in Sinhala, discussing a new trend or phenomenon (""නව මුහුණුව�",341,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_0457,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual conversation or message in Sinhala, expressing frustration or disappointment with someone named ""Muhunuwara Jaathyantharaya"" for not fulfilling a promise.",194,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_0103,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a casual, friendly reference to ""hitting"" or ""punching"" someone, possibly in a playful or humorous context, which is not inherently offensive in most settings",167,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_0103,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a casual or colloquial expression in Sinhala, possibly translating to something like ""You show off too much"" or ""Stop showing off."" While it may be critical or",138,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_1127,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a comment on a cricket match, using hashtags and slang specific to Sri Lanka (SL) cricket fans. It does not contain any derogatory language, insults, or",448,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_1127,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a social media post discussing a cricket match and using hashtags related to a campaign (#TweepsMatchOut) and expressing an opinion. While it mentions ""gayiya",239,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_1004,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual conversation in Sinhala, expressing frustration or disappointment about a situation with a ""user"" (පාස්කු - possibly",259,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_1004,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual, albeit somewhat emotive, conversation or message in Sinhala, possibly expressing frustration or disappointment. There are no evident offensive words or phrases th",165,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_0915,NOT,OFF,OFF,0,"OFF
+
+The text contains aggressive and offensive language, directly encouraging the use of derogatory terms like ""මෝඩ"" (stupid) and expressing a strong negative sentiment. It also",330,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_0915,NOT,NOT,NOT,1,"NOT
+
+The text appears to be expressing frustration or anger about a situation, using strong language but without any evident use of offensive terms or hate speech. The hashtags suggest a call to rejec",191,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_0572,OFF,NOT,NOT,0,"NOT
+
+The text appears to be discussing the perception of students as being unintelligent or ""uneducated"" based on their use of language, specifically in the context of tuition conversations. While it",339,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_0572,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a casual conversation in Sinhala regarding the use of language in educational contexts, asking if it's appropriate to use certain terms or language in teaching. There's no ",191,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_0420,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a question or statement about someone's behavior, possibly regarding the use of a device or media, and does not contain any evident offensive language, slurs, or",299,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_0420,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a mix of Sinhala and hashtags, and while it contains some slang and potentially colloquial language, it does not contain any explicit offensive content. The phrases and wor",180,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_2234,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a discussion about someone's beliefs or opinions regarding a person's actions, using a casual and informal tone. While it expresses a strong opinion, it does not contain",313,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_2234,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a personal opinion or a comment about specific individuals, possibly political figures (as suggested by the names ""Mahinda"" and ""Ranil""), but it does not",179,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_0357,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a simple user mention with a date, ""2 Jan"" (January 2nd), and a name, ""Amith Malinga."" There's no indication",171,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_0357,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a user mention or comment on a platform, possibly related to a person named Amith Malinga. It does not contain any explicit or derogatory language, insults,",148,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_2419,OFF,NOT,NOT,0,"NOT
+
+The text, while discussing a serious topic regarding societal progress and governance in the country, does not contain any offensive language or content. It expresses an opinion about the potenti",387,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_2419,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a personal message expressing frustration or criticism towards someone, possibly a user, regarding their behavior or actions within a community. While it contains strong la",205,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_1729,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a humorous or sarcastic comment about someone's behavior, possibly in the context of a digital interaction, as indicated by the mention of ""පිස",232,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_1729,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a phrase in Sinhala, which translates roughly to ""Don't be rude, my friend, use words politely."" There's no indication of offensive content or language in",158,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_0131,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual online conversation in Sinhala, discussing media freedom in Sri Lanka (#lka) with a reference to a potentially sensitive topic. There are no explicit offensive wor",255,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_0131,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual exchange between users, possibly on a social media platform, discussing a topic related to media freedom in Sri Lanka (#lka). There are no explicit offensive",175,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_0123,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual conversation in Sinhala, where one person asks if the other has done something, and the response suggests that they didn't and that they shouldn't be ashamed",345,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_0123,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual conversation between individuals, possibly friends or peers, discussing a possible misunderstanding or confusion regarding an exam or school-related issue. There a",199,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_0384,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual conversation between two users, with one expressing their doubt about something and the other responding with a seemingly light-hearted or humorous reply. There ar",235,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_0384,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual conversation in Sinhala, roughly translating to ""Hey, don't be afraid, come closer."" There's no indication of offensive language or content in the message",161,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_0896,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a mix of Sinhala and hashtags, expressing a congratulatory message with no apparent offensive content. The use of ""#condratulation"" and ""good job"" in",345,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_0896,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a mix of Sinhala and English, expressing congratulations and praise for someone's achievement, specifically mentioning a ""good job."" There are no evident offensive words or",200,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_0953,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual conversation in Sinhala, expressing an opinion about a situation. It does not contain any derogatory language, hate speech, or content that would be considered off",420,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_0953,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual conversation or message in Sinhala, expressing frustration or disappointment about a situation, possibly related to internet speed or service. There are no evident",211,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_2070,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual, humorous comment in Sinhala, expressing a sentiment of surprise or amusement, marked by the emoticon "":D"". There's no indication of offensive language or",206,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_2070,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a playful or humorous phrase in Sinhala, possibly expressing a light-hearted sentiment or a joke. There's no indication of offensive content or language, and the use",149,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_2466,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a casual, informal conversation among users, using familiar greetings and terms like ""@USER"" and expressing a sentiment of ""not being good"" or ""not feeling well",184,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_2466,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a casual, friendly exchange between users, possibly on a social media platform. It does not contain any derogatory language, hate speech, or content that could be considere",148,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_0109,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual conversation between users, expressing frustration or surprise about something, possibly a technical issue with a ""Shakthri (ෂක්ම�",258,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_0109,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual conversation in Sinhala, possibly between two users, expressing frustration or disagreement. There are no evident offensive words or phrases used, and the language",173,40
+Hormoz-8B,sold,T3_answer_first,unicode,sold_2299,NOT,NOT,NOT,1,"NOT
+
+The text translates to ""No, I don't want to think about it. Even if it's difficult, I need to move on."" It expresses a personal sentiment of not wanting to",264,40
+Hormoz-8B,sold,T3_answer_first,romanized,sold_2299,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a nonsensical string of words and phrases in Sinhala, with no discernible offensive content. It seems to be a random sequence of words that do not form",165,40
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0082,B,2,B,1,2,323,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0082,B,2,B,1,2,174,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0015,B,2,B,1,2,368,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0015,B,2,B,1,2,187,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0004,A,2,B,0,2,284,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0004,A,2,B,0,2,163,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0095,B,2,B,1,2,267,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0095,B,2,B,1,2,156,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0036,A,1,A,1,1,807,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0036,A,2,B,0,2,310,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0032,A,2,B,0,2,249,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0032,A,2,B,0,2,151,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0029,A,2,B,0,2,211,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0029,A,1,A,1,1,146,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0018,B,2,B,1,2,395,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0018,B,2,B,1,2,200,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0014,A,2,B,0,2,237,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0014,A,2,B,0,2,156,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0087,A,2,B,0,2,226,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0087,A,2,B,0,2,148,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0070,A,2,B,0,2,339,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0070,A,2,B,0,2,186,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0012,A,2,B,0,2,362,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0012,A,2,B,0,2,188,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0076,B,2,B,1,2,304,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0076,B,2,B,1,2,165,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0055,A,2,B,0,2,280,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0055,A,2,B,0,2,161,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0005,B,2,B,1,2,279,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0005,B,1,A,0,1,162,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0028,A,2,B,0,2,367,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0028,A,2,B,0,2,186,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0030,A,2,B,0,2,251,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0030,A,2,B,0,2,156,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0065,A,2,B,0,2,379,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0065,A,2,B,0,2,201,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0078,B,2,B,1,2,306,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0078,B,1,A,0,1,173,2
+Hormoz-8B,global_piqa,T1_direct,unicode,piqa_0072,A,2,B,0,2,399,2
+Hormoz-8B,global_piqa,T1_direct,romanized,piqa_0072,A,2,B,0,2,202,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0082,B,2,B,1,2,602,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0082,B,2,B,1,2,286,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0015,B,2,B,1,2,647,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0015,B,2,B,1,2,298,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0004,A,1,A,1,1,564,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0004,A,2,B,0,2,274,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0095,B,2,B,1,2,546,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0095,B,2,B,1,2,267,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0036,A,1,A,1,1,1086,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0036,A,2,B,0,2,421,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0032,A,2,B,0,2,528,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0032,A,2,B,0,2,262,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0029,A,1,A,1,1,490,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0029,A,1,A,1,1,257,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0018,B,2,B,1,2,674,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0018,B,2,B,1,2,311,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0014,A,2,B,0,2,516,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0014,A,2,B,0,2,267,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0087,A,2,B,0,2,505,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0087,A,2,B,0,2,259,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0070,A,2,B,0,2,618,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0070,A,2,B,0,2,297,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0012,A,2,B,0,2,641,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0012,A,1,A,1,1,299,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0076,B,2,B,1,2,583,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0076,B,2,B,1,2,276,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0055,A,2,B,0,2,559,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0055,A,2,B,0,2,272,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0005,B,1,A,0,1,558,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0005,B,2,B,1,2,272,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0028,A,2,B,0,2,646,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0028,A,2,B,0,2,297,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0030,A,2,B,0,2,530,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0030,A,2,B,0,2,267,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0065,A,2,B,0,2,658,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0065,A,2,B,0,2,312,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0078,B,2,B,1,2,585,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0078,B,2,B,1,2,283,2
+Hormoz-8B,global_piqa,T2_fewshot,unicode,piqa_0072,A,2,B,0,2,678,2
+Hormoz-8B,global_piqa,T2_fewshot,romanized,piqa_0072,A,2,B,0,2,313,2
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0082,B,2,B,1,2. ගොම කොහි ඇත්දැයි බලාකි�,336,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0082,B,1,A,0,"1
+
+Explanation: The sentence structure and context suggest that the phrase is asking about what one should do when something unexpected happens. Option 1, ""kiri kohi aethdaeyi bala",187,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0015,B,2,B,1,"2
+
+**Reasoning:**
+
+The passage implies that the goal is to stop a ritual (or action) that involves the burning of ritual objects (like books, as suggested by ""�",381,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0015,B,2,B,1,"2
+
+The second option is the best choice as it provides a coherent and grammatically correct sentence. ""Ruwanwaeli saaeya redi walin wasaa waaeda iwara",200,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0004,A,1,A,1,"1
+
+**Reasoning:**
+
+The text is discussing the idea of achieving something difficult in Sri Lanka. Option 1, ""සූර්යග්",297,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0004,A,2,B,0,"2
+
+**Explanation:**
+
+The phrase ""sudu wennata sithaa lankaawee samaharu wadakaha sudiya biwuwee"" translates to ""Soon",176,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0095,B,2,B,1,"2
+
+**Explanation:**
+
+The passage seems to be describing the action of bringing a stick (හුණ) down with force, perhaps to break it or make a point",280,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0095,B,2,B,1,"2
+
+Explanation: The phrase ""paaree aewidina wita ira muhunata waetiima waelakwiimata"" translates roughly to ""I am waiting for your guidance in",169,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0036,A,1,A,1,"1
+
+**Explanation:**
+
+The first answer is the better choice because it accurately describes the role of Yakupit (ූල්ලියා�",820,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0036,A,2,B,0,"2
+
+**Reasoning:**
+
+The sentence structure and context suggest that the phrase ""daskon haa pramilaa athara wuu aniyam sambandhathaawa""",323,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0032,A,2,B,0,"2
+
+**Explanation:**
+
+The question asks how one should approach Sri Lanka (දළදාව) when visiting. Option 2, ""ප�",262,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0032,A,1,A,1,"1
+
+Explanation: The phrase ""daladaawa lankaawata genaawee kesee sangawaa gena da?"" translates to ""What should be done about this difficult situation?"" The first",164,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0029,A,1,A,1,"1
+
+**Reasoning:** The question asks where the ""ධීවරයන්"" (people/travelers) are going. The phrase ""�",224,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0029,A,1,A,1,"1
+
+The question asks about the future state of something (""yannee mona kaalayata da?""), which translates to ""what will it be like in the future?"" or ""how",159,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0018,B,2,B,1,"2
+
+**Reasoning:**
+
+The question asks for the best way to welcome a guest. Option 2 is more polite and considerate. It suggests providing a welcoming gesture by opening a door",408,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0018,B,1,A,0,"1
+
+The context of the text implies a need to understand how to prevent or deal with a problem. The first answer offers a solution (""polthel pengawuu paankadayak diga k",213,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0014,A,1,A,1,"1
+
+**Reasoning:** The question asks what happened to the lion's (රැජිණ) ""soul"" (ස්වා�",250,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0014,A,2,B,0,"2
+
+The second option, ""basa dii maeruwaa ya,"" is the best choice as it translates to ""he/she should speak the truth"" in English. The context",169,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0087,A,1,A,1,"1
+
+**Reasoning:** The sentence ""මැටි පහනක් මීටර් දෙ",239,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0087,A,1,A,1,"1
+
+**Reasoning:** The sentence seems to be a fragment of a language, possibly a constructed or fictional one. The phrase ""maeti pahanak miitar dekaka pamana us",161,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0070,A,2,B,0,"2
+
+**Reasoning:**
+
+The question asks what happens when someone with a ""maran"" (which translates to a kind of weapon or tool) strikes. The first answer talks about",352,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0070,A,2,B,0,"2
+
+The second option is the best choice as it maintains grammatical consistency and logical flow. The sentence structure suggests a cause-and-effect relationship, where ""walee aliyek da""",199,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0012,A,2,B,0,"2
+
+**Reasoning:**
+
+The question asks what the scenario describes. Option 2 provides a more complete and logical description. It states that the person went to the location (the factory",375,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0012,A,1,A,1,"1
+
+The first answer is the best option as it directly translates to ""The engineer provided the necessary tools, so he was able to complete the work,"" which logically completes the sentence. The second",201,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0076,B,1,A,0,"1
+
+**Reasoning:**
+
+The context implies a situation where two people, one wealthy and the other poor, are competing or contrasting in some way. The phrase ""පි",317,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0076,B,1,A,0,"1
+
+**Explanation:**
+
+The sentence seems to be in a South Asian language, likely Sinhala, and translates roughly to: ""I want to complete my studies first before getting married.""",178,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0055,A,2,B,0,"2
+
+**Explanation:**
+
+The passage seems to be discussing the importance of providing assistance or guidance (උදව් කිරීම)",293,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0055,A,2,B,0,"2
+
+Explanation: The given text seems to be in a language that might be a dialect or a constructed language, but the context implies a negative consequence (""haendunwuuyee"" could",174,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0005,B,1,A,0,"1
+
+**Reasoning:**
+
+The text implies that the speaker is discussing a situation where someone is trying to prevent a fall (or 'මී පැණ",292,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0005,B,1,A,0,"1
+
+**Explanation:**
+
+The sentence seems to be discussing a situation where someone is questioning the need for immediate action (""lanuwaka ellii helata basinnaa bohoo wita",175,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0028,A,2,B,0,2. පුල්ලි මාරු කලත් කොටියා,380,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0028,A,2,B,0,"2
+
+The second option is the best choice as it maintains the grammatical structure and logical flow of the sentence. The phrase ""pulli maaru kalath kotiyaagee kaelee",199,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0030,A,1,A,1,"1
+
+**Reasoning:**
+
+The text translates to ""To gain time, what should I do?"" The context implies a need for a quick action or solution. Option 1, """,264,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0030,A,1,A,1,"1
+
+The phrase ""dikthala dinaa gaeniimata kaalagoola"" translates to ""I need to finish my homework before dinner."" The best option to complete this sentence",169,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0065,A,2,B,0,"2
+
+**Reasoning:**
+
+The passage seems to be discussing the order of actions during a specific process. The correct answer follows a logical sequence: first, destroy (or disable) the",392,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0065,A,1,A,1,"1
+
+The first option is the best choice as it follows a logical sequence. The sentence suggests that one should first perform the Buddha puuja (prayer or worship) and then, afterward,",214,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0078,B,2,B,1,"2
+
+**Explanation:**
+
+The question asks what needs to be done *before* leaving home to prevent sweating. Option 2 directly addresses this by suggesting cooling off with a fan (�",319,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0078,B,1,A,0,"1
+
+The phrase ""polen genaa palaa kola iwiimata pera kumak kala yuthu da?"" translates to ""How can we solve the problem when the situation keeps repeating",186,40
+Hormoz-8B,global_piqa,T3_answer_first,unicode,piqa_0072,A,1,A,1,"1
+
+**Reasoning:**
+
+The passage emphasizes the need for a sustainable and responsible approach to using a natural resource (in this context, a forest). Option 1 suggests using a """,412,40
+Hormoz-8B,global_piqa,T3_answer_first,romanized,piqa_0072,A,1,A,1,"1
+
+The first option is the best choice as it directly addresses the idea of ""not giving up"" (gaman biman yannata) and suggests a proactive approach to overcoming challenges (",215,40

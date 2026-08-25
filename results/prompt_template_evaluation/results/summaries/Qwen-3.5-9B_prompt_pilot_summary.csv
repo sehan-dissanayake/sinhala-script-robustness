@@ -1,0 +1,10 @@
+﻿model,dataset,template,n,invalid_rate,accuracy_among_valid,overall_accuracy
+Qwen-3.5-9B,sinhala_mmlu,T1_direct,40,0.0,0.35,0.35
+Qwen-3.5-9B,sinhala_mmlu,T2_fewshot,40,0.0,0.325,0.325
+Qwen-3.5-9B,sinhala_mmlu,T3_answer_first,40,0.0,0.45,0.45
+Qwen-3.5-9B,sold,T1_direct,40,0.0,0.55,0.55
+Qwen-3.5-9B,sold,T2_fewshot,40,0.0,0.525,0.525
+Qwen-3.5-9B,sold,T3_answer_first,40,0.0,0.525,0.525
+Qwen-3.5-9B,global_piqa,T1_direct,40,0.0,0.55,0.55
+Qwen-3.5-9B,global_piqa,T2_fewshot,40,0.0,0.675,0.675
+Qwen-3.5-9B,global_piqa,T3_answer_first,40,0.0,0.6,0.6

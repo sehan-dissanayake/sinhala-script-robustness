@@ -1,0 +1,415 @@
+﻿model,dataset,template,script,id,gold_label,pred,pred_label,correct,raw_output,n_input_tokens,n_output_tokens
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_1310,B,3,C,0,3,245,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_1310,B,3,C,0,3yi.,136,4
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_0229,D,1,A,0,1,338,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_0229,D,2,B,0,2,139,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_0052,D,1,A,0,1,431,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_0052,D,3,C,0,3,160,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_1519,C,1,A,0,1,346,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_1519,C,1,A,0,1,148,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_0564,D,1,A,0,1,576,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_0564,D,3,C,0,3,193,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_0502,B,4,D,0,4,511,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_0502,B,3,C,0,3,170,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_0458,D,1,A,0,1,331,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_0458,D,1,A,0,1,143,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_0286,A,1,A,1,1,501,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_0286,A,3,C,0,3,179,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_1509,D,1,A,0,1,308,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_1509,D,3,C,0,3,136,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_0210,C,1,A,0,1,368,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_0210,C,1,A,0,1,151,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_1386,A,3,C,0,3,245,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_1386,A,3,C,0,3,123,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_1517,B,4,D,0,4,591,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_1517,B,1,A,0,1,191,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_1828,A,1,A,1,1,428,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_1828,A,4,D,0,4. warnaya wenas wiima,155,9
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_1117,D,4,D,1,4,572,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_1117,D,4,D,1,4) gawayangee pitee badu genayaama,208,15
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_0179,B,4,D,0,4,501,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_0179,B,1,A,0,1,185,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_1210,D,3,C,0,3,146,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_1210,D,4,D,1,4,109,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_0865,D,3,C,0,3,477,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_0865,D,4,D,1,4,193,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_0066,C,1,A,0,1,473,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_0066,C,1,A,0,1,175,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_0062,C,3,C,1,3,383,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_0062,C,1,A,0,1,160,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,unicode,mmlu_0192,A,3,C,0,3,597,2
+stablelm-zephyr-3b,sinhala_mmlu,T1_direct,romanized,mmlu_0192,A,3,C,0,3,192,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_1310,B,3,C,0,3,541,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_1310,B,3,C,0,3,234,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_0229,D,2,B,0,2,634,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_0229,D,3,C,0,3,237,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_0052,D,1,A,0,1,727,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_0052,D,3,C,0,3,258,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_1519,C,3,C,1,3,642,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_1519,C,3,C,1,3,246,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_0564,D,1,A,0,1,872,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_0564,D,3,C,0,3,291,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_0502,B,1,A,0,1,807,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_0502,B,3,C,0,3,268,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_0458,D,3,C,0,3,627,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_0458,D,3,C,0,3,241,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_0286,A,3,C,0,3,797,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_0286,A,3,C,0,3,277,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_1509,D,3,C,0,3,604,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_1509,D,3,C,0,3,234,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_0210,C,2,B,0,2,664,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_0210,C,3,C,1,3,249,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_1386,A,3,C,0,3,541,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_1386,A,3,C,0,3,221,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_1517,B,1,A,0,1,887,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_1517,B,3,C,0,3,289,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_1828,A,3,C,0,3,724,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_1828,A,3,C,0,3,253,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_1117,D,2,B,0,2,868,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_1117,D,1,A,0,1. ABCD,306,5
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_0179,B,3,C,0,3,797,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_0179,B,3,C,0,3,283,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_1210,D,3,C,0,3,442,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_1210,D,3,C,0,3,207,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_0865,D,2,B,0,2,773,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_0865,D,3,C,0,3,291,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_0066,C,2,B,0,2,769,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_0066,C,3,C,1,3,273,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_0062,C,3,C,1,3,679,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_0062,C,3,C,1,3,258,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,unicode,mmlu_0192,A,3,C,0,3,893,2
+stablelm-zephyr-3b,sinhala_mmlu,T2_fewshot,romanized,mmlu_0192,A,3,C,0,3,290,2
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_1310,B,3,C,0,"3
+
+Explanation: The question asks for the smallest whole number that is a multiple of 18. Let's analyze each option:
+
+1. 10 is a multiple of 2 and 5,",258,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_1310,B,3,C,0,"3yi.
+
+Explanation: The question translates to ""without water, how many leaves are there on a coconut tree?"" The answer can be found by knowing that on average, a mature coconut",149,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_0229,D,1,A,0,1,351,2
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_0229,D,1,A,0,"1. krushikarmaanthaya
+
+Explanation: The given text, ""buddu dahamata anuwa daehaemi raekiyaawak nowannee",152,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_0052,D,4,D,1,4. ජේතවනාරාම දාග,444,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_0052,D,3,C,0,3. thupaaraamaya daagaeba,173,12
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_1519,C,1,A,0,1,359,2
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_1519,C,1,A,0,"1. lii keli kawiyeki.
+
+Explanation: The given phrase ""hisa muwa thula bella dewura daaethee dasaegili",161,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_0564,D,3,C,0,3,589,2
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_0564,D,3,C,0,"3. asaadhaaranaya agaya kiriima.
+
+Explanation: The given question appears to be a mix of words and phrases that do not form a coherent sentence or question",206,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_0502,B,4,D,0,4,524,2
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_0502,B,3,C,0,"3
+
+Explanation: The given question is in Sinhalese, which is a language spoken in Sri Lanka. The question translates to ""Pancha Pusthakayehi sand",183,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_0458,D,3,C,0,3. මධ්‍යධරණී මුහ�,344,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_0458,D,1,A,0,"1. Rathu Muhuda
+
+Explanation: The given phrase ""galiila muhuda sandahaa yedena thawath namak wannee"" can be translated",156,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_0286,A,3,C,0,3. දිව්‍ය සත්ප්‍�,514,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_0286,A,3,C,0,"3. diwya sathprasaadaya ya .
+
+Explanation: The given text appears to be a mix of languages and seems to be a statement in a mix of English and",192,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_1509,D,3,C,0,3,321,2
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_1509,D,3,C,0,3. thun adiya,149,7
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_0210,C,1,A,0,1. උතුරු දිසාවය,381,38
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_0210,C,4,D,0,"4. uda disaawaya
+
+Explanation: The given text, ""sigaaloowaada suuthrayee guruwarun upamaa kara aethi dis",164,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_1386,A,1,A,1,1. මා,258,10
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_1386,A,1,A,1,1. maa,136,5
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_1517,B,4,D,0,4,604,2
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_1517,B,1,A,0,"1. udarata haa pahatha rata sampradaayan rata sampradaayan.
+
+Explanation: The given sentence is in Sinhala language, and it",204,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_1828,A,4,D,0,4. වර්ණය වෙනස් ව�,441,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_1828,A,4,D,0,"4. warnaya wenas wiima
+
+Explanation: The given question is in the Rajasthani language, and it translates to ""Why does Rasa use a stick now?"" R",168,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_1117,D,4,D,1,4. CADB,585,5
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_1117,D,1,A,0,1. ABCD,221,5
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_0179,B,3,C,0,3. තෙවන සතියේ දී �,514,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_0179,B,3,C,0,"3. thewana sathiyee dii ya.
+
+Explanation: The given text appears to be a mix of languages and may contain a typo or misunderstanding. The phrase """,198,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_1210,D,1,A,0,"1
+
+Explanation: The given text ""වුළුහි ෆලු �",159,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_1210,D,1,A,0,"1
+
+Explanation: The given phrase ""wuluhi falu wala ganana"" seems to be a mix of a language that is not clearly identifiable. However, we can try to",122,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_0865,D,4,D,1,4,490,2
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_0865,D,2,B,0,"2. diga ki.mii. 423, palala ki.mii. 242",206,20
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_0066,C,1,A,0,1. කළුවර,486,19
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_0066,C,1,A,0,1. kaluwara,188,7
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_0062,C,3,C,1,3. අභයගිරි විහාර,396,40
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_0062,C,1,A,0,1. kaelani wihaarayayi.,173,13
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,unicode,mmlu_0192,A,3,C,0,3,610,2
+stablelm-zephyr-3b,sinhala_mmlu,T3_answer_first,romanized,mmlu_0192,A,3,C,0,3. adhyaapanayata yomu nowiima nisaa ya.,205,20
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_0457,NOT,NOT,NOT,1,NOT,417,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_0457,NOT,NOT,NOT,1,NOT,143,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_0103,OFF,NOT,NOT,0,NOT,138,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_0103,OFF,NOT,NOT,0,NOT,80,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_1127,OFF,NOT,NOT,0,NOT,575,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_1127,OFF,NOT,NOT,0,NOT,186,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_1004,NOT,NOT,NOT,1,NOT,286,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_1004,NOT,NOT,NOT,1,NOT,113,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_0915,NOT,NOT,NOT,1,NOT,388,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_0915,NOT,NOT,NOT,1,NOT,146,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_0572,OFF,NOT,NOT,0,NOT,413,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_0572,OFF,NOT,NOT,0,NOT,132,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_0420,NOT,NOT,NOT,1,NOT,356,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_0420,NOT,NOT,NOT,1,NOT,130,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_2234,OFF,NOT,NOT,0,NOT,377,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_2234,OFF,NOT,NOT,0,NOT,126,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_0357,NOT,NOT,NOT,1,NOT,138,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_0357,NOT,OFF,OFF,0,OFF,91,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_2419,OFF,NOT,NOT,0,NOT,491,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_2419,OFF,NOT,NOT,0,NOT,163,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_1729,NOT,NOT,NOT,1,NOT,239,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_1729,NOT,NOT,NOT,1,NOT,103,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_0131,NOT,NOT,NOT,1,NOT,271,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_0131,NOT,NOT,NOT,1,NOT,123,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_0123,NOT,NOT,NOT,1,NOT,428,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_0123,NOT,NOT,NOT,1,NOT,144,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_0384,NOT,NOT,NOT,1,NOT,244,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_0384,NOT,NOT,NOT,1,NOT,109,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_0896,NOT,NOT,NOT,1,NOT,424,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_0896,NOT,NOT,NOT,1,NOT,149,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_0953,NOT,NOT,NOT,1,NOT,534,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_0953,NOT,NOT,NOT,1,NOT,163,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_2070,NOT,NOT,NOT,1,NOT,198,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_2070,NOT,NOT,NOT,1,NOT,94,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_2466,OFF,NOT,NOT,0,NOT,156,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_2466,OFF,NOT,NOT,0,NOT,93,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_0109,NOT,NOT,NOT,1,NOT,279,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_0109,NOT,NOT,NOT,1,NOT,119,2
+stablelm-zephyr-3b,sold,T1_direct,unicode,sold_2299,NOT,NOT,NOT,1,NOT,292,2
+stablelm-zephyr-3b,sold,T1_direct,romanized,sold_2299,NOT,NOT,NOT,1,NOT,114,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_0457,NOT,OFF,OFF,0,OFF,674,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_0457,NOT,OFF,OFF,0,OFF,210,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_0103,OFF,NOT,NOT,0,NOT,395,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_0103,OFF,NOT,NOT,0,NOT,147,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_1127,OFF,NOT,NOT,0,NOT,832,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_1127,OFF,OFF,OFF,1,OFF,253,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_1004,NOT,OFF,OFF,0,OFF,543,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_1004,NOT,OFF,OFF,0,OFF,180,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_0915,NOT,NOT,NOT,1,NOT,645,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_0915,NOT,OFF,OFF,0,OFF,213,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_0572,OFF,NOT,NOT,0,NOT,670,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_0572,OFF,OFF,OFF,1,OFF,199,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_0420,NOT,NOT,NOT,1,NOT,613,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_0420,NOT,OFF,OFF,0,OFF,197,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_2234,OFF,NOT,NOT,0,NOT,634,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_2234,OFF,NOT,NOT,0,NOT,193,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_0357,NOT,NOT,NOT,1,NOT,395,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_0357,NOT,OFF,OFF,0,OFF,158,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_2419,OFF,NOT,NOT,0,NOT,748,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_2419,OFF,OFF,OFF,1,OFF,230,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_1729,NOT,NOT,NOT,1,NOT,496,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_1729,NOT,NOT,NOT,1,NOT,170,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_0131,NOT,NOT,NOT,1,NOT,528,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_0131,NOT,OFF,OFF,0,OFF,190,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_0123,NOT,NOT,NOT,1,NOT,685,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_0123,NOT,OFF,OFF,0,OFF,211,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_0384,NOT,NOT,NOT,1,NOT,501,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_0384,NOT,NOT,NOT,1,NOT,176,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_0896,NOT,NOT,NOT,1,NOT,681,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_0896,NOT,NOT,NOT,1,NOT,216,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_0953,NOT,NOT,NOT,1,NOT,791,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_0953,NOT,OFF,OFF,0,OFF,230,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_2070,NOT,NOT,NOT,1,NOT,455,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_2070,NOT,NOT,NOT,1,NOT,161,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_2466,OFF,NOT,NOT,0,NOT,413,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_2466,OFF,NOT,NOT,0,NOT,160,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_0109,NOT,NOT,NOT,1,NOT,536,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_0109,NOT,OFF,OFF,0,OFF,186,2
+stablelm-zephyr-3b,sold,T2_fewshot,unicode,sold_2299,NOT,NOT,NOT,1,NOT,549,2
+stablelm-zephyr-3b,sold,T2_fewshot,romanized,sold_2299,NOT,NOT,NOT,1,NOT,181,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_0457,NOT,NOT,NOT,1,NOT,429,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_0457,NOT,NOT,NOT,1,NOT,155,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_0103,OFF,NOT,NOT,0,NOT,150,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_0103,OFF,NOT,NOT,0,NOT,92,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_1127,OFF,NOT,NOT,0,NOT,587,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_1127,OFF,NOT,NOT,0,NOT,198,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_1004,NOT,NOT,NOT,1,NOT,298,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_1004,NOT,NOT,NOT,1,NOT,125,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_0915,NOT,NOT,NOT,1,NOT,400,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_0915,NOT,NOT,NOT,1,NOT,158,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_0572,OFF,NOT,NOT,0,NOT,425,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_0572,OFF,NOT,NOT,0,NOT,144,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_0420,NOT,NOT,NOT,1,NOT,368,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_0420,NOT,NOT,NOT,1,NOT,142,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_2234,OFF,NOT,NOT,0,NOT,389,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_2234,OFF,NOT,NOT,0,NOT,138,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_0357,NOT,NOT,NOT,1,NOT,150,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_0357,NOT,NOT,NOT,1,NOT,103,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_2419,OFF,NOT,NOT,0,NOT,503,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_2419,OFF,NOT,NOT,0,NOT,175,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_1729,NOT,NOT,NOT,1,NOT,251,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_1729,NOT,NOT,NOT,1,NOT,115,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_0131,NOT,NOT,NOT,1,NOT,283,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_0131,NOT,NOT,NOT,1,NOT,135,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_0123,NOT,NOT,NOT,1,NOT,440,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_0123,NOT,NOT,NOT,1,NOT,156,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_0384,NOT,NOT,NOT,1,NOT,256,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_0384,NOT,NOT,NOT,1,NOT,121,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_0896,NOT,NOT,NOT,1,NOT,436,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_0896,NOT,NOT,NOT,1,NOT,161,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_0953,NOT,NOT,NOT,1,NOT,546,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_0953,NOT,NOT,NOT,1,NOT,175,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_2070,NOT,NOT,NOT,1,NOT,210,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_2070,NOT,NOT,NOT,1,NOT,106,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_2466,OFF,NOT,NOT,0,NOT,168,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_2466,OFF,NOT,NOT,0,NOT,105,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_0109,NOT,NOT,NOT,1,NOT,291,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_0109,NOT,NOT,NOT,1,NOT,131,2
+stablelm-zephyr-3b,sold,T3_answer_first,unicode,sold_2299,NOT,NOT,NOT,1,NOT,304,2
+stablelm-zephyr-3b,sold,T3_answer_first,romanized,sold_2299,NOT,NOT,NOT,1,NOT,126,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0082,B,1,A,0,1,408,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0082,B,2,B,1,2,138,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0015,B,2,B,1,2,468,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0015,B,2,B,1,2,147,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0004,A,1,A,1,1,331,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0004,A,1,A,1,1,121,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0095,B,1,A,0,1,306,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0095,B,1,A,0,1,112,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0036,A,2,B,0,2,1194,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0036,A,2,B,0,2,288,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0032,A,1,A,1,1,280,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0032,A,2,B,0,2,108,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0029,A,1,A,1,1,220,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0029,A,1,A,1,1. haraawa kaalayata ya,101,11
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0018,B,2,B,1,2,524,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0018,B,1,A,0,1,155,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0014,A,1,A,1,1,263,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0014,A,2,B,0,2,111,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0087,A,1,A,1,1,244,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0087,A,1,A,1,1,100,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0070,A,2,B,0,2,433,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0070,A,1,A,1,1,143,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0012,A,1,A,1,1,463,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0012,A,2,B,0,2,146,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0076,B,1,A,0,1,365,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0076,B,1,A,0,1,121,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0055,A,1,A,1,1,333,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0055,A,2,B,0,2,114,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0005,B,1,A,0,1,335,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0005,B,1,A,0,1,115,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0028,A,1,A,1,1,481,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0028,A,1,A,1,1,141,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0030,A,2,B,0,2,289,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0030,A,2,B,0,2,114,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0065,A,2,B,0,2,494,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0065,A,2,B,0,2,160,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0078,B,2,B,1,2,381,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0078,B,2,B,1,2,131,2
+stablelm-zephyr-3b,global_piqa,T1_direct,unicode,piqa_0072,A,1,A,1,1,529,2
+stablelm-zephyr-3b,global_piqa,T1_direct,romanized,piqa_0072,A,2,B,0,2,157,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0082,B,1,A,0,1,828,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0082,B,2,B,1,2,256,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0015,B,2,B,1,2,888,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0015,B,2,B,1,2,264,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0004,A,2,B,0,2,751,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0004,A,1,A,1,1,238,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0095,B,2,B,1,2,726,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0095,B,2,B,1,2,230,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0036,A,2,B,0,2,1614,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0036,A,2,B,0,2,406,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0032,A,1,A,1,1,700,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0032,A,2,B,0,2,226,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0029,A,2,B,0,2,640,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0029,A,2,B,0,2,219,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0018,B,2,B,1,2,944,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0018,B,2,B,1,2,273,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0014,A,2,B,0,2,683,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0014,A,2,B,0,2,229,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0087,A,2,B,0,2,664,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0087,A,2,B,0,2,218,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0070,A,2,B,0,2,853,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0070,A,2,B,0,2,261,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0012,A,1,A,1,1,883,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0012,A,2,B,0,2,264,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0076,B,1,A,0,1,785,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0076,B,1,A,0,1,239,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0055,A,2,B,0,2,753,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0055,A,2,B,0,2,232,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0005,B,2,B,1,2,755,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0005,B,2,B,1,2,233,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0028,A,1,A,1,1,901,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0028,A,1,A,1,1,259,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0030,A,1,A,1,1,709,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0030,A,2,B,0,2,232,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0065,A,1,A,1,1,914,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0065,A,2,B,0,2,278,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0078,B,1,A,0,1,801,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0078,B,2,B,1,2,249,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,unicode,piqa_0072,A,1,A,1,1,949,2
+stablelm-zephyr-3b,global_piqa,T2_fewshot,romanized,piqa_0072,A,2,B,0,2,275,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0082,B,1,A,0,1,421,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0082,B,1,A,0,1. kiri kohi aethdaeyi balaakiyaa gena ya,151,21
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0015,B,1,A,0,1,481,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0015,B,2,B,1,2,160,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0004,A,1,A,1,1,344,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0004,A,1,A,1,1. suuryagrahanayak weelaawee ya.,134,16
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0095,B,1,A,0,1,319,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0095,B,1,A,0,"1. kadadaasiyakin muhuna wasaa ganna
+
+Explanation: The given text seems to be a mix of two different phrases or sentences. The first part, ""pa",125,40
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0036,A,1,A,1,1,1207,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0036,A,1,A,1,1,301,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0032,A,1,A,1,1. කොණ්ඩය අස්සේ �,293,40
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0032,A,1,A,1,"1. kondaya assee hangaagena ya
+
+Explanation: The given text seems to be a mix of Sinhalese and English words without a clear context. However,",121,40
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0029,A,1,A,1,1. හරාව කාලයට ය,233,36
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0029,A,1,A,1,"1. haraawa kaalayata ya
+
+Explanation: The given text, ""dhiiwarayan muudu yannee mona kaalayata da?"", translates to",114,40
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0018,B,1,A,0,1,537,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0018,B,1,A,0,1,168,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0014,A,1,A,1,1. වස දී මැරුවා ය,276,40
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0014,A,1,A,1,"1. wasa dii maeruwaa ya
+
+Explanation: The given text appears to be a mix of two different phrases. The first part, ""anulaa raejin",124,40
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0087,A,1,A,1,"1. එය බිඳෙයි
+
+Explanation: The given text asks for the best",257,40
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0087,A,1,A,1,1,113,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0070,A,1,A,1,1,446,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0070,A,1,A,1,"1. walee nayek da kaelee aliyek da athee karawaelak da wuu wita ya
+
+Explanation: The given text seems to be a",156,40
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0012,A,1,A,1,1,476,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0012,A,1,A,1,"1. pruthugiisiikaarayan rawataa dura paarakin aganuwata gena giya ekaya
+
+Explanation: The given text seems to be",159,40
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0076,B,1,A,0,1. කොටළුවෙකි,378,31
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0076,B,1,A,0,"1. kotaluweki
+
+Explanation: The given text appears to be in Sinhalese, an ancient language spoken in Sri Lanka. I identified ""kotaluweki",134,40
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0055,A,1,A,1,1,346,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0055,A,1,A,1,"1. aththam kramaya lesaya
+
+Explanation: The given text seems to be a mix of two different phrases or sentences. The first part, ""goyam kaepi",127,40
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0005,B,1,A,0,1. තම සහෝදරයාට ය,348,40
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0005,B,1,A,0,"1. thama sahoodarayaata ya
+
+Explanation: The given text appears to be a mix of a language that might be Zulu, and it seems to be a quote or",128,40
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0028,A,1,A,1,1,494,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0028,A,1,A,1,"1. kaelee maaru kalath kotiyaagee pulli maaru nowee
+
+Explanation: The given text seems to be a conversation between two people discussing about something",154,40
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0030,A,1,A,1,1,302,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0030,A,1,A,1,1,127,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0065,A,1,A,1,1,507,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0065,A,1,A,1,1,173,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0078,B,1,A,0,1,394,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0078,B,1,A,0,"1. panu biththara yanna hondin weelaa gatha yuthu ya
+
+Explanation: The given text seems to be a mix of Finnish and an incomplete",144,40
+stablelm-zephyr-3b,global_piqa,T3_answer_first,unicode,piqa_0072,A,1,A,1,1,542,2
+stablelm-zephyr-3b,global_piqa,T3_answer_first,romanized,piqa_0072,A,1,A,1,1,170,2

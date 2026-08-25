@@ -1,0 +1,10 @@
+﻿model,dataset,template,n,invalid_rate,accuracy_among_valid,overall_accuracy
+zephyr-7b-beta,sinhala_mmlu,T1_direct,40,0.0,0.2,0.2
+zephyr-7b-beta,sinhala_mmlu,T2_fewshot,40,0.6,0.125,0.05
+zephyr-7b-beta,sinhala_mmlu,T3_answer_first,40,0.05,0.13157894736842105,0.125
+zephyr-7b-beta,sold,T1_direct,40,0.0,0.7,0.7
+zephyr-7b-beta,sold,T2_fewshot,40,0.375,0.64,0.4
+zephyr-7b-beta,sold,T3_answer_first,40,0.0,0.7,0.7
+zephyr-7b-beta,global_piqa,T1_direct,40,0.0,0.4,0.4
+zephyr-7b-beta,global_piqa,T2_fewshot,40,0.5,0.65,0.325
+zephyr-7b-beta,global_piqa,T3_answer_first,40,0.0,0.6,0.6

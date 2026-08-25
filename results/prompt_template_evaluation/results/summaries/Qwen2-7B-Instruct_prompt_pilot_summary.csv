@@ -1,0 +1,10 @@
+﻿model,dataset,template,n,invalid_rate,accuracy_among_valid,overall_accuracy
+Qwen2-7B-Instruct,sinhala_mmlu,T1_direct,40,0.0,0.3,0.3
+Qwen2-7B-Instruct,sinhala_mmlu,T2_fewshot,40,0.0,0.35,0.35
+Qwen2-7B-Instruct,sinhala_mmlu,T3_answer_first,40,0.0,0.275,0.275
+Qwen2-7B-Instruct,sold,T1_direct,40,0.0,0.675,0.675
+Qwen2-7B-Instruct,sold,T2_fewshot,40,0.0,0.4,0.4
+Qwen2-7B-Instruct,sold,T3_answer_first,40,0.0,0.7,0.7
+Qwen2-7B-Instruct,global_piqa,T1_direct,40,0.0,0.4,0.4
+Qwen2-7B-Instruct,global_piqa,T2_fewshot,40,0.0,0.475,0.475
+Qwen2-7B-Instruct,global_piqa,T3_answer_first,40,0.0,0.375,0.375

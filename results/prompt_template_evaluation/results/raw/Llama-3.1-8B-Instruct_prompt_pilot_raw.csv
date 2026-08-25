@@ -1,0 +1,526 @@
+﻿model,dataset,template,script,id,gold_label,pred,pred_label,correct,raw_output,n_input_tokens,n_output_tokens
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1310,B,4,D,0,4,221,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1310,B,1,A,0,1,150,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0229,D,4,D,1,4,280,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0229,D,2,B,0,2,159,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0052,D,3,C,0,3,343,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0052,D,3,C,0,3,175,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1519,C,3,C,1,3,280,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1519,C,2,B,0,2,161,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0564,D,4,D,1,4,438,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0564,D,2,B,0,2,206,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0502,B,2,B,1,2,396,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0502,B,3,C,0,3,185,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0458,D,4,D,1,4,277,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0458,D,3,C,0,3,156,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0286,A,3,C,0,3,389,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0286,A,2,B,0,2,190,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1509,D,3,C,0,3,263,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1509,D,2,B,0,2,156,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0210,C,2,B,0,2,301,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0210,C,3,C,1,3,167,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1386,A,3,C,0,3,219,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1386,A,3,C,0,3,142,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1517,B,4,D,0,4,451,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1517,B,4,D,0,4,205,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1828,A,1,A,1,1,343,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1828,A,3,C,0,3,172,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1117,D,1,A,0,1,449,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1117,D,3,C,0,3,227,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0179,B,3,C,0,3,391,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0179,B,1,A,0,1,195,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_1210,D,4,D,1,4,155,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_1210,D,4,D,1,4,132,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0865,D,4,D,1,4,388,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0865,D,4,D,1,4,213,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0066,C,2,B,0,2,373,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0066,C,2,B,0,2,192,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0062,C,2,B,0,2,308,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0062,C,2,B,0,2,164,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,unicode,mmlu_0192,A,1,A,1,1,457,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T1_direct,romanized,mmlu_0192,A,2,B,0,2,203,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1310,B,3,C,0,3,437,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1310,B,3,C,0,3,246,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0229,D,4,D,1,4,496,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0229,D,1,A,0,1,255,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0052,D,3,C,0,3,559,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0052,D,1,A,0,1,271,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1519,C,3,C,1,3,496,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1519,C,3,C,1,3,257,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0564,D,4,D,1,4,654,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0564,D,1,A,0,1,302,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0502,B,4,D,0,4,612,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0502,B,3,C,0,3,281,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0458,D,3,C,0,3,493,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0458,D,3,C,0,3,252,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0286,A,3,C,0,3,605,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0286,A,1,A,1,1,286,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1509,D,3,C,0,3,479,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1509,D,3,C,0,3,252,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0210,C,2,B,0,2,517,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0210,C,3,C,1,3,263,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1386,A,2,B,0,2,435,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1386,A,3,C,0,3,238,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1517,B,4,D,0,4,667,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1517,B,4,D,0,4,301,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1828,A,4,D,0,4,559,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1828,A,1,A,1,1,268,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1117,D,3,C,0,3,665,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1117,D,3,C,0,3,323,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0179,B,3,C,0,3,607,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0179,B,1,A,0,1,291,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_1210,D,3,C,0,3,371,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_1210,D,4,D,1,4,228,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0865,D,4,D,1,4,604,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0865,D,4,D,1,4,309,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0066,C,2,B,0,2,589,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0066,C,1,A,0,1,288,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0062,C,2,B,0,2,524,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0062,C,1,A,0,1,260,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,unicode,mmlu_0192,A,2,B,0,2,673,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T2_fewshot,romanized,mmlu_0192,A,1,A,1,1,299,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1310,B,3,C,0,"3
+
+The answer is 3 because සඤ්ඤ is a single consonant in the modern Sinhala alphabet, and it is not counted as a separate letter.",234,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1310,B,2,B,1,"2
+The Sinhala alphabet consists of 40 letters, but the question asks for the number of vowels. In the Sinhala alphabet, there are 11 vowels (3 short vowels and 8",163,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0229,D,2,B,0,"2
+
+බුදු දහම අනුව දැහැමි �",293,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0229,D,3,C,0,"3
+
+The phrase ""budu dahamata anuwa daehaemi raekiyaawak nowannee"" translates to ""the people who are born in the land of the Buddha",172,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0052,D,3,C,0,"3
+
+The Thuparama Dagaba is a dagaba in Anuradhapura, Sri Lanka, and it is believed to be the first dagaba built in Sri Lanka, and it",356,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0052,D,3,C,0,"3
+The question seems to be in a language that resembles Sinhala, a language spoken in Sri Lanka. The phrase ""budun wahanseegee patidhaathuwa thaenpath",188,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1519,C,3,C,1,"3
+This is a traditional Sinhalese proverb, which is a type of සිරසපාද කවිය�",293,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1519,C,3,C,1,"3
+
+This phrase appears to be in the Swahili language. The phrase ""hisa muwa thula bella dewura daaethee dasaegili"" can be translated to English",174,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0564,D,2,B,0,2,451,2
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0564,D,2,B,0,"2
+The question is asking about the characteristics of a democratic system of government. The correct answer is related to the concept of ""aathmaarthakaamii katayuthu kiriim",219,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0502,B,2,B,1,"2. 
+
+පංච පුස්තකය බිබ්ලිය�",409,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0502,B,3,C,0,"3
+
+This is a question in Sinhala, and it seems to be referring to the five books of the Bible. The correct answer is ""yeesus wahansee saha minisaa",198,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0458,D,4,D,1,"4
+
+The Mediterranean Sea is also known as the Tyrrhenian Sea, but the name ""Tyrrhenian"" is not commonly used. However, the correct answer is the Mediterranean Sea itself",290,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0458,D,3,C,0,"3
+
+This is a quote from the Buddhist scripture, the Dhammapada. The phrase ""galiila muhuda"" is a Pali phrase that translates to ""the great flood"" or",169,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0286,A,3,C,0,"3
+
+දේව දරුකම නමැති නොමැ�",402,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0286,A,3,C,0,"3
+
+This is a question in Sinhala, and it seems to be a riddle or a proverb. The translation of the given text is: ""The gift of a god is given to a",203,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1509,D,2,B,0,"2
+තෙයිත තෙයිත තෙයිත යත�",276,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1509,D,2,B,0,"2
+This appears to be a phrase in an ancient language, likely Pali or Sanskrit, which is often used in Buddhist scriptures. The phrase ""theyitha theyitha theyitha",169,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0210,C,2,B,0,"2
+කාර්තේසියානු දර්ශනය �",314,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0210,C,3,C,1,"3
+
+The question seems to be in Sinhala, and it translates to ""which direction is the sun in the morning"". The correct answer is ""dakunu disaawaya"", which means",180,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1386,A,2,B,0,"2
+The word ඔවුන් is a pronominal noun, which is a type of compound noun that functions as a pronoun.",232,37
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1386,A,3,C,0,"3
+The word ""diyaniyak"" is a Sinhalese word that means ""fourth"" or ""four"".",155,28
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1517,B,4,D,0,"4
+
+This answer is correct because මණ්ඩි පද හා පා සරඹ",464,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1517,B,4,D,0,"4
+
+This is a quote from a traditional Sri Lankan proverb, and it is referring to the two main kingdoms of Sri Lanka, the Kingdom of Polonnaruwa (Pahatharata",218,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1828,A,2,B,0,"2
+රසායනික විපර්යාසයක ද",356,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1828,A,3,C,0,"3
+The question is asking about the rate of diffusion of a gas in a liquid. The correct answer is related to the concept of diffusion rates, and option 3, ""waayu bub",185,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1117,D,3,C,0,"3
+The correct answer is related to the Indus Valley Civilization, which is known for its well-organized trade networks and economic systems. The options given are related to the different aspects of t",462,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1117,D,4,D,1,"4
+
+The question is written in a language that appears to be a mix of Swahili and Sanskrit, with some modifications. The correct translation is: ""What is the name of the four",240,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0179,B,3,C,0,"3
+
+The Buddha's first sermon, also known as the Dhammacakkappavattana Sutta, was delivered on the third week after his enlightenment, which is why the correct answer is",404,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0179,B,2,B,1,"2
+
+This is a question in Sinhala, a language spoken in Sri Lanka. The question appears to be a poetic or lyrical phrase, and the correct answer is likely related to the context of",208,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_1210,D,4,D,1,"4
+
+The question seems to be in Sinhala, and it translates to ""The number of fruits in a guava"". In Sinhala, වුළුහ",168,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_1210,D,2,B,0,"2
+
+This is a numerical representation of the Rosetta Stone, which is an ancient Egyptian artifact that helped decipher hieroglyphics. The text ""wuluhi falu wala ganana""",145,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0865,D,4,D,1,"4
+
+ශ්‍රී ලංකාව දිග පළල අ�",401,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0865,D,2,B,0,"2
+
+The question seems to be in Sinhala, and it's asking about the ratio of the number of males to females in Sri Lanka. The correct answer is 2, which corresponds to the",226,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0066,C,2,B,0,"2
+නූල් රූකඩ නිර්මාණයේ �",386,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0066,C,2,B,0,"2
+
+The question is asking about the main cause of the destruction of a building. The word ""nuul ruukada"" means ""new building"" and ""ruukada saaediima",205,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0062,C,2,B,0,"2
+ථූපාරාම විහාරය ලක්දි",321,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0062,C,2,B,0,"2
+This is a Pali phrase from the Dhammapada, a Buddhist scripture. The phrase ""lakdiwa idikala palamu sthuupaya lesa handunwannee",177,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,unicode,mmlu_0192,A,2,B,0,"2
+මිනිසා හා සතුන් අතර ව",470,40
+Llama-3.1-8B-Instruct,sinhala_mmlu,T3_answer_first,romanized,mmlu_0192,A,2,B,0,"2
+The correct answer is 2 because the question is asking about the relationship between the number of women and the number of men, and the statement ""wenaskam athara minisaa s",216,40
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_0457,NOT,NOT,NOT,1,NOT,329,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_0457,NOT,NOT,NOT,1,NOT,160,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_0103,OFF,NOT,NOT,0,NOT,138,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_0103,OFF,NOT,NOT,0,NOT,101,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_1127,OFF,NOT,NOT,0,NOT,450,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_1127,OFF,NOT,NOT,0,NOT,205,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_1004,NOT,OFF,OFF,0,OFF,237,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_1004,NOT,OFF,OFF,0,OFF,129,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_0915,NOT,NOT,NOT,1,NOT,305,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_0915,NOT,OFF,OFF,0,OFF,160,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_0572,OFF,NOT,NOT,0,NOT,322,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_0572,OFF,NOT,NOT,0,NOT,154,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_0420,NOT,OFF,OFF,0,OFF,289,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_0420,NOT,OFF,OFF,0,OFF,145,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_2234,OFF,NOT,NOT,0,NOT,298,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_2234,OFF,NOT,NOT,0,NOT,144,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_0357,NOT,NOT,NOT,1,NOT,142,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_0357,NOT,NOT,NOT,1,NOT,113,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_2419,OFF,OFF,OFF,1,OFF,381,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_2419,OFF,NOT,NOT,0,NOT,177,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_1729,NOT,NOT,NOT,1,NOT,206,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_1729,NOT,NOT,NOT,1,NOT,123,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_0131,NOT,NOT,NOT,1,NOT,232,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_0131,NOT,NOT,NOT,1,NOT,142,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_0123,NOT,OFF,OFF,0,OFF,341,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_0123,NOT,OFF,OFF,0,OFF,160,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_0384,NOT,NOT,NOT,1,NOT,211,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_0384,NOT,NOT,NOT,1,NOT,126,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_0896,NOT,OFF,OFF,0,OFF,332,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_0896,NOT,NOT,NOT,1,NOT,164,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_0953,NOT,NOT,NOT,1,NOT,412,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_0953,NOT,OFF,OFF,0,OFF,183,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_2070,NOT,NOT,NOT,1,NOT,177,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_2070,NOT,NOT,NOT,1,NOT,114,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_2466,OFF,NOT,NOT,0,NOT,152,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_2466,OFF,NOT,NOT,0,NOT,112,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_0109,NOT,NOT,NOT,1,NOT,234,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_0109,NOT,NOT,NOT,1,NOT,137,2
+Llama-3.1-8B-Instruct,sold,T1_direct,unicode,sold_2299,NOT,NOT,NOT,1,NOT,245,2
+Llama-3.1-8B-Instruct,sold,T1_direct,romanized,sold_2299,NOT,NOT,NOT,1,NOT,132,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_0457,NOT,NOT,NOT,1,NOT,507,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_0457,NOT,OFF,OFF,0,OFF,222,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_0103,OFF,OFF,OFF,1,OFF,316,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_0103,OFF,OFF,OFF,1,OFF,163,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_1127,OFF,OFF,OFF,1,OFF,628,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_1127,OFF,OFF,OFF,1,OFF,267,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_1004,NOT,OFF,OFF,0,OFF,415,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_1004,NOT,OFF,OFF,0,OFF,191,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_0915,NOT,OFF,OFF,0,OFF,483,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_0915,NOT,OFF,OFF,0,OFF,222,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_0572,OFF,OFF,OFF,1,OFF,500,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_0572,OFF,NOT,NOT,0,NOT,216,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_0420,NOT,OFF,OFF,0,OFF,467,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_0420,NOT,OFF,OFF,0,OFF,207,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_2234,OFF,OFF,OFF,1,OFF,476,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_2234,OFF,NOT,NOT,0,NOT,206,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_0357,NOT,NOT,NOT,1,NOT,320,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_0357,NOT,NOT,NOT,1,NOT,175,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_2419,OFF,NOT,NOT,0,NOT,559,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_2419,OFF,OFF,OFF,1,OFF,239,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_1729,NOT,OFF,OFF,0,OFF,384,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_1729,NOT,NOT,NOT,1,NOT,185,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_0131,NOT,NOT,NOT,1,NOT,410,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_0131,NOT,OFF,OFF,0,OFF,204,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_0123,NOT,NOT,NOT,1,NOT,519,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_0123,NOT,OFF,OFF,0,OFF,222,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_0384,NOT,OFF,OFF,0,OFF,389,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_0384,NOT,OFF,OFF,0,OFF,188,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_0896,NOT,OFF,OFF,0,OFF,510,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_0896,NOT,NOT,NOT,1,NOT,226,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_0953,NOT,OFF,OFF,0,OFF,590,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_0953,NOT,OFF,OFF,0,OFF,245,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_2070,NOT,NOT,NOT,1,NOT,355,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_2070,NOT,NOT,NOT,1,NOT,176,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_2466,OFF,OFF,OFF,1,OFF,330,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_2466,OFF,OFF,OFF,1,OFF,174,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_0109,NOT,OFF,OFF,0,OFF,412,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_0109,NOT,OFF,OFF,0,OFF,199,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,unicode,sold_2299,NOT,OFF,OFF,0,OFF,423,2
+Llama-3.1-8B-Instruct,sold,T2_fewshot,romanized,sold_2299,NOT,NOT,NOT,1,NOT,194,2
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_0457,NOT,NOT,NOT,1,"NOT
+The text appears to be a casual and informal conversation between two users, discussing news and a news ticker in Chinese, without any explicit or implicit offense.",341,33
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_0457,NOT,NOT,NOT,1,"NOT
+
+This text appears to be a quote from a Sinhala song or a poem, and it does not contain any language that is typically considered offensive. The text is a poetic expression and seems to",172,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_0103,OFF,NOT,NOT,0,"NOT
+This text appears to be a playful or casual expression, possibly a colloquialism or slang, and does not contain any explicit or derogatory language.",150,34
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_0103,OFF,NOT,NOT,0,"NOT
+This text appears to be a casual, informal expression in Sinhala, possibly a colloquialism or a slang phrase, but it does not contain any overtly offensive language or tone.",113,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_1127,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a lighthearted and playful tweet about a cricket match, using colloquial language and a casual tone. The language used is not aggressive or derogatory",462,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_1127,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a playful and lighthearted tweet about a cricket match, using colloquial language and hashtags. The tone is not aggressive or derogatory, and the",217,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_1004,NOT,OFF,OFF,0,"OFF
+This text is classified as 'OFF' because it contains derogatory language and a derogatory term for a specific group of people.",249,29
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_1004,NOT,NOT,NOT,1,"NOT
+
+This text appears to be a quote from a song or a poem, and the language used is a mix of Sinhala and English, which is a common practice in Sri Lankan music and",141,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_0915,NOT,NOT,NOT,1,"NOT
+The text is a Sinhala phrase that translates to ""People say foolish things. They can be forgiven. Those who say foolish things are bullies who try to justify them. There is no",317,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_0915,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a sarcastic expression of frustration, using strong language to convey a message, but it does not contain hate speech or personal attacks. The use of the hashtag ""#say",172,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_0572,OFF,NOT,NOT,0,"NOT
+The text appears to be a humorous and lighthearted comment, using a playful tone to question the identity of someone's parentage, likely in the context of a joke or a",334,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_0572,OFF,NOT,NOT,0,"NOT
+
+This text appears to be a humorous and lighthearted question about a conversation between a student and a tutor, likely in a Sri Lankan context, given the use of Sinhala",166,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_0420,NOT,NOT,NOT,1,"NOT
+This text appears to be a playful and nonsensical phrase, possibly from a social media post, and does not contain any explicit or derogatory language.",301,34
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_0420,NOT,OFF,OFF,0,"OFF
+This text appears to be a Sinhala phrase with a mix of words that could be considered derogatory or insulting, particularly the use of the word ""balalaa"" which is a derog",157,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_2234,OFF,NOT,NOT,0,"NOT
+The text appears to be a humorous and lighthearted comment about a political figure (Mahinda) and a politician (Ranil) and their respective wives (Chandrika",310,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_2234,OFF,NOT,NOT,0,"NOT
+
+This text appears to be a quote from a song or a poem, likely from a Sri Lankan context, referencing the names of two former Sri Lankan presidents, Mahinda Rajapak",156,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_0357,NOT,NOT,NOT,1,"NOT
+The text appears to be a casual, informal message, possibly a social media post, and does not contain any language that would be considered offensive.",154,32
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_0357,NOT,NOT,NOT,1,"NOT
+
+This text appears to be a casual, informal message in Sinhala, possibly a New Year's greeting or a casual conversation, and does not contain any language that would be considered offensive.",125,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_2419,OFF,NOT,NOT,0,"NOT
+
+The text appears to be a neutral statement about the country's technological advancements and the importance of a well-governed system, without any derogatory or inflammatory language.",393,36
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_2419,OFF,NOT,NOT,0,"NOT
+
+This text appears to be a quote from a Sinhala language poem or song, possibly a patriotic or nationalistic one, as it mentions ""samaajagatha wiimee"" (",189,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_1729,NOT,NOT,NOT,1,"NOT
+The text appears to be a question asking about the origin of a person named මෛත්‍රීගේන් �",218,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_1729,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a quote from a song or a phrase, and it does not contain any explicit or derogatory language that would be considered offensive.",135,34
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_0131,NOT,NOT,NOT,1,"NOT
+The text appears to be a casual conversation between users on social media, with a mention of a news article or a statement that was made, but the tone is not aggressive or derogatory.",244,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_0131,NOT,NOT,NOT,1,"NOT
+
+This text appears to be a protest or a statement in support of media freedom in Sri Lanka (lka), and does not contain any explicit language or content that would be considered offensive.",154,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_0123,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a colloquial and informal conversation between two people, with a playful and teasing tone. The language used is a common dialect in Sri Lanka, and the conversation seems",353,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_0123,NOT,NOT,NOT,1,"NOT
+
+This text appears to be a Sinhala translation of a conversation between two people, likely in a fictional or humorous context, and does not contain any language that is typically considered offen",172,39
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_0384,NOT,NOT,NOT,1,"NOT
+
+This text appears to be a casual conversation between two users, with one user asking for the name of a cat and the other responding with a playful tone, using a colloquial expression.",223,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_0384,NOT,NOT,NOT,1,"NOT
+
+This text appears to be a nonsensical phrase with a mix of Sinhala words and characters, possibly a playful or humorous expression, and does not contain any language that would be considered offe",138,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_0896,NOT,OFF,OFF,0,"OFF
+The text contains derogatory language and insults towards a woman, specifically referring to her as ""හස්බන්ඩ්"" which is a",344,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_0896,NOT,NOT,NOT,1,"NOT
+
+This text appears to be a congratulatory message in Sinhala, expressing good wishes to someone on their wedding. The language used is polite and respectful, and there is no indication of any nega",176,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_0953,NOT,NOT,NOT,1,"NOT
+
+The text appears to be a casual, informal comment about the number of charter planes arriving in Sri Lanka and comparing it to new airports in other countries, with a tone of mild surprise and po",424,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_0953,NOT,NOT,NOT,1,"NOT
+
+This text appears to be a creative writing or a fictional passage in Sinhala, using imaginative language and metaphors. It does not contain any explicit or implicit references to hate speech, pro",195,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_2070,NOT,NOT,NOT,1,"NOT
+This text is classified as 'NOT' because it appears to be a casual and playful expression, using colloquial language and a smiley face at the end, indicating a lighthe",189,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_2070,NOT,NOT,NOT,1,"NOT
+
+This text appears to be a playful and nonsensical phrase, likely used in a lighthearted or humorous context, possibly in a social media post or a chat. The use",126,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_2466,OFF,NOT,NOT,0,"NOT
+This text appears to be a playful or casual expression, possibly a colloquialism, and does not contain any explicit or derogatory language.",164,32
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_2466,OFF,NOT,NOT,0,"NOT
+
+This text appears to be a playful or casual greeting in Sinhala, using informal language and colloquial expressions.",124,26
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_0109,NOT,NOT,NOT,1,"NOT
+This text appears to be a casual, informal conversation between two users, discussing the settling of bacteria in a container, and is not containing any explicit or derogatory language.",246,37
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_0109,NOT,NOT,NOT,1,"NOT
+
+This text appears to be a casual, informal conversation between two users, likely on a social media platform, and does not contain any language that is overtly derogatory or hurtful. The",149,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,unicode,sold_2299,NOT,NOT,NOT,1,"NOT
+The text appears to be a colloquial expression in Sinhala, possibly a phrase or a sentence that is not intended to be offensive. The language used is informal and conversational, and",257,40
+Llama-3.1-8B-Instruct,sold,T3_answer_first,romanized,sold_2299,NOT,NOT,NOT,1,"NOT
+
+This text appears to be a nonsensical phrase with a mix of Sinhala words and what seems to be a URL. It does not contain any language that would be considered offensive.",144,40
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0082,B,2,B,1,2,321,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0082,B,1,A,0,1,157,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0015,B,2,B,1,2,364,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0015,B,2,B,1,2,166,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0004,A,2,B,0,2,268,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0004,A,2,B,0,2,138,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0095,B,2,B,1,2,253,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0095,B,2,B,1,2,132,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0036,A,1,A,1,1,853,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0036,A,1,A,1,1,294,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0032,A,1,A,1,1,234,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0032,A,1,A,1,1,129,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0029,A,2,B,0,2,192,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0029,A,1,A,1,1,121,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0018,B,2,B,1,2,398,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0018,B,2,B,1,2,175,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0014,A,2,B,0,2,223,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0014,A,1,A,1,1,130,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0087,A,2,B,0,2,212,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0087,A,1,A,1,1,123,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0070,A,1,A,1,1,338,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0070,A,2,B,0,2,161,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0012,A,2,B,0,2,359,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0012,A,2,B,0,2,163,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0076,B,2,B,1,2,292,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0076,B,1,A,0,1,144,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0055,A,2,B,0,2,266,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0055,A,2,B,0,2,138,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0005,B,1,A,0,1,274,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0005,B,1,A,0,1,136,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0028,A,2,B,0,2,366,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0028,A,2,B,0,2,157,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0030,A,2,B,0,2,238,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0030,A,2,B,0,2,130,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0065,A,2,B,0,2,382,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0065,A,2,B,0,2,177,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0078,B,2,B,1,2,304,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0078,B,1,A,0,1,151,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,unicode,piqa_0072,A,2,B,0,2,404,2
+Llama-3.1-8B-Instruct,global_piqa,T1_direct,romanized,piqa_0072,A,2,B,0,2,178,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0082,B,2,B,1,2,615,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0082,B,1,A,0,1,266,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0015,B,2,B,1,2,658,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0015,B,2,B,1,2,274,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0004,A,2,B,0,2,562,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0004,A,2,B,0,2,247,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0095,B,2,B,1,2,547,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0095,B,2,B,1,2,241,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0036,A,1,A,1,1,1147,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0036,A,1,A,1,1,403,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0032,A,1,A,1,1,528,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0032,A,2,B,0,2,238,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0029,A,2,B,0,2,486,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0029,A,1,A,1,1,230,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0018,B,2,B,1,2,692,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0018,B,2,B,1,2,284,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0014,A,2,B,0,2,517,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0014,A,2,B,0,2,239,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0087,A,2,B,0,2,506,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0087,A,1,A,1,1,232,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0070,A,2,B,0,2,632,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0070,A,2,B,0,2,270,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0012,A,2,B,0,2,653,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0012,A,2,B,0,2,272,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0076,B,2,B,1,2,586,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0076,B,1,A,0,1,253,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0055,A,2,B,0,2,560,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0055,A,2,B,0,2,247,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0005,B,2,B,1,2,568,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0005,B,2,B,1,2,245,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0028,A,2,B,0,2,660,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0028,A,2,B,0,2,266,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0030,A,2,B,0,2,532,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0030,A,2,B,0,2,239,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0065,A,2,B,0,2,676,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0065,A,2,B,0,2,286,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0078,B,2,B,1,2,598,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0078,B,1,A,0,1,260,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,unicode,piqa_0072,A,2,B,0,2,698,2
+Llama-3.1-8B-Instruct,global_piqa,T2_fewshot,romanized,piqa_0072,A,2,B,0,2,287,2
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0082,B,1,A,0,"1
+The answer is likely ""1"" because the question is asking about cows (ගොපල්ලන්) and their calves (ග",334,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0082,B,1,A,0,"1
+This is a riddle in a language that appears to be a mix of Hindi and Sanskrit, but it's actually a coded language. The correct answer can be deciphered by replacing each",170,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0015,B,1,A,0,"1
+The word ""රෙදි"" (cloth) is more suitable in this context as it is a common material used to cover or wrap something, whereas ""ව",377,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0015,B,1,A,0,"1
+The word ""ruwanwaeli"" is a Sinhala word that means ""rain cloud"" or ""clouds bring rain."" The phrase ""ruwanwaeli saaeya",179,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0004,A,1,A,1,"1
+The word ""සූර්යග්‍රහණයක්"" (solar eclipse) refers to",281,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0004,A,1,A,1,"1
+The given text is written in Sinhala, a language spoken in Sri Lanka. The phrase ""sudu wennata"" translates to ""new moon"" in English. The term ""sury",151,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0095,B,1,A,0,"1
+The correct option is to use the hand to shade the face, as it is a common and practical method to prevent the sun from shining directly into one's eyes while walking.",266,38
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0095,B,1,A,0,"1
+The correct answer is option 1 because the text appears to be a jumbled version of a phrase in a language, and option 1 is a possible unscrambled version of the",145,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0036,A,1,A,1,"1
+The text describes a ritual where a statue of a woman is created to appease the suspicion of adultery against Pramila, and a mark is made on a stone in the corner (das",866,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0036,A,1,A,1,"1
+The correct answer is option 1 because it uses the correct verb ""kalawayehi"" (meaning ""to be happy"") instead of ""nalalehi"" (meaning ""to be",307,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0032,A,1,A,1,"1
+The answer is 1 because දළදාව (the Tooth Relic) is a sacred object that is typically carried on a golden casket or a",247,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0032,A,1,A,1,"1
+The word ""daladaawa"" is a Sinhalese word, and the sentence seems to be in Sinhalese. The word ""kondaya"" is also a Sinhalese",142,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0029,A,1,A,1,"1
+
+The word ""හරාව"" is a Sinhalese word that means ""season"" or ""time of the year"", which is a suitable context for the phrase",205,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0029,A,1,A,1,"1
+The word ""dhiiwarayan"" is derived from ""dhiiwar"", which means ""to cut"" or ""to chop"", and ""muudu"" means ""wood"". The phrase",134,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0018,B,1,A,0,"1
+පොල්තෙල් පෙඟවූ පාන්ක",411,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0018,B,1,A,0,"1
+The correct option uses the word ""bhuumithel"" which is a more suitable word to use in this context, as it is a more common and grammatically correct word in the",188,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0014,A,1,A,1,"1
+The word ""වස"" (vas) means ""to kill with a weapon"" or ""to slay"", which fits the context of the sentence. The word ""බ",236,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0014,A,1,A,1,"1
+The correct answer is option 1 because ""wasa"" is the correct word to use in this context, as it is the correct translation of ""how"" in the given sentence.",143,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0087,A,1,A,1,"1
+The word ""තැලෙයි"" (thalēyi) means ""it breaks"" or ""it shatters"", which is a more likely outcome",225,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0087,A,1,A,1,"1
+The word ""miitar"" is likely a misspelling of ""mitar"" or ""mitar"" is a misspelling of ""meter"", which is a unit of time.",136,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0070,A,1,A,1,"1
+The correct option is 1 because the correct order of the items in the sentence is ""වලේ නයෙක්"", ""�",351,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0070,A,2,B,0,"2
+The correct option is 2 because it follows the correct word order and grammar structure of the sentence, which is a typical pattern in many languages, including some African and Asian languages.",174,39
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0012,A,1,A,1,"1
+පරංගියා කෝට්ටේ ගිය සි",372,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0012,A,1,A,1,"1
+The correct option uses the word ""dura"" which means ""towards"" or ""in the direction of"", which is a more suitable preposition in this context to indicate the direction of",176,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0076,B,1,A,0,"1
+The term ""ගෘහාශ්‍රිත අශ්චිය ද",305,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0076,B,1,A,0,"1
+The sentence appears to be written in a fictional language, but the structure and vocabulary seem to be inspired by Sanskrit or an Indo-Aryan language. The word ""pirimi"" is similar",157,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0055,A,2,B,0,"2
+The term ""ශ්‍රමදාන ක්‍රමය"" (Shramadana Krama)",279,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0055,A,1,A,1,"1
+The correct option is the one that uses the correct grammatical structure and word order, which is more typical of the language being described. The word ""aththam"" is a more common",151,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0005,B,1,A,0,"1
+මී පැණි කඩන්නට ලණුවක �",287,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0005,B,1,A,0,"1
+The word ""mii"" is a diminutive form of ""mi"" which means ""water"" in Sinhala, a language spoken in Sri Lanka. The word ""paeni"" is",149,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0028,A,2,B,0,"2
+The correct option is the one that correctly states that even if the external things like residence change, the inherent nature of a person does not change. The word ""පුල",379,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0028,A,1,A,1,"1
+The correct option is the one that follows the correct word order in the sentence, which is subject-verb-object (SVO) in this case. In the given sentence, ""padin",170,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0030,A,1,A,1,"1
+The text appears to be in Sinhala, and the phrase ""අවුරුදු හතක්"" translates",251,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0030,A,1,A,1,"1
+The word ""dikthala"" is a verb that means ""to dance"" in the past tense, and the sentence is in the past tense. The correct verb form for ""to dance",143,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0065,A,1,A,1,"1
+The correct order is to give alms to the Sangha first, as they are considered the most important recipients of alms in Buddhism.",395,31
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0065,A,1,A,1,"1
+The correct option is the one that follows the correct grammatical structure and word order of the sentence. In the given options, option 1 maintains the correct order of the words, with """,190,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0078,B,1,A,0,"1
+පණු බිත්තර යන්න හොඳි�",317,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0078,B,1,A,0,"1
+This option is grammatically correct and uses the correct verb conjugation for the sentence, which is asking for a bicycle to be repaired.",164,30
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,unicode,piqa_0072,A,1,A,1,"1
+The word ""මඤ්ඤොක්කා"" is a type of tree, and it is often used to make wooden objects,",417,40
+Llama-3.1-8B-Instruct,global_piqa,T3_answer_first,romanized,piqa_0072,A,1,A,1,"1
+The word ""gannakan"" is a feminine noun, and in Sinhala, the language this text appears to be written in, the adjective ""many"" is typically used with feminine nouns",191,40
