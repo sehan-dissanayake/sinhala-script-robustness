@@ -10,22 +10,36 @@
     "sinhala_mmlu": {
       "task": "mcq",
       "file": "data/eval/sinhala_mmlu.jsonl",
-      "sha256": "3d41dcd97ff73d40ee066256131c2db6a179eb3556fa1317359e5a0644686efc",
-      "n": 1851,
+      "sha256": "b1adf853b6a5915c6fe62b73ae1ee25a47c642bed99384f3f0d44467b5ed45e7",
+      "n": 6879,
       "strata_fields": [
-        "domain"
+        "domain",
+        "difficulty"
       ],
       "strata_counts": {
-        "domain=Humanities": 1162,
-        "domain=Language": 155,
-        "domain=Social_Science": 370,
-        "domain=Stem": 164
+        "domain=Business_Studies|difficulty=Hard": 232,
+        "domain=Business_Studies|difficulty=Medium": 231,
+        "domain=Humanities|difficulty=Easy": 1162,
+        "domain=Humanities|difficulty=Hard": 1051,
+        "domain=Humanities|difficulty=Medium": 1128,
+        "domain=Language|difficulty=Easy": 155,
+        "domain=Language|difficulty=Hard": 116,
+        "domain=Language|difficulty=Medium": 117,
+        "domain=Other|difficulty=Hard": 504,
+        "domain=Other|difficulty=Medium": 510,
+        "domain=Social_Science|difficulty=Easy": 370,
+        "domain=Social_Science|difficulty=Hard": 281,
+        "domain=Social_Science|difficulty=Medium": 408,
+        "domain=Stem|difficulty=Easy": 164,
+        "domain=Stem|difficulty=Hard": 341,
+        "domain=Stem|difficulty=Medium": 109
       },
       "label_counts": {
-        "A": 473,
-        "B": 501,
-        "C": 507,
-        "D": 370
+        "A": 1524,
+        "B": 1658,
+        "C": 1692,
+        "D": 1516,
+        "E": 489
       }
     },
     "sold": {

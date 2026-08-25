@@ -49,7 +49,7 @@ class EvalSpec:
 
 SPECS: tuple[EvalSpec, ...] = (
     EvalSpec("sinhala_mmlu", "sinhala_mmlu.jsonl", "sinhala_mmlu_romanized.jsonl",
-             task="mcq", strata_fields=("domain", "difficulty"), labels=("A", "B", "C", "D")),
+             task="mcq", strata_fields=("domain", "difficulty"), labels=("A", "B", "C", "D", "E", "F")),
     EvalSpec("sold", "sold.jsonl", "sold_romanized.jsonl",
              task="binary", strata_fields=("label",), labels=("NOT", "OFF")),
     EvalSpec("global_piqa", "global_piqa.jsonl", "global_piqa_romanized.jsonl",

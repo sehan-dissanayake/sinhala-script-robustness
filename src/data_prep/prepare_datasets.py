@@ -15,7 +15,7 @@ LETTERS = "ABCDEFGH"
 
 
 def map_answer(ans, choices, q_id=""):
-    """Map SinhalaMMLU's 1-based answer index to a letter.
+    """Map SinhalaMMLU's 1-based answer index to a letter (A, B, C, D, E, ...).
 
     One upstream row (q_no 64, "how many standard time zones is the Earth divided
     into") stores the answer *value* 24 instead of its index, which silently
@@ -23,13 +23,13 @@ def map_answer(ans, choices, q_id=""):
     index by matching it against the choices, and fail loudly if that is
     ambiguous, rather than writing a label no downstream scorer can interpret.
     """
-    if ans in (1, 2, 3, 4):
+    if isinstance(ans, int) and 1 <= ans <= len(choices) and ans <= len(LETTERS):
         return LETTERS[ans - 1]
     matches = [i for i, c in enumerate(choices) if str(c).strip() == str(ans).strip()]
-    if len(matches) == 1:
+    if len(matches) == 1 and matches[0] < len(LETTERS):
         return LETTERS[matches[0]]
     raise ValueError(
-        f"{q_id}: answer {ans!r} is not a 1-4 index and matches "
+        f"{q_id}: answer {ans!r} is not a valid 1-{len(choices)} index and matches "
         f"{len(matches)} of the choices {choices!r}"
     )
 
@@ -37,16 +37,20 @@ def prepare_mmlu():
     print("Processing SinhalaMMLU...")
     data_dir = os.path.join("data", "raw", "sinhala_mmlu")
     records = []
-    for file in os.listdir(data_dir):
+    for file in sorted(os.listdir(data_dir)):
         if file.endswith(".jsonl"):
             with open(os.path.join(data_dir, file), 'r', encoding='utf-8') as f:
                 for line in f:
-                    records.append(json.loads(line))
+                    if line.strip():
+                        records.append(json.loads(line))
                     
     output_records = []
     for idx, r in enumerate(records, 1):
-        domain = str(r.get('category', 'unknown')).title()
-        diff = r.get('metadata', {}).get('difficulty', 'unknown').capitalize()
+        domain = str(r.get('category', 'unknown')).strip().replace(' ', '_').title()
+        diff_raw = str(r.get('metadata', {}).get('difficulty', 'unknown')).strip().lower()
+        if diff_raw == "harrd":
+            diff_raw = "hard"
+        diff = diff_raw.capitalize()
         output_records.append({
             "id": f"mmlu_{idx:04d}",
             "dataset": "sinhala_mmlu",
