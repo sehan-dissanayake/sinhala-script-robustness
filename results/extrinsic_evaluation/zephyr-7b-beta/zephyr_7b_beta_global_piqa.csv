@@ -1,0 +1,324 @@
+﻿culturally_specific,id,gold_label,unicode_pred_digit,unicode_pred_label,unicode_correct,unicode_raw_output,unicode_n_input_tokens,unicode_n_output_tokens,romanized_pred_digit,romanized_pred_label,romanized_correct,romanized_raw_output,romanized_n_input_tokens,romanized_n_output_tokens
+True,piqa_0001,A,2,B,0,"2. හේන කපා, වවා, රැක, අස්වනු",305,40,2,B,0,"2. heena kapaa, wawaa, raeka, aswanu nelaa, gini thabaa gatha yuthu ya",158,35
+True,piqa_0002,B,1,A,0,"1 is the best option to complete the given text.
+
+Explanation:
+
+The text is asking the readers to guess whether the plants or the animals make more noise. The options provided",194,40,2,B,1,2. riiri yakaa kiyaa ya,117,12
+True,piqa_0003,A,2,B,0,"2. 2
+
+තොලශහහරහොහුළ",378,40,2,B,0,2. napuru una katuwa pathulee aenuna pasuwa ruduru pethangoda uyanata giya nisaaya,157,33
+True,piqa_0004,A,1,A,1,1. සූර්යග්‍රහණයක් වේලාවේ ය,239,40,2,B,0,"2. chandragrahanayak weelaawee ya.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""The",129,40
+True,piqa_0005,B,1,A,0,1. තම සෝෝදරයාට ය,260,27,2,B,1,2. thama massinaata ya,125,9
+True,piqa_0006,B,1,A,0,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""The Pussey Cat becomes",246,40,2,B,1,2. kiri thee eken tikak dunnaa ya,127,16
+True,piqa_0007,A,2,B,0,2. අවාරයේ කරුණා කළ යුතු,214,40,2,B,0,2. awaarayee karunaa kala yuthu ya,124,17
+True,piqa_0008,A,2,B,0,2. ළමයා වඩා ගැනීමට ඕන නිසා,321,40,2,B,0,"2. lamayaa wadaa gaeniimata oona nisaa reddda hadaa ganna kiyaa ya
+
+Explanation:
+
+The given text is",161,40
+True,piqa_0009,A,2,B,0,2. (2) සමචතුරස්‍ර අටක් සාදා �,227,40,2,B,0,2. (2) samachathurasra atak saadaa gatha yuthuya,124,23
+True,piqa_0010,A,2,B,0,2. වම් අතේ සුලැගිල්�����,243,40,2,B,0,"2 is the best option to complete the given text.
+
+goothayimbara yoodhayaa ritigala jayaseenata pahara dunnee kumak",123,40
+True,piqa_0011,B,2,B,1,2. මැතිරූ තෙලක්,240,28,2,B,1,2. maethiruu thelak,123,10
+True,piqa_0012,A,1,A,1,"1 is the best option to complete the given text.
+
+පරංටයා කෝට්ටේ",330,40,2,B,0,"2. (2) pruthugiisiikaarayan rawataa langa paarakin aganuwata gena giya ekaya
+
+Explanation:",155,40
+True,piqa_0013,B,2,B,1,2. (2) කුඹුරු වලින් සතුන් �,231,40,2,B,1,2. kumburu walin sathun elawaa gaeniimata ya,117,19
+True,piqa_0014,A,2,B,0,2. (2) බස දී මැරුවා ය,202,31,2,B,0,2. basa dii maeruwaa ya,119,12
+True,piqa_0015,B,2,B,1,2. 2. රුවන්වැලි සෑය රෙදි ව��,329,40,2,B,1,2. (2),157,6
+True,piqa_0016,B,1,A,0,"1 is the best option to complete the given text.
+
+2. අන්දරේ කිරි කෑවා",281,40,2,B,1,2. andaree kiri kaaewaa wagee kiyaaya,137,17
+True,piqa_0017,A,2,B,0,"2. බෝතලයක දමා ය  (Sri Lankan English: 2)
+
+Ex",161,40,1,A,1,"1. saampradaayika kramayata jaadi hadannee
+
+kalaayaka damaa ya
+
+2. saampradaayika kramay",105,40
+True,piqa_0018,B,2,B,1,2. භූමිතෙල් පෙඟවූ පා,396,40,2,B,1,"2. bhuumithel pengawuu paankadayak diga kootuwaka othaa gaerandiyaagee aengee gaanna
+
+Ex",167,40
+True,piqa_0019,B,2,B,1,2. තණ කොළ අග සැදුනු,562,40,2,B,1,2. thana kola aga saedunu pini hiru raes wihiduna wita saenen athurudahan wii yana baewin praan,209,40
+True,piqa_0020,B,2,B,1,2. (2) කඩදාසියක් මතට දමන්න,215,36,2,B,1,2. kadadaasiyak mathata damanna,118,13
+True,piqa_0021,A,1,A,1,1. Lokku tinu olintu tinu bazuku tinu bazuku tinu bazuku tinu bazuku tinu bazuku,784,40,1,A,1,"1. loku tin udin podi tin thaebiimen, ikmanata tin eka matha eka thaebiya haekiya",288,36
+True,piqa_0022,A,2,B,0,2. ඉහළ එකතු වෙන වැසි ජ,412,40,2,B,0,2. ihala ekathu wena waesi jalaya guruthwaya nisaa ihalata genwaa polawa yata aethi nala maarga w,180,40
+True,piqa_0023,B,2,B,1,2 (ඉලංගම් පොර ය) is the best option to complete the given text.���,203,40,1,A,0,1. maayaa angam pora ya,115,11
+True,piqa_0024,B,2,B,1,2. අම්මා ජීවානුහරණය කල අ,354,40,2,B,1,2. ammaa jiiwaanuharanaya kala alpeneththakin ema katuwa ayin kalaaya,164,31
+True,piqa_0025,A,2,B,0,2. ඉන්පසු රෙදි කෑල්ලකින්,451,40,2,B,0,2. inpasu redi kaaellakin aethiliya hondin athullaa gaththaaya,173,27
+True,piqa_0026,B,2,B,1,2. විශාල ගලකින් ලෙන වසා ගි,308,40,2,B,1,2. wishaala galakin lena wasaa giyeeya,150,17
+True,piqa_0027,B,2,B,1,"2. එය ටොඳ කෑ, තැඹිලි ව",390,40,2,B,1,"2. eya hil kota, thaembili wathura tika bii, inpasu eya dekata kapaa, londa kaae haeki",171,40
+True,piqa_0028,A,2,B,0,"2. 2
+
+Explanation:
+
+The given text is in Sinhala, and it describes a situation where a person is trying to escape from a dangerous situation. The text",350,40,2,B,0,2. pulli maaru kalath kotiyaagee kaelee maaru nowee,151,22
+True,piqa_0029,A,2,B,0,"2. වාරකන් කාලයට ය
+
+ධීවරයන් ම����",163,40,2,B,0,2. waarakan kaalayata ya,109,11
+True,piqa_0030,A,1,A,1,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""The day's schedule"".",222,40,1,A,1,"1. awurudu hathak mehekaara kam kalee ya
+
+Explanation:
+
+The given text is in Sinhala, and it translates to",121,40
+True,piqa_0031,A,1,A,1,"1 is the best option to complete the given text.
+
+Answer: 1
+
+Explanation:
+
+The given text is in Sinhala, and it translates to",251,40,2,B,0,2. kan haendak damaa sudda kiriimaya,130,16
+True,piqa_0032,A,1,A,1,"1 is the best option to complete the given text.
+
+දළදාව ලංකාවට ��",225,40,2,B,0,2. (2) pothak assee hangaagena ya,115,16
+True,piqa_0033,B,1,A,0,1. වල් ඌරා පසුපස මහස��������,397,40,1,A,0,1. wal uuraa pasupasa mahasohon yakaa nositina bawa nishchaya karagaeniimata,179,32
+True,piqa_0034,A,2,B,0,2. ඇතිළිය හොලවන්න,211,30,1,A,1,1. haendi gaanna,114,8
+True,piqa_0035,A,1,A,1,"1 is the best option to complete the given text.
+
+2 is also a possible option, but 1 is preferred as it suggests using solar panels, wind turbines, and biogas",700,40,2,B,0,"2. Pol, thal, kithul weeni thaala waragayee shaakayaka lapati pushpa manjariya kelawaraka sita kapaa",272,40
+True,piqa_0036,A,1,A,1,"1 is the best option to complete the given text.
+
+දස්කොන් හා ප්‍රමි��",792,40,2,B,0,2. pramilaa bisawata waeladii thibuu saankaa dooshayak wenuwen kala bali yaagayaka dii aegee ru,299,40
+True,piqa_0037,B,1,A,0,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""In the month of pilgr",188,40,1,A,0,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to:
+
+kukulu mas",106,40
+True,piqa_0038,B,1,A,0,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it describes the process of installing a ceiling fan.",363,40,2,B,1,2. podi gal kaetayak kamali gena aawaa,154,17
+True,piqa_0039,A,1,A,1,1. තම හිස ගලවා ඔහුට ����,269,40,2,B,0,2. thama saluwa galawaa ohuta dunnee ya,128,17
+True,piqa_0040,B,2,B,1,2. ඵස්සාන කාලය අවසන් වී පායනා,245,40,2,B,1,"2. wassaana kaalaya awasan wii paayanaa kaalaya aerambena wita
+
+Original Question: කතින ��",140,40
+True,piqa_0041,A,1,A,1,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is about Ravana, the demon king from the Hindu epic Ramayana. The text",171,40,2,B,0,2. diyen yana yanthrayaki,108,12
+True,piqa_0042,B,2,B,1,2. ඵිදුලිය සේය (ටෙලුග,226,40,1,A,0,"1 is not the best option to complete the given text.
+
+2 is the best option to complete the given text.
+
+guththila kaawyata anuwa surang",115,40
+True,piqa_0043,A,2,B,0,2. පඩුවස්දෙව් රජු විසින් ම,392,40,2,B,0,2. paduwasdew raju wisin malaya raja wenuweni,173,20
+True,piqa_0044,A,1,A,1,1. ඔට්ටුපාලු කෑලි,256,36,1,A,1,1. ottupaalu kaaeli,126,10
+True,piqa_0045,B,1,A,0,1. කිරෙන් ටට ටහංසයාට දිය,261,40,2,B,1,2. diyen kiri wen kara bonawaa yaeyi kiyathi,141,21
+True,piqa_0046,A,1,A,1,"1 is the best option to complete the given text.
+
+Explanation:
+
+The text is in Sinhala, and it translates to ""The farmers are waiting in the village",203,40,1,A,1,"1 is the best option to complete the given text.
+
+deewaanampiya rajuta mihindu himiyan hamu wunee
+1. muwan",118,40
+True,piqa_0047,B,1,A,0,"1. සීරී ණි
+
+Explanation:
+
+The given text is in Sinhala, and it describes a situation where a",267,40,1,A,0,1. siirii thibuni,126,9
+True,piqa_0048,A,2,B,0,"2. 2
+
+Explanation:
+
+Based on the given text, we can infer that the text is about a group of people who are working together to achieve a common goal.",249,40,2,B,0,2. nuwara waewee gillawaa naawana ladi,134,19
+True,piqa_0049,A,1,A,1,1 is the best option to complete the given text. The correct answer is: 1. බලට්ටක් සවි,197,40,2,B,0,"2. gottak sawi karanna (2)
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""Let's go and",111,40
+True,piqa_0050,B,2,B,1,"2. පුර කාලයේ ය  (Sinhala)
+
+Translation: In the month of Puratas",193,40,2,B,1,2. Pura kaalayee ya,118,10
+True,piqa_0051,B,2,B,1,"2. 2
+
+Explanation:
+
+The given text is in Sinhala, and it asks whether there are one or two options provided. The options are presented in English,",595,40,2,B,1,"2. eka boo maenda ya, deka animisa loochana ya, thuna sakman maluwa, hatharee ruwan geya, paha",244,40
+True,piqa_0052,B,1,A,0,"1. ගිල ගඏ යුතුය (Sinhala)
+
+In English:",184,40,2,B,1,"2. baehaera kala yuthuya
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""Bulath wita h",106,40
+True,piqa_0053,B,2,B,1,"2. 2
+
+ඵුස්සදේව විදින හීය ක",322,40,2,B,1,2. Polowee ata isbak da wathuree isbak da yana bawa kiyathi. (2),152,32
+True,piqa_0054,A,2,B,0,"2. 2
+
+Explanation:
+
+Both options provide a scenario where multiple devices are connected to a network. However, option 2 is more specific in describing the number of",545,40,2,B,0,"2. wilumbee dii ek dishaawakata da, ukulee dii anek dishaawata saha urahisa haa gela pradeeshay",208,40
+True,piqa_0055,A,1,A,1,1. අත්තම් ක්‍රමය ලෙසය,239,32,2,B,0,2. shramadaana kramaya lesaya,123,12
+True,piqa_0056,A,2,B,0,2. සිංහල වැරදිව ඉච්චාරනය,269,40,2,B,0,"2. sinhala waeradiwa uchchaaranaya karannata purudu karannata ya
+
+Explanation:
+
+The given text is in Sinhala",137,40
+True,piqa_0057,A,2,B,0,2. කලියම ගලවා යා යුතුය,228,35,2,B,0,2. kaliyama galawaa yaa yuthuya,130,16
+True,piqa_0058,A,1,A,1,1. සම්ඝෝල සහ පරිප්ඪු සම�,302,40,1,A,1,"1. samboola saha parippu samaga bath
+
+waeda aerii parakku wii gedara paemini ammaa, ada raae k",140,40
+True,piqa_0059,A,2,B,0,"2. ආහාර අනුභව කොට, වැඩ",376,40,2,B,0,"2. aahaara anubhawa kota, waeda allaa,ganudenu kala yuthuya",162,27
+True,piqa_0060,B,2,B,1,"2. තැළුනා"", ආච්චි කීවාය",300,40,2,B,1,"2. ""thaelunaa"", aachchi kiiwaaya. (Note: The given text is in Sinhala, and the provided answers are also in Sinhala. The",141,40
+True,piqa_0061,B,1,A,0,1 is the best option to complete the given text. Do not repeat the question or text in your response. Respond with only the number (1/2) and nothing else.���,872,40,1,A,0,"1. lunu, miris kudu, gammiris kudu ekathu kara hondin kotaa ganna.
+
+Explanation:",311,40
+True,piqa_0062,B,1,A,0,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""Let the army come and help",172,40,2,B,1,"2. yuddha kalee ya 
+
+(Note: This question seems to be incomplete or incorrectly formatted. The given options do not seem to be related to the text",104,40
+True,piqa_0063,A,2,B,0,"2. 2
+
+ගෙදර අසල ඇති කතු",273,40,2,B,0,2. wahalata wadaa usa yaamata diya yuthuya,142,21
+True,piqa_0064,A,1,A,1,1. කඩදාසි කොළයකින් ගොට්ට,322,40,1,A,1,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to:
+
+kadee mud",145,40
+True,piqa_0065,A,2,B,0,"2. බුද්ධ පූජාව තබා, ��",375,40,2,B,0,"2. buddha puujaawa thabaa, gihiyanta kaaemata dii, inpasu sanghayaata walandannata diimaya ya",167,40
+True,piqa_0066,A,2,B,0,2. පිහියකි,380,15,1,A,1,1. kaeththaki,159,7
+True,piqa_0067,B,2,B,1,"2. 2
+
+Translation:
+2. අසුන් පැනවීම ඉන්",369,40,2,B,1,2. 2. Sudu reddak damaa asun paenawiima inpasu gilanpasa puujaa kiriima.,163,35
+True,piqa_0068,A,1,A,1,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""A beautiful garden with flowers,",246,40,2,B,0,2. thalathel bhaawithaa karanna,131,14
+True,piqa_0069,B,2,B,1,"2. චෛත්‍යය, බෝධිය, බුඡ",244,40,2,B,1,"2. chaithyaya, boodhiya, budugeya",123,16
+True,piqa_0070,A,2,B,0,"2. 2
+
+Translation:
+තුනක් ඇති මිනිහෙක්",324,40,2,B,0,2. walee aliyek da kaelee nayek da athee karawaelak da wuu wita ya,153,30
+True,piqa_0071,B,2,B,1,2. (2) කපු කටිමින් සිටියා ය,175,35,2,B,1,"2. Kapu katimin sitiyaa ya 
+
+(Note: This is a Sinhala phrase that translates to ""a golden mansion with a silver roof"". The given",107,40
+True,piqa_0072,A,2,B,0,2. මඤ්ඤොක්කා ගසක් කපා හැරම,344,40,2,B,0,2. manynyokkaa gasak kapaa haeramitiyak saadaa denna,169,24
+True,piqa_0073,A,1,A,1,"1 is the best option to complete the given text.
+
+දෝඝායු කුමරාට �",238,40,2,B,0,2. langa balanna dura nobalanna,121,12
+True,piqa_0074,B,1,A,0,"1 is the best option to complete the given text.
+
+2. කටුස්සගෙ කරේ ර",289,40,2,B,1,"2. katussage karee raththaran baendaa wagee
+
+Explanation:
+
+The given text is in Sinhala, and it translates to """,132,40
+True,piqa_0075,B,1,A,0,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""May the country be blessed with",253,40,1,A,0,1. Dan Yanu Shrii Lankaawee Sulabawa Daknata Laebena Palathuraki Dan Kanawita. Dan Aetaya Hapaa Gili,132,40
+True,piqa_0076,B,1,A,0,"1. කොටළුවෙකි
+
+Note: The given text is in Sinhala, and the question and options",275,40,1,A,0,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is a mix of Sinhala and Tamil words that do not form a coherent",130,40
+True,piqa_0077,B,2,B,1,2. ආවා වූ ද නො ආවා වූ ද ස�,340,40,2,B,1,2. aawaa wuu da no aawaa wuu da sathara disaawehi sanghayaa ta dena ladi,162,32
+False,piqa_0078,B,1,A,0,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to: ""The police have arrested the",302,40,2,B,1,2. (2) panu biththara yanna hondin soodaa gatha yuthu ya,140,27
+False,piqa_0079,B,2,B,1,2. දහයියා හා බෝල් සුළඟ,349,40,2,B,1,"2. dahayiyaa haa bol sulangee gasaagena yana athara honda wii bima goda gaesee
+
+Explanation:",154,40
+False,piqa_0080,B,2,B,1,2. ඇතිළිය හොලවන්න,217,30,1,A,0,1 is the best option to complete the given text. (1),115,15
+False,piqa_0081,B,2,B,1,2. (2) වැල් කැබැල්ලකින් ග,258,40,2,B,1,2. wael kaebaellakin gaeta gaesuwaaya,131,18
+False,piqa_0082,B,1,A,0,1. කිරි කෝහි ඇත්දැයි බලා,297,40,2,B,1,2. goma kohi aethdaeyi balaakiyaa gena ya,147,21
+False,piqa_0083,A,2,B,0,"2. ඒ (2)
+
+Note: The given text is in Sinhala, and the options provided are also in Sinhala. However, the question and the response",182,40,2,B,0,2. wathura gaa hondin piiranna,103,14
+False,piqa_0084,B,1,A,0,1. කැත්ත,160,15,2,B,1,2. porawa,103,5
+False,piqa_0085,B,2,B,1,2 (නැවුණි) is the best option to complete the given text as it indicates that the person being referred to is new to the field of software,189,40,2,B,1,2. naewuni,107,6
+False,piqa_0086,B,1,A,0,1. ඉණිමගක් භාවිතා කරන්න�������,192,40,1,A,0,1 is the best option to complete the given text. (1),109,15
+False,piqa_0087,A,2,B,0,2. එය තැලෙයි,197,23,2,B,0,2. eya thaeleyi,110,10
+False,piqa_0088,B,1,A,0,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""Capturing a screenshot using",237,40,2,B,1,"2. bhuumithel tikak dara walata isinna
+
+Explanation:
+
+The given text is in Sinhala, and it translates to """,120,40
+False,piqa_0089,A,2,B,0,"2. 2
+
+Explanation:
+
+The given text is in Sinhala, and the question is asking which option is the best to complete the text. The options provided are",216,40,2,B,0,"2. diya wenna patan gaththeeya
+
+Explanation:
+
+The given text is in Sinhala script, and it is difficult to determine the meaning",115,40
+False,piqa_0090,B,2,B,1,2. පස්වරු පහ,191,21,2,B,1,2. paswaru paha,106,8
+False,piqa_0091,A,1,A,1,1. ගලට යටින් දිග පොල්�,347,40,2,B,0,2. 2,152,5
+False,piqa_0092,B,1,A,0,1. කොස්ස දමා එය එලියට ගත,294,40,2,B,1,2. koottak damaa eya eliyata gaththaaya.,147,20
+False,piqa_0093,A,1,A,1,"1. කාන්දමක් භාවිත කිරීම
+
+ළිඳ",247,40,1,A,1,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in a language that is not easily understood. It appears to be a combination of words",128,40
+False,piqa_0094,B,1,A,0,"1 is the best option to complete the given text.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""The villagers gathered around the",220,40,2,B,1,2. iti gaanna,112,7
+False,piqa_0095,B,2,B,1,2. අතින් මුහුණ වසා ගන්න (��,227,40,2,B,1,2. athin muhuna wasaa ganna,121,12
+False,piqa_0096,B,1,A,0,"1 is the best option to complete the given text.
+
+Explanation:
+
+The text is in Sinhala, and it translates to ""In cricket, the wicketkeeper",213,40,2,B,1,2. kekkak bhaawithaa kara ganna,119,15
+False,piqa_0097,A,2,B,0,"2. 2
+
+Explanation:
+
+The given text is in Sinhala, and it asks who should be responsible for implementing technology in a specific location. The options provided are",342,40,2,B,0,2. daelwuu gini pettiya wiisi kota rathinynyaya saakkuwee damaa gatha haeka,165,37
+False,piqa_0098,A,1,A,1,"1 is the best option to complete the given text.
+
+අලුත් කන්නයේ වී",271,40,2,B,0,2. kesel kola damanna,130,10
+False,piqa_0099,B,1,A,0,"1 is the best option to complete the given text.
+
+Original text: මදුරුවන් කෑම ව�",261,40,2,B,1,"2. paengiri thel tikak gaa gatha yuthu ya.
+
+Original text: maduruwan kaaema walakwaa gaeniimata k",134,40
+False,piqa_0100,B,2,B,1,2. 'රෙදි කෑල්ලක් වතුරෙන්,323,40,1,A,0,"1. 'redi kaaellak elakiren themala nalalen thiyanna', aachchi kiiwaaya. (Answer: 1)
+
+Ex",148,40
