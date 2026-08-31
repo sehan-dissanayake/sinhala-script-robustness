@@ -197,6 +197,22 @@ def linkage():
     w("tab_linkage.tex", "\n".join(rows))
 
 
+def intrinsic_joined():
+    """Full intrinsic metrics plus the Hugging Face identifier, for the short paper,
+    which has no room for two separate appendix tables."""
+    it = pd.read_csv(os.path.join(C.OUT_DIR, "intrinsic_pooled.csv")).sort_values("u_bpb")
+    rows = []
+    for r in it.itertuples():
+        tag = r"$\ddagger$" if r.model in INSTRUCT else ""
+        rows.append(
+            f"{r.model.replace('-', chr(92)+'nobreakdash-')}{tag} & {r.params:.1f} "
+            f"& {r.u_ppl:.2f} & {r.u_bpb:.3f} & {r.u_bpw:.2f} "
+            f"& {r.r_ppl:.1f} & {r.r_bpb:.3f} & {r.r_bpw:.2f} "
+            f"& {r.m_ppl:.2f} & {r.m_bpb:.3f} & {r.m_bpw:.2f} "
+            f"& \\texttt{{{HF_ID[r.model]}}} \\\\")
+    w("tab_intrinsic_joined.tex", "\n".join(rows))
+
+
 if __name__ == "__main__":
     extrinsic_main()
     strata()
@@ -205,3 +221,4 @@ if __name__ == "__main__":
     model_ids()
     ngram()
     linkage()
+    intrinsic_joined()

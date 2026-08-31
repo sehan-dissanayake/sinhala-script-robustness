@@ -798,7 +798,8 @@ Answer:
 
 Prompts are rendered through each checkpoint's own chat template. For checkpoints
 that emit reasoning traces by default we disable that behaviour identically in
-both script conditions. Decoding is greedy with at most 40 new tokens.
+both script conditions. Decoding is greedy at temperature 0 with at most 40 new
+tokens and inputs truncated at 4{,}096 tokens.
 
 \section{Checkpoints}
 \label{sec:models}

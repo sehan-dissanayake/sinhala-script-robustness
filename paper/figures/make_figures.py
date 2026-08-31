@@ -313,6 +313,103 @@ def fig4(it, ni):
     save(fig, "fig4_ngram_reference")
 
 
+
+
+# --------------------------------------------------- short-paper figure ------
+
+def figS1(it, ex, strata, ni, ne):
+    """One column, two panels: the metric artifact and the floor-effect law.
+
+    Used by the 4-page version, where float budget allows only two figures.
+    """
+    fig, axes = plt.subplots(2, 1, figsize=(COL, 2.55), gridspec_kw=dict(hspace=0.58))
+
+    a = axes[0]
+    sc = a.scatter(it.u_bpb, it.u_ppl, c=it.u_tok_per_word, cmap="viridis_r", s=17,
+                   edgecolor="black", linewidth=0.25, zorder=3)
+    plain_log_y(a, [3, 5, 10, 20])
+    a.set_xlabel("bits per byte, native Unicode")
+    a.set_ylabel("perplexity")
+    a.set_xlim(1.08, 2.52)
+    a.set_ylim(2.0, 40)
+    r = ni["rank"]["ppl_vs_bpb_unicode"]
+    a.set_title(f"(a) the two metrics disagree:  $\\rho$ = {r['rho']:.2f}, "
+                f"$p$ = {r['p']:.2f}", loc="left", pad=4)
+    cb = fig.colorbar(sc, ax=a, pad=0.02, aspect=11)
+    cb.set_label("tokens / word", labelpad=2)
+    cb.outline.set_linewidth(0.4)
+    cb.ax.tick_params(width=0.4, length=1.8)
+    for name, dx, dy in [("Qwen3.5-4B", 13, 5), ("Gemma-2-9B", 13, -5),
+                         ("Pythia-410M", 36, 7)]:
+        row = it[it.model == name].iloc[0]
+        a.annotate(name, (row.u_bpb, row.u_ppl), xytext=(dx, dy),
+                   textcoords="offset points", fontsize=5.8, ha="left", va="center",
+                   arrowprops=dict(arrowstyle="-", lw=0.4, color="0.35",
+                                   shrinkA=0.5, shrinkB=2.5))
+
+    b = axes[1]
+    chance = ne["chance"]["sinhala_mmlu"]
+    m = ex[(ex.dataset == "sinhala_mmlu") & (ex.model != "LaMini-GPT-1.5B")]
+    st = strata.copy()
+    st["headroom"] = st.u - chance
+    b.axhline(0, color="0.85", lw=0.6, zorder=0)
+    b.axvline(0, color="0.85", lw=0.6, zorder=0)
+    b.scatter(st.headroom, st.gap, s=10, marker="s", facecolor="none",
+              edgecolor=MIX, linewidth=0.7, zorder=2,
+              label=f"benchmark strata ($n$ = {len(st)})")
+    b.scatter(m.head_u, m.gap, s=21, color=UNI, edgecolor="black", linewidth=0.3,
+              zorder=4, label=f"checkpoints ($n$ = {len(m)})")
+    xs = np.linspace(-3.5, 22.5, 40)
+    f1 = ne["gap_vs_headroom_mmlu"]
+    f2 = ne["mmlu_cell_gap_vs_headroom"]
+    b.plot(xs, f1["intercept"] + f1["slope"] * xs, color=UNI, lw=1.0, zorder=3)
+    b.plot(xs, f2["intercept"] + f2["slope"] * xs, color=MIX, lw=1.0,
+           ls=(0, (4, 2)), zorder=3)
+    b.set_xlabel("native-script headroom above chance (pp)")
+    b.set_ylabel("Romanization loss (pp)")
+    b.set_xlim(-4.0, 23.5)
+    b.set_ylim(-3.2, 17.5)
+    b.set_title("(b) the loss tracks native-script headroom", loc="left", pad=4)
+    b.text(0.03, 0.97, f"slope {f1['slope']:.2f},  $R^2$ = {f1['r2']:.2f}",
+           transform=b.transAxes, va="top", ha="left", fontsize=6.1, color=UNI)
+    b.text(0.03, 0.86, f"slope {f2['slope']:.2f},  $R^2$ = {f2['r2']:.2f}",
+           transform=b.transAxes, va="top", ha="left", fontsize=6.1, color=MIX)
+    b.legend(loc="lower right", fontsize=5.9)
+    save(fig, "figS1_metric_and_law")
+
+
+def figS2(it, ex, ne):
+    """Single-column stacked version of the flattening figure, for the 4-page paper,
+    which has room for only one full-width float."""
+    fig, axes = plt.subplots(2, 1, figsize=(COL, 3.75), gridspec_kw=dict(hspace=0.42))
+
+    a = axes[0]
+    d = it.sort_values("u_bpw")
+    hl = ["Llama-3.1-8B", "Qwen3.5-9B-Base", "LaMini-GPT-1.5B"]
+    slope_panel(a, d.u_bpw.tolist(), d.r_bpw.tolist(), d.model.tolist(), hl,
+                "bits per word")
+    a.set_title("(a) 31 checkpoints, language modelling cost", loc="left", pad=5)
+    spread_bracket(a, -0.10, it.u_bpw.min(), it.u_bpw.max(), UNI,
+                   f"{it.u_bpw.max()-it.u_bpw.min():.1f}", "left")
+    spread_bracket(a, 2.02, it.r_bpw.min(), it.r_bpw.max(), ROM,
+                   f"{it.r_bpw.max()-it.r_bpw.min():.1f}", "right")
+    a.set_xlim(-0.22, 2.28)
+
+    b = axes[1]
+    m = ex[(ex.dataset == "sinhala_mmlu") & (ex.model != "LaMini-GPT-1.5B")].sort_values("u_acc")
+    hl2 = ["Qwen3.5-9B", "Qwen3.5-4B", "Llama-3.1-8B-Instruct"]
+    slope_panel(b, m.u_acc.tolist(), m.r_acc.tolist(), m.model.tolist(), hl2,
+                "SinhalaMMLU accuracy (%)",
+                chance=ne["chance"]["sinhala_mmlu"], chance_label="chance 23.4")
+    b.set_title("(b) 9 instruction-tuned checkpoints, accuracy", loc="left", pad=5)
+    spread_bracket(b, -0.10, m.u_acc.min(), m.u_acc.max(), UNI,
+                   f"{m.u_acc.max()-m.u_acc.min():.1f}", "left")
+    spread_bracket(b, 2.02, m.r_acc.min(), m.r_acc.max(), ROM,
+                   f"{m.r_acc.max()-m.r_acc.min():.1f}", "right")
+    b.set_xlim(-0.22, 2.28)
+    save(fig, "figS2_flattening_narrow")
+
+
 if __name__ == "__main__":
     C.ensure_dirs()
     it, ex, sold, strata, ni, ne = load()
@@ -320,3 +417,5 @@ if __name__ == "__main__":
     fig2(it, ni)
     fig3(ex, sold, strata, ne)
     fig4(it, ni)
+    figS1(it, ex, strata, ni, ne)
+    figS2(it, ex, ne)
