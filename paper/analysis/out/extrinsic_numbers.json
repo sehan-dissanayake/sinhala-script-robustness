@@ -1,0 +1,652 @@
+{
+  "chance": {
+    "sinhala_mmlu": 23.445268207588317,
+    "sold": 50.0,
+    "global_piqa": 50.0
+  },
+  "mmlu_five_option_items": 2139,
+  "n_items": {
+    "sinhala_mmlu": 6879,
+    "sold": 2500,
+    "global_piqa": 100
+  },
+  "n_models": 10,
+  "competence_alpha": 0.01,
+  "competent_models": {
+    "sinhala_mmlu": [
+      "Qwen3.5-4B",
+      "Qwen2-7B-Instruct",
+      "Llama-3.1-8B-Instruct",
+      "Hormoz-8B",
+      "Qwen3.5-9B"
+    ],
+    "sold": [
+      "Qwen3.5-4B",
+      "Qwen2-7B-Instruct",
+      "Llama-3.1-8B-Instruct",
+      "Qwen3.5-9B"
+    ],
+    "global_piqa": []
+  },
+  "competent_and_nondegenerate_all_mcq": [
+    "Hormoz-8B",
+    "Llama-3.1-8B-Instruct",
+    "Qwen2-7B-Instruct",
+    "Qwen3.5-4B",
+    "Qwen3.5-9B"
+  ],
+  "sinhala_mmlu_summary": {
+    "u_range": [
+      0.9012937927024277,
+      44.13432184910597
+    ],
+    "r_range": [
+      18.767262683529584,
+      28.666957406599796
+    ],
+    "u_spread": 43.23302805640355,
+    "r_spread": 9.899694723070212,
+    "u_range_x": [
+      21.703736008140716,
+      44.13432184910597
+    ],
+    "r_range_x": [
+      21.92179095798808,
+      28.666957406599796
+    ],
+    "u_spread_x": 22.430585840965257,
+    "r_spread_x": 6.745166448611716,
+    "n_competent": 5,
+    "competent_gaps": {
+      "Qwen3.5-4B": 10.64,
+      "Qwen2-7B-Instruct": 2.01,
+      "Llama-3.1-8B-Instruct": 5.41,
+      "Hormoz-8B": 0.76,
+      "Qwen3.5-9B": 15.47
+    },
+    "competent_retention": {
+      "Qwen3.5-4B": 0.2,
+      "Qwen2-7B-Instruct": 0.64,
+      "Llama-3.1-8B-Instruct": 0.401,
+      "Hormoz-8B": 0.7,
+      "Qwen3.5-9B": 0.252
+    },
+    "n_sig_holm_competent": 4,
+    "max_p_holm_competent": 0.8273094899826713,
+    "median_retention": 0.40115904700579486
+  },
+  "sold_summary": {
+    "n_real": 5,
+    "u_mcc": {
+      "Qwen3.5-4B": 0.219,
+      "Qwen2-7B-Instruct": 0.148,
+      "Llama-3.1-8B-Instruct": 0.259,
+      "Hormoz-8B": 0.108,
+      "Qwen3.5-9B": 0.28
+    },
+    "r_mcc": {
+      "Qwen3.5-4B": 0.127,
+      "Qwen2-7B-Instruct": 0.042,
+      "Llama-3.1-8B-Instruct": 0.105,
+      "Hormoz-8B": 0.09,
+      "Qwen3.5-9B": 0.069
+    },
+    "mcc_retained_pct": {
+      "Qwen3.5-4B": 57.9,
+      "Qwen2-7B-Instruct": 28.7,
+      "Llama-3.1-8B-Instruct": 40.5,
+      "Hormoz-8B": 82.9,
+      "Qwen3.5-9B": 24.4
+    },
+    "median_mcc_retained": 40.486012584174404,
+    "d_macroF1": {
+      "Qwen3.5-4B": 5.11,
+      "Qwen2-7B-Instruct": -0.45,
+      "Llama-3.1-8B-Instruct": 7.5,
+      "Hormoz-8B": -3.98,
+      "Qwen3.5-9B": 11.16
+    },
+    "n_dMCC_sig_holm": 4,
+    "acc_change": {
+      "Qwen3.5-4B": 5.28,
+      "Qwen2-7B-Instruct": 5.12,
+      "Llama-3.1-8B-Instruct": 6.12,
+      "Hormoz-8B": 1.64,
+      "Qwen3.5-9B": 11.32
+    }
+  },
+  "global_piqa_summary": {
+    "u_range": [
+      0.0,
+      56.99999999999999
+    ],
+    "r_range": [
+      33.0,
+      51.0
+    ],
+    "u_spread": 56.99999999999999,
+    "r_spread": 18.0,
+    "u_range_x": [
+      40.0,
+      56.99999999999999
+    ],
+    "r_range_x": [
+      33.0,
+      51.0
+    ],
+    "u_spread_x": 16.999999999999993,
+    "r_spread_x": 18.0,
+    "n_competent": 0,
+    "competent_gaps": {},
+    "competent_retention": {},
+    "n_sig_holm_competent": 0,
+    "max_p_holm_competent": NaN,
+    "median_retention": NaN
+  },
+  "sinhala_mmlu_flattening": {
+    "slope": 0.22241007313539,
+    "intercept": 19.105648721400414,
+    "r2": 0.7057887984507356,
+    "p": 0.004585385414461983,
+    "slope_ci": [
+      0.12134758346474729,
+      0.5427200403455865
+    ],
+    "n": 9,
+    "note": "LaMini excluded (native-script parse failure)"
+  },
+  "global_piqa_flattening": {
+    "slope": 0.7869565217391307,
+    "intercept": 6.994685990338155,
+    "r2": 0.5784982734264639,
+    "p": 0.01733292302120675,
+    "slope_ci": [
+      0.07536063726310506,
+      1.327104409120547
+    ],
+    "n": 9,
+    "note": "LaMini excluded (native-script parse failure)"
+  },
+  "gap_vs_headroom_mmlu": {
+    "slope": 0.7775899268646101,
+    "intercept": -0.8748443305406508,
+    "r2": 0.9670216962186572,
+    "p": 1.9203458673280907e-06,
+    "n": 9,
+    "spearman": 0.9
+  },
+  "sold_majority_baseline": 59.4,
+  "sold_real_signal_models": [
+    "Qwen3.5-4B",
+    "Qwen2-7B-Instruct",
+    "Llama-3.1-8B-Instruct",
+    "Hormoz-8B",
+    "Qwen3.5-9B"
+  ],
+  "sold_acc_vs_mcc_delta": {
+    "pearson": 0.6850022781845597,
+    "note": "across all 10 models"
+  },
+  "mmlu_by_difficulty": [
+    {
+      "difficulty": "Easy",
+      "n_items": 1851,
+      "u_acc": 37.6877,
+      "r_acc": 29.1086,
+      "gap": 8.5791,
+      "gap_lo": 7.4014,
+      "gap_hi": 9.7461,
+      "p_holm": 0.0
+    },
+    {
+      "difficulty": "Hard",
+      "n_items": 2525,
+      "u_acc": 28.4752,
+      "r_acc": 23.2317,
+      "gap": 5.2436,
+      "gap_lo": 4.3406,
+      "gap_hi": 6.1386,
+      "p_holm": 0.0
+    },
+    {
+      "difficulty": "Medium",
+      "n_items": 2503,
+      "u_acc": 35.9329,
+      "r_acc": 28.7255,
+      "gap": 7.2074,
+      "gap_lo": 6.2245,
+      "gap_hi": 8.1904,
+      "p_holm": 0.0
+    }
+  ],
+  "mmlu_by_domain": [
+    {
+      "domain": "Business_Studies",
+      "n_items": 463,
+      "u_acc": 35.162,
+      "r_acc": 27.1274,
+      "gap": 8.0346,
+      "gap_lo": 5.7883,
+      "gap_hi": 10.324,
+      "p_holm": 0.0
+    },
+    {
+      "domain": "Humanities",
+      "n_items": 3341,
+      "u_acc": 32.6968,
+      "r_acc": 27.8719,
+      "gap": 4.8249,
+      "gap_lo": 3.9808,
+      "gap_hi": 5.657,
+      "p_holm": 0.0
+    },
+    {
+      "domain": "Language",
+      "n_items": 388,
+      "u_acc": 29.433,
+      "r_acc": 24.7423,
+      "gap": 4.6907,
+      "gap_lo": 2.268,
+      "gap_hi": 7.1134,
+      "p_holm": 0.0002
+    },
+    {
+      "domain": "Other",
+      "n_items": 1014,
+      "u_acc": 32.4852,
+      "r_acc": 24.5168,
+      "gap": 7.9684,
+      "gap_lo": 6.4497,
+      "gap_hi": 9.5069,
+      "p_holm": 0.0
+    },
+    {
+      "domain": "Social_Science",
+      "n_items": 1059,
+      "u_acc": 38.4703,
+      "r_acc": 26.6667,
+      "gap": 11.8036,
+      "gap_lo": 10.255,
+      "gap_hi": 13.2956,
+      "p_holm": 0.0
+    },
+    {
+      "domain": "Stem",
+      "n_items": 614,
+      "u_acc": 34.1694,
+      "r_acc": 26.1564,
+      "gap": 8.013,
+      "gap_lo": 6.0912,
+      "gap_hi": 9.9349,
+      "p_holm": 0.0
+    }
+  ],
+  "mmlu_script_x_difficulty": {
+    "C(script)[T.romanized]:C(difficulty)[T.Medium]": {
+      "coef": 0.057234116507394614,
+      "p": 0.16917297815577081
+    },
+    "C(script)[T.romanized]:C(difficulty)[T.Hard]": {
+      "coef": 0.11402586553431798,
+      "p": 0.007036954019735384
+    }
+  },
+  "mmlu_script_x_domain": {
+    "C(script)[T.romanized]:C(domain)[T.Humanities]": {
+      "coef": 0.14831882207158922,
+      "p": 0.03410993091525321
+    },
+    "C(script)[T.romanized]:C(domain)[T.Language]": {
+      "coef": 0.13928827491904022,
+      "p": 0.14702796831120618
+    },
+    "C(script)[T.romanized]:C(domain)[T.Other]": {
+      "coef": -0.016740234569325756,
+      "p": 0.8341527343405029
+    },
+    "C(script)[T.romanized]:C(domain)[T.Social_Science]": {
+      "coef": -0.16686202091721541,
+      "p": 0.031213450889355697
+    },
+    "C(script)[T.romanized]:C(domain)[T.Stem]": {
+      "coef": -0.00585930060649547,
+      "p": 0.945002028856004
+    }
+  },
+  "mmlu_script_main_effect": {
+    "coef": -0.38990998084313605,
+    "p": 1.363933590495763e-34,
+    "odds_ratio": 0.677117825330486
+  },
+  "piqa_cultural": {
+    "culturally_specific=False": {
+      "n": 230,
+      "u_acc": 40.0,
+      "r_acc": 47.3913,
+      "gap": -7.3913,
+      "b": 26,
+      "c": 43,
+      "n_disc": 69,
+      "p": 0.0541,
+      "test": "chi2",
+      "gap_lo": -14.3478,
+      "gap_hi": -0.4348
+    },
+    "culturally_specific=True": {
+      "n": 770,
+      "u_acc": 45.3247,
+      "r_acc": 43.7662,
+      "gap": 1.5584,
+      "b": 136,
+      "c": 124,
+      "n_disc": 260,
+      "p": 0.4951,
+      "test": "chi2",
+      "gap_lo": -2.5974,
+      "gap_hi": 5.5844
+    }
+  },
+  "piqa_n_culturally_specific": 77,
+  "piqa_pooled_competent": {
+    "n": 500,
+    "u_acc": 51.0,
+    "r_acc": 46.4,
+    "gap": 4.6,
+    "b": 103,
+    "c": 80,
+    "n_disc": 183,
+    "p": 0.1039,
+    "test": "chi2",
+    "gap_lo": -0.6,
+    "gap_hi": 10.0
+  },
+  "pooled_competent": {
+    "sinhala_mmlu": {
+      "n": 34395,
+      "u_acc": 33.667684,
+      "r_acc": 26.812037,
+      "gap": 6.855648,
+      "b": 6573,
+      "c": 4215,
+      "n_disc": 10788,
+      "p": 0.0,
+      "test": "chi2",
+      "gap_lo": 6.27126,
+      "gap_hi": 7.451664
+    },
+    "sold": {
+      "n": 10000,
+      "u_acc": 62.87,
+      "r_acc": 55.91,
+      "gap": 6.96,
+      "b": 1844,
+      "c": 1148,
+      "n_disc": 2992,
+      "p": 0.0,
+      "test": "chi2",
+      "gap_lo": 5.88,
+      "gap_hi": 8.03025
+    }
+  },
+  "token_ratio": {
+    "sinhala_mmlu": {
+      "median": 0.4846187443136277,
+      "min": 0.30610993124689956,
+      "max": 0.716042368222909,
+      "n_shorter": 10,
+      "n": 10
+    },
+    "sold": {
+      "median": 0.5423665139695758,
+      "min": 0.33752718903178186,
+      "max": 0.7556664608029684,
+      "n_shorter": 10,
+      "n": 10
+    },
+    "global_piqa": {
+      "median": 0.5004668998971005,
+      "min": 0.3054927132109223,
+      "max": 0.7372798151891423,
+      "n_shorter": 10,
+      "n": 10
+    }
+  },
+  "mmlu_gap_by_token_ratio_tercile": {
+    "high": {
+      "gap": 7.176,
+      "mean_ratio": 0.679
+    },
+    "low": {
+      "gap": 5.861,
+      "mean_ratio": 0.53
+    },
+    "mid": {
+      "gap": 7.528,
+      "mean_ratio": 0.597
+    }
+  },
+  "linkage_n": 10,
+  "linkage": {
+    "u_bpb~mmlu_gap": {
+      "rho": -0.9,
+      "p": 0.0009430623223403293,
+      "n": 9
+    },
+    "u_bpb~mmlu_unicode_acc": {
+      "rho": -0.75,
+      "p": 0.019942126131992522,
+      "n": 9
+    },
+    "u_bpb~sold_d_mcc": {
+      "rho": -0.8166666666666667,
+      "p": 0.007224785246358786,
+      "n": 9
+    },
+    "r_bpb~mmlu_gap": {
+      "rho": -0.8499999999999999,
+      "p": 0.0037047773275858133,
+      "n": 9
+    },
+    "r_bpb~mmlu_unicode_acc": {
+      "rho": -0.7166666666666667,
+      "p": 0.029818035695845287,
+      "n": 9
+    },
+    "r_bpb~sold_d_mcc": {
+      "rho": -0.9166666666666666,
+      "p": 0.0005066190663052084,
+      "n": 9
+    },
+    "d_bpb~mmlu_gap": {
+      "rho": -0.06666666666666667,
+      "p": 0.8646897846262037,
+      "n": 9
+    },
+    "d_bpb~mmlu_unicode_acc": {
+      "rho": -0.26666666666666666,
+      "p": 0.4879222748387009,
+      "n": 9
+    },
+    "d_bpb~sold_d_mcc": {
+      "rho": -0.39999999999999997,
+      "p": 0.2861051019083129,
+      "n": 9
+    },
+    "u_bpw~mmlu_gap": {
+      "rho": -0.9,
+      "p": 0.0009430623223403293,
+      "n": 9
+    },
+    "u_bpw~mmlu_unicode_acc": {
+      "rho": -0.75,
+      "p": 0.019942126131992522,
+      "n": 9
+    },
+    "u_bpw~sold_d_mcc": {
+      "rho": -0.8166666666666667,
+      "p": 0.007224785246358786,
+      "n": 9
+    },
+    "d_bpw~mmlu_gap": {
+      "rho": 0.5333333333333333,
+      "p": 0.13922686754397814,
+      "n": 9
+    },
+    "d_bpw~mmlu_unicode_acc": {
+      "rho": 0.2333333333333333,
+      "p": 0.5456987782182727,
+      "n": 9
+    },
+    "d_bpw~sold_d_mcc": {
+      "rho": 0.39999999999999997,
+      "p": 0.2861051019083129,
+      "n": 9
+    },
+    "ppl_ratio~mmlu_gap": {
+      "rho": -0.5333333333333333,
+      "p": 0.13922686754397814,
+      "n": 9
+    },
+    "ppl_ratio~mmlu_unicode_acc": {
+      "rho": -0.41666666666666663,
+      "p": 0.26458604674749614,
+      "n": 9
+    },
+    "ppl_ratio~sold_d_mcc": {
+      "rho": -0.41666666666666663,
+      "p": 0.26458604674749614,
+      "n": 9
+    },
+    "u_ppl~mmlu_gap": {
+      "rho": 0.31666666666666665,
+      "p": 0.4063970144863861,
+      "n": 9
+    },
+    "u_ppl~mmlu_unicode_acc": {
+      "rho": 0.48333333333333334,
+      "p": 0.18746985521554207,
+      "n": 9
+    },
+    "u_ppl~sold_d_mcc": {
+      "rho": -0.03333333333333333,
+      "p": 0.932156735540504,
+      "n": 9
+    },
+    "r_ppl~mmlu_gap": {
+      "rho": -0.33333333333333337,
+      "p": 0.38071318167686347,
+      "n": 9
+    },
+    "r_ppl~mmlu_unicode_acc": {
+      "rho": -0.049999999999999996,
+      "p": 0.8983528043506301,
+      "n": 9
+    },
+    "r_ppl~sold_d_mcc": {
+      "rho": -0.43333333333333335,
+      "p": 0.2439524358800516,
+      "n": 9
+    },
+    "params~mmlu_gap": {
+      "rho": 0.652725378829464,
+      "p": 0.056676692165527655,
+      "n": 9
+    },
+    "params~mmlu_unicode_acc": {
+      "rho": 0.7698812160552653,
+      "p": 0.015240184856772943,
+      "n": 9
+    },
+    "params~sold_d_mcc": {
+      "rho": 0.4937281711658766,
+      "p": 0.17675983229878714,
+      "n": 9
+    }
+  },
+  "mmlu_cell_gap_vs_headroom": {
+    "n_cells": 16,
+    "slope": 0.5756640614386345,
+    "intercept": 1.5526552815786205,
+    "r2": 0.8288204115327867,
+    "p": 9.785981994774138e-07,
+    "spearman": 0.85
+  },
+  "piqa_sign_test": {
+    "n_positive": 7,
+    "n_negative": 2,
+    "p": 0.1796875
+  },
+  "piqa_median_discordant_pairs": 36,
+  "answer_concentration_mmlu_competent": {
+    "u_top_mean": 36.978837096496086,
+    "r_top_mean": 38.628939715256635,
+    "n_more_concentrated_romanized": 3,
+    "n": 5,
+    "wilcoxon_p": 0.625
+  },
+  "sold_off_rate_shift": {
+    "Qwen3.5-4B": {
+      "u": 51.48,
+      "r": 55.32
+    },
+    "Qwen2-7B-Instruct": {
+      "u": 10.48,
+      "r": 23.44
+    },
+    "Llama-3.1-8B-Instruct": {
+      "u": 21.52,
+      "r": 20.68
+    },
+    "Hormoz-8B": {
+      "u": 9.8,
+      "r": 20.72
+    },
+    "Qwen3.5-9B": {
+      "u": 52.32,
+      "r": 57.08
+    }
+  },
+  "sold_gold_off_rate": 40.6,
+  "sold_unicode_mcc_ci": {
+    "TinyLlama-1.1B-Chat": [
+      -0.044,
+      0.018
+    ],
+    "LaMini-GPT-1.5B": [
+      0.0,
+      0.0
+    ],
+    "StableLM-Zephyr-3B": [
+      -0.006,
+      0.074
+    ],
+    "SmolLM3-3B": [
+      -0.012,
+      0.058
+    ],
+    "Qwen3.5-4B": [
+      0.182,
+      0.258
+    ],
+    "Zephyr-7B-beta": [
+      0.021,
+      0.098
+    ],
+    "Qwen2-7B-Instruct": [
+      0.108,
+      0.188
+    ],
+    "Llama-3.1-8B-Instruct": [
+      0.22,
+      0.296
+    ],
+    "Hormoz-8B": [
+      0.069,
+      0.147
+    ],
+    "Qwen3.5-9B": [
+      0.244,
+      0.318
+    ]
+  }
+}

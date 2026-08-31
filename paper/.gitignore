@@ -1,0 +1,11 @@
+# LaTeX build artifacts. acl_latex.pdf is committed on purpose so the current
+# draft can be read without building it.
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+__pycache__/
