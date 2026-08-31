@@ -1,0 +1,398 @@
+"""
+Build the Sinhala NLP Visualization Jupyter Notebook with simple, clear, and comprehensive explanations.
+Run with: python build_notebook.py
+"""
+import json, os
+
+FIGURES_DIR = r'd:\NLP-Project\sinhala-script-robustness\results\visualization\figures'
+NB_PATH     = r'd:\NLP-Project\sinhala-script-robustness\results\visualization\Sinhala_NLP_Visualization_Notebook.ipynb'
+
+
+def md_cell(source):
+    return {"cell_type": "markdown", "metadata": {},
+            "source": source if isinstance(source, list) else [source]}
+
+
+def code_cell(source, outputs=None):
+    return {"cell_type": "code", "execution_count": None, "metadata": {},
+            "outputs": outputs or [],
+            "source": source if isinstance(source, list) else [source]}
+
+
+def display_cell(fig_path, title):
+    return code_cell(
+        f'# Display: {title}\n'
+        f'from IPython.display import Image, display\n'
+        f'display(Image(r"{fig_path}", width=1100))'
+    )
+
+
+cells = []
+
+# Title Cell
+cells.append(md_cell(
+    "# 🇱🇰 Sinhala Script Robustness — Full Visualization & Analysis Notebook\n"
+    "### CS4661 Natural Language Processing — Group 04\n\n"
+    "---\n\n"
+    "## 🎯 What is this Project About?\n\n"
+    "People write the Sinhala language in two main ways:\n"
+    "1. **Unicode (Native Script):** Writing using real Sinhala letters (e.g., `ආයුබෝවන්`).\n"
+    "2. **Romanized (Singlish / Transliterated):** Writing Sinhala words using English letters (e.g., `ayubowan`).\n\n"
+    "**Core Question:** Can popular Artificial Intelligence (AI) Language Models understand both scripts equally well, or do they fail when switching between native Sinhala letters and Singlish?\n\n"
+    "---\n\n"
+    "## 📚 Datasets & Tasks Evaluated\n\n"
+    "We tested the models on three distinct natural language tasks:\n"
+    "1. **Sinhala MMLU (6,879 questions):** Multiple-choice exam questions covering science, history, law, and general knowledge translated into Sinhala.\n"
+    "2. **SOLD (2,500 comments):** Sinhala Offensive Language Dataset. Deciding if a comment is **Offensive (OFF)** or **Not Offensive (NOT)**.\n"
+    "3. **Global PIQA (100 questions):** Physical Commonsense Reasoning translated into Sinhala (e.g., everyday physical facts and solutions).\n\n"
+    "---\n\n"
+    "## 🤖 Models Tested (10 AI Models)\n\n"
+    "| Model Name | Size (Parameters) | Description |\n"
+    "|:---|:---|:---|\n"
+    "| **TinyLlama-1.1B** | 1.1 Billion | Very lightweight small model |\n"
+    "| **LaMini-GPT-1.5B** | 1.5 Billion | Small instruction-tuned model |\n"
+    "| **SmolLM3-3B** | 3.0 Billion | Modern lightweight small language model |\n"
+    "| **StableLM-Zephyr-3B** | 3.0 Billion | Compact instruction-following model |\n"
+    "| **Qwen-3.5-4B** | 4.0 Billion | Medium-sized multilingual model from Alibaba |\n"
+    "| **Qwen2-7B-Instruct** | 7.0 Billion | Strong 7B open-source model |\n"
+    "| **Zephyr-7B-Beta** | 7.0 Billion | Popular alignment-tuned model |\n"
+    "| **Hormoz-8B** | 8.0 Billion | Multilingual model trained on regional languages |\n"
+    "| **Llama-3.1-8B-Instruct** | 8.0 Billion | State-of-the-art 8B open model from Meta |\n"
+    "| **Qwen-3.5-9B** | 9.0 Billion | Advanced 9B multilingual model from Alibaba |\n\n"
+    "---\n"
+))
+
+# Setup Cell
+cells.append(md_cell(
+    "## 🛠️ Step 1: Environment Setup & Data Loading\n\n"
+    "In the cell below, we load all necessary Python libraries (Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn) and verify that our dataset records are loaded properly."
+))
+
+cells.append(code_cell(
+    "import os, warnings, numpy as np, pandas as pd\n"
+    "import matplotlib; matplotlib.use('Agg')\n"
+    "import matplotlib.pyplot as plt\n"
+    "import seaborn as sns\n"
+    "import matplotlib.patches as mpatches\n"
+    "from sklearn.metrics import (\n"
+    "    confusion_matrix, f1_score, precision_score, recall_score,\n"
+    "    roc_curve, auc, precision_recall_curve, average_precision_score\n"
+    ")\n"
+    "warnings.filterwarnings('ignore')\n\n"
+    "BASE    = r'D:/NLP-Project/sinhala-script-robustness/results/extrinsic_evaluation'\n"
+    "OUT_DIR = r'D:/NLP-Project/sinhala-script-robustness/results/visualization/figures'\n"
+    "print('All libraries loaded successfully!')"
+))
+
+cells.append(code_cell(
+    "# Load evaluation summary for all 10 models\n"
+    "MODELS = {\n"
+    "    'TinyLlama-1.1B':  'TinyLlama-1.1B-Chat-v1.0',\n"
+    "    'LaMini-GPT-1.5B': 'LaMini-GPT-1.5B',\n"
+    "    'SmolLM3-3B':      'SmolLM3-3B',\n"
+    "    'StableLM-3B':     'stablelm-zephyr-3b',\n"
+    "    'Qwen2-7B':        'Qwen2-7B-Instruct',\n"
+    "    'Zephyr-7B':       'zephyr-7b-beta',\n"
+    "    'Hormoz-8B':       'Hormoz-8B',\n"
+    "    'Llama-3.1-8B':    'Llama-3.1-8B-Instruct',\n"
+    "    'Qwen3.5-4B':      'Qwen-3.5-4B',\n"
+    "    'Qwen3.5-9B':      'Qwen-3.5-9B',\n"
+    "}\n\n"
+    "records = []\n"
+    "for m_name, folder in MODELS.items():\n"
+    "    files = [f for f in os.listdir(os.path.join(BASE, folder)) if 'summary' in f]\n"
+    "    if not files: continue\n"
+    "    df = pd.read_csv(os.path.join(BASE, folder, files[0]))\n"
+    "    for _, row in df.iterrows():\n"
+    "        if pd.notna(row.get('Task')):\n"
+    "            records.append({'Model': m_name, 'Task': row['Task'],\n"
+    "                'Unicode_Acc': row['Unicode Acc (%)'], 'Romanized_Acc': row['Romanized Acc (%)'],\n"
+    "                'Gap': row['Gap (pp)'], 'N': row['N'],\n"
+    "                'Unicode_Invalid': row['Unicode Invalid (%)'],\n"
+    "                'Romanized_Invalid': row['Romanized Invalid (%)'],\n"
+    "            })\n\n"
+    "summary_df = pd.DataFrame(records)\n"
+    "print(summary_df.to_string())"
+))
+
+# Figure Specifications with Simple English Explanations
+FIG_SPECS = [
+    (
+        "fig01_grouped_bar_accuracy.png",
+        "Figure 1: Unicode vs Romanized Accuracy — Grouped Bar Chart",
+        "## 📊 Figure 1: Accuracy Comparison (Native Unicode vs Romanized Singlish)\n\n"
+        "### 📌 Simple Summary:\n"
+        "This chart shows how accurately each model answered questions when given **native Sinhala script** compared to when given **Romanized Singlish (English letters)**.\n\n"
+        "### 🔍 How to Read This Chart:\n"
+        "- **Blue Bar:** Accuracy on native Sinhala text (`Unicode`).\n"
+        "- **Pink Bar:** Accuracy on English-letter Sinhala text (`Romanized`).\n"
+        "- **Taller bar = Better performance.**\n"
+        "- The 3 sub-graphs represent our 3 datasets: **Sinhala MMLU**, **SOLD**, and **Global PIQA**.\n\n"
+        "### 💡 What the Data Tells Us:\n"
+        "1. **Big models prefer native Sinhala on complex tasks:** On Sinhala MMLU, models like `Qwen-3.5-9B` and `Llama-3.1-8B` have much taller blue bars than pink bars. They understand real Sinhala script much better than phonetic English spelling.\n"
+        "2. **Simple tasks show less difference:** On the SOLD dataset (offensive comment detection), blue and pink bars are almost equal for most models (~60%).\n"
+        "3. **Small models struggle everywhere:** `TinyLlama` and `LaMini` have tiny bars (<25%), which is no better than guessing randomly."
+    ),
+    (
+        "fig02_gap_heatmap.png",
+        "Figure 2: Performance Gap Heatmap (Unicode - Romanized)",
+        "## 🌡️ Figure 2: The Script Performance Gap Heatmap\n\n"
+        "### 📌 Simple Summary:\n"
+        "This heatmap calculates the exact difference: **(Unicode Accuracy − Romanized Accuracy)** in percentage points.\n\n"
+        "### 🔍 How to Read the Colors:\n"
+        "- 🟢 **Green (Positive Number):** The model did **better on native Sinhala script**.\n"
+        "- 🔴 **Red (Negative Number):** The model did **better on Romanized Singlish**.\n"
+        "- 🟡 **Yellow (Close to Zero):** The model treated **both scripts equally** (This means it is **Script-Robust**).\n\n"
+        "### 💡 What the Data Tells Us:\n"
+        "1. **Qwen-3.5-9B (+15.47 on MMLU):** Shows a bright green box. It gets a 15% boost when using native Sinhala letters because its tokenizer and training included real Sinhala data.\n"
+        "2. **SmolLM3-3B (+0.76 on MMLU, +1.64 on SOLD):** Shows soft yellow boxes. It performs almost identically regardless of script, showing high script consistency.\n"
+        "3. **LaMini-GPT-1.5B (-18.08 on SOLD, -17.87 on MMLU):** Shows bright red boxes. It fails badly on native Sinhala script and only gets answers right when written in English letters."
+    ),
+    (
+        "fig03_invalid_rate_heatmap.png",
+        "Figure 3: Invalid Response Rate Heatmap",
+        "## ❌ Figure 3: Invalid / Broken Response Rates\n\n"
+        "### 📌 Simple Summary:\n"
+        "When an AI model is asked a multiple-choice question, it should reply with a valid option (like 'A', 'B', 'C', 'NOT', or 'OFF'). If the model outputs nonsense, repeats words endlessly, or leaves it blank, it is counted as an **Invalid Response**.\n\n"
+        "### 🔍 How to Read This Chart:\n"
+        "- **Left side:** Invalid rate for native Sinhala script (`Unicode`).\n"
+        "- **Right side:** Invalid rate for Romanized script (`Romanized`).\n"
+        "- **0% (White/Pale):** Perfect! The model followed instructions and gave valid answers.\n"
+        "- **High % (Dark Red):** Failure! The model was confused by the text and could not generate a proper answer.\n\n"
+        "### 💡 What the Data Tells Us:\n"
+        "1. **LaMini-GPT-1.5B has a 92% to 95% failure rate on native Sinhala:** It cannot understand native Sinhala characters at all. Its tokenizer breaks Sinhala letters into unknown tokens (`<unk>`).\n"
+        "2. **TinyLlama-1.1B fails 95% of the time on Unicode MMLU:** It does not know Sinhala script.\n"
+        "3. **Modern 7B-9B models have 0.0% invalid rates:** Models like `Qwen2-7B`, `Llama-3.1-8B`, and `Qwen3.5-9B` always follow instructions properly in both scripts."
+    ),
+    (
+        "fig04_roc_curves_sold.png",
+        "Figure 4: ROC Curves — SOLD Task",
+        "## 📈 Figure 4: ROC Curves (Offensive Language Detection)\n\n"
+        "### 📌 Simple Summary:\n"
+        "The **ROC Curve (Receiver Operating Characteristic)** tests how well an AI can separate **Offensive comments (OFF)** from **Clean comments (NOT)** without making false accusations.\n\n"
+        "### 🔍 How to Read This Chart:\n"
+        "- **X-axis (False Positive Rate):** How often clean comments were wrongly flagged as offensive.\n"
+        "- **Y-axis (True Positive Rate):** How often offensive comments were successfully caught.\n"
+        "- **Diagonal Dashed Line:** Random coin toss guessing (AUC = 0.50).\n"
+        "- **Top-Left Corner:** The closer the curve is to the top-left, the better the model (AUC closer to 1.00).\n\n"
+        "### 💡 What the Data Tells Us:\n"
+        "1. **Llama-3.1-8B and Qwen models achieve the highest AUC:** They detect hate speech and toxic comments with the fewest mistakes.\n"
+        "2. **Small models stay near the 0.50 diagonal line:** Small models cannot tell whether a Sinhala comment is rude or polite."
+    ),
+    (
+        "fig05_precision_recall_sold.png",
+        "Figure 5: Precision-Recall Curves — SOLD Task",
+        "## 🎯 Figure 5: Precision-Recall Curves (Catching Toxic Comments)\n\n"
+        "### 📌 Simple Summary:\n"
+        "This graph looks specifically at how accurately models detect the **Offensive (OFF)** class.\n\n"
+        "### 🔍 How to Read This Chart:\n"
+        "- **Precision (Y-axis):** When the AI flags a comment as offensive, what percentage of the time is it actually offensive? (High = very few false alarms).\n"
+        "- **Recall (X-axis):** Out of all offensive comments in the dataset, how many did the AI successfully catch? (High = very few toxic comments missed).\n"
+        "- **AP (Average Precision):** Higher score = Better balance of catching toxic comments without false alarms.\n\n"
+        "### 💡 What the Data Tells Us:\n"
+        "1. In both native Sinhala and Singlish, **Llama-3.1-8B** achieves top detection ability.\n"
+        "2. Models that always say 'NOT offensive' drop to 0 on Recall because they miss every toxic comment."
+    ),
+    (
+        "fig06_f1_precision_recall.png",
+        "Figure 6: Precision, Recall & F1-Score per Model (SOLD)",
+        "## ⚖️ Figure 6: Detailed Classification Metrics (Precision, Recall, F1-Score)\n\n"
+        "### 📌 Simple Summary:\n"
+        "Accuracy alone can be misleading if a model just guesses the same answer every time. This chart breaks down performance into 3 key metrics:\n"
+        "1. **Precision:** Accuracy of positive flags.\n"
+        "2. **Recall:** Coverage of all real toxic cases.\n"
+        "3. **F1-Score:** The balanced average combining Precision and Recall.\n\n"
+        "### 🔍 How to Read This Chart:\n"
+        "- **Blue Bar = Native Sinhala (Unicode)** | **Pink Bar = Romanized Singlish**\n"
+        "- Score goes from **0.0 (Worst)** to **1.0 (Perfect)**.\n\n"
+        "### 💡 What the Data Tells Us:\n"
+        "1. **Llama-3.1-8B reaches an F1-score around 0.65:** It is currently the best model for moderation of Sinhala social media content.\n"
+        "2. **Script consistency:** For top models, the blue and pink F1 bars are very close in height, meaning they can detect hate speech in both native Sinhala script and Singlish equally well."
+    ),
+    (
+        "fig07_confusion_matrices_sold.png",
+        "Figure 7: Confusion Matrices — SOLD Task (All Models)",
+        "## 🔢 Figure 7: Confusion Matrices (What Mistakes Do Models Make?)\n\n"
+        "### 📌 Simple Summary:\n"
+        "A confusion matrix shows the exact breakdown of correct answers vs mistakes.\n\n"
+        "### 🔍 How to Read Each 2x2 Box:\n"
+        "- **Top-Left Box (True NOT):** Clean comments correctly identified as clean. *(Good)*\n"
+        "- **Bottom-Right Box (True OFF):** Offensive comments correctly caught. *(Good)*\n"
+        "- **Top-Right Box (False Alarm):** Clean comment wrongly marked as offensive. *(Bad)*\n"
+        "- **Bottom-Left Box (Missed):** Toxic comment missed by the model. *(Bad)*\n"
+        "- **Row 1:** Results using Native Sinhala script.\n"
+        "- **Row 2:** Results using Romanized Singlish.\n\n"
+        "### 💡 What the Data Tells Us:\n"
+        "1. **Top models have dark diagonal boxes:** They correctly categorize both clean and offensive comments.\n"
+        "2. **Weak models put all numbers in the left column:** They simply predict 'NOT' for every single comment because they cannot read the text."
+    ),
+    (
+        "fig08_radar_chart.png",
+        "Figure 8: Radar Chart — Multi-Task Performance",
+        "## 🕸️ Figure 8: Radar / Spider Chart (Overall Capability Profile)\n\n"
+        "### 📌 Simple Summary:\n"
+        "This spider chart combines performance across all 3 tasks onto a single web. A **larger, wider shape** means a stronger, more capable AI model.\n\n"
+        "### 🔍 How to Read This Chart:\n"
+        "- **3 Corners = 3 Tasks:** MMLU (Knowledge), SOLD (Hate Speech), PIQA (Common Sense).\n"
+        "- **Left Web:** Native Sinhala Script (`Unicode`).\n"
+        "- **Right Web:** Romanized Script (`Romanized`).\n"
+        "- **Bigger colored area = Better all-around model.**\n\n"
+        "### 💡 What the Data Tells Us:\n"
+        "1. **Qwen-3.5-9B and Llama-3.1-8B cover the largest area:** They perform well across all three diverse tasks.\n"
+        "2. **Comparing Left vs Right:** If a model's shape shrinks when moving from Left to Right, it means the model loses intelligence when text is written in Singlish."
+    ),
+    (
+        "fig09_robustness_score.png",
+        "Figure 9: Script Robustness Score",
+        "## 🏆 Figure 9: Script Robustness Ranking (Who is Most Consistent?)\n\n"
+        "### 📌 Simple Summary:\n"
+        "Which model is the most **script-robust**? That is, which model gives consistent results regardless of whether you write in native Sinhala letters or English letters?\n\n"
+        "### 🔍 How to Read This Chart:\n"
+        "- **Left Graph (Average Signed Gap):** Positive = favors native Sinhala; Negative = favors Singlish.\n"
+        "- **Right Graph (Mean Absolute Gap):** **LOWER IS BETTER.** A score close to 0.0 means the model treats both scripts with equal fairness.\n\n"
+        "### 💡 What the Data Tells Us:\n"
+        "1. **Most Robust Models:** `SmolLM3-3B` and `Zephyr-7B` have the lowest average gap (~1.5 pp). They perform with steady reliability across both scripts.\n"
+        "2. **Most Script-Biased Model:** `Qwen-3.5-9B` has a high gap (+11.6 pp). It is much smarter in native Sinhala than in Singlish.\n"
+        "3. **Worst Broken Model:** `LaMini-GPT-1.5B` has a huge gap because it crashes on native Sinhala."
+    ),
+    (
+        "fig10_full_accuracy_heatmap.png",
+        "Figure 10: Full Accuracy Heatmap (All Models x All Tasks)",
+        "## 🗺️ Figure 10: Complete Accuracy Grid (All Models × All Tasks)\n\n"
+        "### 📌 Simple Summary:\n"
+        "A master table showing the exact accuracy percentage for every model on every task in both scripts.\n\n"
+        "### 🔍 How to Read the Numbers:\n"
+        "- **Left Table:** Native Sinhala (`Unicode`).\n"
+        "- **Right Table:** Romanized Singlish (`Romanized`).\n"
+        "- **Darker Blue / Purple = Higher Accuracy (Better).**\n\n"
+        "### 💡 What the Data Tells Us:\n"
+        "1. **SOLD is the easiest task (accuracies up to 65.8%):** Detecting hate speech is easier than solving university-level exam questions.\n"
+        "2. **MMLU is the hardest task (accuracies range from 0.9% to 44.1%):** Answering complex academic questions in Sinhala requires deep language comprehension."
+    ),
+    (
+        "fig11_comprehensive_task_accuracy.png",
+        "Figure 11: Comprehensive Task Accuracy (All Models Side-by-Side)",
+        "## 📊 Figure 11: All Models Ranked Side-by-Side\n\n"
+        "### 📌 Simple Summary:\n"
+        "This chart lines up all 10 models side-by-side within each task so you can directly compare which model wins in each domain.\n\n"
+        "### 🔍 How to Read This Chart:\n"
+        "- **Top Plot:** Native Sinhala script.\n"
+        "- **Bottom Plot:** Romanized Singlish.\n"
+        "- Each color represents a specific AI model.\n\n"
+        "### 💡 What the Data Tells Us:\n"
+        "1. **MMLU Winner:** `Qwen-3.5-9B` is the clear champion on Sinhala MMLU (44.1%).\n"
+        "2. **SOLD Winner:** `Llama-3.1-8B` takes first place on offensive speech detection (65.8%).\n"
+        "3. **PIQA Winner:** `Qwen-3.5-4B` and `Qwen2-7B` lead on physical common sense reasoning (57.0%)."
+    ),
+    (
+        "fig12_sold_class_distribution.png",
+        "Figure 12: SOLD Class Distribution per Model",
+        "## ⚖️ Figure 12: Prediction Bias (Clean vs Offensive Balance)\n\n"
+        "### 📌 Simple Summary:\n"
+        "Do models have an unfair bias toward calling everything clean or calling everything offensive?\n\n"
+        "### 🔍 How to Read This Chart:\n"
+        "- **Dark Navy Bar (Gold):** The true real-world count of comments in the dataset.\n"
+        "- **Blue Bar:** What the model predicted in Native Sinhala.\n"
+        "- **Pink Bar:** What the model predicted in Romanized Singlish.\n"
+        "- **Ideal outcome:** The Blue and Pink bars should closely match the Dark Navy bar.\n\n"
+        "### 💡 What the Data Tells Us:\n"
+        "1. High-performing models (`Llama-3.1-8B`, `Qwen2-7B`) make predictions that match the real dataset distribution.\n"
+        "2. Small models suffer from extreme bias: they predict 'NOT' almost 100% of the time because they lack the vocabulary to detect offensive terms."
+    ),
+    (
+        "fig13_bubble_accuracy_invalid.png",
+        "Figure 13: Bubble Chart — Accuracy vs Invalid Rate",
+        "## 🎈 Figure 13: Accuracy vs Invalid Error Rate Bubble Plot\n\n"
+        "### 📌 Simple Summary:\n"
+        "Why do models get low scores? Is it because they picked the wrong answer, or because they failed to produce a valid response at all?\n\n"
+        "### 🔍 How to Read This Chart:\n"
+        "- **X-axis (Invalid Rate %):** Percentage of broken/unusable responses. **(Left is best, 0%)**.\n"
+        "- **Y-axis (Accuracy %):** Percentage of correct answers. **(Top is best, 100%)**.\n"
+        "- **Bubble Size:** Represents the number of test questions (MMLU = big bubble, PIQA = small bubble).\n"
+        "- **Desired Zone:** **Top-Left Corner** (High accuracy, zero invalid responses).\n\n"
+        "### 💡 What the Data Tells Us:\n"
+        "1. Reliable models cluster tightly in the top-left corner at 0% invalid errors.\n"
+        "2. Models in the bottom-right corner (like `LaMini` and `TinyLlama` on native Sinhala) score near zero purely because their output is 90%+ unparseable garbage."
+    ),
+    (
+        "fig14_delta_plot.png",
+        "Figure 14: Delta Plot — Script Switch (Romanized - Unicode)",
+        "## 🔄 Figure 14: The Script Switching Impact (Romanized − Unicode)\n\n"
+        "### 📌 Simple Summary:\n"
+        "What happens when a user types in Singlish instead of native Sinhala? This chart shows the exact gain or drop in score.\n\n"
+        "### 🔍 How to Read This Chart:\n"
+        "- 🔵 **Blue Bar (Negative Value):** Model scored **higher in Native Sinhala**.\n"
+        "- 🌸 **Pink Bar (Positive Value):** Model scored **higher in Romanized Singlish**.\n"
+        "- **The Center Line (0.0):** Zero difference (Perfect script independence).\n\n"
+        "### 💡 What the Data Tells Us:\n"
+        "1. On **Sinhala MMLU**, switching to Singlish causes a huge drop (-15.5 pp) for advanced models like `Qwen-3.5-9B`.\n"
+        "2. On **SOLD**, the difference is very small (bars stay close to 0.0), showing that offensive keywords are recognizable in both scripts."
+    ),
+    (
+        "fig15_dashboard.png",
+        "Figure 15: Summary Dashboard",
+        "## 🎛️ Figure 15: Executive Project Summary Dashboard\n\n"
+        "### 📌 Simple Summary:\n"
+        "A high-level executive dashboard summarizing the entire research project in one clean visual view.\n\n"
+        "### 🔍 Key Highlights on the Dashboard:\n"
+        "- **Best Knowledge Model (MMLU):** `Qwen-3.5-9B` (44.1% Accuracy)\n"
+        "- **Best Safety & Moderation Model (SOLD):** `Llama-3.1-8B-Instruct` (65.8% Accuracy)\n"
+        "- **Most Script-Robust Model:** `SmolLM3-3B` & `Zephyr-7B`\n"
+        "- **Average Script Gap Across All Tests:** +2.4 pp favoring native Sinhala script."
+    ),
+    (
+        "fig16_piqa_comparison.png",
+        "Figure 16: Global PIQA Comparison",
+        "## 🌍 Figure 16: Global PIQA — Physical Commonsense Reasoning in Sinhala\n\n"
+        "### 📌 Simple Summary:\n"
+        "Physical Intuition QA tests common sense knowledge about the physical world (e.g., 'To separate egg yolks, you should use a plastic bottle'). Here, questions are translated into Sinhala.\n\n"
+        "### 🔍 How to Read This Chart:\n"
+        "- **Blue Bar = Native Sinhala** | **Pink Bar = Romanized Singlish**\n"
+        "- **Dashed Line at 50%:** Random guessing baseline (since there are 2 choices).\n\n"
+        "### 💡 What the Data Tells Us:\n"
+        "1. Most models hover around **50% - 57%**, showing that physical commonsense reasoning in Sinhala remains challenging for current AI.\n"
+        "2. Models like `Qwen-3.5-4B` and `Llama-3.1-8B` lead the pack with over 53% accuracy in both scripts."
+    ),
+]
+
+# Add Figure Cells to Notebook
+for fname, title, explanation in FIG_SPECS:
+    fig_path = os.path.join(FIGURES_DIR, fname).replace('\\', '/')
+    cells.append(md_cell("---\n"))
+    cells.append(md_cell(explanation))
+    cells.append(display_cell(fig_path, title))
+
+# Conclusion Cell
+cells.append(md_cell("---\n"))
+cells.append(md_cell(
+    "## 🎓 Final Conclusions & Recommendations\n\n"
+    "### 1. Key Takeaways\n\n"
+    "| Area | Finding |\n"
+    "|:---|:---|\n"
+    "| **Overall Best Model** | **Llama-3.1-8B-Instruct** and **Qwen-3.5-9B** are the strongest models for Sinhala NLP applications. |\n"
+    "| **Best Script for AI** | **Native Unicode Sinhala** produces significantly better results on knowledge-heavy tasks (MMLU). |\n"
+    "| **Singlish Performance** | Singlish works decently well on simple tasks (hate speech detection), but complex reasoning drops by up to 15%. |\n"
+    "| **Small Model Limitation** | Models under 3B parameters (`TinyLlama`, `LaMini`) are not suitable for Sinhala script without dedicated fine-tuning. |\n\n"
+    "### 2. Practical Recommendations for Sinhala NLP Developers:\n"
+    "- If you are building a **Sinhala Chatbot or Q&A System**, always convert user input into **Native Unicode Sinhala** before feeding it into the LLM for highest accuracy.\n"
+    "- If you are building a **Social Media Content Moderation Tool**, `Llama-3.1-8B` can effectively handle both native Sinhala script and Singlish.\n\n"
+    "---\n"
+    "**CS4661 NLP — Group 04 | Sinhala Script Robustness Project**\n"
+))
+
+# Save Notebook JSON
+nb = {
+    "nbformat": 4,
+    "nbformat_minor": 5,
+    "metadata": {
+        "kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
+        "language_info": {"name": "python", "version": "3.11.0"},
+    },
+    "cells": cells,
+}
+
+with open(NB_PATH, "w", encoding="utf-8") as f:
+    json.dump(nb, f, indent=1)
+
+print(f"[OK] Rebuilt notebook with simple, clear English explanations: {NB_PATH}")
+print(f"[OK] Total cells: {len(cells)}")
