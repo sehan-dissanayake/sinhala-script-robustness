@@ -1,0 +1,4 @@
+Task,N,Unicode Acc (%),Romanized Acc (%),Gap (pp),Unicode Invalid (%),Romanized Invalid (%)
+Sinhala MMLU,6879,28.67,27.18,1.48,0.0,0.03
+SOLD,2500,54.48,50.88,3.6,0.0,0.0
+Global PIQA,100,46.0,46.0,0.0,0.0,0.0
