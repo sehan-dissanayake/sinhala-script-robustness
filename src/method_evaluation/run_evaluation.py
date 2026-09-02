@@ -6,6 +6,7 @@ Outputs (results/method_evaluation/):
     per_item/<c>__<m>.json  per-item CER arrays (strict + relaxed)
     significance.json       bootstrap 95% CIs + paired Wilcoxon vs. best method
 """
+from __future__ import annotations
 
 import argparse
 import json

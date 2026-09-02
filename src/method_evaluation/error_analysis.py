@@ -21,6 +21,7 @@ is deliberate and reported as `coverage` and `leak_rate` below:
 
 Outputs -> results/method_evaluation/error_analysis.json
 """
+from __future__ import annotations
 
 import json
 import re
