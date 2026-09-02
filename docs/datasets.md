@@ -1,6 +1,6 @@
 # Downstream evaluation datasets
 
-Status: **final**. `data/eval/` is frozen and ready for the LLM experiment phase.
+Status: **final**. `data/eval/` is frozen and the evaluation has been run against it.
 Everything here is reproducible from the raw sources with no randomness involved;
 `data/eval/manifest.json` records the counts, strata, and a SHA-256 per file.
 
@@ -26,24 +26,24 @@ and a letter `label` indexing `options`; SOLD carries `label` in `{"NOT", "OFF"}
 Global PIQA records additionally carry `example_id`, `culturally_specific`, `llm_assisted`, and
 `eng_options` (upstream English translations, useful for error analysis).
 
-Pairing both conditions in one record is deliberate: the planned McNemar test is a *paired*
+Pairing both conditions in one record is deliberate: the McNemar test is a *paired*
 test, so the runner must not be able to score mismatched subsets against each other.
 
 | File | Items | Task | Coverage |
 |---|---|---|---|
-| `sinhala_mmlu.jsonl` | 1,851 | 4-way MCQ | the entire released split |
+| `sinhala_mmlu.jsonl` | 6,879 | 4-way and 5-way MCQ | the full set, obtained from the authors |
 | `sold.jsonl` | 2,500 | Binary | the entire test split |
 | `global_piqa.jsonl` | 100 | 2-way MCQ | all of `sin_sinh` |
 
-4,451 items × 2 script conditions = **8,902 prompts per model**.
+9,479 items x 2 script conditions = **18,958 prompts per model**.
 
 **No sampling, no few-shot.** Every available item is evaluated and every prompt is zero-shot —
 no demonstrations shown to the model before the real question. Zero-shot is used uniformly
 across all three datasets so none of them gets a prompting advantage the others don't; running
 two datasets few-shot and one zero-shot would make the cross-dataset comparison uninterpretable.
 There is no randomness anywhere in this step. Label distributions are the source distributions:
-MMLU A/B/C/D = 473/501/507/370, SOLD NOT/OFF = 1485/1015, Global PIQA A/B = 49/51. `strata` is
-still recorded on every item and summarised in the manifest, since the analysis phase will want
+MMLU A/B/C/D/E = 1524/1658/1692/1516/489, SOLD NOT/OFF = 1485/1015, Global PIQA A/B = 49/51. `strata` is
+still recorded on every item and summarised in the manifest, since the analysis uses
 per-domain and per-class breakdowns.
 
 ## Script conditions
@@ -60,12 +60,18 @@ different method: `python src/data_prep/build_eval_sets.py --method uroman`.
 
 ## Sources and provenance
 
-**SinhalaMMLU** (`naist-nlp/SinhalaMMLU`, gated — needs `HF_TOKEN`). Only a `train` split is
-released, 1,851 questions, all 4-way. Two things to know:
+**SinhalaMMLU** (`naist-nlp/SinhalaMMLU`, gated — needs `HF_TOKEN`). The public release is a
+1,851-item sample. The full 6,879-item set was obtained from the authors by email in August
+2026, and **is not redistributed here**: they asked that it not be made public, and the
+CC BY-NC-ND licence separately forbids distributing adaptations, which our Romanized twin is.
+`data/eval/sinhala_mmlu.jsonl` is git-ignored. What is released is the code that rebuilds it,
+the item identifiers, and the SHA-256 digest in `manifest.json`, so a reader with their own copy
+of the full set can confirm they have reproduced our file exactly. Two things to know:
 
-* Every row is labelled `difficulty=Easy`, so difficulty carries no information. The builder
-  detects constant strata fields, drops them from the reported breakdown, and says so rather
-  than implying a difficulty analysis is possible. The field is still kept on each record.
+* The full set carries real `difficulty` strata (Easy, Medium, Hard) and six domains, unlike the
+  public sample, in which every row is labelled `difficulty=Easy`. The builder detects constant
+  strata fields and drops them from the reported breakdown rather than implying an analysis is
+  possible, so it behaves correctly on either input.
 * One upstream row (`mmlu_0854`, `q_no` 64, "how many standard time zones is the Earth divided
   into") stores the answer *value* `24` in the `answer` field instead of the 1-based index `3`.
   That previously produced the uninterpretable label `"24"`. `prepare_datasets.py` now recovers
@@ -101,11 +107,11 @@ so that is satisfied, but any future fine-tuning work must exclude it.
   the flag so this can be split out.
 * **SOLD text contains placeholders.** Posts use `@USER` and similar tokens, which pass through
   transliteration untouched (by design) and appear identically in both conditions.
-* **MMLU domain skew.** Humanities is 63% of the benchmark (1,162 of 1,851). Domain-level
-  breakdowns outside it are thinner: Social Science 370, STEM 164, Language 155.
-* **Cost.** 8,902 prompts per model, ~35.6k across four models. Worth checking against your
-  API budget and rate limits before starting, and worth making the runner resumable so a
-  partial run is not lost.
+* **MMLU domain skew.** Humanities is the largest domain at 3,341 of 6,879 items. Domain-level
+  breakdowns outside it are thinner: Social Science 1,059, Other 1,014, STEM 614, Business
+  Studies 463, Language 388.
+* **Cost.** 18,958 prompts per checkpoint, 208,538 across the eleven evaluated. The runners are
+  resumable, which matters on a hosted notebook with a hard session timeout.
 
 ## Regenerating
 
