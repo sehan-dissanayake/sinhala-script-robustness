@@ -1,6 +1,27 @@
 """Generate LaTeX table bodies from the frozen analysis, so no number is typed by hand.
 
 Run from the repository root:  python paper/tables/make_tables.py
+
+Main-body tables
+    tab_intrinsic_main    all 31 checkpoints, native / Romanized / mixed
+    tab_extrinsic_main    downstream results, SinhalaMMLU and SOLD
+    tab_strata            SinhalaMMLU by difficulty and domain
+    tab_linkage           intrinsic measurements against downstream script effects
+
+Appendix tables
+    tab_intrinsic_full    the same 31 checkpoints with every metric
+    tab_model_ids         Hugging Face identifiers and tokenizer fertility
+    tab_methods           transliteration quality against human references
+    tab_ngram             held-out character n-gram references
+    tab_piqa              Global PIQA, per checkpoint
+    tab_invalid_tau       unparseable-output rates and input token ratios
+    tab_pilot             the prompt-template pilot, all templates and scripts
+    tab_shared24          reproduction of the published benchmark on its own pool
+    tab_decomp            per-checkpoint split of the perplexity ratio
+    tab_flatten           robustness of the flattening regressions
+    tab_svh               our transliteration against human typing, scored
+    tab_attest            spelling attestation against the human word list
+    tab_mismatch          the most frequent disagreements with human typing
 """
 from __future__ import annotations
 
@@ -41,6 +62,16 @@ HF_ID = {
 }
 INSTRUCT = set(C.EXTRINSIC_MODELS)
 
+# The 24 checkpoints the benchmark we extend evaluated, so its headline numbers
+# can be recomputed on the same pool. Mirrors PUBLISHED in stats_robustness.py.
+SHARED24 = {
+    "Pythia-410M", "Mistral-Nemo-Base-2407", "Cerebras-GPT-1.3B", "Minitron-8B-Base",
+    "Llama-3.1-8B", "OPT-2.7B", "Llama-3.2-3B", "OPT-1.3B", "Phi-4-14B", "Llama-3.2-1B",
+    "TinyLlama-1.1B-Chat", "StableLM-Zephyr-3B", "OPT-350M", "Mistral-7B-v0.3",
+    "LaMini-GPT-1.5B", "Hormoz-8B", "Qwen2-7B", "BLOOM-3B", "SmolLM3-3B",
+    "Qwen1.5-1.8B", "Zephyr-7B-beta", "BLOOM-1B1", "BLOOM-560M", "Gemma-7B",
+}
+
 
 def w(name, body):
     p = os.path.join(TAB, name)
@@ -50,14 +81,9 @@ def w(name, body):
     print("wrote", p)
 
 
-def stars(p):
-    if p < 0.001:
-        return r"\ssig{***}"
-    if p < 0.01:
-        return r"\ssig{**}"
-    if p < 0.05:
-        return r"\ssig{*}"
-    return r"\nsig{n.s.}"
+def nb(name):
+    """Model name with non-breaking hyphens, so a row never wraps mid-name."""
+    return name.replace("-", "\\nobreakdash-")
 
 
 def fp(p):
@@ -67,36 +93,79 @@ def fp(p):
     return f"{p:.4f}".lstrip("0")
 
 
-# ------------------------------------------------------------- main results --
+def ci(lo, hi, d=2):
+    return f"$[{lo:+.{d}f},{hi:+.{d}f}]$"
 
-def extrinsic_main():
-    ex = pd.read_csv(os.path.join(C.OUT_DIR, "extrinsic_main.csv"))
+
+def load():
+    return (
+        pd.read_csv(os.path.join(C.OUT_DIR, "intrinsic_pooled.csv")),
+        pd.read_csv(os.path.join(C.OUT_DIR, "extrinsic_main.csv")),
+        json.load(open(os.path.join(C.OUT_DIR, "intrinsic_numbers.json"))),
+        json.load(open(os.path.join(C.OUT_DIR, "extrinsic_numbers.json"))),
+        json.load(open(os.path.join(C.OUT_DIR, "robustness_numbers.json"))),
+    )
+
+
+# =========================================================== main-body tables ==
+
+def intrinsic_main(it):
+    """Promoted from the appendix: every checkpoint, both main script conditions.
+
+    Laid out as two side-by-side blocks so 31 rows fit the main body. Mixed-script
+    columns and bits per character survive in tab_intrinsic_full.
+    """
+    it = it.sort_values("u_bpb").reset_index(drop=True)
+    half = (len(it) + 1) // 2
+
+    def cells(i):
+        if i >= len(it):
+            return "& & & & & & "
+        r = it.loc[i]
+        tag = r"$\ddagger$" if r.model in INSTRUCT else ""
+        return (f"{nb(r.model)}{tag} & {r.params:.1f} "
+                f"& {r.u_ppl:.2f} & {r.u_bpb:.3f} & {r.u_bpw:.1f} "
+                f"& {r.r_bpb:.3f} & {r.r_bpw:.1f}")
+
+    rows = [f"{cells(i)} && {cells(i + half)} \\\\" for i in range(half)]
+    w("tab_intrinsic_main.tex", "\n".join(rows))
+
+
+def extrinsic_main(ex):
+    """Downstream results. Unparseable rates and token ratios move to the appendix."""
     sold = pd.read_csv(os.path.join(C.OUT_DIR, "sold_detail.csv")).set_index("model")
     order = sorted(C.EXTRINSIC_MODELS, key=lambda m: C.EXTRINSIC_MODELS[m][2])
     mm = ex[ex.dataset == "sinhala_mmlu"].set_index("model")
     pq = ex[ex.dataset == "global_piqa"].set_index("model")
+
     rows = []
     for m in order:
-        a, s, q = mm.loc[m], sold.loc[m], pq.loc[m]
+        a, s = mm.loc[m], sold.loc[m]
         comp = r"$\dagger$" if a.competent and not a.degenerate_u else ""
-        name = m.replace("-", "\\nobreakdash-")
         rows.append(
-            f"{name}{comp} & {C.EXTRINSIC_MODELS[m][2]:.1f} "
+            f"{nb(m)}{comp} & {C.EXTRINSIC_MODELS[m][2]:.1f} "
             f"& {a.u_acc:.1f} & {a.r_acc:.1f} & {a.gap:+.1f} "
-            f"& [{a.gap_lo:.1f},{a.gap_hi:.1f}] & {fp(a.p_holm)} "
+            f"& [{a.gap_lo:.1f}, {a.gap_hi:.1f}] & {fp(a.p_holm)} "
             f"& {s.u_macroF1:.1f} & {s.r_macroF1:.1f} "
-            f"& {s.u_mcc:.3f} & {s.r_mcc:.3f} & {fp(s.dMCC_p_holm)} "
-            f"& {a.u_invalid:.1f} & {a.r_invalid:.1f} & {a.tok_ratio:.2f} \\\\")
+            f"& {s.u_mcc:.3f} & {s.r_mcc:.3f} & {fp(s.dMCC_p_holm)} \\\\")
     w("tab_extrinsic_main.tex", "\n".join(rows))
 
-    # Global PIQA moves to the appendix: 100 items cannot support a main-text column.
-    prows = []
+    # appendix: unparseable output and how many tokens each condition costs
+    rows = []
     for m in order:
-        q, a = pq.loc[m], mm.loc[m]
-        prows.append(f"{m.replace('-', chr(92)+'nobreakdash-')} & {q.u_acc:.0f} & {q.r_acc:.0f} "
-                     f"& {q.gap:+.0f} & {q.b:.0f}/{q.c:.0f} & {fp(q.p_holm)} "
-                     f"& {q.u_invalid:.0f} & {q.r_invalid:.0f} \\\\")
-    w("tab_piqa.tex", "\n".join(prows))
+        a, q = mm.loc[m], pq.loc[m]
+        rows.append(f"{nb(m)} & {a.u_invalid:.2f} & {a.r_invalid:.2f} "
+                    f"& {q.u_invalid:.0f} & {q.r_invalid:.0f} "
+                    f"& {a.tok_ratio:.2f} \\\\")
+    w("tab_invalid_tau.tex", "\n".join(rows))
+
+    # appendix: Global PIQA, which 100 items cannot support in the main body
+    rows = []
+    for m in order:
+        q = pq.loc[m]
+        rows.append(f"{nb(m)} & {q.u_acc:.0f} & {q.r_acc:.0f} & {q.gap:+.0f} "
+                    f"& {q.b:.0f}/{q.c:.0f} & {fp(q.p_holm)} \\\\")
+    w("tab_piqa.tex", "\n".join(rows))
 
 
 def strata():
@@ -112,10 +181,55 @@ def strata():
     lines.append(r"\addlinespace[2pt]")
     lines.append(r"\multicolumn{6}{@{}l}{\emph{by domain}} \\")
     for r in dom.itertuples():
-        nm = r.domain.replace("_", " ")
-        lines.append(f"\\quad {nm} & {r.n_items:,} & {r.u_acc:.1f} & {r.r_acc:.1f} "
-                     f"& {r.gap:.1f} & {fp(r.p_holm)} \\\\")
+        lines.append(f"\\quad {r.domain.replace('_', ' ')} & {r.n_items:,} & {r.u_acc:.1f} "
+                     f"& {r.r_acc:.1f} & {r.gap:.1f} & {fp(r.p_holm)} \\\\")
     w("tab_strata.tex", "\n".join(lines))
+
+
+def linkage(rb):
+    """Spearman correlations with bootstrap intervals.
+
+    The intervals are wide because there are ten checkpoints. Showing them is the
+    point: it is what keeps this an association rather than a predictor.
+    """
+    L = rb["linkage_ci"]
+    names = [("u_bpb", r"Sinhala \bpb{}"),
+             ("r_bpb", r"Romanized \bpb{}"),
+             ("u_bpw", r"Sinhala \bpw{}"),
+             ("d_bpb", r"\bpb{} gap"),
+             ("ppl_ratio", "PPL ratio"),
+             ("params", "parameters")]
+    rows = []
+    for k, lab in names:
+        a, b = L[f"{k}~mmlu_gap"], L[f"{k}~sold_d_mcc"]
+        rows.append(f"{lab} & ${a['rho']:+.2f}$ & {ci(a['ci_lo'], a['ci_hi'])} "
+                    f"& ${b['rho']:+.2f}$ & {ci(b['ci_lo'], b['ci_hi'])} \\\\")
+    w("tab_linkage.tex", "\n".join(rows))
+
+
+# ============================================================ appendix tables ==
+
+def intrinsic_full(it):
+    it = it.sort_values("u_bpb")
+    rows = []
+    for r in it.itertuples():
+        tag = r"$\ddagger$" if r.model in INSTRUCT else ""
+        rows.append(
+            f"{nb(r.model)}{tag} & {r.params:.1f} "
+            f"& {r.u_ppl:.2f} & {r.u_bpb:.3f} & {r.u_bpc:.3f} & {r.u_bpw:.2f} "
+            f"& {r.r_ppl:.1f} & {r.r_bpb:.3f} & {r.r_bpc:.3f} & {r.r_bpw:.2f} "
+            f"& {r.m_ppl:.2f} & {r.m_bpb:.3f} & {r.m_bpw:.2f} \\\\")
+    w("tab_intrinsic_full.tex", "\n".join(rows))
+
+
+def model_ids(it):
+    rows = []
+    for r in it.sort_values("params").itertuples():
+        tag = r"$\ddagger$" if r.model in INSTRUCT else ""
+        share = r"$\bullet$" if r.model in SHARED24 else ""
+        rows.append(f"{r.model}{tag}{share} & {r.params:.2f} & \\texttt{{{HF_ID[r.model]}}} "
+                    f"& {r.u_tok_per_word:.1f} & {r.r_tok_per_word:.1f} \\\\")
+    w("tab_model_ids.tex", "\n".join(rows))
 
 
 def methods():
@@ -143,82 +257,202 @@ def methods():
     w("tab_methods.tex", "\n".join(rows))
 
 
-def intrinsic_full():
-    it = pd.read_csv(os.path.join(C.OUT_DIR, "intrinsic_pooled.csv")).sort_values("u_bpb")
-    rows = []
-    for r in it.itertuples():
-        tag = r"$\ddagger$" if r.model in INSTRUCT else ""
-        rows.append(
-            f"{r.model.replace('-', chr(92)+'nobreakdash-')}{tag} & {r.params:.1f} "
-            f"& {r.u_ppl:.2f} & {r.u_bpb:.3f} & {r.u_bpw:.2f} "
-            f"& {r.r_ppl:.1f} & {r.r_bpb:.3f} & {r.r_bpw:.2f} "
-            f"& {r.m_ppl:.2f} & {r.m_bpb:.3f} & {r.m_bpw:.2f} \\\\")
-    w("tab_intrinsic_full.tex", "\n".join(rows))
-
-
-def model_ids():
-    it = pd.read_csv(os.path.join(C.OUT_DIR, "intrinsic_pooled.csv")).sort_values("params")
-    rows = []
-    for r in it.itertuples():
-        tag = r"$\ddagger$" if r.model in INSTRUCT else ""
-        rows.append(f"{r.model}{tag} & {r.params:.2f} & \\texttt{{{HF_ID[r.model]}}} "
-                    f"& {r.u_tok_per_word:.1f} & {r.r_tok_per_word:.1f} \\\\")
-    w("tab_model_ids.tex", "\n".join(rows))
-
-
-def ngram():
-    ni = json.load(open(os.path.join(C.OUT_DIR, "intrinsic_numbers.json")))
-    it = pd.read_csv(os.path.join(C.OUT_DIR, "intrinsic_pooled.csv"))
+def ngram(it, ni):
     rows = []
     for order in range(6):
         u = ni["ngram_reference"]["unicode"][f"order{order}"]["bpb"]
         r = ni["ngram_reference"]["romanized"][f"order{order}"]["bpb"]
-        nu = int((it.u_bpb < u).sum())
-        nr = int((it.r_bpb < r).sum())
-        rows.append(f"character {order+1}-gram & {u:.3f} & {nu} & {r:.3f} & {nr} \\\\")
+        rows.append(f"character {order+1}-gram & {u:.3f} & {int((it.u_bpb < u).sum())} "
+                    f"& {r:.3f} & {int((it.r_bpb < r).sum())} \\\\")
     rows.append(r"\addlinespace[2pt]")
     rows.append(f"best checkpoint & {it.u_bpb.min():.3f} & -- & {it.r_bpb.min():.3f} & -- \\\\")
-    rows.append(f"median checkpoint & {it.u_bpb.median():.3f} & -- & {it.r_bpb.median():.3f} & -- \\\\")
+    rows.append(f"median checkpoint & {it.u_bpb.median():.3f} & -- "
+                f"& {it.r_bpb.median():.3f} & -- \\\\")
     w("tab_ngram.tex", "\n".join(rows))
 
 
-def linkage():
-    lk = pd.read_csv(os.path.join(C.OUT_DIR, "linkage.csv"))
-    ne = json.load(open(os.path.join(C.OUT_DIR, "extrinsic_numbers.json")))
-    L = ne["linkage"]
-    names = [("u_bpb", "Unicode BPB (level)"), ("r_bpb", "Romanized BPB (level)"),
-             ("d_bpb", "BPB gap (Rom. $-$ Uni.)"), ("u_bpw", "Unicode BPW (level)"),
-             ("ppl_ratio", "perplexity ratio"), ("params", "parameter count")]
+def pilot(rb):
+    """All three templates under both script conditions, as run in the pilot."""
+    p = rb["pilot"]
+    by = pd.DataFrame(p["byscript_table"])
+    pooled = pd.DataFrame(p["pooled_table"]).set_index(["dataset", "template"])
+    dsname = {"sinhala_mmlu": "SinhalaMMLU", "sold": "SOLD", "global_piqa": "Global PIQA"}
+    tname = {"T1_direct": r"\textbf{T1} direct (used)", "T2_fewshot": "T2 two-shot",
+             "T3_answer_first": "T3 answer first"}
     rows = []
-    for k, lab in names:
-        a = L[f"{k}~mmlu_gap"]
-        b = L[f"{k}~sold_d_mcc"]
-        rows.append(f"{lab} & ${a['rho']:+.2f}$ & {fp(a['p'])} & ${b['rho']:+.2f}$ & {fp(b['p'])} \\\\")
-    w("tab_linkage.tex", "\n".join(rows))
+    for ds in ("sinhala_mmlu", "sold", "global_piqa"):
+        rows.append(rf"\multicolumn{{6}}{{@{{}}l}}{{\emph{{{dsname[ds]}}}}} \\")
+        for t in ("T1_direct", "T2_fewshot", "T3_answer_first"):
+            g = by[(by.dataset == ds) & (by.template == t)].set_index("script")
+            po = pooled.loc[(ds, t)]
+            rows.append(f"\\quad {tname[t]} "
+                        f"& {100*g.loc['unicode'].overall_accuracy:.1f} "
+                        f"& {100*g.loc['romanized'].overall_accuracy:.1f} "
+                        f"& {100*po.overall_accuracy:.1f} "
+                        f"& {100*g.loc['unicode'].invalid_rate:.1f} "
+                        f"& {100*g.loc['romanized'].invalid_rate:.1f} \\\\")
+        rows.append(r"\addlinespace[2pt]")
+    w("tab_pilot.tex", "\n".join(rows[:-1]))
 
 
-def intrinsic_joined():
-    """Full intrinsic metrics plus the Hugging Face identifier, for the short paper,
-    which has no room for two separate appendix tables."""
-    it = pd.read_csv(os.path.join(C.OUT_DIR, "intrinsic_pooled.csv")).sort_values("u_bpb")
+def shared24(rb, ni):
+    """Our recomputation against the published values, on the published pool."""
+    s = rb["shared24"]
+    d = s["published_ppl_deviation_pct"]
+    rows = [
+        f"median PPL ratio, Sinh.\\ to Rom. & 312.3 & "
+        f"{s['ppl_ratio']['median']:.1f} \\\\",
+        f"\\quad its range & 149.1 to 769.7 & "
+        f"{s['ppl_ratio']['min']:.1f} to {s['ppl_ratio']['max']:.1f} \\\\",
+        f"median PPL ratio, Sinh.\\ to mixed & 2.0 & "
+        f"{s['m_ppl_ratio_median']:.1f} \\\\",
+        f"$\\rho$(params, Sinh.\\ PPL) & $+0.09$ & "
+        f"${s['params_vs_unicode_ppl']['rho']:+.2f}$ \\\\",
+        f"$\\rho$(params, Rom.\\ PPL) & $-0.09$ & "
+        f"${s['params_vs_romanized_ppl']['rho']:+.2f}$ \\\\",
+        f"$\\rho$(Sinh.\\ PPL, Rom.\\ PPL) & $+0.52$ & "
+        f"${s['unicode_vs_romanized_ppl']['rho']:+.2f}$ \\\\",
+        f"$\\rho$(Sinh.\\ PPL, mixed PPL) & $+0.96$ & "
+        f"${s['unicode_vs_mixed_ppl']['rho']:+.2f}$ \\\\",
+        f"CV, Sinh.\\ PPL & 66.4\\% & "
+        f"{s['cv_pct']['unicode_ppl']:.1f}\\% \\\\",
+        f"CV, Rom.\\ PPL & 62.3\\% & "
+        f"{s['cv_pct']['romanized_ppl']:.1f}\\% \\\\",
+        r"\addlinespace[2pt]",
+        f"median $|$dev.$|$, Sinh.\\ PPL & --- & "
+        f"{d['unicode_median']:.3f}\\% \\\\",
+        f"median $|$dev.$|$, Rom.\\ PPL & --- & "
+        f"{d['romanized_median']:.3f}\\% \\\\",
+    ]
+    w("tab_shared24.tex", "\n".join(rows))
+
+
+def decomp(it, rb):
+    """Per-checkpoint split of the log perplexity ratio into its two parts."""
+    d = pd.read_csv(os.path.join(C.OUT_DIR, "ppl_decomposition.csv"))
+    d = d.merge(it[["model", "u_ppl", "r_ppl"]], on="model")
+    d["ratio"] = d.r_ppl / d.u_ppl
+    d = d.sort_values("ratio")
     rows = []
-    for r in it.itertuples():
-        tag = r"$\ddagger$" if r.model in INSTRUCT else ""
-        rows.append(
-            f"{r.model.replace('-', chr(92)+'nobreakdash-')}{tag} & {r.params:.1f} "
-            f"& {r.u_ppl:.2f} & {r.u_bpb:.3f} & {r.u_bpw:.2f} "
-            f"& {r.r_ppl:.1f} & {r.r_bpb:.3f} & {r.r_bpw:.2f} "
-            f"& {r.m_ppl:.2f} & {r.m_bpb:.3f} & {r.m_bpw:.2f} "
-            f"& \\texttt{{{HF_ID[r.model]}}} \\\\")
-    w("tab_intrinsic_joined.tex", "\n".join(rows))
+    for r in d.itertuples():
+        share = r"$\bullet$" if r.model in SHARED24 else ""
+        rows.append(f"{nb(r.model)}{share} & {r.ratio:.0f} & {r.total:.2f} "
+                    f"& {r.tok_term:.2f} & {2**r.tok_term:.1f} "
+                    f"& {r.loss_term:.2f} & {2**r.loss_term:.1f} "
+                    f"& {100*r.tok_share:.0f} \\\\")
+    w("tab_decomp.tex", "\n".join(rows))
+
+
+def flatten(rb):
+    """Every robustness refit of the two flattening regressions."""
+    fm, fc = rb["flattening_models"], rb["flattening_cells"]
+    pn = fm["permutation_null"]
+
+    def blk(tag, o, n_label):
+        b, l = o["slope_boot_ci"], o["loco"]
+        return [
+            f"\\quad slope & {o['slope']:.3f} \\\\",
+            f"\\quad 95\\% boot.\\ CI & {ci(b['lo'], b['hi'], 3)} \\\\",
+            f"\\quad leave-one-out & {l['slope_min']:.3f} to {l['slope_max']:.3f} \\\\",
+            f"\\quad $R^2$ & {o['r2']:.3f} \\\\",
+            f"\\quad $p$, slope $=0$ & {fp(o['p'])} \\\\",
+            f"\\quad $p$, slope $=1$ & {fp(o['p_slope_eq_1'])} \\\\",
+        ]
+
+    rows = [r"\multicolumn{2}{@{}l}{\emph{across checkpoints, $n = 10$}} \\",
+            r"\quad \textbf{levels: Romanized on native accuracy} & \\"]
+    rows += blk("lv", fm["levels"], "10")
+    rows.append(r"\quad \emph{headroom form: loss on headroom} & \\")
+    rows += blk("hd", fm["headroom"], "10")
+    rows += [
+        r"\addlinespace[2pt]",
+        r"\multicolumn{2}{@{}l}{\emph{permutation null, Romanized scores shuffled}} \\",
+        f"\\quad levels slope, mean & {pn['levels_slope_mean']:+.3f} \\\\",
+        f"\\quad levels $R^2$, mean & {pn['levels_r2_mean']:.3f} \\\\",
+        f"\\quad levels $\\Pr(R^2 \\geq$ observed$)$ & {pn['levels_p_r2_ge_obs']:.3f} \\\\",
+        f"\\quad headroom slope, mean & {pn['headroom_slope_mean']:+.3f} \\\\",
+        f"\\quad headroom $R^2$, mean & {pn['headroom_r2_mean']:.3f} \\\\",
+        f"\\quad headroom $\\Pr(R^2 \\geq$ observed$)$ & {pn['headroom_p_r2_ge_obs']:.3f} \\\\",
+        r"\addlinespace[2pt]",
+        r"\multicolumn{2}{@{}l}{\emph{across benchmark cells, $n = 16$}} \\",
+        r"\quad \textbf{levels: Romanized on native accuracy} & \\",
+    ]
+    rows += blk("cl", fc["levels"], "16")
+    rows.append(f"\\quad item-weighted slope & {fc['levels_weighted_slope']:.3f} \\\\")
+    w("tab_flatten.tex", "\n".join(rows))
+
+
+def svh():
+    """Our transliteration scored against human typing on identical content."""
+    p = os.path.join(C.OUT_DIR, "synthetic_vs_human.json")
+    if not os.path.exists(p):
+        print("skip tab_svh: no synthetic_vs_human.json")
+        return
+    s = json.load(open(p))
+    it = pd.read_csv(os.path.join(C.OUT_DIR, "intrinsic_pooled.csv")).set_index("model")
+    rows = []
+    order = sorted(s, key=lambda n: it.params.get(n, 0))
+    for n in order:
+        v = s[n]
+        tag = r"$\ddagger$" if n in INSTRUCT else ""
+        rows.append(f"{nb(n)}{tag} & {it.params.get(n, float('nan')):.2f} "
+                    f"& {v['unicode']['bpb']:.3f} & {v['human']['bpb']:.3f} "
+                    f"& {v['ours']['bpb']:.3f} & {v['ours_minus_human']['bpb']:+.3f} "
+                    f"& {v['ours_over_human_ppl']:.2f} \\\\")
+    d = [v["ours_minus_human"]["bpb"] for v in s.values()]
+    r = [v["ours_over_human_ppl"] for v in s.values()]
+    print("  svh max reproduction deviation (bpb %%): %.3f"
+          % max(x["bpb"] for v in s.values() for x in v["reproduction_pct_dev"].values()))
+    rows.append(r"\addlinespace[2pt]")
+    rows.append(f"median & --- & --- & --- & --- & {np.median(d):+.3f} "
+                f"& {np.median(r):.2f} \\\\")
+    w("tab_svh.tex", "\n".join(rows))
+
+
+def attest():
+    p = os.path.join(C.OUT_DIR, "attestation_numbers.json")
+    if not os.path.exists(p):
+        print("skip tab_attest: no attestation_numbers.json")
+        return
+    a = json.load(open(p))
+    at, dn = a["attestation"], a["downstream"]
+    lab = [("parallel_human", "parallel, typed by people"),
+           ("parallel_ours", "parallel, ours"),
+           ("sold", "SOLD, ours"),
+           ("global_piqa", "Global PIQA, ours")]
+    rows = []
+    for k, l in lab:
+        v = at[k]
+        rows.append(f"{l} & {v['n_covered']:,} & {v['coverage_pct']:.1f} "
+                    f"& {v['attested_pct']:.1f} & {v['attested_vowel_collapsed_pct']:.1f} \\\\")
+    w("tab_attest.tex", "\n".join(rows))
+
+    rows = []
+    for t, l in (("low", "low"), ("mid", "middle"), ("high", "high")):
+        v = dn[t]
+        rows.append(f"{l} & {v['n_items']:,} & {v['mean_attestation_pct']:.1f} "
+                    f"& {v['u_acc']:.1f} & {v['r_acc']:.1f} & {v['gap']:.1f} "
+                    f"& [{v['gap_lo']:.1f}, {v['gap_hi']:.1f}] \\\\")
+    w("tab_attest_tercile.tex", "\n".join(rows))
+
+    mp = a["aligned"]["mismatch_profile"]["top_residual_mismatches"][:12]
+    rows = [f"\\rom{{{m['ours']}}} & \\rom{{{m['human']}}} & {m['n']} \\\\" for m in mp]
+    w("tab_mismatch.tex", "\n".join(rows))
 
 
 if __name__ == "__main__":
-    extrinsic_main()
+    it, ex, ni, ne, rb = load()
+    intrinsic_main(it)
+    extrinsic_main(ex)
     strata()
+    linkage(rb)
+    intrinsic_full(it)
+    model_ids(it)
     methods()
-    intrinsic_full()
-    model_ids()
-    ngram()
-    linkage()
-    intrinsic_joined()
+    ngram(it, ni)
+    pilot(rb)
+    shared24(rb, ni)
+    decomp(it, rb)
+    flatten(rb)
+    svh()
+    attest()
