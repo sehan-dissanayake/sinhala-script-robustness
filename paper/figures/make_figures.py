@@ -32,6 +32,15 @@ os.makedirs(FIG, exist_ok=True)
 COL = 3.05
 WIDE = 6.30
 
+# Height of figure 1. Overridable so a paper with a different page geometry
+# can trade vertical space without shrinking the labels.
+H1 = 2.26
+
+# Vertical nudge, in points, for the left-hand spread label of figure 1 panel (a).
+# The midpoint of that range sits almost exactly on a y tick, so at some figure
+# heights the label and the tick label collide.
+SPREAD_DY_A = 5
+
 # Okabe--Ito, safe for the common colour vision deficiencies and in greyscale.
 UNI = "#0072B2"     # blue      : Sinhala script
 ROM = "#D55E00"     # vermillion: Romanized
@@ -130,12 +139,17 @@ def slope_panel(ax, left, right, labels, highlight, ylabel, chance=None,
     ax.tick_params(axis="x", length=0, pad=3)
 
 
-def spread_bracket(ax, xpos, lo, hi, color, text, side):
+def spread_bracket(ax, xpos, lo, hi, color, text, side, dy=0):
+    """Vertical range bracket with its size written beside it.
+
+    dy nudges the label vertically, in points, for the cases where the midpoint
+    of the range happens to land on a y tick label.
+    """
     ax.annotate("", xy=(xpos, lo), xytext=(xpos, hi), annotation_clip=False,
                 arrowprops=dict(arrowstyle="|-|,widthA=0.22,widthB=0.22",
                                 lw=0.8, color=color))
     dx = -3 if side == "left" else 3
-    ax.annotate(text, (xpos, (lo + hi) / 2), xytext=(dx, 0), annotation_clip=False,
+    ax.annotate(text, (xpos, (lo + hi) / 2), xytext=(dx, dy), annotation_clip=False,
                 textcoords="offset points", ha=("right" if side == "left" else "left"),
                 va="center", fontsize=6.2, color=color)
 
@@ -146,7 +160,7 @@ def fig1(it, ex, ni, ne, rb):
     (a) intrinsic cost per word, (b) downstream accuracy, (c) how much of a
     checkpoint's Sinhala-script accuracy survives the change of script.
     """
-    fig, axes = plt.subplots(1, 3, figsize=(WIDE, 2.26),
+    fig, axes = plt.subplots(1, 3, figsize=(WIDE, H1),
                              gridspec_kw=dict(wspace=0.40, width_ratios=[1, 1, 1.5]))
 
     # (a) intrinsic, bits per word: word counts are identical within a pair
@@ -157,7 +171,8 @@ def fig1(it, ex, ni, ne, rb):
                 "bits per word (lower is better)", annotate=False)
     a.set_title("(a) LM cost, 31 checkpoints", loc="left", pad=6)
     spread_bracket(a, -0.17, it.u_bpw.min(), it.u_bpw.max(), UNI,
-                   f"spread\n{it.u_bpw.max()-it.u_bpw.min():.1f}", "left")
+                   f"spread\n{it.u_bpw.max()-it.u_bpw.min():.1f}", "left",
+                   dy=SPREAD_DY_A)
     spread_bracket(a, 1.17, it.r_bpw.min(), it.r_bpw.max(), ROM,
                    f"spread\n{it.r_bpw.max()-it.r_bpw.min():.1f}", "right")
     a.set_xlim(-0.50, 1.46)
@@ -212,8 +227,8 @@ def fig1(it, ex, ni, ne, rb):
              edgecolor="none", borderpad=0.25)
     c.annotate("full transfer", (30.4, 31.6), fontsize=5.7, color="0.42",
                rotation=52, ha="center", va="center")
-    c.annotate(f"chance", (46.0, chance - 0.35), fontsize=5.7, color=REF,
-               ha="right", va="top")
+    c.annotate("chance", (lo + 0.35, chance - 0.30), fontsize=5.7, color=REF,
+               ha="left", va="top")
     save(fig, "fig1_flattening")
 
 
