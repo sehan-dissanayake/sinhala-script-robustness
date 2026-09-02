@@ -1,0 +1,524 @@
+% ---------------------------------------------------------------------------
+% Bibliography.
+%
+% Every entry below was checked against a primary record: the ACL Anthology
+% BibTeX export for Anthology papers, the arXiv API for preprints, and the
+% Crossref REST API for everything with a publisher DOI. Author lists, years,
+% venues, page ranges and DOIs were compared field by field.
+%
+% Verification notes worth keeping:
+%   * pramodya-etal-2025-sinhalammlu: Crossref reports pages 32931-32949, the
+%     ACL Anthology reports 32943-32961. The Anthology is authoritative for
+%     Anthology papers, so its range is used.
+%   * ranasinghe-etal-2025-sold: online first 2024-03-06, in print in volume 59
+%     (2025). Cited by volume year, per the publisher's own citation line.
+%   * chamikara-sumanathilaka-2026: previously unverified. Now confirmed
+%     against the Crossref record for 10.1109/ICARC68737.2026.11454126
+%     (ICARC 2026, Belihuloya, Sri Lanka, 18-19 February 2026, pages 1-6).
+%   * rajapakse-weerasinghe-2026-script: the arXiv journal_ref field confirms
+%     the "9th" in the venue name and the SCSE DOI.
+% ---------------------------------------------------------------------------
+
+% ============================ Sinhala and script duality ===================
+
+@inproceedings{rajapakse-weerasinghe-2026-script,
+  author    = {Rajapakse, Minuri and Weerasinghe, Ruvan},
+  title     = {Script Sensitivity: Benchmarking Language Models on {Unicode}, Romanized and Mixed-Script {Sinhala}},
+  booktitle = {2026 9th IEEE International Research Conference on Smart Computing and Systems Engineering (SCSE)},
+  year      = {2026},
+  pages     = {1--6},
+  publisher = {IEEE},
+  doi       = {10.1109/SCSE70081.2026.11499772},
+  note      = {arXiv:2601.14958},
+  url       = {https://arxiv.org/abs/2601.14958}
+}
+
+@misc{desilva-2019-survey,
+  author        = {de Silva, Nisansa},
+  title         = {Survey on Publicly Available {Sinhala} Natural Language Processing Tools and Research},
+  year          = {2019},
+  eprint        = {1906.02358},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  doi           = {10.48550/arXiv.1906.02358},
+  url           = {https://arxiv.org/abs/1906.02358}
+}
+
+@inproceedings{ranathunga-de-silva-2022-languages,
+  author    = {Ranathunga, Surangika and de Silva, Nisansa},
+  title     = {Some Languages are More Equal than Others: Probing Deeper into the Linguistic Disparity in the {NLP} World},
+  booktitle = {Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)},
+  month     = nov,
+  year      = {2022},
+  address   = {Online only},
+  publisher = {Association for Computational Linguistics},
+  pages     = {823--848},
+  doi       = {10.18653/v1/2022.aacl-main.62},
+  url       = {https://aclanthology.org/2022.aacl-main.62/}
+}
+
+@inproceedings{dhananjaya-etal-2022-bertifying,
+  author    = {Dhananjaya, Vinura and Demotte, Piyumal and Ranathunga, Surangika and Jayasena, Sanath},
+  title     = {{BERT}ifying {S}inhala -- A Comprehensive Analysis of Pre-trained Language Models for {S}inhala Text Classification},
+  booktitle = {Proceedings of the Thirteenth Language Resources and Evaluation Conference},
+  month     = jun,
+  year      = {2022},
+  address   = {Marseille, France},
+  publisher = {European Language Resources Association},
+  pages     = {7377--7385},
+  url       = {https://aclanthology.org/2022.lrec-1.803/}
+}
+
+@inproceedings{chamikara-sumanathilaka-2026,
+  author    = {Chamikara, Sakun and Sumanathilaka, Deshan},
+  title     = {Hate Speech Detection in Romanized {Sinhala} Text Using Multilingual Transformer Models},
+  booktitle = {2026 6th International Conference on Advanced Research in Computing (ICARC)},
+  month     = feb,
+  year      = {2026},
+  address   = {Belihuloya, Sri Lanka},
+  pages     = {1--6},
+  publisher = {IEEE},
+  doi       = {10.1109/ICARC68737.2026.11454126},
+  url       = {https://ieeexplore.ieee.org/document/11454126}
+}
+
+@misc{hewapathirana-sumanathilaka-2024-emoscan,
+  author        = {Hewapathirana, Jayathi and Sumanathilaka, Deshan},
+  title         = {{E}mo{S}can: Automatic Screening of Depression Symptoms in Romanized {S}inhala Tweets},
+  year          = {2024},
+  eprint        = {2403.19728},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  doi           = {10.48550/arXiv.2403.19728},
+  url           = {https://arxiv.org/abs/2403.19728}
+}
+
+% ============================ Evaluation datasets ==========================
+
+@inproceedings{pramodya-etal-2025-sinhalammlu,
+  author    = {Pramodya, Ashmari and Nelki, Nirasha and Shalinda, Heshan and
+               Liyanage, Chamila and Sakai, Yusuke and Pushpananda, Randil and
+               Weerasinghe, Ruvan and Kamigaito, Hidetaka and Watanabe, Taro},
+  title     = {{S}inhala{MMLU}: A Comprehensive Benchmark for Evaluating Multitask Language Understanding in {S}inhala},
+  booktitle = {Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
+  month     = nov,
+  year      = {2025},
+  address   = {Suzhou, China},
+  publisher = {Association for Computational Linguistics},
+  pages     = {32943--32961},
+  doi       = {10.18653/v1/2025.emnlp-main.1673},
+  url       = {https://aclanthology.org/2025.emnlp-main.1673/}
+}
+
+@article{ranasinghe-etal-2025-sold,
+  author  = {Ranasinghe, Tharindu and Anuradha, Isuri and Premasiri, Damith and
+             Silva, Kanishka and Hettiarachchi, Hansi and Uyangodage, Lasitha and
+             Zampieri, Marcos},
+  title   = {{SOLD}: {S}inhala offensive language dataset},
+  journal = {Language Resources and Evaluation},
+  volume  = {59},
+  number  = {1},
+  pages   = {297--337},
+  year    = {2025},
+  doi     = {10.1007/s10579-024-09723-1}
+}
+
+@misc{chang-etal-2025-globalpiqa,
+  author        = {Chang, Tyler A. and Arnett, Catherine and Sadallah, Abdelrahman and
+                   Eldesokey, Abdelrahman and Kashar, Abeer and Daud, Abolade and others},
+  title         = {Global {PIQA}: Evaluating Commonsense Reasoning Across 100+ Languages and Cultures},
+  year          = {2025},
+  eprint        = {2510.24081},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  doi           = {10.48550/arXiv.2510.24081},
+  url           = {https://arxiv.org/abs/2510.24081}
+}
+
+@misc{desilva-ranathunga-2026-sinhalapiqa,
+  author        = {de Silva, Nisansa and Ranathunga, Surangika},
+  title         = {{S}inhala Physical Common Sense Reasoning Dataset for Global {PIQA}},
+  year          = {2026},
+  eprint        = {2602.02207},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  doi           = {10.48550/arXiv.2602.02207},
+  url           = {https://arxiv.org/abs/2602.02207}
+}
+
+@inproceedings{bisk-etal-2020-piqa,
+  author    = {Bisk, Yonatan and Zellers, Rowan and Le Bras, Ronan and Gao, Jianfeng and Choi, Yejin},
+  title     = {{PIQA}: Reasoning about Physical Commonsense in Natural Language},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume    = {34},
+  pages     = {7432--7439},
+  year      = {2020},
+  doi       = {10.1609/aaai.v34i05.6239}
+}
+
+@inproceedings{hendrycks-etal-2021-mmlu,
+  author    = {Hendrycks, Dan and Burns, Collin and Basart, Steven and Zou, Andy and
+               Mazeika, Mantas and Song, Dawn and Steinhardt, Jacob},
+  title     = {Measuring Massive Multitask Language Understanding},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2021},
+  url       = {https://openreview.net/forum?id=d7KBjmI3GmQ}
+}
+
+@inproceedings{joshi-etal-2020-state,
+  author    = {Joshi, Pratik and Santy, Sebastin and Budhiraja, Amar and Bali, Kalika and Choudhury, Monojit},
+  title     = {The State and Fate of Linguistic Diversity and Inclusion in the {NLP} World},
+  booktitle = {Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
+  month     = jul,
+  year      = {2020},
+  address   = {Online},
+  publisher = {Association for Computational Linguistics},
+  pages     = {6282--6293},
+  doi       = {10.18653/v1/2020.acl-main.560},
+  url       = {https://aclanthology.org/2020.acl-main.560/}
+}
+
+% ============================ Romanization and transliteration =============
+
+@inproceedings{de-mel-etal-2025-sinhala,
+  author    = {De Mel, Yomal and Wickramasinghe, Kasun and de Silva, Nisansa and Ranathunga, Surangika},
+  title     = {{S}inhala Transliteration: A Comparative Analysis Between Rule-based and {S}eq2{S}eq Approaches},
+  booktitle = {Proceedings of the First Workshop on Natural Language Processing for Indo-Aryan and Dravidian Languages},
+  month     = jan,
+  year      = {2025},
+  address   = {Abu Dhabi},
+  publisher = {Association for Computational Linguistics},
+  pages     = {166--173},
+  url       = {https://aclanthology.org/2025.indonlp-1.19/}
+}
+
+@misc{sumanathilaka-etal-2025-swabhasha,
+  author        = {Sumanathilaka, Deshan and Perera, Sameera and Dharmasiri, Sachithya and
+                   Athukorala, Maneesha and Herath, Anuja Dilrukshi and Dias, Rukshan and
+                   Gamage, Pasindu and Weerasinghe, Ruvan and Priyadarshana, Y. H. P. P.},
+  title         = {{Swa-bhasha} Resource Hub: Romanized {S}inhala to {S}inhala Transliteration Systems and Data Resources},
+  year          = {2025},
+  eprint        = {2507.09245},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  doi           = {10.48550/arXiv.2507.09245},
+  url           = {https://arxiv.org/abs/2507.09245}
+}
+
+@inproceedings{hermjakob-etal-2018-uroman,
+  author    = {Hermjakob, Ulf and May, Jonathan and Knight, Kevin},
+  title     = {Out-of-the-box Universal {R}omanization Tool uroman},
+  booktitle = {Proceedings of {ACL} 2018, System Demonstrations},
+  month     = jul,
+  year      = {2018},
+  address   = {Melbourne, Australia},
+  publisher = {Association for Computational Linguistics},
+  pages     = {13--18},
+  doi       = {10.18653/v1/P18-4003},
+  url       = {https://aclanthology.org/P18-4003/}
+}
+
+@misc{rajan-aksharamukha,
+  author       = {Rajan, Vinodh},
+  title        = {Aksharamukha: Script Converter for Indic and Southeast Asian Scripts},
+  howpublished = {Software, version 2.3, AGPL-3.0},
+  url          = {https://github.com/virtualvinodh/aksharamukha},
+  year         = {2024}
+}
+
+@inproceedings{roark-etal-2020-dakshina,
+  author    = {Roark, Brian and Wolf-Sonkin, Lawrence and Kirov, Christo and
+               Mielke, Sabrina J. and Johny, Cibu and Demirsahin, Isin and Hall, Keith},
+  title     = {Processing {S}outh {A}sian Languages Written in the {L}atin Script: the {D}akshina Dataset},
+  booktitle = {Proceedings of the Twelfth Language Resources and Evaluation Conference},
+  month     = may,
+  year      = {2020},
+  address   = {Marseille, France},
+  publisher = {European Language Resources Association},
+  pages     = {2413--2423},
+  url       = {https://aclanthology.org/2020.lrec-1.294/}
+}
+
+@inproceedings{j-etal-2024-romansetu,
+  author    = {J, Jaavid and Dabre, Raj and M, Aswanth and Gala, Jay and
+               Jayakumar, Thanmay and Puduppully, Ratish and Kunchukuttan, Anoop},
+  title     = {{R}oman{S}etu: Efficiently unlocking multilingual capabilities of Large Language Models via {R}omanization},
+  booktitle = {Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  month     = aug,
+  year      = {2024},
+  address   = {Bangkok, Thailand},
+  publisher = {Association for Computational Linguistics},
+  pages     = {15593--15615},
+  doi       = {10.18653/v1/2024.acl-long.833},
+  url       = {https://aclanthology.org/2024.acl-long.833/}
+}
+
+@inproceedings{benton-etal-2025-improving,
+  author    = {Benton, Adrian and Gutkin, Alexander and Kirov, Christo and Roark, Brian},
+  title     = {Improving Informally {R}omanized Language Identification},
+  booktitle = {Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
+  month     = nov,
+  year      = {2025},
+  address   = {Suzhou, China},
+  publisher = {Association for Computational Linguistics},
+  pages     = {2318--2336},
+  doi       = {10.18653/v1/2025.emnlp-main.117},
+  url       = {https://aclanthology.org/2025.emnlp-main.117/}
+}
+
+@misc{khullar-etal-2025-scriptgap,
+  author        = {Khullar, Manurag and Desai, Utkarsh and Malviya, Poorva and
+                   Dalmia, Aman and Shi, Zheyuan Ryan},
+  title         = {Script Gap: Evaluating {LLM} Triage on {I}ndian Languages in Native vs Romanized Scripts in a Real World Setting},
+  year          = {2025},
+  eprint        = {2512.10780},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  doi           = {10.48550/arXiv.2512.10780},
+  url           = {https://arxiv.org/abs/2512.10780}
+}
+
+@article{sengupta-etal-2024-hinglish,
+  author  = {Sengupta, Ayan and Das, Soham and Akhtar, Md. Shad and Chakraborty, Tanmoy},
+  title   = {Social, economic, and demographic factors drive the emergence of {H}inglish code-mixing on social media},
+  journal = {Humanities and Social Sciences Communications},
+  volume  = {11},
+  number  = {1},
+  pages   = {620},
+  year    = {2024},
+  doi     = {10.1057/s41599-024-03058-6}
+}
+
+% ============================ Metrics and tokenization =====================
+
+@misc{gao-etal-2020-pile,
+  author        = {Gao, Leo and Biderman, Stella and Black, Sid and Golding, Laurence and
+                   Hoppe, Travis and Foster, Charles and Phang, Jason and He, Horace and
+                   Thite, Anish and Nabeshima, Noa and Presser, Shawn and Leahy, Connor},
+  title         = {The {Pile}: An 800{GB} Dataset of Diverse Text for Language Modeling},
+  year          = {2020},
+  eprint        = {2101.00027},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  doi           = {10.48550/arXiv.2101.00027},
+  url           = {https://arxiv.org/abs/2101.00027}
+}
+
+@inproceedings{magnusson-etal-2024-paloma,
+  author    = {Magnusson, Ian and Bhagia, Akshita and Hofmann, Valentin and Soldaini, Luca and
+               Jha, Ananya Harsh and Tafjord, Oyvind and Schwenk, Dustin and Walsh, Evan Pete and
+               Elazar, Yanai and Lo, Kyle and Groeneveld, Dirk and Beltagy, Iz and
+               Hajishirzi, Hannaneh and Smith, Noah A. and Richardson, Kyle and Dodge, Jesse},
+  title     = {Paloma: A Benchmark for Evaluating Language Model Fit},
+  booktitle = {Advances in Neural Information Processing Systems 37 (NeurIPS 2024) Datasets and Benchmarks Track},
+  year      = {2024},
+  doi       = {10.48550/arXiv.2312.10523},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2024/hash/760b2d94398aa61468aa3bc11506d9ea-Abstract-Datasets_and_Benchmarks_Track.html}
+}
+
+@inproceedings{petrov-etal-2023-tokenizers,
+  author    = {Petrov, Aleksandar and La Malfa, Emanuele and Torr, Philip H. S. and Bibi, Adel},
+  title     = {Language Model Tokenizers Introduce Unfairness Between Languages},
+  booktitle = {Advances in Neural Information Processing Systems 36 (NeurIPS 2023)},
+  pages     = {36963--36990},
+  year      = {2023},
+  doi       = {10.48550/arXiv.2305.15425},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2023/hash/74bb24dca8334adce292883b4b651eda-Abstract-Conference.html}
+}
+
+@inproceedings{ahia-etal-2023-languages,
+  author    = {Ahia, Orevaoghene and Kumar, Sachin and Gonen, Hila and Kasai, Jungo and
+               Mortensen, David and Smith, Noah A. and Tsvetkov, Yulia},
+  title     = {Do All Languages Cost the Same? Tokenization in the Era of Commercial Language Models},
+  booktitle = {Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing},
+  month     = dec,
+  year      = {2023},
+  address   = {Singapore},
+  publisher = {Association for Computational Linguistics},
+  pages     = {9904--9923},
+  doi       = {10.18653/v1/2023.emnlp-main.614},
+  url       = {https://aclanthology.org/2023.emnlp-main.614/}
+}
+
+@incollection{nag-etal-2024-fragmented,
+  author    = {Nag, Arijit and Samanta, Bidisha and Mukherjee, Animesh and
+               Ganguly, Niloy and Chakrabarti, Soumen},
+  title     = {Effect of Unknown and Fragmented Tokens on the Performance of Multilingual Language Models at Low-Resource Tasks},
+  booktitle = {Event Analytics across Languages and Communities},
+  publisher = {Springer Nature Switzerland},
+  pages     = {95--107},
+  year      = {2024},
+  doi       = {10.1007/978-3-031-64451-1_5}
+}
+
+@inproceedings{popovic-2015-chrf,
+  author    = {Popovi{\'c}, Maja},
+  title     = {chr{F}: character n-gram {F}-score for automatic {MT} evaluation},
+  booktitle = {Proceedings of the Tenth Workshop on Statistical Machine Translation},
+  month     = sep,
+  year      = {2015},
+  address   = {Lisbon, Portugal},
+  publisher = {Association for Computational Linguistics},
+  pages     = {392--395},
+  doi       = {10.18653/v1/W15-3049},
+  url       = {https://aclanthology.org/W15-3049/}
+}
+
+% ============================ Statistics ===================================
+
+@article{mcnemar-1947,
+  author  = {McNemar, Quinn},
+  title   = {Note on the sampling error of the difference between correlated proportions or percentages},
+  journal = {Psychometrika},
+  volume  = {12},
+  number  = {2},
+  pages   = {153--157},
+  year    = {1947},
+  doi     = {10.1007/BF02295996}
+}
+
+@article{holm-1979,
+  author  = {Holm, Sture},
+  title   = {A Simple Sequentially Rejective Multiple Test Procedure},
+  journal = {Scandinavian Journal of Statistics},
+  volume  = {6},
+  number  = {2},
+  pages   = {65--70},
+  year    = {1979},
+  url     = {https://www.jstor.org/stable/4615733}
+}
+
+@inproceedings{dror-etal-2018-hitchhikers,
+  author    = {Dror, Rotem and Baumer, Gili and Shlomov, Segev and Reichart, Roi},
+  title     = {The Hitchhiker's Guide to Testing Statistical Significance in Natural Language Processing},
+  booktitle = {Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  month     = jul,
+  year      = {2018},
+  address   = {Melbourne, Australia},
+  publisher = {Association for Computational Linguistics},
+  pages     = {1383--1392},
+  doi       = {10.18653/v1/P18-1128},
+  url       = {https://aclanthology.org/P18-1128/}
+}
+
+@article{matthews-1975,
+  author  = {Matthews, B. W.},
+  title   = {Comparison of the predicted and observed secondary structure of {T4} phage lysozyme},
+  journal = {Biochimica et Biophysica Acta (BBA) -- Protein Structure},
+  volume  = {405},
+  number  = {2},
+  pages   = {442--451},
+  year    = {1975},
+  doi     = {10.1016/0005-2795(75)90109-9}
+}
+
+@article{chicco-jurman-2020,
+  author  = {Chicco, Davide and Jurman, Giuseppe},
+  title   = {The advantages of the {M}atthews correlation coefficient ({MCC}) over {F1} score and accuracy in binary classification evaluation},
+  journal = {BMC Genomics},
+  volume  = {21},
+  number  = {1},
+  pages   = {6},
+  year    = {2020},
+  doi     = {10.1186/s12864-019-6413-7}
+}
+
+% ============================ Models =======================================
+
+@misc{grattafiori-etal-2024-llama3,
+  author        = {Grattafiori, Aaron and Dubey, Abhimanyu and Jauhri, Abhinav and
+                   Pandey, Abhinav and Kadian, Abhishek and Al-Dahle, Ahmad and others},
+  title         = {The {L}lama 3 Herd of Models},
+  year          = {2024},
+  eprint        = {2407.21783},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  doi           = {10.48550/arXiv.2407.21783},
+  url           = {https://arxiv.org/abs/2407.21783}
+}
+
+@misc{yang-etal-2024-qwen2,
+  author        = {Yang, An and Yang, Baosong and Hui, Binyuan and Zheng, Bo and
+                   Yu, Bowen and Zhou, Chang and others},
+  title         = {{Q}wen2 Technical Report},
+  year          = {2024},
+  eprint        = {2407.10671},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  doi           = {10.48550/arXiv.2407.10671},
+  url           = {https://arxiv.org/abs/2407.10671}
+}
+
+@misc{yang-etal-2025-qwen3,
+  author        = {Yang, An and Li, Anfeng and Yang, Baosong and Zhang, Beichen and
+                   Hui, Binyuan and Zheng, Bo and Yu, Bowen and Gao, Chang and others},
+  title         = {{Q}wen3 Technical Report},
+  year          = {2025},
+  eprint        = {2505.09388},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  doi           = {10.48550/arXiv.2505.09388},
+  url           = {https://arxiv.org/abs/2505.09388}
+}
+
+@misc{gemmateam-2024-gemma2,
+  author        = {{Gemma Team} and Riviere, Morgane and Pathak, Shreya and
+                   Sessa, Pier Giuseppe and Hardin, Cassidy and Bhupatiraju, Surya and others},
+  title         = {{G}emma 2: Improving Open Language Models at a Practical Size},
+  year          = {2024},
+  eprint        = {2408.00118},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  doi           = {10.48550/arXiv.2408.00118},
+  url           = {https://arxiv.org/abs/2408.00118}
+}
+
+@misc{abdin-etal-2024-phi4,
+  author        = {Abdin, Marah and Aneja, Jyoti and Behl, Harkirat and Bubeck, S{\'e}bastien and
+                   Eldan, Ronen and Gunasekar, Suriya and Harrison, Michael and Hewett, Russell J. and others},
+  title         = {Phi-4 Technical Report},
+  year          = {2024},
+  eprint        = {2412.08905},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  doi           = {10.48550/arXiv.2412.08905},
+  url           = {https://arxiv.org/abs/2412.08905}
+}
+
+@misc{lescao-etal-2023-bloom,
+  author        = {{BigScience Workshop} and Le Scao, Teven and Fan, Angela and
+                   Akiki, Christopher and Pavlick, Ellie and Ili{\'c}, Suzana and
+                   Hesslow, Daniel and others},
+  title         = {{BLOOM}: A 176{B}-Parameter Open-Access Multilingual Language Model},
+  year          = {2023},
+  eprint        = {2211.05100},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  doi           = {10.48550/arXiv.2211.05100},
+  url           = {https://arxiv.org/abs/2211.05100}
+}
+
+@misc{laurencon-etal-2023-roots,
+  author        = {Lauren{\c{c}}on, Hugo and Saulnier, Lucile and Wang, Thomas and
+                   Akiki, Christopher and Villanova del Moral, Albert and
+                   Le Scao, Teven and others},
+  title         = {The {B}ig{S}cience {ROOTS} Corpus: A 1.6{TB} Composite Multilingual Dataset},
+  year          = {2023},
+  eprint        = {2303.03915},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  doi           = {10.48550/arXiv.2303.03915},
+  url           = {https://arxiv.org/abs/2303.03915}
+}
+
+@misc{biderman-etal-2023-pythia,
+  author        = {Biderman, Stella and Schoelkopf, Hailey and Anthony, Quentin and
+                   Bradley, Herbie and O'Brien, Kyle and Hallahan, Eric and others},
+  title         = {{P}ythia: A Suite for Analyzing Large Language Models Across Training and Scaling},
+  year          = {2023},
+  eprint        = {2304.01373},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  doi           = {10.48550/arXiv.2304.01373},
+  url           = {https://arxiv.org/abs/2304.01373}
+}

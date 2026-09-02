@@ -78,14 +78,23 @@ condition comes from our own transliterator for all three datasets.
    tests with Holm correction; bootstrap intervals; a competence screen; and the
    robustness refits. All in `paper/analysis/`.
 
-## The paper
+## The papers
 
-`paper/` holds the submission and everything that generates it.
+`paper/` holds two write-ups of this work and everything that generates them: the
+full ACL submission, and a four page short paper for the non-archival
+GlobalSouthAI workshop at NeurIPS 2026 that leads with what the case study says
+about evaluating Global South languages. The short one is written for its length
+rather than compressed, and reuses the same verified analysis outputs.
 
 ```
 paper/
-├── acl_latex.tex          # the paper (compile with XeLaTeX)
+├── acl_latex.tex          # the full paper (compile with XeLaTeX)
 ├── custom.bib             # every entry checked against a primary record
+├── globalsouthai/         # the four page workshop paper (compile with pdfLaTeX)
+│   ├── main.tex
+│   ├── checklist.tex      # the NeurIPS checklist, filled in
+│   ├── make_assets.py     # its figures and tables, at NeurIPS page geometry
+│   └── check_paper.py     # page budget and numeric-claim guard rails
 ├── analysis/              # statistics, one script per block, writes out/*.json
 │   ├── stats_intrinsic.py
 │   ├── stats_extrinsic.py
@@ -97,15 +106,20 @@ paper/
 └── figures/make_figures.py
 ```
 
-No number in the paper is typed by hand. `verify_claims.py` re-derives every
+No number in either paper is typed by hand. `verify_claims.py` re-derives every
 figure quoted in the text from the frozen analysis outputs and fails if any has
-moved:
+moved. `check_paper.py` then asserts that the workshop version introduces no
+number that verification has not already covered, and that its content still fits
+in four pages:
 
 ```bash
-python paper/analysis/verify_claims.py     # 251 claims checked
+python paper/analysis/verify_claims.py       # 251 claims checked
+python paper/globalsouthai/check_paper.py    # page budget and numbers
 ```
 
-See [`paper/README.md`](paper/README.md) for how to build the PDF.
+See [`paper/README.md`](paper/README.md) and
+[`paper/globalsouthai/README.md`](paper/globalsouthai/README.md) for how to build
+the PDFs.
 
 ## Repository layout
 
@@ -123,7 +137,7 @@ sinhala-script-robustness/
 │   ├── method_evaluation/  # how the method was chosen
 │   ├── evaluation/         # model clients and prompt templates
 │   └── analysis/           # metrics and significance helpers
-├── paper/              # the submission, its analysis, tables and figures
+├── paper/              # both write-ups, their analysis, tables and figures
 ├── results/            # notebooks, per-item outputs, aggregated metrics
 ├── docs/               # dataset provenance and method write-ups
 ├── tools/anonymize.py  # strips author-identifying strings before publishing
