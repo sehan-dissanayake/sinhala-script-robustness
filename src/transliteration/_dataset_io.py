@@ -1,4 +1,5 @@
 """Shared JSONL dataset writer for transliteration methods."""
+from __future__ import annotations
 
 import json
 from pathlib import Path

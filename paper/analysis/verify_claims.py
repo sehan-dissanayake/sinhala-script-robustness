@@ -20,6 +20,9 @@ import common as C
 
 NI = json.load(open(os.path.join(C.OUT_DIR, "intrinsic_numbers.json")))
 NE = json.load(open(os.path.join(C.OUT_DIR, "extrinsic_numbers.json")))
+RB = json.load(open(os.path.join(C.OUT_DIR, "robustness_numbers.json")))
+AT = json.load(open(os.path.join(C.OUT_DIR, "attestation_numbers.json")))
+SV = json.load(open(os.path.join(C.OUT_DIR, "synthetic_vs_human.json")))
 IT = pd.read_csv(os.path.join(C.OUT_DIR, "intrinsic_pooled.csv"))
 EX = pd.read_csv(os.path.join(C.OUT_DIR, "extrinsic_main.csv"))
 SD = pd.read_csv(os.path.join(C.OUT_DIR, "sold_detail.csv")).set_index("model")
@@ -159,15 +162,28 @@ eq("5.1: odds ratio", NE["mmlu_script_main_effect"]["odds_ratio"], 0.70, 5e-3)
 eq("5.1: best romanized acc", MM.r_acc.max(), 28.7, 0.05)
 eq("5.1: best headroom kept", MM.loc["Qwen3.5-9B"].head_r, 5.2, 0.05)
 eq("5.1: best headroom", MM.loc["Qwen3.5-9B"].head_u, 20.7, 0.05)
-eq("5.1: flattening slope", NE["sinhala_mmlu_flattening"]["slope"], 0.22, 5e-3)
-eq("5.1: flattening ci lo", NE["sinhala_mmlu_flattening"]["slope_ci"][0], 0.11, 5e-3)
-eq("5.1: flattening ci hi", NE["sinhala_mmlu_flattening"]["slope_ci"][1], 0.57, 5e-3)
+eq("5.1: flattening slope", RB["flattening_models"]["levels"]["slope"], 0.22, 5e-3)
+eq("5.2: levels ci lo",
+   RB["flattening_models"]["levels"]["slope_boot_ci"]["lo"], 0.11, 5e-3)
+eq("5.2: levels ci hi",
+   RB["flattening_models"]["levels"]["slope_boot_ci"]["hi"], 0.54, 5e-3)
 eq("5.2: law intercept", NE["gap_vs_headroom_mmlu"]["intercept"], -1.06, 5e-3)
 eq("5.2: law p", NE["gap_vs_headroom_mmlu"]["p"], 8.6e-7, 5e-8)
-eq("5.2: cell slope", NE["mmlu_cell_gap_vs_headroom"]["slope"], 0.55, 5e-3)
-eq("5.2: cell r2", NE["mmlu_cell_gap_vs_headroom"]["r2"], 0.82, 5e-3)
-eq("5.2: cell p", NE["mmlu_cell_gap_vs_headroom"]["p"], 1.5e-6, 5e-8)
-eq("5.2: cell spearman", NE["mmlu_cell_gap_vs_headroom"]["spearman"], 0.84, 5e-3)
+eq("5.2: cell levels slope", RB["flattening_cells"]["levels"]["slope"], 0.45, 5e-3)
+eq("5.2: cell levels ci lo",
+   RB["flattening_cells"]["levels"]["slope_boot_ci"]["lo"], 0.36, 5e-3)
+eq("5.2: cell levels ci hi",
+   RB["flattening_cells"]["levels"]["slope_boot_ci"]["hi"], 0.63, 5e-3)
+eq("5.2: cell levels loco lo",
+   RB["flattening_cells"]["levels"]["loco"]["slope_min"], 0.43, 5e-3)
+eq("5.2: cell levels loco hi",
+   RB["flattening_cells"]["levels"]["loco"]["slope_max"], 0.50, 5e-3)
+eq("5.2: cell levels r2", RB["flattening_cells"]["levels"]["r2"], 0.75, 5e-3)
+eq("5.2: cell levels p vs 1",
+   RB["flattening_cells"]["levels"]["p_slope_eq_1"], 1.5e-6, 5e-8)
+eq("5.2: cell weighted slope",
+   RB["flattening_cells"]["levels_weighted_slope"], 0.48, 5e-3)
+eq("5.2: n cells", RB["flattening_cells"]["n_cells"], 16, 0)
 dif = {r["difficulty"]: r for r in NE["mmlu_by_difficulty"]}
 eq("5.2: Easy gap", dif["Easy"]["gap"], 7.9, 0.05)
 eq("5.2: Medium gap", dif["Medium"]["gap"], 6.2, 0.05)
@@ -226,6 +242,18 @@ eq("6: u_bpb sold p", NE["linkage"]["u_bpb~sold_d_mcc"]["p"], 0.008, 5e-4)
 eq("6: ppl ratio rho", NE["linkage"]["ppl_ratio~mmlu_gap"]["rho"], -0.52, 5e-3)
 eq("6: ppl ratio p", NE["linkage"]["ppl_ratio~mmlu_gap"]["p"], 0.13, 5e-3)
 eq("6: linkage n", NE["linkage"]["u_bpb~mmlu_gap"]["n"], 10, 0)
+L = RB["linkage_ci"]
+eq("6: u_bpb mmlu ci lo", L["u_bpb~mmlu_gap"]["ci_lo"], -1.00, 5e-3)
+eq("6: u_bpb mmlu ci hi", L["u_bpb~mmlu_gap"]["ci_hi"], -0.30, 5e-3)
+eq("6: u_bpb mmlu loo lo", L["u_bpb~mmlu_gap"]["loo_min"], -0.90, 5e-3)
+eq("6: u_bpb mmlu loo hi", L["u_bpb~mmlu_gap"]["loo_max"], -0.77, 5e-3)
+eq("6: u_bpb sold ci lo", L["u_bpb~sold_d_mcc"]["ci_lo"], -1.00, 5e-3)
+eq("6: u_bpb sold ci hi", L["u_bpb~sold_d_mcc"]["ci_hi"], -0.36, 5e-3)
+eq("6: u_bpb sold loo lo", L["u_bpb~sold_d_mcc"]["loo_min"], -0.87, 5e-3)
+eq("6: u_bpb sold loo hi", L["u_bpb~sold_d_mcc"]["loo_max"], -0.73, 5e-3)
+eq("6: d_bpb ci lo", L["d_bpb~mmlu_gap"]["ci_lo"], -0.89, 5e-3)
+eq("6: d_bpb ci hi", L["d_bpb~mmlu_gap"]["ci_hi"], 0.63, 5e-3)
+is_("6: d_bpb loo straddles zero", not L["d_bpb~mmlu_gap"]["loo_sign_stable"])
 
 # --------------------------------------------------------------- discussion ---
 eq("7: parameter range fold", IT.params.max() / IT.params.min(), 42, 0.5)
@@ -234,6 +262,121 @@ eq("appendix: sequences scored", 31 * 1500, 46500, 0)
 eq("appendix: bpc factor unicode", NI["parallel_corpus"]["unicode_bytes_per_char"], 2.651, 5e-3)
 rc = NI["parallel_corpus"]
 eq("appendix: bpc factor romanized", rc["romanized_bytes"] / rc["romanized_chars"], 1.003, 5e-3)
+
+# ============================ claims added in the revision ==================
+
+S24 = RB["shared24"]
+eq("4.1: shared pool size", S24["n_shared"], 24, 0)
+eq("4.1: new checkpoints", S24["n_new"], 7, 0)
+eq("4.1: shared24 median ratio", S24["ppl_ratio"]["median"], 312.3, 0.05)
+eq("4.1: mixed dev excl outliers",
+   S24["published_ppl_deviation_pct"]["mixed_median_excl_outliers"], 0.39, 5e-3)
+is_("4.1: two mixed outliers",
+    len(S24["published_ppl_deviation_pct"]["mixed_outliers_gt5pct"]) == 2)
+eq("4.2: shared24 ppl-bpb rho", S24["ppl_vs_bpb_unicode"]["rho"], 0.46, 5e-3)
+eq("4.2: shared24 ppl-bpb p", S24["ppl_vs_bpb_unicode"]["p"], 0.02, 5e-3)
+eq("4.3: shared24 params-bpb rho", S24["params_vs_unicode_bpb"]["rho"], -0.42, 5e-3)
+eq("4.3: shared24 params-bpb p", S24["params_vs_unicode_bpb"]["p"], 0.04, 5e-3)
+
+D = RB["decomposition"]
+is_("4.3: decomposition is an identity", D["identity_max_abs_resid_bits"] < 1e-12)
+eq("4.3: shared24 total bits", D["shared24"]["median_total_bits"], 8.29, 5e-3)
+eq("4.3: shared24 normaliser bits", D["shared24"]["median_tok_term_bits"], 4.37, 5e-3)
+eq("4.3: shared24 loss bits", D["shared24"]["median_loss_term_bits"], 4.56, 5e-3)
+eq("4.3: shared24 normaliser factor", D["shared24"]["median_tok_factor"], 21, 0.5)
+eq("4.3: shared24 loss factor", D["shared24"]["median_loss_factor"], 24, 0.5)
+eq("4.3: shared24 total factor", D["shared24"]["median_total_factor"], 312, 1.0)
+eq("4.3: all31 normaliser share", D["median_tok_share_pct"], 39, 0.5)
+eq("4.3: bpb gap median", NI["d_bpb"]["median"], 2.14, 5e-3)
+eq("4.3: bpb gap factor", NI["d_bpb"]["median_prob_factor"], 4.4, 0.05)
+DC = pd.read_csv(os.path.join(C.OUT_DIR, "ppl_decomposition.csv")).set_index("model")
+is_("4.3: Qwen3.5 and Gemma normaliser terms are negative",
+    all(DC.loc[m].tok_term < 0 for m in
+        ["Qwen3.5-4B", "Qwen3.5-4B-Base", "Qwen3.5-9B", "Qwen3.5-9B-Base",
+         "Gemma-7B", "Gemma-2-9B"]))
+_all = IT.set_index("model")
+_all = (_all.r_ppl / _all.u_ppl).sort_values()
+_qwen35 = ["Qwen3.5-9B", "Qwen3.5-9B-Base", "Qwen3.5-4B-Base", "Qwen3.5-4B"]
+eq("4.3: Qwen3.5 ratio min", _all[_qwen35].min(), 58, 0.5)
+eq("4.3: Qwen3.5 ratio max", _all[_qwen35].max(), 64, 0.5)
+is_("4.3: Qwen3.5 hold the four smallest ratios",
+    set(_all.index[:4]) == set(_qwen35))
+is_("4.3: Gemma-7B is fifth smallest", _all.index[4] == "Gemma-7B")
+eq("4.3: pool median ratio", _all.median(), 294, 0.5)
+
+FM = RB["flattening_models"]
+eq("5.2: headroom slope", FM["headroom"]["slope"], 0.78, 5e-3)
+eq("5.2: headroom r2", FM["headroom"]["r2"], 0.96, 5e-3)
+eq("5.2: levels loco lo", FM["levels"]["loco"]["slope_min"], 0.17, 5e-3)
+eq("5.2: levels loco hi", FM["levels"]["loco"]["slope_max"], 0.26, 5e-3)
+eq("5.2: levels r2", FM["levels"]["r2"], 0.65, 5e-3)
+eq("5.2: levels p vs 1", FM["levels"]["p_slope_eq_1"], 8.6e-7, 5e-8)
+PN = FM["permutation_null"]
+eq("5.2: null headroom slope", PN["headroom_slope_mean"], 1.00, 5e-3)
+eq("5.2: null headroom r2", PN["headroom_r2_mean"], 0.94, 5e-3)
+eq("5.2: null headroom p", PN["headroom_p_r2_ge_obs"], 0.089, 5e-3)
+eq("5.2: null levels slope", PN["levels_slope_mean"], 0.00, 5e-3)
+eq("5.2: null levels r2", PN["levels_r2_mean"], 0.11, 5e-3)
+eq("5.2: null levels p", PN["levels_p_r2_ge_obs"], 0.005, 1e-3)
+eq("5.3: Phi-4 u mcc", SD.loc["Phi-4-14B"].u_mcc, 0.152, 5e-4)
+eq("5.3: Phi-4 r mcc", SD.loc["Phi-4-14B"].r_mcc, 0.076, 5e-4)
+
+# ------------------------------------------------- transliterator fidelity ----
+A = AT["aligned"]
+eq("app G: sentences aligned", A["n_sentences_word_aligned"], 485, 0)
+eq("app G: word pairs", A["n_word_pairs"], 2933, 0)
+eq("app G: exact match", A["word_exact_match_pct"], 44.6, 0.05)
+eq("app G: vowel-normalised match", A["word_exact_match_vowel_collapsed_pct"], 72.2, 0.05)
+MP = A["mismatch_profile"]
+eq("app G: vowel-only share", MP["vowel_convention_only_pct"], 27.6, 0.05)
+eq("app G: residual share", MP["residual_pct"], 27.8, 0.05)
+AA = AT["attestation"]
+eq("app G: lexicon words", AA["lexicon_words"], 449598, 0)
+eq("app G: mean spellings per word", AA["lexicon_mean_spellings_per_word"], 15.7, 0.05)
+eq("app G: ours attested norm", AA["parallel_ours"]["attested_vowel_collapsed_pct"], 88.6, 0.05)
+eq("app G: human attested norm", AA["parallel_human"]["attested_vowel_collapsed_pct"], 84.2, 0.05)
+eq("app G: sold attested norm", AA["sold"]["attested_vowel_collapsed_pct"], 87.0, 0.05)
+eq("app G: piqa attested norm", AA["global_piqa"]["attested_vowel_collapsed_pct"], 86.9, 0.05)
+DN = AT["downstream"]
+eq("app G: attestation items", DN["n_items_scored"], 2447, 0)
+eq("app G: attestation spearman", DN["item_spearman_attest_vs_loss"]["rho"], 0.02, 5e-3)
+eq("app G: attestation spearman p", DN["item_spearman_attest_vs_loss"]["p"], 0.31, 5e-3)
+eq("app G: tercile gap low", DN["low"]["gap"], 5.0, 0.05)
+eq("app G: tercile gap mid", DN["mid"]["gap"], 7.2, 0.05)
+eq("app G: tercile gap high", DN["high"]["gap"], 7.3, 0.05)
+
+# --------------------------------------------- our text against human typing --
+_d = [v["ours_minus_human"]["bpb"] for v in SV.values()]
+_r = [v["ours_over_human_ppl"] for v in SV.values()]
+_dev = [x["bpb"] for v in SV.values() for x in v["reproduction_pct_dev"].values()]
+eq("app G: control checkpoints", len(SV), 6, 0)
+is_("app G: ours is harder for every checkpoint", all(x > 0 for x in _d))
+eq("app G: ours-human min", min(_d), 0.17, 5e-3)
+eq("app G: ours-human max", max(_d), 0.24, 5e-3)
+is_("app G: perplexity says the opposite", all(x < 1 for x in _r))
+eq("app G: control ppl ratio median", float(pd.Series(_r).median()), 0.74, 5e-3)
+eq("app G: control reproduction max", max(_dev), 0.11, 5e-3)
+is_("app G: two control checkpoints are downstream ones",
+    len(set(SV) & set(C.EXTRINSIC_MODELS)) == 2)
+
+# ------------------------------------------------------------- prompt pilot ---
+P = RB["pilot"]
+eq("app A: pilot generations", P["n_generations"], 3240, 0)
+eq("app A: pilot items per dataset", P["n_items_per_dataset"], 20, 0)
+is_("app A: template used is T1", P["template_used"] == "T1_direct")
+is_("app A: T1 wins mmlu", P["winners"]["sinhala_mmlu"]["best_template"] == "T1_direct")
+is_("app A: T1 has no invalid output on mmlu",
+    P["winners"]["sinhala_mmlu"]["t1_invalid_rate"] == 0.0)
+eq("app A: T3 lead on sold",
+   100 * (P["winners"]["sold"]["best_overall_acc"] - P["winners"]["sold"]["t1_overall_acc"]),
+   1.4, 0.05)
+eq("app A: T3 lead on piqa",
+   100 * (P["winners"]["global_piqa"]["best_overall_acc"]
+          - P["winners"]["global_piqa"]["t1_overall_acc"]), 7.2, 0.05)
+eq("app A: pilot overlap pct", P["mmlu_pilot_overlap_pct"], 0.3, 0.05)
+eq("app A: pilot overlap items", P["mmlu_pilot_items_in_eval_set"], 20, 0)
+
+eq("app I: control sequences scored", 6 * 3 * 500, 9000, 0)
 
 # ------------------------------------------------------------------ report ----
 print(f"{checks} claims checked")
