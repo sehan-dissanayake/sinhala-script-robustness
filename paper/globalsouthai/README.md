@@ -79,15 +79,6 @@ Adding the images makes the two lines slightly narrower than the placeholders, s
 the page budget has headroom rather than the reverse. Re-run `check_paper.py`
 anyway.
 
-## Before submitting
-
-1. Create the anonymous mirror and replace `XXXXXXXX` in `\anonrepo`. The same
-   placeholder is in `../acl_latex.tex`.
-2. Drop in the two Sinhala PDFs and set `\sinhalafigstrue`.
-3. Confirm `python tools/anonymize.py --check` exits 0.
-4. The workshop asks submitting authors to nominate reviewers for its reciprocal
-   review process. That is a separate form, not part of this directory.
-
 ## Style file options
 
 `main.tex` uses the plain `\usepackage{neurips_2026}` default, which is anonymous

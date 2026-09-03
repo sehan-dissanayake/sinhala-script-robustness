@@ -140,7 +140,6 @@ sinhala-script-robustness/
 ├── paper/              # both write-ups, their analysis, tables and figures
 ├── results/            # notebooks, per-item outputs, aggregated metrics
 ├── docs/               # dataset provenance and method write-ups
-├── tools/anonymize.py  # strips author-identifying strings before publishing
 └── requirements.txt
 ```
 
@@ -218,17 +217,3 @@ redistribute is set out per source in the paper's licence appendix and in
 Global PIQA is CC BY-SA 4.0 and **evaluation only**, its authors disallow training
 on it or on synthetic data seeded from it, and any publication using uroman must
 acknowledge it, which the paper does.
-
-## Anonymity
-
-The evaluation notebooks were run on Kaggle and originally carried dataset paths
-containing account slugs that identify the authors. Those have been replaced with
-neutral placeholders. Before publishing an anonymous mirror for double-blind
-review, run:
-
-```bash
-python tools/anonymize.py --check
-```
-
-It exits non-zero if any known or suspicious identifying string is present. See
-[`ANONYMITY.md`](ANONYMITY.md) for the full checklist.

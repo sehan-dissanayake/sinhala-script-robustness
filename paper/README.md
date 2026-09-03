@@ -99,5 +99,4 @@ to look at, then caption length, then prose.
 
 `\usepackage[review]{acl}` produces the anonymous version with line numbers.
 Switch to `\usepackage{acl}` for camera-ready, or `\usepackage[preprint]{acl}` for
-a non-anonymous preprint. Before camera-ready see the checklist at the end of
-[`../ANONYMITY.md`](../ANONYMITY.md).
+a non-anonymous preprint.
