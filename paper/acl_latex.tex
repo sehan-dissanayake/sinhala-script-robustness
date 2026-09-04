@@ -2,8 +2,15 @@
 %  Romanization Flattens the Field
 %  ACL submission, anonymous review version.
 %
-%  COMPILER: XeLaTeX (required, for the Sinhala examples).
-%  In Overleaf: Menu -> Compiler -> XeLaTeX.
+%  COMPILER: pdfLaTeX. In Overleaf: Menu -> Compiler -> pdfLaTeX.
+%
+%      pdflatex acl_latex && bibtex acl_latex && pdflatex acl_latex && pdflatex acl_latex
+%
+%  This file is pure ASCII and needs no Unicode engine. The Sinhala examples are
+%  inline PDF images, built once by sinhala/build.sh and committed, and the
+%  pronunciation beside each one is ordinary pdfLaTeX text set with tipa. See
+%  sinhala/README.md for the arrangement and sinhala/si-common.tex for the sizing
+%  contract those images honour.
 %
 %  Switch \usepackage[review]{acl} to \usepackage{acl} for camera-ready, or to
 %  \usepackage[preprint]{acl} for a non-anonymous preprint with page numbers.
@@ -14,7 +21,25 @@
 \documentclass[11pt]{article}
 \usepackage[review]{acl}
 
+% ---- fonts and encodings -----------------------------------------------------
+% The standard pdfLaTeX preamble of acl_latex_template/acl_latex.tex, unchanged
+% and in its order: Times for the body, T1 so that hyphenation works on words
+% with accented characters, utf8 input, microtype, and inconsolata for the
+% typewriter text in Appendix A.
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{microtype}
+\usepackage{inconsolata}
+
+% IPA for the Sinhala examples, in the T3 encoding tipa adds alongside T1. With
+% Times selected above, T3 resolves to xipa10, the Times companion of the TIPA
+% fonts, so the pronunciations match the body text rather than sitting in
+% Computer Modern. The [safe] option leaves \|, \:, \;, \! and \* with their usual
+% meanings, so tipa cannot collide with the math spacing commands amsmath brings.
+\usepackage[safe]{tipa}
+
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{amsmath}
@@ -23,16 +48,49 @@
 \usepackage{array}
 \usepackage[normalem]{ulem}
 
-% ---- fonts -------------------------------------------------------------------
-% XeLaTeX font setup. TeX Gyre Termes is metric-compatible with Times.
-\usepackage{fontspec}
-\setmainfont{TeX Gyre Termes}
-\setsansfont{TeX Gyre Heros}
-\setmonofont{TeX Gyre Cursor}[Scale=MatchLowercase]
+% ---- Sinhala examples --------------------------------------------------------
+% pdfLaTeX cannot set the Sinhala script, so each example is compiled once by
+% sinhala/build.sh into a tightly cropped PDF and included here as an inline
+% graphic at its natural size. sinhala/si-common.tex fixes the geometry of those
+% crops: every one of them is 1.2 nominal font sizes tall with the baseline a
+% quarter of that height above the bottom edge, which is why a single rule places
+% all of them and why nothing here is tuned per file. Sizing off \f@size rather
+% than 1em keeps the scale factor at exactly 1 and still lets an example follow
+% the surrounding size if it is ever used in a caption or a footnote.
+\makeatletter
+\newcommand{\sinhalaglyph}[1]{%
+  \raisebox{-0.25\height}{%
+    \includegraphics[height=1.2\dimexpr\f@size pt\relax]{sinhala/#1}}}
+\makeatother
 
-% Sinhala. If Overleaf cannot find this face, substitute "Noto Sans Sinhala".
-\newfontfamily\sinhalafont{Noto Serif Sinhala}[Script=Sinhala, Scale=MatchLowercase]
-\newcommand{\si}[1]{{\sinhalafont #1}}
+% One Sinhala example: the script, then its pronunciation. #1 names the snippet
+% in sinhala/, #2 is the IPA in tipa input syntax. The IPA is here because most
+% readers of this paper do not read Sinhala.
+\newcommand{\siex}[2]{\sinhalaglyph{#1}\,[\textipa{#2}]}
+
+% The five examples the paper uses, each defined once, with the romanization the
+% prose gives it in the comment. Keeping them here is what lets the body of this
+% file stay ASCII. The pronunciations follow the Sinhala transliteration tables at
+% https://www.nongnu.org/sinhala/doc/transliteration/sinhala-transliteration_4.html
+% and the tipa input syntax for the symbols they use is: 6 turned script a, 2
+% turned v, T theta, D eth, E epsilon, U upsilon, I small capital I, a colon for
+% the length mark, \super for the aspiration mark and \textltailn for left-tail
+% n. Every file named here also carries its own IPA as a comment, so the two
+% cannot drift apart unnoticed.
+\newcommand{\sikohomada}{\siex{si-kohomada}{k6h6m2D2}}      % kohomada
+\newcommand{\sitha}{\siex{si-tha}{T2}}                      % th
+\newcommand{\siwa}{\siex{si-wa}{v2}}                        % w
+% The three-word example is one image per word, with ordinary interword spaces
+% between them, so that a line can still break inside the phrase the way it could
+% when the phrase was live text. One 134pt image cannot break anywhere and forces
+% a very loose line in a 228pt column.
+% The \space between the words is an ordinary interword space, written out rather
+% than left to line endings so that it cannot be lost to a stray comment.
+\newcommand{\siwesak}{%                                       % wesak
+  \sinhalaglyph{si-wesak}%
+  \space\sinhalaglyph{si-uthsawayeedii}%                      % uthsawayeedii
+  \space\siex{si-bauddhayin}{vEs2k UTs2v2je:Di: baUDD\super{h}2jIn}}% bauddhayin
+\newcommand{\sinya}{\siex{si-nya}{\textltailn 2}}           % the nya sequences
 
 % ---- helpers -----------------------------------------------------------------
 \newcommand{\rom}[1]{\textit{#1}}                 % Romanized Sinhala
@@ -107,8 +165,9 @@ Sinhala is an Indo-Aryan language written in a script of its own and spoken by o
 ranasinghe-etal-2025-sold}. Like several South Asian languages it has an everyday
 orthographic split. Formal writing uses the Sinhala script, but comments, chat and
 social media are dominated by Romanized Sinhala, informally called Singlish, typed
-with Latin letters. It has no standard spelling, so \si{කොහොමද} (``how are you'')
-is typed \rom{kohomada}, \rom{kohomd} or \rom{kohomade} depending on the writer.
+with Latin letters. It has no standard spelling, so \sikohomada{} (``how are
+you'') is typed \rom{kohomada}, \rom{kohomd} or \rom{kohomade} depending on the
+writer.
 
 This is not a marginal input condition. Such splits are driven by durable social and
 economic factors rather than fashion \citep{sengupta-etal-2024-hinglish}, and in a
@@ -250,9 +309,9 @@ Almost every Sinhala transliteration tool runs Latin to Sinhala
 \citep{de-mel-etal-2025-sinhala, sumanathilaka-etal-2025-swabhasha}. We need the
 reverse, so we implemented a deterministic grapheme-level transliterator that parses
 Sinhala as the abugida it is and uses the digraph conventions speakers actually
-type, so \si{ත} is \rom{th} and \si{ව} is \rom{w}. It runs locally, covers every
+type, so \sitha{} is \rom{th} and \siwa{} is \rom{w}. It runs locally, covers every
 input, and collapses only the consonant distinctions casual Singlish also collapses.
-For example \si{වෙසක් උත්සවයේදී බෞද්ධයින්} becomes
+For example \siwesak{} becomes
 \rom{wesak uthsawayeedii bauddhayin}.
 
 We validated it against 755{,}000 human-romanized items from the Swa-bhasha
@@ -1143,7 +1202,7 @@ romanizer released with \citet{desilva-ranathunga-2026-sinhalapiqa}, against
 755{,}000 human-romanized items. Ours has the lowest character error rate on all
 three corpora. The web tool is close once its \rom{v} is rewritten to \rom{w},
 which is a spelling convention rather than a transliteration error, but it cannot
-romanize 17 sequences involving \si{ඤ} at all and leaves Sinhala characters in
+romanize 17 sequences involving \sinya{} at all and leaves Sinhala characters in
 0.8\% to 2.5\% of its output.
 
 \begin{table}[t]

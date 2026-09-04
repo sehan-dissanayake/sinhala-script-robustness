@@ -127,7 +127,11 @@ def intrinsic_main(it):
                 f"& {r.u_ppl:.2f} & {r.u_bpb:.3f} & {r.u_bpw:.1f} "
                 f"& {r.r_bpb:.3f} & {r.r_bpw:.1f}")
 
-    rows = [f"{cells(i)} && {cells(i + half)} \\\\" for i in range(half)]
+    # Seven cells per block and one tab between them, for the fourteen columns
+    # tab:intrinsicmain declares. A second tab here used to emit a fifteenth cell,
+    # which pushed the right-hand block one column over and wrapped its last value
+    # onto a line of its own.
+    rows = [f"{cells(i)} & {cells(i + half)} \\\\" for i in range(half)]
     w("tab_intrinsic_main.tex", "\n".join(rows))
 
 

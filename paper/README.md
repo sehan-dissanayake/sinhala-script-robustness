@@ -4,7 +4,7 @@ Two papers live here. This file is about the long one.
 
 | directory | venue | length | compiler |
 |---|---|---|---|
-| `.` (`acl_latex.tex`) | ACL, archival | 8 page main body, 19 total | XeLaTeX |
+| `.` (`acl_latex.tex`) | ACL, archival | 8 page main body, 19 total | pdfLaTeX |
 | [`globalsouthai/`](globalsouthai/README.md) | GlobalSouthAI @ NeurIPS 2026, non-archival | 4 page body, 27 total | pdfLaTeX |
 
 The workshop paper is written separately for its length rather than compressed
@@ -14,33 +14,44 @@ needs.
 
 ## Compiler
 
-**XeLaTeX is required.** The paper sets Sinhala examples inline, which pdfLaTeX
-cannot do. In Overleaf: Menu, then Compiler, then XeLaTeX.
+**pdfLaTeX.** In Overleaf: Menu, then Compiler, then pdfLaTeX. Nothing else is
+needed; there is no font to install and no Unicode engine anywhere in the build.
 
 ```bash
-xelatex acl_latex
-bibtex  acl_latex
-xelatex acl_latex
-xelatex acl_latex
+pdflatex acl_latex
+bibtex   acl_latex
+pdflatex acl_latex
+pdflatex acl_latex
 ```
+
+`acl_latex.tex` follows `acl_latex_template/acl_latex.tex` and is pure ASCII.
 
 ## Fonts
 
-| Role | Font | Fallback |
+Everything is a standard pdfLaTeX font that ships with TeX Live, so the preamble is
+the template's own.
+
+| Role | Package | Font |
 |---|---|---|
-| body | TeX Gyre Termes | metric-compatible with Times, ships with TeX Live |
-| sans | TeX Gyre Heros | |
-| mono | TeX Gyre Cursor | |
-| Sinhala | Noto Serif Sinhala | change to `Noto Sans Sinhala` if Overleaf cannot find it |
+| body | `times` | Times, in T1 |
+| typewriter | `inconsolata` | Inconsolata |
+| IPA | `tipa` | `xipa10`, the Times companion of the TIPA fonts |
 
-The Sinhala face is declared once, near the top of `acl_latex.tex`:
+## Sinhala examples
 
-```latex
-\newfontfamily\sinhalafont{Noto Serif Sinhala}[Script=Sinhala, Scale=MatchLowercase]
+pdfLaTeX cannot set the Sinhala script, so the five Sinhala examples are prebuilt
+PDF images that the paper includes inline, and the pronunciation next to each one is
+ordinary pdfLaTeX text set with `tipa`. The images live in
+[`sinhala/`](sinhala/README.md) together with their sources, a build script and the
+one-page explanation of how they are sized and aligned. They are committed, so a
+normal build never touches them:
+
+```bash
+cd sinhala && ./build.sh    # only when an example changes; needs LuaLaTeX
 ```
 
-If compilation fails with "cannot find font", that line is the only thing to
-change.
+Because the examples are images, `acl_latex.tex` contains no Sinhala codepoints. Do
+not put any there. Add examples through `sinhala/`, as that README describes.
 
 ## Files
 
@@ -49,6 +60,7 @@ acl_latex.tex     the paper
 custom.bib        bibliography, every entry checked against a primary record
 acl.sty           ACL style file, copied from acl_latex_template/
 acl_natbib.bst    ACL bibliography style, same source
+sinhala/          the inline Sinhala examples, their sources and their build script
 tables/*.tex      generated table bodies, do not edit by hand
 figures/*.pdf     generated figures, do not edit by hand
 analysis/         the statistics behind every number

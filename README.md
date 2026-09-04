@@ -88,8 +88,9 @@ rather than compressed, and reuses the same verified analysis outputs.
 
 ```
 paper/
-├── acl_latex.tex          # the full paper (compile with XeLaTeX)
+├── acl_latex.tex          # the full paper (compile with pdfLaTeX)
 ├── custom.bib             # every entry checked against a primary record
+├── sinhala/               # the inline Sinhala examples, prebuilt as PDF images
 ├── globalsouthai/         # the four page workshop paper (compile with pdfLaTeX)
 │   ├── main.tex
 │   ├── checklist.tex      # the NeurIPS checklist, filled in

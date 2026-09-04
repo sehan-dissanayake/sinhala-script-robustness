@@ -1,0 +1,90 @@
+% =============================================================================
+%  Shared preamble for the inline Sinhala snippets of ../acl_latex.tex.
+%
+%  These files are the only ones in the paper that contain Sinhala codepoints,
+%  and the only ones that need a Unicode engine. They are compiled here, once,
+%  with LuaLaTeX (or XeLaTeX) into tightly cropped one-line PDFs. The paper
+%  itself is pdfLaTeX and only ever \includegraphics the results, so building
+%  the paper needs pdfLaTeX and nothing else. See build.sh and README.md.
+%
+%  Sizing contract with the main document
+%  --------------------------------------
+%  Each snippet is set at the paper's body size with the Sinhala face scaled to
+%  the x-height of the paper's body font, so its natural size is already the
+%  right one and the main document must not rescale it to fit.
+%
+%  standalone crops to the TeX box, so a snippet whose glyphs happen to carry no
+%  descender would crop shorter than one that does, and scaling every file to a
+%  common height would then set the same script at different sizes. To prevent
+%  that, every snippet carries one invisible strut: 0.90 of the body size above
+%  the baseline and 0.30 below it. Every crop therefore has the same height,
+%  1.20 of the body size, and puts the baseline at the same place, one quarter of
+%  that height above the bottom edge, whatever the glyphs do. A single include
+%  rule then works for every file, with no per-file tuning:
+%
+%      \raisebox{-0.25\height}{%
+%        \includegraphics[height=1.2\dimexpr\f@size pt\relax]{sinhala/<name>}}
+%
+%  Both sides measure against the nominal font size (\f@size) and not against
+%  1em, because 1em is a property of whichever font is loaded and these two
+%  documents do not load the same Times: TeX Gyre Termes here, psnfss "times"
+%  in the paper. Sizing off \f@size holds the scale factor at exactly 1 whatever
+%  those faces quad at, while still letting the glyphs follow the surrounding
+%  size if a snippet is ever used inside \footnotesize or a caption.
+%
+%  Why 0.90 and 0.30 and not something roomier: at the 11pt body size, which
+%  LaTeX implements as 10.95pt, that is a box of 9.86pt on 3.29pt of depth. The
+%  tallest of the seven snippets measures 8.85pt and the deepest 2.61pt, so
+%  nothing is clipped, and 9.86pt still fits under the 13.6pt leading of the
+%  surrounding text alongside a previous line's descender. A taller strut would
+%  push the line it lands on off the baseline grid for no gain, since the extra
+%  space would be blank. \sinhala below turns a snippet that outgrows the strut
+%  into a hard error rather than a silent clip.
+%
+%  The page box comes out at 13.14pt for every snippet, which pdfinfo reports as
+%  13.091 big points. build.sh prints them, so the invariant stays checkable.
+% =============================================================================
+\documentclass[11pt,border=0pt]{standalone}
+
+\usepackage{iftex}
+\usepackage{fontspec}
+
+% The paper's body font, needed here only so that Scale=MatchLowercase has the
+% right reference. TeX Gyre Termes is metric-compatible with Times, which is what
+% \usepackage{times} gives us over there.
+\setmainfont{TeX Gyre Termes}
+
+% Sinhala. Substitute "Noto Sans Sinhala" if this face is unavailable; both ship
+% with the Noto font packages and both are present on Overleaf.
+\ifLuaTeX
+  \newfontfamily\sinhalafont{Noto Serif Sinhala}[%
+    Script=Sinhala, Renderer=HarfBuzz, Scale=MatchLowercase]
+\else
+  \newfontfamily\sinhalafont{Noto Serif Sinhala}[%
+    Script=Sinhala, Scale=MatchLowercase]
+\fi
+
+\makeatletter
+% One nominal body size as a length, so the factors below read as factors.
+\newcommand{\si@size}{\dimexpr\f@size pt\relax}
+
+% The strut of the sizing contract above. \rule[lift]{width}{height} yields a box
+% of height lift+height and depth -lift, so this is 0.90 up and 0.30 down.
+\newcommand{\sinhalastrut}{\rule[-0.3\si@size]{0pt}{1.2\si@size}}
+
+% The one macro each snippet file calls. Refuses to produce a file that would be
+% clipped, which build.sh turns into a failed build through -halt-on-error.
+\newcommand{\sinhala}[1]{%
+  \setbox\z@\hbox{{\sinhalafont #1}}%
+  \ifdim\ht\z@>0.9\si@size
+    \errmessage{Sinhala snippet is \the\ht\z@\space tall, over the
+      \the\dimexpr0.9\si@size\relax\space strut; raise the strut in
+      si-common.tex and reread the sizing contract}%
+  \fi
+  \ifdim\dp\z@>0.3\si@size
+    \errmessage{Sinhala snippet is \the\dp\z@\space deep, over the
+      \the\dimexpr0.3\si@size\relax\space strut; lower the strut in
+      si-common.tex and reread the sizing contract}%
+  \fi
+  \sinhalastrut\box\z@}
+\makeatother
