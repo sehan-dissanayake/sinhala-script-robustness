@@ -197,7 +197,7 @@ that tokenizers serve unevenly \citep{petrov-etal-2023-tokenizers,
 ahia-etal-2023-languages}, and over-segmentation carries a measurable downstream
 cost on low-resource tasks \citep{nag-etal-2024-fragmented}. Sinhala sits at that
 extreme, with fertility on our corpus ranging from 4.3 to 14.2 tokens per word.
-Bits per byte is established practice in language modelling, but to our knowledge
+Bits per byte is established practice in language modeling, but to our knowledge
 it has not previously been used to show that the substantive conclusions of a
 published multilingual benchmark change when the normalizer changes.
 
@@ -224,7 +224,7 @@ which 2{,}145 items have five options rather than four, so random guessing score
 release contains a 1{,}851-item sample. We obtained the full set from the
 authors, who ask that it not be redistributed, so we release our transformation
 code and item identifiers rather than the items
-(\S\ref{sec:licences}).} SOLD supplies the complete 2{,}500-item test split of a
+(\S\ref{sec:licenses}).} SOLD supplies the complete 2{,}500-item test split of a
 binary offensive-language task in which 40.6\% of posts are offensive, so always
 predicting the majority class scores 59.4\%. Global PIQA, which follows PIQA
 \citep{bisk-etal-2020-piqa}, contributes the 100 Sinhala items of its released
@@ -295,7 +295,8 @@ resolve differences of that size. A paired comparison does not require an optima
 template, only one that does not favor a script, and the evidence for that comes from
 the main run rather than the pilot: there the unparseable rate never exceeds 0.03\%
 in either condition for the competent cohort (\S\ref{sec:controls}). Answers are
-extracted by pattern match and anything unparseable is scored as wrong. All three
+extracted by pattern match and anything unparseable is scored as wrong. Twenty pilot
+items, 0.3\% of SinhalaMMLU, also appear in the final evaluation set. All three
 templates and their pilot scores are in Appendix~\ref{sec:prompts}.
 
 \subsection{Significance testing}
@@ -641,7 +642,7 @@ SinhalaMMLU gap ($\rho = -0.83$, 95\% CI $-1.00$ to $-0.30$, leave-one-out $-0.9
 to $-0.77$) and the loss of Matthews correlation on SOLD ($\rho = -0.78$, CI
 $-1.00$ to $-0.36$, leave-one-out $-0.87$ to $-0.73$), which is the narrowing of
 \S\ref{sec:law} seen from the intrinsic side. The negative result matters as much:
-the bits-per-byte \emph{gap}, the natural analogue of the degradation ratio prior
+the bits-per-byte \emph{gap}, the natural counterpart of the degradation ratio prior
 work reports, shows no association ($\rho = -0.15$, CI $-0.89$ to $+0.63$), and
 neither does the perplexity ratio ($\rho = -0.52$). For the gap even the
 leave-one-out range straddles zero, so we cannot sign it. With ten checkpoints this
@@ -682,70 +683,31 @@ data are.
 % =============================================================================
 \section*{Limitations}
 
-\paragraph{One language.} Everything here is Sinhala. The floor effect we describe
-should generalize to any language with a dominant Romanized register, but we have
-not shown that. \citet{khullar-etal-2025-scriptgap} report compatible magnitudes for
-six Indic languages; Urdu, Tamil and Arabic dialects are the obvious further tests.
+\paragraph{Scope.} Everything here is Sinhala, zero-shot and greedy, one template,
+open checkpoints up to 14.7B. Few-shot prompting, transliterate-then-infer or
+Romanized fine-tuning could each narrow the gap by an unmeasured amount, and stronger
+proprietary models have more headroom, so \S\ref{sec:law} predicts larger losses
+there.
 
-\paragraph{The Romanized items are transliterated.} No parallel resource
-of human-typed Romanized versions of these benchmarks exists at this scale, so we
-built the Romanized side with our own transliterator (\S\ref{sec:translit}) and then
-checked whether its conventions could account for the effect. Item by item on SOLD,
-how closely an item's Romanized spellings match attested human spellings does not
-predict its Romanized penalty (Spearman $0.02$, $p = 0.31$, $n = 2{,}447$;
-Table~\ref{tab:attesttercile}). Scored against the human-typed Romanized side of the
-parallel corpus, our text is the harder of the two by 0.17 to 0.24 bits per byte
-(\S\ref{sec:translitbias}), so our gaps are closer to upper than to lower bounds. The
-intrinsic results do not depend on the transliterator at all, since their Romanized
-side was typed by native speakers, and they show the same effect. A human-written
-Romanized version of even a few hundred SinhalaMMLU items would settle the question
-more directly.
+\paragraph{The Romanized items are transliterated.} No human-typed Romanized version
+of these benchmarks exists at this scale, so we built one. Attestation does not
+predict an item's Romanized penalty on SOLD (Spearman $0.02$, $n = 2{,}447$), and our
+text is the harder of the two against human typing (\S\ref{sec:translitbias}), so our
+gaps are closer to upper than to lower bounds.
 
-\paragraph{Checkpoint size is confounded with other factors.} Our 31 checkpoints
-differ in family, tokenizer, training corpus and instruction-tuning status at once,
-so the association between parameter count and Sinhala-script bits per byte is not a
-scaling law; the fertility analysis is direct evidence that family-level confounds
-are present.
-
-\paragraph{We cannot exclude contamination.} These training corpora are not fully
-auditable, so we cannot rule out that public evaluation sets, or Sinhala-script
-material closely related to them, appeared during pretraining. If they did, the
-Sinhala-script side would be inflated and our gaps overstated. This applies to any
-evaluation of pretrained models on public benchmarks.
-
-\paragraph{The intrinsic-to-downstream link is exploratory.} Ten checkpoints, no
-held-out validation, no pre-registration, and bootstrap intervals wide enough to
-reach $-1.00$ (\S\ref{sec:linkage}). Table~\ref{tab:linkage} is a hypothesis, not a
-screening tool.
-
-\paragraph{The mixed-script condition is weaker evidence.} That corpus is authentic
-mixed-script text rather than a transliteration of the parallel set, so it is not
-parallel to either script condition and supports only a descriptive statement about
-how mildly script mixing perturbs cost.
-
-\paragraph{Small open-weight models only.} The downstream evaluation covers open
-checkpoints up to 14.7B. Frontier proprietary models are much stronger on Sinhala
-\citep{pramodya-etal-2025-sinhalammlu} and so have more headroom, and the slope of
-\S\ref{sec:law} predicts larger absolute losses for them. That prediction is
-untested here.
-
-\paragraph{Zero-shot only.} One template, zero-shot, greedy decoding. This measures
-what a user gets out of the box rather than the ceiling: few-shot prompting,
-transliterate-then-infer, or Romanized fine-tuning could all narrow the gap by an
-amount we do not measure. The template was chosen on a 20-item pilot per dataset,
-and 20 of those SinhalaMMLU items, 0.3\% of the benchmark, are also in the final
-evaluation set.
-
-\paragraph{Two checkpoints cannot do the task.} LaMini-GPT-1.5B and
-TinyLlama-1.1B-Chat produce unparseable output on most Sinhala-script items of at
-least one task, so their apparent improvement under romanization is an artifact of
-that failure rather than a script effect.
+\paragraph{Confounds and weaker evidence.} The 31 checkpoints differ in family,
+tokenizer, training corpus and instruction tuning at once, so the parameter-count
+association is not a scaling law, and unauditable corpora leave contamination
+possible. The intrinsic-to-downstream link rests on ten checkpoints with intervals
+reaching $-1.00$ (\S\ref{sec:linkage}); the mixed-script corpus is not parallel to
+either condition; and two checkpoints cannot follow the format in the Sinhala script,
+so their apparent gains are artifacts (\S\ref{sec:screen}).
 
 % \section*{Acknowledgments}
 
 % Omitted for anonymous review. This project uses the universal romanizer software
 % `uroman' written by Ulf Hermjakob, USC Information Sciences Institute
-% (2015-2020), as required by its licence.
+% (2015-2020), as required by its license.
 
 \bibliography{custom}
 
@@ -1263,8 +1225,8 @@ narrowing of \S\ref{sec:law} already predicts.}
 \label{tab:attesttercile}
 \end{table}
 
-\section{Licences and Redistribution}
-\label{sec:licences}
+\section{Licenses and Redistribution}
+\label{sec:licenses}
 
 \begin{itemize}\itemsep2pt
 \item \textbf{SinhalaMMLU} \citep{pramodya-etal-2025-sinhalammlu}: CC BY-NC-ND
@@ -1279,8 +1241,8 @@ it is byte-identical. Everyone else can reproduce the SOLD and Global PIQA resul
 in full.
 \item \textbf{SOLD} \citep{ranasinghe-etal-2025-sold}: publicly released for
 research through its Hugging Face dataset and its repository, neither of which
-carries an explicit licence file. We redistribute the 2{,}500-item test split with
-our Romanized side attached, in the same pseudonymised form as upstream, and will
+carries an explicit license file. We redistribute the 2{,}500-item test split with
+our Romanized side attached, in the same pseudonymized form as upstream, and will
 remove it on request from the authors.
 \item \textbf{Global PIQA} \citep{chang-etal-2025-globalpiqa,
 desilva-ranathunga-2026-sinhalapiqa}: CC BY-SA 4.0, evaluation only. The authors
@@ -1295,12 +1257,12 @@ transliterator. We redistribute none of it and our code downloads it from source
 redistributed unchanged.
 \item \textbf{Aksharamukha} \citep{rajan-aksharamukha}: AGPL-3.0, version 2.3,
 called as a library for comparison only. \textbf{uroman}
-\citep{hermjakob-etal-2018-uroman}: version 1.3.1.1, MIT-style licence with a
-required acknowledgement, which appears in the Acknowledgments section as its
-licence directs.
+\citep{hermjakob-etal-2018-uroman}: version 1.3.1.1, MIT-style license with a
+required acknowledgment, which appears in the Acknowledgments section as its
+license directs.
 \item \textbf{Model weights}: evaluation only, no fine-tuning and no derivative
 release, which is within the terms of the Llama Community License, the Gemma Terms
-of Use, the BigScience RAIL licence and the Apache-2.0 and MIT licences covering
+of Use, the BigScience RAIL license and the Apache-2.0 and MIT licenses covering
 the remaining families.
 \end{itemize}
 
@@ -1311,7 +1273,7 @@ Every number in this paper is produced by scripts that read only the per-item
 model outputs, so the tables and figures cannot drift from the data. A checking
 script re-derives every figure quoted in the text from the frozen analysis and
 fails if any has moved. We release the frozen evaluation sets with both script
-conditions paired per record, subject to \S\ref{sec:licences}, all per-item
+conditions paired per record, subject to \S\ref{sec:licenses}, all per-item
 generations for every checkpoint, the analysis and figure scripts, and the
 transliterator: \anonrepo. The transliterator is also on PyPI, but naming the
 package would identify us, so the name is withheld until the camera-ready version.

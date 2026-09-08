@@ -367,7 +367,7 @@ def fig5(it):
 
     fig, ax = plt.subplots(figsize=(COL, 4.35))
     ax.barh(y, d.tok_term, height=0.72, color=HI, edgecolor="black", linewidth=0.25,
-            label="token-count normaliser", zorder=3)
+            label="token-count normalizer", zorder=3)
     ax.barh(y, d.loss_term, left=d.tok_term, height=0.72, color=UNI,
             edgecolor="black", linewidth=0.25, label="per-byte loss", zorder=3)
     for i, r in d.iterrows():
