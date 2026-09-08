@@ -760,40 +760,6 @@ TinyLlama-1.1B-Chat produce unparseable output on most Sinhala-script items of a
 least one task. Their apparent improvement under Romanization is an artifact of
 that failure, not a script effect, which is why the competence screen exists.
 
-% \section*{Ethics Statement}
-
-% \paragraph{Content warning.} \S\ref{sec:extrinsic} and Appendix
-% \ref{sec:extradetail} discuss an offensive-language dataset. We quote no
-% offensive text anywhere in this paper, and report only aggregate metrics over it.
-
-% \paragraph{Data.} All datasets are public research releases used for evaluation
-% only, and Appendix~\ref{sec:licences} states each licence and exactly what we do
-% and do not redistribute. Global PIQA forbids training on it
-% or on synthetic data seeded from it, and we do neither. SinhalaMMLU is released
-% under a licence that forbids distributing adaptations, and its authors asked that
-% the full set not be made public, so our Romanized version of it stays local and
-% we release only the code and the item identifiers needed to rebuild it. SOLD
-% contains offensive social media text. It is already pseudonymised upstream, with
-% user mentions replaced by placeholders, and we neither collected nor re-annotated
-% any of it. We add no new human annotation and no new data collection, so no
-% ethics approval was required.
-
-% \paragraph{Models.} All 31 checkpoints were used for evaluation only, with no
-% fine-tuning, redistribution or derivative model release. That is within the terms
-% of each family's licence, including the Llama Community License, the Gemma Terms
-% of Use and the BigScience RAIL licence, all of which permit evaluation of the
-% released weights.
-
-% \paragraph{Risk.} The practical risk our results speak to is deployment. A
-% moderation or support system validated on Sinhala-script text and serving
-% Romanized users will look far better in evaluation than in the field, and on SOLD
-% that failure is invisible in accuracy while more than half the usable signal is
-% gone. Publishing the size of that gap, and a screen that stops averaging from
-% hiding it, is the useful response. Our transliterator collapses several Sinhala
-% consonant distinctions, matching casual Singlish practice, so it is a tool for
-% building evaluation data and not for rendering names or other text where those
-% distinctions carry meaning.
-
 % \section*{Acknowledgments}
 
 % Omitted for anonymous review. This project uses the universal romanizer software
