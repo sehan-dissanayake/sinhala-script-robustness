@@ -1,115 +1,50 @@
-# Building the paper
+# *ACL Paper Styles
 
-Two papers live here. This file is about the long one.
+This directory contains the latest LaTeX templates for *ACL conferences.
 
-| directory | venue | length | compiler |
-|---|---|---|---|
-| `.` (`acl_latex.tex`) | ACL, archival | 8 page main body, 19 total | pdfLaTeX |
-| [`globalsouthai/`](globalsouthai/README.md) | GlobalSouthAI @ NeurIPS 2026, non-archival | 4 page body, 27 total | pdfLaTeX |
+## Instructions for authors
 
-The workshop paper is written separately for its length rather than compressed
-from this one, and reuses the same verified analysis outputs. See its own README
-for the build, the page-budget check and the two Sinhala figure placeholders it
-needs.
+Paper submissions to *ACL conferences must use the official ACL style
+templates.
 
-## Compiler
+The LaTeX style files are available
 
-**pdfLaTeX.** In Overleaf: Menu, then Compiler, then pdfLaTeX. Nothing else is
-needed; there is no font to install and no Unicode engine anywhere in the build.
+- as an [Overleaf template](https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj)
+- in this repository
+- as a [.zip file](https://github.com/acl-org/acl-style-files/archive/refs/heads/master.zip)
 
-```bash
-pdflatex acl_latex
-bibtex   acl_latex
-pdflatex acl_latex
-pdflatex acl_latex
-```
+Please see [`acl_latex.tex`](https://github.com/acl-org/acl-style-files/blob/master/acl_latex.tex) for detailed instructions on using the LaTeX style.  This file also serves as a template document for use with LaTeX and pdfLaTeX.  The file  [`acl_lualatex.tex`](https://github.com/acl-org/acl-style-files/blob/master/acl_lualatex.tex) serves as a template document for use with both XeLaTeX and LuaLaTeX. 
 
-`acl_latex.tex` follows `acl_latex_template/acl_latex.tex` and is pure ASCII.
+Please follow the paper formatting guidelines general to *ACL
+conferences:
 
-## Fonts
+- [Paper formatting guidelines](https://acl-org.github.io/ACLPUB/formatting.html)
 
-Everything is a standard pdfLaTeX font that ships with TeX Live, so the preamble is
-the template's own.
+Authors may not modify these style files or use templates designed for
+other conferences.
 
-| Role | Package | Font |
-|---|---|---|
-| body | `times` | Times, in T1 |
-| typewriter | `inconsolata` | Inconsolata |
-| IPA | `tipa` | `xipa10`, the Times companion of the TIPA fonts |
+## Instructions for publications chairs
 
-## Sinhala examples
+To adapt the style files for your conference, please fork this repository and
+make necessary changes. Minimally, you'll need to update the name of
+the conference and rename the files.
 
-pdfLaTeX cannot set the Sinhala script, so the five Sinhala examples are prebuilt
-PDF images that the paper includes inline, and the pronunciation next to each one is
-ordinary pdfLaTeX text set with `tipa`. The images live in
-[`sinhala/`](sinhala/README.md) together with their sources, a build script and the
-one-page explanation of how they are sized and aligned. They are committed, so a
-normal build never touches them:
+If you make improvements to the templates that should be propagated to
+future conferences, please submit a pull request. Thank you in
+advance!
 
-```bash
-cd sinhala && ./build.sh    # only when an example changes; needs LuaLaTeX
-```
+In older versions of the templates, authors were asked to fill in the
+START submission ID so that it would be stamped at the top of each
+page of the anonymized version. This is no longer needed, because it
+is now possible to do this stamping automatically within
+START. Currently, the way to do this is for the program chair to email
+support@softconf.com and request it.
 
-Because the examples are images, `acl_latex.tex` contains no Sinhala codepoints. Do
-not put any there. Add examples through `sinhala/`, as that README describes.
+## Instructions for making changes to style files
 
-## Files
-
-```
-acl_latex.tex     the paper
-custom.bib        bibliography, every entry checked against a primary record
-acl.sty           ACL style file, copied from acl_latex_template/
-acl_natbib.bst    ACL bibliography style, same source
-sinhala/          the inline Sinhala examples, their sources and their build script
-tables/*.tex      generated table bodies, do not edit by hand
-figures/*.pdf     generated figures, do not edit by hand
-analysis/         the statistics behind every number
-```
-
-`tables/` and `figures/` are generated. Regenerate them after any change to the
-analysis:
-
-```bash
-cd ..                                    # repository root
-python paper/analysis/stats_intrinsic.py
-python paper/analysis/stats_extrinsic.py
-python paper/analysis/stats_robustness.py
-python paper/analysis/stats_attestation.py
-python paper/tables/make_tables.py
-python paper/figures/make_figures.py
-python paper/analysis/verify_claims.py
-```
-
-`verify_claims.py` restates every number that appears in `acl_latex.tex` and
-checks it against the frozen analysis outputs in `analysis/out/`. It prints how
-many claims it checked and fails loudly if any has drifted. Run it before every
-submission, together with the workshop paper's own guard rails:
-
-```bash
-python paper/globalsouthai/make_assets.py
-python paper/globalsouthai/check_paper.py
-```
-
-## Page budget
-
-The main body must be at most 8 pages. Limitations, Ethics, References and the
-appendices do not count. The current build is 8 pages of main body and 19 pages
-in total.
-
-To check where the main body ends, look for the `sec:endofmain` label in
-`acl_latex.aux`:
-
-```bash
-grep endofmain acl_latex.aux
-```
-
-The page number in that entry is the last page of the main body. If it exceeds 8,
-the float placement parameters near the top of the preamble are the first thing
-to look at, then caption length, then prose.
-
-## Review version
-
-`\usepackage[review]{acl}` produces the anonymous version with line numbers.
-Switch to `\usepackage{acl}` for camera-ready, or `\usepackage[preprint]{acl}` for
-a non-anonymous preprint. Before camera-ready see the checklist at the end of
-[`../ANONYMITY.md`](../ANONYMITY.md).
+- merge pull request in github, or push to github
+- git pull from github to a local repository
+- then, git push from your local repository to overleaf project 
+    - Overleaf project is https://www.overleaf.com/project/5f64f1fb97c4c50001b60549
+    - Overleaf git url is https://git.overleaf.com/5f64f1fb97c4c50001b60549
+- then, click "Submit" and then "Submit as Template" in overleaf in order to ask overleaf to update the overleaf template from the overleaf project 
