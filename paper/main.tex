@@ -25,17 +25,18 @@
 \usepackage{array}
 \usepackage[normalem]{ulem}
 
-% ---- referenceable figure panels --------------------------------------------
-% Figures 1 and 2 are each one image holding several panels, so a panel needs a
-% reference of its own rather than a letter typed after \ref.
-% \panelref{fig:x}{b} prints "1(b)": one macro carries the figure and the panel
-% together, and the figure number is never written by hand.
+% ---- figure panels ----------------------------------------------------------
+% Figures 1 and 2 are drawn as one PDF per panel by paper/figures/make_figures.py
+% and placed as subfigures, so the (a), (b), (c) labels and every cross-reference
+% to a panel come from LaTeX rather than being typed.
 %
-% subcaption would be the usual tool and is deliberately not used. The panels come
-% from one matplotlib figure with the letters drawn in, so there are no sub-floats
-% for it to caption, and loading it perturbs acl.sty's review line numbering, which
-% is already fragile (see the note beside the widow penalties, further down).
-\newcommand{\panelref}[2]{\ref{#1}(#2)}
+% The panels are included at their natural size, never scaled to a width, so the
+% type is exactly the size the plotting script chose and is identical across
+% panels. The subfigure widths therefore have to match the PDFs; make_figures.py
+% prints the page sizes and W1A/W1B/W1C there are what these fractions follow.
+\usepackage{subcaption}
+\captionsetup[sub]{font=small,labelfont=bf,skip=3pt}
+\captionsetup{subrefformat=parens}   % \subref prints "(a)", as the panel does
 
 % ---- Sinhala examples --------------------------------------------------------
 \makeatletter
@@ -525,7 +526,7 @@ are statistically unrelated ($\rho = 0.08$, $p = 0.68$), as are the Romanized va
 best by bits per byte: Gemma-2-9B ranks 26th of 31 on perplexity and 2nd on bits per
 byte, and Qwen3.5-9B-Base moves from 28th to 6th.
 
-The cause is visible in Figure~\panelref{fig:ppl}{b}. Perplexity is almost fully explained
+The cause is visible in Figure~\ref{fig:ppl-fert}. Perplexity is almost fully explained
 by how many tokens a tokenizer spends on a Sinhala word ($\rho = -0.87$, $p < 10^{-9}$),
 which ranges from 4.3 for the Qwen3.5 and Gemma tokenizers to 14.2 for models that fall
 back to bytes. Spreading the same loss over three times as many tokens lowers per-token
@@ -591,26 +592,26 @@ training corpus at the same time; it is an association across models.
 
 \subsection{Romanization narrows the spread}
 
-Figure~\panelref{fig:flat}{a}\nds{Use subfig or sub-caption and directly refer. Do not hard code}\stu{Done at the level that matters, sir, though not with
-\texttt{subcaption}. Every panel reference now goes through one macro,
-\texttt{\textbackslash panelref\{fig:flat\}\{a\}}, which prints
-Figure~\panelref{fig:flat}{a}. The panel letter is an argument of the reference rather
-than free text sitting after it, and the figure number is never typed. There were five of
-the old pattern and none is left.
-We did not use \texttt{subcaption} for two reasons. Each of these figures is a single
-image from our plotting script with the letters drawn into it, so there are no sub-floats
-for the package to caption, and loading it disturbs the line numbering that
-\texttt{acl.sty}'s \texttt{review} option installs.
-\emph{On that last point, something you may want to know.} While checking the above we
-found that the template already prints grey line numbers on top of words, because
-\texttt{lineno} picks a margin per column and gets the side wrong for the first lines of a
-column. There is no LaTeX error and no overfull box, so nothing reports it. It is not
-something we introduced: the draft you reviewed does it 74 times, for instance ``083'' over
-``dominated'' on page~1. The count moves with pagination. We have left it alone, since
-fixing it would mean editing \texttt{acl.sty} and the instructions forbid that, but we
-added \texttt{paper/analysis/check\_layout.py} which counts these and fails on the things
-that are ours: widows, and the main body running past eight pages. Please tell us if you
-would rather we worked around it.} shows the effect that the rest of the paper examines.
+Figure~\ref{fig:flat-lm}\nds{Use subfig or sub-caption and directly refer. Do not hard code}\stu{Done properly, sir. Our plotting script now writes one PDF per
+panel instead of one image per figure, and both figures are placed as
+\texttt{subcaption} subfigures. The panel letters come from LaTeX, the text refers to
+Figure~\ref{fig:flat-lm} and Figure~\ref{fig:flat-acc}, and the caption uses
+\texttt{\textbackslash subref}, so nothing about a panel is typed by hand. The panels go
+in at their natural size rather than scaled to a width, so the type is the same size in
+all three, and \texttt{make\_figures.py} prints the page sizes that the subfigure widths
+follow.
+\emph{One thing you may want to know, found while doing this.} The template prints grey
+line numbers on top of words. \texttt{acl.sty} loads \texttt{lineno} with
+\texttt{switch}, which picks a margin per column and gets the side wrong for the first
+lines of a column. There is no LaTeX error and no overfull box, so nothing reports it, and
+it is not new: the draft you reviewed does it 74 times, for example ``083'' over
+``dominated'' on page~1. Ours is at 191, partly because the paper is longer and partly
+because \texttt{subcaption} makes it somewhat worse, and the count moves with pagination.
+Fixing it would mean editing \texttt{acl.sty}, which the instructions forbid, so we have
+left it and added \texttt{paper/analysis/check\_layout.py}, which counts these and fails
+on the parts that are ours: widows, and the main body running past eight pages. If you
+would rather keep the count down we can go back to one image per figure, but the panel
+letters would have to be typed again.} shows the effect that the rest of the paper examines.
 Sinhala-script cost spans 16.3 to 34.1 bits per word, a spread of 17.7 bits, while
 Romanized cost spans 20.3 to 25.7, a spread of 5.4. Regressing one on the other, a full
 bit per word of Sinhala-script improvement buys only 0.14 bits on Romanized text (95\% CI
@@ -680,7 +681,7 @@ Pooled over the cohort the gap is 6.0 points (95\% CI 5.4 to 6.5, $n = 41{,}274$
 items), with an odds ratio for Romanized input of 0.70 ($p < 0.001$) in a logistic fit
 with checkpoint fixed effects and item-clustered errors.
 
-Stated as levels the same result is more severe. Figure~\panelref{fig:flat}{b} shows
+Stated as levels the same result is more severe. Figure~\ref{fig:flat-acc} shows
 Sinhala-script accuracy spanning 22.4 points while Romanized accuracy spans 6.7, and
 Romanized accuracy never exceeds 28.7\% against a 23.4\% chance baseline, so the best
 checkpoint keeps 5.2 of its 20.7 points of headroom. Five of the seven checkpoints with no
@@ -688,18 +689,32 @@ significant gap are already at or near chance natively.
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig1_flattening.pdf}
+% Widths follow the panel PDFs that make_figures.py reports, so nothing is
+% rescaled. The trailing %% keep the line breaks from adding a space between the
+% panels, which would otherwise overfill the row.
+\begin{subfigure}[b]{0.295\textwidth}%
+  \centering\includegraphics{figures/fig1a_lm_cost.pdf}%
+  \caption{}\label{fig:flat-lm}%
+\end{subfigure}\hfill%
+\begin{subfigure}[b]{0.285\textwidth}%
+  \centering\includegraphics{figures/fig1b_mmlu_accuracy.pdf}%
+  \caption{}\label{fig:flat-acc}%
+\end{subfigure}\hfill%
+\begin{subfigure}[b]{0.345\textwidth}%
+  \centering\includegraphics{figures/fig1c_transfer.pdf}%
+  \caption{}\label{fig:flat-levels}%
+\end{subfigure}
 \caption{Romanization narrows the spread between checkpoints.
-(a) Language modeling cost for 31
-checkpoints. Word counts are identical within a pair, so the columns are directly
-comparable, and the highlighted lines are checkpoints cheaper on Romanized text.
-(b) SinhalaMMLU accuracy: a 22.4 point spread becomes 6.7 and no
-checkpoint finishes more than 5.3 points above chance. (c) The same
-numbers as levels, with
-the 16 domain by difficulty cells. Both slopes fall well below the full-transfer
-slope of 1 (bootstrap intervals 0.11 to 0.54 and 0.36 to 0.63). LaMini-GPT-1.5B is
-omitted from (b) and (c) for unparseable output on 95.9\% of Sinhala-script
-items.}
+\subref{fig:flat-lm} Language modeling cost for 31 checkpoints. Word counts are
+identical within a pair, so the columns are directly comparable, and the
+highlighted lines are checkpoints cheaper on Romanized text.
+\subref{fig:flat-acc} SinhalaMMLU accuracy: a 22.4 point spread becomes 6.7 and no
+checkpoint finishes more than 5.3 points above chance.
+\subref{fig:flat-levels} The same numbers as levels, with the 16 domain by
+difficulty cells. Both slopes fall well below the full-transfer slope of 1
+(bootstrap intervals 0.11 to 0.54 and 0.36 to 0.63). LaMini-GPT-1.5B is omitted
+from \subref{fig:flat-acc} and \subref{fig:flat-levels} for unparseable output on
+95.9\% of Sinhala-script items.}
 \label{fig:flat}
 \end{figure*}
 
@@ -1368,11 +1383,19 @@ checkpoint beats a character bigram on Romanized Sinhala.}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig2_perplexity_artifact.pdf}
-\caption{What Sinhala-script perplexity is measuring. (a) Across 31
-checkpoints it is unrelated to Sinhala-script bits per byte. (b) It is
-instead almost fully determined
-by how many tokens the tokenizer spends per Sinhala word.}
+\begin{subfigure}[b]{\columnwidth}%
+  \centering\includegraphics{figures/fig2a_ppl_vs_bpb.pdf}%
+  \caption{}\label{fig:ppl-bpb}%
+\end{subfigure}
+
+\begin{subfigure}[b]{\columnwidth}%
+  \centering\includegraphics{figures/fig2b_ppl_vs_fertility.pdf}%
+  \caption{}\label{fig:ppl-fert}%
+\end{subfigure}
+\caption{What Sinhala-script perplexity is measuring.
+\subref{fig:ppl-bpb} Across 31 checkpoints it is unrelated to Sinhala-script bits
+per byte. \subref{fig:ppl-fert} It is instead almost fully determined by how many
+tokens the tokenizer spends per Sinhala word.}
 \label{fig:ppl}
 \end{figure}
 

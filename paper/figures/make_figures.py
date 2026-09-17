@@ -36,6 +36,16 @@ WIDE = 6.30
 # can trade vertical space without shrinking the labels.
 H1 = 2.26
 
+# Widths of figure 1's three panels, now separate files. They keep the 1:1:1.5
+# proportion the combined figure used and leave room for the subfigure gaps, so
+# the three can sit side by side across WIDE without being rescaled.
+W1A = 1.78
+W1B = 1.78
+W1C = 2.36
+
+# Height of one panel of figure 2, which stacks two panels in one column.
+H2 = 1.62
+
 # Vertical nudge, in points, for the left-hand spread label of figure 1 panel (a).
 # The midpoint of that range sits almost exactly on a y tick, so at some figure
 # heights the label and the tick label collide.
@@ -154,22 +164,18 @@ def spread_bracket(ax, xpos, lo, hi, color, text, side, dy=0):
                 va="center", fontsize=6.2, color=color)
 
 
-def fig1(it, ex, ni, ne, rb):
-    """Three views of the same flattening, across the full text width.
+def _mmlu_frame(ex):
+    return ex[(ex.dataset == "sinhala_mmlu")
+              & (ex.model != "LaMini-GPT-1.5B")].sort_values("u_acc")
 
-    (a) intrinsic cost per word, (b) downstream accuracy, (c) how much of a
-    checkpoint's Sinhala-script accuracy survives the change of script.
-    """
-    fig, axes = plt.subplots(1, 3, figsize=(WIDE, H1),
-                             gridspec_kw=dict(wspace=0.40, width_ratios=[1, 1, 1.5]))
 
-    # (a) intrinsic, bits per word: word counts are identical within a pair
-    a = axes[0]
+def _panel_lm_cost(a, it, prefix=""):
+    """Intrinsic cost per word. Word counts are identical within a pair."""
     d = it.sort_values("u_bpw")
     hl = ["Llama-3.1-8B", "LaMini-GPT-1.5B"]
     slope_panel(a, d.u_bpw.tolist(), d.r_bpw.tolist(), d.model.tolist(), hl,
                 "bits per word (lower is better)", annotate=False)
-    a.set_title("(a) LM cost, 31 checkpoints", loc="left", pad=6)
+    a.set_title(f"{prefix}LM cost, 31 checkpoints", loc="left", pad=6)
     spread_bracket(a, -0.17, it.u_bpw.min(), it.u_bpw.max(), UNI,
                    f"spread\n{it.u_bpw.max()-it.u_bpw.min():.1f}", "left",
                    dy=SPREAD_DY_A)
@@ -177,23 +183,24 @@ def fig1(it, ex, ni, ne, rb):
                    f"spread\n{it.r_bpw.max()-it.r_bpw.min():.1f}", "right")
     a.set_xlim(-0.50, 1.46)
 
-    # (b) extrinsic, SinhalaMMLU accuracy
-    b = axes[1]
-    m = ex[(ex.dataset == "sinhala_mmlu") & (ex.model != "LaMini-GPT-1.5B")].sort_values("u_acc")
+
+def _panel_mmlu_acc(b, m, ne, prefix=""):
+    """Downstream accuracy, same slope-chart form as the intrinsic panel."""
     hl2 = ["Qwen3.5-9B", "TinyLlama-1.1B-Chat"]
     slope_panel(b, m.u_acc.tolist(), m.r_acc.tolist(), m.model.tolist(), hl2,
                 "SinhalaMMLU accuracy (%)",
                 chance=ne["chance"]["sinhala_mmlu"], chance_label="chance 23.4",
                 annotate=False)
-    b.set_title("(b) SinhalaMMLU accuracy", loc="left", pad=6)
+    b.set_title(f"{prefix}SinhalaMMLU accuracy", loc="left", pad=6)
     spread_bracket(b, -0.17, m.u_acc.min(), m.u_acc.max(), UNI,
                    f"spread\n{m.u_acc.max()-m.u_acc.min():.1f} pp", "left")
     spread_bracket(b, 1.17, m.r_acc.min(), m.r_acc.max(), ROM,
                    f"spread\n{m.r_acc.max()-m.r_acc.min():.1f} pp", "right")
     b.set_xlim(-0.50, 1.46)
 
-    # (c) how much of it survives
-    c = axes[2]
+
+def _panel_transfer(c, m, ne, rb, prefix=""):
+    """How much of a checkpoint's Sinhala-script accuracy survives the script change."""
     chance = ne["chance"]["sinhala_mmlu"]
     st = strata_for_panel()
     lv = rb["flattening_models"]["levels"]
@@ -213,7 +220,7 @@ def fig1(it, ex, ni, ne, rb):
     c.set_ylabel("Romanized accuracy (%)")
     c.set_xlim(lo, hi)
     c.set_ylim(21.0, 34.6)
-    c.set_title("(c) how much survives", loc="left", pad=6)
+    c.set_title(f"{prefix}how much survives", loc="left", pad=6)
     handles = [
         Line2D([], [], color=UNI, marker="o", lw=1.0, markersize=3.2,
                markeredgecolor="black", markeredgewidth=0.3,
@@ -229,7 +236,29 @@ def fig1(it, ex, ni, ne, rb):
                rotation=52, ha="center", va="center")
     c.annotate("chance", (lo + 0.35, chance - 0.30), fontsize=5.7, color=REF,
                ha="left", va="top")
-    save(fig, "fig1_flattening")
+
+
+def fig1(it, ex, ni, ne, rb):
+    """Three views of the same flattening, one PDF per panel.
+
+    The paper places these as three subfigures, so each panel is its own file and
+    LaTeX supplies the (a), (b), (c) labels and the cross-references. The panels are
+    included at their natural size, never scaled, so the type is the same size in
+    all three. Widths are chosen to sum to the text width with the subfigure gaps.
+    """
+    m = _mmlu_frame(ex)
+
+    fig, a = plt.subplots(figsize=(W1A, H1))
+    _panel_lm_cost(a, it)
+    save(fig, "fig1a_lm_cost")
+
+    fig, b = plt.subplots(figsize=(W1B, H1))
+    _panel_mmlu_acc(b, m, ne)
+    save(fig, "fig1b_mmlu_accuracy")
+
+    fig, c = plt.subplots(figsize=(W1C, H1))
+    _panel_transfer(c, m, ne, rb)
+    save(fig, "fig1c_transfer")
 
 
 def strata_for_panel():
@@ -238,12 +267,9 @@ def strata_for_panel():
 
 # ---------------------------------------------------------------- figure 2 ---
 
-def fig2(it, ni):
-    fig, axes = plt.subplots(2, 1, figsize=(COL, 3.30), gridspec_kw=dict(hspace=0.58))
+def _panel_ppl_vs_bpb(a, it, ni, fig, ticks, prefix=""):
+    """Perplexity against bits per byte, coloured by tokenizer fertility."""
     fert = it.u_tok_per_word
-    ticks = [3, 5, 10, 20]
-
-    a = axes[0]
     sc = a.scatter(it.u_bpb, it.u_ppl, c=fert, cmap="viridis_r", s=16,
                    edgecolor="black", linewidth=0.25, zorder=3)
     plain_log_y(a, ticks)
@@ -252,13 +278,14 @@ def fig2(it, ni):
     a.set_xlim(1.08, 2.52)
     a.set_ylim(2.0, 40)
     r = ni["rank"]["ppl_vs_bpb_unicode"]
-    a.set_title(f"(a) perplexity vs. bits per byte:  $\\rho$ = {r['rho']:.2f}, "
+    a.set_title(f"{prefix}perplexity vs. bits per byte:  $\\rho$ = {r['rho']:.2f}, "
                 f"$p$ = {r['p']:.2f}", loc="left", pad=4)
     cb = fig.colorbar(sc, ax=a, pad=0.02, aspect=11)
     cb.set_label("tokens / word", labelpad=2)
     cb.outline.set_linewidth(0.4)
     cb.ax.tick_params(width=0.4, length=1.8)
-    for name, dx, dy, ha in [("Qwen3.5-4B", 13, 5, "left"), ("Gemma-2-9B", 13, -5, "left"),
+    for name, dx, dy, ha in [("Qwen3.5-4B", 13, 5, "left"),
+                             ("Gemma-2-9B", 13, -5, "left"),
                              ("Pythia-410M", 34, -9, "left")]:
         row = it[it.model == name].iloc[0]
         a.annotate(name, (row.u_bpb, row.u_ppl), xytext=(dx, dy),
@@ -266,16 +293,20 @@ def fig2(it, ni):
                    arrowprops=dict(arrowstyle="-", lw=0.4, color="0.35",
                                    shrinkA=0.5, shrinkB=2.5))
 
-    b = axes[1]
-    b.scatter(fert, it.u_ppl, s=16, color=UNI, edgecolor="black", linewidth=0.25, zorder=3)
+
+def _panel_ppl_vs_fertility(b, it, ni, ticks, prefix=""):
+    """Perplexity against tokenizer fertility, with a log-linear fit."""
+    fert = it.u_tok_per_word
+    b.scatter(fert, it.u_ppl, s=16, color=UNI, edgecolor="black", linewidth=0.25,
+              zorder=3)
     plain_log_y(b, ticks)
     b.set_xlabel("tokens per Sinhala word (tokenizer fertility)")
     b.set_ylabel("perplexity")
     b.set_xlim(3.2, 15.6)
     b.set_ylim(2.0, 40)
     r2 = ni["rank"]["fertility_vs_unicode_ppl"]
-    b.set_title(f"(b) perplexity vs. tokenizer fertility:  $\\rho$ = {r2['rho']:.2f}, "
-                f"$p$ < $10^{{-9}}$", loc="left", pad=4)
+    b.set_title(f"{prefix}perplexity vs. tokenizer fertility:  "
+                f"$\\rho$ = {r2['rho']:.2f}, $p$ < $10^{{-9}}$", loc="left", pad=4)
     sl, ic = np.polyfit(fert, np.log(it.u_ppl), 1)
     xs = np.linspace(fert.min(), fert.max(), 50)
     b.plot(xs, np.exp(ic + sl * xs), color=REF, lw=0.8, ls=(0, (3, 2)), zorder=2)
@@ -283,7 +314,23 @@ def fig2(it, ni):
                va="top", ha="left")
     b.annotate("byte fallback\n(OPT, Pythia, Minitron)", (13.4, 6.6), fontsize=5.8,
                va="center", ha="right")
-    save(fig, "fig2_perplexity_artifact")
+
+
+def fig2(it, ni):
+    """What Sinhala-script perplexity is measuring, one PDF per panel.
+
+    Placed as two stacked subfigures, so LaTeX supplies the labels. Included at
+    natural size like figure 1's panels.
+    """
+    ticks = [3, 5, 10, 20]
+
+    fig, a = plt.subplots(figsize=(COL, H2))
+    _panel_ppl_vs_bpb(a, it, ni, fig, ticks)
+    save(fig, "fig2a_ppl_vs_bpb")
+
+    fig, b = plt.subplots(figsize=(COL, H2))
+    _panel_ppl_vs_fertility(b, it, ni, ticks)
+    save(fig, "fig2b_ppl_vs_fertility")
 
 
 # ---------------------------------------------------------------- figure 3 ---
