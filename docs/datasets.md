@@ -83,13 +83,29 @@ ships a 7,500-item `train` split, meant for fine-tuning a model; it is downloade
 `download_sold.py`) but otherwise unused here, since nothing in this project is fine-tuned.
 
 **Global PIQA** (`mrlbenchmarks/global-piqa-nonparallel`, config `sin_sinh`). 100 hand-written
-items, each a prompt plus two candidate solutions, 77 of them culturally specific. Two decisions:
+items, each a prompt plus two candidate solutions. The source paper describes 110 items created
+and verified by its two authors, of which the public non-parallel release carries 100. 77 of the
+100 carry `approx_cultural_score = 1` in the release, which is the field this project reads as
+"culturally specific"; the source paper itself gives a qualitative three-way split (general
+common sense, specifically Sri Lankan, and the Sri Lankan version of a shared concept) without
+per-class counts. Two decisions:
 
-The dataset also publishes a `sin_latn` config. That is a **separate, non-parallel** Sinhala set
-authored in Latin script by different contributors — not a transliteration of `sin_sinh`. Using
-it as the Romanized condition would vary content and authorship along with script and make the
-comparison uninterpretable, so we transliterate `sin_sinh` ourselves, exactly as for the other
-two datasets.
+The dataset also publishes a `sin_latn` config, and we do **not** use it as the Romanized
+condition. It is the same 100 items — all 200 English glosses match `sin_sinh` exactly — but
+written in a scholarly transliteration with diacritics, in the style of ISO 15919: `Hēn
+govithæna karannē kumana piḷivelaṭada?`. Only 86.4% of its characters are ASCII and 61.1% of its
+words carry at least one non-ASCII character (ā, ṭ, æ, ē, ī, ḷ, ḍ, ṇ, ū, ō, ǣ, a combining breve
+and ZWJ), costing 1.178 bytes per character against 1.000 for ours.
+
+That matters for three reasons. It is not the register this project is about: Romanized Sinhala
+as people actually type it is plain ASCII with no diacritics, which is what our transliterator
+produces. Its diacritics and ZWJ are rare characters that tokenizers fragment, so using it would
+put back the byte-and-token confound the whole paper exists to remove. And it exists for Global
+PIQA only — SinhalaMMLU and SOLD have no Latin-script twin — so using it for one dataset and our
+transliterator for the other two would make the script condition mean different things across
+the three tasks. We therefore transliterate `sin_sinh` ourselves, exactly as for the other two
+datasets. Note also that `sin_latn` is registered as its own language in the release, with its
+own `example_id` group and its own answer shuffling, so it is not a drop-in paired twin either.
 
 Licence note: Global PIQA is CC BY-SA 4.0 and **evaluation-only** — the authors explicitly
 disallow training on it, or on synthetic data seeded from it. This project does no training,
@@ -101,8 +117,8 @@ so that is satisfied, but any future fine-tuning work must exclude it.
   dataset can only detect fairly large script effects. Treat it as a third task that either
   corroborates or fails to corroborate MMLU and SOLD, not as an independently conclusive result.
   Reporting the exact discordant-pair counts alongside the p-value is worth doing here.
-* **Cultural specificity is a confound worth checking.** 77% of Global PIQA `sin_sinh` items are
-  culturally specific. If Romanized performance drops there, it may reflect thin Romanized
+* **Cultural specificity is a confound worth checking.** 77 of the 100 Global PIQA `sin_sinh`
+  items are flagged culturally specific. If Romanized performance drops there, it may reflect thin Romanized
   Sinhala coverage of cultural vocabulary rather than a script effect per se; `strata` carries
   the flag so this can be split out.
 * **SOLD text contains placeholders.** Posts use `@USER` and similar tokens, which pass through

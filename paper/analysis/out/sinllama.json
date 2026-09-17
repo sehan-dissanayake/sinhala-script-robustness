@@ -1,0 +1,236 @@
+{
+  "n_sentences": 500,
+  "parent": {
+    "model": "Llama-3-8B",
+    "params": 8.0,
+    "n": 500,
+    "u_ppl": 3.247676273855397,
+    "u_bpb": 1.156567696393302,
+    "u_bpc": 3.065991475289579,
+    "u_bpw": 16.44422050568823,
+    "u_tok": 29368,
+    "u_bytes": 43152,
+    "u_words": 3035,
+    "r_ppl": 1008.9979358045082,
+    "r_bpb": 3.6039696913849495,
+    "r_bpc": 3.614002692292494,
+    "r_bpw": 22.242489716418945,
+    "r_tok": 6765,
+    "r_bytes": 18731,
+    "r_words": 3035,
+    "m_ppl": 6.393282341586189,
+    "m_bpb": 1.646238395773861,
+    "m_bpc": 3.244950147830596,
+    "m_bpw": 19.71668106901327,
+    "m_tok": 34939,
+    "m_bytes": 56806,
+    "m_words": 4743,
+    "ppl_ratio": 310.6830394171959,
+    "m_ppl_ratio": 1.9685713114492676,
+    "d_bpb": 2.4474019949916475,
+    "d_bpw": 5.798269210730716,
+    "m_d_bpb": 0.48967069938055907,
+    "u_tok_per_word": 9.676441515650742,
+    "u_tok_per_byte": 0.6805710048201705,
+    "r_tok_per_word": 2.228995057660626,
+    "r_tok_per_byte": 0.3611659815279483,
+    "m_tok_per_word": 7.366434745941388,
+    "m_tok_per_byte": 0.6150582684927649
+  },
+  "adapted": {
+    "model": "SinLlama-8B",
+    "params": 8.0,
+    "n": 500,
+    "u_ppl": 74.55870586303881,
+    "u_bpb": 0.6282000559519948,
+    "u_bpc": 1.665320605383983,
+    "u_bpw": 8.931824980046287,
+    "u_tok": 4358,
+    "u_bytes": 43152,
+    "u_words": 3035,
+    "r_ppl": 645.75049236088,
+    "r_bpb": 3.371424133000491,
+    "r_bpc": 3.380809756155694,
+    "r_bpw": 20.80729668376679,
+    "r_tok": 6765,
+    "r_bytes": 18731,
+    "r_words": 3035,
+    "m_ppl": 701.3683177861878,
+    "m_bpb": 1.3966518813613193,
+    "m_bpc": 2.7529826424446058,
+    "m_bpw": 16.72743132460702,
+    "m_tok": 8392,
+    "m_bytes": 56806,
+    "m_words": 4743,
+    "ppl_ratio": 8.660967017682635,
+    "m_ppl_ratio": 9.406927194720517,
+    "d_bpb": 2.743224077048496,
+    "d_bpw": 11.875471703720503,
+    "m_d_bpb": 0.7684518254093246,
+    "u_tok_per_word": 1.4359143327841846,
+    "u_tok_per_byte": 0.10099184278828328,
+    "r_tok_per_word": 2.228995057660626,
+    "r_tok_per_byte": 0.3611659815279483,
+    "m_tok_per_word": 1.7693442968585285,
+    "m_tok_per_byte": 0.14773087349927824
+  },
+  "parent_weights_note": "meta-llama/Meta-Llama-3-8B is gated; the run used NousResearch/Meta-Llama-3-8B, whose four safetensors shards carry the same sizes and SHA-256 digests as the official repository.",
+  "vocab": {
+    "Llama-3-8B": 128256,
+    "SinLlama-8B": 139336
+  },
+  "gains": {
+    "unicode": {
+      "bpb_parent": 1.156567696393302,
+      "bpb_adapted": 0.6282000559519948,
+      "bpb_delta": -0.5283676404413072,
+      "bpb_pct_reduction": 45.68410842607788,
+      "bpw_parent": 16.44422050568823,
+      "bpw_adapted": 8.931824980046287,
+      "ppl_parent": 3.247676273855397,
+      "ppl_adapted": 74.55870586303881,
+      "ppl_factor": 22.95755474868446,
+      "fertility_parent": 9.676441515650742,
+      "fertility_adapted": 1.4359143327841846
+    },
+    "romanized": {
+      "bpb_parent": 3.6039696913849495,
+      "bpb_adapted": 3.371424133000491,
+      "bpb_delta": -0.23254555838445867,
+      "bpb_pct_reduction": 6.452483741479387,
+      "bpw_parent": 22.242489716418945,
+      "bpw_adapted": 20.80729668376679,
+      "ppl_parent": 1008.9979358045082,
+      "ppl_adapted": 645.75049236088,
+      "ppl_factor": 0.6399918864511861,
+      "fertility_parent": 2.228995057660626,
+      "fertility_adapted": 2.228995057660626
+    },
+    "mixed": {
+      "bpb_parent": 1.646238395773861,
+      "bpb_adapted": 1.3966518813613193,
+      "bpb_delta": -0.24958651441254176,
+      "bpb_pct_reduction": 15.16101890547976,
+      "bpw_parent": 19.71668106901327,
+      "bpw_adapted": 16.72743132460702,
+      "ppl_parent": 6.393282341586189,
+      "ppl_adapted": 701.3683177861878,
+      "ppl_factor": 109.703948662492,
+      "fertility_parent": 7.366434745941388,
+      "fertility_adapted": 1.7693442968585285
+    }
+  },
+  "adaptation_asymmetry": 2.2721037723187867,
+  "fertility_factor_unicode": 6.738871041762277,
+  "ppl_ratio": {
+    "parent": 310.6830394171959,
+    "adapted": 8.660967017682635,
+    "factor": 35.87163405459123
+  },
+  "d_bpb": {
+    "parent": 2.4474019949916475,
+    "adapted": 2.743224077048496,
+    "change": 0.2958220820568487
+  },
+  "d_bpw": {
+    "parent": 5.798269210730716,
+    "adapted": 11.875471703720503
+  },
+  "decomposition_adapted": {
+    "bytes_per_token_unicode": 9.901789811840294,
+    "bytes_per_token_romanized": 2.768810051736881,
+    "total_bits": 3.1145281142970944,
+    "normalizer_bits": -14.264619193909052,
+    "per_byte_bits": 17.37914730820615,
+    "normalizer_share": -4.580025824274307,
+    "residual": -3.552713678800501e-15
+  },
+  "decomposition_parent": {
+    "bytes_per_token_unicode": 1.4693543993462272,
+    "bytes_per_token_romanized": 2.768810051736881,
+    "total_bits": 8.279299674824484,
+    "normalizer_bits": 3.0930536084827436,
+    "per_byte_bits": 5.18624606634174,
+    "normalizer_share": 0.37358879735782896,
+    "residual": 1.7763568394002505e-15
+  },
+  "ranks_among_32": {
+    "u_ppl": 32,
+    "u_bpb": 1,
+    "r_bpb": 3,
+    "ppl_ratio": 1,
+    "d_bpb": 31,
+    "d_bpw": 32,
+    "u_tok_per_word": 1
+  },
+  "pool_of_31": {
+    "u_bpb_min": 1.1484213946740502,
+    "u_bpb_median": 1.4856402728089675,
+    "u_ppl_max": 25.840030759479877,
+    "u_ppl_median": 5.408926003231497,
+    "r_bpb_min": 3.289943950880775,
+    "r_bpb_median": 3.805244237685265,
+    "u_bpw_min": 16.32839539471981,
+    "u_bpw_median": 21.123014514745492,
+    "r_bpw_median": 23.484688572020662,
+    "ppl_ratio_min": 57.96542179081607,
+    "ppl_ratio_median": 293.6257601415802,
+    "d_bpb_median": 2.140821889342593,
+    "d_bpb_max": 2.808615297217215,
+    "d_bpw_median": 1.1137975543437904,
+    "d_bpw_max": 7.758301863835253,
+    "fertility_min": 4.342668863261944,
+    "fertility_median": 9.511696869851729,
+    "fertility_max": 14.19835255354201
+  },
+  "conclusion_robustness": {
+    "ppl_vs_bpb_unicode": {
+      "pool_of_31": {
+        "rho": 0.07701612903225806,
+        "p": 0.6804869573574756,
+        "n": 31
+      },
+      "with_sinllama": {
+        "rho": -0.020894428152492667,
+        "p": 0.9096291185775631,
+        "n": 32
+      }
+    },
+    "fertility_vs_unicode_ppl": {
+      "pool_of_31": {
+        "rho": -0.8727293825137629,
+        "p": 1.5533837120419584e-10,
+        "n": 31
+      },
+      "with_sinllama": {
+        "rho": -0.8843373197504427,
+        "p": 1.9262519555563632e-11,
+        "n": 32
+      }
+    },
+    "params_vs_unicode_bpb": {
+      "pool_of_31": {
+        "rho": -0.5495461930056345,
+        "p": 0.0013640540618434839,
+        "n": 31
+      },
+      "with_sinllama": {
+        "rho": -0.5614910605800868,
+        "p": 0.0008267414052209783,
+        "n": 32
+      }
+    },
+    "unicode_bpb_vs_d_bpw": {
+      "pool_of_31": {
+        "rho": -0.876209677419355,
+        "p": 1.06360587989366e-10,
+        "n": 31
+      },
+      "with_sinllama": {
+        "rho": -0.8874633431085044,
+        "p": 1.304991143475944e-11,
+        "n": 32
+      }
+    }
+  }
+}

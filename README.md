@@ -53,10 +53,14 @@ of the full set can reproduce our file byte for byte. SOLD and Global PIQA are
 released in full with their Romanized side attached, so those results are
 reproducible by anyone. See [`docs/datasets.md`](docs/datasets.md).
 
-Global PIQA also publishes a `sin_latn` config. That is a *separate*,
-non-parallel Sinhala set authored in Latin script, not a transliteration of
-`sin_sinh`, so using it would confound script with content. Our Romanized
-condition comes from our own transliterator for all three datasets.
+Global PIQA also publishes a `sin_latn` config, which we do not use. It is the
+same 100 items, but in a scholarly transliteration with diacritics: only 86.4% of
+its characters are ASCII and 61.1% of its words carry a diacritic. Romanized
+Sinhala as people type it is plain ASCII, so `sin_latn` measures a different
+register, and its rare characters would put back the byte-and-token confound this
+work exists to remove. It also exists for Global PIQA only. Our Romanized
+condition therefore comes from our own transliterator for all three datasets.
+See [`docs/datasets.md`](docs/datasets.md).
 
 ## Pipeline
 

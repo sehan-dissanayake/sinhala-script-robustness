@@ -1,7 +1,7 @@
 # Inline Sinhala for a pdfLaTeX paper
 
 `../acl_latex.tex` is compiled with pdfLaTeX, which cannot set the Sinhala script.
-The five Sinhala examples in the paper are therefore built here, once, by a Unicode
+The Sinhala examples in the paper are therefore built here, once, by a Unicode
 engine into tightly cropped one-line PDFs, and the paper includes them as inline
 graphics. The PDFs are committed, so **building the paper needs pdfLaTeX and
 nothing else** — no fontspec, no font installation, no Overleaf compiler change.
@@ -9,7 +9,7 @@ nothing else** — no fontspec, no font installation, no Overleaf compiler chang
 These files are the only ones in `paper/` that contain Sinhala codepoints.
 `../acl_latex.tex` is pure ASCII.
 
-## The five examples
+## The examples
 
 | snippet | romanized | IPA | used in |
 | --- | --- | --- | --- |
@@ -19,7 +19,11 @@ These files are the only ones in `paper/` that contain Sinhala codepoints.
 | `si-wesak` | `wesak` | vɛsʌk | §3.2, the worked example |
 | `si-uthsawayeedii` | `uthsawayeedii` | ʊθsʌvʌjeːðiː | §3.2, the worked example |
 | `si-bauddhayin` | `bauddhayin` | baʊððʰʌjɪn | §3.2, the worked example |
-| `si-nya` | — | ɲʌ | §F.1, the sequences the web romanizer drops |
+| `si-nya` | — | ɲʌ | the sequences the web romanizer drops |
+| `si-ka` | `ka` | kʌ | Appendix A, the inherent vowel |
+| `si-kaa` | `kaa` | kaː | Appendix A, a vowel sign |
+| `si-khal` | `k` | k | Appendix A, the *hal kirīma* |
+| `si-sinhala` | `sinhala` | ˈsiŋɦʌlʌ | Appendix A, the language name |
 
 The three-word phrase of §3.2 is one file per word, not one file for the phrase,
 so the paper can still break a line between words the way it could when the phrase
@@ -90,7 +94,7 @@ Overleaf already has it. If a machine has only Noto Sans Sinhala, change the one
 1. Copy any `si-*.tex`, put the Sinhala in `\sinhala{...}`, and record the
    romanization and IPA in the header comment.
 2. Run `./build.sh` and check that the new page box matches the others.
-3. In `../acl_latex.tex`, add a named macro next to the other five, e.g.
+3. In `../acl_latex.tex`, add a named macro next to the others, e.g.
    `\newcommand{\sifoo}{\siex{si-foo}{...}}`, with the IPA in `tipa` input syntax.
    Use the macro in the body, so the paper stays ASCII.
 4. Add a row to the table above.
