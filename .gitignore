@@ -86,3 +86,9 @@ data/raw/sinhala_mmlu/
 data/processed/sinhala_mmlu.jsonl
 data/eval/sinhala_mmlu.jsonl
 data/romanized/*/sinhala_mmlu_romanized.jsonl
+
+
+# Third-party tokenizer files cached by paper/analysis/tokenizer_fertility.py.
+# They are downloaded from their own repositories on demand and are not ours to
+# redistribute.
+data/reference/tokenizers/
