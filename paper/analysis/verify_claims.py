@@ -416,7 +416,7 @@ eq("4.5: adapted d_bpb", SL["d_bpb"]["adapted"], 2.743, 5e-4)
 eq("4.5: unicode bpb gain", -SL["gains"]["unicode"]["bpb_delta"], 0.528, 5e-4)
 eq("4.5: romanized bpb gain", -SL["gains"]["romanized"]["bpb_delta"], 0.233, 5e-4)
 eq("4.5: gain asymmetry", SL["adaptation_asymmetry"], 2.3, 0.05)
-eq("abstract: adapted ppl factor", SL["gains"]["unicode"]["ppl_factor"], 23.0, 0.05)
+eq("4.5: adapted ppl factor", SL["gains"]["unicode"]["ppl_factor"], 23.0, 0.05)
 is_("4.5: adapted is best of 32 by unicode bpb",
     SL["ranks_among_32"]["u_bpb"] == 1)
 is_("4.5: adapted is worst of 32 by unicode ppl",

@@ -8,10 +8,11 @@ and matches the item's form. Everything else is the protocol of the main run:
 zero-shot, greedy, 40 new tokens, each checkpoint's own chat template, answers
 extracted by the same matcher with unparseable output scored wrong.
 
-Item form is recorded per item as `isQnA` and is not a judgement call: it is
-exactly whether the Sinhala stem ends in a question mark. This script re-derives
-it from the frozen evaluation set and checks it against the flag recorded in every
-per-item file, so the split cannot drift.
+Item form is our own annotation, since the released data has no such field: it is
+carried per item as `isQnA` in the result files. It is not a judgement call
+either, being exactly whether the Sinhala stem ends in a question mark. This
+script re-derives the split from the frozen evaluation set and checks it against
+the annotation in every per-item file, so neither can drift from the other.
 
 The statistics match stats_extrinsic.py, whose helpers are imported rather than
 reimplemented: McNemar with a continuity correction, exact below 25 discordant

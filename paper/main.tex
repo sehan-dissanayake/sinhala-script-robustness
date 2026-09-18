@@ -110,23 +110,20 @@ comments, chat and social media are written in Romanized Sinhala, in Latin
 letters\nds{The types should precede the listing or it looks like types are only relevant to latter}\stu{fixed it sir}. A
 recent benchmark reported that language models are roughly 312 times worse on
 Romanized than on Sinhala-script text, and that parameter count predicts ability in
-neither script. Both results rest on perplexity, which is normalized by token count
-and not comparable across tokenizers. We remeasure 31 small open-weight
+neither script. Both rest on perplexity, which is not comparable across
+tokenizers. We remeasure 31 open-weight
 checkpoints (350M to 14.7B) with bits per byte, matching the published perplexities to a
 median of 0.05\%\nds{exactly?}\stu{Not exactly sir, and we have replaced the word and added the difference. Appendix~\ref{sec:repro24}
-now says it clearly and Table~\ref{tab:shared24} lists every comparison.}, so what changes is the metric. The reported
-ratio then splits in two on the same 24 checkpoints, a factor of 21 from identical
-content being cut into a different number of tokens and a factor of 24 from a real
-rise in per-byte loss. Under bits per byte, parameter count is associated with
-Sinhala-script ability. The clearest case is SinLlama, a Sinhala-adapted Llama-3-8B,
-which reports the smallest degradation of any checkpoint here, 8.7-fold, and one of the
-largest real per-byte gaps. We then report the first downstream evaluation of Sinhala
-script variation using 9{,}479
-items, three tasks, eleven instruction-tuned checkpoints, 208{,}538 generations. A 22.4
-point spread in Sinhala-script accuracy narrows to 6.7 under romanization, and Romanized
-accuracy rises with Sinhala-script accuracy at a slope of 0.22 (95\% CI 0.11 to 0.54). On
-offensive-language detection, accuracy moves by a few points while Matthews correlation
-loses over half its value. Longer input does not explain this difference because these tokenizers fall back to byte-level pieces when processing Sinhala script, resulting in less efficient tokenization, so the Romanized prompt is the \emph{shorter} of the two in tokens
+now says it clearly and Table~\ref{tab:shared24} lists every comparison.}. The reported
+ratio then splits in two, a factor of 21 from identical content being cut into more
+tokens and a factor of 24 from a real rise in per-byte loss, and parameter count does
+predict Sinhala-script ability. We then report the first downstream evaluation of
+Sinhala script variation, over 9{,}479 items, three tasks and eleven instruction-tuned
+checkpoints. A 22.4 point spread in Sinhala-script accuracy narrows to 6.7 under
+romanization, and on offensive-language detection accuracy moves by a few points while
+Matthews correlation loses over half its value. Length is not the cause, because these
+tokenizers fall back to byte-level pieces on the Sinhala script, so the Romanized prompt
+is \emph{shorter} in tokens
 for every checkpoint\nds{What? How?}\stu{Sir most of these tokenizers have no
 Sinhala pieces and fall back to byte level, which generate more tokens per Sinhala
 word than the same word romanized. So romanizing makes the prompt
@@ -466,7 +463,7 @@ change in $\log_2 \mathrm{PPL}$ is then exactly
 with $\bar{A}$ and $\bar{x}$ the two-condition means. The first term is the part of the
 reported degradation caused by identical content being cut into a different number of
 tokens, the second the part caused by the model assigning less probability per byte. The
-split is an exact algebraic identity, not an empirical model.
+split is an exact algebraic identity, not an empirical model fitted to the data.
 
 On the 24 checkpoints of \citet{rajapakse-weerasinghe-2026-script}\nds{what is this prior work? refer explicitly}\stu{Fixed sir. There were seven “Prior work” references. Added the correct citation to
 \citet{rajapakse-weerasinghe-2026-script}.} the median gap is 8.29 bits, which is the 312-fold
@@ -861,8 +858,10 @@ Answer:
 Global PIQA needs two forms of T1, because its items do.\nds{This is wrong on two accounts: (1) The domain should have been \textit{Sri Lankan Culture}, (2) Not all examples are \textit{complete the text} type. You'd have known this if you actually read the paper and looked at Table 1.}\stu{You were right on both counts sir. We went back to your Table 1. Of the 110 items, 67 are completions and 43 are question and answer pairs, so ``complete the given text'' was wrong for the questions, and the domain should have been \textit{Sri Lankan Culture}. We fixed the prompt into the two forms below and ran all 11 checkpoints on it, and that is what \S\ref{sec:piqa} and Table~\ref{tab:piqa} now report. Thank you for catching this sir.}
 The released set contains 40 questions and 60 paragraph stems, which is the 43 and 67 of
 \citet{desilva-ranathunga-2026-sinhalapiqa} less the ten items the public release omits.
-The two are told apart by whether the Sinhala stem ends in a question mark, which agrees
-with the \texttt{isQnA} flag recorded for every item. Questions take the same form as
+The release itself carries no item-type field, so we annotated all 100 items by hand and
+record the annotation as \texttt{isQnA}. It agrees exactly with the rule that a question is
+a stem ending in a question mark, which is what our code applies, so the split is
+reproducible from the data rather than from our labels. Questions take the same form as
 SinhalaMMLU, with \textit{Sri Lankan Culture} as the domain:
 \begin{quote}\small\ttfamily
 This is a multiple-choice question related to the Sri Lankan Culture. Choose the
