@@ -1,0 +1,101 @@
+﻿id,gold_label,is_qna,unicode_pred_digit,unicode_pred_label,unicode_correct,unicode_raw_output,unicode_n_input_tokens,unicode_n_output_tokens,romanized_pred_digit,romanized_pred_label,romanized_correct,romanized_raw_output,romanized_n_input_tokens,romanized_n_output_tokens
+piqa_0001,A,True,2,B,0,2,422,2,2,B,0,2,159,2
+piqa_0002,B,False,1,A,0,1,288,2,2,B,1,2,119,2
+piqa_0003,A,True,1,A,1,1/2,502,4,1,A,1,1/2,159,4
+piqa_0004,A,False,1,A,1,1,342,2,1,A,1,1,132,2
+piqa_0005,B,False,1,A,0,1,346,2,1,A,0,1,126,2
+piqa_0006,B,False,1,A,0,1,356,2,2,B,1,2,128,2
+piqa_0007,A,True,1,A,1,1/2,294,4,1,A,1,1. waarayee karunaa kala yuthu ya,128,15
+piqa_0008,A,True,1,A,1,1/2,513,4,2,B,0,2,163,2
+piqa_0009,A,False,1,A,1,1,316,2,2,B,0,2,125,2
+piqa_0010,A,True,1,A,1,1,331,2,1,A,1,1. wam payee sulaegilleni,124,12
+piqa_0011,B,True,1,A,0,1,350,2,1,A,0,1. maethiruu reddak,128,9
+piqa_0012,A,True,1,A,1,1/2,476,4,1,A,1,1/2,158,4
+piqa_0013,B,False,2,B,1,2,321,2,2,B,1,2,121,2
+piqa_0014,A,True,1,A,1,1,276,2,2,B,0,2,123,2
+piqa_0015,B,False,2,B,1,2,479,2,2,B,1,2,158,2
+piqa_0016,B,False,1,A,0,1,399,2,2,B,1,2,139,2
+piqa_0017,A,False,1,A,1,1,229,2,1,A,1,1,107,2
+piqa_0018,B,True,2,B,1,2,537,2,1,A,0,1/2,167,4
+piqa_0019,B,False,2,B,1,2,792,2,2,B,1,2,213,2
+piqa_0020,B,False,1,A,0,1,301,2,2,B,1,2,119,2
+piqa_0021,A,False,2,B,0,2,1138,2,2,B,0,2,282,2
+piqa_0022,A,True,1,A,1,1/2,592,4,1,A,1,1/2,189,4
+piqa_0023,B,True,1,A,0,1/2,285,4,1,A,0,1. maayaa angam pora ya,121,11
+piqa_0024,B,False,1,A,0,1,514,2,2,B,1,2,165,2
+piqa_0025,A,False,1,A,1,1,627,2,1,A,1,1,173,2
+piqa_0026,B,True,1,A,0,1,434,2,1,A,0,1,150,2
+piqa_0027,B,True,2,B,1,2,510,2,2,B,1,2,175,2
+piqa_0028,A,False,1,A,1,1,492,2,1,A,1,1,152,2
+piqa_0029,A,True,1,A,1,1,233,2,1,A,1,1. haraawa kaalayata ya,113,11
+piqa_0030,A,False,2,B,0,2,300,2,2,B,0,2,125,2
+piqa_0031,A,True,1,A,1,1/2,374,4,1,A,1,1,135,2
+piqa_0032,A,True,1,A,1,1,293,2,1,A,1,1/2,120,4
+piqa_0033,B,True,1,A,0,1/2,599,4,1,A,0,1/2,181,4
+piqa_0034,A,False,1,A,1,1,283,2,1,A,1,1,117,2
+piqa_0035,A,True,2,B,0,2,1041,2,2,B,0,2,272,2
+piqa_0036,A,True,2,B,0,2,1207,2,2,B,0,2,300,2
+piqa_0037,B,False,1,A,0,1,260,2,1,A,0,1,110,2
+piqa_0038,B,False,2,B,1,2,497,2,1,A,0,1,161,2
+piqa_0039,A,False,1,A,1,1,365,2,1,A,1,1,129,2
+piqa_0040,B,True,1,A,0,1/2,381,4,1,A,0,1/2,141,4
+piqa_0041,A,False,1,A,1,1,255,2,2,B,0,2,111,2
+piqa_0042,B,True,1,A,0,1,307,2,2,B,1,2. widuliya seeya,117,8
+piqa_0043,A,False,1,A,1,1,603,2,2,B,0,2,173,2
+piqa_0044,A,True,1,A,1,1,344,2,1,A,1,1. ottupaalu kaaeli,133,12
+piqa_0045,B,True,1,A,0,1/2,426,4,2,B,1,2,144,2
+piqa_0046,A,False,1,A,1,1,291,2,2,B,0,2,119,2
+piqa_0047,B,False,1,A,0,1,339,2,1,A,0,1,128,2
+piqa_0048,A,False,2,B,0,2,355,2,2,B,0,2,137,2
+piqa_0049,A,False,1,A,1,1,273,2,1,A,1,1,115,2
+piqa_0050,B,True,1,A,0,1,278,2,1,A,0,1. awa kaalayee ya,121,9
+piqa_0051,B,True,1,A,0,1,801,2,2,B,1,2,241,2
+piqa_0052,B,False,1,A,0,1,214,2,1,A,0,1,109,2
+piqa_0053,B,True,1,A,0,1/2,440,4,1,A,0,1/2,155,4
+piqa_0054,A,False,2,B,0,2,733,2,2,B,0,2,211,2
+piqa_0055,A,False,1,A,1,1,344,2,2,B,0,2,125,2
+piqa_0056,A,False,2,B,0,2,411,2,2,B,0,2,140,2
+piqa_0057,A,True,1,A,1,1,336,2,1,A,1,1. kamiisaya galawaa yaa yuthuya,136,16
+piqa_0058,A,True,1,A,1,1/2,412,4,2,B,0,2,145,2
+piqa_0059,A,False,2,B,0,2,480,2,2,B,0,2,164,2
+piqa_0060,B,False,1,A,0,1,382,2,1,A,0,1,144,2
+piqa_0061,B,False,2,B,1,2,1250,2,2,B,1,2,311,2
+piqa_0062,B,False,1,A,0,1,231,2,2,B,1,2,109,2
+piqa_0063,A,True,2,B,0,2,361,2,2,B,0,2,147,2
+piqa_0064,A,False,2,B,0,2,458,2,1,A,1,1,146,2
+piqa_0065,A,False,2,B,0,2,505,2,2,B,0,2,171,2
+piqa_0066,A,True,1,A,1,1,549,2,1,A,1,1. kaeththaki,164,7
+piqa_0067,B,True,1,A,0,1/2,531,4,1,A,0,1/2,163,4
+piqa_0068,A,False,1,A,1,1,332,2,1,A,1,1,132,2
+piqa_0069,B,False,1,A,0,1,312,2,2,B,1,2,127,2
+piqa_0070,A,True,1,A,1,1/2,446,4,1,A,1,1/2,155,4
+piqa_0071,B,False,1,A,0,1,255,2,2,B,1,2,109,2
+piqa_0072,A,False,2,B,0,2,540,2,2,B,0,2,168,2
+piqa_0073,A,True,1,A,1,1/2,328,4,1,A,1,1. dura balanna langa nobalanna,126,12
+piqa_0074,B,False,1,A,0,1,409,2,2,B,1,2,136,2
+piqa_0075,B,False,1,A,0,1,326,2,2,B,1,2,133,2
+piqa_0076,B,False,1,A,0,1,376,2,1,A,0,1,132,2
+piqa_0077,B,False,2,B,1,2,479,2,2,B,1,2,162,2
+piqa_0078,B,True,2,B,1,2,394,2,1,A,0,1. panu biththara yanna hondin weelaa gatha yuthu ya,143,23
+piqa_0079,B,True,1,A,0,1,447,2,2,B,1,2,159,2
+piqa_0080,B,False,1,A,0,1,289,2,1,A,0,1,121,2
+piqa_0081,B,False,1,A,0,1,348,2,2,B,1,2,130,2
+piqa_0082,B,True,1,A,0,1/2,421,4,2,B,1,2,150,2
+piqa_0083,A,False,1,A,1,1,238,2,2,B,0,2,107,2
+piqa_0084,B,True,1,A,0,1,212,2,1,A,0,1,108,2
+piqa_0085,B,False,1,A,0,1,270,2,1,A,0,1,109,2
+piqa_0086,B,False,1,A,0,1,268,2,2,B,1,2,113,2
+piqa_0087,A,False,1,A,1,1,255,2,1,A,1,1,111,2
+piqa_0088,B,False,2,B,1,2,321,2,2,B,1,2,123,2
+piqa_0089,A,False,1,A,1,1,276,2,2,B,0,2,117,2
+piqa_0090,B,False,1,A,0,1,245,2,1,A,0,1,110,2
+piqa_0091,A,False,1,A,1,1,495,2,1,A,1,1,160,2
+piqa_0092,B,False,1,A,0,1,414,2,1,A,0,1,149,2
+piqa_0093,A,True,1,A,1,1,344,2,1,A,1,1,134,2
+piqa_0094,B,False,1,A,0,1,282,2,1,A,0,1,117,2
+piqa_0095,B,False,1,A,0,1,317,2,2,B,1,2,123,2
+piqa_0096,B,False,1,A,0,1,306,2,1,A,0,1,123,2
+piqa_0097,A,True,2,B,0,2,480,2,1,A,1,1/2,164,4
+piqa_0098,A,False,1,A,1,1,361,2,1,A,1,1,134,2
+piqa_0099,B,True,1,A,0,1/2,347,4,1,A,0,1/2,136,4
+piqa_0100,B,False,2,B,1,2,459,2,2,B,1,2,152,2

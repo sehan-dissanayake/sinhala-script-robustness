@@ -1,0 +1,2 @@
+Model,N,Unicode Acc (%),Romanized Acc (%),Gap (pp),Unicode Invalid (%),Romanized Invalid (%),Unicode MCQ Acc (%),Romanized MCQ Acc (%),Unicode COMP Acc (%),Romanized COMP Acc (%)
+SmolLM3-3B,100,51.0,52.0,-1.0,0.0,0.0,45.0,47.5,55.0,55.0
