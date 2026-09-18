@@ -86,3 +86,5 @@ data/raw/sinhala_mmlu/
 data/processed/sinhala_mmlu.jsonl
 data/eval/sinhala_mmlu.jsonl
 data/romanized/*/sinhala_mmlu_romanized.jsonl
+data/reference/web_tool_shards/augmented_sentences_sample/
+!data/reference/web_tool_endpoint/
