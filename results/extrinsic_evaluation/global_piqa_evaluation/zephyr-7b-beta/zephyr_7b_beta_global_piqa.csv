@@ -1,0 +1,256 @@
+﻿id,gold_label,is_qna,unicode_pred_digit,unicode_pred_label,unicode_correct,unicode_raw_output,unicode_n_input_tokens,unicode_n_output_tokens,romanized_pred_digit,romanized_pred_label,romanized_correct,romanized_raw_output,romanized_n_input_tokens,romanized_n_output_tokens
+piqa_0001,A,True,2,B,0,"2. හේන කපා, වවා, රැක, අස්වනු",318,40,2,B,0,"2. heena kapaa, wawaa, raeka, aswanu nelaa, gini thabaa gatha yuthu ya",170,35
+piqa_0002,B,False,1,A,0,"1. ගරුබ යකා කියා ය
+
+Explanation:
+
+The given text is in Sinhala",205,40,1,A,0,1. garunda yakaa kiyaa ya,128,12
+piqa_0003,A,True,2,B,0,2. නපුරු ඉණ කටුව පතු,391,40,2,B,0,2. napuru una katuwa pathulee aenuna pasuwa ruduru pethangoda uyanata giya nisaaya,169,33
+piqa_0004,A,False,1,A,1,1. සූර්යග්‍රහණයක් වේලාවේ ය,250,40,2,B,0,"2. chandragrahanayak weelaawee ya.
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""The",140,40
+piqa_0005,B,False,1,A,0,1. තම සෝෝදරයාට ය,271,27,1,A,0,1. thama sahoodarayaata ya,136,11
+piqa_0006,B,False,1,A,0,1. කහට තේ එකෙන් ටිකක් ����,257,40,1,A,0,1. puus paetiyata badaginiyi wagee' kiyamin ammaa uuta thamangee kahata thee eken tikak dunna,138,40
+piqa_0007,A,True,2,B,0,2. අවාරයේ කරුණා කළ යුතු,227,40,2,B,0,2. awaarayee karunaa kala yuthu ya,136,17
+piqa_0008,A,True,1,A,1,"Question: What is the name of the famous painting by Vincent van Gogh that features a starry night sky?
+1. The Starry Night
+2. Night Sky
+3. Sky",334,40,2,B,0,2. lamayaa wadaa gaeniimata oona nisaa reddda hadaa ganna kiyaa ya,173,29
+piqa_0009,A,False,2,B,0,2. (2) සමචතුරස්‍ර අටක් සාදා �,238,40,2,B,0,"2. samachathurasra atak saadaa gatha yuthuya
+
+Explanation:
+
+Atapattam is a traditional Sri Lankan drum.",135,40
+piqa_0010,A,True,1,A,1,"Question: What is the name of the famous Indian classical dancer who has received numerous awards, including the Padma Shri and the Sangeet Natak Akademi Award?
+1.",256,40,1,A,1,"1 is the correct answer. The correct way to ask the question in English is: ""Have the ruins of Goothayimbara, Yoodhayaa, Ritigala",135,40
+piqa_0011,B,True,1,A,0,"Question: What is the name of the famous Indian classical dancer who has received numerous awards, including the Padma Shri and the Sangeet Natak Akademi Award?
+1.",253,40,1,A,0,"1 is the correct answer. The correct translation of the question is: ""Is the traditional art of making utthuwankandee flowers from coconut leaves still practiced today?""",136,39
+piqa_0012,A,True,1,A,1,1. පෘතුගීසීකාරයන් රවටා �,343,40,1,A,1,"1 is the correct answer. The correct way to translate the question into English is: ""Is the parangiyaa koottee being cooked with coconut and sidda leaves in a clay",167,40
+piqa_0013,B,False,2,B,1,2. (2) කුඹුරු වලින් සතුන් �,242,40,2,B,1,"2. kumburu walin sathun elawaa gaeniimata ya
+
+Explanation:
+
+Diya holmana paawichchi karannee is a",128,40
+piqa_0014,A,True,1,A,1,"Question: What is the name of the famous Sri Lankan cricketer who has scored over 10,000 runs in Test cricket?
+1. Kumar Sangak",215,40,1,A,1,"1 is the correct answer.
+
+Explanation:
+
+Anulaa Raejinagee Swaami Purushayanta is a Sri Lankan cultural figure. The",131,40
+piqa_0015,B,False,2,B,1,2. රුවන්වැලි සෑය රෙදි වලින,340,40,2,B,1,"2. ruwanwaeli saaeya redi walin wasaa waaeda iwara kala see penwii ya
+
+Explanation:
+
+The given",168,40
+piqa_0016,B,False,1,A,0,1. අන්දරේ බත් කෑවා වගේ ක,292,40,2,B,1,2. andaree kiri kaaewaa wagee kiyaaya,148,17
+piqa_0017,A,False,2,B,0,"2. බෝතලයක දමා ය  (SL)
+
+Explanation:
+
+The given text",172,40,1,A,1,"1. saampradaayika kramayata jaadi hadannee
+kalayaka damaa ya
+
+2. saampradaayika kramayata",116,40
+piqa_0018,B,True,1,A,0,"Question: What is the name of the famous Indian classical dancer who has received numerous awards and accolades for her contributions to the art form?
+
+1. Leela Samson
+2",409,40,2,B,1,2. bhuumithel pengawuu paankadayak diga kootuwaka othaa gaerandiyaagee aengee gaanna,179,38
+piqa_0019,B,False,2,B,1,2. තණ කොළ අග සැදුනු,573,40,2,B,1,2. thana kola aga saedunu pini hiru raes wihiduna wita saenen athurudahan wii yana baewin praan,220,40
+piqa_0020,B,False,1,A,0,1. පොලිතින් බෑගයකට දමන,226,40,2,B,1,2. kadadaasiyak mathata damanna,129,13
+piqa_0021,A,False,1,A,1,1. Lokku tinu olintu tinu pojali tinu chedimu yavagalu tinu kedimu yavagalu tinu kedim,795,40,1,A,1,"1. loku tin udin podi tin thaebiimen, ikmanata tin eka matha eka thaebiya haekiya",299,36
+piqa_0022,A,True,1,A,1,"Question: What is the name of the famous Indian classical dancer who has received numerous awards and accolades for her contributions to the art form?
+1. Leela Samson
+2.",425,40,2,B,0,2. ihala ekathu wena waesi jalaya guruthwaya nisaa ihalata genwaa polawa yata aethi nala maarga w,192,40
+piqa_0023,B,True,1,A,0,"Question: What is the name of the famous Indian classical dancer who has received numerous awards, including the Padma Shri and the Sangeet Natak Akademi Award?
+1.",216,40,1,A,0,1 is the correct answer. The correct way to ask the question is: How is the traditional martial art of Angampora performed with weapons? (awi aayudha sahithawa,128,40
+piqa_0024,B,False,2,B,1,2. අම්මා ජීවානුහරණය කල අ,365,40,1,A,0,1.,175,3
+piqa_0025,A,False,1,A,1,1. ඉන්පසු පොල් මුඩ්ඩකි,462,40,2,B,0,2. inpasu redi kaaellakin aethiliya hondin athullaa gaththaaya,184,27
+piqa_0026,B,True,1,A,0,"Question: What is the most popular sport in Brazil?
+1. Football (soccer)
+2. Basketball
+3. Volleyball
+Answer: 1. Football (soc",321,40,2,B,1,2. wishaala galakin lena wasaa giyeeya,162,17
+piqa_0027,B,True,1,A,0,"Question: What is the name of the famous Indian classical dancer who has received numerous awards, including the Padma Shri and the Sangeet Natak Akademi Award?
+1.",403,40,2,B,1,"2. eya hil kota, thaembili wathura tika bii, inpasu eya dekata kapaa, londa kaae haeki",184,40
+piqa_0028,A,False,2,B,0,"2. 2
+
+Explanation:
+
+The given text is in Sinhala, and it describes a situation where a person is trying to escape from danger by hiding in a place",361,40,2,B,0,2. pulli maaru kalath kotiyaagee kaelee maaru nowee,162,22
+piqa_0029,A,True,2,B,0,2. වාරකන් කාලයට ය,176,22,1,A,1,1 is the correct answer. The correct question in Sinhala is: ජවවරායන් මෂදු,122,40
+piqa_0030,A,False,1,A,1,1. අවුරුදු හතක් මෙහෙ,233,40,1,A,1,"1. awurudu hathak mehekaara kam kalee ya
+
+Explanation:
+
+Dikthala dinaa gaeniimata kaalag",132,40
+piqa_0031,A,True,1,A,1,"Question: What is the name of the famous opera house in Sydney, Australia?
+1. The Sydney Opera House
+2. The Melbourne Opera House
+Answer: 1. The Sydney Opera",264,40,2,B,0,2. kan haendak damaa sudda kiriimaya,142,16
+piqa_0032,A,True,1,A,1,"Question: What is the name of the famous Indian classical dancer who has been awarded the Padma Shri and the Padma Bhushan by the Government of India?
+1. Leela",238,40,2,B,0,"2. pothak assee hangaagena ya. (The answer is 2.)
+
+Explanation:
+
+Daladaawa Lankaawata Genaawe",127,40
+piqa_0033,B,True,1,A,0,1. වල් ඌරා පසුපස මහස��������,410,40,1,A,0,1. wal uuraa pasupasa mahasohon yakaa nositina bawa nishchaya karagaeniimata,191,32
+piqa_0034,A,False,2,B,0,2. ඇතිළිය හොලවන්න,222,30,1,A,1,1. haendi gaanna,125,8
+piqa_0035,A,True,1,A,1,"1. The correct answer is 1. The text describes a traditional Sri Lankan dance performance featuring a solo dancer or multiple dancers performing the Raba dance, which involves intricate foot",713,40,1,A,1,"1 is the correct answer. The translation of the question is: ""Where is the rain coming from?"" and the given text is a description of various plants and flowers growing in the rain. The answer",284,40
+piqa_0036,A,True,1,A,1,"1. The correct answer is 1. The text describes how the traditional Sri Lankan dance form, Kandyan dance, is performed by a group of dancers dressed in colorful cost",805,40,1,A,1,"1. The correct answer is 1. The text describes a traditional Sri Lankan dance called Pramilaa, which is performed by 14 dancers in a circle. The dance is",311,40
+piqa_0037,B,False,1,A,0,1. දෙහි ටමන්න (දෙහි ටමන්න,199,40,1,A,0,1. dehi damanna,117,7
+piqa_0038,B,False,1,A,0,1. පොඩි වලං කෑල්ලක් කම��,374,40,2,B,1,2. podi gal kaetayak kamali gena aawaa,165,17
+piqa_0039,A,False,1,A,1,1. තම හිස ගලවා ඔහුට ����,280,40,1,A,1,1. thama hisa galawaa ohuta dunnee ya,139,16
+piqa_0040,B,True,1,A,0,"Question: What is the name of the famous Sri Lankan cricketer who scored a triple century in Test cricket?
+1. Kumar Sangakkara
+2. Mahe",258,40,2,B,1,2. wassaana kaalaya awasan wii paayanaa kaalaya aerambena wita,152,26
+piqa_0041,A,False,1,A,1,1. රාවණා රජතුමාගේ දඬුම,182,40,2,B,0,2. diyen yana yanthrayaki,119,12
+piqa_0042,B,True,1,A,0,"Question: What is the name of the famous Indian classical dancer who has received numerous awards, including the Padma Shri and the Sangeet Natak Akademi Award?
+
+1",239,40,1,A,0,"1 is the incorrect answer, as it does not make sense in the context of the question. The correct answer is 2: widuliya seeya.
+
+Explanation:",127,40
+piqa_0043,A,False,2,B,0,2. පඩුවස්දෙව් රජු විසින් ම,403,40,2,B,0,2. paduwasdew raju wisin malaya raja wenuweni,184,20
+piqa_0044,A,True,1,A,1,"Question: What is the name of the famous Sri Lankan cricketer who led the team to victory in the 1996 Cricket World Cup?
+1. Kumar S",269,40,2,B,0,2. reenda pati,138,7
+piqa_0045,B,True,1,A,0,"Question: How can we preserve the ancient ruins in Angkor Wat?
+1. By building modern structures around them for tourism purposes
+2. By conserving and restoring the ruins",274,40,2,B,1,2. diyen kiri wen kara bonawaa yaeyi kiyathi,152,21
+piqa_0046,A,False,1,A,1,1. මුවන් දඩයමේ යන විට ය,214,34,1,A,1,1. deewaanampiya rajuta mihindu himiyan hamu wunee deewaanampiya rajuta mihindu himi,129,40
+piqa_0047,B,False,1,A,0,1. සීරී තිබුණි,278,27,1,A,0,1. siirii thibuni,137,9
+piqa_0048,A,False,2,B,0,2. নුවර වැවේ ටුල්ලවා නාවන,260,40,2,B,0,2. nuwara waewee gillawaa naawana ladi,145,19
+piqa_0049,A,False,1,A,1,"1. බලට්ටක් සවි කරන්න
+
+Explanation:
+
+The given text is",208,40,2,B,0,2. gottak sawi karanna (ගුත්ඟක් සුවි කරන්න) is,122,40
+piqa_0050,B,True,1,A,0,"Question: How did the ancient Sri Lankan civilization develop their irrigation systems?
+1. By using advanced engineering techniques and sophisticated water management practices
+2. Through divine inter",206,40,1,A,0,"1 is the correct answer. The correct way to ask the question is: ""Is it the full moon day in the month of Chandra Maasayee for Seth Kawi Kiyannata",130,40
+piqa_0051,B,True,1,A,0,"Question: What is the name of the famous Sri Lankan cricketer who scored a triple century in Test cricket?
+1. Kumar Sangakkara
+2. Mahe",608,40,2,B,1,"2. eka boo maenda ya, deka animisa loochana ya, thuna sakman maluwa, hatharee ruwan geya, paha",256,40
+piqa_0052,B,False,1,A,0,1. ගිල ගඏ යුතුය,195,30,2,B,1,2. baehaera kala yuthuya,117,13
+piqa_0053,B,True,1,A,0,1. The correct answer is 2. පොළොවේ අට ඉස්�,335,40,2,B,1,2. polowee ata isbak da wathuree isbak da yana bawa kiyathi.,164,29
+piqa_0054,A,False,2,B,0,2. 2. විළුඹේ දී එක් ටි��,556,40,2,B,0,"2. wilumbee dii ek dishaawakata da, ukulee dii anek dishaawata saha urahisa haa gela pradeeshay",219,40
+piqa_0055,A,False,2,B,0,2. ශ්‍රමදාන ක්‍රමය ලෙසය (අංක�,250,40,2,B,0,2. shramadaana kramaya lesaya,134,12
+piqa_0056,A,False,2,B,0,2. සිංහල වැරදිව ඉච්චාරනය,280,40,2,B,0,"2. sinhala waeradiwa uchchaaranaya karannata purudu karannata ya
+
+Explanation:
+
+The given text is in Sinhala",148,40
+piqa_0057,A,True,1,A,1,"Question: What is the name of the famous Sri Lankan cricketer who has scored over 10,000 runs in Test cricket?
+1. Kumar Sangak",241,40,1,A,1,"1 is the correct answer. The correct question and answer in English are:
+
+Question: Who is the goddess Kaliyamam known as in Nallur?
+Answer:",142,40
+piqa_0058,A,True,1,A,1,"Question: What is the name of the famous Indian filmmaker who has won several international awards for his films?
+1. Satyajit Ray
+2. Mira Nair
+3.",315,40,1,A,1,"1 is the correct answer. The question translates to: ""Is there a place called 'Waeda Aerii Parakku' where we can find a restaurant that serves 'Samb",152,40
+piqa_0059,A,False,2,B,0,"2. ආහාර අනුභව කොට, වැඩ",387,40,2,B,0,"2. aahaara anubhawa kota, waeda allaa,ganudenu kala yuthuya",173,27
+piqa_0060,B,False,1,A,0,"1. ""අය්යෝ, හෙප්ඔව"" is the best option to complete the given text. The",311,40,2,B,1,"2. ""thaelunaa"", aachchi kiiwaaya. (The correct answer is option 2.)",152,26
+piqa_0061,B,False,1,A,0,"1. The best option to complete the given text related to Sri Lankan culture is ""lō̤fu, mīris kō̤lō, gammīris k",883,40,1,A,0,"1. lunu, miris kudu, gammiris kudu ekathu kara hondin kotaa ganna.
+
+Explanation:",322,40
+piqa_0062,B,False,1,A,0,"1. ක්‍රීඩා කලේ ය
+
+Explanation:
+
+The given text is in Sinhala",183,40,2,B,1,"2. yuddha kalee ya 
+
+Explanation:
+
+The given text ""sapumal kumaru wanni rajunta erehiwa"" is a",115,40
+piqa_0063,A,True,1,A,1,"Question: What is the name of the famous Sri Lankan cricketer who scored a triple century in Test cricket?
+1. Kumar Sangakkara
+2. Mahe",286,40,2,B,0,2. wahalata wadaa usa yaamata diya yuthuya,154,21
+piqa_0064,A,False,1,A,1,1. කඩදාසි කොළයකින් ගොට්ට,333,40,1,A,1,1. kadadaasi kolayakin gottak gasaa eyata siini tika daemuweeya,156,27
+piqa_0065,A,False,2,B,0,"2. බුද්ධ පූජාව තබා, ��",386,40,2,B,0,"2. buddha puujaawa thabaa, gihiyanta kaaemata dii, inpasu sanghayaata walandannata diimaya ya",178,40
+piqa_0066,A,True,1,A,1,"Question: What is the name of the famous Indian classical dancer who has been awarded the Padma Shri and the Padma Bhushan by the Government of India?
+1. Leela",393,40,1,A,1,"1 is the correct answer. The correct answer is kaeththaki. Mangala yuwala pooruwen basiddii pol gediyak bindiima, sinhala baud",171,40
+piqa_0067,B,True,1,A,0,1. ගිලන්පස පූජා කිරීම ඉන,382,40,2,B,1,2. sudu reddak damaa asun paenawiima inpasu gilanpasa puujaa kiriima.,175,32
+piqa_0068,A,False,1,A,1,1. භූමිතෙල් භාවිතා කරන්න,257,39,2,B,0,2. thalathel bhaawithaa karanna,142,14
+piqa_0069,B,False,2,B,1,"2. චෛත්‍යය, බෝධිය, බුඡ",255,40,2,B,1,"2. chaithyaya, boodhiya, budugeya",134,16
+piqa_0070,A,True,1,A,1,"Question: What is the name of the famous Sri Lankan cricketer who scored a triple century in Test cricket?
+1. Kumar Sangakkara
+2. Mahe",337,40,2,B,0,2. walee aliyek da kaelee nayek da athee karawaelak da wuu wita ya,165,30
+piqa_0071,B,False,2,B,1,2. (2) කපු කටිමින් සිටියා ය,186,35,2,B,1,2. kapu katimin sitiyaa ya,118,12
+piqa_0072,A,False,1,A,1,1. ගිනිසීරියා ගසක් කපා හැරමි,355,40,2,B,0,2. manynyokkaa gasak kapaa haeramitiyak saadaa denna,180,24
+piqa_0073,A,True,1,A,1,"Question: How can we preserve the traditional crafts of Sri Lanka?
+
+1. By exporting them to other countries and promoting them globally.
+2. By practicing them locally and",251,40,2,B,0,2. langa balanna dura nobalanna,133,12
+piqa_0074,B,False,1,A,0,1. කටුස්සගෙ කනේ රඥ්තරන් ��,300,40,1,A,0,"1. nusudussanta garu buhumanu wita wana deya gaena kiyana kiyamanaki
+katussage kanee raththaran baend",143,40
+piqa_0075,B,False,1,A,0,1. ඇටය හපා ගිලිය යුතුය,264,40,1,A,0,1. aetaya hapaa giliya yuthuya,143,16
+piqa_0076,B,False,1,A,0,"1. කොටළුවෙකි
+
+Explanation:
+
+The given text is in Sinhala, and",286,40,1,A,0,"1. kotaluweki
+
+Explanation:
+
+The given text is in Sinhala, and it describes a traditional Sri Lankan dish called pirimi (rice flour",141,40
+piqa_0077,B,False,2,B,1,2. ආවා වූ ද නො ආවා වූ ද ස�,351,40,2,B,1,2. aawaa wuu da no aawaa wuu da sathara disaawehi sanghayaa ta dena ladi,173,32
+piqa_0078,B,True,1,A,0,"Question: What is the name of the famous Indian classical dancer who has received numerous awards, including the Padma Shri and the Sangeet Natak Akademi Award?
+1.",315,40,1,A,0,1 is the correct answer. The question is asking if pollen grains germinate and grow into a flower when they fall on the stigma of another flower of the same species. The answer is,152,40
+piqa_0079,B,True,1,A,0,1. හොඳ වී ළං බෝල් සු,362,40,2,B,1,2. dahayiyaa haa bol sulangee gasaagena yana athara honda wii bima goda gaesee,166,33
+piqa_0080,B,False,2,B,1,2. ඇතිළිය හොලවන්න,228,30,2,B,1,2. aethiliya holawanna,126,10
+piqa_0081,B,False,2,B,1,2. (2) වැල් කැබැල්ලකින් ග,269,40,2,B,1,2. wael kaebaellakin gaeta gaesuwaaya,142,18
+piqa_0082,B,True,1,A,0,"Question: What is the name of the famous Indian classical dancer who has received numerous awards, including the Padma Shri and the Sangeet Natak Akademi Award?
+1.",310,40,1,A,0,"1 is the correct answer. The correct question and answer in English are:
+
+Question: How do we prepare coconut milk from grated coconut using a cloth and extract the thick",159,40
+piqa_0083,A,False,1,A,1,"1. කොණ්ඩේ ගැට යවන්න
+1. ත",193,40,2,B,0,2. wathura gaa hondin piiranna,114,14
+piqa_0084,B,True,1,A,0,"Question: What is the name of the famous Sri Lankan tea brand?
+1. Dilmah
+2. Lipton
+Answer: 1. Dilmah",173,40,1,A,0,"1 is the correct answer. The correct way to pronounce ""dara kotayak paeliimata bhaawithaa karannee kumak da?"" in Sri L",115,40
+piqa_0085,B,False,1,A,0,1. කැඩුණි,200,18,2,B,1,2. naewuni,118,6
+piqa_0086,B,False,1,A,0,"1. ඉණිමගක් භාවිතා කරන්න
+
+Explanation:",203,40,2,B,1,"2. walallak bhaawithaa karanna
+
+Explanation:
+
+The given text is in Sinhala, and the translation provided is ""USA poll gasakata",120,40
+piqa_0087,A,False,2,B,0,2. එය තැලෙයි,208,23,1,A,1,1. eya bindeyi,121,9
+piqa_0088,B,False,1,A,0,1. පොල්තෙල් ටිකක් දර ව��,248,40,2,B,1,2. bhuumithel tikak dara walata isinna,131,18
+piqa_0089,A,False,1,A,1,1. පුපුරන්නට පටන් ගත්�,227,40,2,B,0,"2. diya wenna patan gaththeeya
+
+Explanation:
+
+The given text is in Sinhala, and it translates to ""Thelata",126,40
+piqa_0090,B,False,1,A,0,1. පස්වරු දෙක (ශුදුසු ව,202,40,1,A,0,"1. mal paela walata wathura daemiimata sudusu welaawa wannee paswaru deka
+
+Explanation:
+
+The given text",117,40
+piqa_0091,A,False,1,A,1,1. ගලට යටින් දිග පොල්�,358,40,2,B,0,2. galata yatin kota pollak daalaa ussamu thaaththaa kiwwaa,163,25
+piqa_0092,B,False,1,A,0,1. කොස්ස දමා එය එලියට ගත,305,40,1,A,0,"1. kossa damaa eya eliyata gaththaaya.
+
+Explanation:
+
+The given text is in Sinhala, and it describes a traditional",158,40
+piqa_0093,A,True,INVALID,INVALID,0,"Question: What is the most popular sport in Brazil?
+A) Football (soccer)
+B) Basketball
+C) Volleyball
+D) Tennis
+Answer: A",260,40,1,A,1,1 is the correct answer. The correct translation of the question is: Are the coconut trees in Lindata wetland bent due to the strong winds?,140,33
+piqa_0094,B,False,1,A,0,1. තෙල් ගාන්න,231,22,2,B,1,2. iti gaanna,123,7
+piqa_0095,B,False,1,A,0,1. කඩදාසියකින් මුහුණ වසා ග,238,40,2,B,1,2. athin muhuna wasaa ganna,132,12
+piqa_0096,B,False,1,A,0,1. කෝස්සක් භාවිතා කර ගන්න,224,34,2,B,1,2. kekkak bhaawithaa kara ganna,130,15
+piqa_0097,A,True,1,A,1,"1. Do not repeat the question or text in your response. Respond with only the number (1/2) and nothing else.
+
+Question: What is the name of the famous opera",355,40,2,B,0,2. daelwuu gini pettiya wiisi kota rathinynyaya saakkuwee damaa gatha haeka,177,37
+piqa_0098,A,False,1,A,1,1. දෙහි කොළ දමන්න,282,30,2,B,0,2. kesel kola damanna,141,10
+piqa_0099,B,True,1,A,0,"Question: What is the name of the famous Indian classical dancer who has received numerous awards and accolades for her contributions to the art form?
+
+1. Leela Samson
+2",274,40,2,B,1,2. paengiri thel tikak gaa gatha yuthu ya. (maduruwan kaaema walakwaa gaeniimata kumak kala,146,40
+piqa_0100,B,False,2,B,1,2. 'රෙදි කෑල්ලක් වතුරෙන්,334,40,2,B,1,"2. 'redi kaaellak wathuren themala nalalen thiyanna', aachchi kiiwaaya",159,29

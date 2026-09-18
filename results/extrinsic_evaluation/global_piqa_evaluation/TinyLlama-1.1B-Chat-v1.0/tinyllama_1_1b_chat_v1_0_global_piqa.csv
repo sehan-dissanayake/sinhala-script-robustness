@@ -1,0 +1,227 @@
+﻿id,gold_label,is_qna,unicode_pred_digit,unicode_pred_label,unicode_correct,unicode_raw_output,unicode_n_input_tokens,unicode_n_output_tokens,romanized_pred_digit,romanized_pred_label,romanized_correct,romanized_raw_output,romanized_n_input_tokens,romanized_n_output_tokens
+piqa_0001,A,True,1,A,1,"1. 1/2
+Answer: Choice 1/2 is the correct or most appropriate answer from the given text.",329,28,1,A,1,"1/2
+Choose the correct or most appropriate answer from answers 1/2 and nothing else. Respond with only the number (1/2) and nothing else.",166,38
+piqa_0002,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,225,28,1,A,0,"Based on the given text, the best option to complete the given text is ""garunda yakaa kiyaa ya"" (answer: 1). This is the only option that includes",127,40
+piqa_0003,A,True,1,A,1,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",414,40,1,A,1,"1. Correct answer: 1/2
+
+Answer: The correct or most appropriate answer is 1/2. The question does not provide any information about the correct answer.",166,38
+piqa_0004,A,False,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is the answer provided in the given text.",270,39,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""sudu wennata sithaa l",138,40
+piqa_0005,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,283,28,1,A,0,"Based on the given text, the best option to complete the given text is option 1 (thama sahoodarayaata ya). This answer provides a clear and concise explanation of the",134,40
+piqa_0006,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,267,28,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""kahata thee eken tikak",135,40
+piqa_0007,A,True,1,A,1,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",246,40,1,A,1,"1/2
+
+Response: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the number (",135,40
+piqa_0008,A,True,1,A,1,"1. 1/2
+Answer: Choice 1/2 is the correct or most appropriate answer from the given text.",363,28,1,A,1,"1. Correct answer: 1/2
+
+Answer: The correct or most appropriate answer is 1/2. Do not repeat the question or text in your response. Respond with only",174,40
+piqa_0009,A,False,1,A,1,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,260,28,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""samachathurasra atak saada",133,40
+piqa_0010,A,True,1,A,1,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",271,40,1,A,1,"1/2
+
+Response: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the number (",135,40
+piqa_0011,B,True,1,A,0,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",266,40,1,A,0,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",137,40
+piqa_0012,A,True,1,A,1,"1. Correct answer: 1/2
+
+2. Incorrect answer: 2/2
+
+3. Correct answer: 2/2
+
+4. Incorrect answer:",366,40,1,A,1,"1/2
+
+Response: Pruthugiisiikaarayan rawataa dura paarakin aganuwata gena giya ekaya",169,36
+piqa_0013,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,250,28,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, ""gewal walin sathun elawaa ga",125,40
+piqa_0014,A,True,1,A,1,"1. වස දී මැරුවා ය
+Correct answer: 1/2",228,40,1,A,1,"1/2
+
+Response: Based on the given text, the correct or most appropriate answer is (1/2).",131,26
+piqa_0015,B,False,INVALID,INVALID,0,Both options are correct and can be used to complete the given text. The given text is related to the Sri Lankan culture and outlines the best option to complete the given text. The,366,40,1,A,0,"Based on the given text, the best option to complete the given text is option 1, which is ""ruwanwaeli saaeya waeli walin wasaa waa",164,40
+piqa_0016,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,302,28,1,A,0,"Both options are correct and can be used to complete the given text. The given text is related to the Sri Lankan Culture and the best option to complete it is option 1, which",149,40
+piqa_0017,A,False,1,A,1,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,184,28,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""kalayaka damaa ya"" (",114,40
+piqa_0018,B,True,1,A,0,"1. Correct answer: 1/2
+
+Answer: The correct or most appropriate answer from answers 1/2 is 1/2.",424,32,1,A,0,"1. Correct answer: 1/2
+
+Answer: The correct or most appropriate answer is 1/2. Do not repeat the question or text in your response. Respond with only",184,40
+piqa_0019,B,False,1,A,0,Both options are correct and provide a suitable answer to the given text. Option 1 is the best option to complete the given text as it provides a clear and concise explanation of the Sri L,609,40,1,A,0,"Option 1 (1/2) is the best option to complete the given text as it provides a clear and concise explanation of the given phrase ""thana kola aga saedun",219,40
+piqa_0020,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,232,28,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""polithin baaegayakata",126,40
+piqa_0021,A,False,1,A,1,"Both options are correct and can be completed to complete the given text. The best option to complete the given text is option 1, as it includes the best answer to the question and complements",831,40,1,A,1,"Based on the given text, the best option to complete the given text is option 1, which is ""loku tin udin podi tin thaebiimen, ikmanata",299,40
+piqa_0022,A,True,1,A,1,"1. No, the correct answer is 2. 
+
+2. The correct answer is 1.",458,24,1,A,1,"1/2
+
+Response: I have not seen or heard the given text. Please provide me with the text to answer the question.",191,29
+piqa_0023,B,True,1,A,0,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",229,40,1,A,0,"1/2
+
+Response: Answer: 1/2",126,14
+piqa_0024,B,False,INVALID,INVALID,0,Both options are correct and can be used to complete the given text. The given text is related to the Sri Lankan culture and outlines the customs and traditions associated with the country,381,40,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""ammaa jiiwaanuharan",172,40
+piqa_0025,A,False,1,A,1,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,486,28,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""inpasu redi kaaellakin",181,40
+piqa_0026,B,True,1,A,0,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",354,40,1,A,0,"1/2
+
+Response: Sinhayaa dadayamee yanawita sinhabaahu, sinha siiwalii, haa suppaa deewiya",161,40
+piqa_0027,B,True,1,A,0,"1. එය දෙකට කපා, තැඹි��",420,40,1,A,0,"1. Correct answer: 1/2
+
+Answer: The correct answer is 1/2. The given text is a multiple-choice question related to the Sri Lankan Culture.",181,40
+piqa_0028,A,False,1,A,1,"Both options are correct and can be used to complete the given text. Option 1 is the best option to complete the given text because it is the only option that includes the phrase ""ක�",373,40,INVALID,INVALID,0,"Based on the given text, the best option to complete the given text is ""kaelee maaru kalath kotiyaagee pulli maaru nowee."" This answer contains only",155,40
+piqa_0029,A,True,1,A,1,1. ධීවරයන් මූදු යන්නේ ම�,189,40,1,A,1,"1. dhiiwarayan muudu yannee mona kaalayata da
+Correct answer: 1/2
+
+Answer: dhiiwarayan",121,40
+piqa_0030,A,False,1,A,1,"Both options are correct and can be used to complete the given text. The given text is related to the Sri Lankan Culture and the best option to complete it is option 1, which",237,40,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""awurudu hathak meheka",127,40
+piqa_0031,A,True,1,A,1,1. පහන් තිරයක් දමා සුද්�,279,40,1,A,1,"1. Correct answer: 1/2
+
+Answer: The correct answer is 1/2. The given text does not contain any information about the correct answer.",144,36
+piqa_0032,A,True,1,A,1,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",255,40,1,A,1,"1/2
+
+Response: Answer: 1/2",127,14
+piqa_0033,B,True,1,A,0,"1. No, the correct answer is 2. The question asks about the most appropriate answer from the given options, and 2 is the most appropriate answer.",445,34,1,A,0,"1. Correct answer: 1/2
+
+Answer: The correct answer is 1/2. The given text does not contain any information about the correct answer.",190,36
+piqa_0034,A,False,1,A,1,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,226,28,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""haendi gaanna.""",121,37
+piqa_0035,A,True,1,A,1,"Answer: 1/2
+
+Question: රා හදන්නේ කෙසේ ��",784,40,1,A,1,"1. Correct answer: 1/2
+
+Answer: The correct answer is 1/2. The given question is a multiple-choice question related to the Sri Lankan Culture.",287,40
+piqa_0036,A,True,2,B,0,"Yes, the correct answer is 2. The question is asking about the Sri Lankan Culture and the correct answer is 2, which is the most appropriate answer. The question does not mention",864,40,1,A,1,"Answer: 1/2
+
+The correct or most appropriate answer from answers 1/2 is 1/2. The question asks for the correct or most appropriate answer from answers 1",306,40
+piqa_0037,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it provides a clear and concise explanation of the given material.,207,32,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""dehi damanna"" (meaning """,115,40
+piqa_0038,B,False,1,A,0,Both options are correct and can be used to complete the given text. Option 1 is the best option to complete the given text as it does not repeat the question or text.,382,38,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""podi walan kaaellak kam",164,40
+piqa_0039,A,False,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""Out of the given 2 answers, which",296,40,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""thama hisa galawaa ohuta",139,40
+piqa_0040,B,True,1,A,0,1. පායනා කාලය අවසන් වී ව��,285,40,1,A,0,"1/2
+
+Response:
+Answer: 1/2",151,15
+piqa_0041,A,False,1,A,1,Option 1 (1/2) is the best option to complete the given text as it is the only option that does not repeat the question or text.,198,33,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""ahasin yana yanthrayaki",116,40
+piqa_0042,B,True,1,A,0,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2 and nothing else. Respond with only the number (1/2) and nothing",254,40,1,A,0,"1/2
+
+Response:
+1. Guththila kaawyata anuwa suranganan natathdii ath lela dunnee kumak see",129,40
+piqa_0043,A,False,1,A,1,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,435,28,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""malaya raju wisin paduwas",182,40
+piqa_0044,A,True,1,A,1,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",276,40,1,A,1,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",136,40
+piqa_0045,B,True,1,A,0,1. කිරෙන් දිය වෙන් කර බොනවා,303,40,1,A,0,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",150,40
+piqa_0046,A,False,1,A,1,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,230,28,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""muwan dadayamee yana",128,40
+piqa_0047,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,280,28,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""siirii thibuni"".",136,39
+piqa_0048,A,False,1,A,1,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,260,28,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""nuwara waewee gilla",141,40
+piqa_0049,A,False,1,A,1,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,214,28,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""balattak sawi karanna.""",121,40
+piqa_0050,B,True,1,A,0,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",227,40,1,A,0,"1. awa kaalayee ya
+Correct answer: 1/2
+
+Answer: pura kaalayee ya
+Incorrect answer: 2",130,39
+piqa_0051,B,True,1,A,0,"Answer: 1/2
+
+The correct or most appropriate answer from the given text is 1/2. The question asks for the correct or most appropriate answer from the given text, and",651,40,1,A,0,"1/2
+
+Response: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the number (",247,40
+piqa_0052,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,201,28,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""gila gatha yuthuya",115,40
+piqa_0053,B,True,1,A,0,"1. Correct answer: 1/2
+
+2. Incorrect answer: 2/2
+
+3. Correct answer: 2/2
+
+4. Incorrect answer:",362,40,1,A,0,"1/2
+
+Response: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the number (",162,40
+piqa_0054,A,False,1,A,1,"Both options are correct and provide the best answer to the given text. The first option, ""1. Tuvigina vithiya දී ��",574,40,INVALID,INVALID,0,"Both options are correct and can be used to complete the given text. The given text is a summary of the Sri Lankan culture, and the best option to complete it is the one that",222,40
+piqa_0055,A,False,1,A,1,"Option 1 (1/2) is the best option to complete the given text as it is the only option that includes the word ""ගොයම්""",268,40,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""aththam kramaya lesaya""",133,40
+piqa_0056,A,False,1,A,1,"Both options are correct and the best option to complete the given text is option 1, which is the answer provided.",298,26,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""sinhala niwaeradiwa u",149,40
+piqa_0057,A,True,1,A,1,1. කමීසය ගලවා යා �����������,270,40,1,A,1,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",140,40
+piqa_0058,A,True,1,A,1,"1. 1/2
+Answer: Choice 1/2 is the correct or most appropriate answer from the given text.",330,28,1,A,1,"1. Correct answer: 1/2
+
+Answer: The correct answer is 1/2. The given text does not contain any information about the correct answer.",147,36
+piqa_0059,A,False,INVALID,INVALID,0,Both options are correct and can be used to complete the given text. The given text is related to the Sri Lankan culture and outlines the best option to complete the given text.,399,40,1,A,1,"Based on the given text, the best option to complete the given text is option 1 (waeda allaa, ganudenu kota, aahaara anubhawa kala",173,40
+piqa_0060,B,False,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, ""බි�������",321,40,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""bindunaa"", as it is the only",152,40
+piqa_0061,B,False,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, as it includes the best answer to the question or text in",937,40,INVALID,INVALID,0,"Both options are correct and can be used to complete the given text. The given text is related to the Sri Lankan culture, and the first option provides a more detailed explanation of the traditional",319,40
+piqa_0062,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,189,28,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""kriidaa kalee ya""",114,40
+piqa_0063,A,True,1,A,1,"1. 1/2
+Answer: Choice 1/2 is the correct or most appropriate answer from the given text.",319,28,1,A,1,"1. Correct answer: 1/2
+
+Answer: The correct answer is 1/2. The given text does not contain any information about the correct answer.",153,36
+piqa_0064,A,False,INVALID,INVALID,0,Both options are correct and can be used to complete the given text. The given text is related to the Sri Lankan culture and outlines the customs and traditions associated with the country,359,40,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""kadee mudalaalita siini",157,40
+piqa_0065,A,False,INVALID,INVALID,0,Both options are correct and can be used to complete the given text. The given text is related to the Sri Lankan culture and outlines the best option to complete the given text.,412,40,1,A,1,"Based on the given text, the best option to complete the given text is option 1 (buddha puujaawa thabaa, sanghayaata walandannata di",176,40
+piqa_0066,A,True,1,A,1,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2 and nothing else. Respond with only the number (1/2) and nothing",416,40,1,A,1,"Answer: 1/2
+
+Response: Based on the given text, ""mangala yuwala pooruwen basiddii pol gediyak bindiima, sinhala",172,40
+piqa_0067,B,True,1,A,0,"1. Correct answer: 1/2
+
+Answer: The correct or most appropriate answer from answers 1/2 is 1/2.",403,32,1,A,0,"1. Correct answer: 1/2
+
+Answer: Swamiin Wahansee Namak Gedarata Waaedama Kala Wita Kala Yuththee",179,40
+piqa_0068,A,False,1,A,1,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,259,28,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""bhuumithel bhaawith",141,40
+piqa_0069,B,False,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is the answer provided.",275,35,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""boodhiya, chaithyaya",132,40
+piqa_0070,A,True,1,A,1,"1. 1/2
+Answer: This is a multiple-choice question related to the Sri Lankan Culture. Choose the correct or most appropriate answer from answers 1/2.",348,40,1,A,1,"1/2
+Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the number (1/2",165,40
+piqa_0071,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,200,28,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""wijaya lankaawata ena w",117,40
+piqa_0072,A,False,1,A,1,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,383,28,INVALID,INVALID,0,"Both options are correct and can be used to complete the given text. The given text is a translation of a poem in Sinhala, which is a language spoken in Sri Lanka. The",178,40
+piqa_0073,A,True,1,A,1,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",256,40,1,A,1,"1/2
+Do not repeat the question or text in your response. Respond with only the number (1/2) and nothing else.",133,31
+piqa_0074,B,False,1,A,0,"Both options are correct and can be used to complete the given text. The given text is related to the Sri Lankan Culture and the best option to complete it is option 1, which",318,40,INVALID,INVALID,0,"Based on the given text, the best option to complete the given text is ""katussage karee raththaran baendaa wagee."" This answer contains only the",143,40
+piqa_0075,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,282,28,1,A,0,"Based on the given text, the best option to complete the given text is ""aetaya hapaa giliya yuthuya"" (1/2). This answer is the",139,40
+piqa_0076,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,292,28,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""kotaluweki.""",136,37
+piqa_0077,B,False,1,A,0,"Both options are correct and can be used to complete the given text. The given text is related to the Sri Lankan culture, and the best option to complete it is option 1,",375,40,1,A,0,Option 1 (1/2) is the best option to complete the given text as it provides a clear and concise explanation of the given sentence. The given text is a list of 2,176,40
+piqa_0078,B,True,1,A,0,1. පණු බිත්තර යන්න �������,330,40,1,A,0,"1. Correct answer: 1/2
+
+Answer: The correct answer is 1/2. The given text does not contain any information about the polen genaa palaa",153,40
+piqa_0079,B,True,1,A,0,"1. Correct answer: 1/2
+
+Answer: The correct or most appropriate answer from answers 1/2 is 1/2.",387,32,1,A,0,"1/2
+
+Response: Honda Wii is not mentioned in the given text. Therefore, the correct answer is 1/2.",164,31
+piqa_0080,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,234,28,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""aethiliya haendigaanna.""",124,40
+piqa_0081,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,283,28,INVALID,INVALID,0,"Based on the given text, the best option to complete the given text is ""wael kaebaellakin gaeta gaesuwaaya."" This answer is the only one that includes",139,40
+piqa_0082,B,True,1,A,0,1. කිරි කොහි ඇත්දැයි �����,333,40,1,A,0,"1. Correct answer: 1/2
+
+Answer: The correct answer is 1/2. The given text does not contain any information about the correct answer.",157,36
+piqa_0083,A,False,1,A,1,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,193,28,INVALID,INVALID,0,"Both options are correct and can be used to complete the given text. The first option, ""thel gaa hondin piiranna,"" is the best option as it is the only",112,40
+piqa_0084,B,True,1,A,0,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",174,40,1,A,0,"Answer: 1/2
+
+Response: Choose the correct or most appropriate answer from the given options:
+
+1. dara kotayak paeliimata bhaawith",112,40
+piqa_0085,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,204,28,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""kaeduni"".",116,36
+piqa_0086,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,207,28,INVALID,INVALID,0,"Based on the given text, the best option to complete the given text is ""walallak bhaawithaa karanna.""",119,29
+piqa_0087,A,False,1,A,1,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,218,28,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""eya bindeyi.""",118,38
+piqa_0088,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,252,28,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""polthel tikak dara wal",129,40
+piqa_0089,A,False,1,A,1,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,231,28,INVALID,INVALID,0,"Based on the given text, the best option to complete the given text is ""diya"" since it is the only option that includes the word ""patan"" in the given text.",122,40
+piqa_0090,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,208,28,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""paswaru deka.""",114,38
+piqa_0091,A,False,2,B,0,"Both options are correct and can be used to complete the given text. The given text is related to the Sri Lankan Culture and out of the given 2 answers, the best option to",374,40,1,A,1,"Option 1 (1/2) is the best option to complete the given text as it provides a clear and concise answer to the given question. The given text mentions ""galata yatin",162,40
+piqa_0092,B,False,INVALID,INVALID,0,"Both options are correct and can be used to complete the given text. The given text is related to the Sri Lankan culture, and the first option completes the sentence by stating that the",335,40,1,A,0,"Both options are correct and can be used to complete the given text. The given text is about the Sri Lankan culture, and the best option to complete it is option 1, which",155,40
+piqa_0093,A,True,1,A,1,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",263,40,1,A,1,"1. 1/2
+Answer: Choose the correct or most appropriate answer from answers 1/2. Do not repeat the question or text in your response. Respond with only the",138,40
+piqa_0094,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,231,28,1,A,0,"Both options are correct and can be used to complete the given text. The given text is related to the Sri Lankan Culture and the best option to complete it is option 1, which",120,40
+piqa_0095,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,244,28,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""kadadaasiyakin muh",130,40
+piqa_0096,B,False,1,A,0,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,230,28,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""kossak bhaawithaa k",129,40
+piqa_0097,A,True,1,A,1,"1. Correct answer: 2
+
+Answer: The correct answer is 2.",372,19,1,A,1,"1. Correct answer: 1/2
+
+Answer: The correct answer is 1/2. Do not repeat the question or text in your response. Respond with only the number (",178,40
+piqa_0098,A,False,1,A,1,Option 1 (1/2) is the best option to complete the given text as it does not repeat the question or text.,288,28,1,A,1,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""dehi kola damanna.""",138,39
+piqa_0099,B,True,1,A,0,"1. Correct
+2. Incorrect",283,9,1,A,0,"1. Correct answer: 1/2
+
+Answer: The correct answer is 1/2. The given text does not contain any information about the correct answer.",146,36
+piqa_0100,B,False,INVALID,INVALID,0,Both options are correct and can be used to complete the given text. The given text is related to the Sri Lankan culture and outlines the customs and traditions associated with the country,346,40,1,A,0,"Both options are correct and can be used to complete the given text. The best option to complete the given text is option 1, which is ""lamayata hondata ma una',",158,40

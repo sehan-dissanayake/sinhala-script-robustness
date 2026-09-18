@@ -92,3 +92,6 @@ data/romanized/*/sinhala_mmlu_romanized.jsonl
 # They are downloaded from their own repositories on demand and are not ours to
 # redistribute.
 data/reference/tokenizers/
+
+data/reference/web_tool_shards/augmented_sentences_sample/
+!data/reference/web_tool_endpoint/

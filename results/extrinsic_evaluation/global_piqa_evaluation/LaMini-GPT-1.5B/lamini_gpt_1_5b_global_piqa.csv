@@ -1,0 +1,182 @@
+﻿id,gold_label,is_qna,unicode_pred_digit,unicode_pred_label,unicode_correct,unicode_raw_output,unicode_n_input_tokens,unicode_n_output_tokens,romanized_pred_digit,romanized_pred_label,romanized_correct,romanized_raw_output,romanized_n_input_tokens,romanized_n_output_tokens
+piqa_0001,A,True,INVALID,INVALID,0,"හේන කපා, වවා, රැ�",390,40,1,A,1,1,128,2
+piqa_0002,B,False,INVALID,INVALID,0,"ගරුඬ යකා ය
+ගරුඬ",252,40,INVALID,INVALID,0,Garunda yakaa kiyaa ya.,81,10
+piqa_0003,A,True,INVALID,INVALID,0,රුදුරු පෙතංගො�,469,40,1,A,1,1. ruduru pethangoda uyanata giya pasuwa napuru una katuwa pathulee aenuna nisaaya.,128,34
+piqa_0004,A,False,INVALID,INVALID,0,සුදු වෙන්නට සි�,306,40,1,A,1,"1. Suuryagrahanayak weelaawee ya.
+Answer (number 2/2 only): 2. Chandragrahanayak weelaawee ya.",94,38
+piqa_0005,B,False,INVALID,INVALID,0,භ්න්නාට ලණුවක �,309,40,INVALID,INVALID,0,Thama sahoodarayaata ya.,92,10
+piqa_0006,B,False,INVALID,INVALID,0,පූස් පැටියට බඩ�,319,40,1,A,0,"1. Kahata thee eken tikak dunnaa ya
+2. Kahata thee eken tikak dunnaa ya
+Answer (number 1/2 only): 1.",92,40
+piqa_0007,A,True,INVALID,INVALID,0,වාරයේ කරුණා කළ,260,40,1,A,1,1,99,2
+piqa_0008,A,True,INVALID,INVALID,0,රෙද්ද හදා ගැනී�,480,40,1,A,1,"1. reddda hadaa gaeniimata oona nisaa lamayaa wadaa ganna kiyaa ya
+2. lamayaa wadaa gaeni",130,40
+piqa_0009,A,False,INVALID,INVALID,0,සෑදීමට නම්,278,30,1,A,1,"1. Samachatharasra hayak saadaa gatha yuthuya
+Answer (number 1/2 only): 1. Samachatharasra hayak saada",92,40
+piqa_0010,A,True,INVALID,INVALID,0,වම් පයේ සුලැගි�,297,40,INVALID,INVALID,0,wam payee sulaegilleni,93,10
+piqa_0011,B,True,INVALID,INVALID,0,මැතිරූ රෙද්දේ �,317,40,INVALID,INVALID,0,uthuwankandee suura saradiyel wedi nowadinnata kumak paawichchi kalaa yaeyi kiyayi da.,97,39
+piqa_0012,A,True,INVALID,INVALID,0,පෘතුගීසීකාරයන,441,40,1,A,1,1.,122,3
+piqa_0013,B,False,INVALID,INVALID,0,ගෙවල්මන පාවිච�,285,40,1,A,0,"1. Gewal walin sathun elawaa gaeniimata ya
+2. Kumburu walin sathun elawaa gaeniimata ya",86,38
+piqa_0014,A,True,INVALID,INVALID,0,වස දී මැරුවා ය,242,38,INVALID,INVALID,0,Basa dii maeruwaa ya.,92,12
+piqa_0015,B,False,INVALID,INVALID,0,රුවන්වැලි සෑය �,443,40,1,A,0,"1. Ruwanwaeli saaeya waeli walin wasaa waaeda iwara kala see penwii ya
+Answer (number 2/2 only): 1.",123,40
+piqa_0016,B,False,INVALID,INVALID,0,මොන තරම් අපහසු�,360,40,1,A,0,"1. Andaree bath kaaewaa wagee kiyaaya
+
+Answer (number 1/2 only): 1. Andaree bath kaaewaa wagee kiyaaya",103,40
+piqa_0017,A,False,INVALID,INVALID,0,බෝතලයක දමා ය,193,34,1,A,1,"1. kalayaka damaa ya
+3. boothalayaka damaa ya
+Answer (number 2/3 only): 1. kalayaka damaa ya",73,40
+piqa_0018,B,True,INVALID,INVALID,0,ගෙට රිංගූ ගැරඬ�,504,40,1,A,0,1,137,2
+piqa_0019,B,False,INVALID,INVALID,0,ලෝ වැඩ සඟරාවෙහ�,750,40,INVALID,INVALID,0,Thana kola aga saedunu pini hiru raes wihiduna wita saenen athurudahan wii yana baewin praanayada,179,40
+piqa_0020,B,False,INVALID,INVALID,0,පොලිතින් බෑගය�,265,40,1,A,0,"1. Polithin baaegayakata damanna
+3. kadadaasiyak mathata damanna
+Answer (number 1/2 only): 1. Polithin",85,40
+piqa_0021,A,False,INVALID,INVALID,0,ලොකු ටින් උඩින�,976,40,1,A,1,"1. Loku tin udin podi tin thaebiimen, ikmanata tin eka matha eka thaebiya haekiya
+Answer (number 1/2 only",243,40
+piqa_0022,A,True,INVALID,INVALID,0,වතුර මල් වැඩ කර,559,40,1,A,1,1,158,2
+piqa_0023,B,True,INVALID,INVALID,0,මායා අංගම් පොර �,249,40,1,A,0,1,89,2
+piqa_0024,B,False,INVALID,INVALID,0,කැලේ දං කඩන්න ග,473,40,1,A,0,"1. Ammaa jiiwaanuharanaya kala aenayakin ema katuwa ayin kalaaya
+Answer (number 1/2 only): 1. Am",130,40
+piqa_0025,A,False,INVALID,INVALID,0,ඉන්පසු පොල් මු�,586,40,1,A,1,"1. Inpasu pol muddakin aethiliya hondin athullaa gaththaaya
+Answer (number 2/2 only): 2. Inpasu redi k",139,40
+piqa_0026,B,True,INVALID,INVALID,0,විශාල දොරකින් �,401,40,1,A,0,1,119,2
+piqa_0027,B,True,INVALID,INVALID,0,"එය හිලි කොට, තැ�",477,40,INVALID,INVALID,0,"3. Eya hil kota, thaembili wathura tika bii, inpasu eya hil kota, londa kaae haeki ya",139,40
+piqa_0028,A,False,INVALID,INVALID,0,පුල්ලි මාරු කො�,456,40,1,A,1,1.,118,3
+piqa_0029,A,True,INVALID,INVALID,0,හරාව කාලයට ය,200,34,1,A,1,1.,80,3
+piqa_0030,A,False,INVALID,INVALID,0,දිනා ගැනීමට කා�,263,40,1,A,1,"1. Awurudu hathak mehekaara kam kalee ya
+2. Dawas hathak mehekaara kam kalee ya",86,34
+piqa_0031,A,True,INVALID,INVALID,0,පහන් තිරයක් දම�,341,40,INVALID,INVALID,0,Kanee kalaanduru iwath kiriimata sudusuma kramaya wannee kumak da?,104,29
+piqa_0032,A,True,INVALID,INVALID,0,ලංකාවට ගෙනාවේ �,258,40,INVALID,INVALID,0,Mondaya assee hangaagena ya.,88,11
+piqa_0033,B,True,INVALID,INVALID,0,වල් ඌරා පසුපස ම,565,40,1,A,0,1,147,2
+piqa_0034,A,False,INVALID,INVALID,0,"හොදි උයන විට, හ�",247,40,1,A,1,"1. haendi gaanna
+3. aethiliya holawanna
+Answer (number 1/2 only): 1. haendi gaanna
+4. aethiliya holaw",81,40
+piqa_0035,A,True,INVALID,INVALID,0,"පොල්,තල්,කිතුල�",976,40,INVALID,INVALID,0,"Pol,thal,kithul waeni thaala wargayee shaakayaka lapati pushpa manjariya kelawaraka sita kapaa eyin wa",240,40
+piqa_0036,A,True,INVALID,INVALID,0,ප්‍රමිලා බිසවට,976,40,1,A,1,1. Pramilaa Bisawata waeladii thibuu saankaa dooshayak wenuwen kala bali yaagayaka dii aegee,269,40
+piqa_0037,B,False,INVALID,INVALID,0,මස් පිළියෙළ කි�,224,40,1,A,0,"1. dehi damanna
+3. siyambalaa damanna
+Answer (number 1/2 only): 1. dehi damanna
+4. siyambalaa dam",74,40
+piqa_0038,B,False,INVALID,INVALID,0,පොඩි වුවෝ ඔක්ක�,460,40,1,A,0,"1. Podi walan kaaellak kamali gena aawaa.
+Answer (number 1/2 only): 1. Podi walan kaaellak kam",124,40
+piqa_0039,A,False,INVALID,INVALID,0,රජතුමා තමන් සො�,329,40,1,A,1,"1. Thama hisa galawaa ohuta dunnee ya
+2. Thama saluwa galawaa ohuta dunnee ya",94,31
+piqa_0040,B,True,INVALID,INVALID,0,පායනා කාලය අවස�,346,40,1,A,0,1,111,2
+piqa_0041,A,False,INVALID,INVALID,0,රාවණා රජතුමාග�,218,40,1,A,1,"1. ahasin yana yanthrayaki
+
+Answer: 1. ahasin yana yanthrayaki",75,27
+piqa_0042,B,True,INVALID,INVALID,0,ගුත්තිල කාව්‍ය,272,40,1,A,0,1. Gigiruma Seeya,85,8
+piqa_0043,A,False,INVALID,INVALID,0,නියඟයක් හෝ අපල �,566,40,1,A,1,"1. Malaya Raju Wisin Paduwasdew Raja Wenuweni
+Answer (number 1/2 only): 1. Malaya Raju Wisin Paduwasd",140,40
+piqa_0044,A,True,INVALID,INVALID,0,වෙසක් කූඩුවක් �,311,40,1,A,1,1. Ottupaalu kaaeli,103,14
+piqa_0045,B,True,INVALID,INVALID,0,හංසයාට දිය වෙන�,393,40,1,A,0,1,111,2
+piqa_0046,A,False,INVALID,INVALID,0,මුවන් දඩයමේ යන,255,40,1,A,1,"1. Muwan dadayamee yana wita ya
+
+Answer (number 2/2 only): 2. Masun dadayamee yana wita ya",83,37
+piqa_0047,B,False,INVALID,INVALID,0,කොට බංකුව උඩ ති,301,40,INVALID,INVALID,0,Siirii Thibuni.,95,8
+piqa_0048,A,False,INVALID,INVALID,0,වික්‍රම රාජසිං,319,40,1,A,1,"1. Nuwara waewee gillawaa marana ladi
+Answer (number 1/2 only): 1. Nuwara waewee gillawaa marana l",97,40
+piqa_0049,A,False,INVALID,INVALID,0,ගසේ ඇති අඹ පහසු�,236,40,1,A,1,"1. Balattak Sawi Karanna
+Answer (number 2/2 only): 1. Gottak Sawi Karanna",80,27
+piqa_0050,B,True,INVALID,INVALID,0,කවි කියන්නට යා,244,40,1,A,0,1,88,2
+piqa_0051,B,True,INVALID,INVALID,0,"එක බෝ මැඬ ය, දෙක",764,40,1,A,0,1,205,2
+piqa_0052,B,False,INVALID,INVALID,0,ගිල ගත යුතුය,178,34,1,A,0,"1. Gila Gatha Yuthuya
+2. Baehaera Kala Yuthuya",73,24
+piqa_0053,B,True,INVALID,INVALID,0,ඵුස්සදේව විදි�,405,40,INVALID,INVALID,0,Polowee isbak da wathuree ata isbak da yana bawa kiyathi.,122,26
+piqa_0054,A,False,INVALID,INVALID,0,දී එක් දිශාවකට,693,40,1,A,1,"1. danahisee dii ek dishaawakata da, ukulee dii anek dishaawata saha urahisa haa gela prade",181,40
+piqa_0055,A,False,INVALID,INVALID,0,ගොයම් කැපීම වැ�,307,40,1,A,1,"1. Aththam kramaya lesaya
+3. Shramadaana kramaya lesaya
+Answer (number 1/2 only): 1. Aththam kramaya les",93,40
+piqa_0056,A,False,INVALID,INVALID,0,සිංහල වැරදිව උ�,375,40,1,A,1,"1. Sinhala niwaeradiwa uchchaaranaya karannata purudu karannata ya
+Answer (number 2 only): 2. Sinhala wa",107,40
+piqa_0057,A,True,INVALID,INVALID,0,නල්ලූර් කන්දස�,302,40,1,A,1,1,103,2
+piqa_0058,A,True,INVALID,INVALID,0,වැඩ ඇරී පරක්කු,377,40,1,A,1,1. Samboola saha parippu samaga bath.,110,15
+piqa_0059,A,False,INVALID,INVALID,0,නොනගතේ දී නැවැ�,439,40,1,A,1,"1. Waeda allaa, ganudenu kota, aahaara anubhawa kala yuthuya
+Answer (number 1/2 only): 1. Waeda",129,40
+piqa_0060,B,False,INVALID,INVALID,0,පි඲ුණා ඇඟේ වැද�,344,40,1,A,0,"""1. bindunaa""
+Answer (number 2/2 only): ""2. thaelunaa""",109,25
+piqa_0061,B,False,INVALID,INVALID,0,"ලුණු, මිරිස් කු",976,40,1,A,0,"1. Lunu, miris kudu, gammiris kudu ekathu kara hondin kotaa ganna.
+Answer (number 2/2 only",284,40
+piqa_0062,B,False,INVALID,INVALID,0,කුමරු වන්නි රජ�,195,40,1,A,0,"1. kriidaa kalee ya
+3. yuddha kalee ya
+Answer (number 1/2 only): 1. kriidaa kalee ya",71,37
+piqa_0063,A,True,INVALID,INVALID,0,වහලට වඩා උස යාම,327,40,1,A,1,1,114,2
+piqa_0064,A,False,INVALID,INVALID,0,කොළයකින් ගොට්�,422,40,1,A,1,"1. kadadaasi kolayakin gottak gasaa eyata siini tika daemuweeya
+Answer (number 2 only): 2. bath kolay",114,40
+piqa_0065,A,False,INVALID,INVALID,0,බුද්ධ පූජාව තබ�,469,40,1,A,1,"1. Buddha puujaawa thabaa, sanghayaata walandannata dii, inpasu gihiyanta kaaemata diimaya ya
+Answer (",135,40
+piqa_0066,A,True,INVALID,INVALID,0,මංගල යුවල පෝරු�,516,40,INVALID,INVALID,0,kaeththaki,132,5
+piqa_0067,B,True,INVALID,INVALID,0,ස්වාමීන්සේ නම�,496,40,1,A,0,1. Gilanpasa puujaa kiriima inpasu sudu reddak damaa asun paenawiima.,133,34
+piqa_0068,A,False,INVALID,INVALID,0,භූමිතෙල් භාවි�,295,40,1,A,1,"3. bhuumithel bhaawithaa karanna
+Answer (number 1/2 only): 
+3. bhuumithel bhaawithaa",99,40
+piqa_0069,B,False,INVALID,INVALID,0,"බෝධිය, චෛත්‍යය,",276,40,1,A,0,"1. boodhiya, chaithyaya, budugeya
+Answer (number 1/2 only): 1. boodhiya, chaithyaya, budugeya",91,40
+piqa_0070,A,True,INVALID,INVALID,0,වලේ නයෙක් ද කැල,409,40,1,A,1,1,124,2
+piqa_0071,B,False,INVALID,INVALID,0,විටියාවට එන වි�,219,40,1,A,0,"1. kaju kadamin sitiyaa ya
+2. kapu katimin sitiyaa ya",78,27
+piqa_0072,A,False,INVALID,INVALID,0,ගිනිසීරියා ගස�,503,40,1,A,1,"1. ginisiiriyaa gasak kapaa haeramitiyak saadaa denna
+
+Answer (number 1/2 only): 1. ginisiiri",137,40
+piqa_0073,A,True,INVALID,INVALID,0,දුර බලන්න ළඟ නො,294,40,1,A,1,1. Dura balanna langa nobalanna.,94,13
+piqa_0074,B,False,INVALID,INVALID,0,ගරුහුමන් ලැබු�,373,40,INVALID,INVALID,0,Katussage kanee Raththaran baendaa wagee.,101,17
+piqa_0075,B,False,INVALID,INVALID,0,ඇටය හපා ගිලිය ය,290,40,1,A,0,"1. Aetaya hapaa giliya yuthuya
+2. Aetaya iwatha daemiya yuthuya",96,34
+piqa_0076,B,False,INVALID,INVALID,0,ගැහැණු බූරුවෙ�,337,40,1,A,0,"1. kotaluweki
+3. hiniluweki
+Answer (number 1/2 only): 1. kotaluweki
+4. hiniluwe",97,40
+piqa_0077,B,False,INVALID,INVALID,0,කොටාරම් කොටා ස�,442,40,1,A,0,"1. Aawaa wuu da no aawaa wuu da ata disaawehi sanghayaa ta dena ladi
+2. Aawaa w",131,40
+piqa_0078,B,True,INVALID,INVALID,0,පොලෙන්න හොඳින�,361,40,INVALID,INVALID,0,"3. panu biththara yanna hondin weelaa gatha yuthu ya
+Answer: 3",111,29
+piqa_0079,B,True,INVALID,INVALID,0,වී හුලං කිරීමේ,412,40,INVALID,INVALID,0,Honda wii haa bol sulangee gasaagena yana athara dahayiyaa bima goda gaesee.,126,31
+piqa_0080,B,False,INVALID,INVALID,0,ඇතිළිය හැඳිගා�,252,40,1,A,0,"1. Aethiliya haendigaanna
+3. Aethiliya holawanna
+Answer (number 1/2 only): 1. Aethiliya haendigaanna",85,40
+piqa_0081,B,False,INVALID,INVALID,0,ගිය ගැට ගැසුවා�,311,40,1,A,0,"1. Gasaka poththakin gaeta gaesuwaaya
+Answer (number 1/2 only): 1. Gasaka poththakin gaeta gaesuwaaya",99,40
+piqa_0082,B,True,INVALID,INVALID,0,ගොපල්ලන් රෑ හඳ,388,40,1,A,0,"1. kiri kohi aethdaeyi balaakiyaa gena ya
+2. goma kohi aethdaeyi balaakiyaa",118,40
+piqa_0083,A,False,INVALID,INVALID,0,ගැට යවන්න,202,27,1,A,1,1. Thel Gaa Hondin Piiranna.,71,14
+piqa_0084,B,True,INVALID,INVALID,0,භාවිතා කුමක් ද,179,40,INVALID,INVALID,0,kaeththa,75,4
+piqa_0085,B,False,INVALID,INVALID,0,කිලෝ ග්‍රෑම් එ�,234,40,1,A,0,"1. kaeduni
+3. naewuni
+Answer (number 1/2 only): 1. kaeduni",74,26
+piqa_0086,B,False,INVALID,INVALID,0,ඉණිමගක් භාවිත�,232,40,1,A,0,"1. Inimagak bhaawithaa karanna
+3. Walallak bhaawithaa karanna
+Answer (number 1/2 only): 1. Inimag",78,40
+piqa_0087,A,False,INVALID,INVALID,0,ධුනොත් මීටර් ද�,219,40,1,A,1,"1. Eya bindeyi
+2. Eya thaeleyi",78,19
+piqa_0088,B,False,INVALID,INVALID,0,පහසුවෙන්න,285,29,1,A,0,"1. Polthel Tikak Dara Walata Isinna
+Answer (number 2/2 only): 1. Polthel Tikak Dara Walata Isinna",86,36
+piqa_0089,A,False,INVALID,INVALID,0,පුපුරන්නට පටන�,239,40,1,A,1,"1.
+Answer (number 2 only): 2.",80,12
+piqa_0090,B,False,INVALID,INVALID,0,පස්වරු පහ,209,27,1,A,0,"1. Paswaru deka
+3. Paswaru paha
+Answer (number 1/2 only): 1. Paswaru deka
+4. Paswaru paha",75,40
+piqa_0091,A,False,INVALID,INVALID,0,ගලට යටින් දිග ප,458,40,1,A,1,"1. Galata yatin diga pollak daalaa ussamu thaaththaa kiwwaa
+Answer (number 2/2 only): 1. Galata yatin kota",117,40
+piqa_0092,B,False,INVALID,INVALID,0,ගාන විට කොස්ස ව,375,40,1,A,0,1. Kossa damaa eya eliyata gaththaaya.,116,19
+piqa_0093,A,True,INVALID,INVALID,0,ළිඳට වැටුණු බෙ�,311,40,INVALID,INVALID,0,kaandamak bhaawitha kiriima.,100,14
+piqa_0094,B,False,INVALID,INVALID,0,ගාන්න ගාන්න ගා�,245,40,1,A,0,"1. Thel gaanna
+3. Iti gaanna
+Answer (number 2/2 only): 1. Thel gaanna
+4. Iti gaanna
+Answer (number 1",81,40
+piqa_0095,B,False,INVALID,INVALID,0,පාරේ ඇවිදින වි�,280,40,1,A,0,"3. kadadaasiyakin muhuna wasaa ganna
+Answer (number 1/2 only):
+3. kadadaasiyakin muhuna wasaa g",89,40
+piqa_0096,B,False,INVALID,INVALID,0,කොස්සක් භාවිත�,270,40,1,A,0,1. kossak bhaawithaa kara ganna,87,15
+piqa_0097,A,True,INVALID,INVALID,0,රතිඤ්ඤය වීසි ක�,447,40,1,A,1,1.,132,3
+piqa_0098,A,False,INVALID,INVALID,0,"ගුල්ලන්න
+අලුත්",323,40,1,A,1,"1. dehi kola damanna
+3. kesel kola damanna
+Answer (number 1/2 only): 1. dehi kola damanna
+4. kes",96,40
+piqa_0099,B,True,INVALID,INVALID,0,එළඟි තෙල් ටිකක�,314,40,1,A,0,1. Elangi thel tikak gaa gatha yuthu ya.,104,20
+piqa_0100,B,False,INVALID,INVALID,0,රෙදි කෑල්ලක් ව,422,40,INVALID,INVALID,0,"'redi kaaellak elakiren themala nalalen thiyanna', aachchi kiiwaaya'",119,29

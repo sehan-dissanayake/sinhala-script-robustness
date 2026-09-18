@@ -1,0 +1,2 @@
+Model,N,Unicode Acc (%),Romanized Acc (%),Gap (pp),Unicode Invalid (%),Romanized Invalid (%),Unicode MCQ Acc (%),Romanized MCQ Acc (%),Unicode COMP Acc (%),Romanized COMP Acc (%)
+TinyLlama-1.1B-Chat-v1.0,100,44.0,44.0,0.0,7.0,9.0,52.5,55.0,38.33,36.67
