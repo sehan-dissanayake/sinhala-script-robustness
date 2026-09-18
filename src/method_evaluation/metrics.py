@@ -14,7 +14,7 @@ Two regimes are reported:
 
 Case is folded in the strict regime because letter case is not a Singlish
 spelling convention: it reflects each tool's interface rather than its
-romanization scheme. The Nisansa web form capitalizes the first letter of
+romanization scheme. The web tool form capitalizes the first letter of
 whatever text it is handed (93% of its outputs), while the three local methods
 never capitalize; 84% of the human social-media references happen to start with
 a capital. Scoring case-sensitively therefore credits one method for a UI

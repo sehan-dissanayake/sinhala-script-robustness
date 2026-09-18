@@ -49,7 +49,7 @@
         "aspiration": 6.528480496164517e-05,
         "gemination": 0.3638648604537294
       },
-      "nisansa_sirs_method": {
+      "web_tool": {
         "n": 4397,
         "n_scored": 4397,
         "n_empty": 0,
@@ -61,7 +61,7 @@
         "aspiration": 0.17150318263424189,
         "gemination": 0.16177574669495676
       },
-      "nisansa_w": {
+      "web_tool_w": {
         "n": 4397,
         "n_scored": 4397,
         "n_empty": 0,
@@ -134,7 +134,7 @@
         "aspiration": 0.00276921643157173,
         "gemination": 0.36764010837221994
       },
-      "nisansa_sirs_method": {
+      "web_tool": {
         "n": 450587,
         "n_scored": 449117,
         "n_empty": 1470,
@@ -167,7 +167,7 @@
         "aspiration": 0.5614841595113057,
         "gemination": 0.10896110169925445
       },
-      "nisansa_w": {
+      "web_tool_w": {
         "n": 450587,
         "n_scored": 449117,
         "n_empty": 1470,
@@ -340,7 +340,7 @@
         "aspiration": 0.00041372723642556133,
         "gemination": 0.1989174937780821
       },
-      "nisansa_sirs_method": {
+      "web_tool": {
         "n": 300000,
         "n_scored": 299551,
         "n_empty": 449,
@@ -372,7 +372,7 @@
         "aspiration": 0.38307537177935824,
         "gemination": 0.04439301233369726
       },
-      "nisansa_w": {
+      "web_tool_w": {
         "n": 300000,
         "n_scored": 299551,
         "n_empty": 449,

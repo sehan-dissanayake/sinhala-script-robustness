@@ -49,7 +49,7 @@
   },
   {
     "corpus": "social_media",
-    "method": "nisansa_sirs_method",
+    "method": "web_tool",
     "n": 4397,
     "n_empty": 0,
     "coverage_pct": 100.0,
@@ -65,7 +65,7 @@
   },
   {
     "corpus": "social_media",
-    "method": "nisansa_w",
+    "method": "web_tool_w",
     "n": 4397,
     "n_empty": 0,
     "coverage_pct": 100.0,
@@ -129,7 +129,7 @@
   },
   {
     "corpus": "swa_bhasha_words",
-    "method": "nisansa_sirs_method",
+    "method": "web_tool",
     "n": 450587,
     "n_empty": 1470,
     "coverage_pct": 99.67375889672805,
@@ -145,7 +145,7 @@
   },
   {
     "corpus": "swa_bhasha_words",
-    "method": "nisansa_w",
+    "method": "web_tool_w",
     "n": 450587,
     "n_empty": 1470,
     "coverage_pct": 99.67375889672805,
@@ -209,7 +209,7 @@
   },
   {
     "corpus": "augmented_sentences_sample",
-    "method": "nisansa_sirs_method",
+    "method": "web_tool",
     "n": 300000,
     "n_empty": 449,
     "coverage_pct": 99.85033333333332,
@@ -225,7 +225,7 @@
   },
   {
     "corpus": "augmented_sentences_sample",
-    "method": "nisansa_w",
+    "method": "web_tool_w",
     "n": 300000,
     "n_empty": 449,
     "coverage_pct": 99.85033333333332,

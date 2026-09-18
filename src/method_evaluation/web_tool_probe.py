@@ -1,4 +1,4 @@
-"""Characterise what the Nisansa web romanizer can and cannot do, by measurement.
+"""Characterise what the web romanizer can and cannot do, by measurement.
 
 Two defects affect the evaluation, and both were originally found by accident
 rather than by measurement, which is a bad way to know the shape of a bug:
@@ -20,10 +20,10 @@ rather than by measurement, which is a bad way to know the shape of a bug:
 This walks the Sinhala akshara grid one item per request (a batch would confound
 the two defects, since one failing item fails its whole batch) and records the
 verbatim output for each. The result is committed so nobody has to re-probe, and
-`nisansa_batch` reads the failing table from it instead of guessing.
+`web_tool_batch` reads the failing table from it instead of guessing.
 
-    python src/method_evaluation/nisansa_probe.py            # full grid
-    python src/method_evaluation/nisansa_probe.py --report    # re-derive tables
+    python src/method_evaluation/web_tool_probe.py            # full grid
+    python src/method_evaluation/web_tool_probe.py --report    # re-derive tables
 """
 
 from __future__ import annotations
@@ -38,8 +38,8 @@ from tqdm import tqdm
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from nisansa_batch import (SUPPORT_DIR, URL, Unprocessable, has_sinhala,  # noqa: E402
-                           romanize_raw)
+from web_tool_batch import (SUPPORT_DIR, URL, Unprocessable, has_sinhala,  # noqa: E402
+                            romanize_raw)                       romanize_raw)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 PROBE_PATH = SUPPORT_DIR / "probe_results.json"
@@ -215,17 +215,17 @@ def write_tables(data: dict) -> None:
         f"{len(leaking_units) - covered} leaking unit(s) not covered by the derived table")
     SUPPORT_DIR.mkdir(parents=True, exist_ok=True)
     FAILING_PATH.write_text(json.dumps({
-        "description": "Sequences the Nisansa endpoint cannot romanize at all "
-                       "(returns its empty placeholder). Measured by nisansa_probe.py.",
+        "description": "Sequences the web tool endpoint cannot romanize at all "
+                       "(returns its empty placeholder). Measured by web_tool_probe.py.",
         "url": URL,
         "n_units_probed": len(data["units"]),
         "sequences": failing,
         "sequences_readable": [f"{s}  {codes(s)}" for s in failing],
     }, ensure_ascii=False, indent=1), encoding="utf-8")
     LEAKING_PATH.write_text(json.dumps({
-        "description": "Minimal set of sequences the Nisansa endpoint returns unromanized "
+        "description": "Minimal set of sequences the web tool endpoint returns unromanized "
                        "inside otherwise valid output. Match by substring. Scored as "
-                       "errors, not repaired. Derived by nisansa_probe.py from "
+                       "errors, not repaired. Derived by web_tool_probe.py from "
                        "leaking_units, which lists every probed unit that leaked.",
         "url": URL,
         "sequences": leaking,

@@ -20,7 +20,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 RESULTS_DIR = PROJECT_ROOT / "results" / "method_evaluation"
-ENDPOINT_DIR = PROJECT_ROOT / "data" / "reference" / "nisansa_endpoint"
+ENDPOINT_DIR = PROJECT_ROOT / "data" / "reference" / "web_tool_endpoint"
 REVIEW_PATH = RESULTS_DIR / "method_evaluation_results.csv"
 FLAT_PATH = RESULTS_DIR / "results_table.csv"
 
@@ -34,8 +34,8 @@ METHOD_LABELS = {
     "phonetic": "Phonetic (in-house)",
     "aksharamukha": "Aksharamukha",
     "uroman": "uroman",
-    "nisansa_sirs_method": "Nisansa web (as published)",
-    "nisansa_w": "Nisansa web (v->w preprocessed)",
+    "web_tool": "Web tool (as published)",
+    "web_tool_w": "Web tool (v->w preprocessed)",
 }
 FLAT_COLUMNS = [
     "corpus", "method", "n", "n_empty", "coverage_pct", "leak_rate_pct",
@@ -152,7 +152,7 @@ def build(metrics, sig, err, failing) -> Sheet:
     n += 1
 
     # 5. Case sensitivity
-    s.title(f"Table {n}. Case sensitivity check (the Nisansa web form capitalizes the first letter "
+    s.title(f"Table {n}. Case sensitivity check (the Web tool web form capitalizes the first letter "
             f"of its input, which is an interface artifact rather than a romanization choice)")
     s.header("Corpus", "Method", "CER case-folded (primary)", "CER case-sensitive")
     for c in corpora:
@@ -174,9 +174,9 @@ def build(metrics, sig, err, failing) -> Sheet:
                   _r(100 * leak, 3) if leak is not None else "")
     n += 1
 
-    # 7. Nisansa sequences that produce no output
+    # 7. Web tool sequences that produce no output
     if failing:
-        s.title(f"Table {n}. Nisansa endpoint: sequences that return no output at all "
+        s.title(f"Table {n}. Web tool endpoint: sequences that return no output at all "
                 f"(measured by probing the full akshara grid)")
         s.header("Sequence", "Code points")
         for seq in failing:
@@ -185,9 +185,9 @@ def build(metrics, sig, err, failing) -> Sheet:
 
     # 8. Leaked characters, word corpus
     leaked = (err.get("swa_bhasha_words", {}).get("methods", {})
-                 .get("nisansa_sirs_method", {}).get("leaked_chars", {}))
+                 .get("web_tool", {}).get("leaked_chars", {}))
     if leaked:
-        s.title(f"Table {n}. Nisansa endpoint: characters returned unromanized inside otherwise "
+        s.title(f"Table {n}. Web tool endpoint: characters returned unromanized inside otherwise "
                 f"valid output, Swa-Bhasha word corpus")
         s.header("Code point", "Character", "Occurrences")
         for key, count in leaked.items():

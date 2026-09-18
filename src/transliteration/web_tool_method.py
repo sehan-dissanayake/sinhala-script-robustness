@@ -1,10 +1,10 @@
-"""HTTP POST-based transliteration using Nisansa Sir's web method.
+"""HTTP POST-based transliteration using an external rule-based web romanizer tool.
 
-This script interacts with the web app at:
-https://nisansads.staff.uom.lk/CodeSamples/sinhala_romaniser.php
-via HTTP POST to perform romanization with 'Remove diacritics' checked.
+The live endpoint URL is omitted for double-blind review. Configure via WEB_TOOL_URL
+environment variable if reproducing network calls against a live endpoint.
 """
 
+import os
 import unicodedata
 import urllib.request
 import urllib.parse
@@ -17,8 +17,12 @@ except ImportError:  # Direct execution
     from _dataset_io import cli as _cli, process_datasets as _process_datasets
     from phonetic import transliterate as phonetic_transliterate
 
+DEFAULT_URL = os.environ.get(
+    "WEB_TOOL_URL", "https://anonymous-web-tool.example.org/sinhala_romaniser.php"
+)
+
 def transliterate(text: str) -> str:
-    """Romanize Sinhala text using Nisansa Sir's web method via HTTP POST."""
+    """Romanize Sinhala text using the external web tool via HTTP POST."""
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     if not text:
@@ -26,7 +30,7 @@ def transliterate(text: str) -> str:
 
     text = unicodedata.normalize("NFC", text)
     
-    url = "https://nisansads.staff.uom.lk/CodeSamples/sinhala_romaniser.php"
+    url = DEFAULT_URL
     data = urllib.parse.urlencode({
         "sinhala_text": text,
         "remove_diacritics": "1"
@@ -51,12 +55,13 @@ def transliterate(text: str) -> str:
         raise ValueError("Could not find the output box in the HTML response.")
 
 def process_datasets() -> None:
-    _process_datasets("nisansa_sirs_method", transliterate)
+    _process_datasets("web_tool", transliterate)
 
 if __name__ == "__main__":
     # One HTTP request per string, so use --datasets to regenerate a single
     # dataset rather than re-fetching all ~4,500 records.
-    _cli("nisansa_sirs_method", transliterate)
+    _cli("web_tool", transliterate)
 
     # Example usage:
     #print(f"Testing: 'ඇමරිකා ඓතිහාසික එක්සත් ජනපදය'\nTransliteration: {transliterate(' ඇමරිකා ඓතිහාසික එක්සත් ජනපදය')}")
+

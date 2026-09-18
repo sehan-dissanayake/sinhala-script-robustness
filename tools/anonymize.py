@@ -41,16 +41,30 @@ SUBSTITUTIONS = {
 }
 
 # Anything matching these is reported by --check even if it is not in the table
-# above, so a new collaborator's slug cannot slip through unnoticed.
+# above, so a new collaborator's slug or identifying institution cannot slip
+# through unnoticed.
 SUSPICIOUS = [
     re.compile(r"uom\d{6}[a-z]", re.I),                  # university index numbers
     re.compile(r"github\.com/[A-Za-z0-9_-]+/sinhala", re.I),
+    re.compile(r"staff\.uom\.lk", re.I),
+    re.compile(r"cse\.mrt\.ac\.lk", re.I),
+    re.compile(r"\bnisansads\b", re.I),
+    re.compile(r"\bNisansa(?:\s+Sir)?\b", re.I),
+    re.compile(r"\b(sehandissanayake|dasunillangasinghe|shanilpraveen)\b", re.I),
 ]
 
-SKIP_DIRS = {".git", "__pycache__", ".venv", "node_modules"}
-# Reference corpora are third-party word lists. They contain ordinary Sinhala
-# words that happen to look like names and must not be rewritten.
-SKIP_PATHS = {os.path.join("data", "reference", "raw")}
+SKIP_DIRS = {".git", "__pycache__", ".venv", "node_modules", ".playwright-mcp", ".idea", ".vscode"}
+# Large untracked caches, raw reference data, and credentials
+SKIP_PATHS = {
+    os.path.normpath(p)
+    for p in [
+        os.path.join("data", "reference", "raw"),
+        os.path.join("data", "reference", "cache"),
+        os.path.join("data", "reference", "parallel"),
+        os.path.join("results", "method_evaluation", "per_item"),
+        "kaggle.json",
+    ]
+}
 TEXT_EXT = {".py", ".ipynb", ".md", ".txt", ".json", ".tex", ".csv", ".yml",
             ".yaml", ".cfg", ".toml", ".sh"}
 
@@ -58,10 +72,13 @@ TEXT_EXT = {".py", ".ipynb", ".md", ".txt", ".json", ".tex", ".csv", ".yml",
 def candidate_files():
     for root, dirs, files in os.walk(REPO):
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
-        rel_root = os.path.relpath(root, REPO)
+        rel_root = os.path.normpath(os.path.relpath(root, REPO))
         if any(rel_root == p or rel_root.startswith(p + os.sep) for p in SKIP_PATHS):
             continue
         for fn in files:
+            rel_file = os.path.normpath(os.path.relpath(os.path.join(root, fn), REPO))
+            if rel_file in SKIP_PATHS:
+                continue
             if os.path.splitext(fn)[1].lower() in TEXT_EXT:
                 yield os.path.join(root, fn)
 

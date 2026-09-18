@@ -1,4 +1,4 @@
-"""Distributed, resumable runner for the Nisansa web romanizer.
+"""Distributed, resumable runner for the rule-based web romanizer.
 
 Romanizing the 450,587-word and 275,259-sentence corpora through a third-party
 web form takes hours, so this splits a corpus into independent shards that team
@@ -13,7 +13,7 @@ over, because the evaluation counts them as the tool's genuine errors:
     are recorded in ``unsupported.json`` and scored as an empty hypothesis, i.e.
     CER 1.0. They are no longer dropped from the comparison.
   * characters the endpoint returns unromanized inside otherwise valid output
-    (ඓ, ඞ, ඦ and friends - see ``nisansa_probe.py``) are kept as-is. An earlier
+    (ඓ, ඞ, ඦ and friends - see ``web_tool_probe.py``) are kept as-is. An earlier
     revision ran the in-house phonetic romanizer over every response to patch
     these up, which silently turned the measured system into a hybrid of two
     methods under test. Shard data produced before that change needs
@@ -40,14 +40,14 @@ datasets.
 
 Usage
 -----
-    python nisansa_shards.py status --corpus swa_bhasha_words
-    python nisansa_shards.py run --corpus swa_bhasha_words --all
-    python nisansa_shards.py run --corpus swa_bhasha_words --shard 7
-    python nisansa_shards.py refetch-leaks --corpus swa_bhasha_words
-    python nisansa_shards.py merge --corpus swa_bhasha_words
+    python web_tool_shards.py status --corpus swa_bhasha_words
+    python web_tool_shards.py run --corpus swa_bhasha_words --all
+    python web_tool_shards.py run --corpus swa_bhasha_words --shard 7
+    python web_tool_shards.py refetch-leaks --corpus swa_bhasha_words
+    python web_tool_shards.py merge --corpus swa_bhasha_words
 
 Maintainer-only, once per corpus:
-    python nisansa_shards.py init --corpus <name> --shards 24
+    python web_tool_shards.py init --corpus <name> --shards 24
 """
 
 from __future__ import annotations
@@ -66,12 +66,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 PARALLEL_DIR = PROJECT_ROOT / "data" / "reference" / "parallel"
-SHARD_ROOT = PROJECT_ROOT / "data" / "reference" / "nisansa_shards"
+SHARD_ROOT = PROJECT_ROOT / "data" / "reference" / "web_tool_shards"
 CACHE_DIR = PROJECT_ROOT / "data" / "reference" / "cache"
 TRANSLIT_DIR = PROJECT_ROOT / "data" / "reference" / "transliterated"
-LEAKING_PATH = PROJECT_ROOT / "data" / "reference" / "nisansa_endpoint" / "leaking_sequences.json"
+LEAKING_PATH = PROJECT_ROOT / "data" / "reference" / "web_tool_endpoint" / "leaking_sequences.json"
 
-METHOD = "nisansa_sirs_method"
+METHOD = "web_tool"
 DEFAULT_CORPUS = "swa_bhasha_words"
 
 # Items per append. One group is a couple of dozen HTTP requests, so a hard kill
@@ -165,7 +165,7 @@ def leaking_sequences() -> list[str]:
     if not LEAKING_PATH.exists():
         raise SystemExit(
             f"{LEAKING_PATH.relative_to(PROJECT_ROOT)} missing.\n"
-            f"Run: python src/method_evaluation/nisansa_probe.py")
+            f"Run: python src/method_evaluation/web_tool_probe.py")
     return json.loads(LEAKING_PATH.read_text(encoding="utf-8"))["sequences"]
 
 
@@ -206,7 +206,7 @@ def cmd_seed(corpus: str, allow_repaired: bool) -> None:
     n = meta["n_shards"]
     existing: dict[str, str] = {}
     for cache_file in (CACHE_DIR / corpus / f"{METHOD}.json",
-                       CACHE_DIR / f"{corpus}_nisansacov" / f"{METHOD}.json"):
+                       CACHE_DIR / f"{corpus}_webcov" / f"{METHOD}.json"):
         if cache_file.exists():
             for k, v in json.loads(cache_file.read_text(encoding="utf-8")).items():
                 if v and k != v:          # k == v was the old failure placeholder
@@ -322,7 +322,7 @@ def _pid_alive(pid: int) -> bool:
 
 def _fetch_into_shard(corpus: str, shard: int, todo: list[str], desc: str) -> tuple[int, bool]:
     """Fetch `todo` and append results to the shard file. Returns (written, stopped_early)."""
-    from nisansa_batch import transliterate_many
+    from web_tool_batch import transliterate_many
 
     path = shard_path(corpus, shard)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -396,7 +396,7 @@ def cmd_run(corpus: str, shard: int, limit: int | None) -> None:
     print(f"\nwrote {written:,} results. {remaining:,} items left in this shard.")
     if remaining:
         print(f"Interrupted? Just run the same command again - it resumes:\n"
-              f"  python src/method_evaluation/nisansa_shards.py run "
+              f"  python src/method_evaluation/web_tool_shards.py run "
               f"--corpus {corpus} --shard {shard}")
     else:
         print("shard complete.")
@@ -443,7 +443,7 @@ def cmd_reset(corpus: str, yes: bool) -> None:
     if not yes:
         raise SystemExit(
             "This deletes those results so they can be refetched raw.\n"
-            "They remain in git history (`git checkout -- data/reference/nisansa_shards`).\n"
+            "They remain in git history (`git checkout -- data/reference/web_tool_shards`).\n"
             "Re-run with --yes to proceed.")
     for p in paths:
         p.unlink()
@@ -497,7 +497,7 @@ def cmd_refetch_leaks(corpus: str) -> None:
             else:
                 changed += 1
     print(f"\nrefetched {total_written:,}; {changed:,} results changed, {same:,} unchanged.")
-    print("Now rerun `merge`, then derive_nisansa_w.py and run_evaluation.py.")
+    print("Now rerun `merge`, then derive_web_tool_w.py and run_evaluation.py.")
 
 
 def cmd_merge(corpus: str) -> None:
@@ -548,7 +548,7 @@ def cmd_merge(corpus: str) -> None:
 
     # The v->w rewrite is a preprocessing stage of this method, not an optional
     # extra, so it runs here rather than needing a separate command.
-    from derive_nisansa_w import apply_to, write_variant
+    from derive_web_tool_w import apply_to, write_variant
     rewritten, stats = apply_to(records)
     w_path = write_variant(corpus, rewritten)
     print(f"wrote v->w preprocessed -> {w_path.relative_to(PROJECT_ROOT)} "

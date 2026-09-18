@@ -2,6 +2,6 @@
 # git rewrites LF to CRLF on Windows checkout, so the same shard file looks
 # modified on one machine and not another and every teammate's commit shows
 # spurious whole-file diffs.
-data/reference/nisansa_shards/**/*.jsonl text eol=lf
-data/reference/nisansa_shards/**/*.json  text eol=lf
+data/reference/web_tool_shards/**/*.jsonl text eol=lf
+data/reference/web_tool_shards/**/*.json  text eol=lf
 *.txt.gz binary

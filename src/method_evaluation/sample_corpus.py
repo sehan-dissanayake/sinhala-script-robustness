@@ -46,7 +46,7 @@ def sample(corpus: str, n: int, seed: int, suffix: str = "sample") -> Path:
 def subset_covered_by(corpus: str, method: str, suffix: str) -> Path:
     """Restrict a corpus to the items one method actually managed to romanize.
 
-    The Nisansa endpoint refuses sustained volume, so it covers only part of the
+    The web tool endpoint refuses sustained volume, so it covers only part of the
     word corpus. Comparing methods requires identical items, so this carves out
     exactly the covered subset; every method is then scored on the same rows.
     """

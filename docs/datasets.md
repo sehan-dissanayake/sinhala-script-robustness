@@ -125,11 +125,11 @@ python src/data_prep/build_eval_sets.py
 ```
 
 If a label or metadata fix changes `data/processed/` you must refresh the romanized twins.
-Re-running a local method is the normal route. The Nisansa method costs one HTTP request per
+Re-running a local method is the normal route. The web tool method costs one HTTP request per
 string (~4,500 for the full set), so when only metadata changed use:
 
 ```bash
-python src/transliteration/resync_metadata.py --method nisansa_sirs_method
+python src/transliteration/resync_metadata.py --method web_tool
 ```
 
 which copies the non-Romanized fields across and refuses to run if the Sinhala text itself

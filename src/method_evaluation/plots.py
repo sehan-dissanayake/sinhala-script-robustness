@@ -19,22 +19,22 @@ METHOD_LABELS = {
     "phonetic": "Phonetic",
     "aksharamukha": "Aksharamukha",
     "uroman": "uroman",
-    "nisansa_sirs_method": "Nisansa",
-    "nisansa_w": "Nisansa (v→w)",
+    "web_tool": "Web tool",
+    "web_tool_w": "Web tool (v→w)",
 }
 CORPUS_LABELS = {
     "social_media": "Social media\n(authentic sentences)",
     "swa_bhasha_words": "Swa-Bhasha\n(multi-ref words)",
     "augmented_sentences": "Augmented\n(sentences)",
     "augmented_sentences_sample": "Augmented\n(300k sample)",
-    "swa_bhasha_words_nisansacov": "Swa-Bhasha words\n(25k Nisansa block)",
+    "swa_bhasha_words_webcov": "Swa-Bhasha words\n(25k Web tool block)",
 }
 PALETTE = {
     "phonetic": "#2E86AB",
     "aksharamukha": "#E4572E",
     "uroman": "#8B5FBF",
-    "nisansa_sirs_method": "#17A398",
-    "nisansa_w": "#0E6E66",       # same family as Nisansa: it is a variant of it
+    "web_tool": "#17A398",
+    "web_tool_w": "#0E6E66",       # same family as web_tool: it is a variant of it
 }
 
 sns.set_theme(style="whitegrid", context="talk")

@@ -1,23 +1,23 @@
-"""The v->w preprocessing stage for the Nisansa method.
+"""The v->w preprocessing stage for the web tool method.
 
 The endpoint writes ව as `v`; Sinhala speakers typing Singlish overwhelmingly
 write `w` (human v-share is 0.01 on the word corpus and 0.20 on social media,
-against Nisansa's 1.00). That single orthographic choice, not romanization
+against the web tool's 1.00). That single orthographic choice, not romanization
 quality, accounted for its entire measured gap to the phonetic method, so the
 rewrite is applied as a standard preprocessing step before scoring and
-`nisansa_w` is the Nisansa variant reported in the headline results.
+`web_tool_w` is the web tool variant reported in the headline results.
 
-The rewrite is unambiguous on this data: `w` occurs in ~0.03% of Nisansa
+The rewrite is unambiguous on this data: `w` occurs in ~0.03% of web tool
 outputs, so there is nothing for a v->w mapping to collide with. `apply_to` logs
 the collision count each time so that stays verifiable rather than assumed.
 
 It is still a *modified* method rather than the tool as published, and both rows
 are reported side by side so the distinction is visible. No network access is
-needed - it is a pure post-process of fetched results, and `nisansa_shards.py
+needed - it is a pure post-process of fetched results, and `web_tool_shards.py
 merge` calls it automatically. Run it directly for a corpus that has no shard
 set, such as social_media:
 
-    python derive_nisansa_w.py --corpora social_media
+    python derive_web_tool_w.py --corpora social_media
 """
 
 from __future__ import annotations
@@ -29,8 +29,8 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 TRANSLIT_DIR = PROJECT_ROOT / "data" / "reference" / "transliterated"
 
-SOURCE = "nisansa_sirs_method"
-DERIVED = "nisansa_w"
+SOURCE = "web_tool"
+DERIVED = "web_tool_w"
 
 
 def to_w(text: str) -> str:
@@ -83,7 +83,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--corpora", nargs="+", default=["social_media", "swa_bhasha_words"],
-                    help="corpora to preprocess; `nisansa_shards.py merge` does this "
+                    help="corpora to preprocess; `web_tool_shards.py merge` does this "
                          "automatically for sharded corpora")
     args = ap.parse_args()
     for c in args.corpora:

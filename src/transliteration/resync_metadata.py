@@ -3,7 +3,7 @@
 Romanized files are copies of the processed records plus `text_romanized` (and
 `options_romanized`), so any correction to a label or a metadata field in
 data/processed/ leaves them stale. For the local methods the fix is simply to
-re-run them. The Nisansa method costs one HTTP request per string (~4,500 for
+re-run them. The web tool method costs one HTTP request per string (~4,500 for
 the full set), so re-fetching unchanged text to pick up a label fix is wasteful
 and rude to a third-party endpoint.
 
@@ -12,7 +12,7 @@ record onto the existing romanized record, and refuses to touch a file whose
 Sinhala text no longer matches - if the source text changed, the romanization is
 genuinely out of date and the method must actually be re-run.
 
-    python src/transliteration/resync_metadata.py --method nisansa_sirs_method
+    python src/transliteration/resync_metadata.py --method web_tool
 """
 
 from __future__ import annotations

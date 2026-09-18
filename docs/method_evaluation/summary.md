@@ -15,7 +15,7 @@ produces output closest to how real people actually write Singlish?
 | **Phonetic (in-house)** | A rule-based converter built for this project: each Sinhala letter/sound maps to a fixed English spelling |
 | **Aksharamukha** | A general-purpose transliteration library, not built specifically for Sinhala |
 | **uroman** | Another general-purpose "universal romanizer" tool |
-| **Nisansa Sir's method** | Nisansa Sir's web application |
+| **Web tool method** | Rule-based web application |
 
 Example of the four methods on the same word (ආයුබෝවන් — a common greeting):
 
@@ -24,7 +24,7 @@ Sinhala:      ආයුබෝවන්
 Phonetic:     aayuboowan
 Aksharamukha: aayuboowan
 uroman:       aayuboovan       <- uses "v" instead of "w"
-Nisansa:      aayuboovan       <- also "v"; see the v→w step in section 3
+Web tool:      aayuboovan       <- also "v"; see the v→w step in section 3
 ```
 
 They mostly produce very similar results but differ consistently in small
@@ -76,7 +76,7 @@ For every Sinhala item in each dataset:
    (below).
 3. Average the scores across the whole dataset, per method.
 
-### Nisansa Sir's method
+### Web tool method
 
 Because this method is a web application rather than a local library, every
 item has to be sent over the internet. One word per request would have taken
@@ -88,7 +88,7 @@ an hour.
 **What we record is the tool's output exactly as it comes back.** An earlier
 version of our code quietly ran our own phonetic converter over every response
 to tidy up characters the web app had left in Sinhala. That was a mistake: it
-made the thing we were measuring a *mixture* of Nisansa's method and one of the
+made the thing we were measuring a *mixture* of the web tool's method and one of the
 methods it was being compared against, and it hid a real defect. Both datasets
 were refetched from scratch without it.
 
@@ -110,7 +110,7 @@ Fixed:    aayuboowan     <- now identical to Phonetic
 We measured these properly rather than discovering them by accident, by
 submitting the entire Sinhala letter-plus-vowel-sign grid (881 combinations)
 one at a time and recording what came back. Both results are saved in the repo
-under `data/reference/nisansa_endpoint/`.
+under `data/reference/web_tool_endpoint/`.
 
 **Bug 1 — 17 combinations produce no output at all.** Every one of them is the
 letter **ඤ** (U+0DA4) carrying a vowel sign or al-lakuna:
@@ -205,16 +205,16 @@ alongside the softer metrics above.
 
 ## 5. Results
 
-CER by dataset (lower is better; **bold** = best). Nisansa is shown after the
+CER by dataset (lower is better; **bold** = best). Web tool is shown after the
 v→w step, which is its better version:
 
-| Dataset | Items | Phonetic | Nisansa (v→w) | Aksharamukha | uroman |
+| Dataset | Items | Phonetic | Web tool (v→w) | Aksharamukha | uroman |
 |---|---|---|---|---|---|
 | Social media sentences | 4,397 | **0.182** | 0.182 | 0.191 | 0.228 |
 | Swa-Bhasha words | 450,587 | **0.121** | 0.133 | 0.148 | 0.228 |
 | Augmented sentences (sample) | 300,000 | **0.112** | 0.114 | 0.139 | 0.210 |
 
-Phonetic is first everywhere. On the two big datasets the gap to Nisansa is
+Phonetic is first everywhere. On the two big datasets the gap to Web tool is
 small but entirely solid: the confidence intervals do not overlap and the
 paired test gives p < 1e-90. On social media the two are separated by 0.0003,
 which is a difference too small to care about even though the paired test
@@ -225,9 +225,9 @@ Full numbers, social media (the most realistic test):
 | Method | Coverage | CER ↓ | WER ↓ | chrF ↑ | BLEU ↑ | Exact ↑ |
 |---|---|---|---|---|---|---|
 | **Phonetic** | 100% | **0.182** | **0.606** | **67.8** | **28.6** | **4.16%** |
-| Nisansa (v→w) | 100% | 0.182 | 0.607 | 67.8 | 28.6 | 4.16% |
+| Web tool (v→w) | 100% | 0.182 | 0.607 | 67.8 | 28.6 | 4.16% |
 | Aksharamukha | 100% | 0.191 | 0.640 | 63.7 | 26.3 | 3.50% |
-| Nisansa (as published) | 100% | 0.197 | 0.647 | 63.4 | 25.4 | 3.18% |
+| Web tool (as published) | 100% | 0.197 | 0.647 | 63.4 | 25.4 | 3.18% |
 | uroman | 100% | 0.228 | 0.746 | 55.7 | 20.7 | 1.59% |
 
 Word list, where the multiple accepted spellings make exact-match meaningful:
@@ -235,9 +235,9 @@ Word list, where the multiple accepted spellings make exact-match meaningful:
 | Method | Coverage | CER ↓ | chrF ↑ | Exact ↑ |
 |---|---|---|---|---|
 | **Phonetic** | 100% | **0.121** | **78.7** | **33.2%** |
-| Nisansa (v→w) | 99.67% | 0.133 | 76.1 | 30.9% |
+| Web tool (v→w) | 99.67% | 0.133 | 76.1 | 30.9% |
 | Aksharamukha | 100% | 0.148 | 69.6 | 23.9% |
-| Nisansa (as published) | 99.67% | 0.176 | 65.5 | 20.6% |
+| Web tool (as published) | 99.67% | 0.176 | 65.5 | 20.6% |
 | uroman | 100% | 0.228 | 51.6 | 9.7% |
 
 Augmented sentences (cross-check only):
@@ -245,21 +245,21 @@ Augmented sentences (cross-check only):
 | Method | Coverage | CER ↓ | chrF ↑ | Exact ↑ |
 |---|---|---|---|---|
 | **Phonetic** | 100% | **0.112** | **79.6** | 3.426% |
-| Nisansa (v→w) | 99.85% | 0.114 | 79.5 | **3.432%** |
+| Web tool (v→w) | 99.85% | 0.114 | 79.5 | **3.432%** |
 | Aksharamukha | 100% | 0.139 | 70.3 | 2.819% |
-| Nisansa (as published) | 99.85% | 0.153 | 68.5 | 2.460% |
+| Web tool (as published) | 99.85% | 0.153 | 68.5 | 2.460% |
 | uroman | 100% | 0.210 | 53.5 | 1.737% |
 
-Coverage of 99.85% is 449 of 300,000 rows with no output. Nisansa edges Phonetic
+Coverage of 99.85% is 449 of 300,000 rows with no output. Web tool edges Phonetic
 on exact match here by 6 items in 300,000, which is noise, not a result.
 
 ### A note on what changed from our earlier draft
 
-Our first write-up reported Phonetic and Nisansa as a **statistical tie** at
+Our first write-up reported Phonetic and Web tool as a **statistical tie** at
 0.120 CER each on the word list. That is no longer what we find, for two
 reasons, both of them corrections to our own method rather than new data:
 
-1. we were scoring Nisansa's output *after* our phonetic converter had tidied
+1. we were scoring the web tool's output *after* our phonetic converter had tidied
    it up, so part of what we measured was our own method;
 2. we were excluding the words it could not romanize, so it paid no price for
    failing to answer.
@@ -278,11 +278,11 @@ how often real humans use certain spelling choices (word list):
 |---|---|---|---|---|
 | **Real humans** | almost always (99% w) | rarely (0.12/word) | often (0.55/word) | never |
 | **Phonetic** | always (100% w) | over-uses (0.81) | matches (0.56) | never |
-| **Nisansa (v→w)** | always (100% w) | over-uses (0.81) | matches (0.56) | 0.82% of outputs |
+| **Web tool (v→w)** | always (100% w) | over-uses (0.81) | matches (0.56) | 0.82% of outputs |
 | **Aksharamukha** | always (100% w) | over-uses (0.81) | drops it (0.23) | never |
 | **uroman** | opposite (100% v) | over-uses (0.80) | drops it (0.003) | never |
 
-Phonetic and Nisansa have nearly the same profile, which is why they land
+Phonetic and Web tool have nearly the same profile, which is why they land
 close together; what separates them now is coverage and the leaked characters,
 not spelling style. Aksharamukha loses ground by dropping aspiration, and
 uroman is last because it does that *and* writes `v` *and* over-doubles
@@ -299,14 +299,14 @@ method. Not yet implemented — the clearest next improvement.
 
 **The in-house phonetic method is the best of the four.** It has the lowest CER
 and highest chrF on all three datasets, and the differences against
-Aksharamukha and uroman are large. Against Nisansa's method the difference is
+Aksharamukha and uroman are large. Against the web tool's method the difference is
 smaller but statistically clear on the two large datasets, and it comes from
 two specific things rather than from being a better letter-to-letter converter:
 
-- Nisansa **cannot romanize 17 ඤ combinations at all**, so 0.33% of the word
+- Web tool **cannot romanize 17 ඤ combinations at all**, so 0.33% of the word
   list and 0.16% of the sentences get no answer
-- Nisansa **leaves Sinhala characters in 0.8–2.5% of its output**
-- Nisansa needs the **v→w step** applied to match how people actually type;
+- Web tool **leaves Sinhala characters in 0.8–2.5% of its output**
+- Web tool needs the **v→w step** applied to match how people actually type;
   without it, it also ranks below Aksharamukha
 
 On pure letter-to-letter mapping, once the v/w convention is normalized and
@@ -319,5 +319,5 @@ deterministically, needs no network, covers every input, and can be reproduced
 offline by anyone. So it is the recommendation on both quality and engineering
 grounds.
 
-The two bugs above are worth reporting to Dr Nisansa; both are small, specific
+The two bugs above are worth reporting to the upstream maintainer; both are small, specific
 and come with a one-line reproduction.

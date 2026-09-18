@@ -1,6 +1,6 @@
-"""Batched client for the Nisansa web romanizer.
+"""Batched client for the rule-based web romanizer.
 
-The upstream form (`sinhala_romaniser.php`) accepts free text and romanizes it
+The upstream form accepts free text and romanizes it
 line by line, so many items can be romanized in a single POST by joining them
 with newlines and splitting the response back apart. Measured on the word set
 this is ~70x faster than one request per item (~4.5 ms/item vs ~317 ms/item),
@@ -13,7 +13,7 @@ differently because they are different kinds of failure:
 placeholder instead of output, deterministically, regardless of payload size,
 request rate or time of day. All known cases involve U+0DA4 (ඤ) followed by a
 vowel sign or al-lakuna. The set is not guessable, so it is measured directly by
-`nisansa_probe.py` and read from disk (see `failing_sequences`); the hard-coded
+`web_tool_probe.py` and read from disk (see `failing_sequences`); the hard-coded
 table below is only a fallback for a fresh clone. Because a batch fails if any
 of its items contains such a sequence, sending them wastes a bisection per
 affected batch, so they are held back locally and reported as failures. A failed
@@ -26,7 +26,7 @@ recorded verbatim, because a leftover Sinhala character in the output *is* the
 tool's answer and scoring it as an error is the point.
 
 Earlier revisions ran the in-house phonetic romanizer over every response to
-patch leaks up. That made the measured system "Nisansa plus phonetic repair"
+patch leaks up. That made the measured system "web tool plus phonetic repair"
 and quietly hid the leak defect behind the output of one of the competing
 methods, so `repair` now defaults to False. It is kept only to reproduce the
 older numbers.
@@ -58,6 +58,7 @@ a romanization choice, and the evaluation folds case, so this is immaterial.
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import time
@@ -73,11 +74,13 @@ TRANSLIT_SRC = PROJECT_ROOT / "src" / "transliteration"
 sys.path.insert(0, str(TRANSLIT_SRC))
 from phonetic import transliterate as _phonetic  # noqa: E402
 
-URL = "https://nisansads.staff.uom.lk/CodeSamples/sinhala_romaniser.php"
+URL = os.environ.get(
+    "WEB_TOOL_URL", "https://anonymous-web-tool.example.org/sinhala_romaniser.php"
+)
 
-# Written by nisansa_probe.py; committed, so a fresh clone gets the measured
+# Written by web_tool_probe.py; committed, so a fresh clone gets the measured
 # table without probing the endpoint again.
-SUPPORT_DIR = PROJECT_ROOT / "data" / "reference" / "nisansa_endpoint"
+SUPPORT_DIR = PROJECT_ROOT / "data" / "reference" / "web_tool_endpoint"
 FAILING_PATH = SUPPORT_DIR / "failing_sequences.json"
 
 MAX_LINES = 250
@@ -124,7 +127,7 @@ class Misaligned(BatchRejected):
 def failing_sequences() -> tuple[str, ...]:
     """Sequences the endpoint cannot romanize, longest first.
 
-    Measured by `nisansa_probe.py`. Falls back to the hand-written table if the
+    Measured by `web_tool_probe.py`. Falls back to the hand-written table if the
     probe has never been run in this checkout.
     """
     if FAILING_PATH.exists():
@@ -190,7 +193,7 @@ def romanize_raw(text: str, timeout: int = 60) -> str:
 
     No phonetic repair, no case folding: exactly what the tool produced, leaked
     Sinhala characters included. Raises `Unprocessable` on a hard failure.
-    Used by `nisansa_probe.py` to characterise the endpoint.
+    Used by `web_tool_probe.py` to characterise the endpoint.
     """
     box = _post(unicodedata.normalize("NFC", text), timeout)
     return _TAGS.sub("", box).strip()

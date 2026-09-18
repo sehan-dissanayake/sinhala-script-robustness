@@ -61,7 +61,7 @@ def process_datasets(method_name: str, fn: Callable[[str], str],
     """Romanize every processed dataset (or only the named ones) with `fn`.
 
     `datasets` exists so a single dataset can be regenerated without recomputing
-    the rest. That matters for the network-bound Nisansa method, where the full
+    the rest. That matters for the network-bound web tool method, where the full
     set is thousands of requests to a third-party endpoint.
     """
     if datasets:

@@ -1,6 +1,6 @@
 {
- "description": "Minimal set of sequences the Nisansa endpoint returns unromanized inside otherwise valid output. Match by substring. Scored as errors, not repaired. Derived by nisansa_probe.py from leaking_units, which lists every probed unit that leaked.",
- "url": "https://nisansads.staff.uom.lk/CodeSamples/sinhala_romaniser.php",
+ "description": "Minimal set of sequences the web tool endpoint returns unromanized inside otherwise valid output. Match by substring. Scored as errors, not repaired. Derived by web_tool_probe.py from leaking_units, which lists every probed unit that leaked.",
+ "url": "https://anonymous-web-tool.example.org/sinhala_romaniser.php",
  "sequences": [
   "ඎ",
   "ඏ",

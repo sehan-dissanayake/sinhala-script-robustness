@@ -11,15 +11,15 @@ METHOD_LABELS = {
     "phonetic": "Phonetic (in-house)",
     "aksharamukha": "Aksharamukha",
     "uroman": "uroman",
-    "nisansa_sirs_method": "Nisansa web (as published)",
-    "nisansa_w": "Nisansa web (v→w preprocessed)",
+    "web_tool": "Web tool (as published)",
+    "web_tool_w": "Web tool (v→w preprocessed)",
 }
 CORPUS_LABELS = {
     "social_media": "Social media (authentic sentence pairs)",
     "swa_bhasha_words": "Swa-Bhasha (multi-reference words)",
     "augmented_sentences": "Augmented (sentence pairs)",
     "augmented_sentences_sample": "Augmented sentences (300k sample, cross-check)",
-    "swa_bhasha_words_nisansacov": "Swa-Bhasha words (25k block Nisansa could cover)",
+    "swa_bhasha_words_webcov": "Swa-Bhasha words (25k block Web tool could cover)",
 }
 
 
@@ -123,7 +123,7 @@ def main():
                 f"{margin:.4f} CER. The paired Wilcoxon separates them on every corpus, so the ordering "
                 f"is not a coin flip - but the margin is small in absolute terms, and it comes from "
                 f"coverage and leaked characters rather than from better letter-to-letter mapping. On the "
-                f"items Nisansa did answer, and with the v/w convention normalized, the two are very "
+                f"items the web tool did answer, and with the v/w convention normalized, the two are very "
                 f"close.\n")
         if close:
             names = ", ".join(METHOD_LABELS.get(m, m) for m in close)
@@ -149,17 +149,17 @@ def main():
         lines.append(
             f"- **Wins the large-scale word set decisively**: CER "
             f"{_fmt(g('swa_bhasha_words','phonetic','cer_mean'))} vs "
-            f"{_fmt(g('swa_bhasha_words','nisansa_sirs_method','cer_mean'))} (Nisansa), "
+            f"{_fmt(g('swa_bhasha_words','web_tool','cer_mean'))} (Web tool), "
             f"{_fmt(g('swa_bhasha_words','aksharamukha','cer_mean'))} (Aksharamukha) and "
             f"{_fmt(g('swa_bhasha_words','uroman','cer_mean'))} (uroman) across {n_words:,} words "
             f"with 7.1M accepted human variants (p < 1e-300 against every one of them).")
     if ("social_media", "phonetic") in grid:
         lines.append(
             f"- **Wins authentic social-media text too**: CER "
-            f"{_fmt(g('social_media','phonetic','cer_mean'))} vs Nisansa "
-            f"{_fmt(g('social_media','nisansa_sirs_method','cer_mean'))}, with the highest chrF "
+            f"{_fmt(g('social_media','phonetic','cer_mean'))} vs Web tool "
+            f"{_fmt(g('social_media','web_tool','cer_mean'))}, with the highest chrF "
             f"({_fmt(g('social_media','phonetic','chrf'),1)} vs "
-            f"{_fmt(g('social_media','nisansa_sirs_method','chrf'),1)}). See the capitalization note "
+            f"{_fmt(g('social_media','web_tool','chrf'),1)}). See the capitalization note "
             "below - scoring case-sensitively reverses this ranking for the wrong reason.")
     lines.append(
         "- **Matches human spelling convention**: humans overwhelmingly use `w` (not `v`) and use "
@@ -167,7 +167,7 @@ def main():
         "Aksharamukha drops aspiration; uroman uses `v` and over-geminates.")
     lines.append(
         "- **Complete and reproducible**: local and deterministic, so the whole corpus can be regenerated "
-        "offline and covers every word. Nisansa is a third-party web endpoint that can change or go offline, "
+        "offline and covers every word. The web tool is a third-party web endpoint that can change or go offline, "
         "and it cannot romanize part of the alphabet at all (see the limitation note below), so it is both "
         "less reproducible and less complete.\n")
     lines.append(
@@ -175,29 +175,29 @@ def main():
         "(~0.8/token on words vs humans' ~0.12). A trivial post-process collapsing `aa/ee/ii/oo/uu` "
         "would close roughly half the residual CER to human text (relaxed CER is ~1/3 of strict).\n")
 
-    if ("swa_bhasha_words", "nisansa_w") in grid:
-        lines.append("### The v/w convention accounted for Nisansa's entire gap\n")
+    if ("swa_bhasha_words", "web_tool_w") in grid:
+        lines.append("### The v/w convention accounted for Web tool's entire gap\n")
         lines.append(
-            "Nisansa's output matches the phonetic method on long vowels, aspiration and gemination, and "
+            "The web tool's output matches the phonetic method on long vowels, aspiration and gemination, and "
             "differs almost only in writing ව as `v` where humans overwhelmingly write `w`. Rewriting just "
             "that one convention is applied as a preprocessing stage before scoring (a pure post-process of "
             "the fetched results, not the published tool) and removes the difference entirely:\n")
-        lines.append("| Corpus | Nisansa as published | Nisansa with v→w | Phonetic |")
+        lines.append("| Corpus | Web tool as published | Web tool with v→w | Phonetic |")
         lines.append("|---|---|---|---|")
         for corpus in by_corpus:
-            if (corpus, "nisansa_w") not in grid:
+            if (corpus, "web_tool_w") not in grid:
                 continue
             lines.append(
                 f"| {CORPUS_LABELS.get(corpus, corpus)} | "
-                f"{_fmt(g(corpus, 'nisansa_sirs_method', 'cer_mean'))} | "
-                f"**{_fmt(g(corpus, 'nisansa_w', 'cer_mean'))}** | "
+                f"{_fmt(g(corpus, 'web_tool', 'cer_mean'))} | "
+                f"**{_fmt(g(corpus, 'web_tool_w', 'cer_mean'))}** | "
                 f"{_fmt(g(corpus, 'phonetic', 'cer_mean'))} |")
         lines.append("")
         lines.append(
             "So the two methods are equivalent in romanization quality once that single orthographic "
             "choice is normalized, which is consistent with the relaxed metrics: after canonicalizing "
             "spelling style, their CERs were already identical to four decimal places. The honest "
-            "conclusion is that Nisansa is not a *worse* romanizer - it simply writes `v`, and Sinhala "
+            "conclusion is that the web tool is not a *worse* romanizer - it simply writes `v`, and Sinhala "
             "speakers type `w`. Phonetic remains the recommendation because it matches human convention "
             "out of the box and is local, complete and reproducible, not because it transliterates "
             "better.\n")
@@ -208,7 +208,7 @@ def main():
     if cased:
         lines.append("### Note: letter case is a UI artifact, not a romanization choice\n")
         lines.append(
-            "The Nisansa web form capitalizes the first letter of whatever text it is given (93% of its "
+            "The web tool form capitalizes the first letter of whatever text it is given (93% of its "
             "outputs), the three local methods never capitalize, and 84% of the human social-media "
             "references happen to start with a capital. Scoring case-sensitively therefore rewards one "
             "method for an interface side-effect - and that alone is enough to flip the social-media "
@@ -252,15 +252,15 @@ def main():
         "- **Significance**: percentile bootstrap 95% CIs on mean CER and paired Wilcoxon signed-rank "
         "tests against the per-corpus best method.\n")
     lines.append(
-        "- **Nisansa coverage**: this method is a web form rather than a local library. It romanizes free "
+        "- **Web tool coverage**: this method is a web form rather than a local library. It romanizes free "
         "text line by line, so items are batched (newline-joined) instead of sent one per request, which "
         "is ~78x faster and was verified to give output identical to one-request-per-item, ignoring case, "
         "on all 4,253 social-media strings. It is scored on every item of every corpus.\n")
     lines.append(
         "- **v→w preprocessing**: the endpoint writes ව as `v` where Sinhala speakers type `w`. Since that "
         "one orthographic choice accounted for its entire measured gap, the rewrite is applied as a "
-        "standard preprocessing stage and `Nisansa web (v→w preprocessed)` is the variant to read as *the* "
-        "Nisansa result. The as-published row is kept beside it so the modification stays visible.\n")
+        "standard preprocessing stage and `Web tool (v→w preprocessed)` is the variant to read as *the* "
+        "web tool result. The as-published row is kept beside it so the modification stays visible.\n")
     lines.append(
         "- **Nothing is excluded.** Where a method produced no output for an item, that item is scored as "
         "total error (CER 1.0) rather than dropped. Failing to romanize an input is a property of the tool, "
@@ -269,8 +269,8 @@ def main():
         "quality but hid a coverage failure; those matched-subset numbers are still reproducible with "
         "`run_evaluation.py --common-subset`.\n")
     lines.append(
-        "- **Two measured defects in the Nisansa tool.** Both are characterised by direct probing of the "
-        "full Sinhala akshara grid (881 units, `nisansa_probe.py`), not inferred from failures:\n"
+        "- **Two measured defects in the web tool.** Both are characterised by direct probing of the "
+        "full Sinhala akshara grid (881 units, `web_tool_probe.py`), not inferred from failures:\n"
         "  1. *No output at all* for **17 sequences**, every one of them ඤ (U+0DA4) carrying a vowel sign "
         "or al-lakuna (ඤ්, ඤා, ඤැ, ඤෑ, ඤි, ඤී, ඤු, ඤූ, ඤෘ, ඤේ, ඤෛ, ඤො, ඤෝ, ඤෞ, ඤෲ, ඤ්‍ය, ඤ්‍ර). The letter "
         "ඤ alone romanizes fine, as does ඤෙ and the neighbouring ඥ (U+0DA5), so the tool's mapping table is "

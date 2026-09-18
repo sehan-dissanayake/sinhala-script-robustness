@@ -33,7 +33,7 @@ PARALLEL_DIR = PROJECT_ROOT / "data" / "reference" / "parallel"
 TRANSLIT_DIR = PROJECT_ROOT / "data" / "reference" / "transliterated"
 RESULTS_DIR = PROJECT_ROOT / "results" / "method_evaluation"
 
-METHODS = ["phonetic", "aksharamukha", "uroman", "nisansa_sirs_method", "nisansa_w"]
+METHODS = ["phonetic", "aksharamukha", "uroman", "web_tool", "web_tool_w"]
 _ASP = re.compile(r"th|dh|kh|gh|ph|bh|ch|sh")
 _LONG = re.compile(r"aa|ee|ii|oo|uu")
 _GEM = re.compile(r"([b-df-hj-np-tv-z])\1")

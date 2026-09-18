@@ -1,6 +1,6 @@
 {
- "description": "Sequences the Nisansa endpoint cannot romanize at all (returns its empty placeholder). Measured by nisansa_probe.py.",
- "url": "https://nisansads.staff.uom.lk/CodeSamples/sinhala_romaniser.php",
+ "description": "Sequences the web tool endpoint cannot romanize at all (returns its empty placeholder). Measured by web_tool_probe.py.",
+ "url": "https://anonymous-web-tool.example.org/sinhala_romaniser.php",
  "n_units_probed": 1026,
  "sequences": [
   "ඤ්",

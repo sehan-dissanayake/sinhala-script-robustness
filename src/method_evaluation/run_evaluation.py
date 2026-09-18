@@ -21,7 +21,7 @@ PARALLEL_DIR = PROJECT_ROOT / "data" / "reference" / "parallel"
 TRANSLIT_DIR = PROJECT_ROOT / "data" / "reference" / "transliterated"
 RESULTS_DIR = PROJECT_ROOT / "results" / "method_evaluation"
 
-ALL_METHODS = ["phonetic", "aksharamukha", "uroman", "nisansa_sirs_method", "nisansa_w"]
+ALL_METHODS = ["phonetic", "aksharamukha", "uroman", "web_tool", "web_tool_w"]
 
 
 def _load_corpus(corpus: str) -> tuple[dict[str, list[str]], str]:
@@ -79,7 +79,7 @@ def evaluate_corpus(corpus: str, methods: list[str],
     # Every item is scored, for every method. Where a method produced no output
     # the item counts as total error (CER 1.0), because failing to romanize an
     # input is the tool's own limitation and hiding it flatters the tool. The
-    # Nisansa endpoint refuses ~0.3% of the word corpus (ඤ with a vowel sign or
+    # The web tool endpoint refuses ~0.3% of the word corpus (ඤ with a vowel sign or
     # al-lakuna); earlier revisions dropped those rows from all methods so the
     # comparison stayed matched, which measured mapping quality but silently
     # excused a coverage failure. Both views are useful, so the matched subset

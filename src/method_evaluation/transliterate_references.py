@@ -8,7 +8,7 @@ then emit an aligned hypotheses file:
         {"id": ..., "sinhala": ..., "hypothesis": ...}
 
 Local methods (phonetic, aksharamukha, uroman) are CPU-bound and safe to run on
-the full corpora. The `nisansa` method calls a third-party web endpoint once per
+the full corpora. The `web_tool` method calls a third-party web endpoint once per
 string, so it is only appropriate for small corpora (see --help).
 """
 
@@ -34,9 +34,9 @@ sys.path.insert(0, str(TRANSLIT_SRC))
 def _load_methods(names: list[str]) -> dict:
     methods = {}
     for name in names:
-        if name == "nisansa_sirs_method":
+        if name == "web_tool":
             spec = importlib.util.spec_from_file_location(
-                "nisansa_sirs_method", TRANSLIT_SRC / "nisansa_sir's_method.py"
+                "web_tool", TRANSLIT_SRC / "web_tool_method.py"
             )
             module = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(module)
@@ -50,7 +50,7 @@ METHOD_MODULES = {
     "phonetic": "phonetic",
     "aksharamukha": "aksharamukha_method",
     "uroman": "uroman_method",
-    "nisansa_sirs_method": "nisansa_sirs_method",
+    "web_tool": "web_tool",
 }
 
 
@@ -82,7 +82,7 @@ def _read_unique_sinhala(corpus: str) -> list[str]:
 def _fill_cache_batched(todo: list[str], cache: dict, cache_path: Path,
                         desc: str, save_interval: int, block: int = 2500,
                         passes: int = 3) -> list[str]:
-    """Fill the cache using the batched Nisansa client (~70x fewer requests).
+    """Fill the cache using the batched Web tool client (~70x fewer requests).
 
     Failures are deliberately *not* cached. The upstream service sheds load
     under sustained traffic, and caching the untranslated source as a stand-in
@@ -91,7 +91,7 @@ def _fill_cache_batched(todo: list[str], cache: dict, cache_path: Path,
     retried in later passes and whatever remains is returned, so the caller can
     fail loudly rather than score partial data.
     """
-    from nisansa_batch import transliterate_many
+    from web_tool_batch import transliterate_many
 
     pending = list(todo)
     for attempt in range(1, passes + 1):
@@ -137,7 +137,7 @@ def run_method(corpus: str, method_name: str, fn, save_every: int = 2000) -> Non
     # bound total writes to ~15 dumps regardless of corpus size (avoids O(n^2)).
     save_interval = max(save_every, len(todo) // 15 + 1)
 
-    if method_name == "nisansa_sirs_method":
+    if method_name == "web_tool":
         unresolved = _fill_cache_batched(todo, cache, cache_path,
                                          f"{corpus}/{method_name}", save_interval)
         if unresolved:
