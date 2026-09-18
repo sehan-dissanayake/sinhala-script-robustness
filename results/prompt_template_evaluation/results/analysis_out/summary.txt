@@ -26,5 +26,4 @@ Any single model dragging the winning template down? (bottom 3 shown per dataset
     TinyLlama-1.1B-Chat-v1.0 overall_acc=0.050 invalid_rate=0.900
     SmolLM3-3B               overall_acc=0.300 invalid_rate=0.000
     Qwen-3.5-4B              overall_acc=0.450 invalid_rate=0.000
-
-Full CSV breakdowns written to: E:\git\sinhala-script-robustness\results\prompt_template_evaluation\results\analysis_out
+Full CSV breakdowns written to: results/prompt_template_evaluation/results/analysis_out

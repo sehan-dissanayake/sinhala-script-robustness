@@ -1,7 +1,6 @@
 
 # ============================================================
 # Sinhala Script Robustness — Full Visualization Script
-# CS4661 NLP Group 04
 # ============================================================
 # Run this script to generate all visualizations and save them
 # in results/visualization/figures/
@@ -23,9 +22,9 @@ from sklearn.preprocessing import LabelBinarizer
 warnings.filterwarnings('ignore')
 
 # ─── PATHS ───────────────────────────────────────────────────
-BASE      = r"d:\NLP-Project\sinhala-script-robustness\results\extrinsic_evaluation"
-OUT_DIR   = r"d:\NLP-Project\sinhala-script-robustness\results\visualization\figures"
-EXCEL     = r"C:\Users\userk\Downloads\Copy of CS4661 - NLP - Group 04.xlsx"
+_THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE      = os.path.normpath(os.path.join(_THIS_DIR, "..", "extrinsic_evaluation"))
+OUT_DIR   = os.path.join(_THIS_DIR, "figures")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 # ─── STYLE ───────────────────────────────────────────────────
@@ -672,8 +671,7 @@ def fig11_excel_overview():
 
     fig, axes = plt.subplots(2, 1, figsize=(16, 14))
     fig.suptitle(
-        "Comprehensive Task Accuracy — All Models Side-by-Side\n"
-        "(Source: CS4661 NLP Group 04 Spreadsheet)",
+        "Comprehensive Task Accuracy — All Models Side-by-Side",
         fontsize=15, fontweight="bold"
     )
 

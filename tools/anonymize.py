@@ -38,6 +38,7 @@ SUBSTITUTIONS = {
     "uom220131a": "anon-owner-d",
     "uom220165f": "anon-owner-e",
     "uom220538d": "anon-owner-f",
+    "manojkumarcs28": "anon-model-hub",
 }
 
 # Anything matching these is reported by --check even if it is not in the table
@@ -50,7 +51,10 @@ SUSPICIOUS = [
     re.compile(r"cse\.mrt\.ac\.lk", re.I),
     re.compile(r"\bnisansads\b", re.I),
     re.compile(r"\bNisansa(?:\s+Sir)?\b", re.I),
-    re.compile(r"\b(sehandissanayake|dasunillangasinghe|shanilpraveen)\b", re.I),
+    re.compile(r"\b(sehandissanayake|dasunillangasinghe|shanilpraveen|manojkumarcs28|userk)\b", re.I),
+    re.compile(r"\bCS4661\b", re.I),
+    re.compile(r"\bgroup\s*0?4\b", re.I),
+    re.compile(r"\bNLP-Project\b", re.I),
 ]
 
 SKIP_DIRS = {".git", "__pycache__", ".venv", "node_modules", ".playwright-mcp", ".idea", ".vscode"}

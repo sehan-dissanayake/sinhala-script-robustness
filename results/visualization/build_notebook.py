@@ -4,8 +4,9 @@ Run with: python build_notebook.py
 """
 import json, os
 
-FIGURES_DIR = r'd:\NLP-Project\sinhala-script-robustness\results\visualization\figures'
-NB_PATH     = r'd:\NLP-Project\sinhala-script-robustness\results\visualization\Sinhala_NLP_Visualization_Notebook.ipynb'
+_THIS_DIR   = os.path.dirname(os.path.abspath(__file__))
+FIGURES_DIR = os.path.join(_THIS_DIR, 'figures')
+NB_PATH     = os.path.join(_THIS_DIR, 'Sinhala_NLP_Visualization_Notebook.ipynb')
 
 
 def md_cell(source):
@@ -20,10 +21,11 @@ def code_cell(source, outputs=None):
 
 
 def display_cell(fig_path, title):
+    rel_name = os.path.basename(fig_path)
     return code_cell(
         f'# Display: {title}\n'
         f'from IPython.display import Image, display\n'
-        f'display(Image(r"{fig_path}", width=1100))'
+        f'display(Image(r"figures/{rel_name}", width=1100))'
     )
 
 
@@ -32,7 +34,7 @@ cells = []
 # Title Cell
 cells.append(md_cell(
     "# 🇱🇰 Sinhala Script Robustness — Full Visualization & Analysis Notebook\n"
-    "### CS4661 Natural Language Processing — Group 04\n\n"
+    "### Extrinsic Evaluation Visualizations & Multi-Task Robustness Analysis\n\n"
     "---\n\n"
     "## 🎯 What is this Project About?\n\n"
     "People write the Sinhala language in two main ways:\n"
@@ -79,8 +81,9 @@ cells.append(code_cell(
     "    roc_curve, auc, precision_recall_curve, average_precision_score\n"
     ")\n"
     "warnings.filterwarnings('ignore')\n\n"
-    "BASE    = r'D:/NLP-Project/sinhala-script-robustness/results/extrinsic_evaluation'\n"
-    "OUT_DIR = r'D:/NLP-Project/sinhala-script-robustness/results/visualization/figures'\n"
+    "_nb_dir = os.path.dirname(os.path.abspath('__file__'))\n"
+    "BASE    = os.path.normpath(os.path.join(_nb_dir, '..', 'extrinsic_evaluation'))\n"
+    "OUT_DIR = os.path.normpath(os.path.join(_nb_dir, 'figures'))\n"
     "print('All libraries loaded successfully!')"
 ))
 
@@ -377,7 +380,7 @@ cells.append(md_cell(
     "- If you are building a **Sinhala Chatbot or Q&A System**, always convert user input into **Native Unicode Sinhala** before feeding it into the LLM for highest accuracy.\n"
     "- If you are building a **Social Media Content Moderation Tool**, `Llama-3.1-8B` can effectively handle both native Sinhala script and Singlish.\n\n"
     "---\n"
-    "**CS4661 NLP — Group 04 | Sinhala Script Robustness Project**\n"
+    "**Sinhala Script Robustness Project**\n"
 ))
 
 # Save Notebook JSON

@@ -1,6 +1,6 @@
 # Sinhala Script Robustness — Full Analysis Report
 
-> All numbers drawn live from [`intrinsic_numbers.json`](file:///e:/git/sinhala-script-robustness/paper/analysis/out/intrinsic_numbers.json), [`extrinsic_numbers.json`](file:///e:/git/sinhala-script-robustness/paper/analysis/out/extrinsic_numbers.json), and their source scripts [`stats_intrinsic.py`](file:///e:/git/sinhala-script-robustness/paper/analysis/stats_intrinsic.py) / [`stats_extrinsic.py`](file:///e:/git/sinhala-script-robustness/paper/analysis/stats_extrinsic.py).
+> All numbers drawn live from [`intrinsic_numbers.json`](../../paper/analysis/out/intrinsic_numbers.json), [`extrinsic_numbers.json`](../../paper/analysis/out/extrinsic_numbers.json), and their source scripts [`stats_intrinsic.py`](../../paper/analysis/stats_intrinsic.py) / [`stats_extrinsic.py`](../../paper/analysis/stats_extrinsic.py).
 
 ---
 
@@ -17,7 +17,7 @@ The three script conditions are:
 
 # Part 1 — Intrinsic Tests
 
-> Source: [`stats_intrinsic.py`](file:///e:/git/sinhala-script-robustness/paper/analysis/stats_intrinsic.py), corpus: 500 parallel sentence pairs, 31 checkpoints.
+> Source: [`stats_intrinsic.py`](../../paper/analysis/stats_intrinsic.py), corpus: 500 parallel sentence pairs, 31 checkpoints.
 
 ---
 
@@ -210,7 +210,7 @@ On native Sinhala, one LLM (Llama-3.1-8B) beats the trigram — a normal result 
 
 # Part 2 — Downstream (Extrinsic) Tests
 
-> Source: [`stats_extrinsic.py`](file:///e:/git/sinhala-script-robustness/paper/analysis/stats_extrinsic.py), 10 instruction-tuned checkpoints, 3 tasks, 9,479 items.
+> Source: [`stats_extrinsic.py`](../../paper/analysis/stats_extrinsic.py), 10 instruction-tuned checkpoints, 3 tasks, 9,479 items.
 
 ---
 
