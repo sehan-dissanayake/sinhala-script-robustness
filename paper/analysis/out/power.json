@@ -2,17 +2,17 @@
   "alpha": 0.05,
   "target_power": 0.8,
   "observed": {
-    "global_piqa": {
-      "n_items": 100,
-      "n_checkpoints": 11,
-      "median_discordant_pairs": 36.0,
-      "p_disc_median": 0.36
-    },
     "sinhala_mmlu": {
       "n_items": 6879,
       "n_checkpoints": 11,
       "median_discordant_pairs": 1802.0,
       "p_disc_median": 0.2619566797499637
+    },
+    "global_piqa": {
+      "n_items": 100,
+      "n_checkpoints": 11,
+      "median_discordant_pairs": 36.0,
+      "p_disc_median": 0.36
     }
   },
   "global_piqa": {
@@ -27,13 +27,14 @@
       "18": 0.8084669132431093,
       "20": 0.9119864357742
     },
-    "power_at_observed_pooled_gap": 0.0691497880730206,
+    "pooled_gap_points": -0.1,
     "power_at_largest_mmlu_gap": 0.6904376921487324,
-    "items_needed_for_observed_pooled_gap": 1970
+    "power_at_reference_gap": 0.1260963473339826,
+    "items_needed_for_reference_gap": 825
   },
   "sinhala_mmlu": {
     "mde_points": 1.7426530126454165
   },
-  "observed_pooled_piqa_gap_points": 3.8333,
+  "reference_gap_points": 5.960169,
   "largest_mmlu_gap_points": 15.47
 }

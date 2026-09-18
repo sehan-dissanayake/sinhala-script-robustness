@@ -97,6 +97,10 @@ Evidence from Small Language Models}
 
 \author{Anonymous ACL submission}
 
+% No widow or orphan lines, asked for in review.
+\widowpenalty=10000
+\clubpenalty=10000
+
 \begin{document}
 \maketitle
 
@@ -153,8 +157,8 @@ for Sinhala. Benchmarking 24 open weight models with perplexity, they reported a
 median 312-fold degradation from Sinhala-script to Romanized text and no
 correlation between parameter count and script handling. Both findings rest on a
 metric that is not comparable across models.\nds{Need to add a space after the full stop. I am only mentioning it here. But fix it everywhere}\stu{Fixed sir} Perplexity is normalized by token count,
-and token count depends on the tokenizer\nds{Did you look at the tokenisers by~\citet{ekanayake2026helabert}, \citet{aravinda2025sinllama}, \citet{velayuthan2025egalitarian}, and \citet{nisfer2026grapheme}?}\stu{We had not sir. We looked into these papers and it was a real gap. All four are now
-discussed in \S\ref{sec:related} and also we measured them sir(Appendix~\ref{sec:tokenizers}). results on our own corpusare as below.
+and token count depends on the tokenizer\nds{Did you look at the tokenisers by~\citet{ekanayake2026helabert}, \citet{aravinda2025sinllama}, \citet{velayuthan-sarveswaran-2025-egalitarian}, and \citet{nisfer2026grapheme}?}\stu{We had not sir. We looked into these papers and it was a real gap. All four are now
+discussed in \S\ref{sec:related} and also we measured them sir (Appendix~\ref{sec:tokenizers}). The results on our own corpus are as below.
 HelaBERT 1.31 and
 SinLlama 1.44 tokens per Sinhala word, against 4.34 to 14.20 across our 31 general
 checkpoints. So a Sinhala vocabulary cuts Sinhala script fertility by three to seven
@@ -217,7 +221,7 @@ lexicon \citep{sumanathilaka-etal-2025-swabhasha}.
 
 \paragraph{Romanization in other languages.}
 Romanized South Asian text has been studied mainly as a resource and identification
-problem \citep{roark-etal-2020-dakshina, benton-etal-2025-improving}. \citet{j-etal-2024-romansetu}\nds{check ref}\stu{Checked it and fixed it sir. We corrected the entry and it now reads ``Husain et
+problem \citep{roark-etal-2020-processing, benton-etal-2025-improving}. \citet{husain-etal-2024-romansetu}\nds{check ref}\stu{Checked it and fixed it sir. We corrected the entry and it now reads ``Husain et
 al.''.} show romanization can \emph{help} once a model is
 adapted for it, the mirror image of the zero-shot setting we study. Work on Sinhala trains
 models for the register rather than measuring general ones
@@ -245,7 +249,7 @@ published multilingual benchmark change when the normalizer changes.
 
 \paragraph{Sinhala tokenizers.}
 Since fertility is most of what perplexity on Sinhala reflects, tokenizer work for the
-language matters here. \citet{velayuthan2025egalitarian} argue that unequal
+language matters here. \citet{velayuthan-sarveswaran-2025-egalitarian} argue that unequal
 representation between languages starts with the tokenizer, and
 \citet{nisfer2026grapheme} give grapheme level tooling for scripts where one written
 unit spans several code points. HelaBERT \citep{ekanayake2026helabert} and SinLlama
@@ -272,15 +276,15 @@ romanized with identical content, so all comparisons are paired and differ only 
 orthography. Both conditions come from the Sinhala-script source through our own transliterator,
 including for Global PIQA, which also publishes a Latin-script config that
 \S\ref{sec:licenses} explains we do not use. The intrinsic corpus is the parallel set
-released with \citet{rajapakse-weerasinghe-2026-script} contains 500 sentence pairs whose
+released with \citet{rajapakse-weerasinghe-2026-script}, which contains 500 sentence pairs whose
 Romanized side native speakers typed, so the intrinsic results do not depend on our
 transliterator. A separate 500-sentence mixed-script corpus supports a secondary
 condition.
 
 Downstream we use every available item with no sampling. SinhalaMMLU is a
 6{,}879-item curriculum-aligned multiple-choice benchmark in the style of MMLU
-\citep{hendrycks-etal-2021-mmlu}, over six domains and three difficulty levels using 2{,}145
-items have five options rather than four, so guessing scores 23.4\%.\footnote{The public Hugging Face
+\citep{hendrycks-etal-2021-mmlu}, over six domains and three difficulty levels, and 2{,}145
+of its items have five options rather than four, so guessing scores 23.4\%.\footnote{The public Hugging Face
 release contains a 1{,}851-item sample. We obtained the full set from the
 authors, who ask that it not be redistributed, so we release our transformation
 code and item identifiers rather than the items
@@ -304,14 +308,14 @@ collapses only the consonant distinctions casual Singlish also collapses, turnin
 \siwesak{} into \rom{wesak uthsawayeedii bauddhayin}.
 
 We validated it against 755{,}000 human-romanized items from the Swa-bhasha
-Resource Hub \citep{sumanathilaka-etal-2025-swabhasha}contains 4{,}397 authentic
+Resource Hub \citep{sumanathilaka-etal-2025-swabhasha}, which contains 4{,}397 authentic
 social-media sentence pairs, 450{,}587 words each carrying several accepted
 spellings, and a 300{,}000-sentence machine-augmented cross-check. Scored against
 the closest accepted reference by character error rate, chrF
 \citep{popovic-2015-chrf} and exact match, ours has the lowest error rate of the four
 methods on all three corpora, 0.182, 0.121 and 0.112, and a paired Wilcoxon test
 separates it from Aksharamukha \citep{rajan-aksharamukha}, uroman
-\citep{hermjakob-etal-2018-uroman} and the web romanizer released for
+\citep{hermjakob-etal-2018-box} and the web romanizer released for
 \citet{desilva-ranathunga-2026-sinhalapiqa} at $p < 0.001$ on both large corpora.
 
 What is left is convention rather than phonemic error, chiefly that all four methods
@@ -408,7 +412,7 @@ its tokenization:
 \label{eq:bpb}
 \end{equation}
 and likewise per character (\bpc) and per whitespace word (\bpw). The denominator no
-longer depends on the tokenizer.The numerator still does, since a model's loss reflects
+longer depends on the tokenizer. The numerator still does, since a model's loss reflects
 how its own vocabulary carves up the string, so Equation~\ref{eq:bpb} removes the
 arbitrary unit of account rather than every trace of tokenization. We pool numerator and
 denominator over the corpus instead of averaging per-sentence ratios, so short sentences
@@ -428,7 +432,7 @@ run.
 Across the 31 checkpoints, Sinhala-script perplexity and Sinhala-script bits per byte
 are statistically unrelated ($\rho = 0.08$, $p = 0.68$), as are the Romanized values
 ($\rho = 0.13$, $p = 0.48$). Only one of the five best by perplexity is among the five
-best by bits per byte.Gemma-2-9B ranks 26th of 31 on perplexity and 2nd on bits per
+best by bits per byte. Gemma-2-9B ranks 26th of 31 on perplexity and 2nd on bits per
 byte, and Qwen3.5-9B-Base moves from 28th to 6th.
 
 The cause is visible in Figure~\ref{fig:ppl-fert}. Perplexity is almost fully explained
@@ -437,7 +441,7 @@ which ranges from 4.3 for the Qwen3.5 and Gemma tokenizers to 14.2 for models th
 back to bytes. Spreading the same loss over three times as many tokens lowers per-token
 perplexity without the model knowing anything more, so comparing perplexity across
 families on Sinhala is largely comparing tokenizers. How far the two come apart depends
-on the pool.On the 24 checkpoints of \citet{rajapakse-weerasinghe-2026-script} the rank
+on the pool. On the 24 checkpoints of \citet{rajapakse-weerasinghe-2026-script} the rank
 correlation is moderate ($\rho = 0.46$, $p = 0.02$), still leaving four fifths of
 bits-per-byte rank variance unexplained, and adding the seven newer checkpoints removes
 even that. The disagreement is not an artifact of our additions, but it grows as modern
@@ -486,7 +490,7 @@ $p = 0.0008$), and that holds on the 24 checkpoints of
 \citet{rajapakse-weerasinghe-2026-script} on their own ($\rho = -0.42$, $p = 0.04$).
 Romanized ability stays uncorrelated with scale ($\rho = -0.28$, $p = 0.13$). We would
 not call this a scaling result, because the checkpoints differ in family, tokenizer and
-training corpus at the same time.It is an association across models.
+training corpus at the same time. It is an association across models.
 
 
 \subsection{Romanization narrows the spread}
@@ -497,7 +501,7 @@ Sinhala-script cost spans 16.3 to 34.1 bits per word, a spread of 17.7 bits, whi
 Romanized cost spans 20.3 to 25.7, a spread of 5.4. Regressing one on the other, a full
 bit per word of Sinhala-script improvement buys only 0.14 bits on Romanized text (95\% CI
 0.05 to 0.25, $R^2 = 0.19$). Twelve of the 31 checkpoints are cheaper on Romanized text,
-and which ones is predictable.The better a checkpoint is on the Sinhala script, the more
+and which ones is predictable. The better a checkpoint is on the Sinhala script, the more
 it loses ($\rho = -0.88$, $p < 10^{-9}$). The mixed-script condition behaves differently
 and reproduces the earlier finding, with Sinhala-script and mixed bits per byte
 rank-correlated at $\rho = 0.94$ and a median gap of 0.49 bits, against $\rho = 0.41$ for
@@ -518,7 +522,7 @@ the highest of the 32, because the tokenizer stopped spending 9.68 tokens on a S
 word and started spending 1.44. What matters here is the reported degradation ratio,
 which falls from 311 to 8.7, by far the smallest in the pool, while the real per-byte gap
 widens from 2.447 to 2.743 bits, exceeded by only one of the 31. The adaptation bought
-0.528 bits per byte on the Sinhala script and 0.233 on Romanized text, favoring the formal alphabet over how most people actually type. The standard published metric falsely makes it look like the most balanced model, but the bits per byte metric proves that it is one of the worst. (Appendix~\ref{sec:sinllamadetail}).
+0.528 bits per byte on the Sinhala script and 0.233 on Romanized text, favoring the formal alphabet over how most people actually type. The standard published metric falsely makes it look like the most balanced model, but the bits per byte metric proves that it is one of the worst (Appendix~\ref{sec:sinllamadetail}).
 
 \subsection{Comparison with $n$-gram models}
 
@@ -526,7 +530,7 @@ Relative comparisons leave open whether these models are merely worse on Romaniz
 or close to uninformed about it, so we fit add-1 character $n$-gram references on the
 same corpus under five-fold cross-validation. On Romanized Sinhala the best $n$-gram
 reaches 2.64 bits per byte and a character bigram 3.06, while the best of the 31
-checkpoints reaches 3.29 and the median 3.81, so none beats the bigram on the Sinhala
+checkpoints reaches 3.29 and the median 3.81, so none beats the bigram. On the Sinhala
 script the ordering is the expected one, with the character trigram at 1.16 and one
 checkpoint below it (Appendix Table~\ref{tab:ngram}). An in-domain $n$-gram is a cheap
 model and the comparison favors it, so we read this as the checkpoints failing to use
@@ -539,7 +543,7 @@ they know.
 \label{sec:extrinsic}
 
 Table~\ref{tab:main} reports every checkpoint on SinhalaMMLU and SOLD. Global PIQA is in Appendix Table~\ref{tab:piqa}, since at 100 items it supports a much
-coarser comparison than the other two, and \S\ref{sec:piqa} discusses it\nds{no PIQA because all failed?}\stu{Now all 11 models are fully reported on Global PIQA in Table~\ref{tab:piqa}. In Section~\ref{sec:piqa}, we now included why 100 items is small to resolve a performance gap sir.}.
+coarser comparison than the other two, and \S\ref{sec:piqa} discusses it\nds{no PIQA because all failed?}\stu{Now all 11 models are fully reported on Global PIQA in Table~\ref{tab:piqa}. In Section~\ref{sec:piqa}, we now included why 100 items is small to resolve a performance gap sir. We also re-ran it with the corrected prompt.}.
 
 \subsection{Multiple-choice knowledge}
 
@@ -661,7 +665,7 @@ different picture (Appendix Figure~\ref{fig:floor}): Qwen3.5-9B goes from 0.280 
 keeping 24\% of its signal, Qwen2-7B-Instruct from 0.148 to 0.042, keeping 29\%, and
 Llama-3.1-8B-Instruct from 0.259 to 0.105, keeping 40\%. Five of the six checkpoints with
 a real Sinhala-script signal lose significantly under Holm correction and the median keeps
-45\%. They drift toward trivial behavior instead of Qwen2-7B-Instruct more than doubles its
+45\%. They drift toward trivial behavior instead. Qwen2-7B-Instruct more than doubles its
 rate of predicting the offensive class, 10.5\% to 23.4\%, without becoming more accurate.
 A deployment monitored on accuracy alone would see a few points of movement while over
 half the usable signal was lost.
@@ -669,17 +673,24 @@ half the usable signal was lost.
 \subsection{Global PIQA}
 \label{sec:piqa}
 
-Global PIQA provides a challenging evaluation setting for the checkpoints considered in this study. In the Sinhala script condition, none of the evaluated checkpoints exceeds chance-level performance, consistent with the 49.09\% accuracy reported for SinBERT by \citet{desilva-ranathunga-2026-sinhalapiqa}. However, the benchmark contains only 100 items, which limits the statistical resolution for detecting small paired differences between the two script conditions of the same items. At the observed median of 36 discordant pairs, McNemar's test detects 17.3 points at
-80\% power, against a largest gap anywhere in this paper of 15.5, while the same design
-reaches 1.74 points on SinhalaMMLU's 6{,}879 items and our 3.8 point pooled gap would need
-about 1{,}970. The direction is consistent, with seven of ten parseable checkpoints drop, a sign test gives $p = 0.18$, and pooling gives 3.8 points at
-$p = 0.14$. The constraint is our effect size against the item count, not the benchmark\nds{The stated purpose of PIQA is to work as a benchmark. Not as a test set.}\stu{Yes sir. we removed the word ``underpowered'' as its not suitable. And Global PIQA works well for its intended purpose of Ranking and comparing different models. We measure the subtle 2-3 point drop within the same model when switching scripts. However, with only 100 evaluation items, the statistical power of the paired comparison is sufficient primarily for detecting substantially larger effects. In Section~\ref{sec:piqa}, we now explain this sample size difference, making it clear this is a limit of our effect size, not a flaw in the benchmark. We kept all Global PIQA results in Table~\ref{tab:piqa} so the full data is available.}.
+These numbers come from a second run, with an instruction that names \textit{Sri Lankan
+Culture} and follows each item's form, since the first asked every item for a completion
+and 40 of the 100 are questions (Appendix~\ref{sec:prompts}). Sinhala-script accuracy
+moves 2.0 points on average. No checkpoint exceeds chance natively, the best being 58\% at
+$p = 0.06$, consistent with the 49.09\% that \citet{desilva-ranathunga-2026-sinhalapiqa}
+report for SinBERT, and the script comparison is a null. Of the ten checkpoints with
+parseable output, four drop, four improve and two are unchanged, a sign test gives
+$p = 1.00$ and pooling gives $-0.1$ points (95\% CI $-3.6$ to $+3.3$). At the median of 36
+discordant pairs, McNemar's test reaches 80\% power only against a 17.3 point gap, against
+1.74 points on SinhalaMMLU's 6{,}879 (Appendix~\ref{sec:extradetail}), so the limit is the
+item count
+against our effect size rather than anything about the benchmark\nds{The stated purpose of PIQA is to work as a benchmark. Not as a test set.}\stu{Yes sir. We removed the word ``underpowered'' as it is not suitable. Global PIQA works well for its intended purpose of ranking and comparing different models. What we measure is the small drop within the same model when the script changes, and with 100 items a paired test can only resolve much larger effects. We now give the numbers for this in Section~\ref{sec:piqa} instead of using an adjective, and we kept all Global PIQA results in Table~\ref{tab:piqa}. We also re-ran this benchmark with the corrected prompt you pointed out, and with the item types handled properly the gap is now essentially zero rather than a weak trend.}.
 
 \subsection{Two mechanisms ruled out}
 \label{sec:controls}
 
-Two competing explanations can be ruled out. The first is token fragmentation.
-Romanization does not lengthen Sinhala input. The script costs a median 9.5 tokens per word
+Two competing explanations can be ruled out. The first is token fragmentation, but
+romanization does not lengthen Sinhala input. The script costs a median 9.5 tokens per word
 against 2.09 for its romanization, because these tokenizers largely fall back to bytes, and
 all eleven checkpoints receive \emph{fewer} tokens in the Romanized condition on all three
 tasks, a median ratio of 0.48 on SinhalaMMLU. They get shorter input and still do worse.
@@ -765,7 +776,12 @@ so their apparent gains are artifacts (\S\ref{sec:screen}).
 % `uroman' written by Ulf Hermjakob, USC Information Sciences Institute
 % (2015-2020), as required by its license.-
 
-\bibliography{custom, anthology-1, anthology-2}
+% The two anthology shards are the ACL Anthology's own consolidated BibTeX,
+% downloaded from https://aclanthology.org/anthology-1.bib and -2.bib. Keep this
+% order: shard 2 uses the @string{anth} that only shard 1 defines. Entries the
+% Anthology supplies are cited by its keys and are deliberately absent from
+% custom.bib, so nothing is defined twice.
+\bibliography{custom,anthology-1,anthology-2}
 
 % =============================================================================
 \appendix
@@ -783,7 +799,7 @@ applied by \citet{ranathunga-de-silva-2022-languages} it is low resource, and it
 geographically separated from the South Asian mainland, so it is often left out of
 Indic data and model efforts that cover its relatives
 \citep{desilva-ranathunga-2026-sinhalapiqa}. Like several South Asian languages it is
-diglossic.The written variety and the spoken variety differ in morphology, and
+diglossic. The written variety and the spoken variety differ in morphology, and
 benchmark text is written in the former.
 
 \paragraph{The script.} Sinhala has its own Brahmi-derived script, encoded in
@@ -799,16 +815,16 @@ code points costs three bytes, and our corpus averages 2.65 bytes per character 
 1.00 for Latin. A tokenizer with no Sinhala pieces in its vocabulary has to fall back to
 those bytes, which is where the fertility of 4.3 to 14.2 tokens per word in
 Table~\ref{tab:modelids} comes from, and why perplexity on Sinhala is so sensitive to
-which tokenizer produced it \citep{velayuthan2025egalitarian}.
+which tokenizer produced it \citep{velayuthan-sarveswaran-2025-egalitarian}.
 
 \paragraph{The Romanized register.} Formal Sinhala is written in the script, but
 informal writing online is dominated by Romanized Sinhala in Latin letters, called
 \textit{Singlish} in Sri Lanka. It has no standard orthography and no institutional
 one is likely, since it exists precisely to be typed quickly on keyboards laid out for
-English. Writers transcribe by ear, so the same word appears many ways.The Swa-bhasha
+English. Writers transcribe by ear, so the same word appears many ways. The Swa-bhasha
 lexicon records an average of 15.7 accepted Romanized spellings per Sinhala word
 \citep{sumanathilaka-etal-2025-swabhasha}, and \sikohomada{} (``how are you'') is typed
-\rom{kohomada}, \rom{kohomd} or \rom{kohomade}. The variation is not random.It comes
+\rom{kohomada}, \rom{kohomd} or \rom{kohomade}. The variation is not random. It comes
 from vowel length being dropped, from vowels being left out altogether in short function
 words, and from English loanwords keeping their English spelling rather than their
 Sinhala pronunciation (Table~\ref{tab:mismatch}). Existing Sinhala tooling mostly
@@ -846,24 +862,36 @@ Question: \{question\}\\
 1. \{option 1\} ... \{n\}. \{option n\}\\
 Answer:
 \end{quote}
-Global PIQA carries no domain field in the release, so it takes the domain-free form of
-the same template:
+Global PIQA needs two forms of T1, because its items do.\nds{This is wrong on two accounts: (1) The domain should have been \textit{Sri Lankan Culture}, (2) Not all examples are \textit{complete the text} type. You'd have known this if you actually read the paper and looked at Table 1.}\stu{You were right on both counts sir, and we re-ran the benchmark rather than only fixing the wording. Of the 110 items in your Table 1, 67 are completions and 43 are question and answer pairs, so ``complete the given text'' was wrong for the questions, and the domain should have been \textit{Sri Lankan Culture}. All 11 checkpoints were re-run with the two forms below, and \S\ref{sec:piqa} now reports that run. Sinhala-script accuracy moves by 2.0 points on average and the script gap becomes essentially zero, so the earlier weak trend was partly the prompt. We have kept the earlier numbers in the comparison so the change is visible.}
+The released set contains 40 questions and 60 paragraph stems, which is the 43 and 67 of
+\citet{desilva-ranathunga-2026-sinhalapiqa} less the ten items the public release omits.
+The two are told apart by whether the Sinhala stem ends in a question mark, which agrees
+with the \texttt{isQnA} flag recorded for every item. Questions take the same form as
+SinhalaMMLU, with \textit{Sri Lankan Culture} as the domain:
 \begin{quote}\small\ttfamily
-Out of the given \{n\} answers, which one is the best option to complete the given
-text? Do not repeat the question or text in your response. Respond with only the
-number (1/.../\{n\}) and nothing else.\\
+This is a multiple-choice question related to the Sri Lankan Culture. Choose the
+correct or most appropriate answer from answers 1/2. Do not repeat the question or
+text in your response. Respond with only the number (1/2) and nothing else.\\
+Question: \{prompt\}\\
+1. \{solution 1\} 2. \{solution 2\}\\
+Answer:
+\end{quote}
+and stems take the completion form, with the domain still named:
+\begin{quote}\small\ttfamily
+This is related to the Sri Lankan Culture. Out of the given 2 answers, which one is
+the best option to complete the given text? Do not repeat the question or text in
+your response. Respond with only the number (1/2) and nothing else.\\
 \{prompt\}\\
 1. \{solution 1\} 2. \{solution 2\}\\
 Answer:
 \end{quote}
-Two things about this wording are worth recording.\nds{This is wrong on two accounts: (1) The domain should have been \textit{Sri Lankan Culture}, (2) Not all examples are \textit{complete the text} type. You'd have known this if you actually read the paper and looked at Table 1.}\stu{We apologize for missing this in Table 1. Out of the 110 items, 67 are completions and 43 are question and answer pairs, so saying ``complete the given text'' was wrong. We should have set the domain to \textit{Sri Lankan Culture}. We have updated the appendix to explain this breakdown clearly. Fortunately, because both script conditions used the exact same prompt neither script had an unfair advantage the test between Sinhala script and Singlish remains fair. It does likely lower absolute scores, which is another reason we avoid drawing conclusions from overall PIQA accuracy. We have corrected the prompt in our released code for future benchmarks sir.} The released items come in two forms, 67
-paragraph completions and 43 question-answer pairs
-\citep{desilva-ranathunga-2026-sinhalapiqa}, and this instruction describes the first
-form. It is also the only one of the three datasets for which the domain slot is empty,
-where \textit{Sri Lankan Culture} would have been the appropriate value. The instruction
-is byte-identical across the two script conditions of every item, so it enters the paired
-difference as a constant. What it can affect is the absolute level of Global PIQA
-accuracy, which is a further reason we do not interpret that level (\S\ref{sec:piqa}).
+The first run of Global PIQA used the completion wording for every item and left the domain
+empty, which fits the 60 stems and not the 40 questions. The prompt pilot of
+\S\ref{sec:prompting} used that earlier wording too, so its Global PIQA figure is not
+comparable with the run reported in \S\ref{sec:piqa}. Both instructions are
+byte-identical across the two script conditions of an item, so in either run the wording
+enters the paired difference as a constant; what it can change is the absolute level, which
+is why the re-run matters and why we do not interpret that level (\S\ref{sec:piqa}).
 
 Binary classification:
 \begin{quote}\small\ttfamily
@@ -948,7 +976,8 @@ prompting regime (\S\ref{sec:prompting}). At 20 items per dataset none of these
 differences is resolvable, which is why the pilot is treated as a format check. Accuracy
 is not comparable across the three blocks: chance is 23.4\% on SinhalaMMLU, 50\% on SOLD
 and 50\% on Global PIQA, so T1's 44.7\% on Global PIQA is below its baseline while 26.7\%
-on SinhalaMMLU is above its own.\protect\nds{So by raw accuracy you do better at PIQA than MMLU; but you reject PIQA because it does not meet the stat test?}\protect\stu{Actually sir the raw numbers are misleading because the guessing baselines are different. 
+on SinhalaMMLU is above its own. These Global PIQA numbers use the earlier instruction, not
+the corrected one of \S\ref{sec:piqa}.\protect\nds{So by raw accuracy you do better at PIQA than MMLU; but you reject PIQA because it does not meet the stat test?}\protect\stu{Actually sir the raw numbers are misleading because the guessing baselines are different. 
 Global PIQA only has 2 choices, so random guessing gives 50\% meaning 44.7\% is worse than flipping a coin. 
 SinhalaMMLU has 4 to 5 choices, so guessing gives 23.4\% meaning 26.7\% is actually beating chance. Updated the caption to make this clear too. Also we didn't throw out PIQA sir. All 11 models are fully reported in Table~\ref{tab:piqa}. 
 We just don't claim a proven script penalty from it, because 100 questions is too small to tell if a 3 point gap is real or just random sir.}}
@@ -1059,7 +1088,7 @@ tokenizer and land within 0.008 bits per byte of each other, so the substitution
 not have been badly wrong, but the exact parent makes the contrast clean.
 
 Three further details are worth recording. First, the decomposition of
-Equation~\ref{eq:decomp} stops being informative on this checkpoint.Its tokenizer
+Equation~\ref{eq:decomp} stops being informative on this checkpoint. Its tokenizer
 spends 9.90 bytes per token on the Sinhala script and 2.77 on Romanized text, so the two
 terms come out at $-14.26$ and $+17.38$ bits and sum to the observed 3.11. The identity
 still holds exactly, but a ratio that is the residue of two much larger opposing
@@ -1069,7 +1098,7 @@ and our intrinsic corpus is Sinhala text from the web, so we cannot rule out tha
 of these sentences or near-duplicates were in its training data; that would inflate its
 Sinhala-script advantage and not its Romanized one, so it does not affect the direction
 of the asymmetry. Third, \texttt{meta-llama/Meta-Llama-3-8B} is gated, and our run loaded
-the widely used ungated mirror of it.The four \texttt{safetensors} shards carry the same
+the widely used ungated mirror of it. The four \texttt{safetensors} shards carry the same
 sizes and SHA-256 digests as the official repository, and the tokenizer reproduces the
 recorded Llama-3.1 fertility exactly.
 
@@ -1247,6 +1276,24 @@ Table~\ref{tab:invalidtau} gives the unparseable-output rates and the input toke
 ratios omitted from Table~\ref{tab:main}, Table~\ref{tab:strata} the SinhalaMMLU
 strata, and Table~\ref{tab:piqa} the per-checkpoint Global PIQA results.
 
+Two splits of Global PIQA are worth recording, since neither rescues a script effect
+from it. Pooled over the ten parseable checkpoints, the 40 question items give
+$+1.0$ points and the 60 paragraph stems $-0.8$, so the item form the instruction now
+distinguishes does not carry the comparison. The 77 items flagged culturally specific
+give $+1.2$ points and the remaining 23 give $-4.3$, both far inside what 100 items can
+resolve. Unparseable output is rare in this run: zero for eight of the eleven
+checkpoints in both conditions, at most 9\% for TinyLlama-1.1B-Chat, and 100\% in the
+Sinhala script for LaMini-GPT-1.5B. Only that checkpoint survives Holm correction, and
+its apparent 42 point gain is the same parsing artifact (\S\ref{sec:screen}).
+
+The power figures behind \S\ref{sec:piqa} are these. Against the 6.0 point gap we pool on
+SinhalaMMLU, McNemar's test on 36 discordant pairs has power 0.13, and reaching 80\% power
+for that gap would need about 825 items. Comparing the two runs, Sinhala-script accuracy
+differs by 2.0 points on average and rises for five of the eleven checkpoints, while the
+number of checkpoints scoring lower on Romanized text falls from seven to four, so the
+corrected instruction moves the absolute level and removes the weak downward trend the
+first run showed.
+
 One checkpoint lets us check the pretraining-exposure reading of
 \S\ref{sec:controls} directly. BLOOM's corpus covers 46 languages and Sinhala is not
 one of them \citep{laurencon-etal-2023-roots, lescao-etal-2023-bloom}, and all three
@@ -1301,10 +1348,13 @@ checkpoint, so the Romanized condition is the shorter input in every case.}
 \rows{tables/tab_piqa.tex}
 \bottomrule
 \end{tabular}
-\caption{Global PIQA, 100 items. ``disc.\ b/c'' are the discordant pair counts
-entering McNemar's test. No checkpoint is above chance in the Sinhala-script
-condition and no comparison survives correction, so we treat this task as
-underpowered rather than as corroboration.}
+\caption{Global PIQA, 100 items, from the re-run with the item-type-aware
+instruction of Appendix~\ref{sec:prompts}. ``disc.\ b/c'' are the discordant pair
+counts entering McNemar's test. No checkpoint is above chance in the Sinhala-script
+condition, and the only comparison surviving correction is LaMini-GPT-1.5B, which
+cannot produce a parseable answer in the Sinhala script at all, so its 42 point
+``gain'' is an artifact (\S\ref{sec:screen}). With 100 items this task neither
+supports nor contradicts the effect measured on the other two (\S\ref{sec:piqa}).}
 \label{tab:piqa}
 \end{table}
 
@@ -1337,7 +1387,7 @@ null.}
 \label{sec:QulHum}
 
 Table~\ref{tab:methods} compares our method with Aksharamukha
-\citep{rajan-aksharamukha}, uroman \citep{hermjakob-etal-2018-uroman} and the web
+\citep{rajan-aksharamukha}, uroman \citep{hermjakob-etal-2018-box} and the web
 romanizer released for \citet{desilva-ranathunga-2026-sinhalapiqa}, against
 755{,}000 human-romanized items. Ours has the lowest character error rate on all
 three corpora. The web tool comes close once its \rom{v} is rewritten to \rom{w},
@@ -1384,7 +1434,7 @@ Table~\ref{tab:attest} bounds how much this matters, using the
 supplied for each Sinhala word and averages 15.7 accepted spellings per word.
 Once the long-vowel convention is normalized, 88.6\% of our word tokens in the
 parallel corpus carry a spelling some human actually supplied for that word, and
-87.0\% on SOLD. The reference point is the row above.The native speakers who typed
+87.0\% on SOLD. The reference point is the row above. The native speakers who typed
 the same 500 sentences match the lexicon 84.2\% of the time by the same measure. Our
 spellings are therefore attested about as often as human typing is.
 
@@ -1438,7 +1488,7 @@ protocol of \S\ref{sec:intrinsic}.
 Table~\ref{tab:svh} reports six checkpoints, scored on CPU so that the control did
 not compete with the main runs for GPU time. The Sinhala-script and human-typed
 columns reproduce the recorded run to within 0.11\%, which is an independent check on
-the intrinsic pipeline. The quantity of interest is the difference.Our
+the intrinsic pipeline. The quantity of interest is the difference. Our
 transliteration costs 0.17 to 0.24 more bits per byte than the human-typed text on
 identical content, with the same sign for every checkpoint. Our Romanized condition
 is therefore the harder of the two, so the downstream gaps in \S\ref{sec:extrinsic}
@@ -1589,7 +1639,7 @@ transliterator. We redistribute none of it and our code downloads it from source
 redistributed unchanged.
 \item \textbf{Aksharamukha} \citep{rajan-aksharamukha} AGPL-3.0, version 2.3,
 called as a library for comparison only. \textbf{uroman}
-\citep{hermjakob-etal-2018-uroman} version 1.3.1.1, MIT-style license with a
+\citep{hermjakob-etal-2018-box} version 1.3.1.1, MIT-style license with a
 required acknowledgment, which appears in the Acknowledgments section as its
 license directs.
 \item \textbf{Model weights}: evaluation only, no fine-tuning and no derivative

@@ -109,20 +109,30 @@ def n_for(delta: float, p_disc: float, cap: int = 40000) -> int:
 
 
 def observed():
-    """Per-checkpoint discordant rates actually seen, per dataset."""
+    """Per-checkpoint discordant rates actually seen, per dataset.
+
+    Global PIQA comes from the re-run with the item-type-aware prompt, which is
+    the Global PIQA result the paper reports.
+    """
     ne = json.load(open(os.path.join(C.OUT_DIR, "extrinsic_numbers.json")))
     ex = pd.read_csv(os.path.join(C.OUT_DIR, "extrinsic_main.csv"))
     out = {}
-    for ds in ("global_piqa", "sinhala_mmlu"):
-        d = ex[ex.dataset == ds]
-        n = ne["n_items"][ds]
-        disc = (d["n_disc"] / n).dropna()
-        out[ds] = {
-            "n_items": int(n),
-            "n_checkpoints": int(len(disc)),
-            "median_discordant_pairs": float(d["n_disc"].median()),
-            "p_disc_median": float(disc.median()),
-        }
+    d = ex[ex.dataset == "sinhala_mmlu"]
+    n = ne["n_items"]["sinhala_mmlu"]
+    out["sinhala_mmlu"] = {
+        "n_items": int(n),
+        "n_checkpoints": int(len(d)),
+        "median_discordant_pairs": float(d["n_disc"].median()),
+        "p_disc_median": float((d["n_disc"] / n).median()),
+    }
+    rr = json.load(open(os.path.join(C.OUT_DIR, "piqa_rerun.json")))
+    disc = pd.Series([r["n_disc"] for r in rr["per_model"]], dtype=float)
+    out["global_piqa"] = {
+        "n_items": int(rr["n_items"]),
+        "n_checkpoints": int(rr["n_checkpoints"]),
+        "median_discordant_pairs": float(disc.median()),
+        "p_disc_median": float(disc.median() / rr["n_items"]),
+    }
     return out
 
 
@@ -140,7 +150,12 @@ def main():
     }
 
     ne = json.load(open(os.path.join(C.OUT_DIR, "extrinsic_numbers.json")))
-    observed_piqa_gap = ne["piqa_pooled_competent"]["gap"] / 100
+    rr = json.load(open(os.path.join(C.OUT_DIR, "piqa_rerun.json")))
+    piqa_pooled_gap = rr["pooled_parseable"]["gap"] / 100
+    # The re-run pools to essentially zero on Global PIQA, so "how many items
+    # would it take" is asked of a reference effect instead: the pooled
+    # SinhalaMMLU gap, which is the central downstream effect of the paper.
+    reference_gap = ne["pooled_competent"]["sinhala_mmlu"]["gap"] / 100
     largest_mmlu_gap = max(
         abs(v) for v in ne["sinhala_mmlu_summary"]["competent_gaps"].values()
     ) / 100
@@ -152,15 +167,16 @@ def main():
         "global_piqa": {
             "mde_points": 100 * piqa_mde,
             "power_curve_by_true_gap_points": curve,
-            "power_at_observed_pooled_gap": power(
-                piqa["n_items"], piqa["p_disc_median"], observed_piqa_gap),
+            "pooled_gap_points": 100 * piqa_pooled_gap,
             "power_at_largest_mmlu_gap": power(
                 piqa["n_items"], piqa["p_disc_median"], largest_mmlu_gap),
-            "items_needed_for_observed_pooled_gap": n_for(
-                observed_piqa_gap, piqa["p_disc_median"]),
+            "power_at_reference_gap": power(
+                piqa["n_items"], piqa["p_disc_median"], reference_gap),
+            "items_needed_for_reference_gap": n_for(
+                reference_gap, piqa["p_disc_median"]),
         },
         "sinhala_mmlu": {"mde_points": 100 * mmlu_mde},
-        "observed_pooled_piqa_gap_points": 100 * observed_piqa_gap,
+        "reference_gap_points": 100 * reference_gap,
         "largest_mmlu_gap_points": 100 * largest_mmlu_gap,
     }
 
@@ -179,8 +195,11 @@ def main():
     print(f"  power at the largest gap seen anywhere in the paper "
           f"({100 * largest_mmlu_gap:.1f} pts): "
           f"{out['global_piqa']['power_at_largest_mmlu_gap']:.3f}")
-    print(f"  items needed for the {100 * observed_piqa_gap:.1f} pt pooled gap: "
-          f"{out['global_piqa']['items_needed_for_observed_pooled_gap']:,}")
+    print(f"  Global PIQA pools to {100 * piqa_pooled_gap:+.1f} pts")
+    print(f"  power at the pooled SinhalaMMLU gap ({100 * reference_gap:.1f} pts): "
+          f"{out['global_piqa']['power_at_reference_gap']:.3f}")
+    print(f"  items needed for a {100 * reference_gap:.1f} pt gap: "
+          f"{out['global_piqa']['items_needed_for_reference_gap']:,}")
     print(f"\nSinhalaMMLU: {mmlu['n_items']:,} items, median discordant rate "
           f"{100 * mmlu['p_disc_median']:.0f}%")
     print(f"  smallest detectable gap at {TARGET_POWER:.0%} power: "

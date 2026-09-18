@@ -13,7 +13,6 @@ Appendix tables
     tab_model_ids         Hugging Face identifiers and tokenizer fertility
     tab_methods           transliteration quality against human references
     tab_ngram             held-out character n-gram references
-    tab_piqa              Global PIQA, per checkpoint
     tab_invalid_tau       unparseable-output rates and input token ratios
     tab_pilot             the prompt-template pilot, all templates and scripts
     tab_shared24          reproduction of the published benchmark on its own pool
@@ -154,22 +153,22 @@ def extrinsic_main(ex):
             f"& {s.u_mcc:.3f} & {s.r_mcc:.3f} & {fp(s.dMCC_p_holm)} \\\\")
     w("tab_extrinsic_main.tex", "\n".join(rows))
 
-    # appendix: unparseable output and how many tokens each condition costs
+    # appendix: unparseable output and how many tokens each condition costs.
+    # The Global PIQA columns come from the re-run with the item-type-aware
+    # prompt, which is the Global PIQA result the paper reports; `pq` above is
+    # the earlier prompt and is kept only for the comparison in that section.
+    rr = json.load(open(os.path.join(C.OUT_DIR, "piqa_rerun.json")))
+    rr = {r["model"]: r for r in rr["per_model"]}
     rows = []
     for m in order:
-        a, q = mm.loc[m], pq.loc[m]
+        a, q = mm.loc[m], rr[m]
         rows.append(f"{nb(m)} & {a.u_invalid:.2f} & {a.r_invalid:.2f} "
-                    f"& {q.u_invalid:.0f} & {q.r_invalid:.0f} "
+                    f"& {q['u_invalid']:.0f} & {q['r_invalid']:.0f} "
                     f"& {a.tok_ratio:.2f} \\\\")
     w("tab_invalid_tau.tex", "\n".join(rows))
 
-    # appendix: Global PIQA, which 100 items cannot support in the main body
-    rows = []
-    for m in order:
-        q = pq.loc[m]
-        rows.append(f"{nb(m)} & {q.u_acc:.0f} & {q.r_acc:.0f} & {q.gap:+.0f} "
-                    f"& {q.b:.0f}/{q.c:.0f} & {fp(q.p_holm)} \\\\")
-    w("tab_piqa.tex", "\n".join(rows))
+    # tab_piqa.tex is written by paper/analysis/stats_piqa_rerun.py, which owns
+    # the Global PIQA re-run.
 
 
 def strata():
