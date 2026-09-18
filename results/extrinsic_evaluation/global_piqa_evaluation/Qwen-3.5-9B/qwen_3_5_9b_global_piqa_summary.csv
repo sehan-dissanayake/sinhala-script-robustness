@@ -1,0 +1,2 @@
+Model,N,Unicode Acc (%),Romanized Acc (%),Gap (pp),Unicode Invalid (%),Romanized Invalid (%),Unicode MCQ Acc (%),Romanized MCQ Acc (%),Unicode COMP Acc (%),Romanized COMP Acc (%)
+Qwen-3.5-9B,100,50.0,50.0,0.0,0.0,0.0,52.5,52.5,48.33,48.33

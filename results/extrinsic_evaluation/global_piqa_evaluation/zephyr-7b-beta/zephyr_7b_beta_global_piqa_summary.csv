@@ -1,0 +1,2 @@
+Model,N,Unicode Acc (%),Romanized Acc (%),Gap (pp),Unicode Invalid (%),Romanized Invalid (%),Unicode MCQ Acc (%),Romanized MCQ Acc (%),Unicode COMP Acc (%),Romanized COMP Acc (%)
+zephyr-7b-beta,100,42.0,49.0,-7.0,1.0,0.0,42.5,50.0,41.67,48.33
