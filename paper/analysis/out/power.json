@@ -1,0 +1,39 @@
+{
+  "alpha": 0.05,
+  "target_power": 0.8,
+  "observed": {
+    "global_piqa": {
+      "n_items": 100,
+      "n_checkpoints": 11,
+      "median_discordant_pairs": 36.0,
+      "p_disc_median": 0.36
+    },
+    "sinhala_mmlu": {
+      "n_items": 6879,
+      "n_checkpoints": 11,
+      "median_discordant_pairs": 1802.0,
+      "p_disc_median": 0.2619566797499637
+    }
+  },
+  "global_piqa": {
+    "mde_points": 17.336682485531135,
+    "power_curve_by_true_gap_points": {
+      "4": 0.07256108659857913,
+      "6": 0.1274541765075917,
+      "8": 0.21021217525000913,
+      "10": 0.3205546560667029,
+      "12": 0.4520292348512764,
+      "15": 0.6597735700329935,
+      "18": 0.8084669132431093,
+      "20": 0.9119864357742
+    },
+    "power_at_observed_pooled_gap": 0.0691497880730206,
+    "power_at_largest_mmlu_gap": 0.6904376921487324,
+    "items_needed_for_observed_pooled_gap": 1970
+  },
+  "sinhala_mmlu": {
+    "mde_points": 1.7426530126454165
+  },
+  "observed_pooled_piqa_gap_points": 3.8333,
+  "largest_mmlu_gap_points": 15.47
+}

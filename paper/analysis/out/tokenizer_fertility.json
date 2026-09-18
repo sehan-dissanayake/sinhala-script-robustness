@@ -1,0 +1,29 @@
+{
+  "n_sentences": 500,
+  "tokenizers": {
+    "HelaBERT": {
+      "vocab": 32000,
+      "unicode": 1.3067545304777595,
+      "romanized": 2.1014827018121913
+    },
+    "SinLlama (Extended-Sinhala-LLaMA)": {
+      "vocab": 139336,
+      "unicode": 1.4359143327841846,
+      "romanized": 2.228995057660626
+    },
+    "SinBERT-large": {
+      "vocab": 52000,
+      "unicode": 3.5034596375617792,
+      "romanized": 6.154530477759473
+    }
+  },
+  "pool_of_31": {
+    "n": 31,
+    "unicode_min": 4.342668863261944,
+    "unicode_median": 9.511696869851729,
+    "unicode_max": 14.19835255354201,
+    "romanized_min": 1.914662273476112,
+    "romanized_median": 2.0919275123558485,
+    "romanized_max": 2.442833607907743
+  }
+}

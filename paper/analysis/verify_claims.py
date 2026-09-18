@@ -1,6 +1,6 @@
 """Check the numeric claims written into the paper against the frozen analysis.
 
-Every assertion below restates a number that appears in acl_latex.tex. If the
+Every assertion below restates a number that appears in main.tex. If the
 analysis is re-run and a value moves, this script fails and tells you which claim
 in the paper is now stale.
 
@@ -23,6 +23,9 @@ NE = json.load(open(os.path.join(C.OUT_DIR, "extrinsic_numbers.json")))
 RB = json.load(open(os.path.join(C.OUT_DIR, "robustness_numbers.json")))
 AT = json.load(open(os.path.join(C.OUT_DIR, "attestation_numbers.json")))
 SV = json.load(open(os.path.join(C.OUT_DIR, "synthetic_vs_human.json")))
+SL = json.load(open(os.path.join(C.OUT_DIR, "sinllama.json")))
+PW = json.load(open(os.path.join(C.OUT_DIR, "power.json")))
+TF = json.load(open(os.path.join(C.OUT_DIR, "tokenizer_fertility.json")))
 IT = pd.read_csv(os.path.join(C.OUT_DIR, "intrinsic_pooled.csv"))
 EX = pd.read_csv(os.path.join(C.OUT_DIR, "extrinsic_main.csv"))
 SD = pd.read_csv(os.path.join(C.OUT_DIR, "sold_detail.csv")).set_index("model")
@@ -378,6 +381,75 @@ eq("app A: pilot overlap items", P["mmlu_pilot_items_in_eval_set"], 20, 0)
 
 eq("app I: control sequences scored", 6 * 3 * 500, 9000, 0)
 
+
+# --------------------------------------------- the Sinhala-adapted checkpoint --
+# Section 4.5 and Appendix G.
+P_, A_ = SL["parent"], SL["adapted"]
+eq("4.5: parent unicode bpb", P_["u_bpb"], 1.157, 5e-4)
+eq("4.5: adapted unicode bpb", A_["u_bpb"], 0.628, 5e-4)
+eq("4.5: parent unicode ppl", P_["u_ppl"], 3.25, 5e-3)
+eq("4.5: adapted unicode ppl", A_["u_ppl"], 74.56, 5e-3)
+eq("4.5: parent unicode fertility", P_["u_tok_per_word"], 9.68, 5e-3)
+eq("4.5: adapted unicode fertility", A_["u_tok_per_word"], 1.44, 5e-3)
+eq("4.5: parent ppl ratio", SL["ppl_ratio"]["parent"], 310.7, 0.05)
+eq("4.5: adapted ppl ratio", SL["ppl_ratio"]["adapted"], 8.7, 0.05)
+eq("4.5: parent d_bpb", SL["d_bpb"]["parent"], 2.447, 5e-4)
+eq("4.5: adapted d_bpb", SL["d_bpb"]["adapted"], 2.743, 5e-4)
+eq("4.5: unicode bpb gain", -SL["gains"]["unicode"]["bpb_delta"], 0.528, 5e-4)
+eq("4.5: romanized bpb gain", -SL["gains"]["romanized"]["bpb_delta"], 0.233, 5e-4)
+eq("4.5: gain asymmetry", SL["adaptation_asymmetry"], 2.3, 0.05)
+eq("abstract: adapted ppl factor", SL["gains"]["unicode"]["ppl_factor"], 23.0, 0.05)
+is_("4.5: adapted is best of 32 by unicode bpb",
+    SL["ranks_among_32"]["u_bpb"] == 1)
+is_("4.5: adapted is worst of 32 by unicode ppl",
+    SL["ranks_among_32"]["u_ppl"] == 32)
+is_("4.5: adapted has the smallest reported ratio of 32",
+    SL["ranks_among_32"]["ppl_ratio"] == 1)
+is_("4.5: only one of the 31 has a wider per-byte gap",
+    SL["ranks_among_32"]["d_bpb"] == 31)
+eq("app G: added Sinhala pieces", SL["vocab"]["SinLlama-8B"] - SL["vocab"]["Llama-3-8B"],
+   11080, 0)
+eq("app G: adapted vocab", SL["vocab"]["SinLlama-8B"], 139336, 0)
+eq("app G: bytes per token unicode",
+   SL["decomposition_adapted"]["bytes_per_token_unicode"], 9.90, 5e-3)
+eq("app G: bytes per token romanized",
+   SL["decomposition_adapted"]["bytes_per_token_romanized"], 2.77, 5e-3)
+eq("app G: decomposition normalizer term",
+   SL["decomposition_adapted"]["normalizer_bits"], -14.26, 5e-3)
+eq("app G: decomposition per-byte term",
+   SL["decomposition_adapted"]["per_byte_bits"], 17.38, 5e-3)
+eq("app G: decomposition total", SL["decomposition_adapted"]["total_bits"], 3.11, 5e-3)
+is_("app G: decomposition is exact",
+    abs(SL["decomposition_adapted"]["residual"]) < 1e-9)
+eq("app G: two Llama versions within 0.008 bpb",
+   abs(P_["u_bpb"] - float(IT[IT.model == "Llama-3.1-8B"].u_bpb.iloc[0])), 0.008, 5e-4)
+R_ = SL["conclusion_robustness"]
+eq("3.3 reply: rho(ppl,bpb) with adapted",
+   R_["ppl_vs_bpb_unicode"]["with_sinllama"]["rho"], -0.02, 5e-3)
+eq("3.3 reply: rho(fertility,ppl) with adapted",
+   R_["fertility_vs_unicode_ppl"]["with_sinllama"]["rho"], -0.88, 5e-3)
+eq("3.3 reply: rho(params,bpb) with adapted",
+   R_["params_vs_unicode_bpb"]["with_sinllama"]["rho"], -0.56, 5e-3)
+
+# ------------------------------------------------------- power, section 5.4 ----
+eq("5.4: piqa MDE", PW["global_piqa"]["mde_points"], 17.3, 0.05)
+eq("5.4: mmlu MDE", PW["sinhala_mmlu"]["mde_points"], 1.74, 5e-3)
+eq("5.4: items needed for the pooled piqa gap",
+   PW["global_piqa"]["items_needed_for_observed_pooled_gap"], 1970, 0)
+eq("5.4: largest mmlu gap", PW["largest_mmlu_gap_points"], 15.5, 0.05)
+eq("5.4: piqa median discordant pairs",
+   PW["observed"]["global_piqa"]["median_discordant_pairs"], 36, 0)
+
+# --------------------------------------------- tokenizer fertility, app H -----
+T_ = TF["tokenizers"]
+eq("2.5: HelaBERT unicode fertility", T_["HelaBERT"]["unicode"], 1.31, 5e-3)
+eq("2.5: SinLlama unicode fertility",
+   T_["SinLlama (Extended-Sinhala-LLaMA)"]["unicode"], 1.44, 5e-3)
+eq("2.5: SinBERT romanized fertility", T_["SinBERT-large"]["romanized"], 6.15, 5e-3)
+is_("2.5: SinBERT is the worst on romanized text",
+    T_["SinBERT-large"]["romanized"] > TF["pool_of_31"]["romanized_max"])
+eq("app H: HelaBERT vocab", T_["HelaBERT"]["vocab"], 32000, 0)
+
 # ------------------------------------------------------------------ report ----
 print(f"{checks} claims checked")
 if fails:
@@ -385,4 +457,4 @@ if fails:
     for f in fails:
         print("  -", f)
     sys.exit(1)
-print("all claims in acl_latex.tex match paper/analysis/out/")
+print("all claims in paper/main.tex match paper/analysis/out/")
