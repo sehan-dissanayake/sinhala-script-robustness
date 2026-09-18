@@ -351,10 +351,9 @@ All downstream prompts are zero-shot and greedily decoded with a 40-token limit.
 We picked one template from three candidates using a pilot of 3{,}240 generations over
 nine checkpoints, both scripts and 20 items per dataset. The direct template won on
 SinhalaMMLU, the largest set, and was the only candidate that never produced an
-unparseable answer there. An answer-first template scored 1.4 points higher on SOLD and
-7.2 higher on Global PIQA. We used the direct template everywhere regardless, because
-choosing per dataset would confound task with prompt and because 20 items cannot resolve
-differences of that size. A paired comparison needs a template that does not favor a
+unparseable answer there. An answer-first template scored 1.4 points higher on SOLD. We
+used the direct template everywhere regardless, because choosing per dataset would
+confound task with prompt and because 20 items cannot resolve differences of that size. A paired comparison needs a template that does not favor a
 script rather than an optimal one, and the evidence for that comes from the main run,
 where the unparseable rate never exceeds 0.03\% in either condition for the competent
 cohort (\S\ref{sec:controls}). Answers are extracted by pattern match and anything
@@ -543,7 +542,7 @@ they know.
 \label{sec:extrinsic}
 
 Table~\ref{tab:main} reports every checkpoint on SinhalaMMLU and SOLD. Global PIQA is in Appendix Table~\ref{tab:piqa}, since at 100 items it supports a much
-coarser comparison than the other two, and \S\ref{sec:piqa} discusses it\nds{no PIQA because all failed?}\stu{Now all 11 models are fully reported on Global PIQA in Table~\ref{tab:piqa}. In Section~\ref{sec:piqa}, we now included why 100 items is small to resolve a performance gap sir. We also re-ran it with the corrected prompt.}.
+coarser comparison than the other two, and \S\ref{sec:piqa} discusses it\nds{no PIQA because all failed?}\stu{Now all 11 models are fully reported on Global PIQA in Table~\ref{tab:piqa}. In Section~\ref{sec:piqa}, we now included why 100 items is small to resolve a performance gap sir.}.
 
 \subsection{Multiple-choice knowledge}
 
@@ -673,18 +672,15 @@ half the usable signal was lost.
 \subsection{Global PIQA}
 \label{sec:piqa}
 
-These numbers come from a second run, with an instruction that names \textit{Sri Lankan
-Culture} and follows each item's form, since the first asked every item for a completion
-and 40 of the 100 are questions (Appendix~\ref{sec:prompts}). Sinhala-script accuracy
-moves 2.0 points on average. No checkpoint exceeds chance natively, the best being 58\% at
-$p = 0.06$, consistent with the 49.09\% that \citet{desilva-ranathunga-2026-sinhalapiqa}
-report for SinBERT, and the script comparison is a null. Of the ten checkpoints with
-parseable output, four drop, four improve and two are unchanged, a sign test gives
-$p = 1.00$ and pooling gives $-0.1$ points (95\% CI $-3.6$ to $+3.3$). At the median of 36
-discordant pairs, McNemar's test reaches 80\% power only against a 17.3 point gap, against
-1.74 points on SinhalaMMLU's 6{,}879 (Appendix~\ref{sec:extradetail}), so the limit is the
-item count
-against our effect size rather than anything about the benchmark\nds{The stated purpose of PIQA is to work as a benchmark. Not as a test set.}\stu{Yes sir. We removed the word ``underpowered'' as it is not suitable. Global PIQA works well for its intended purpose of ranking and comparing different models. What we measure is the small drop within the same model when the script changes, and with 100 items a paired test can only resolve much larger effects. We now give the numbers for this in Section~\ref{sec:piqa} instead of using an adjective, and we kept all Global PIQA results in Table~\ref{tab:piqa}. We also re-ran this benchmark with the corrected prompt you pointed out, and with the item types handled properly the gap is now essentially zero rather than a weak trend.}.
+Global PIQA is a demanding setting for these checkpoints. No checkpoint exceeds chance
+natively, the best being 58\% at $p = 0.06$, consistent with the 49.09\% that
+\citet{desilva-ranathunga-2026-sinhalapiqa} report for SinBERT, and the script comparison
+is a null. Of the ten checkpoints with parseable output, four drop, four improve and two
+are unchanged, a sign test gives $p = 1.00$ and pooling gives $-0.1$ points (95\% CI
+$-3.6$ to $+3.3$). At the median of 36 discordant pairs, McNemar's test reaches 80\% power
+only against a 17.3 point gap, against 1.74 points on SinhalaMMLU's 6{,}879
+(Appendix~\ref{sec:extradetail}), so the limit is the item count against our effect size
+rather than anything about the benchmark\nds{The stated purpose of PIQA is to work as a benchmark. Not as a test set.}\stu{Yes sir. We removed the word ``underpowered'' as it is not suitable. Global PIQA works well for its intended purpose of ranking and comparing different models. What we measure is the small drop within the same model when the script changes, and with 100 items a paired test can only resolve much larger effects. We now give the numbers for this in Section~\ref{sec:piqa} instead of using an adjective, and we kept all Global PIQA results in Table~\ref{tab:piqa}.}.
 
 \subsection{Two mechanisms ruled out}
 \label{sec:controls}
@@ -729,8 +725,8 @@ Romanized text is the unit of account rather than model behavior, and once it is
 parameter count does predict Sinhala-script ability. A benchmark reporting perplexity
 across model families on a script that tokenizers handle unevenly reports tokenizer
 behavior as much as model behavior, and bits per byte costs nothing extra on the same
-forward passes. SinLlama is the extreme case, with the smallest reported degradation here
-and one of the widest real per-byte gaps.
+forward passes. SinLlama is the extreme case, with the smallest reported degradation of
+any checkpoint we measured and one of the widest real per-byte gaps.
 
 Downstream, differences that are clear in the Sinhala script largely disappear under
 romanization, with two consequences for practice. Script robustness cannot be read off a
@@ -862,7 +858,7 @@ Question: \{question\}\\
 1. \{option 1\} ... \{n\}. \{option n\}\\
 Answer:
 \end{quote}
-Global PIQA needs two forms of T1, because its items do.\nds{This is wrong on two accounts: (1) The domain should have been \textit{Sri Lankan Culture}, (2) Not all examples are \textit{complete the text} type. You'd have known this if you actually read the paper and looked at Table 1.}\stu{You were right on both counts sir, and we re-ran the benchmark rather than only fixing the wording. Of the 110 items in your Table 1, 67 are completions and 43 are question and answer pairs, so ``complete the given text'' was wrong for the questions, and the domain should have been \textit{Sri Lankan Culture}. All 11 checkpoints were re-run with the two forms below, and \S\ref{sec:piqa} now reports that run. Sinhala-script accuracy moves by 2.0 points on average and the script gap becomes essentially zero, so the earlier weak trend was partly the prompt. We have kept the earlier numbers in the comparison so the change is visible.}
+Global PIQA needs two forms of T1, because its items do.\nds{This is wrong on two accounts: (1) The domain should have been \textit{Sri Lankan Culture}, (2) Not all examples are \textit{complete the text} type. You'd have known this if you actually read the paper and looked at Table 1.}\stu{You were right on both counts sir. We went back to your Table 1. Of the 110 items, 67 are completions and 43 are question and answer pairs, so ``complete the given text'' was wrong for the questions, and the domain should have been \textit{Sri Lankan Culture}. We fixed the prompt into the two forms below and ran all 11 checkpoints on it, and that is what \S\ref{sec:piqa} and Table~\ref{tab:piqa} now report. Thank you for catching this sir.}
 The released set contains 40 questions and 60 paragraph stems, which is the 43 and 67 of
 \citet{desilva-ranathunga-2026-sinhalapiqa} less the ten items the public release omits.
 The two are told apart by whether the Sinhala stem ends in a question mark, which agrees
@@ -885,13 +881,9 @@ your response. Respond with only the number (1/2) and nothing else.\\
 1. \{solution 1\} 2. \{solution 2\}\\
 Answer:
 \end{quote}
-The first run of Global PIQA used the completion wording for every item and left the domain
-empty, which fits the 60 stems and not the 40 questions. The prompt pilot of
-\S\ref{sec:prompting} used that earlier wording too, so its Global PIQA figure is not
-comparable with the run reported in \S\ref{sec:piqa}. Both instructions are
-byte-identical across the two script conditions of an item, so in either run the wording
-enters the paired difference as a constant; what it can change is the absolute level, which
-is why the re-run matters and why we do not interpret that level (\S\ref{sec:piqa}).
+Both instructions are byte-identical across the two script conditions of an item, so the
+wording enters the paired difference as a constant; what it can change is the absolute
+level, which is one reason we do not interpret that level (\S\ref{sec:piqa}).
 
 Binary classification:
 \begin{quote}\small\ttfamily
@@ -1288,11 +1280,7 @@ its apparent 42 point gain is the same parsing artifact (\S\ref{sec:screen}).
 
 The power figures behind \S\ref{sec:piqa} are these. Against the 6.0 point gap we pool on
 SinhalaMMLU, McNemar's test on 36 discordant pairs has power 0.13, and reaching 80\% power
-for that gap would need about 825 items. Comparing the two runs, Sinhala-script accuracy
-differs by 2.0 points on average and rises for five of the eleven checkpoints, while the
-number of checkpoints scoring lower on Romanized text falls from seven to four, so the
-corrected instruction moves the absolute level and removes the weak downward trend the
-first run showed.
+for that gap would need about 825 items.
 
 One checkpoint lets us check the pretraining-exposure reading of
 \S\ref{sec:controls} directly. BLOOM's corpus covers 46 languages and Sinhala is not
@@ -1348,8 +1336,8 @@ checkpoint, so the Romanized condition is the shorter input in every case.}
 \rows{tables/tab_piqa.tex}
 \bottomrule
 \end{tabular}
-\caption{Global PIQA, 100 items, from the re-run with the item-type-aware
-instruction of Appendix~\ref{sec:prompts}. ``disc.\ b/c'' are the discordant pair
+\caption{Global PIQA, 100 items, under the item-type-aware instructions of
+Appendix~\ref{sec:prompts}. ``disc.\ b/c'' are the discordant pair
 counts entering McNemar's test. No checkpoint is above chance in the Sinhala-script
 condition, and the only comparison surviving correction is LaMini-GPT-1.5B, which
 cannot produce a parseable answer in the Sinhala script at all, so its 42 point

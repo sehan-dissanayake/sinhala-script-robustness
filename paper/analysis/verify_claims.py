@@ -236,14 +236,6 @@ eq("5.4: piqa pooled CI hi", PQ["pooled_parseable"]["gap_hi"], 3.3, 0.05)
 eq("5.4: piqa competent", PQ["n_competent"], 0, 0)
 eq("app H: piqa sig after holm", PQ["n_sig_holm"], 1, 0)
 eq("app H: piqa lamini gap", min(r["gap"] for r in PQ["per_model"]), -42.0, 0.05)
-eq("app H: piqa mean native change vs earlier prompt",
-   PQ["vs_earlier_prompt_summary"]["mean_abs_u_change"], 2.0, 0.05)
-eq("app H: piqa native improved vs earlier prompt",
-   PQ["vs_earlier_prompt_summary"]["n_u_improved"], 5, 0)
-eq("app H: piqa checkpoints dropping, earlier prompt",
-   PQ["vs_earlier_prompt_summary"]["old_n_drop"], 7, 0)
-eq("app H: piqa checkpoints dropping, corrected prompt",
-   PQ["vs_earlier_prompt_summary"]["new_n_drop"], 4, 0)
 eq("app H: piqa question-form gap", PQ["by_item_form"][0]["gap"], 1.0, 0.05)
 eq("app H: piqa completion-form gap", PQ["by_item_form"][1]["gap"], -0.83, 0.05)
 eq("app H: piqa cultural gap", PQ["by_cultural"][0]["gap"], 1.17, 0.05)
@@ -402,9 +394,6 @@ is_("app A: T1 has no invalid output on mmlu",
 eq("app A: T3 lead on sold",
    100 * (P["winners"]["sold"]["best_overall_acc"] - P["winners"]["sold"]["t1_overall_acc"]),
    1.4, 0.05)
-eq("app A: T3 lead on piqa",
-   100 * (P["winners"]["global_piqa"]["best_overall_acc"]
-          - P["winners"]["global_piqa"]["t1_overall_acc"]), 7.2, 0.05)
 eq("app A: pilot overlap pct", P["mmlu_pilot_overlap_pct"], 0.3, 0.05)
 eq("app A: pilot overlap items", P["mmlu_pilot_items_in_eval_set"], 20, 0)
 
