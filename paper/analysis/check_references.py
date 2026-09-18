@@ -27,6 +27,8 @@ import xml.etree.ElementTree as ET
 REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 BIB = os.path.join(REPO, "paper", "custom.bib")
 TEX = os.path.join(REPO, "paper", "main.tex")
+SHARDS = [os.path.join(REPO, "paper", "anthology-1.bib"),
+          os.path.join(REPO, "paper", "anthology-2.bib")]
 UA = {"User-Agent": "sinhala-script-robustness reference check (mailto:anon@example.org)"}
 
 problems: list[str] = []
@@ -40,11 +42,33 @@ def norm(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", s.lower())
 
 
-def parse_bib(path: str) -> dict[str, dict]:
-    text = open(path, encoding="utf-8").read()
+# The Anthology shards write most fields as @string concatenations, so
+# url = anth # {2022.lrec-1.803/} has to be expanded before it can be fetched.
+BIB_STRINGS = {"anth": "https://aclanthology.org/",
+               "acl": "Association for Computational Linguistics"}
+
+
+def expand_strings(value: str) -> str:
+    out = []
+    for part in value.split("#"):
+        part = part.strip()
+        if len(part) > 1 and part[0] in "{\"" and part[-1] in "}\"":
+            out.append(part[1:-1])
+        else:
+            out.append(BIB_STRINGS.get(part, part))
+    return "".join(out)
+
+
+def parse_bib(path: str, only: set[str] | None = None) -> dict[str, dict]:
+    """Entries of a .bib file, or just the named ones out of a large shard."""
+    text = open(path, encoding="utf-8", errors="replace").read()
     entries = {}
     for m in re.finditer(r"@(\w+)\s*\{\s*([^,]+),", text):
         kind, key = m.group(1).lower(), m.group(2).strip()
+        if kind in ("string", "comment", "preamble"):
+            continue
+        if only is not None and key not in only:
+            continue
         start = m.end()
         depth, i = 1, m.start()
         # walk from the opening brace of the entry to its match
@@ -75,15 +99,17 @@ def parse_bib(path: str) -> dict[str, dict]:
                     k += 1
                 fields[name] = rest[1:k]
             else:
-                fields[name] = rest.split(",")[0].strip().strip('"')
+                fields[name] = expand_strings(rest.split(",")[0].strip())
         entries[key] = {"type": kind, **fields}
     return entries
 
 
 # The ACL Anthology records the first author of RomanSetu as family name "J".
 # The paper itself, and arXiv:2401.14280, print "Jaavid Aktar Husain", which is
-# what the bib uses so that \\citet does not render "J et al.".
-KNOWN_AUTHOR_EXCEPTIONS = {"j-etal-2024-romansetu"}
+# what the bib uses so that \\citet does not render "J et al.". The entry is kept
+# in custom.bib under a key of its own, husain-etal-2024-romansetu, so that it
+# cannot collide with the Anthology shard's j-etal-2024-romansetu.
+KNOWN_AUTHOR_EXCEPTIONS = {"husain-etal-2024-romansetu"}
 
 _ACCENTS = str.maketrans({
     "\u00e7": "c", "\u00e9": "e", "\u00e8": "e", "\u00ea": "e", "\u00e1": "a",
@@ -206,18 +232,43 @@ def url_resolves(url: str) -> bool:
 
 
 def main():
-    entries = parse_bib(BIB)
+    own = parse_bib(BIB)
     tex = open(TEX, encoding="utf-8").read()
     cited = set()
     for m in re.finditer(r"\\cite[a-zA-Z]*\*?(?:\[[^\]]*\])*\{([^}]*)\}", tex):
         cited.update(k.strip() for k in m.group(1).split(","))
 
-    print(f"{len(entries)} bibliography entries, {len(cited)} distinct citation keys\n")
+    # Anything main.tex cites that custom.bib does not define has to come from the
+    # ACL Anthology shards named in \bibliography. Pull those entries out and check
+    # them like the rest, so a key that resolves to nothing cannot slip through.
+    from_shards: dict[str, dict] = {}
+    for shard in SHARDS:
+        want = (cited - set(own)) - set(from_shards)
+        if not want or not os.path.exists(shard):
+            continue
+        for key, e in parse_bib(shard, only=want).items():
+            e["_shard"] = os.path.basename(shard)
+            from_shards[key] = e
+
+    entries = {**own, **from_shards}
+    print(f"{len(own)} entries in custom.bib and {len(from_shards)} taken from the "
+          f"Anthology shards, {len(cited)} distinct citation keys\n")
 
     missing = sorted(cited - set(entries))
     if missing:
-        problems.append(f"cited but not in custom.bib: {', '.join(missing)}")
-    orphans = sorted(set(entries) - cited)
+        problems.append(f"cited but defined nowhere: {', '.join(missing)}")
+
+    # A key defined twice makes the winner depend on database order, so the
+    # Anthology-supplied entries must not also sit in custom.bib.
+    for shard in SHARDS:
+        if not os.path.exists(shard):
+            continue
+        dup = sorted(parse_bib(shard, only=set(own)))
+        if dup:
+            problems.append(f"defined in both custom.bib and {os.path.basename(shard)}: "
+                            f"{', '.join(dup)}")
+
+    orphans = sorted(set(own) - cited)
     if orphans:
         print(f"note: {len(orphans)} entry/entries never cited: {', '.join(orphans)}\n")
 
@@ -244,7 +295,8 @@ def main():
                 print(f"  {key:38s} UNVERIFIED")
             continue
         compare(key, e, got, source)
-        print(f"  {key:38s} ok via {source}")
+        where = f" [{e['_shard']}]" if "_shard" in e else ""
+        print(f"  {key:38s} ok via {source}{where}")
 
     print(f"\n{checked} entries verified against a primary record")
     if problems:

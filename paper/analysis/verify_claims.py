@@ -25,6 +25,7 @@ AT = json.load(open(os.path.join(C.OUT_DIR, "attestation_numbers.json")))
 SV = json.load(open(os.path.join(C.OUT_DIR, "synthetic_vs_human.json")))
 SL = json.load(open(os.path.join(C.OUT_DIR, "sinllama.json")))
 PW = json.load(open(os.path.join(C.OUT_DIR, "power.json")))
+PQ = json.load(open(os.path.join(C.OUT_DIR, "piqa_rerun.json")))
 TF = json.load(open(os.path.join(C.OUT_DIR, "tokenizer_fertility.json")))
 IT = pd.read_csv(os.path.join(C.OUT_DIR, "intrinsic_pooled.csv"))
 EX = pd.read_csv(os.path.join(C.OUT_DIR, "extrinsic_main.csv"))
@@ -215,12 +216,32 @@ eq("5.3: Qwen2-7B off rate u", NE["sold_off_rate_shift"]["Qwen2-7B-Instruct"]["u
 eq("5.3: Qwen2-7B off rate r", NE["sold_off_rate_shift"]["Qwen2-7B-Instruct"]["r"], 23.4, 0.05)
 eq("5.3: Hormoz off rate u", NE["sold_off_rate_shift"]["Hormoz-8B"]["u"], 9.8, 0.05)
 eq("5.3: Hormoz off rate r", NE["sold_off_rate_shift"]["Hormoz-8B"]["r"], 20.7, 0.05)
-eq("5.4: piqa discordant median", NE["piqa_median_discordant_pairs"], 36, 0)
-eq("5.4: piqa sign test p", NE["piqa_sign_test"]["p"], 0.18, 5e-3)
-eq("5.4: piqa n positive", NE["piqa_sign_test"]["n_positive"], 7, 0)
-eq("5.4: piqa n negative", NE["piqa_sign_test"]["n_negative"], 2, 0)
-eq("5.4: piqa pooled gap", NE["piqa_pooled_competent"]["gap"], 3.8, 0.05)
-eq("5.4: piqa pooled p", NE["piqa_pooled_competent"]["p"], 0.14, 5e-3)
+# Global PIQA is the re-run with the item-type-aware instruction; the earlier
+# prompt's numbers stay in extrinsic_numbers.json for the comparison only.
+eq("5.4: piqa items", PQ["n_items"], 100, 0)
+eq("5.4: piqa question items", PQ["item_forms"]["question_answer"], 40, 0)
+eq("5.4: piqa completion items", PQ["item_forms"]["paragraph_completion"], 60, 0)
+eq("5.4: piqa discordant median", PQ["median_discordant_pairs"], 36, 0)
+eq("5.4: piqa best native acc", max(r["u_acc"] for r in PQ["per_model"]), 58.0, 0.05)
+eq("5.4: piqa best native p", min(r["u_p_above"] for r in PQ["per_model"]), 0.055, 5e-3)
+eq("5.4: piqa parseable", PQ["n_parseable"], 10, 0)
+eq("5.4: piqa n drop", PQ["parseable_summary"]["n_drop"], 4, 0)
+eq("5.4: piqa n rise", PQ["parseable_summary"]["n_rise"], 4, 0)
+eq("5.4: piqa n tie", PQ["parseable_summary"]["n_tie"], 2, 0)
+eq("5.4: piqa sign test n moved", PQ["sign_test"]["n_moved"], 8, 0)
+eq("5.4: piqa sign test p", PQ["sign_test"]["p"], 1.00, 5e-3)
+eq("5.4: piqa pooled gap", PQ["pooled_parseable"]["gap"], -0.1, 0.05)
+eq("5.4: piqa pooled CI lo", PQ["pooled_parseable"]["gap_lo"], -3.6, 0.05)
+eq("5.4: piqa pooled CI hi", PQ["pooled_parseable"]["gap_hi"], 3.3, 0.05)
+eq("5.4: piqa competent", PQ["n_competent"], 0, 0)
+eq("app H: piqa sig after holm", PQ["n_sig_holm"], 1, 0)
+eq("app H: piqa lamini gap", min(r["gap"] for r in PQ["per_model"]), -42.0, 0.05)
+eq("app H: piqa question-form gap", PQ["by_item_form"][0]["gap"], 1.0, 0.05)
+eq("app H: piqa completion-form gap", PQ["by_item_form"][1]["gap"], -0.83, 0.05)
+eq("app H: piqa cultural gap", PQ["by_cultural"][0]["gap"], 1.17, 0.05)
+eq("app H: piqa non-cultural gap", PQ["by_cultural"][1]["gap"], -4.35, 0.05)
+eq("app H: piqa max invalid excl lamini",
+   max(r["r_invalid"] for r in PQ["per_model"] if r["model"] != "LaMini-GPT-1.5B"), 9.0, 0.05)
 eq("5.5: unicode tok/word", NI["fertility"]["unicode_tok_per_word"]["median"], 9.5, 0.05)
 eq("5.5: romanized tok/word", NI["fertility"]["romanized_tok_per_word"]["median"], 2.09, 5e-3)
 eq("5.5: token ratio median mmlu", NE["token_ratio"]["sinhala_mmlu"]["median"], 0.48, 5e-3)
@@ -373,9 +394,6 @@ is_("app A: T1 has no invalid output on mmlu",
 eq("app A: T3 lead on sold",
    100 * (P["winners"]["sold"]["best_overall_acc"] - P["winners"]["sold"]["t1_overall_acc"]),
    1.4, 0.05)
-eq("app A: T3 lead on piqa",
-   100 * (P["winners"]["global_piqa"]["best_overall_acc"]
-          - P["winners"]["global_piqa"]["t1_overall_acc"]), 7.2, 0.05)
 eq("app A: pilot overlap pct", P["mmlu_pilot_overlap_pct"], 0.3, 0.05)
 eq("app A: pilot overlap items", P["mmlu_pilot_items_in_eval_set"], 20, 0)
 
@@ -398,7 +416,7 @@ eq("4.5: adapted d_bpb", SL["d_bpb"]["adapted"], 2.743, 5e-4)
 eq("4.5: unicode bpb gain", -SL["gains"]["unicode"]["bpb_delta"], 0.528, 5e-4)
 eq("4.5: romanized bpb gain", -SL["gains"]["romanized"]["bpb_delta"], 0.233, 5e-4)
 eq("4.5: gain asymmetry", SL["adaptation_asymmetry"], 2.3, 0.05)
-eq("abstract: adapted ppl factor", SL["gains"]["unicode"]["ppl_factor"], 23.0, 0.05)
+eq("4.5: adapted ppl factor", SL["gains"]["unicode"]["ppl_factor"], 23.0, 0.05)
 is_("4.5: adapted is best of 32 by unicode bpb",
     SL["ranks_among_32"]["u_bpb"] == 1)
 is_("4.5: adapted is worst of 32 by unicode ppl",
@@ -434,8 +452,11 @@ eq("3.3 reply: rho(params,bpb) with adapted",
 # ------------------------------------------------------- power, section 5.4 ----
 eq("5.4: piqa MDE", PW["global_piqa"]["mde_points"], 17.3, 0.05)
 eq("5.4: mmlu MDE", PW["sinhala_mmlu"]["mde_points"], 1.74, 5e-3)
-eq("5.4: items needed for the pooled piqa gap",
-   PW["global_piqa"]["items_needed_for_observed_pooled_gap"], 1970, 0)
+eq("app H: power at the reference gap", PW["global_piqa"]["power_at_reference_gap"],
+   0.126, 5e-3)
+eq("app H: items needed for the reference gap",
+   PW["global_piqa"]["items_needed_for_reference_gap"], 825, 0)
+eq("5.4: reference gap points", PW["reference_gap_points"], 6.0, 0.05)
 eq("5.4: largest mmlu gap", PW["largest_mmlu_gap_points"], 15.5, 0.05)
 eq("5.4: piqa median discordant pairs",
    PW["observed"]["global_piqa"]["median_discordant_pairs"], 36, 0)

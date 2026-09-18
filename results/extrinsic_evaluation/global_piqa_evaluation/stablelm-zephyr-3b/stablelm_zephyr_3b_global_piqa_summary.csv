@@ -1,0 +1,2 @@
+Model,N,Unicode Acc (%),Romanized Acc (%),Gap (pp),Unicode Invalid (%),Romanized Invalid (%),Unicode MCQ Acc (%),Romanized MCQ Acc (%),Unicode COMP Acc (%),Romanized COMP Acc (%)
+stablelm-zephyr-3b,100,46.0,53.0,-7.0,0.0,0.0,50.0,52.5,43.33,53.33

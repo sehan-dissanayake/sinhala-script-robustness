@@ -1,0 +1,2 @@
+Model,N,Unicode Acc (%),Romanized Acc (%),Gap (pp),Unicode Invalid (%),Romanized Invalid (%),Unicode MCQ Acc (%),Romanized MCQ Acc (%),Unicode COMP Acc (%),Romanized COMP Acc (%)
+Llama-3.1-8B-Instruct,100,54.0,48.0,6.0,0.0,0.0,40.0,40.0,63.33,53.33
