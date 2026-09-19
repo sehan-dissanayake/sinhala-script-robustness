@@ -533,9 +533,15 @@ they know.
 \section{Downstream Consequences}
 \label{sec:extrinsic}
 
-Table~\ref{tab:main} reports every checkpoint on SinhalaMMLU and SOLD. Global PIQA is in Appendix Table~\ref{tab:piqa}, since at 100 items it supports a much coarser comparison than the other two, and \S\ref{sec:piqa} discusses it. 
+\nds{Summary of what u do here is needed in this intro para. Do not start off with a table reference. That destroys clarity. When referring to appendix u should tell which appendix section. eg: in Table x in Appendix A.}\stu{Fixed sir. This section reports what romanization costs once a checkpoint has to act on Sinhala text rather than only predict it next-token: multiple choice knowledge on SinhalaMMLU, offensive language detection on SOLD, and physical commonsense on Global PIQA, each scored under the same paired design as \S\ref{sec:intrinsic}. We also named the appendix section everywhere below, not just the table or figure number.}
 
-\nds{no PIQA because all failed?}\stu{Now all 11 models are fully reported on Global PIQA in Table~\ref{tab:piqa}. In Section~\ref{sec:piqa}, we now included why 100 items is small to resolve a performance gap sir.}
+This section reports what romanization costs once a checkpoint has to act on Sinhala
+text rather than only predict it next-token: multiple choice knowledge on SinhalaMMLU,
+offensive language detection on SOLD, and physical commonsense on Global PIQA, each
+scored under the same paired design as \S\ref{sec:intrinsic}. Table~\ref{tab:main}
+reports every checkpoint on SinhalaMMLU and SOLD. Global PIQA is smaller and coarser, so
+we report it separately, in Table~\ref{tab:piqa} in Appendix~\ref{sec:extradetail}, and
+discuss it in \S\ref{sec:piqa}.
 
 \subsection{Multiple choice knowledge}
 
@@ -640,20 +646,24 @@ by difficulty cells and pooling the competent cohort within each gives a slope o
 (95\% CI 0.36 to 0.63, leave one cell out 0.43 to 0.50, $R^2 = 0.75$), again below 1.0 at
 $p = 1.5 \times 10^{-6}$. The two views aggregate the same generations, so they are not
 independent, but they agree on the shape and differ on the magnitude, with content level
-transfer about twice model level transfer (Appendix Table~\ref{tab:flatten}).
+transfer about twice model level transfer (Table~\ref{tab:flatten} in
+Appendix~\ref{sec:extradetail}).
 
-The strata agree (Appendix Table~\ref{tab:strata}). Loss falls monotonically with
+The strata agree (Table~\ref{tab:strata} in Appendix~\ref{sec:extradetail}). Loss falls monotonically with
 difficulty, 7.9 points on Easy items, 6.2 on Medium and 4.3 on Hard, with a significant
 interaction in the item clustered logistic fit ($p < 0.001$), because models sit nearer
 chance on hard items in both conditions. By domain it runs from 10.3 points on Social
 Science, where Sinhala script accuracy is highest, to 4.1 on Humanities, the largest
-domain. Slices where the models are weaker to begin with reveal smaller script effects.
+domain. Slices where the models are weaker to begin with reveal smaller script effects,
+which is the same pattern as the levels regression above: romanization costs the most
+where a checkpoint had the most to lose, and close to nothing where it was already near
+chance.
 
 \subsection{Offensive language detection}
 
 On SOLD the choice of metric changes the conclusion. Accuracy falls by 1.6 to 11.3
 points against a 59.4\% majority baseline, a modest change. Matthews correlation gives a
-different picture (Appendix Figure~\ref{fig:floor}): Qwen3.5-9B goes from 0.280 to 0.069,
+different picture (Figure~\ref{fig:floor} in Appendix~\ref{sec:fullintrinsic}): Qwen3.5-9B goes from 0.280 to 0.069,
 keeping 24\% of its signal, Qwen2-7B-Instruct from 0.148 to 0.042, keeping 29\%, and
 Llama-3.1-8B-Instruct from 0.259 to 0.105, keeping 40\%. Five of the six checkpoints with
 a real Sinhala script signal lose significantly under Holm correction and the median keeps
