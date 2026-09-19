@@ -105,30 +105,27 @@ Evidence from Small Language Models}
 
 \begin{abstract}
 Sinhala is written online in two ways. Formal text uses the Sinhala script, while
-comments, chat and social media are written in Romanized Sinhala, in Latin
-letters\nds{The types should precede the listing or it looks like types are only relevant to latter}\stu{fixed it sir}. A
-recent benchmark reported that language models are roughly 312 times worse on
-Romanized than on Sinhala script text, and that parameter count predicts ability in
-neither script. Both rest on perplexity, which is not comparable across
-tokenizers. We remeasure 31 open weight
-checkpoints (350M to 14.7B) with bits per byte, matching the published perplexities to a
+comments, chat and social media are in Romanized Sinhala, in Latin
+letters\nds{The types should precede the listing or it looks like types are only relevant to latter}\stu{fixed it sir}.
+A recent benchmark reported that language models are about 312 times worse on Romanized
+text than on the script, and that model size predicts neither. Both come from
+perplexity, which counts tokens and cannot be compared across models that cut text up
+differently. We measure 31 open models (350M to 14.7B) again in bits per byte, which
+counts bytes instead, reproducing the published perplexities to a
 median of 0.05\%\nds{exactly?}\stu{Not exactly sir, and we have replaced the word and added the difference. Appendix~\ref{sec:repro24}
-now says it clearly and Table~\ref{tab:shared24} lists every comparison.}. The reported
-ratio then splits in two, a factor of 21 from identical content being cut into more
-tokens and a factor of 24 from a real rise in per-byte loss, and parameter count does
-predict Sinhala script ability. We then report the first downstream evaluation of
-Sinhala script variation, over 9{,}479 items, three tasks and eleven instruction tuned
-checkpoints. A 22.4 point spread in Sinhala script accuracy narrows to 6.7 under
-romanization, and on offensive language detection accuracy moves by a few points while
-Matthews correlation loses over half its value. Length is not the cause, because these
-tokenizers fall back to byte-level pieces on the Sinhala script, so the Romanized prompt
-is \emph{shorter} in tokens
-for every checkpoint\nds{What? How?}\stu{Sir most of these tokenizers have no
+now says it clearly and Table~\ref{tab:shared24} lists every comparison.}. The gap then
+divides in two, a factor of 21 that is only the token count difference and a factor
+of 24 that is a real loss. With the unit fixed, larger models do better on Sinhala
+script. We then test eleven instruction tuned models on 9{,}479 items across three
+tasks. Differences of 22.4 points between models on Sinhala script shrink to 6.7 once
+the text is romanized, and on offensive language detection accuracy barely moves while
+Matthews correlation loses half its value. Longer input is not the reason, because the
+Romanized prompt is \emph{shorter} in tokens
+for every model\nds{What? How?}\stu{Sir most of these tokenizers have no
 Sinhala pieces and fall back to byte level, which generate more tokens per Sinhala
 word than the same word romanized. So romanizing makes the prompt
 shorter. This is now stated in the
-abstract and measured per checkpoint in Table~\ref{tab:invalidtau}.}. Absolute Sinhala script bits per byte tracks the size of
-that gap but the bits-per-byte \emph{gap} does not.
+abstract and measured per checkpoint in Table~\ref{tab:invalidtau}.}.
 \end{abstract}
 
 % =============================================================================
@@ -822,7 +819,7 @@ should be measured in.
 
 One template, T1 below, is used for every dataset and both script conditions. T2
 and T3 were the pilot alternatives (\S\ref{sec:prompting}) and are given in full here.
-\texttt{\{n\}} is the item's option count and \texttt{\{domain\}}
+In them, \texttt{\{n\}} is the item's option count and \texttt{\{domain\}}
 is the domain name where the dataset provides one.
 
 Every instruction is in English while the item is in Sinhala, in both script
@@ -1123,14 +1120,17 @@ which accounts for about half of its Romanized count. Tokenizer work for Sinhala
 therefore effective on the script it targets and leaves the Latin script register where
 it was.
 
+% tabcolsep is 2pt and the last heading is abbreviated because at 4pt and
+% "Romanized" the tabular is wider than the column and bleeds into the right
+% margin, which aclpubcheck reports as an error.
 \begin{table}[t]
 \centering\small
-\setlength{\tabcolsep}{4pt}
+\setlength{\tabcolsep}{2pt}
 \begin{tabular}{@{}lrcc@{}}
 \toprule
 & & \multicolumn{2}{c}{\textbf{tokens / word}} \\
 \cmidrule(lr){3-4}
-\textbf{Tokenizer} & \textbf{vocab} & Sinhala & Romanized \\
+\textbf{Tokenizer} & \textbf{vocab} & Sinhala & Rom. \\
 \midrule
 \rows{tables/tab_tokenizers.tex}
 \bottomrule
