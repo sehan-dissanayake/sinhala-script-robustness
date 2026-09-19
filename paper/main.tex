@@ -92,8 +92,7 @@
 % the camera-ready version.
 \newcommand{\anonrepo}{\url{https://anonymous.4open.science/r/sinhala-script-robustness-llm}\nds{Great that you are giving this here. But you need to go though it and make sure there are no names or references to us. For example, I found my name in a folder.}\stu{Corrected it sir.}}
 
-\title{Script Fragility in Sinhala: Tokenizer-Independent and Downstream\\
-Evidence from Small Language Models}
+\title{Does Script Choice Matter? A Study of Romanized and Unicode Sinhala on Small Language Models}
 
 \author{Anonymous ACL submission}
 
@@ -277,7 +276,7 @@ condition.
 Downstream we use every available item with no sampling. SinhalaMMLU is a
 6{,} 879 item curriculum aligned multiple choice benchmark in the style of MMLU
 \citep{hendrycks-etal-2021-mmlu}, over six domains and three difficulty levels, and 2{,}145
-of its items have five options rather than four, so guessing scores 23.4\%.\footnote{The public Hugging Face
+of its items have five options rather than four, so guessing scores 23.4\%.\footnote{The public HuggingFace
 release contains a 1{,}851 item sample. We obtained the full set from the
 authors, who ask that it not be redistributed, so we release our transformation
 code and item identifiers rather than the items
@@ -516,7 +515,7 @@ which falls from 311 to 8.7, by far the smallest in the pool, while the real per
 widens from 2.447 to 2.743 bits, exceeded by only one of the 31. The adaptation bought
 0.528 bits per byte on the Sinhala script and 0.233 on Romanized text, favoring the formal alphabet over how most people actually type. The standard published metric falsely makes it look like the most balanced model, but the bits per byte metric proves that it is one of the worst (Appendix~\ref{sec:sinllamadetail}).
 
-\subsection{Comparison with $n$-gram models}
+\subsection{Comparison with $\mathbf{n}$-gram models}
 
 Relative comparisons leave open whether these models are merely worse on Romanized text
 or close to uninformed about it, so we fit add-1 character $n$-gram references on the
@@ -534,8 +533,9 @@ they know.
 \section{Downstream Consequences}
 \label{sec:extrinsic}
 
-Table~\ref{tab:main} reports every checkpoint on SinhalaMMLU and SOLD. Global PIQA is in Appendix Table~\ref{tab:piqa}, since at 100 items it supports a much
-coarser comparison than the other two, and \S\ref{sec:piqa} discusses it\nds{no PIQA because all failed?}\stu{Now all 11 models are fully reported on Global PIQA in Table~\ref{tab:piqa}. In Section~\ref{sec:piqa}, we now included why 100 items is small to resolve a performance gap sir.}.
+Table~\ref{tab:main} reports every checkpoint on SinhalaMMLU and SOLD. Global PIQA is in Appendix Table~\ref{tab:piqa}, since at 100 items it supports a much coarser comparison than the other two, and \S\ref{sec:piqa} discusses it. 
+
+\nds{no PIQA because all failed?}\stu{Now all 11 models are fully reported on Global PIQA in Table~\ref{tab:piqa}. In Section~\ref{sec:piqa}, we now included why 100 items is small to resolve a performance gap sir.}
 
 \subsection{Multiple choice knowledge}
 
@@ -950,7 +950,7 @@ prompting regime (\S\ref{sec:prompting}). At 20 items per dataset none of these
 differences is resolvable, which is why the pilot is treated as a format check. Accuracy
 is not comparable across the three blocks: chance is 23.4\% on SinhalaMMLU, 50\% on SOLD
 and 50\% on Global PIQA, so T1's 44.7\% on Global PIQA is below its baseline while 26.7\%
-on SinhalaMMLU is above its own. \protect\nds{So by raw accuracy you do better at PIQA than MMLU.But you reject PIQA because it does not meet the stat test?}\protect\stu{Actually sir the raw numbers are misleading because the guessing baselines are different. 
+on SinhalaMMLU is above its own. \protect\nds{So by raw accuracy you do better at PIQA than MMLU. But you reject PIQA because it does not meet the stat test?}\protect\stu{Actually sir the raw numbers are misleading because the guessing baselines are different. 
 Global PIQA only has 2 choices, so random guessing gives 50\% meaning 44.7\% is worse than flipping a coin. 
 SinhalaMMLU has 4 to 5 choices, so guessing gives 23.4\% meaning 26.7\% is actually beating chance. Updated the caption to make this clear too. Also we didn't throw out PIQA sir. All 11 models are fully reported in Table~\ref{tab:piqa}. 
 We just don't claim a proven script penalty from it, because 100 questions is too small to tell if a 3 point gap is real or just random sir.}}
@@ -1068,7 +1068,7 @@ still holds exactly, but a ratio that is the residue of two much larger opposing
 quantities is not a quantity to interpret, which is itself an argument against reading
 the ratio at all. Second, SinLlama was continually pre-trained on web crawled Sinhala,
 and our intrinsic corpus is Sinhala text from the web, so we cannot rule out that some
-of these sentences or near duplicates were in its training data,which would inflate its
+of these sentences or near duplicates were in its training data, which would inflate its
 Sinhala script advantage and not its Romanized one, so it does not affect the direction
 of the asymmetry. Third, \texttt{meta-llama/Meta-Llama-3-8B} is gated, and our run loaded
 the widely used ungated mirror of it. The four \texttt{safetensors} shards carry the same
@@ -1120,9 +1120,6 @@ which accounts for about half of its Romanized count. Tokenizer work for Sinhala
 therefore effective on the script it targets and leaves the Latin script register where
 it was.
 
-% tabcolsep is 2pt and the last heading is abbreviated because at 4pt and
-% "Romanized" the tabular is wider than the column and bleeds into the right
-% margin, which aclpubcheck reports as an error.
 \begin{table}[t]
 \centering\small
 \setlength{\tabcolsep}{2pt}
@@ -1130,7 +1127,7 @@ it was.
 \toprule
 & & \multicolumn{2}{c}{\textbf{tokens / word}} \\
 \cmidrule(lr){3-4}
-\textbf{Tokenizer} & \textbf{vocab} & Sinhala & Rom. \\
+\textbf{Tokenizer} & \textbf{vocab} & Sinhala & Romanized \\
 \midrule
 \rows{tables/tab_tokenizers.tex}
 \bottomrule
@@ -1395,7 +1392,7 @@ parallel corpus, 485 of the 500 sentences have matching token counts, giving
 once runs of the same Latin vowel are collapsed, which is the one convention our
 transliterator applies uniformly and people apply erratically. The remaining
 27.8\% differ in some other way, and Table~\ref{tab:mismatch} lists the most
-frequent. They are dominated by vowel reduction and abbreviation.People write
+frequent. They are dominated by vowel reduction and abbreviation. People write
 \rom{mn} for our \rom{man} and \rom{dan} for our \rom{daen}. English loanwords are
 a smaller but more consequential class, concentrated in the sentences that diverge
 most, where a person writes \rom{phone}, \rom{video} or \rom{tv} and our
@@ -1427,7 +1424,7 @@ spellings are therefore attested about as often as human typing is.
 for that Sinhala word in the Swa-bhasha lexicon. ``tokens'' counts the word
 tokens the lexicon covers and ``cov.'' the share of all Sinhala word tokens that
 is. ``norm.'' collapses runs of the same Latin vowel on both sides. The first row
-is the reference point.It applies the same measure to text native speakers
+is the reference point. It applies the same measure to text native speakers
 typed.}
 \label{tab:attest}
 \end{table}
