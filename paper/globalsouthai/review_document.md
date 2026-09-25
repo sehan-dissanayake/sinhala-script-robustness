@@ -1,189 +1,177 @@
-# Review document — GlobalSouthAI @ NeurIPS 2026 camera-ready
+# Review document — GlobalSouthAI camera-ready
 
-Internal critical read of `paper/globalsouthai/main.tex` (accepted: 8 / 7 / 7, all confidence 4)
-ahead of the camera-ready. Reviewer claims have been re-derived from the frozen outputs in
-`paper/analysis/out/`; line numbers are `main.tex` as submitted. Tags: **[B]** blocking,
-**[F]** fix, **[C]** check/decide, **[D]** decline with a stated reason.
+Internal read of `paper/globalsouthai/main.tex` before the camera-ready. Accepted 8 / 7 / 7,
+all confidence 4. Line numbers are `main.tex` as submitted. Every number below was re-derived
+from `results/intrinsic_evaluation/*.csv` and `paper/analysis/out/`.
 
 ## Overall
 
-No reviewer asks for a new experiment as a condition of acceptance. One new experiment is
-worth doing anyway (see Appendices). The two substantive problems are both about how §3
-states its result, not about whether it holds.
+No reviewer makes a new experiment a condition of acceptance. The downstream results, the
+scale reversal, the flattening, the SOLD metric result and the reproduction of the published
+perplexities all hold unchanged. The problem is confined to §3, where the decomposition is
+stated three different ways that are each defective, and two of three reviewers caught the
+first of the three.
 
-**[B] The 21× / 24× split does not compose, and two reviewers caught it independently.**
-Verified on `out/ppl_decomposition.csv` for the published 24 checkpoints: median total gap
-8.29 bits (313×), median normalizer 4.37 bits (20.7×), median per-byte loss 4.555 bits
-(23.5×). But 4.37 + 4.555 = 8.925, not 8.29, and 20.7 × 23.5 ≈ 486. Equation 1 is exact
-*per checkpoint* (identity error 5e-15); three separately taken medians are not. Reviewer
-ghL4's proposed repair works — aggregating in log space with arithmetic means gives
-14.76 × 22.75 = 335.8× exactly.
+Both reviewers are right that the medians do not compose. On the published 24: total 8.29 bits
+(312x), normaliser 4.37 (20.7x), per-byte loss 4.555 (23.5x). But 4.37 + 4.555 = 8.925, not
+8.29, and 20.7 x 23.5 = 486, not 312. Equation 1 is exact per checkpoint (residual 5e-15);
+three separately taken medians are not. Worth knowing why the guard rail missed it:
+`verify_claims.py:307-312` checks all three medians individually, so each is true and the
+composition implied by the prose is never tested. The comment at
+`stats_robustness.py:193`, "the reported ratio factorises into these two", is the same error
+inside the code.
 
-**[B] The split *share* is unit-dependent, which is worse than ghL4's phrasing of it.** ghL4
-calls bits per byte "not a unique division" between artifact and real loss. It is sharper than
-that. The identity has the form (loss per unit) × (units per token) for *any* unit, so it can
-be rewritten over words — exact there too (error 3.6e-15) — and under the word unit the median
-normalizer share is **94%** with a mean real-loss factor of **1.04**, against 39–48% and ~23×
-under bytes. The "roughly half the headline is the unit of account" framing is therefore itself
-an artifact of choosing bytes, and it collides with ghL4 #2, which asks us to promote bits per
-word to the principal cross-script estimate. **These two asks cannot be answered
-independently.** Recommended line: keep the decomposition as an accounting under UTF-8, state
-the normalizer's median *share* instead of a factor pair, and lead the real-degradation claim
-with the two unit-clean numbers we already have — 2.14 bits per byte (4.4×) and 1.11 bits per
-word (2.2×). The word framing halves the headline real loss, so this is a framing decision, not
-a mechanical edit. **[C]**
+Two further problems that nobody flagged and that matter more.
 
-Minor throughout: `normaliser` (l427, l428, l459) vs `normalizer` (l181, l191, l328, l466);
-`favour`/`favours` in an otherwise -ize document.
+Dimensions: the loss term is (bytes per token) x (change in bits per byte), so its units are
+bits per *token*. The "factor of 24" is therefore a per-token quantity, which is why it sits so
+comfortably beside the per-token 312x. The actual per-byte figure is 2.16 bits per byte, a
+factor of 4.5. So "a factor of 24 is a real rise in per-byte loss" (l69, l110) attaches a
+per-token magnitude to a per-byte quantity.
+
+Units: bits per byte does not remove the normaliser, it replaces a token-count normaliser with
+a byte-count one. Exactly, and verified to 8.9e-16 across all 31 checkpoints,
+bpb_r / bpb_u = (NLL_r / NLL_u) x (Bytes_u / Bytes_r), and that second factor has a median of
+2.30 purely because Sinhala UTF-8 spends 2.65 bytes per character against 1.00 for Latin.
+Byte counts are not matched across a pair. Word counts are, exactly, in all 31 pairs. So the
+one encoding-free and tokenizer-free statement available is the total NLL ratio, and on the
+published 24 that is 1.023 — the median checkpoint assigns 2.3% more loss to the identical
+content, and 12 of the 24 assign *less*. Reviewer ghL4's point 2 is this, understated.
+
+The consequence is that l192's "Almost exactly half of the headline is the unit of account" is
+too modest rather than too strong. On the pool the claim is about, essentially all of it is.
+This is a better paper, not a worse one: the strongest single illustration available is that
+SmolLM3-3B carries the largest reported degradation in the pool at 769x while assigning 4%
+*less* total loss to the Romanized text, whereas Gemma-2-9B, the only checkpoint genuinely
+much worse on Romanized input at +46%, reports a middling 357x. Recommend rebuilding §3 around
+the unit-free ratio, keeping Equation 1 as an accounting under UTF-8, and quoting the
+normaliser's median *share* instead of a factor pair. Nothing downstream changes.
+
+Various British and American spellings mixed throughout: normaliser (l427, l428, l459) against
+normalizer (l181, l191, l328, l466); favour and favours in an otherwise -ize document.
 
 ## Abstract and Introduction
 
-- l68–69, l110–111: the factor pair. Drop "exactly in two" — the identity is exact, the quoted
-  split is not. **[B]**
-- l71, l112 "first downstream evaluation of Sinhala script variation": ghL4 #3 and fYs9 both
-  ask the novelty claim to name the Romanized side as automatic. Cheapest honest fix is
-  "…with automatically Romanized inputs", in both places. **[F]**
-- Abstract leads with the 0.22 slope (n = 10 heterogeneous checkpoints) rather than 0.451
-  (n = 16 cells, item-weighted 0.476). sWb1 #2 and fYs9 both flag this; sWb1 is explicit that
-  the conservative number is strong enough. Give both or lead with the cell-level fit. **[F]**
-  Cost note: the abstract is 197 words against the 200-word cap the earlier commit enforced,
-  so this is a swap, not an insert.
+l68-69, l110-111: the factor pair, as above. Drop "exactly in two" — the identity is exact, the
+split as quoted is not.
+l71, l112: "first downstream evaluation of Sinhala script variation" should say the Romanized
+side is automatically produced. Both ghL4 and fYs9 ask for this and it costs four words.
+Abstract leads with the 0.22 slope over 10 heterogeneous checkpoints rather than 0.451 over 16
+cells (item-weighted 0.476). sWb1 and fYs9 both flag it and sWb1 says outright that the
+conservative number is strong enough. Give both. Note the abstract is at 197 of its 200-word
+cap, so this is a swap, not an insert.
 
-## §2 Setup
+## Setup
 
-- l139, l764 "755,000 human-romanized reference items": 4,397 + 450,587 + 300,000 = 754,984,
-  of which the 300,000 are machine-augmented. Human-supplied is ~455,000. ghL4 #4 is correct;
-  say "755,000 reference items, 455,000 of them human-supplied". **[F]**
-- ghL4 #4 also asks whether our conventions were developed on the Swa-bhasha data later used
-  to validate them. They were not, and we can prove it rather than assert it: the mapping
-  tables in `src/transliteration/phonetic.py` were committed 2026-07-15/17, the Swa-bhasha
-  reference pipeline landed 2026-07-26, and the only subsequent commit to that file is CLI
-  plumbing. One sentence. **[F]**
-  In the same breath, disclose the one real dependency we do have:
-  `src/method_evaluation/derive_nisansa_w.py` builds the `nisansa_w` comparator from a
-  v-share statistic measured on the same Swa-bhasha corpus used for scoring. It is candid in
-  the code and absent from the paper. It affects a baseline, not our method, but it is exactly
-  what ghL4 is asking about and is better volunteered. **[F]**
-- l152 "six have a real signal on SOLD" is wrong. The screen yields **five** on SOLD. **[B]**
+l139, l764: "755,000 human-romanized reference items". The three corpora are 4,397 + 450,587 +
+300,000 = 754,984, and the 300,000 are machine-augmented, so human-supplied is about 455,000.
+ghL4 is right that the label overstates it.
+l139: ghL4 asks whether our digraph conventions were developed on the Swa-bhasha data later
+used to validate them. They were not, and the repository proves it rather than asserting it —
+the mapping tables in `src/transliteration/phonetic.py` were committed 2026-07-15 and 07-17,
+the Swa-bhasha pipeline landed 07-26, and the only later commit to that file is CLI plumbing.
+One sentence. In the same place, volunteer the one real dependency we do have:
+`src/method_evaluation/derive_nisansa_w.py` builds the `nisansa_w` comparator from a v-share
+statistic measured on the same corpus used for scoring. It affects a baseline, not our method,
+it is candid in the code and absent from the paper, and it is better disclosed than found.
+l152: "six have a real signal on SOLD" is wrong. The screen returns five. Hormoz-8B is excluded
+at a 90.2% single-option share against a >90% rule, that is, by two tenths of a point.
 
-## §3 Perplexity was measuring the tokenizer
+## Perplexity was measuring the tokenizer
 
-- l191–192 as above. l192 "Almost exactly half" is the 48% median normalizer share on the
-  published 24 and is correct; l427's 39% is the same quantity over all 31. Currently they read
-  as if one supersedes the other. State both as shares, with their pools. **[F]**
-- Keep l194's "2.14 bits per byte, a factor of 4.4" — it is the one statement in §3 that is
-  unit-clean and survives everything above.
+Rebuild per Overall. l194's "2.14 bits per byte, a factor of 4.4" is the one statement in the
+section that survives, but state it as 4.4x less probability per byte so it is not read beside
+the per-token 312x.
+l192 and l427 are the same quantity on two pools, 48% on the published 24 and 39% over all 31,
+and currently read as though one supersedes the other. Give both with their pools.
 
-## §4 Model performance under Romanized input
+## Model performance under Romanized input
 
-- **Cohorts are inconsistent, and ghL4 #5 is right.** Three different sets are all called "the
-  competent checkpoints": the MMLU screen gives six; the SOLD screen gives five (Hormoz-8B is
-  excluded at a 90.2% single-option share against a `> 90%` rule — by two tenths of a point);
-  the flattening regression at l236 uses all **ten** parseable checkpoints and therefore does
-  not depend on the competence screen at all. Verified: slope is 0.221 on the ten and 0.123 on
-  the competent six. Label every cohort at the point of use. **[B]**
-- l244 "Five of the six lose significantly" and "median keeps 45%" are computed over the six
-  *MMLU*-competent checkpoints, while the pooled SOLD gap (n = 12,500) and the appendix
-  attestation terciles use the five *SOLD*-competent ones. Same sentence region, two
-  populations. **[B]**
-- sWb1's two questions on the slope have answers we can give now: item weighting is undefined
-  at checkpoint level, because all ten checkpoints score the same 6,879 items, so the weights
-  are equal; and dropping the extreme low and high Sinhala-script checkpoints gives 0.168 —
-  it moves *away* from 0.45, not toward it. Report both. Volunteering the second is more
-  persuasive than leaving it to be found. **[F]**
-- **Competence-screen sensitivity (sWb1 #4) is cheap and should be done.** CPU-only from
-  frozen per-item CSVs, but the thresholds are hard-coded literals at
-  `paper/analysis/stats_extrinsic.py:130` and `:132`; lift them into `argparse` first.
-  Precomputed from the stored screen statistics: the MMLU six are **identical** at α = 0.001,
-  0.01 and at both an 80% and a 90% degeneracy rule; α = 0.05 adds Zephyr-7B-beta
-  (p = 0.045); a 95% rule adds SmolLM3-3B (93.3%). SOLD is the sensitive one, on Hormoz-8B's
-  0.2-point margin. A short sweep kills the "the screen was tuned" reading outright on MMLU
-  and is honest about SOLD. **[F]**
-- l230: "Qwen3.5-9B falling from 44.1% to 28.7% (95% CI 14.0 to 16.9)" — the interval is on
-  the 15.5-point difference, not on either level. Reword. **[F]**
+Three different sets are all called "the competent checkpoints". The MMLU screen returns six,
+the SOLD screen returns five, and the flattening regression at l236 uses all ten parseable
+checkpoints and so does not depend on the competence screen at all. The slope is 0.221 on the
+ten and 0.123 on the competent six. Label each cohort where it is used; this is ghL4's point 5
+and it is correct.
+l244: "Five of the six lose significantly" and "median keeps 45%" are computed over the six
+*MMLU*-competent checkpoints, while the pooled SOLD gap (n = 12,500) and the appendix
+attestation terciles use the five *SOLD*-competent ones. Same paragraph, two populations.
+sWb1's two questions on the slope both have answers now. Item weighting is undefined at
+checkpoint level because all ten score the same 6,879 items, so the weights are equal; and
+dropping the extreme high and low Sinhala-script checkpoints gives 0.168, which moves away from
+the cell-level 0.45 rather than toward it. Report both — the second is more persuasive
+volunteered than found.
+Competence sweep: cheap, CPU-only from the frozen CSVs, and it should be done, but the
+thresholds are literals at `stats_extrinsic.py:130` and `:132` and want lifting into argparse
+first. The stored screen statistics already give the answer: the MMLU six are identical at
+alpha 0.001 and 0.01 and at both an 80% and a 90% degeneracy rule; alpha 0.05 adds
+Zephyr-7B-beta at p = 0.045; a 95% rule adds SmolLM3-3B at 93.3%. SOLD is the sensitive one,
+on Hormoz-8B's 0.2-point margin. Reporting this kills the "screen was tuned" reading on MMLU
+outright and is honest about SOLD.
+l230: "falling from 44.1% to 28.7% (95% CI 14.0 to 16.9)" — the interval is on the 15.5-point
+difference, not on either level.
 
-## §5 Implications
+## Implications for evaluation
 
-Well received; sWb1 explicitly asks that this section and the licensing decisions survive into
-the camera-ready. No change beyond keeping the cross-references valid.
+Well received, and sWb1 asks specifically that this section and the licensing decisions survive
+into the camera-ready. No change beyond keeping the cross-references valid.
 
-## §6 Limitations
+## Limitations
 
-Content is right and all three reviewers said so. The problem is placement: synthetic
-romanization is the caveat two reviewers want *prominent*, and it currently sits mid-paragraph
-in a four-sentence run-on. Give it its own lead sentence. **[F]**
+Content is right and all three reviewers said so. Placement is the problem: synthetic
+romanization is the caveat two reviewers want prominent and it currently sits mid-paragraph in
+a four-sentence run-on. Give it its own lead sentence.
 
 ## Appendices
 
-- **Table 16 never says why only six checkpoints.** The ACL version does (`paper/main.tex:1468`:
-  scored on CPU so the control did not compete with the main runs for GPU time). Porting that
-  one sentence turns an apparent cherry-pick into a stated budget decision. All three reviewers
-  raised the coverage of this table. **[F]**
-- **The one new experiment worth running.** Extend the ours-vs-human bits-per-byte control to
-  one or two *competent* checkpoints. `run_synthetic_vs_human.py` already takes `--models` and
-  `--conditions ours`, and the unicode/human columns for those checkpoints are already
-  recorded, so the marginal cost is 500 sentences in one condition per checkpoint.
-  Llama-3.1-8B-Instruct or Qwen3.5-4B would close the objection — raised by sWb1 #3, ghL4 #3
-  and fYs9 — that the control covers none of the checkpoints carrying the downstream result.
-  Nothing else in the review set is this cheap relative to what it buys. **[C] do if the
-  timeline allows**
-- **sWb1 Q4 has found a real wording error.** `mcc_w` (`stats_extrinsic.py:76–86`) is documented
-  as folding invalid answers in as the wrong class. Mechanically an invalid answer is counted as
-  a prediction of `NOT`, so on a gold-`NOT` item it lands in TN and *helps* MCC; the SOLD
-  accuracy column maps invalid to a sentinel and always counts it wrong. Invalid rates never
-  exceed 0.03% in the competent cohort so no reported number moves, but both the docstring and
-  the appendix sentence are wrong as written, and the reviewer asked this exact question. Fix
-  the wording; a one-line "MCC with invalid dropped" robustness note would settle it. **[F]**
-- ghL4 #2's bits-per-word promotion needs no compute — BPW is already stored for all 31
-  checkpoints in all three conditions in `out/intrinsic_pooled.csv`. Decide the framing first
-  (see Overall). **[C]**
-- Attestation is not naturalness, and ghL4 makes the point well: our deterministic output
-  scores *more* lexicon-attested (88.6%) than the humans who typed the same sentences (84.2%).
-  Stop offering that pair as evidence of naturalness and let it do the narrower job it can do.
-  **[F]**
+table 16: the short version never says why only six checkpoints. The long version does
+(`paper/main.tex:1468`, scored on CPU so the control did not compete with the main runs for GPU
+time). Porting that sentence turns an apparent cherry-pick into a stated budget decision, and
+all three reviewers raised this table's coverage.
+The one new experiment worth running is extending that control to one or two checkpoints that
+pass the competence screen. `run_synthetic_vs_human.py` already takes `--models` and
+`--conditions ours`, and the unicode and human columns are already recorded, so the marginal
+cost is 500 sentences in one condition. Llama-3.1-8B-Instruct or Qwen3.5-4B would close the
+objection all three reviewers raise, that the control covers none of the checkpoints carrying
+the downstream result. Nothing else in the review set is this cheap for what it buys.
+sWb1's question on SOLD invalid handling has found a real error. `mcc_w`
+(`stats_extrinsic.py:76-86`) is documented as folding invalid answers in as the wrong class,
+but mechanically an invalid answer counts as a prediction of NOT, so on a gold-NOT item it
+lands in TN and helps MCC, while the accuracy column maps invalid to a sentinel and always
+counts it wrong. Invalid never exceeds 0.03% in the competent cohort so no reported number
+moves, but the docstring and the appendix sentence are both wrong and the reviewer asked this
+exact question.
+Bits per word needs no new compute — it is already stored for all 31 checkpoints in all three
+conditions in `out/intrinsic_pooled.csv`.
+Attestation is not naturalness, and ghL4 makes the point well: our output scores more
+lexicon-attested (88.6%) than the humans who typed the same sentences (84.2%). Let that pair do
+the narrower job it can do.
 
-## Declines, each with a reason worth stating
+## Requests to decline, with reasons
 
-- **[D] Human-typed Romanized subset at scale** (all three reviewers). Out of scope for a
-  camera-ready; partially met by the single-checkpoint control above. Keep sWb1's framing —
-  it converts our largest limitation into a measurement — as explicit future work.
-- **[D] Transliterate-back-to-Sinhala baseline** (fYs9). On our own synthetic Romanized side
-  this is close to circular: it inverts our own grapheme map, so it would largely recover the
-  Sinhala-script score and would measure our transliterator's injectivity rather than anything
-  about the models. It is only informative on human-typed input. Say that in one sentence
-  rather than pleading time.
-- **[D] Full-set prompt-template sweep, tokenizer-fertility-controlled refits, within-family
-  scaling, a Romanized-adapted model** (fYs9). All need new GPU runs. The Appendix B argument —
-  that a paired comparison needs a template that does not favour a script, not an optimal one,
-  evidenced by ≤0.03% invalid rates in both conditions — already carries the template point.
+A human-typed Romanized subset at scale is out of scope for a camera-ready and is partly met by
+the single-checkpoint control above; keep sWb1's framing of it as explicit future work.
+The transliterate-back-to-Sinhala baseline fYs9 asks for is close to circular on our own
+synthetic Romanized side, since it inverts our own grapheme map and would mostly recover the
+Sinhala-script score while measuring our transliterator's injectivity rather than anything about
+the models. It is informative only on human-typed input, and saying that is better than pleading
+time. The full-set template sweep, fertility-controlled refits, within-family scaling and a
+Romanized-adapted model all need new GPU runs; the Appendix B argument, that a paired comparison
+needs a template which does not favour a script rather than an optimal one, already carries the
+template point.
 
-## Build and repo blockers for the mechanics
+## Mechanics
 
-- `paper/globalsouthai/make_assets.py` and `check_paper.py` are documented in the top-level
-  README but **are not in the repo**. They are what regenerates this paper's tables and figures
-  at NeurIPS geometry and guards the page budget. Every fix above changes a rendered number, so
-  restore them before touching a table. `paper/globalsouthai/README.md` is also referenced and
-  missing. **[B]**
-- `\sinword` and the `\ifsinhalafigs` switch (l27–34) are dead code; the two Sinhala examples use
-  `\includegraphics` directly. Remove. **[F]**
-- Two bootstrap CIs exist for the same slope — `stats_extrinsic` gives [0.113, 0.567],
-  `stats_robustness` [0.113, 0.538], and the paper quotes 0.11–0.54. Make one script
-  authoritative. **[F]**
-- Re-run `verify_claims.py` after every edit. Both 39% and 48% are live numbers, so whichever
-  wording we adopt has to be registered there.
-- **Confirm the camera-ready page allowance before planning.** The abstract is at 197 of 200
-  words and the body is at the four-page mark, so every addition above has to be paid for out
-  of existing text.
-
-## Triage
-
-**Must fix (correctness):** the factor pair in abstract/intro/§3; the byte-vs-word framing
-decision; "six have a real signal on SOLD"; the three unlabelled cohorts in §4; the MCC invalid
-wording; the missing `make_assets.py` / `check_paper.py`.
-
-**Should fix (pre-empts the obvious objection):** both slopes in the abstract; the competence
-sweep; the "automatically Romanized" qualifier; the 755k composition and the transliterator
-independence sentence; the Table 16 CPU rationale; synthetic romanization promoted in §6.
-
-**Optional:** the ours-vs-human control on one competent checkpoint; MCC with invalid dropped;
-figure and table legibility (sWb1's Figure 1(c) annotation and the Table 5 reordering callout).
+`make_assets.py`, `check_paper.py` and `fill_checklist.py` are now in place, so the corrected
+tables and figures can be regenerated rather than hand-edited. `paper/globalsouthai/README.md`
+is still referenced by the top-level README and missing.
+`check_paper.py` gates every number in `main.tex` against `acl_latex.tex`, so the long version
+has to be corrected first or the new §3 values will need ALLOW entries. `verify_claims.py:307-312`
+needs rewriting alongside, since the three medians it checks are exactly the ones being
+withdrawn.
+l27-34: `\sinword` and the `\ifsinhalafigs` switch are dead code; the two Sinhala examples use
+`\includegraphics` directly.
+Two bootstrap intervals exist for the same slope, [0.113, 0.567] from `stats_extrinsic` and
+[0.113, 0.538] from `stats_robustness`, against 0.11 to 0.54 in the paper. Make one
+authoritative.
+Confirm the camera-ready page allowance before planning. The body is at the four-page mark and
+the abstract is three words under its cap, so every addition above has to be paid for.
