@@ -109,6 +109,49 @@ def intrinsic_single_block(it: pd.DataFrame) -> None:
 
 
 # ----------------------------------------------------------------- figures ----
+def fig1_combined(MF, it, ex, ne, rb) -> None:
+    """Figure 1 as the single three-panel PDF this paper includes.
+
+    The long version now draws one PDF per panel and places them as subfigures;
+    this paper keeps one graphic, so the same panel functions are laid out here
+    on one canvas. Panel (c) labels its two fits directly on the lines rather
+    than only in a legend, which reviewer sWb1 asked for: that panel is where
+    the two slopes first appear.
+    """
+    import matplotlib.pyplot as plt
+
+    m = MF._mmlu_frame(ex)
+    fig, (a, b, c) = plt.subplots(
+        1, 3, figsize=(MF.WIDE, MF.H1),
+        gridspec_kw=dict(wspace=0.40, width_ratios=[1, 1, 1.5]))
+    MF._panel_lm_cost(a, it, prefix="(a) ")
+    MF._panel_mmlu_acc(b, m, ne, prefix="(b) ")
+    MF._panel_transfer(c, m, ne, rb, prefix="(c) ")
+
+    # direct labels at the right-hand end of each fitted line
+    lv = rb["flattening_models"]["levels"]
+    cl = rb["flattening_cells"]["levels"]
+    n_cells = len(MF.strata_for_panel())
+    x_end = 45.8
+    c.annotate(f"{n_cells} cells, slope {cl['slope']:.2f}",
+               (x_end, cl["intercept"] + cl["slope"] * x_end),
+               xytext=(0, 4), textcoords="offset points",
+               fontsize=5.7, color=MF.MIX, ha="right", va="bottom")
+    # in the empty lower-right corner, with a leader to the line, because the
+    # line itself runs through the highest checkpoints and the cell markers
+    x_hit = 41.0
+    c.annotate(f"{len(m)} checkpoints\nslope {lv['slope']:.2f}",
+               xy=(x_hit, lv["intercept"] + lv["slope"] * x_hit),
+               xytext=(x_end, 25.3), fontsize=5.7, color=MF.UNI,
+               ha="right", va="top", linespacing=1.1,
+               arrowprops=dict(arrowstyle="-", color=MF.UNI, lw=0.5,
+                               shrinkA=1, shrinkB=1))
+    leg = c.get_legend()
+    if leg is not None:
+        leg.remove()
+    MF.save(fig, "fig1_flattening")
+
+
 def figures() -> None:
     """Regenerate at NeurIPS width by overriding the figure module's geometry."""
     import make_figures as MF
@@ -124,11 +167,19 @@ def figures() -> None:
     os.makedirs(FIG, exist_ok=True)
 
     it, ex, sold, strata, ni, ne, rb = MF.load()
-    MF.fig1(it, ex, ni, ne, rb)          # three panels, main body
-    MF.fig2(it, ni)                      # perplexity artifact, appendix
-    MF.fig3(ex, sold, strata, ne, rb)    # SOLD Matthews, appendix
-    MF.fig4(it, ni)                      # n-gram reference, appendix
-    MF.fig5(it)                          # decomposition bars, appendix
+    fig1_combined(MF, it, ex, ne, rb)    # three panels on one canvas, main body
+    # The appendix figures fig2-fig5 are the committed PDFs. The long version's
+    # figure module now writes fig2 as separate per-panel files, which this
+    # paper does not include, so they are not regenerated here.
+
+
+def figure1_only() -> None:
+    """Rebuild only Figure 1, leaving every table and appendix figure untouched."""
+    import make_figures as MF
+
+    MF.WIDE, MF.COL, MF.H1, MF.SPREAD_DY_A, MF.FIG = 5.5, 5.5, 1.90, 8, FIG
+    it, ex, sold, strata, ni, ne, rb = MF.load()
+    fig1_combined(MF, it, ex, ne, rb)
 
 
 def main() -> None:
@@ -153,4 +204,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    if "--figure1" in sys.argv:
+        figure1_only()
+    else:
+        main()

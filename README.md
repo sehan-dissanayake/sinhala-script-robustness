@@ -15,10 +15,12 @@ all comparisons are paired.
 * **Perplexity was measuring the tokenizer.** Across 31 checkpoints, Sinhala-script
   perplexity and bits per byte are unrelated (Spearman 0.08), while perplexity is
   almost fully explained by tokenizer fertility (−0.87).
-* **The reported 312-fold degradation splits exactly in two.** On the same 24
-  checkpoints prior work used, a factor of 21 comes from identical content being
-  cut into a different number of tokens, and a factor of 24 from a real rise in
-  per-byte loss.
+* **Almost all of the reported 312-fold degradation is the unit of account.**
+  Word counts are identical within a parallel pair, and in those matched units the
+  median checkpoint of prior work's 24 assigns only 2.3% more loss to the same
+  content, while 12 of the 24 assign less. (An earlier version of this README split
+  the ratio into factors of 21 and 24; those were separately taken medians and do
+  not compose, so that framing is withdrawn.)
 * **Romanization flattens the field.** A 22.4 point spread in Sinhala-script
   accuracy becomes 6.7 points, and Romanized accuracy rises with Sinhala-script
   accuracy at a slope of only 0.22.

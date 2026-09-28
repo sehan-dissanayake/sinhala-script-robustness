@@ -78,6 +78,14 @@ ALLOW = {
     "90.2": "Hormoz-8B single-label rate on SOLD, just over the 90% ceiling",
     "0.045": "Zephyr-7B-beta above-chance p on SinhalaMMLU, admitted at alpha=0.05",
     "93.3": "SmolLM3-3B single-option rate, admitted under a 95% rule",
+    # Camera-ready author block.
+    "22": "batch suffix in the placeholder author email addresses",
+    # Camera-ready appendix analyses, recomputed by derived_check from the
+    # per-item result files (point estimates) or reported from its bootstrap.
+    "48153": "pooled SinhalaMMLU items with one checkpoint added, 7 x 6,879",
+    "5.5": "upper 95% bound on the pooled gap under either looser screen",
+    "0.2": "percent of family-bootstrap slopes at or above 1",
+    "0.66": "Spearman, Sinhala-script fertility vs SinhalaMMLU gap, ten checkpoints",
 }
 
 # Values the camera-ready introduces, re-derived here from the frozen outputs so
@@ -214,9 +222,84 @@ def derived_check() -> list[str]:
     los = _st.median([float(dec[r["model"]]["loss_term"]) for r in pub])
     if abs((nrm + los) - tot) < 0.05:
         problems.append("median terms now compose; the S3 caveat may be stale")
+    problems += appendix_check(C)
     if not problems:
         print(f"{len(DERIVED)} camera-ready values re-derived; "
               f"bpb identity residual {resid:.1e}; word counts matched")
+    return problems
+
+
+def appendix_check(C) -> list[str]:
+    """Recompute the deterministic numbers of the camera-ready appendix analyses.
+
+    Pooled gaps come from the per-item SinhalaMMLU result files, and the family
+    and fertility figures from extrinsic_main.csv. Bootstrap intervals are not
+    re-run here, only the point estimates they surround.
+    """
+    import numpy as np
+    import pandas as pd
+    from scipy import stats
+
+    res = os.path.join(os.path.dirname(PAPER), "results", "extrinsic_evaluation")
+    files = {
+        "Qwen3.5-4B": "Qwen-3.5-4B/qwen_3_5_4b",
+        "Qwen2-7B-Instruct": "Qwen2-7B-Instruct/qwen2_7b_instruct",
+        "Llama-3.1-8B-Instruct": "Llama-3.1-8B-Instruct/llama_3_1_8b_instruct",
+        "Hormoz-8B": "Hormoz-8B/hormoz_8b",
+        "Qwen3.5-9B": "Qwen-3.5-9B/qwen_3_5_9b",
+        "Phi-4-14B": "Phi-4/phi_4",
+        "Zephyr-7B-beta": "zephyr-7b-beta/zephyr_7b_beta",
+        "SmolLM3-3B": "SmolLM3-3B/smollm3_3b",
+    }
+    six = list(files)[:6]
+
+    def pooled(models):
+        x = np.vstack([pd.read_csv(os.path.join(res, files[m] + "_sinhala_mmlu.csv"),
+                                   encoding="utf-8-sig",
+                                   usecols=["unicode_correct", "romanized_correct"]
+                                   ).to_numpy() for m in models])
+        return len(x), 100 * (x[:, 0] - x[:, 1]).mean()
+
+    ex = pd.read_csv(os.path.join(C.OUT_DIR, "extrinsic_main.csv"))
+    mm = ex[(ex.dataset == "sinhala_mmlu")
+            & (ex.model != "LaMini-GPT-1.5B")].set_index("model")
+    qwen = ["Qwen3.5-4B", "Qwen2-7B-Instruct", "Qwen3.5-9B"]
+
+    def slope(models):
+        return np.polyfit(mm.loc[models, "u_acc"], mm.loc[models, "r_acc"], 1)[0]
+
+    fert = {"TinyLlama-1.1B-Chat": 9.8, "StableLM-Zephyr-3B": 14.0, "SmolLM3-3B": 9.5,
+            "Qwen3.5-4B": 4.3, "Zephyr-7B-beta": 9.3, "Qwen2-7B-Instruct": 7.6,
+            "Llama-3.1-8B-Instruct": 9.7, "Hormoz-8B": 8.6, "Qwen3.5-9B": 4.3,
+            "Phi-4-14B": 9.5}   # Sinhala tokens per word, tab_model_ids.tex
+    ix = list(mm.index)
+    gap = (mm.u_acc - mm.r_acc).loc[ix].to_numpy()
+    ua = mm.u_acc.loc[ix].to_numpy()
+    fe = np.array([fert[m] for m in ix])
+    resid = gap - np.polyval(np.polyfit(ua, gap, 1), ua)
+
+    checks = [
+        ("pooled gap, as specified", pooled(six)[1], 6.0, 0.05),
+        ("pooled items, +Zephyr", pooled(six + ["Zephyr-7B-beta"])[0], 48153, 0),
+        ("pooled gap, +Zephyr", pooled(six + ["Zephyr-7B-beta"])[1], 5.0, 0.05),
+        ("pooled gap, +SmolLM3", pooled(six + ["SmolLM3-3B"])[1], 5.1, 0.05),
+        ("slope, one Qwen: 3.5-4B",
+         slope([m for m in ix if m not in qwen or m == "Qwen3.5-4B"]), 0.24, 0.005),
+        ("slope, one Qwen: 3.5-9B",
+         slope([m for m in ix if m not in qwen or m == "Qwen3.5-9B"]), 0.25, 0.005),
+        ("slope, one Qwen: 2-7B",
+         slope([m for m in ix if m not in qwen or m == "Qwen2-7B-Instruct"]), 0.46, 0.005),
+        ("fertility vs gap rho", stats.spearmanr(fe, gap)[0], -0.66, 0.005),
+        ("fertility vs Sinhala acc rho", stats.spearmanr(fe, ua)[0], -0.73, 0.005),
+        ("fertility vs residual gap rho", stats.spearmanr(fe, resid)[0], 0.05, 0.005),
+        ("Qwen3.5-9B loss", gap[ix.index("Qwen3.5-9B")], 15.5, 0.05),
+        ("Qwen3.5-4B loss", gap[ix.index("Qwen3.5-4B")], 10.6, 0.05),
+    ]
+    # the printed value must be the correctly rounded analysis value
+    problems = [f"appendix: {name}: paper says {want}, analysis gives {got:.4f}"
+                for name, got, want, tol in checks if abs(got - want) > tol]
+    if not problems:
+        print(f"{len(checks)} appendix analysis values recomputed from per-item results")
     return problems
 
 
