@@ -26,6 +26,12 @@
 %      Qwen3.5 pair (fYs9), orthography vs register (sWb1 Q), meaning
 %      preservation, transliterate-back and code-mixing (fYs9).
 %
+%  PAGE BUDGET. GlobalSouthAI allows four pages excluding references and
+%  appendices, so Limitations and the acknowledgments must also end on page 4.
+%  \label{sec:endofmain} after the ack environment marks that point, and
+%  check_paper.py fails if it lands after page 4. The checklist follows the
+%  appendices, as in the template.
+%
 %  STILL TO FILL IN (placeholders, marked TODO below):
 %    1. All nine email addresses in \author are pattern-based placeholders.
 %    2. The funding and competing-interest statements in the ack environment.
@@ -54,6 +60,7 @@
 \usepackage{microtype}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{enumitem}
 
 % ---- Sinhala examples --------------------------------------------------------
 % pdfLaTeX cannot set the Sinhala script, so each word is a tightly cropped PDF
@@ -122,24 +129,22 @@
 \maketitle
 
 \begin{abstract}
-Language model benchmarks for Sinhala are written in the formal script, while the
-people who would use a model mostly type an ad hoc Romanized register in Latin
-letters. We study that mismatch for Sinhala, an Indo-Aryan language with over 17
-million speakers. A recent
-benchmark reported models about 312 times worse on Romanized than Sinhala script text,
-and no effect of scale. Remeasuring 31 checkpoints,
+Language model benchmarks for Sinhala are written in the formal script, while its
+users mostly type an ad hoc Romanized register in Latin letters. We study that mismatch for this Indo-Aryan language of over 17 million
+speakers. A recent
+benchmark reported models 312 times worse on Romanized than Sinhala script text, and
+no effect of scale. Remeasuring 31 checkpoints,
 we reproduce those perplexities and find almost all of the ratio is the
-unit of account.Word counts are identical within a parallel pair, and in matched
-units the median checkpoint assigns only 2.3\% more loss to the same content, while 12 of
-24 assign less. Measured tokenizer independently, scale does
+unit of account. In matched word units the median checkpoint assigns 2.3\% more
+loss to the same content, and 12 of 24 assign less. Measured tokenizer independently, scale does
 predict Sinhala script ability. In the first downstream evaluation of Sinhala script
-variation, 9{,}479 items and eleven instruction-tuned checkpoints over 208{,}538
-generations with the romanized side produced by a deterministic rule-based transliterator, the effect is not a uniform drop but a
-flattening. A 22.4-point spread in Sinhala script accuracy
+variation, with 208{,}538 generations from eleven instruction-tuned checkpoints on 9{,}479
+items romanized by a deterministic rule-based transliterator, the effect is not a uniform
+drop but a flattening. A 22.4-point spread in Sinhala script accuracy
 becomes 6.7, and Romanized accuracy tracks it at a slope of 0.45
 across benchmark cells and 0.22 across checkpoints. On offensive-language detection,
 accuracy barely moves while Matthews correlation loses over half its value. We close
-with five methodological practices for evaluation under script variation.
+with five evaluation practices.
 \end{abstract}
 
 % =============================================================================
@@ -167,34 +172,35 @@ Sinhala-script data.
 \citet{rajapakse-weerasinghe-2026-script} measured that gap first, benchmarking 24
 open-weight models with perplexity and reporting a median 312-fold degradation from
 Sinhala script to Romanized text and no correlation between parameter count and script
-handling. Both numbers depend on the metric rather than on the models, because
-perplexity is normalized by token count and token count for a fixed string is entirely
-a property of the tokenizer \citep{gao-etal-2020-pile, magnusson-etal-2024-paloma}.
+handling. Both numbers depend on the metric rather than the models, because
+perplexity is normalized by token count, which for a fixed string is set by the tokenizer \citep{gao-etal-2020-pile, magnusson-etal-2024-paloma}.
 Sinhala is exactly where that matters, since tokenizers segment it very unevenly
 \citep{petrov-etal-2023-tokenizers, ahia-etal-2023-languages}.
 
 Recomputing that benchmark in units the two conditions share leaves very little of the
-reported ratio standing.A median 2.3\% rise in loss on identical content, with half the
-pool cheaper on Romanized text, and the claim that scale does not help does not
-survive (\S\ref{sec:metric}). In the first downstream evaluation of Sinhala script variation across 9{,}479 items, 208{,}538 generations with romanized inputs produced by a deterministic rule-based transliterator, and eleven instruction-tuned small language models (SLMs, 1.1B to 14.7B parameters), romanization compresses the range of model quality far more than it shifts the mean, turning a 22.4 point spread in accuracy into 6.7 points (\S\ref{sec:flatten}). And on
-offensive-language detection, accuracy falls a few points while Matthews correlation
-loses more than half its value, so the choice of metric determines whether the damage is visible.
+reported ratio standing, and the claim that scale does not help does not survive
+(\S\ref{sec:metric}). In the first downstream study of Sinhala script variation, over eleven
+instruction-tuned small language models
+(SLMs, 1.1B to 14.7B parameters) and Romanized inputs from a deterministic rule-based
+transliterator, romanization compresses the range of model quality far more than it shifts
+the mean (\S\ref{sec:flatten}). On offensive-language detection, accuracy falls a few
+points while Matthews correlation loses more than half its value, so the metric decides
+whether the damage shows.
 
 % =============================================================================
 \section{Setup}
 \label{sec:setup}
 
 \paragraph{Data and conditions.} Every item is evaluated twice, in the Sinhala script as
-published and in a Romanized form with identical content, so every comparison is paired
-and differs only in orthography. The intrinsic corpus is the 500 parallel
+published and in a Romanized form with identical content, so every comparison is paired. The intrinsic corpus is the 500 parallel
 sentence pairs of \citet{rajapakse-weerasinghe-2026-script}, whose Romanized side native
-speakers typed, so the intrinsic results do not depend on our transliteration. Downstream we use every item of three sets with no sampling.
-6{,}879 multiple-choice items from SinhalaMMLU \citep{pramodya-etal-2025-sinhalammlu},
-where a mix of four and five option items puts guessing at 23.4\%, the
-complete 2{,}500-item test split of the SOLD offensive-language task
+speakers typed, so the intrinsic results do not depend on our transliteration. Downstream we use every item of three sets, the
+6{,}879 multiple-choice items of SinhalaMMLU \citep{pramodya-etal-2025-sinhalammlu},
+where mixed four and five option items put guessing at 23.4\%, the
+full 2{,}500-item test split of the SOLD offensive-language task
 \citep{ranasinghe-etal-2025-sold}, 40.6\% offensive so the majority class scores
 59.4\%, and the 100 Sinhala items of Global PIQA \citep{chang-etal-2025-globalpiqa,
-desilva-ranathunga-2026-sinhalapiqa}. That is 9{,}479 items over eleven instruction-tuned SLM checkpoints, or 208{,}538 zero-shot greedy generations in 80 GPU hours, with one prompt template for every dataset so task and prompt are not confounded. The intrinsic sweep covers 31 checkpoints from 350M to 14.7B, 24 of them prior work's pool (Appendix~\ref{sec:setupfull}).
+desilva-ranathunga-2026-sinhalapiqa}. That gives 208{,}538 zero-shot greedy generations over eleven checkpoints in 80 GPU hours, with one prompt template for every dataset so task and prompt are not confounded. The intrinsic sweep covers 31 checkpoints from 350M to 14.7B, including prior work's 24 (Appendix~\ref{sec:setupfull}).
 
 \paragraph{The Romanized side.} Almost every Sinhala transliteration tool runs Latin
 to Sinhala \citep{sumanathilaka-etal-2025-swabhasha} and we need the reverse, so we
@@ -211,13 +217,13 @@ evaluation harness and all analysis code at \repo.
 \paragraph{Statistics and the competence screen.} Paired comparisons use McNemar's test
 \citep{mcnemar-1947} with Holm correction over checkpoints within a task
 \citep{holm-1979}, and intervals come from 10{,}000 paired bootstrap resamples. A model
-already at chance in the Sinhala script condition cannot lose anything by being given
-Romanized input, so averaging it in would understate the effect. We mark a checkpoint
+at chance in the Sinhala script has nothing to lose, and averaging it in understates the
+effect. We mark a checkpoint
 \emph{competent} on a task when its Sinhala script score beats the guessing baseline at
-$p < 0.01$ under a Poisson-binomial null and it does not put more than 90\% of its
-answers on one option. Six of eleven pass on SinhalaMMLU and five on SOLD, unchanged
-under most alternative thresholds. None pass on Global PIQA, which we therefore treat as
-underpowered and report only in Appendix~\ref{sec:extradetail}.
+$p < 0.01$ under a Poisson-binomial null and it puts no more than 90\% of its
+answers on one option. Six of eleven pass on SinhalaMMLU and five on SOLD, robust
+to most alternative thresholds. None pass on Global PIQA, so we treat it as
+underpowered (Appendix~\ref{sec:extradetail}).
 
 % =============================================================================
 \section{Perplexity was measuring the tokenizer}
@@ -251,34 +257,31 @@ exactly
 \end{equation}
 with $\bar{A}$ and $\bar{x}$ the two-condition means. The first term is identical content
 cut into a different number of tokens, the second the model assigning less probability
-per unit. The identity is exact for any unit.
+per unit.
 
 On prior work's 24 checkpoints \citep{rajapakse-weerasinghe-2026-script} the median gap
 is 8.29 bits, which is their 312-fold ratio. Applied per checkpoint and aggregated as a
 share, the normalizer takes a median 48\% of that gap on those 24 and 39\% over all 31.
-The split is not unique, because the unit has to be chosen, and bytes are not matched
-across a pair, since Sinhala UTF-8 spends 2.65 bytes per character against 1.00 for Latin
-and its side of the corpus occupies 2.30 times the bytes. Over whitespace words, whose
+The split depends on the unit, and bytes are not matched across a pair, since Sinhala
+UTF-8 spends 2.65 bytes per character against 1.00 for Latin. Over whitespace words, whose
 counts are identical in every pair, the same identity puts 99\% of the gap on the
 normalizer.
 
 So the statement worth quoting needs no unit at all. Because word counts match exactly,
 the ratio of bits per word is the ratio of total loss over identical content, and on the
 published 24 its median is 1.02. The median checkpoint assigns 2.3\%
-more loss to the same sentences Romanized, and 12 of the 24 assign \emph{less}. Reported and actual degradation are close to unrelated. SmolLM3-3B has the
+more loss to the same sentences Romanized, and 12 of the 24 assign \emph{less}. SmolLM3-3B has the
 largest ratio of all 31 at 769-fold while assigning 4\% less loss to the Romanized text.
 Gemma-2-9B, genuinely the worst at 46\% more loss, reports a middling 357-fold. Almost
 all of the headline is the unit of account.
 
-None of this says the models are fine on Romanized Sinhala, and \S\ref{sec:flatten} shows
-they are not. It says a per-token ratio cannot measure it, and that the signal to carry
-forward is not the size of the gap but the collapse of its range. The scale claim reverses
-too. Parameter count is uncorrelated with Sinhala-script perplexity
-($\rho = 0.15$, $p = 0.42$) but correlated with Sinhala-script bits per byte
+The models are not fine on Romanized Sinhala (\S\ref{sec:flatten}), but a per-token ratio
+cannot measure how far. The scale claim reverses too. Parameter count is uncorrelated with Sinhala-script perplexity
+($\rho = 0.15$, $p = 0.42$) but correlated with its bits per byte
 ($\rho = -0.55$, $p = 0.001$), including on prior work's own 24 checkpoints
-($\rho = -0.42$, $p = 0.04$). What scale does not buy is Romanized ability
+($\rho = -0.42$, $p = 0.04$). Scale does not buy Romanized ability
 ($\rho = -0.28$, $p = 0.13$). Family, tokenizer and corpus vary together, so
-this is an association, not a scaling result.
+this is an association only.
 
 % =============================================================================
 \section{Model performance under Romanized input}
@@ -287,40 +290,34 @@ this is an association, not a scaling result.
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.80\linewidth]{figures/fig1_flattening.pdf}
-\caption{(a) Language modelling cost. Word counts are identical within a pair, so the
-columns are comparable, and highlighted lines are checkpoints cheaper on Romanized text.
-(b) SinhalaMMLU accuracy, a 22.4 point spread becoming 6.7. (c) The same numbers as
-levels, with the 16 domain by difficulty cells. Both slopes fall well below the
-full-transfer slope of 1. LaMini-GPT-1.5B is omitted from (b) and (c) for unparseable
-output on 95.9\% of Sinhala-script items.}
+\caption{(a) Bits per word, comparable across columns since word counts match within a
+pair. Highlighted lines are cheaper on Romanized text. (b) SinhalaMMLU accuracy. (c) The
+same numbers as levels, with the 16 domain by difficulty cells. Both slopes fall well below
+the full-transfer slope of 1. LaMini-GPT-1.5B, unparseable on 95.9\% of Sinhala-script
+items, is omitted from (b) and (c).}
 \label{fig:flat}
 \end{figure}
 
-Figure~\ref{fig:flat}(a) shows the effect that organizes the rest. Sinhala-script cost
-spans 16.3 to 34.1 bits per word across the 31 checkpoints while
+Figure~\ref{fig:flat}(a) shows the core effect. Sinhala-script cost
+spans 16.3 to 34.1 bits per word over 31 checkpoints while
 Romanized cost collapses into a 20.3 to 25.7 band, and a full bit per word of
 Sinhala-script improvement buys only 0.14 bits on Romanized text (95\% CI 0.05 to
-0.25). Which checkpoints end up cheaper on Romanized text is
-predictable, because the better a checkpoint is on the Sinhala script the more it loses
-($\rho = -0.88$, $p < 10^{-9}$). No checkpoint beats a held-out character bigram
-on Romanized Sinhala. The bigram reaches 3.06 bits per byte against the best checkpoint's 3.29
-(Appendix~\ref{sec:intrinsicfull}).
+0.25). The better a checkpoint is on the Sinhala script, the more
+it loses ($\rho = -0.88$, $p < 10^{-9}$). No checkpoint beats a character bigram
+on Romanized Sinhala, 3.06 bits per byte against the best checkpoint's 3.29.
 
 \paragraph{The same shape appears downstream.} Four of the six checkpoints competent on
 SinhalaMMLU lose significantly after correction (Appendix
 Table~\ref{tab:mainfull}), Qwen3.5-9B falling from 44.1\% to 28.7\%, a 15.5 point drop
-(95\% CI 14.0 to 16.9), and the two that lose least had 2.5 and 5.2 points of headroom.
-Pooled over those six, the gap is 6.0 points (95\% CI 5.4 to 6.5, $n = 41{,}274$).
-In Figure~\ref{fig:flat}(b) no checkpoint is above 28.7\% against a 23.4\% chance
-baseline, so the best keeps 5.2 of its 20.7 points of headroom. Regressing Romanized on
+(95\% CI 14.0 to 16.9).
+Pooled over those six, the gap is 6.0 points (95\% CI 5.4 to 6.5, $n = 41{,}274$), and
+no checkpoint is above 28.7\% on Romanized input against a 23.4\% chance baseline. Regressing Romanized on
 Sinhala-script accuracy over the benchmark's 16 domain by difficulty cells, where the
 units are items, gives a slope of 0.45 (95\% CI 0.36 to 0.63, and 0.48 weighted by item
 count). We take that as the primary estimate because it has four times the units of the
-checkpoint-level fit, and none of its confound, since checkpoints differ in family,
-tokenizer, corpus and tuning at once. Across the ten checkpoints producing
-parseable output the slope is 0.22 (95\% bootstrap CI 0.11 to 0.54, leave-one-out 0.17
-to 0.26), falling to 0.12 on the competent six and 0.17 with the highest and lowest
-Sinhala-script checkpoints dropped. Every fit is reliably below the 1.0 of full transfer
+checkpoint-level fit and avoids its confound of family, tokenizer, corpus and tuning. Across the ten checkpoints producing
+parseable output the slope is 0.22 (95\% bootstrap CI 0.11 to 0.54), and 0.12 on the
+competent six. Every fit is reliably below the 1.0 of full transfer
 ($p = 8.6 \times 10^{-7}$ for the checkpoint-level form) and above the 0.0 of total
 flattening (Appendix~\ref{sec:flattenfull}).
 
@@ -330,8 +327,7 @@ keeps only 45\% of its Matthews correlation. Five of the six SinhalaMMLU-compete
 checkpoints lose significantly (Appendix~\ref{sec:extradetail} also gives the five the
 SOLD screen admits). The mechanism is a retreat toward triviality, and
 Qwen2-7B-Instruct more than doubles its rate of predicting the offensive class, 10.5\%
-to 23.4\%, without becoming more accurate. Accuracy shows a five point wobble while
-most signal is gone.
+to 23.4\%, without becoming more accurate.
 
 The effect is neither a tokenization artifact nor output degeneration. All eleven
 checkpoints receive \emph{fewer} tokens in the Romanized condition on all three tasks, a
@@ -342,40 +338,28 @@ median 2.09 per word against 9.5, and the invalid rate never exceeds 0.03\%
 \section{Implications for evaluation}
 \label{sec:lessons}
 
-Five practices follow from the measurements above, each traceable to one of them.
-\paragraph{Normalize by a unit both conditions share.}
-Perplexity conflates capability with tokenizer fertility, and bits per byte removes the tokenizer only to reintroduce the encoding, since a byte buys less text in Sinhala than in Latin (\S\ref{sec:metric}). Normalize by a unit whose count is invariant across the pair, words being the obvious one, and report the denominator with the number.
-\paragraph{Evaluate in deployed registers.}
-Formal-script-only evaluation overstates capability wherever a Romanized variant dominates use, so test Romanized input directly (\S\ref{sec:flatten}).
-\paragraph{Screen for native competence.}
-Averaging in checkpoints near chance in the formal script hides degradation by construction. Report the guessing baseline and average only competent ones.
-\paragraph{Select metrics robust to class imbalance.}
-Under imbalance, accuracy stays anchored to the majority baseline while discriminative power collapses, so use Matthews correlation or macro-F1 (\S\ref{sec:flatten}).
-\paragraph{Validate in the target register.}
-Formal-script rankings do not predict Romanized ones, and stronger models lose more. Select checkpoints in the deployment register, transliterating before inference where feasible.
-
-% Marker for the page-budget check: the four-page limit covers the content above.
-% Limitations, references, appendices and the checklist are counted separately.
-\label{sec:endofmain}
+Each of these five practices follows from one of the measurements above.
+\begin{enumerate}[leftmargin=1.4em,itemsep=1pt,topsep=2pt]
+\item \textbf{Normalize by a unit both conditions share.} Perplexity conflates capability with tokenizer fertility, and bits per byte trades the tokenizer for the encoding (\S\ref{sec:metric}). Use a unit whose count is fixed across the pair, such as words.
+\item \textbf{Evaluate in deployed registers.} Formal-script-only evaluation overstates capability wherever a Romanized variant dominates use, so test Romanized input directly (\S\ref{sec:flatten}).
+\item \textbf{Screen for native competence.} Averaging in checkpoints near chance in the formal script hides degradation by construction. Report the guessing baseline and average only competent ones.
+\item \textbf{Select metrics robust to class imbalance.} Accuracy stays anchored to the majority baseline while discriminative power collapses, so use Matthews correlation or macro-F1.
+\item \textbf{Validate in the target register.} Formal-script rankings do not predict Romanized ones, and stronger models lose more. Select checkpoints in the deployment register.
+\end{enumerate}
 
 % =============================================================================
 \section{Limitations}
 \label{sec:limitations}
 
-The Romanized side of the downstream items is produced by our transliterator rather than
-typed by users, because no parallel resource
-exists at that scale. Rather than assume it is neutral we measured it. Our text is 0.17
-to 0.24 bits per byte \emph{harder} than what native speakers typed for the same
-sentences, so our downstream gaps are closer to upper bounds than to lower bounds. That
-control covers six checkpoints, none of them among those carrying the downstream result,
-which a few hundred human typed items would fix (Appendix~\ref{sec:translit}). The intrinsic
-results do not share the limitation, since their Romanized side was human typed, and they
-show the same flattening. Everything here is also one language, and the floor effect we
-describe may not transfer, although \citet{khullar-etal-2025-scriptgap} report compatible
-magnitudes for six South Asian languages. We cannot exclude Sinhala-script evaluation
-material in pretraining, and everything is zero-shot on open weights up to 14.7B, so this
-is what a user gets out of the box and not a ceiling.
-Appendix~\ref{sec:limitfull} has the rest.
+The main caveat is that the downstream Romanized text comes from our transliterator and was
+not typed by users, because no parallel resource exists at that scale. Our text is 0.17 to 0.24 bits
+per byte \emph{harder} than what native speakers typed for the same sentences, so the
+downstream gaps are closer to upper bounds. That control covers six small checkpoints and
+none that carry the downstream result (Appendix~\ref{sec:translit}), but the intrinsic
+results use human typed text and show the same flattening. The study covers one language and the effect may not transfer, although
+\citet{khullar-etal-2025-scriptgap} report compatible magnitudes for six South Asian
+languages. We cannot exclude contamination, and everything is zero-shot on open weights up
+to 14.7B, so it shows what a user gets out of the box (Appendix~\ref{sec:limitfull}).
 
 % Acknowledgments, in the template's ack environment, which the style hides in
 % anonymous builds. NeurIPS requires the final version to declare funding and
@@ -388,6 +372,11 @@ Hub, SOLD and Global PIQA for releasing their data.
 %\emph{[Funding: to be confirmed by the authors.]}
 %\emph{[Competing interests: to be confirmed by the authors.]}
 \end{ack}
+
+% Marker for the page-budget check. GlobalSouthAI allows four pages excluding
+% references and appendices, so everything above, Limitations and the
+% acknowledgments included, must end on page 4.
+\label{sec:endofmain}
 
 % =============================================================================
 \bibliographystyle{unsrtnat}
@@ -414,7 +403,7 @@ mainly as a resource and identification problem \citep{roark-etal-2020-dakshina,
 benton-etal-2025-improving}. \citet{j-etal-2024-romansetu} show romanization can
 \emph{help} when models are adapted for it, the mirror image of our zero-shot setting.
 The closest same language work trains a model for the register.
-\citet{chamikara-sumanathilaka-2026} Fine-tune multilingual encoders for hate speech
+\citet{chamikara-sumanathilaka-2026} fine-tune multilingual encoders for hate speech
 detection on Romanized Sinhala, and \citet{hewapathirana-sumanathilaka-2024-emoscan}
 build a classifier over Romanized Sinhala social media. We instead ask what
 general-purpose generative models do out of the box. Closest in spirit is
@@ -469,7 +458,7 @@ SOLD we lead with Matthews correlation \citep{matthews-1975, chicco-jurman-2020}
 because the classes are imbalanced and accuracy sits close to the majority baseline.
 Unparseable output is scored as wrong for accuracy. In the Matthews correlation it enters
 as a prediction of the non-offensive class rather than symmetrically, so it is not
-penalised identically in both directions. Every checkpoint carrying a SOLD result
+penalized identically in both directions. Every checkpoint carrying a SOLD result
 produced zero unparseable output in both conditions, so the choice affects nothing we
 report. Item level effects are also fitted as logistic regressions with checkpoint fixed
 effects and cluster-robust standard errors by item, which put the odds ratio for
@@ -560,7 +549,7 @@ bytes per token in both scripts. Those six also hold the five smallest ratios in
 pool, with the four Qwen3.5 entries between 58-fold and 64-fold against a pool median
 of 294-fold, so the eye-catching part of a 312-fold figure is concentrated in the
 models whose tokenizers handle Sinhala worst. How completely the two metrics come
-apart also depends on the pool,on the 24 published checkpoints the rank correlation
+apart also depends on the pool. On the 24 published checkpoints the rank correlation
 between perplexity and bits per byte is moderate ($\rho = 0.46$, $p = 0.02$), still
 leaving four fifths of bits-per-byte rank variance unexplained, and adding the seven
 newer checkpoints removes even that.
@@ -653,7 +642,7 @@ pretraining exposure \citep{lescao-etal-2023-bloom}.
 \begin{table}[t]
 \caption{All 31 checkpoints, sorted by Sinhala-script bits per byte. $\ddagger$ marks
 the eleven evaluated downstream. The perplexity and bits-per-byte orderings disagree
-almost completely.Gemma-2-9B is 2nd by bits per byte and 26th by perplexity, and
+almost completely. Gemma-2-9B is 2nd by bits per byte and 26th by perplexity, and
 Qwen3.5-9B-Base moves from 28th to 6th.}
 \label{tab:intrinsic}
 \centering\scriptsize
@@ -736,7 +725,7 @@ an 80\% or a 90\% concentration rule. A threshold of $p < 0.05$ admits Zephyr-7B
 and a 95\% rule admits SmolLM3-3B at a 93.3\% single-option rate. SOLD is the sensitive
 task, turning on Hormoz-8B's two tenths of a point. Global PIQA admits nobody under any
 setting we tried. Where the cohort does change, the pooled SinhalaMMLU gap moves in the
-direction the screen exists to prevent admitting Zephyr-7B-beta lowers it from 6.0 points
+direction the screen exists to prevent. Admitting Zephyr-7B-beta lowers it from 6.0 points
 to 5.0 (95\% CI 4.5 to 5.5, $n = 48{,}153$), and admitting SmolLM3-3B lowers it to 5.1
 (CI 4.6 to 5.5), because both sit close to chance and so have little to lose. The gap stays
 large and significant under every setting. We report the screen as specified rather than
@@ -943,7 +932,7 @@ scheme, so the dental stop becomes \rom{th} and the labiodental approximant beco
 distinctions casual Singlish also collapses.
 
 \paragraph{Against human references.} We validated it on 755{,}000 reference
-items from the Swa-bhasha Resource Hub \citep{sumanathilaka-etal-2025-swabhasha}, compromising
+items from the Swa-bhasha Resource Hub \citep{sumanathilaka-etal-2025-swabhasha}, comprising
 4{,}397 authentic social-media sentence pairs, 450{,}587 words each carrying several
 accepted spellings, and a 300{,}000-sentence machine-augmented cross-check. About
 455{,}000 of the items are therefore human-supplied and the remainder machine-augmented,
@@ -1184,7 +1173,7 @@ Global PIQA forbids training on it or on synthetic data seeded from it, and we d
 neither. SinhalaMMLU is released under a license that forbids distributing
 adaptations, and its authors asked that the full set not be made public, so our
 Romanized version of it stays local. SOLD contains offensive social media text,
-already pseudonymised upstream with user mentions replaced by placeholders, and we
+already pseudonymized upstream with user mentions replaced by placeholders, and we
 neither collected nor re-annotated any of it. We add no new human annotation and no
 new data collection, so no ethics approval was required.
 
@@ -1230,7 +1219,7 @@ license requires, we state that this project uses the universal romanizer softwa
 \citep{hermjakob-etal-2018-uroman}.
 
 % =============================================================================
-% \clearpage
-% \input{checklist.tex}
+\newpage
+\input{checklist.tex}
 
 \end{document}

@@ -19,8 +19,7 @@ ANSWERS = [
     # 1 Claims
     (r"\answerYes{}",
      r"The abstract and Section~\ref{sec:intro} state the three claims the paper "
-     r"supports, namely that half the published degradation ratio is the token-count "
-     r"normaliser (Section~\ref{sec:metric}), that romanization compresses rather "
+     r"supports, namely that almost all of the published degradation ratio is the token-count normalizer (Section~\ref{sec:metric}), that romanization compresses rather "
      r"than uniformly lowers downstream ability (Section~\ref{sec:flatten}), and "
      r"that the metric a benchmark reports decides which of these is visible "
      r"(Section~\ref{sec:lessons}). Scope is one language and eleven open "
@@ -42,8 +41,7 @@ ANSWERS = [
      r"it numerically on our own measurements to $5 \times 10^{-15}$ bits."),
     # 4 Experimental result reproducibility
     (r"\answerYes{}",
-     r"Section~\ref{sec:setup} and Appendix~\ref{sec:setupfull} give the checkpoint "
-     r"list with Hugging Face identifiers and revisions, the corpora and splits, the "
+     r"Section~\ref{sec:setup} and Appendix~\ref{sec:setupfull} give the checkpoint list with Hugging Face identifiers, the corpora and splits, the "
      r"prompt templates, the decoding settings, the answer-extraction rule, the "
      r"competence screen, and every statistical procedure. "
      r"Appendix~\ref{sec:reproduction} additionally reproduces the published "
@@ -52,14 +50,12 @@ ANSWERS = [
     (r"\answerYes{}",
      r"All analysis code, the transliterator, the frozen result files and the scripts "
      r"that regenerate every number, table and figure in this paper are in the "
-     r"anonymous repository at \anonrepo. One dataset cannot be redistributed: "
-     r"SinhalaMMLU is licensed CC BY-NC-ND 4.0 and its authors asked that the full "
+     r"repository at \repo. One dataset cannot be redistributed. SinhalaMMLU is licensed CC BY-NC-ND 4.0 and its authors asked that the full "
      r"set stay private, so we release the transformation code and the item "
      r"identifiers instead of the items (Appendix~\ref{sec:licences})."),
     # 6 Experimental setting/details
     (r"\answerYes{}",
-     r"There is no training in this work, so the relevant details are evaluation "
-     r"details: zero-shot prompting, greedy decoding with a 40-token limit, one "
+     r"There is no training in this work, so the relevant details are evaluation details, namely zero-shot prompting, greedy decoding with a 40-token limit, one "
      r"template chosen on a documented pilot, no item sampling, and fp16 inference. "
      r"All of these are in Section~\ref{sec:setup} and "
      r"Appendix~\ref{sec:setupfull}."),
@@ -89,8 +85,7 @@ ANSWERS = [
      r"uses (Appendix~\ref{sec:ethics})."),
     # 10 Broader impacts
     (r"\answerYes{}",
-     r"Section~\ref{sec:lessons} and Appendix~\ref{sec:ethics} discuss both "
-     r"directions: the positive impact is that a safety system validated on the "
+     r"Section~\ref{sec:lessons} and Appendix~\ref{sec:ethics} discuss both directions. The positive impact is that a safety system validated on the "
      r"formal script and serving Romanized users can now be shown to be far worse in "
      r"the field than in evaluation, and the negative one is that our transliterator "
      r"deliberately collapses consonant distinctions, so it suits building evaluation "
@@ -99,22 +94,19 @@ ANSWERS = [
     (r"\answerNA{}",
      r"We release no model weights, no scraped data and no generative artifact. The "
      r"released code is a deterministic rule-based transliterator and the analysis "
-     r"pipeline, and the offensive-language corpus we measure on is an existing "
-     r"pseudonymised research release that we do not redistribute."),
+     r"pipeline, and the offensive-language corpus we measure on is an existing pseudonymized research release that we do not redistribute."),
     # 12 Licenses for existing assets
     (r"\answerYes{}",
-     r"Appendix~\ref{sec:licences} names every dataset, model family and tool we use "
-     r"with its licence and states exactly what we do and do not redistribute, "
+     r"Appendix~\ref{sec:licences} names every dataset, model family and tool we use with its license and states exactly what we do and do not redistribute, "
      r"including the CC BY-NC-ND 4.0 terms of SinhalaMMLU, the CC BY-SA 4.0 terms of "
-     r"Global PIQA and its prohibition on training, and the AGPL-3.0 licence of "
-     r"Aksharamukha. The acknowledgement that the uroman licence requires is given "
+     r"Global PIQA and its prohibition on training, and the AGPL-3.0 license of Aksharamukha. The acknowledgement that the uroman license requires is given "
      r"in Appendix~\ref{sec:licences}."),
     # 13 New assets
     (r"\answerYes{}",
      r"The new assets are the Sinhala-to-Latin transliterator, the Romanized "
      r"evaluation conditions and the analysis pipeline, all documented in "
      r"Appendix~\ref{sec:translit} and in the README of the anonymous repository at "
-     r"\anonrepo, which states the licence, the intended use and the known "
+     r"\repo, which states the license, the intended use and the known "
      r"limitations of each."),
     # 14 Crowdsourcing and research with human subjects
     (r"\answerNA{}",

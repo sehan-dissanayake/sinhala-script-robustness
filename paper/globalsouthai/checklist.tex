@@ -10,7 +10,7 @@
 \item {\bf Claims}
     \item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
     \item[] Answer: \answerYes{}
-    \item[] Justification: The abstract and Section~\ref{sec:intro} state the three claims the paper supports, namely that half the published degradation ratio is the token-count normaliser (Section~\ref{sec:metric}), that romanization compresses rather than uniformly lowers downstream ability (Section~\ref{sec:flatten}), and that the metric a benchmark reports decides which of these is visible (Section~\ref{sec:lessons}). Scope is one language and eleven open instruction-tuned checkpoints, stated in Section~\ref{sec:setup} and bounded in Section~\ref{sec:limitations}.
+    \item[] Justification: The abstract and Section~\ref{sec:intro} state the three claims the paper supports, namely that almost all of the published degradation ratio is the token-count normalizer (Section~\ref{sec:metric}), that romanization compresses rather than uniformly lowers downstream ability (Section~\ref{sec:flatten}), and that the metric a benchmark reports decides which of these is visible (Section~\ref{sec:lessons}). Scope is one language and eleven open instruction-tuned checkpoints, stated in Section~\ref{sec:setup} and bounded in Section~\ref{sec:limitations}.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the abstract and introduction do not include the claims made in the paper.
@@ -52,7 +52,7 @@
     \item {\bf Experimental result reproducibility}
     \item[] Question: Does the paper fully disclose all the information needed to reproduce the main experimental results of the paper to the extent that it affects the main claims and/or conclusions of the paper (regardless of whether the code and data are provided or not)?
     \item[] Answer: \answerYes{}
-    \item[] Justification: Section~\ref{sec:setup} and Appendix~\ref{sec:setupfull} give the checkpoint list with Hugging Face identifiers and revisions, the corpora and splits, the prompt templates, the decoding settings, the answer-extraction rule, the competence screen, and every statistical procedure. Appendix~\ref{sec:reproduction} additionally reproduces the published perplexities we build on, to a median of 0.05\%.
+    \item[] Justification: Section~\ref{sec:setup} and Appendix~\ref{sec:setupfull} give the checkpoint list with Hugging Face identifiers, the corpora and splits, the prompt templates, the decoding settings, the answer-extraction rule, the competence screen, and every statistical procedure. Appendix~\ref{sec:reproduction} additionally reproduces the published perplexities we build on, to a median of 0.05\%.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not include experiments.
@@ -72,7 +72,7 @@
 \item {\bf Open access to data and code}
     \item[] Question: Does the paper provide open access to the data and code, with sufficient instructions to faithfully reproduce the main experimental results, as described in supplemental material?
     \item[] Answer: \answerYes{}
-    \item[] Justification: All analysis code, the transliterator, the frozen result files and the scripts that regenerate every number, table and figure in this paper are in the repository at \repo. One dataset cannot be redistributed: SinhalaMMLU is licensed CC BY-NC-ND 4.0 and its authors asked that the full set stay private, so we release the transformation code and the item identifiers instead of the items (Appendix~\ref{sec:licences}).
+    \item[] Justification: All analysis code, the transliterator, the frozen result files and the scripts that regenerate every number, table and figure in this paper are in the repository at \repo. One dataset cannot be redistributed. SinhalaMMLU is licensed CC BY-NC-ND 4.0 and its authors asked that the full set stay private, so we release the transformation code and the item identifiers instead of the items (Appendix~\ref{sec:licences}).
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that paper does not include experiments requiring code.
@@ -89,7 +89,7 @@
 \item {\bf Experimental setting/details}
     \item[] Question: Does the paper specify all the training and test details (e.g., data splits, hyperparameters, how they were chosen, type of optimizer) necessary to understand the results?
     \item[] Answer: \answerYes{}
-    \item[] Justification: There is no training in this work, so the relevant details are evaluation details: zero-shot prompting, greedy decoding with a 40-token limit, one template chosen on a documented pilot, no item sampling, and fp16 inference. All of these are in Section~\ref{sec:setup} and Appendix~\ref{sec:setupfull}.
+    \item[] Justification: There is no training in this work, so the relevant details are evaluation details, namely zero-shot prompting, greedy decoding with a 40-token limit, one template chosen on a documented pilot, no item sampling, and fp16 inference. All of these are in Section~\ref{sec:setup} and Appendix~\ref{sec:setupfull}.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not include experiments.
@@ -141,7 +141,7 @@
 \item {\bf Broader impacts}
     \item[] Question: Does the paper discuss both potential positive societal impacts and negative societal impacts of the work performed?
     \item[] Answer: \answerYes{}
-    \item[] Justification: Section~\ref{sec:lessons} and Appendix~\ref{sec:ethics} discuss both directions: the positive impact is that a safety system validated on the formal script and serving Romanized users can now be shown to be far worse in the field than in evaluation, and the negative one is that our transliterator deliberately collapses consonant distinctions, so it suits building evaluation data and not rendering names.
+    \item[] Justification: Section~\ref{sec:lessons} and Appendix~\ref{sec:ethics} discuss both directions. The positive impact is that a safety system validated on the formal script and serving Romanized users can now be shown to be far worse in the field than in evaluation, and the negative one is that our transliterator deliberately collapses consonant distinctions, so it suits building evaluation data and not rendering names.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that there is no societal impact of the work performed.
@@ -155,7 +155,7 @@
 \item {\bf Safeguards}
     \item[] Question: Does the paper describe safeguards that have been put in place for responsible release of data or models that have a high risk for misuse (e.g., pre-trained language models, image generators, or scraped datasets)?
     \item[] Answer: \answerNA{}
-    \item[] Justification: We release no model weights, no scraped data and no generative artifact. The released code is a deterministic rule-based transliterator and the analysis pipeline, and the offensive-language corpus we measure on is an existing pseudonymised research release that we do not redistribute.
+    \item[] Justification: We release no model weights, no scraped data and no generative artifact. The released code is a deterministic rule-based transliterator and the analysis pipeline, and the offensive-language corpus we measure on is an existing pseudonymized research release that we do not redistribute.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper poses no such risks.
@@ -167,7 +167,7 @@
 \item {\bf Licenses for existing assets}
     \item[] Question: Are the creators or original owners of assets (e.g., code, data, models), used in the paper, properly credited and are the license and terms of use explicitly mentioned and properly respected?
     \item[] Answer: \answerYes{}
-    \item[] Justification: Appendix~\ref{sec:licences} names every dataset, model family and tool we use with its licence and states exactly what we do and do not redistribute, including the CC BY-NC-ND 4.0 terms of SinhalaMMLU, the CC BY-SA 4.0 terms of Global PIQA and its prohibition on training, and the AGPL-3.0 licence of Aksharamukha. The acknowledgement that the uroman licence requires is given in Appendix~\ref{sec:licences}.
+    \item[] Justification: Appendix~\ref{sec:licences} names every dataset, model family and tool we use with its license and states exactly what we do and do not redistribute, including the CC BY-NC-ND 4.0 terms of SinhalaMMLU, the CC BY-SA 4.0 terms of Global PIQA and its prohibition on training, and the AGPL-3.0 license of Aksharamukha. The acknowledgement that the uroman license requires is given in Appendix~\ref{sec:licences}.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not use existing assets.
@@ -183,7 +183,7 @@
 \item {\bf New assets}
     \item[] Question: Are new assets introduced in the paper well documented and is the documentation provided alongside the assets?
     \item[] Answer: \answerYes{}
-    \item[] Justification: The new assets are the Sinhala-to-Latin transliterator, the Romanized evaluation conditions and the analysis pipeline, all documented in Appendix~\ref{sec:translit} and in the README of the repository at \repo, which states the licence, the intended use and the known limitations of each.
+    \item[] Justification: The new assets are the Sinhala-to-Latin transliterator, the Romanized evaluation conditions and the analysis pipeline, all documented in Appendix~\ref{sec:translit} and in the README of the repository at \repo, which states the license, the intended use and the known limitations of each.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not release new assets.

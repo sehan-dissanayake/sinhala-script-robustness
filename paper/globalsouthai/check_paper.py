@@ -2,10 +2,11 @@
 
 Two checks, both cheap enough to run on every edit:
 
-1. The content ends within the four page limit. GlobalSouthAI counts limitations,
-   references, appendices and the NeurIPS checklist separately, so the test is the
-   page that \\label{sec:endofmain} lands on, read out of main.aux. That label sits
-   immediately before \\section{Limitations}.
+1. The content ends within the four page limit. GlobalSouthAI excludes only
+   references and appendices (and the NeurIPS checklist after them), so
+   Limitations and the acknowledgments count. The test is the page that
+   \\label{sec:endofmain} lands on, read out of main.aux. That label sits
+   immediately after the ack environment, before the references.
 
 2. The workshop paper introduces no number that has not already been verified.
    Every numeric token in main.tex and checklist.tex must also appear in
