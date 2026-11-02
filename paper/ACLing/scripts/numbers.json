@@ -1,0 +1,137 @@
+{
+  "decomposition": {
+    "all31": {
+      "n": 31,
+      "mean_log2_ratio": 8.061205217658417,
+      "geo_mean_ratio": 267.09427034420673,
+      "median_ratio": 293.6257601415802,
+      "byte": {
+        "units_sinhala": 43152.0,
+        "units_romanized": 18731.0,
+        "mean_token_term": 3.149240318006028,
+        "mean_content_term": 4.9119648996523875,
+        "token_share_of_mean_pct": 39.06661886125268,
+        "n_content_negative": 0
+      },
+      "code point": {
+        "units_sinhala": 16277.999999999998,
+        "units_romanized": 18678.999999999996,
+        "mean_token_term": 8.973027607908099,
+        "mean_content_term": -0.911822390249682,
+        "token_share_of_mean_pct": 111.31124150334612,
+        "n_content_negative": 23
+      },
+      "word": {
+        "units_sinhala": 3035.0,
+        "units_romanized": 3035.0,
+        "mean_token_term": 8.002508897332834,
+        "mean_content_term": 0.05869632032558244,
+        "token_share_of_mean_pct": 99.27186669064068,
+        "n_content_negative": 12
+      }
+    },
+    "shared24": {
+      "n": 24,
+      "mean_log2_ratio": 8.391367378004508,
+      "geo_mean_ratio": 335.77880982931964,
+      "median_ratio": 312.34521409508704,
+      "byte": {
+        "units_sinhala": 43152.0,
+        "units_romanized": 18731.0,
+        "mean_token_term": 3.8835436471151765,
+        "mean_content_term": 4.5078237308893305,
+        "token_share_of_mean_pct": 46.280224332624734,
+        "n_content_negative": 0
+      },
+      "code point": {
+        "units_sinhala": 16277.999999999998,
+        "units_romanized": 18678.999999999996,
+        "mean_token_term": 9.52682338486948,
+        "mean_content_term": -1.1354560068649728,
+        "token_share_of_mean_pct": 113.531239376329,
+        "n_content_negative": 18
+      },
+      "word": {
+        "units_sinhala": 3035.0,
+        "units_romanized": 3035.0,
+        "mean_token_term": 8.557784331942392,
+        "mean_content_term": -0.16641695393788217,
+        "token_share_of_mean_pct": 101.98319232660575,
+        "n_content_negative": 12
+      }
+    }
+  },
+  "per_word_gap": {
+    "median_bits": 1.1137975543437904,
+    "median_total_bits_ratio": 1.0580386108335282,
+    "n_negative": 12,
+    "min": -10.435068321057663,
+    "argmin": "LaMini-GPT-1.5B",
+    "max": 7.758301863835253,
+    "argmax": "Gemma-2-9B",
+    "shared24_median_bits": 0.41256967137618084,
+    "shared24_n_negative": 12,
+    "sinhala_bpw_range": [
+      16.32839539471981,
+      34.055471712874365
+    ],
+    "romanized_bpw_range": [
+      20.304428383508338,
+      25.719602064627047
+    ],
+    "rho_sinhala_bpw_vs_gap": -0.876209677419355,
+    "p_sinhala_bpw_vs_gap": 1.0636058798936655e-10,
+    "levels_slope": 0.13552964354367242,
+    "levels_r2": 0.1906310573113934
+  },
+  "linkage": {
+    "u_bpb": {
+      "rho_mmlu": -0.8303030303030302,
+      "p_mmlu": 0.002940227023279509,
+      "rho_sold": -0.7818181818181817,
+      "p_sold": 0.0075470077810678785
+    },
+    "r_bpb": {
+      "rho_mmlu": -0.8545454545454544,
+      "p_mmlu": 0.0016368033159867156,
+      "rho_sold": -0.8787878787878788,
+      "p_sold": 0.0008138621117322101
+    },
+    "d_bpw": {
+      "rho_mmlu": 0.4545454545454545,
+      "p_mmlu": 0.18690481034933196,
+      "rho_sold": 0.34545454545454546,
+      "p_sold": 0.3282265114713672
+    },
+    "ppl_ratio": {
+      "rho_mmlu": -0.5151515151515151,
+      "p_mmlu": 0.1275528697032343,
+      "rho_sold": -0.406060606060606,
+      "p_sold": 0.24428229408662647
+    },
+    "params": {
+      "rho_mmlu": 0.5835893219328621,
+      "p_mmlu": 0.07653771742823344,
+      "rho_sold": 0.46808726863364974,
+      "p_sold": 0.17245503609398927
+    }
+  },
+  "sinllama": {
+    "Llama-3-8B": {
+      "tok_per_word": 9.676441515650742,
+      "ppl": 3.247676273855397,
+      "u_bpw": 16.44422050568823,
+      "r_bpw": 22.242489716418945,
+      "gap_bpw": 5.798269210730716,
+      "ppl_ratio": 310.6830394171959
+    },
+    "SinLlama": {
+      "tok_per_word": 1.4359143327841846,
+      "ppl": 74.55870586303881,
+      "u_bpw": 8.931824980046287,
+      "r_bpw": 20.80729668376679,
+      "gap_bpw": 11.875471703720503,
+      "ppl_ratio": 8.660967017682635
+    }
+  }
+}
