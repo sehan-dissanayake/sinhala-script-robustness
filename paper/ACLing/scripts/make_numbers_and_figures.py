@@ -164,11 +164,25 @@ def fam_legend(ax, loc):
 # ---------------------------------------------------------------------------
 # Figure 1: (a) perplexity follows the tokenizer, (b) per-word cost in both scripts
 # ---------------------------------------------------------------------------
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.4, 2.3), gridspec_kw={"wspace": 0.32})
+MARK = {"Qwen3.5": "o", "Qwen1.5/2": "s", "Gemma": "D", "Llama": "^", "Mistral": "v",
+        "BLOOM": "P", "OPT": "X", "Pythia": "h", "Phi": "*", "other": "o"}
+MSIZE = {"Phi": 46, "P": 30, "X": 30}
 
-for f in ORDER:
-    s = it[it.fam == f]
-    ax1.scatter(s.u_tok_per_word, s.u_ppl, s=16, c=PAL[f], edgecolor="white", lw=0.4, zorder=3)
+
+def fam_scatter(ax, xcol, ycol):
+    for f in ORDER:
+        sub = it[it.fam == f]
+        if sub.empty:
+            continue
+        m = MARK[f]
+        size = MSIZE.get(f, MSIZE.get(m, 24))
+        ax.scatter(sub[xcol], sub[ycol], s=size, marker=m, c=PAL[f], edgecolor="0.15",
+                   lw=0.45, alpha=0.92, zorder=3)
+
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.4, 2.6), gridspec_kw={"wspace": 0.30})
+
+fam_scatter(ax1, "u_tok_per_word", "u_ppl")
 ax1.set_yscale("log")
 ax1.set_yticks([3, 5, 10, 20])
 ax1.set_yticklabels(["3", "5", "10", "20"])
@@ -177,22 +191,22 @@ ax1.set_xlabel("Sinhala-script tokens per word (tokenizer fertility)")
 ax1.set_ylabel("Sinhala-script perplexity (log scale)")
 rho = stats.spearmanr(it.u_tok_per_word, it.u_ppl).statistic
 ax1.set_title(f"(a) Perplexity follows the tokenizer ($\\rho$ = {rho:.2f})", loc="left")
-for name, dx, dy, ha in [("Gemma-2-9B", 0.4, -2.2, "left"), ("Qwen3.5-9B", 0.5, 2, "left"),
-                         ("Pythia-410M", -2.6, -0.25, "right")]:
+ax1.set_xlim(3.3, 15.2)
+ax1.set_ylim(2.2, 34)
+ax1.grid(axis="y", which="major", color="0.92", lw=0.5, zorder=0)
+for name, tx, ty, ha in [("Qwen3.5-9B", 5.6, 26, "left"), ("Gemma-2-9B", 5.6, 13.2, "left"),
+                         ("Pythia-410M", 11.6, 2.45, "right")]:
     r = it[it.model == name].iloc[0]
-    ax1.annotate(name, (r.u_tok_per_word, r.u_ppl), xytext=(r.u_tok_per_word + dx, r.u_ppl + dy),
-                 fontsize=6.5, ha=ha, arrowprops=dict(arrowstyle="-", lw=0.4, color="0.4"))
-fam_legend(ax1, "upper right")
-ax1.set_ylim(2.2, 32)
+    ax1.annotate(name, (r.u_tok_per_word, r.u_ppl), xytext=(tx, ty), fontsize=6.5, ha=ha,
+                 va="center", arrowprops=dict(arrowstyle="-", lw=0.4, color="0.45",
+                                              shrinkA=1, shrinkB=3))
 
 lo, hi = 7.5, 35.5
 ax2.plot([lo, hi], [lo, hi], color="0.55", lw=0.7, ls="--", zorder=1)
 ax2.text(29.5, 12.0, "below the line: the Romanized\nversion costs fewer bits", fontsize=6.5,
          color="0.35", ha="center", va="center")
 ax2.text(33.2, 31.0, "equal cost", fontsize=6.5, color="0.35", ha="right", rotation=45)
-for f in ORDER:
-    s = it[it.fam == f]
-    ax2.scatter(s.u_bpw, s.r_bpw, s=16, c=PAL[f], edgecolor="white", lw=0.4, zorder=3)
+fam_scatter(ax2, "u_bpw", "r_bpw")
 # SinLlama and its parent
 pu, pr, au, ar = p["u_bpw"], p["r_bpw"], a["u_bpw"], a["r_bpw"]
 ax2.scatter([pu], [pr], s=26, marker="s", c="white", edgecolor="k", lw=0.7, zorder=4)
@@ -208,6 +222,10 @@ ax2.set_aspect("equal")
 ax2.set_xlabel("Sinhala script, bits per word")
 ax2.set_ylabel("Romanized, bits per word")
 ax2.set_title("(b) The same 500 sentences in both scripts", loc="left")
+hs = [plt.Line2D([], [], marker=MARK[f], ls="", ms=5.2 if f != "Phi" else 7, mfc=PAL[f],
+                 mec="0.15", mew=0.45, label=f) for f in ORDER if f in set(it.fam)]
+fig.legend(handles=hs, loc="lower center", ncol=len(hs), frameon=False, handletextpad=0.15,
+           columnspacing=1.1, bbox_to_anchor=(0.5, -0.16), fontsize=7)
 fig.savefig(FIG / "fig1_intrinsic.pdf")
 plt.close(fig)
 

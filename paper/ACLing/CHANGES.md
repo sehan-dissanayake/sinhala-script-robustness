@@ -45,5 +45,6 @@ ACL Anthology.
 
 - Global PIQA is removed. The downstream set is now SinhalaMMLU and SOLD, with 9,379 items.
 - The mixed-script condition is removed, because that corpus is not parallel.
-- New figures: perplexity against tokenizer fertility, per-word cost in both scripts with the SinLlama arrow, SinhalaMMLU accuracy in both scripts, and SOLD MCC.
+- Title shortened to two lines.
+- New figures: perplexity against tokenizer fertility, per-word cost in both scripts with the SinLlama arrow, SinhalaMMLU accuracy in both scripts, and SOLD MCC. Figure 1 uses a different marker shape per model family and one shared legend below both panels.
 - The paper is anonymized for double-blind review. The only link is the anonymous.4open.science repository.
