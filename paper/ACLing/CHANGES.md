@@ -48,3 +48,9 @@ ACL Anthology.
 - Title shortened to two lines.
 - New figures: perplexity against tokenizer fertility, per-word cost in both scripts with the SinLlama arrow, SinhalaMMLU accuracy in both scripts, and SOLD MCC. Figure 1 uses a different marker shape per model family and one shared legend below both panels.
 - The paper is anonymized for double-blind review. The only link is the anonymous.4open.science repository.
+
+## Later revisions
+
+- Figure 2 is now the three-panel spread figure, redrawn from the ALTA figure: bits per word for 31 models, SinhalaMMLU accuracy for 10 models, and Romanized against Sinhala-script accuracy for models and the 16 item groups. The SOLD MCC values are in Table 3.
+- Table 1 is new. It lists the five best models by Sinhala-script BPB with their perplexity rank, plus the median of all 31. `scripts/make_numbers_and_figures.py` writes it to `tables/tab_top5.tex`.
+- Five references were removed because the text did not need them: MMLU (only named as a style), EmoScan (a second example of task work), Ahia et al. (a third citation for the same tokenizer point), Matthews 1975 (MCC is a standard metric), and Ranathunga and de Silva (the low-resource claim is covered by the de Silva survey).
