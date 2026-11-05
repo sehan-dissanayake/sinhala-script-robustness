@@ -133,14 +133,14 @@ Model & Size (B) & BPB & PPL & PPL & BPB & BPW & PPL & BPB & BPW \\
 
 \subsection{Perplexity mostly measures the tokenizer}
 
-Across the 31 models, Sinhala-script perplexity and Sinhala-script BPB are not related (Spearman $\rho = 0.08$, $p = 0.68$). Table~\ref{tab:top5} lists the five best models by Sinhala-script BPB. Only one of them is among the five best by perplexity. Figure~\ref{fig:intrinsic}a shows why. Perplexity closely follows the number of tokens that the tokenizer uses per Sinhala word ($\rho = -0.87$, $p < 10^{-9}$). More tokens for the same sentence lower the loss per token even at the same sentence probability.
+Across the 31 models, Sinhala-script perplexity and Sinhala-script BPB are not related (Spearman $\rho = 0.08$, $p = 0.68$). Table~\ref{tab:top5} lists the five best models by Sinhala-script BPB. Only one of them is among the five best by perplexity, and Figure~\ref{fig:intrinsic}b shows that the two rankings disagree for the whole pool. Figure~\ref{fig:intrinsic}a shows why. Perplexity closely follows the number of tokens that the tokenizer uses per Sinhala word ($\rho = -0.87$, $p < 10^{-9}$). More tokens for the same sentence lower the loss per token even at the same sentence probability.
 
 This changes the finding about model size. Parameter count is not related to Sinhala-script perplexity ($\rho = 0.15$, $p = 0.42$), in line with Rajapakse and Weerasinghe. It is related to Sinhala-script BPB ($\rho = -0.55$, $p = 0.001$), and this also holds on their 24 models alone ($\rho = -0.42$, $p = 0.04$). On Romanized text the relation is weaker and not significant ($\rho = -0.28$, $p = 0.13$). The models differ in family, tokenizer and training data at once, so this is an association across models and not a scaling law.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/fig1_intrinsic.pdf}
-\caption{Intrinsic results for the 31 models on the 500 parallel sentences. Colours and marker shapes show model families. (a) Sinhala-script perplexity against the tokens each tokenizer uses per Sinhala word. (b) Bits per word for the same sentences in each script. Points below the dashed line assign fewer bits to the Romanized version. The arrow goes from Llama-3-8B to SinLlama, its Sinhala-adapted version.}
+\caption{Perplexity on the Sinhala script mostly measures the tokenizer (31 models, 500 sentences). Colours group the models by how many tokens their tokenizer uses per Sinhala word. (a) Sinhala-script perplexity against tokenizer fertility. (b) Each model's rank by Sinhala-script perplexity and by Sinhala-script bits per byte. Models with efficient Sinhala tokenizers (blue) move up when the token count is removed, and byte-fallback models (red) move down.}
 \label{fig:intrinsic}
 \end{figure}
 
@@ -172,9 +172,9 @@ Word & 3{,}035 & 3{,}035 & 8.56 & $-0.17$ & 102\% & 8.00 & 0.06 & 99\% \\
 \end{tabular*}
 \end{table}
 
-Figure~\ref{fig:intrinsic}b compares bits per word directly. The median model assigns 1.1 more bits per word (6\% more in total) to the Romanized version of a sentence, and 12 of the 31 models assign fewer. On this corpus, then, the 312-fold ratio comes almost entirely from the token count and does not show that the models give much less probability to Romanized Sinhala. The content term still depends on each tokenizer, so Equation~\ref{eq:decomp} removes the token-count effect, not every effect of tokenization.
+Figure~\ref{fig:spread}a (in Section~\ref{sec:extrinsic}) compares bits per word directly. The median model assigns 1.1 more bits per word (6\% more in total) to the Romanized version of a sentence, and 12 of the 31 models assign fewer. On this corpus, then, the 312-fold ratio comes almost entirely from the token count and does not show that the models give much less probability to Romanized Sinhala. The content term still depends on each tokenizer, so Equation~\ref{eq:decomp} removes the token-count effect, not every effect of tokenization.
 
-Figure~\ref{fig:spread}a shows a pattern that returns downstream. Sinhala-script cost ranges from 16.3 to 34.1 bits per word across models, but Romanized cost only from 20.3 to 25.7. One bit per word of improvement on the Sinhala script goes with only 0.14 bits on Romanized text in a linear fit ($R^2 = 0.19$). So the models best on the Sinhala script have the largest per-word gap ($\rho = -0.88$, $p < 10^{-9}$).
+The same panel shows a pattern that returns downstream. Sinhala-script cost ranges from 16.3 to 34.1 bits per word across models, but Romanized cost only from 20.3 to 25.7. One bit per word of improvement on the Sinhala script goes with only 0.14 bits on Romanized text in a linear fit ($R^2 = 0.19$). So the models best on the Sinhala script have the largest per-word gap ($\rho = -0.88$, $p < 10^{-9}$).
 
 \subsection{A model adapted to Sinhala}
 \label{sec:sinllama}
