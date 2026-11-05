@@ -182,68 +182,70 @@ def fam_legend(ax, loc):
 
 
 # ---------------------------------------------------------------------------
-# Figure 1: perplexity measures the tokenizer
-#   (a) Sinhala-script perplexity against tokenizer fertility
-#   (b) each model's rank by perplexity against its rank by bits per byte
-# Models are coloured by how many tokens their tokenizer uses per Sinhala word.
+# Figure 1: (a) perplexity follows the tokenizer, (b) per-word cost in both scripts
 # ---------------------------------------------------------------------------
-GROUPS = [("about 4.4 tokens per word", lambda f: f < 6, "#1b6ca8"),
-          ("7.6 to 9.8 tokens per word", lambda f: (f >= 6) & (f < 12), "#9a9a9a"),
-          ("about 14 tokens per word (byte fallback)", lambda f: f >= 12, "#e76f51")]
-it["grp_col"] = "#9a9a9a"
-for _, rule, col in GROUPS:
-    it.loc[rule(it.u_tok_per_word), "grp_col"] = col
-it["rank_ppl"] = it.u_ppl.rank(method="first").astype(int)
-it["rank_bpb"] = it.u_bpb.rank(method="first").astype(int)
-(HERE / "numbers.json").write_text(json.dumps({**numbers, "fertility_groups": {
-    name: int(rule(it.u_tok_per_word).sum()) for name, rule, _ in GROUPS}}, indent=2))
+MARK = {"Qwen3.5": "o", "Qwen1.5/2": "s", "Gemma": "D", "Llama": "^", "Mistral": "v",
+        "BLOOM": "P", "OPT": "X", "Pythia": "h", "Phi": "*", "other": "o"}
+MSIZE = {"Phi": 46, "P": 30, "X": 30}
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.4, 2.75), gridspec_kw={"wspace": 0.38,
-                                                                       "width_ratios": [1.15, 1]})
-ax1.scatter(it.u_tok_per_word, it.u_ppl, s=24, c=it.grp_col, edgecolor="white", lw=0.5, zorder=3)
+
+def fam_scatter(ax, xcol, ycol):
+    for f in ORDER:
+        sub = it[it.fam == f]
+        if sub.empty:
+            continue
+        m = MARK[f]
+        size = MSIZE.get(f, MSIZE.get(m, 24))
+        ax.scatter(sub[xcol], sub[ycol], s=size, marker=m, c=PAL[f], edgecolor="0.15",
+                   lw=0.45, alpha=0.92, zorder=3)
+
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.4, 2.6), gridspec_kw={"wspace": 0.30})
+
+fam_scatter(ax1, "u_tok_per_word", "u_ppl")
 ax1.set_yscale("log")
 ax1.set_yticks([3, 5, 10, 20])
 ax1.set_yticklabels(["3", "5", "10", "20"])
 ax1.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
-ax1.grid(axis="y", color="0.92", lw=0.5, zorder=0)
-ax1.set_xlim(3.3, 15.3)
-ax1.set_ylim(2.2, 34)
 ax1.set_xlabel("Sinhala-script tokens per word (tokenizer fertility)")
 ax1.set_ylabel("Sinhala-script perplexity (log scale)")
 rho = stats.spearmanr(it.u_tok_per_word, it.u_ppl).statistic
-ax1.set_title(f"(a) Perplexity against fertility ($\\rho$ = {rho:.2f})", loc="left")
-ax1.text(5.0, 23.5, "Qwen3.5 and Gemma", fontsize=6.5, color="#1b6ca8", va="center")
-ax1.text(14.1, 7.6, "OPT, Pythia,\nMinitron, others", fontsize=6.5, color="#e76f51",
-         ha="center", va="center")
-ax1.text(10.4, 12.0, "Llama, Mistral, Phi,\nBLOOM, Qwen2", fontsize=6.5, color="0.4", ha="left",
-         va="center")
-
-for r in it.itertuples():
-    lw, alpha = (1.2, 1.0) if r.grp_col != "#9a9a9a" else (0.7, 0.8)
-    ax2.plot([0, 1], [r.rank_ppl, r.rank_bpb], color=r.grp_col, lw=lw, alpha=alpha,
-             zorder=3 if r.grp_col != "#9a9a9a" else 2, solid_capstyle="round")
-ax2.scatter(np.zeros(len(it)), it.rank_ppl, s=9, c=it.grp_col, zorder=4)
-ax2.scatter(np.ones(len(it)), it.rank_bpb, s=9, c=it.grp_col, zorder=4)
-for name, dy in [("Gemma-2-9B", 0.9), ("Qwen3.5-9B-Base", 0), ("OPT-2.7B", 0),
-                 ("Llama-3.1-8B", -0.5)]:
+ax1.set_title(f"(a) Perplexity follows the tokenizer ($\\rho$ = {rho:.2f})", loc="left")
+ax1.set_xlim(3.3, 15.2)
+ax1.set_ylim(2.2, 34)
+ax1.grid(axis="y", which="major", color="0.92", lw=0.5, zorder=0)
+for name, tx, ty, ha in [("Qwen3.5-9B", 5.6, 26, "left"), ("Gemma-2-9B", 5.6, 13.2, "left"),
+                         ("Pythia-410M", 11.6, 2.45, "right")]:
     r = it[it.model == name].iloc[0]
-    ax2.text(1.06, r.rank_bpb + dy, f"{name} ({r.rank_ppl} $\\to$ {r.rank_bpb})", fontsize=6.2,
-             va="center", ha="left", color=r.grp_col if r.grp_col != "#9a9a9a" else "0.3")
-ax2.set_ylim(32, 0)
-ax2.set_yticks([1, 5, 10, 15, 20, 25, 31])
-ax2.set_xlim(-0.12, 1.95)
-ax2.set_xticks([0, 1])
-ax2.set_xticklabels(["rank by\nperplexity", "rank by\nbits per byte"])
-ax2.tick_params(axis="x", length=0)
-ax2.spines["bottom"].set_visible(False)
-ax2.set_ylabel("rank among 31 models (1 = best)")
-rho2 = stats.spearmanr(it.u_ppl, it.u_bpb).statistic
-ax2.set_title(f"(b) Two rankings of the same models ($\\rho$ = {rho2:.2f})", loc="left")
+    ax1.annotate(name, (r.u_tok_per_word, r.u_ppl), xytext=(tx, ty), fontsize=6.5, ha=ha,
+                 va="center", arrowprops=dict(arrowstyle="-", lw=0.4, color="0.45",
+                                              shrinkA=1, shrinkB=3))
 
-hs = [plt.Line2D([], [], marker="o", ls="", ms=5, mfc=col, mec="white", label=name)
-      for name, _, col in GROUPS]
-fig.legend(handles=hs, loc="lower center", ncol=3, frameon=False, handletextpad=0.2,
-           columnspacing=1.4, bbox_to_anchor=(0.5, -0.12), fontsize=7)
+lo, hi = 7.5, 35.5
+ax2.plot([lo, hi], [lo, hi], color="0.55", lw=0.7, ls="--", zorder=1)
+ax2.text(29.5, 12.0, "below the line: the Romanized\nversion costs fewer bits", fontsize=6.5,
+         color="0.35", ha="center", va="center")
+ax2.text(33.2, 31.0, "equal cost", fontsize=6.5, color="0.35", ha="right", rotation=45)
+fam_scatter(ax2, "u_bpw", "r_bpw")
+# SinLlama and its parent
+pu, pr, au, ar = p["u_bpw"], p["r_bpw"], a["u_bpw"], a["r_bpw"]
+ax2.scatter([pu], [pr], s=26, marker="s", c="white", edgecolor="k", lw=0.7, zorder=4)
+ax2.scatter([au], [ar], s=34, marker="D", c="k", zorder=4)
+ax2.annotate("", xy=(au + 0.35, ar + 0.05), xytext=(pu - 0.35, pr - 0.02),
+             arrowprops=dict(arrowstyle="->", lw=0.7, color="k"), zorder=4)
+ax2.text(au, ar - 2.2, "SinLlama", fontsize=6.5, ha="center")
+ax2.text(pu - 3.2, pr + 3.6, "Llama-3-8B", fontsize=6.5, ha="center")
+ax2.annotate("", xy=(pu - 0.3, pr + 0.5), xytext=(pu - 2.6, pr + 3.4), arrowprops=dict(arrowstyle="-", lw=0.4, color="0.4"))
+ax2.set_xlim(lo, hi)
+ax2.set_ylim(7.5, 35.5)
+ax2.set_aspect("equal")
+ax2.set_xlabel("Sinhala script, bits per word")
+ax2.set_ylabel("Romanized, bits per word")
+ax2.set_title("(b) The same 500 sentences in both scripts", loc="left")
+hs = [plt.Line2D([], [], marker=MARK[f], ls="", ms=5.2 if f != "Phi" else 7, mfc=PAL[f],
+                 mec="0.15", mew=0.45, label=f) for f in ORDER if f in set(it.fam)]
+fig.legend(handles=hs, loc="lower center", ncol=len(hs), frameon=False, handletextpad=0.15,
+           columnspacing=1.1, bbox_to_anchor=(0.5, -0.16), fontsize=7)
 fig.savefig(FIG / "fig1_intrinsic.pdf")
 plt.close(fig)
 

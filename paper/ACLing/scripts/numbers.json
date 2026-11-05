@@ -134,10 +134,5 @@
       "ppl_ratio": 8.660967017682635
     }
   },
-  "top5_overlap_ppl_bpb": 1,
-  "fertility_groups": {
-    "about 4.4 tokens per word": 6,
-    "7.6 to 9.8 tokens per word": 16,
-    "about 14 tokens per word (byte fallback)": 9
-  }
+  "top5_overlap_ppl_bpb": 1
 }
